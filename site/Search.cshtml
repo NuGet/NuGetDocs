@@ -1,0 +1,78 @@
+﻿@using System.Globalization
+
+@{
+    Page.Title = "NuGet Docs | Search";
+
+    const int resultsPerPage = 10;
+    const string bingSearchUrlTemplate = "http://api.search.live.net/json.aspx?AppId={0}&query={1}&sources=web&web.count={2}&web.offset={3}";
+    const string appId = "079107A06124F136AD224769F658F042A7BB8694";
+
+    string originalQuery = Request.QueryString["q"];
+    if (originalQuery.IsEmpty()) {
+        return;
+    }
+
+    originalQuery = originalQuery.Trim();
+    if (originalQuery.IsEmpty()) {
+        return;
+    }
+
+    PageData["query"] = originalQuery;
+
+    // append site:docs.nuget.org to the query
+    string query = originalQuery + " site:docs.nuget.org";
+
+    // result offset
+    string page = Request.QueryString["p"];
+    int pageValue;
+    if (Int32.TryParse(page, out pageValue)) {
+        pageValue = Math.Max(0, pageValue);
+    }
+    else {
+        pageValue = 0;
+    }
+    
+    var searchUrl = String.Format(
+        CultureInfo.InvariantCulture, 
+        bingSearchUrlTemplate, 
+        HttpUtility.UrlEncode(appId), 
+        HttpUtility.UrlEncode(query),
+        resultsPerPage,
+        (pageValue * 10).ToString());
+
+    dynamic jsonResult = null;
+    using (var client = new WebClient()) {
+        var content = client.DownloadString(searchUrl);
+        jsonResult = Json.Decode(content);
+    }
+
+    if (jsonResult == null || jsonResult.SearchResponse == null || jsonResult.SearchResponse.Web == null) {
+        return;
+    }
+
+    string linkTemplate = "Search.cshtml?q=" + originalQuery + "&p=";
+}
+
+@if ((int)jsonResult.SearchResponse.Web.Total == 0) {
+    <h1>There is no result for '@originalQuery'.</h1>
+}
+else { 
+    int totalResults = (int)jsonResult.SearchResponse.Web.Total;
+    int startResult = (int)jsonResult.SearchResponse.Web.Offset + 1;
+    int endResult = startResult + (int)jsonResult.SearchResponse.Web.Results.Length - 1;
+    
+    <h1>Search results for '@originalQuery'.</h1>
+    <h2>@startResult-@endResult of @totalResults results.</h2>
+    <section class="results">
+        @foreach (var result in jsonResult.SearchResponse.Web.Results) {
+            <section class="result">
+                <h2><a href="@result.Url">@result.Title</a></h2>
+                <p>@result.Description</p>
+                <aside>@result.DisplayUrl</aside>
+            </section>
+        }
+        <footer>
+            @PaginationHelper.RenderPagination(pageValue, totalResults, resultsPerPage, linkTemplate)            
+        </footer>
+    </section>
+}

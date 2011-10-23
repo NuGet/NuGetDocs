@@ -1,0 +1,21 @@
+# Build out put
+bin
+obj
+
+# User files
+*.user
+*.suo
+*.sln.cache
+*.vs10x
+*.psess
+*.docstates
+_ReSharper*
+
+# Test Results
+*.results.xml
+TestResults
+
+# Other
+*.bak
+App_Data
+[Tt]humbs.db

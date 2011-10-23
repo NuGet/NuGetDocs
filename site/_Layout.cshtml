@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" /> 
+    <title>@Page.Title</title>
+    <link href="@Href("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+    <link href="@Href("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.cdnjs.com/ajax/libs/modernizr/1.7/modernizr-1.7.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.2.min.js"></script>
+    <script src="@Href("~/Scripts/autocolumn.min.js")"></script>
+    <script src="@Href("~/Scripts/Helpers.js")"></script>
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <div id="content-wraper">
+        <header>
+            <div id="logo"><a href="@Href("~/")">NuGet Docs</a></div>
+        </header>
+        <nav>
+            <ul id="menu">
+                <li><a href="@Href("~/")">Home</a> </li>
+                <li>
+                    <a id="overview-trigger" href="#">Quick View</a>
+                    @RenderPage("~/_Overview.cshtml")
+                </li>
+                <li><a href="@Href("~/docs/Contribute/Contributing-to-NuGet-Documentation")">Contribute</a></li>
+                <li><a href="http://nuget.org">NuGet Gallery</a> </li>
+                <li><a href="http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c">Install NuGet</a></li>
+            </ul>
+            @RenderPage("~/_searchbox.cshtml")
+        </nav>
+        <div id="body">
+        @RenderBody()
+        </div>
+    </div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <ul class="recommended">
+            <li>
+                <a href="@Href("~/docs/start-here/overview")">Overview</a>
+                <p>NuGet is a Visual Studio 2010 extension that makes it easy to add, remove, and update libraries and...</p>
+            </li>
+            <li>
+                <a href="@Href("~/docs/start-here/installing-nuget")">Install</a>
+                <p>NuGet can be installed and updated using the Visual Studio Extension Manager. To check if your copy...</p>
+            </li>
+            <li>
+                <a href="@Href("~/docs/start-here/videos")">Videos</a>
+                <p>Watch screencasts and presentations about anything and everything NuGet.</p>
+            </li>
+            <li>
+                <a href="@Href("~/docs/start-here/nuget-faq")">FAQ</a>
+                <p>Read the Frequently Asked Questions about NuGet and see if your question made the list.</p>
+            </li>
+        </ul>
+        <div class="license">
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" title="CC BY 3.0">
+                    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" />
+                </a>
+            </p>
+            <p>
+                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">NuGet Documentation</span> by 
+                <a xmlns:cc="http://creativecommons.org/ns#" href="http://docs.nuget.org/" property="cc:attributionName" rel="cc:attributionURL">Outercurve Foundation</a> 
+                is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> 
+                except where otherwise noted.
+            </p>
+        </div>
+    </footer>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SetUpQuickView("#overview-trigger", "#overview");
+        });
+    </script>
+    @Microsoft.Web.Helpers.Analytics.GetGoogleAsyncHtml("UA-12268721-4")
+</body>
+</html>

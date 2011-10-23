@@ -1,0 +1,67 @@
+﻿@using Docs.Core
+@{
+    List<Heading> headings = Page.Headings;
+    int previousLevel = 1;
+    Stack<string> toClose = new Stack<string>();
+}
+
+<aside id="toc">
+    <h2><a id="toc-heading" href="#" title="Click here to hide the document outline.">Doc Outline</a></h2>
+    <ol id="toc-body">
+        @for (int i = 0; i < headings.Count; i++) {
+            var heading = headings[i];
+            int lvlDiff = previousLevel - heading.Level;
+            if (lvlDiff > 0) {
+                int foo = lvlDiff * 2;
+                while (foo-- >= 0) {
+                    WriteLiteral(toClose.Pop());
+                }
+                toClose.Push("</li>");
+                WriteLiteral("<li>");
+                <a href="#@heading.ID">@heading.Text</a>
+            }
+
+            else if (lvlDiff < 0) {
+                toClose.Push("</ol>");
+                toClose.Push("</li>");
+                WriteLiteral("<ol>");
+                WriteLiteral("<li>");
+                <a href="#@heading.ID">@heading.Text</a>
+            }
+            else {
+                if (toClose.Any()) {
+                    WriteLiteral(toClose.Pop());
+                }
+                toClose.Push("</li>");
+                WriteLiteral("<li>");
+                <a href="#@heading.ID">@heading.Text</a>
+            }
+            previousLevel = heading.Level;
+        }
+
+
+        @while (toClose.Any()) {
+            WriteLiteral(toClose.Pop());
+        }
+    </ol>
+</aside>
+
+<script type="text/javascript">
+    $(function () {
+        var cookieKey = "NuGet_Docs_TOC_Show",
+            $tocBody = $("#toc-body");
+        if ($.cookie(cookieKey) === "false") {
+            $("#toc-body").hide();
+        }
+
+        $("#toc-heading").click(function (e) {
+            e.preventDefault();
+            $("#toc-body").toggle("fast", function () {
+                var visible = $("#toc-body").is(':visible');
+                $("#toc-heading").attr("title", "Click here to " + (visible ? "hide" : "show") + " the document outline.");
+                $.cookie(cookieKey, visible.toString().toLowerCase(), { expires: 366 });
+            });
+            return false;
+        });
+    });
+</script>

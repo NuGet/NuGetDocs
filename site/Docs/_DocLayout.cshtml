@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/_Layout.cshtml";
+}
+
+@section head {
+    <script src="@Href("~/Scripts/prettify/prettify.js")" type="text/javascript"></script>
+    <script src="@Href("~/Scripts/jquery.cookie.js")" type="text/javascript"></script>
+    <link href="@Href("~/Content/prettify.css")" rel="stylesheet" type="text/css" />
+}
+
+<section id="doc">
+    @RenderPage("~/docs/_TableOfContents.cshtml")
+    @RenderBody()
+</section>
+
+<script>
+    $(document).ready(function () {
+        if (!$('pre').attr('class') == 'none') {
+            $('pre').addClass('prettyprint');
+        }
+        prettyPrint();
+    });
+</script>
