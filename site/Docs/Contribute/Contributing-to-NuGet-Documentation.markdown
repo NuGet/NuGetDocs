@@ -2,110 +2,23 @@
 
 These docs are written in markdown. For an introduction to markdown, see [our sample markdown](#Sample_Markdown). For documentation conventions, see [our documentation  conventions](#Documentation_Conventions).
 
-## Workflow
+## Making a change to existing documentation
 The basic workflow for contributing to NuGet Docs is simple.
 
-0. **Create a Fork.** Within the NuGet Docs codeplex website, create a fork. [Detailed instructions are below](#Create_a_Fork).
+1. Visit the [NuGet Docs project on Github](https://github.com/NuGet/NuGetDocs/)
 
-1. **Clone the repository.** [Mercurial](http://tortoisehg.bitbucket.org/download/index.html) (hg)
-(for instructions using Visual Studio integration, see the next section, 
-[Setting up Source Control with Visual HG](#Setting_up_Source_Control_with_Visual_HG))
+2. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. 
+For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
 
-        hg clone https://hg01.codeplex.com/{username}/{forkname}
+3. Click the link labelled "Edit this file".
 
-2. **Edit the docs.** Open the `Site.sln` solution in Visual Studio (or Visual Web Developer) and 
-edit the .markdown files within the `Docs` folder.
-3. **Add new files to the repository.** If you add new files, be sure to run:
+4. Edit the markdown, type in a commit message below, and click "Commit Changes".
 
-        hg add
+5. Send a pull request for your change. That's it!
 
-4. **Commit changes.** Remember, this commits changes to your local repository.
-
-        hg commit
-
-5. **Push the repository.** When you are done with your changes, push your repository to your online fork.
-
-        hg push
-
-6. **[Send a pull request](#Send_a_Pull_Request)** and we&#8217;ll review 
-your changes and if they&#8217;re good, we&#8217;ll pull them into the main docs.
-7. **Admire your handy work!** by visiting http://docs.nuget.org/ !
-
-## Setting up Source Control with Visual HG
-If you have never used HG before or if you&#8217;d like a refresher 
-then [HG init](http://hginit.com/) is a good starting point.
-
-Another helpful tool to make editing our docs easy is [VisualHG](http://visualhg.codeplex.com), 
-which integrates into Visual Studio.
-
-The following steps will help you get started...
-
-### Pre-requisites
-1. Install VisualHg from [http://visualhg.codeplex.com](http://visualhg.codeplex.com).
-2. Create a local folder for the NuGet docs repository such as `C:\dev\nugetdocs`.
-
-### Create a Fork
-Unless you have direct commit access to the repository (which most of you won&#8217;t), you&#8217;ll 
-need to create a fork of the docs in order to contribute docs.
-
-1. Navigate to the [Source Code tab](http://nugetdocs.codeplex.com/SourceControl/list/changesets) 
-of the [NuGetDocs CodePlex website](http://nugetdocs.codeplex.com/).
-2. Click on the **Create Fork** link. Enter a name and description for the fork and click **Save**.
-    ![Creating a fork](images/creating-a-fork.png)
-3. Once the fork is created, you&#8217;ll have a personalized repository URL for your fork that looks like:
-**https://hg01.codeplex.com/forks/*{your-username}*/*{your-fork-name}***
-    ![A Fork](images/list-of-forks.png)
-
-### Clone the repository
-There is a bug in VisualHG 1.4.1 that prevents cloning a repository directly from within Visual 
-Studio in some machines. You can install TortoiseHG to do this.
-
-1. **Using VisualHG** Clone the repository:
-	1. Run VisualHg (from Visual Studio:  **File** -> **VisualHg** -> **Repo Browser**).  
-    2. The **TortoiseHg Workbench** window is displayed.
-	3. Select **File** -> **Clone Repository** to launch the Clone Repository Dialog.
-
-2. **Using TortoiseHG** If the previous step fails due to the bug mentioned earlier, use TortoiseHG ([install](http://tortoisehg.bitbucket.org/download/index.html)) instead to clone the repository.
-    1. Within Windows Explorer, right click on the local nuget docs folder you created.
-    2. Select **TortoiseHG** -> **Clone** (or `CTRL+SHIFT+N`) to launch the Clone Repository Dialog.
-    ![TortoiseHg Workbench](images/TortoiseHg-Workbench.png)
-3. This brings up the Clone Repository dialog. Enter the URL to your fork (e.g. **https://hg01.codeplex.com/forks/myusername/myfork**) as the source 
-and your local folder as the destination.<br />
-    ![Clone dialog box](images/Clone-dialog-box.png)
-4. For those of you more familiar with Team System or Subversion, the followings steps are useful for making 
-VisualHG behave more like Subversion or TFS. Set up VisualHg to automatically "update" after "pull":
-	1. From the **TortoiseHg Workbench** dialog box select **File** -> **Settings**.
-	2. In the **TortoiseHg Settings** dialog box, click the tab for the NuGet Docs repository.
-	4. Click **Workbench** on the left and make sure **After Pull Operation** is set to **Update** on the right.  
-    ![Update after Pull](images/After-Pull-Operation.png)
-5. To make a VisualHg "commit" work like a SVN or TFS check-in, set up Visual Hg to automatically "push" after "commit":
-    1. In the **TortoiseHg Settings** dialog box, click the tab for the NuGet Docs repository.
-	2. Click **Commit** on the left and put the repository URL in the **Push After Commit** box on the right. 
-    ![Push after Commit](images/Push-After-Commit.png)
-6. To make Visual Studio recognize markdown files and apply some of the 
-markdown formatting while you edit, use the Extension Manager to find and install
-the extension named "Markdown Mode".
-
-### Write some documentation
-
-1. Get the latest version of the docs (from **TortoiseHg Workbench** click **Pull Incoming Changes from Selected URL**).
-2. Make your changes.
-3. Test the changes by running the site locally (`CTRL + F5` in Visual Studio) and reviewing the docs.
-3. Save your changes to the repository:
-    1. Right-click the project or the folder that has your changes
-	and select VisualHg -> Commit.
-    2. The changed files about to be committed are shown and you are prompted to enter
-	a brief comment describing the changes.  
-	![Commit dialog box](images/VisualHG-Commit-dialog-box.png)
-	3. Click Commit
-
-### Send a Pull Request
-1. When you&#8217;re done with all of your changes, go to the [Forks Page](http://nugetdocs.codeplex.com/SourceControl/network). 
-2. To the right of your fork is a link to **Send Pull Request**.
-3. Clicking this brings up a dialog to enter details about your pull request.
-
-Once we get the pull request, we'll review it and merge the changes into the main docs.
-
+## Adding a new document
+Adding a new document requires that you use Git to clone the repository and send a pull request. 
+If you don't know what that means or how to use Git, feel free to propose that the NuGet team add a new page for you to edit.
 
 ## Documentation Conventions
 
