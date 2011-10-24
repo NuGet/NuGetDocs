@@ -7,7 +7,7 @@ The basic workflow for contributing to NuGet Docs is simple.
 
 1. Visit the [NuGet Docs project on Github](https://github.com/NuGet/NuGetDocs/)
 
-2. Fork the project. There's a big Fork button towards the upper right.
+2. Fork the project. There's a big Fork button towards the upper right. That creates a copy of this project under your account. It's really fast and lets you make edits without worrying that you're affecting the real site.
 
 3. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. 
 For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
