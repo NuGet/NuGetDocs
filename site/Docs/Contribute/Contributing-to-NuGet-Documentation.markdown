@@ -14,7 +14,7 @@ For example, the page you're [reading is here](https://github.com/NuGet/NuGetDoc
 
 4. Edit the markdown, type in a commit message below, and click "Commit Changes".
 
-5. Send a pull request for your change. That's it!
+5. Send a pull request for your change. There's a button near the top of the page that says "Pull Request". That's it!
 
 ## Adding a new document
 Adding a new document requires that you use Git to clone the repository and send a pull request. 
