@@ -54,24 +54,24 @@ just send an email to the team to let us know you're working on it.
 * *LICENSE.txt* file at the root of the project trunk containing the copyright for the collective distribution and complete text for the license terms. 
 * *CREDITS.txt* file wherever the LICENSE.txt file is located. Sample:
 
-		NuGet Project
-		ASP.NET Open Source Gallery at Outercurve Foundation
-		Copyright 2010 Outercurve Foundation
+        NuGet Project
+        ASP.NET Open Source Gallery at Outercurve Foundation
+        Copyright 2010 Outercurve Foundation
 
-		This product includes software developed at
-		The Outercurve Foundation (http://www.outercurve.org/).
+        This product includes software developed at
+        The Outercurve Foundation (http://www.outercurve.org/).
 
-		NuGet includes or is derivative of works distributed under the licenses listed below. 
-		The full text for most of the licenses listed below can be found in the LICENSE.txt file 
-		accompanying each work. The original copyright notices have been preserved within 
-		the respective files and or packages. Please refer to the specific files and/or packages 
-		for more detailed information about the authors, copyright notices, and licenses.
+        NuGet includes or is derivative of works distributed under the licenses listed below. 
+        The full text for most of the licenses listed below can be found in the LICENSE.txt file 
+        accompanying each work. The original copyright notices have been preserved within 
+        the respective files and or packages. Please refer to the specific files and/or packages 
+        for more detailed information about the authors, copyright notices, and licenses.
 
-		ProvideBindingPathAttribute (Visual Studio SDK)
-		----- 
-		Website:      http://msdn.microsoft.com/en-us/library/bb166441(VS.80).aspx 
-		Copyright:    Copyright (c) 2010 Microsoft
-		License:      Apache 2.0
+        ProvideBindingPathAttribute (Visual Studio SDK)
+        ----- 
+        Website:      http://msdn.microsoft.com/en-us/library/bb166441(VS.80).aspx 
+        Copyright:    Copyright (c) 2010 Microsoft
+        License:      Apache 2.0
 
 * 3rd party library dependencies should be located under a common directory within the project source tree, such as a *lib* folder. 
 * Source file headers are not required and should not be used except in cases where we're incorporating OSS source code from another project. 
@@ -80,19 +80,19 @@ just send an email to the team to let us know you're working on it.
 
 When incorporating source code from a 3rd party, we should make sure to follow the proper steps mentioned above regarding giving proper credit. Each 3rd party source file should have a header that conforms to the license requirements. If the license does not provide a recommendation for the source file (for example, Apache has a recommended format), use the following as a template:
 
-	/*
-	COPYRIGHT YYYY AUTHORNAME
+    /*
+    COPYRIGHT YYYY AUTHORNAME
 
-	Licensed to the Outercurve Foundation under one or more contributor license agreements.
+    Licensed to the Outercurve Foundation under one or more contributor license agreements.
 
-	See the CREDITS.TXT file distributed with this work for additional information regarding copyright ownership. The Outercurve Foundation licenses this file under the LICENSE_NAME License (the "License"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at:
+    See the CREDITS.TXT file distributed with this work for additional information regarding copyright ownership. The Outercurve Foundation licenses this file under the LICENSE_NAME License (the "License"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at:
 
-		http://LICENSE_URL
+        http://LICENSE_URL
 
-	Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.
 
-	Source: http://OPTIONAL URL WHERE CODE WAS OBTAINED
-	*/
+    Source: http://OPTIONAL URL WHERE CODE WAS OBTAINED
+    */
 
 ## Builds
 
