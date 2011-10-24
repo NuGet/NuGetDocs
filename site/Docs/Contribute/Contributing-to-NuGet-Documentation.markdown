@@ -7,14 +7,16 @@ The basic workflow for contributing to NuGet Docs is simple.
 
 1. Visit the [NuGet Docs project on Github](https://github.com/NuGet/NuGetDocs/)
 
-2. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. 
+2. Fork the project. There's a big Fork button towards the upper right.
+
+3. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. 
 For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
 
-3. Click the link labelled "Edit this file".
+4. Click the link labelled "Edit this file".
 
-4. Edit the markdown, type in a commit message below, and click "Commit Changes".
+5. Edit the markdown, type in a commit message below, and click "Commit Changes".
 
-5. Send a pull request for your change. There's a button near the top of the page that says "Pull Request". That's it!
+6. Send a pull request for your change. There's a button near the top of the page that says "Pull Request". That's it!
 
 ## Adding a new document
 Adding a new document requires that you use Git to clone the repository and send a pull request. 
