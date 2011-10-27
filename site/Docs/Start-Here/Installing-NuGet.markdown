@@ -60,4 +60,4 @@ install a CI build if you already have an official build installed. If you do, y
 *The installed version of 'NuGet Package Manager' is signed, but the update version is not signed. Therefore, Extension Manager cannot install the update.*
 
 To avoid this issue, you need to uninstall the official build (from the VS extension manager) before installing the CI build. Likewise, please uninstall the CI build
-before going back to an official build. However, you don't need to do this from going to a CI build to a newer CI build. If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled), then you likely need to restart Visual Studio using 'Run as Administrator.'
+before going back to an official build. However, you don't need to do this from going to a CI build to a newer CI build. If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled), then you likely need to restart Visual Studio using "Run as Administrator."
