@@ -376,8 +376,6 @@ NuGet automatically runs scripts based on their file names using the following c
 * ***Install.ps1*** runs when a package is installed in a project. 
     * If the same package is installed in multiple projects in a solution, the script runs each time the 
     package is installed. 
-    * If a package is not installed into a project (such as the tools only package), the script runs when 
-    the package is installed into the solution.
     * The package must have files in the *content* or *lib* folder for *Install.ps1* to run. Just having 
     something in the tools folder will not kick this off.
     * If your package also has an *init.ps1*, *install.ps1* runs **after** *init.ps1*.
