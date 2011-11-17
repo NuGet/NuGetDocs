@@ -35,8 +35,8 @@ package is built (but without the element that lists files if that element was i
     <tr>
         <td>title</td>
         <td>
-            The human-friendly title of the package displayed in the Add Library Package 
-            Dialog. If none is specified, the ID is used instead.        
+            The human-friendly title of the package displayed in the Manage NuGet Packages
+            dialog. If none is specified, the ID is used instead.        
         </td>
     </tr>
     <tr>
@@ -86,7 +86,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>iconUrl</td>
-        <td>A URL for the image to use as the icon for the package in the <strong>Add Library Package Reference</strong> dialog box. This should be a 32x32-pixel <em>.png</em> file that has a transparent background.</td>
+        <td>A URL for the image to use as the icon for the package in the <strong>Manage NuGet Packages</strong> dialog box. This should be a 32x32-pixel <em>.png</em> file that has a transparent background.</td>
     </tr>
     <tr>
         <td>licenseUrl</td>

@@ -44,9 +44,9 @@ select the new feed in the **Package source** list.
 ![Selecting local feed in Package Manager Console](images/Selecting-local-feed-in-Package-Manager-Console.png)
 
 You can also select the new feed in the **Online** tab of the
-**Add Library Package Reference** dialog box.
+**Manage NuGet Packages** dialog box.
 
-![Selecting local feed in Add Library Package Reference](images/Selecting-local-feed-in-Add-Library-Package-Reference.png)
+![Selecting local feed in the Manage NuGet Packages dialog](images/Selecting-local-feed-in-Add-Library-Package-Reference.png)
 
 ## Creating Remote Feeds
 
@@ -68,7 +68,7 @@ This results in a very empty project template.
 
 ### Step 2: Install the NuGet.Server Package
 
-Now right click on the **References** node and select **Add Library Package Reference** to launch
+Now right click on the **References** node and select **Manage NuGet Packages** to launch
 the NuGet dialog (alternatively, you can use the Package Manager Console instead and
 type `Install-Package NuGet.Server`).
 

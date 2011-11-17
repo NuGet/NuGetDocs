@@ -1,8 +1,8 @@
 ﻿# Finding and Installing a NuGet Package Using the Package Manager Console
 
 This topic describes how to find, install, remove, and update NuGet packages using PowerShell commands. 
-You can also work with packages using the **Add Library Package Reference** dialog box. 
-For more information, see [Using the Add Library Package Reference Dialog Box](Using-the Add-Library-Package-Reference-Dialog-Box).
+You can also work with packages using the **Manage NuGet Packages** dialog box. 
+For more information, see [Using the Manage NuGet Packages dialog](Using-the Add-Library-Package-Reference-Dialog-Box).
 
 Using PowerShell commands is required if you want to install a package without having a solution open. It's also required in some cases for packages that create commands that you can access only by using PowerShell.
 

@@ -20,7 +20,7 @@ If you have the following operating systems, you must [manually install Powershe
 
 **Not at all**. For information about how to install NuGet without MVC 3, see [Installing NuGet](Installing-NuGet).
 
-## Why does the Package Manager Console or Add Library Package Reference dialog box crash or show an exception?
+## Why does the Package Manager Console or the Manage NuGet Packages dialog box crash or show an exception?
 
 Check the [Known Issues](../Reference/Known-Issues) page. Typically, the issue is due to having an older version of the Reflector add-in installed or not having PowerShell 2.0 installed (as in the case of Windows XP).
 
@@ -38,6 +38,16 @@ Typically, a solution-level package installs new commands that can be called fro
 ## I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?
 
 See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](http://nuget.codeplex.com/wikipage?title=Creating a Package#supporting-multiple-framework-versions).
+
+## How do I check the exact version of NuGet installed?
+
+In Visual Studio go to the _Help_ > _About Microsoft Visual Studio_ menu and look for NuGet Package Manager. The version is 
+displayed next to that entry.
+
+![NuGet Version in the Visual Studio Extension Manager](images/nuget-version.png)
+
+Alternatively, you can launch the Package Manager Console and type in `$host` to output information about NuGet 
+Powershell host including the version.
 
 ## How do I get access to the DTE object in the Package Manager console?
 
@@ -81,7 +91,7 @@ Keep in mind that the focus of NuGet is to let you modify your projects and add 
 The command line tool, NuGet.exe, will download and unpack packages, but it won't automate Visual Studio and 
 modify your project files.
 Within Visual Studio, there are two clients for NuGet: 
-the PowerShell-based **Package Manager Console** and the **Add Library Package Reference** dialog box. 
+the PowerShell-based **Package Manager Console** and the **Manage NuGet Packages** dialog box. 
 Both are wrappers around the NuGet API, which is written in managed code.
 NuGet.exe is also used to create and publish packages.
 
