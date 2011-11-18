@@ -82,7 +82,12 @@ PARAMETERS
         Displays all available versions of a package. The latest version of each package is listed by default.
         
         Required: false
-    </pre>
+
+    <strong>-IncludePrerelease</strong>
+        Indicates whether to include prerelease packages in the returned results.
+
+        Required: false
+</pre>
 ### Examples
 
     
@@ -187,7 +192,13 @@ PARAMETERS
         Specifies the version of the package to install. If omitted, defaults to the latest version.
         
         Required: false
-    </pre>
+
+    <strong>-IncludePrerelease</strong>
+        Indicates whether this command will consider prerelease packages. If omitted, only 
+        stable packages are considered.
+
+        Required: false
+</pre>
 ### Examples
 
     
@@ -390,6 +401,11 @@ PARAMETERS
         Specifies the project containing the project to update. If omitted, the default project is chosen.
         
         Required: false
+
+    <strong>-Safe</strong> <string>
+        The `-Safe` flag constrains upgrades to only versions with the same Major and Minor version component. 
+        
+       Required: false
         
     <strong>-Source</strong> <string>
         Specifies the URL or directory path for the package source containing the package to install. If omitted, 
@@ -401,13 +417,13 @@ PARAMETERS
         Specifies the version that the package will be upgraded to. If omitted, defaults to the latest version.
         
        Required: false
-    </pre>
 
-    <strong>-Safe</strong> <string>
-        The `-Safe` flag constrains upgrades to only versions with the same Major and Minor version component. 
-        
-       Required: false
-    </pre>
+    <strong>-IncludePrerelease</strong>
+        Indicates whether to include prereleases when searching for updates. If omitted, only 
+        stable packages are considered.
+
+        Required: false
+</pre>
 ### Examples
     
     PM> Update-Package Elmah
