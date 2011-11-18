@@ -21,6 +21,10 @@ Specify the Id and version of the package to delete from the server.
         <td>Do not prompt when deleting.</td>
     </tr>
     <tr>
+        <td>ApiKey</td>
+        <td>The API key for the server.</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
@@ -76,7 +80,7 @@ Pass a command name to display help information for that command.
 
 ##  Install Command
 
-Installs a package using the specified sources. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.
+Installs a package using the specified sources. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.  If NuGet.config specifies no sources, uses the default NuGet feed.
 
 ### Usage
     nuget install packageId|pathToPackagesConfig [options]
@@ -101,6 +105,10 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>If set, the destination folder will contain only the package name, not the version number</td>
     </tr>
     <tr>
+        <td>Prerelease</td>
+        <td>Allows prerelease packages to be installed. This flag is not required when restoring packages by installing from packages.config.</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
@@ -120,7 +128,7 @@ Specify the id and optionally the version of the package to install. If a path t
 
 ##  List Command
 
-Displays a list of packages from a given source. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.
+Displays a list of packages from a given source. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used. If NuGet.config specifies no sources, uses the default NuGet feed.
 
 ### Usage
     nuget list [search terms] [options]
@@ -139,6 +147,10 @@ Specify optional search terms.
     <tr>
         <td>AllVersions</td>
         <td>List all versions of a package. By default, only the latest package version is displayed.</td>
+    </tr>
+    <tr>
+        <td>Prerelease</td>
+        <td>Allow prerelease packages to be shown.</td>
     </tr>
     <tr>
         <td>Help</td>
@@ -203,6 +215,10 @@ Specify the location of the nuspec or project file to create a package.
         <td>Prevent default exclusion of NuGet package files and files and folders starting with a dot e.g. .svn.</td>
     </tr>
     <tr>
+        <td>NoPackageAnalysis</td>
+        <td>Specify if the command should not run package analysis after building the package.</td>
+    </tr>
+    <tr>
         <td>Properties</td>
         <td>Provides the ability to specify a semicolon ";" delimited list of properties when creating a package.</td>
     </tr>
@@ -218,9 +234,9 @@ Specify the location of the nuspec or project file to create a package.
     
     nuget pack foo.nuspec
     
-    nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release
-
     nuget pack foo.csproj
+    
+    nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release
     
     nuget pack foo.nuspec -Version 2.1.0
 
@@ -281,6 +297,10 @@ Specify the path to the package and your API key to push the package to the serv
         <td>Specifies the server URL.</td>
     </tr>
     <tr>
+        <td>ApiKey</td>
+        <td>The API key for the server.</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
@@ -326,6 +346,32 @@ Specify the API key to save and an optional URL to the server that provided the 
     
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
 
+
+
+
+
+##  Sources Command
+
+Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet.config
+
+### Usage
+    nuget sources <List|Add|Remove|Enable|Disable> -Name [name] -Source [source]
+
+### Options
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Name of the source.</td>
+    </tr>
+    <tr>
+        <td>Source</td>
+        <td>Path to the package(s) source.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+</table>
 
 
 
@@ -397,6 +443,10 @@ Update packages to latest available versions. This command also updates NuGet.ex
     <tr>
         <td>Verbose</td>
         <td>Show verbose output while updating.</td>
+    </tr>
+    <tr>
+        <td>Prerelease</td>
+        <td>Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.</td>
     </tr>
     <tr>
         <td>Help</td>
