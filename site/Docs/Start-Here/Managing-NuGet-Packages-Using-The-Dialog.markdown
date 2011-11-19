@@ -35,13 +35,19 @@ button in the dialog to launch the Options dialog. Make sure the **Package Sourc
 Type in the name of a source as well as its URL or folder path (a folder containing NuGet package 
 files is a valid package source) and then click the **Add** button.
 
-![Package Sources Dialog With a custom source](images/package-sources-with-custom-source.png)
+![Package Sources Dialog with a custom source](images/package-sources-with-custom-source.png)
 
 The package source will be listed under the **All** node. Click on the package source to view 
 packages from that source. The **All** node displays an aggregated view of packages from all 
 package sources.
 
 ![Manage NuGet Packages Dialog with a custom package source](images/manage-nuget-packagse-with-custom-source.png)
+
+If you want to temporarily disable a package source, just uncheck the package source in the 
+dialog. This is useful if a package source is temporarily down for some reason and you need to 
+keep it from being included in the aggregate feed.
+
+![Package Sources Dialog with a disabled source](images/package-source-with-disabled-source.png)
 
 ## Installing a Package
 
