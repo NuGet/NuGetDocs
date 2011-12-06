@@ -17,3 +17,8 @@
 
 ###[mvcConf 2 - Andy Wahrenberger: Industrial Strenght NuGet](http://channel9.msdn.com/Series/mvcConf/mvcConf-2-Andy-Wahrenberger-Industrial-Strenght-NuGet)
 <iframe style="height:288px;width:512px" src="http://channel9.msdn.com/Series/mvcConf/mvcConf-2-Andy-Wahrenberger-Industrial-Strenght-NuGet/player?w=512&h=288" frameBorder="0" scrolling="no" ></iframe>
+
+###[NDC 2011 - Damian Edwards: NuGet in a caramel coated nutshell] (http://ndc2011.macsimum.no/mp4/Day3%20Friday/Track1%201020-1120.mp4)
+<video src="http://ndc2011.macsimum.no/mp4/Day3%20Friday/Track1%201020-1120.mp4">
+    <a href="http://ndc2011.macsimum.no/mp4/Day3%20Friday/Track1%201020-1120.mp4">Download video</a>
+</video>
