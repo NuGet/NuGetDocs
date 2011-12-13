@@ -53,14 +53,15 @@ InstallShield projects or unloading them.
 
 ## Upgrading to latest NuGet from an older version causes a signature verification error.
 
-If you are running VS 2010 SP1 on Windows XP or Windows Server 2003, you might run into the following error message when attempting to upgrade 
+If you are running VS 2010 SP1, you might run into the following error message when attempting to upgrade 
 NuGet if you have an older version installed.
 
 ![Visual Studio Extension Installer](images/Visual-Studio-Extension-Installer.png)
 
 When viewing the logs, you might see a mention of a `SignatureMismatchException`.
 
-The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.
+The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
+<a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information.
 
 ## Uninstall Button Greyed out? NuGet Requires Admin Privileges to Install/Uninstall
 
