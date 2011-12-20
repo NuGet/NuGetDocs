@@ -15,9 +15,9 @@ being "right."
 
 ## C# coding conventions
 
+The NuGet team uses [Allman bracing style](http://en.wikipedia.org/wiki/Indent_style#Allman_style). 
 We are using the C# coding conventions described in this document: <a href="http://blogs.msdn.com/brada/articles/361363.aspx">C# Coding Guidelines</a> with the following exceptions:
 
-* Opening braces are on the same line as the statement that begins the block, with a space before the brace (this is consistent with what we do in JavaScript), a.k.a. K&R convention. 
 * Private fields are prefixed with an underscore and camel-cased. 
 * Each file should not start with a copyright notice. The ones at the root of the source tree will suffice. 
 * Regions (#region) are not used. 
@@ -41,27 +41,35 @@ Examples:
 Here is some sample code that follows these conventions.
 
 	using System;
-	namespace NuGet {
-		public class ClassName {
+	namespace NuGet
+	{
+		public class ClassName
+		{
 			private List<SomeType> _privateMember;
 
-			public List<SomeType>; SomeProperty {
-				get {
+			public List<SomeType>; SomeProperty
+			{
+				get
+				{
 					return _privateMember;
 				}
 			}
 
 			public string SomeAutoProperty { get; set; }
 
-			public string SomeMethod(bool someCondition) {
-				if (someCondition) {
+			public string SomeMethod(bool someCondition)
+			{
+				if (someCondition)
+				{
 					DoSomething(someArgument);
 				}
-				else {
+				else
+				{
 					return someArray[10];
 				}
 
-				switch (status) {
+				switch (status)
+				{
 					case Status.Foo:
 						return <span class="str">"Foo";
 
