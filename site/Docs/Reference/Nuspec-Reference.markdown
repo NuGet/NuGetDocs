@@ -160,13 +160,26 @@ are populated by the values within the project.
 ## Specifying Dependencies
 
 The dependencies element is a child element of the metadata element and contains a set of dependency 
-elements. Each dependency element is a reference to another package that this package depends on. The 
-following table lists attributes of the dependency element.
+elements. Each dependency element is a reference to another package that this package depends on. 
 
     <dependencies>
       <dependency id="RouteMagic" version="1.1.0" />
       <dependency id="RouteDebugger" version="1.0.0" />
     </dependencies>
+
+The following table lists attributes of the dependency element.
+
+<table class="reference">
+    <tr><th>Attribute</th><th>Description</th></tr>
+    <tr>
+        <td><code>id</code></td>
+        <td>The package id of the package that this package is dependent upon. The package specified by the dependency id is required by this package and NuGet will install it when installing the current package.</td>
+    </tr>
+    <tr>
+        <td><code>version</code></td>
+        <td>The range of versions acceptable as a dependency. Typically this is just a version number which represents a minimum version. However a more explicit [version range syntax](reference/versioning#Specifying_Version_Ranges_in_.nuspec_Files) is supported.</td>
+    </tr>
+</table>
 
 ## Specifying Explicit Assembly References
 Use the `<references />` element to explicitly specify assemblies that the target project should 
