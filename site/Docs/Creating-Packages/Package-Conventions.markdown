@@ -14,7 +14,7 @@ Ninject.Mvc3 instead of Ninject-Mvc3.
 This is useful for helping others get started. For example, if your package name is Clay, then a sample 
 of how to use clay would be Clay.Sample. Also, within the content folder, arrange your samples within a 
 root /Samples/PackageID folder structure. For example, the Clay.Sample package would have a folder 
-/Samples/Clay. See this blog post for more details.
+/Samples/Clay.
 
 ## Package Contents Conventions
 
