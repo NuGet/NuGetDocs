@@ -295,6 +295,8 @@ The following is an example of a `files` element.
       <file src="bin\Debug\*.pdb" target="lib" /> 
       <file src="tools\**\*.*" exclude="**\*.log" />
     </files>
+    
+<p class="caution">NuGet does not add references to any dlls that end with '.resources.dll'</p> 
 
 ### File Element Examples
 Let&#8217;s look at some example usages of this element to gain a better understanding of how it&#8217;s used.
