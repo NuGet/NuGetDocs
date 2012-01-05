@@ -149,7 +149,7 @@ are populated by the values within the project.
         <td>The description as specified in the <code>AssemblyDescriptionAttribute</code>.</td> 
     </tr>
     <tr>
-        <td>references</td>
+        <td>$references$</td>
         <td>
             This element contains a set of <code>&lt;reference&gt;</code> elements, each of which 
             specifies an assembly that will be referenced by the project. The existence of 
