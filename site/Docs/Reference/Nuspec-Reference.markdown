@@ -296,7 +296,7 @@ The following is an example of a `files` element.
       <file src="tools\**\*.*" exclude="**\*.log" />
     </files>
     
-<p class="caution">Note: NuGet does not add references to any dlls that end with '.resources.dll'. Please refer to the following Codeplex discussion: <a href="http://nuget.codeplex.com/discussions/280566" target="_blank" title="Nuget .resources.dll discussion">http://nuget.codeplex.com/discussions/280566</a></p> 
+<p class="caution">NuGet does not add references to any dlls that end with '.resources.dll'. Please refer to the following Codeplex discussion: <a href="http://nuget.codeplex.com/discussions/280566" target="_blank" title="Nuget .resources.dll discussion">http://nuget.codeplex.com/discussions/280566</a></p> 
 
 ### File Element Examples
 Let&#8217;s look at some example usages of this element to gain a better understanding of how it&#8217;s used.
