@@ -144,16 +144,18 @@ are populated by the values within the project.
         <td>$author$</td>
         <td>The company as specified in the <code>AssemblyCompanyAttribute</code>.</td>
     </tr>
-        <tr>
+    <tr>
         <td>$description$</td>
-        <td>The description as specified in the <code>AssemblyDescriptionAttribute</code>.</td>
+        <td>The description as specified in the <code>AssemblyDescriptionAttribute</code>.</td> 
+    </tr>
+    <tr>
         <td>references</td>
         <td>
             This element contains a set of <code>&lt;reference&gt;</code> elements, each of which 
             specifies an assembly that will be referenced by the project. The existence of 
             this element overrides the convention of pulling everything in the <code>lib</code> 
             folder. More info below.
-        </td> 
+        </td>
     </tr>
 </table>
 
