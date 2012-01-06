@@ -398,7 +398,7 @@ PARAMETERS
         Required: false
         
     <strong>-ProjectName</strong> <string>
-        Specifies the project containing the project to update. If omitted, the default project is chosen.
+        Specifies the project containing the project to update. If omitted, all projects are updated.
         
         Required: false
 
