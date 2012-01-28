@@ -113,20 +113,20 @@
 				var columnText;
 				var latestTextNode = null;
 				while($parentColumn.height() < height && oText.length){
-                        var wordWrapIndex = oText.indexOf(' ', counter2);
-                        if (wordWrapIndex != '-1') {
-                            columnText = oText.substring(0, wordWrapIndex);
-                        } else {
-                            columnText = oText;
-                        }
-                        latestTextNode = document.createTextNode(columnText);
-                        $putInHere.append(latestTextNode);
-
-                        if (oText.length > counter2 && wordWrapIndex != '-1') {
-                            oText = oText.substring(wordWrapIndex);
-                        } else {
-                            oText = "";
-                        }
+					var wordWrapIndex = oText.indexOf(' ', counter2);
+					if (wordWrapIndex != '-1') {
+						columnText = oText.substring(0, wordWrapIndex);
+					} else {
+						columnText = oText;
+					}
+					latestTextNode = document.createTextNode(columnText);
+					$putInHere.append(latestTextNode);
+					
+					if (oText.length > counter2 && wordWrapIndex != '-1') {
+						oText = oText.substring(wordWrapIndex);
+					} else {
+						oText = "";
+					}
 				}
 				if($parentColumn.height() >= height && latestTextNode != null){
 					// too tall :(
