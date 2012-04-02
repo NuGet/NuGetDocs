@@ -37,3 +37,7 @@ unpack the package.
 
 In the restore scenario, NuGet will grab the exact version when restoring a package. It will not 
 perform any upgrades.
+
+## Mono
+On mono you can run `xbuild` on the project file or on your solution and it should successfully 
+restore packages for any project that has package restore enabled.
