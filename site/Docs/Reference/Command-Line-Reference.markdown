@@ -90,7 +90,7 @@ Specify the id and optionally the version of the package to install. If a path t
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of packages sources to use for the install.</td>
+        <td>A list of packages sources to use for the install. Delimiter is semi-colon.</td>
     </tr>
     <tr>
         <td>OutputDirectory</td>
@@ -138,7 +138,7 @@ Specify optional search terms.
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of packages sources to search.</td>
+        <td>A list of packages sources to search. Delimiter is semi-colon.</td>
     </tr>
     <tr>
         <td>Verbose</td>
@@ -422,7 +422,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of package sources to search for updates.</td>
+        <td>A list of package sources to search for updates. Delimiter is semi-colon.</td>
     </tr>
     <tr>
         <td>Id</td>
