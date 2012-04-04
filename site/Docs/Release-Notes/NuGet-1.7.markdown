@@ -1,5 +1,15 @@
 ﻿# NuGet 1.7 Release Notes
 
+## Known Installation Issue
+If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade 
+NuGet if you have an older version installed.
+
+The workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
+<a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information.
+
+Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
+then you likely need to restart Visual Studio using "Run as Administrator."
+
 ## Features
 
 ### Support opening readme.txt file after installation
