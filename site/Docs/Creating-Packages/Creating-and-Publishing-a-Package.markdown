@@ -10,7 +10,7 @@ If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create p
 ## Share your Package
 Upgrade to the latest version of NuGet.exe (_[or download it here](http://nuget.codeplex.com/releases/view/58939)_)
 
-    NuGet Update
+    NuGet Update -self
 
 Store your [API Key](#api-key)
 
