@@ -57,6 +57,7 @@ click **Create Fork** to create the remote clone of the main repository. The Mvc
 <a title="How to contribute to MvcContrib" href="http://mvccontrib.codeplex.com/wikipage?title=HowToContribute&amp;referringTitle=T4MVC_contrib">
 a great write-up of this process. 
 3. Clone the fork you created in the previous step to your machine. 
+4. Run build.cmd from the command line to ensure packages are restore. 
 4. Make the relevant changes in your local clone (potentially adding a unit test if this is a bug fix).
 5. Run build.cmd from the command line and make sure that there are 0 errors. 
 6. Commit your changes in your local clone. You may end up repeating steps 4-6 multiple times as you work. When you are finished and ready to have us accept 
