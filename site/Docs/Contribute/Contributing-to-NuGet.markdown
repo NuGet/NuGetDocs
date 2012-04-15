@@ -58,15 +58,15 @@ click **Create Fork** to create the remote clone of the main repository. The Mvc
 a great write-up of this process. 
 3. Clone the fork you created in the previous step to your machine. 
 4. Run build.cmd from the command line to ensure packages are restore. 
-4. Make the relevant changes in your local clone (potentially adding a unit test if this is a bug fix).
-5. Run build.cmd from the command line and make sure that there are 0 errors. 
-6. Commit your changes in your local clone. You may end up repeating steps 4-6 multiple times as you work. When you are finished and ready to have us accept 
+5. Make the relevant changes in your local clone (potentially adding a unit test if this is a bug fix).
+6. Run build.cmd from the command line and make sure that there are 0 errors. 
+7. Commit your changes in your local clone. You may end up repeating steps 4-6 multiple times as you work. When you are finished and ready to have us accept 
 your change, go to step 7. 
-7. Pull from Main and merge your changes with the latest from Main (fix any merge conflicts you might have).
-8. Send a pull request and make sure the summary contains **relevant bug numbers** and **a good description of your changes**.
-9. If you need to revise your code, then do so locally and update the review. Repeat until we approve the review. 
-10. Wait for your review to be approved. We'll try to get to it as soon as possible. 
-11. Push to your server fork and send a pull request. Note, you can push to your server fork at any 
+8. Pull from Main and merge your changes with the latest from Main (fix any merge conflicts you might have).
+9. Send a pull request and make sure the summary contains **relevant bug numbers** and **a good description of your changes**.
+10. If you need to revise your code, then do so locally and update the review. Repeat until we approve the review. 
+11. Wait for your review to be approved. We'll try to get to it as soon as possible. 
+12. Push to your server fork and send a pull request. Note, you can push to your server fork at any 
 time if you want to backup your code on the server, but don't send the pull request until your review is approved.
  
 <p class="info">If you're contributing a new non-trivial feature, we will ask you to fill out a Contributor License Agreement 
