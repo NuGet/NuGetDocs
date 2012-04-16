@@ -115,9 +115,9 @@ there is no way to install prerelease packages using the _Manage NuGet Packages_
 in the future.
 
 To allow installation of a prerelease package, use the _Package Manager Console_ and specify the 
-`-IncludePrelease` flag.
+`-IncludePrerelease` flag.
 
-    Install-Package CoolStuff -IncludePrelease
+    Install-Package CoolStuff -IncludePrerelease
 
 This command includes prerelease packages in the set of packages considered. If a prerelease package is 
 the latest version, then it is installed. If a stable package is the latest, it is installed. This flag 
@@ -132,7 +132,7 @@ a prerelease package when you're only interested in stable packages.
 
 ### Upgrading Prerelease Packages
 The `Update-Package` command will update all packages to the latest stable version. As before, use the 
-`-IncludePrelesase` flag to upgrade to the latest stable or prelease package, whichever is latest.
+`-IncludePrerelease` flag to upgrade to the latest stable or prelease package, whichever is latest.
 
 ## Constraining Upgrades To Allowed Versions
 By default, when running the `Update-Package` command on a package (or updating the package using dialog), 
