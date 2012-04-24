@@ -52,7 +52,7 @@ We have added support for some well know classes to add styles to draw attention
 to call out in a document. Unfortunately mark down does not have a way to added class attributes 
 so you will have to write the HTML by hand and embed it.
 
-#### Informatiom
+#### Information
 <p class="info">
     &lt;p class="info"&gt;Some Informational Text...&lt;/p&gt;
 </p>
