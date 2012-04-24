@@ -113,17 +113,18 @@
 				var columnText;
 				var latestTextNode = null;
 				while($parentColumn.height() < height && oText.length){
-					if (oText.indexOf(' ', counter2) != '-1') {
-						columnText = oText.substring(0, oText.indexOf(' ', counter2));
+					var wordWrapIndex = oText.indexOf(' ', counter2);
+					if (wordWrapIndex != '-1') {
+						columnText = oText.substring(0, wordWrapIndex);
 					} else {
 						columnText = oText;
 					}
 					latestTextNode = document.createTextNode(columnText);
 					$putInHere.append(latestTextNode);
 					
-					if(oText.length > counter2){
-						oText = oText.substring(oText.indexOf(' ', counter2));
-					}else{
+					if (oText.length > counter2 && wordWrapIndex != '-1') {
+						oText = oText.substring(wordWrapIndex);
+					} else {
 						oText = "";
 					}
 				}
