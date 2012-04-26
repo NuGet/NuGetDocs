@@ -138,7 +138,7 @@ are populated by the values within the project.
     </tr>
     <tr>
         <td>$version$</td>
-        <td>The assembly version as specified in the assembly&#8217;s <code>AssemblyVersionAttribute</code>.</td>
+        <td>The assembly version as specified in the assembly&#8217;s <code>AssemblyVersionAttribute</code>. If the assembly&#8217;s <code>AssemblyInformationalVersionAttribute</code> is specified, that one is used instead.</td>
     </tr>
     <tr>
         <td>$author$</td>
