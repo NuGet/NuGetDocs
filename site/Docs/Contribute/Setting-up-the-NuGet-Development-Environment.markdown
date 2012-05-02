@@ -3,11 +3,11 @@ So you want to hack on NuGet? These notes will help you get your development env
 set up correctly so you can work on NuGet using Visual Studio 2010.
 
 ## Get and Build the code
-1. **[Install Tortoise HG](http://tortoisehg.bitbucket.org/download/index.html)** (this includes the Mercurial command line as well)
+1. **Install Git.** Install [Git for Windows](http://code.google.com/p/msysgit/downloads/list?can=3) and then optionally install [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
 1. **Clone the repository.** From a command prompt, run the following command in a directory where you want the source code to be placed. 
 This will create a folder named "nuget" with the source.
 
-        hg clone https://hg01.codeplex.com/nuget
+        git clone https://git01.codeplex.com/nuget
 
 1. **Download and install the <a href="http://visualstudiogallery.msdn.microsoft.com/en-us/25622469-19d8-4959-8e5c-4025d1c9183d?SRC=VSIDE">Visual Studio 2010 SDK</a>** 
 1. **Run build.cmd** from a Command Prompt running with Administrator privileges
