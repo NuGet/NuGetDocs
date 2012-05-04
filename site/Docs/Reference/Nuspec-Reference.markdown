@@ -62,6 +62,7 @@ package is built (but without the element that lists files if that element was i
     <tr>
         <td>releaseNotes</td>
         <td>
+            (v<em>1.5</em>)
             A description of the changes made in each release of the package. This field 
             only shows up when the _Updates_ tab is selected and the package is an update 
             to a previously installed package. It is displayed where the Description would 
@@ -110,7 +111,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>frameworkAssemblies</td>
-        <td>(v<em>1.2+</em>) The list of .NET Framework assembly references that this package requires. These are references to assemblies that exist in the .NET Framework and thus should already be in the GAC for any machine. Specifying framework assembly references  ensures these references are added when installing the package.</td>
+        <td>(v<em>1.2</em>) The list of .NET Framework assembly references that this package requires. These are references to assemblies that exist in the .NET Framework and thus should already be in the GAC for any machine. Specifying framework assembly references  ensures these references are added when installing the package.</td>
     </tr>
     <tr>
         <td>tags</td>
