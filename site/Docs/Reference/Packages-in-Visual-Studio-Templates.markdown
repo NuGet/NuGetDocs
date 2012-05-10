@@ -92,9 +92,15 @@ to your users using the [Visual Studio Extension Manager automatic update mechan
     the [`ID` attribute](http://msdn.microsoft.com/en-us/library/dd393688.aspx) in
     the extension’s vsixmanifest file).
  
-You need to add your nupkg files as [custom extension content](http://msdn.microsoft.com/en-us/library/dd393737.aspx)
-and ensure that they are located under a folder called `Packages` within the
-VSIX package. You can place the nupkg files in the same VSIX as your project
+2.  Add your nupkg files as [custom extension content](http://msdn.microsoft.com/en-us/library/dd393737.aspx):
+    <pre><code>&lt;CustomExtension Type="Moq.4.0.10827.nupkg"&gt;
+              packages/Moq.4.0.10827.nupkg&lt;/CustomExtension&gt;
+    ...
+    </code></pre>
+    Ensure that they are located under a folder called `Packages` within the
+    VSIX package. 
+
+You can place the nupkg files in the same VSIX as your project
 templates or you can have the packages be located in a separate VSIX if that
 makes more sense for your scenario (just note that you should not reference VSIXs
 you do not have control over since they could change in the future and your
@@ -122,7 +128,15 @@ size of the project/item template bundle.
 
 ## Best Practices
 
-1. Make your VSIX declare a dependency on the NuGet VSIX.
+1. Make your VSIX declare a dependency on the NuGet VSIX by adding a reference to 
+it in your VSIX manifest:
+    <pre><code>&lt;Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.7.30402.9028"&gt;
+     &lt;Name&gt;NuGet Package Manager&lt;/Name&gt;
+     &lt;MoreInfoUrl&gt;http://docs.nuget.org/&lt;/MoreInfoUrl&gt;
+    &lt;/Reference&gt;
+    ....
+    </code></pre>
+
 2. Require project/item templates to be saved on creation by setting
 [`<PromptForSaveOnCreation>`](http://msdn.microsoft.com/en-us/library/twfxayz5.aspx) in the
 .vstemplate file.
