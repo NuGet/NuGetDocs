@@ -27,7 +27,7 @@ We are using the C# coding conventions described in this document: <a href="http
 Examples:
 
     // This is ok
-	var tuple = new { Name = >"John", Age = 50 }; 
+	var tuple = new { Name = "John", Age = 50 }; 
 
 	// This is ok
 	var stream = new MemoryStream();
@@ -47,7 +47,7 @@ Here is some sample code that follows these conventions.
 		{
 			private List<SomeType> _privateMember;
 
-			public List<SomeType>; SomeProperty
+			public List<SomeType> SomeProperty
 			{
 				get
 				{
@@ -71,13 +71,13 @@ Here is some sample code that follows these conventions.
 				switch (status)
 				{
 					case Status.Foo:
-						return <span class="str">"Foo";
+						return "Foo";
 
 					case Status.Bar:
-						return <span class="str">"Bar";
+						return "Bar";
 
 					default:
-						return <span class="str">"Bar";
+						return "Bar";
 				}
 				return String.Empty;
 			}

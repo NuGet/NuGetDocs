@@ -34,6 +34,6 @@ then there’s no point in making two packages. Just put both in a single packag
 [Part 2: The core algorithm](http://blog.davidebbo.com/2011/01/nuget-versioning-part-2-core-algorithm.html), 
 [Part 3: Unification via Binding Redirects](http://blog.davidebbo.com/2011/01/nuget-versioning-part-3-unification-via.html).
 
-**Choosing a Version**: In general, it makes sense to name the package version according to the library version. 
-But do not the versioning rules that NuGet uses just in case your library has a very non-standard versioning 
+**Choosing a Version**: In general, it makes sense to name the package version according to the library version, 
+but do not forget the versioning rules that NuGet uses just in case your library has a very non-standard versioning 
 scheme. While we generally recommend that the version of the package matches the library, this is not required.
