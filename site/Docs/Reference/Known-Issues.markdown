@@ -1,4 +1,17 @@
-﻿# Known Issues with NuGet
+﻿# Known Issues with NuGet 
+﻿
+## NuGet 1.8 Incompatible with Windows XP, hotfix pending
+
+Shortly after NuGet 1.8 was released, we learned that a cryptography change in 1.8 broke users on Windows XP.
+Do not install NuGet 1.8 onto a Windows XP machine.  We are working on a NuGet 1.8.1 release to address the
+regression.
+
+There is a <a href="http://nuget.codeplex.com/discussions/356928">CodePlex discussion thread</a> for this issue,
+which resulted in a <a href="http://nuget.codeplex.com/workitem/2240">work item</a> to fix the regression.
+
+If you have already installed NuGet 1.8, you can uninstall it and reinstall NuGet 1.7 using
+<a href="http://nuget.codeplex.com/downloads/get/382255">this download link</a>.
+
 
 ## Package Manager Console throws an exception when the Reflector Visual Studio Add-In is also installed.
 
@@ -148,3 +161,4 @@ Windows Phone Tools does not have support for the Visual Studio Extension Manage
 uninstall NuGet, run the following command.
 
      vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
+
