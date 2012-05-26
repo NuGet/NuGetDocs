@@ -2,15 +2,9 @@
 ﻿
 ## NuGet 1.8 Incompatible with Windows XP, hotfix pending
 
-Shortly after NuGet 1.8 was released, we learned that a cryptography change in 1.8 broke users on Windows XP.
-Do not install NuGet 1.8 onto a Windows XP machine.  We are working on a NuGet 1.8.1 release to address the
-regression.
+Shortly after NuGet 1.8 was released, we learned that a cryptography change in 1.8 broke users on Windows XP. Do not install NuGet 1.8 onto a Windows XP machine; if you have already installed NuGet 1.8, you can uninstall it and reinstall NuGet 1.7 using [this download link](http://nuget.codeplex.com/downloads/get/382255).
 
-There is a <a href="http://nuget.codeplex.com/discussions/356928">CodePlex discussion thread</a> for this issue,
-which resulted in a <a href="http://nuget.codeplex.com/workitem/2240">work item</a> to fix the regression.
-
-If you have already installed NuGet 1.8, you can uninstall it and reinstall NuGet 1.7 using
-<a href="http://nuget.codeplex.com/downloads/get/382255">this download link</a>.
+We are working on a NuGet 1.8.1 release to address the regression.  There is a [CodePlex discussion thread](http://nuget.codeplex.com/discussions/356928) for this issue, which resulted in a [work item](http://nuget.codeplex.com/workitem/2240) to fix the regression.
 
 
 ## Package Manager Console throws an exception when the Reflector Visual Studio Add-In is also installed.
