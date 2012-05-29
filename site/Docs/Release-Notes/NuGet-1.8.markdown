@@ -10,11 +10,11 @@ The workaround is to simply uninstall NuGet and then install it from the VS Exte
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."
 
-## NuGet 1.8 Incompatible with Windows XP, hotfix pending
+## NuGet 1.8 Incompatible with Windows XP, hotfix published
 
-Shortly after NuGet 1.8 was released, we learned that a cryptography change in 1.8 broke users on Windows XP. Do not install NuGet 1.8 onto a Windows XP machine; if you have already installed NuGet 1.8, you can uninstall it and reinstall NuGet 1.7 using [this download link](http://nuget.codeplex.com/downloads/get/382255).
+Shortly after NuGet 1.8 was released, we learned that a cryptography change in 1.8 broke users on Windows XP.
 
-We are working on a NuGet 1.8.1 release to address the regression.  There is a [CodePlex discussion thread](http://nuget.codeplex.com/discussions/356928) for this issue, which resulted in a [work item](http://nuget.codeplex.com/workitem/2240) to fix the regression.
+We have since released a hotfix that addresses this issue.  By updating NuGet through the Visual Studio Extension Gallery, you will receive this hotfix.
 
 ## Features
 
