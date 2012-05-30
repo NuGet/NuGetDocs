@@ -82,6 +82,8 @@ use NuGet outside of Visual Studio.
 ## Does NuGet support Mono?
 
 The command-line application (*nuget.exe*) builds and runs under Mono and allows you to create packages in Mono.
+This is especially true for Mono on Windows, but there are some known issues for Mono on Linux and OS X.  To review
+the known issues, [search for Mono in our issue list](http://nuget.codeplex.com/workitem/list/basic?field=Votes&direction=Descending&issuesToDisplay=Open&keywords=mono&emailSubscribedItemsOnly=false).
 
 ## Is there a command-line tool for NuGet?
 
