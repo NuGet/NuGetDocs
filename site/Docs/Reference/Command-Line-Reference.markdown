@@ -109,6 +109,10 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>Allows prerelease packages to be installed. This flag is not required when restoring packages by installing from packages.config.</td>
     </tr>
     <tr>
+        <td>NoCache</td>
+        <td>Disable looking up packages from local machine cache.</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
