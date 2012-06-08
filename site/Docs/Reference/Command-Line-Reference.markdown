@@ -109,6 +109,10 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>Allows prerelease packages to be installed. This flag is not required when restoring packages by installing from packages.config.</td>
     </tr>
     <tr>
+        <td>NoCache</td>
+        <td>Disable looking up packages from local machine cache.</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
@@ -301,6 +305,10 @@ Specify the path to the package and your API key to push the package to the serv
         <td>The API key for the server.</td>
     </tr>
     <tr>
+        <td>Timeout</td>
+        <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
@@ -366,6 +374,14 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
     <tr>
         <td>Source</td>
         <td>Path to the package(s) source.</td>
+    </tr>
+    <tr>
+        <td>UserName</td>
+        <td>UserName to be used when connecting to an authenticated source.</td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>Password to be used when connecting to an authenticated source.</td>
     </tr>
     <tr>
         <td>Help</td>
