@@ -2,6 +2,42 @@
 
 You can download the command line tool from [here](http://nuget.codeplex.com/releases/view/58939)
 
+
+
+
+##  Config Command
+
+Gets or sets NuGet config values.
+
+### Usage
+    nuget config -Set name=value
+
+### Options
+<table>
+    <tr>
+        <td>Set</td>
+        <td>One on more key-value pairs to be set in config.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+</table>
+
+### Examples
+    Setting a config value:
+    nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
+    
+    Getting a config value:
+    nuget.config HTTP_PROXY
+    
+    Clearing a config value:
+    nuget config -Set HTTP_PROXY=
+
+
+
+
+
 ##  Delete Command
 
 Deletes a package from the server.
@@ -223,6 +259,10 @@ Specify the location of the nuspec or project file to create a package.
         <td>Specify if the command should not run package analysis after building the package.</td>
     </tr>
     <tr>
+        <td>ExcludeEmptyDirectories</td>
+        <td>Prevent inclusion of empty directories when building the package.</td>
+    </tr>
+    <tr>
         <td>Properties</td>
         <td>Provides the ability to specify a semicolon ";" delimited list of properties when creating a package.</td>
     </tr>
@@ -323,6 +363,8 @@ Specify the path to the package and your API key to push the package to the serv
     nuget push foo.nupkg
     
     nuget push foo.nupkg.symbols
+    
+    nuget push foo.nupkg -Timeout 360
 
 
 
@@ -363,7 +405,7 @@ Specify the API key to save and an optional URL to the server that provided the 
 Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet.config
 
 ### Usage
-    nuget sources <List|Add|Remove|Enable|Disable> -Name [name] -Source [source]
+    nuget sources <List|Add|Remove|Enable|Disable|Update> -Name [name] -Source [source]
 
 ### Options
 <table>
