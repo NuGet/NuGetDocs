@@ -245,6 +245,33 @@ The following example shows a folder structure that supports four versions of a 
         \sl40
             \MyAssembly.dll
 
+### New in NuGet version 2.0 and above
+
+Starting in NuGet 2.0, in addition to assembly references, content files as well as PowerShell scripts can be grouped by target frameworks too. The framework folder structure inside `lib` folder as described above  applies exactly the same to `content` and `tools` folders.
+
+    \content
+        \net11
+            \MyContent.txt
+        \net20
+            \MyContent20.txt
+        \net40
+        \sl40
+            \MySilverlightContent.html
+
+    \tools
+        init.ps1
+        \net40
+            install.ps1
+            uninstall.ps1
+        \sl40
+            install.ps1
+            uninstall.ps1
+
+
+A new feature in NuGet 2.0 is that a framework folder can be *empty*, in which case, NuGet will not add assembly references or content files or run the PowerShell scripts for the particular framework version.
+
+**Note**: Because **`init.ps1`** is executed at the solution level and not dependent on project, it must be placed directly under the `tools` folder. If placed under a framework folder, it will be ignored.
+
 ### Framework Names
 
 NuGet attempts to parse the folder name into a <a href="http://msdn.microsoft.com/en-us/library/dd414023.aspx">FrameworkName</a> 

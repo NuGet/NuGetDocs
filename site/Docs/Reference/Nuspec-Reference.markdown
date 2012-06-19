@@ -184,6 +184,48 @@ The following table lists attributes of the dependency element.
     </tr>
 </table>
 
+## Specifying Dependencies in version 2.0 and above
+
+Starting from version 2.0, package dependencies can be specified to vary according to the framework profile of the target project. The `<dependencies>` element contains a set of `<group>` elements. Each group contains zero or more `<dependency>` element and a target framework attribute. All dependencies inside a group are installed together if the target framework is compatible with the project's framework profile.
+
+    <dependencies> 
+       <group>
+          <dependency id="RouteMagic" version="1.1.0" />
+       </group>
+
+       <group targetFramework="net40">
+          <dependency id="jQuery" />
+          <dependency id="WebActivator" />
+       </group>
+ 
+       <group targetFramework="sl30">
+       </group>
+    </dependencies>
+
+
+The following table lists the attributes of a `<group>` element. 
+
+<table class="reference">
+    <tr><th>Attribute</th><th>Description</th></tr>
+    <tr>
+        <td><code>targetFramework</code></td>
+        <td>**Optional**. The target framework of the group. If not set, the group acts as a fallback group, which behaves exactly as before version 2.0.</td>
+    </tr>
+</table>
+
+The `<dependency>` element is the same as described in previous section.
+
+A package can specify package dependencies in either two formats: either with a flat list of `<dependency>` as in pre-2.0, or in groups. However, mixing the two formats is disallowed. For example, the following snippet is **invalid** and will be rejected by NuGet.
+
+    <dependencies> 
+       <dependency id="jQuery" />
+       <dependency id="WebActivator" />
+
+       <group>
+          <dependency id="RouteMagic" version="1.1.0" />
+       </group>
+    </dependencies>
+
 ## Specifying Explicit Assembly References
 Use the `<references />` element to explicitly specify assemblies that the target project should 
 reference.
