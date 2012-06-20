@@ -10,6 +10,10 @@ The workaround is to simply uninstall NuGet and then install it from the VS Exte
 Note: If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled),
 then you likely need to restart Visual Studio using "Run as Administrator."
 
+## Package restore consent is now active
+
+As described in this [post on package restore consent](http://blog.nuget.org/20120518/package-restore-and-consent.html), NuGet 2.0 will now require that consent be given to enable package restore to go online and download packages. Please ensure that you have provided consent via either the package manager configuration dialog or the EnableNuGetPackageRestore environment variable.
+
 ## Group dependencies by target frameworks
 
 Starting with version 2.0, package dependencies can vary based on the framework profile of the target project. This is accomplished using an updated .nuspec schema. The `<dependencies>` element can now contain a set of `<group>` elements. Each group contains zero or more `<dependency>` elements and a `targetFramework` attribute. All dependencies inside a group are installed together if the target framework is compatible with the target project framework profile. For example:
