@@ -20,7 +20,7 @@ root /Samples/PackageID folder structure. For example, the Clay.Sample package w
 
 **App\_Start Folder**: When using the [WebActivator](http://nuget.org/List/Packages/WebActivator) package, 
 put all the application startup code in a root **App\_Start** folder within the package's Content folder. 
-See this blog post for more details.
+See [this blog post](http://blog.davidebbo.com/2011/02/appstart-folder-convention-for-nuget.html) for more details.
 
 **Assemblies**: In general, it makes sense to have one package per assembly. In some cases, if your library 
 has assemblies that don’t make sense in any other context except within your library, then it’s fine to 
