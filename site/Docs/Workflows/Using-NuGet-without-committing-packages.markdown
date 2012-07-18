@@ -13,7 +13,21 @@ fact, this has been one of the top requests on NuGet our issue tracker.
 The good news is that NuGet now offers a workflow which goes a long way to solving this problem, and is
 really easy to set up. Here is the way to do it:
 
-## Setup
+## Enabling Package Restore During Build
+
+Beginning with NuGet 2.0, [restoring packages during build requires explicit consent from the
+user](http://blog.nuget.org/20120518/package-restore-and-consent.html). This must be done on
+each machine that builds the project.
+
+In Visual Studio, enable "Allow NuGet to download missing packages during build". This setting lives
+under **Options -> Package Manager -> General**.
+
+![Allow NuGet to download missing packages setting](images/allow-package-restore-configuration.png)
+
+To enable package restore for build servers without Visual Studio installed, you can also set the
+environment variable `EnableNuGetPackageRestore` to "true".
+
+## Project Setup
 Let’s assume that you have a solution that is either already using NuGet, or planning to use it, and that
 you want to set up the no-commit workflow.
 
