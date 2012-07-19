@@ -30,14 +30,16 @@ Since this framework is mostly for testing NuGet within visual studio, each test
 
 ## Package Creation Tool
 
-Under **Tools\NuGet\GenerateTestPackages** there is a program that takes a 
-<a href="http://blogs.msdn.com/b/camerons/archive/2009/01/26/directed-graph-markup-language-dgml.aspx">dgml file</a>
-(dsl for generated directed graphs) as input and outputs packages that match that graph. 
+To avoid checking in binaries into the source tree, the functional test framework allows two ways of generating packages on the fly.  Under **Tools\NuGet\GenerateTestPackages** there is a tool that takes one of the two forms of inputs
+and creates binaries from it. Specific tests can specify these input files in their *RepositoryPath*
+
+1) [DGML](http://blogs.msdn.com/b/camerons/archive/2009/01/26/directed-graph-markup-language-dgml.aspx)
+DGML is a dsl for generated directed graphs. In our case, this specifies the dependency chain of packages and builds a set of packages from it with default set of package content.
 This comes in handy when trying to test complex package graph behavior.
 
-Specific tests can specify dgml files in their *RepositoryPath* in order to generate the graph before that test is run. 
-The test runner looks for all dgml files and runs the *GeneratePackagesTool* on them, generating the packages that 
-represent the graph.
+2) NuSpec files
+If you need more fine grained control over what each package's content and metadata is, you can check in multiple nuspec files of the format *Id*.*Version*.nuspec. If the package specifies a files node,
+the generator tool would look for it under *RepositoryPath*\files\*full path to file* path. If no file exists at this location, the generator would create an appropriate file and include that in the resulting package.
 
 ## Test API
 
