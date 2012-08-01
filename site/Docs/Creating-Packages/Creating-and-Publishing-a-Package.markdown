@@ -437,3 +437,9 @@ is a helper package that writes information out to a series of log files. You ca
     Install-Package NuGetPSVariables
 
 NuGetPSVariables displays the log files and uninstalls itself.
+
+## Automatically Displaying a Readme.txt File During Package Installation
+
+A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.
+
+This feature was added in NuGet 1.7. If the client is older than NuGet 1.7 the *readme.txt* file will be ignored.
