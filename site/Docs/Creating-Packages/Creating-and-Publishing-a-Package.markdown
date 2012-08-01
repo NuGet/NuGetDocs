@@ -442,4 +442,6 @@ NuGetPSVariables displays the log files and uninstalls itself.
 
 A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.
 
+If the package is installed because it is a dependency of another package, the *readme.txt* file will not be opened. Only the *readme.txt* file of the package that the user is explicitly installing will be shown.
+
 This feature was added in NuGet 1.7. If the client is older than NuGet 1.7 the *readme.txt* file will be ignored.
