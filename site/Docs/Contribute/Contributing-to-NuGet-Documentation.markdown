@@ -9,8 +9,7 @@ The basic workflow for contributing to NuGet Docs is simple.
 
 2. Fork the project. There's a big Fork button towards the upper right. That creates a copy of this project under your account. It's really fast and lets you make edits without worrying that you're affecting the real site.
 
-3. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. 
-For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
+3. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
 
 4. Click the link labelled "Edit this file".
 
@@ -19,6 +18,7 @@ For example, the page you're [reading is here](https://github.com/NuGet/NuGetDoc
 6. Send a pull request for your change. There's a button near the top of the page that says "Pull Request". That's it!
 
 ## Adding a new document
+
 Adding a new document requires that you use Git to clone the repository and send a pull request. 
 If you don't know what that means or how to use Git, feel free to propose that the NuGet team add a new page for you to edit.
 
@@ -71,7 +71,12 @@ so you will have to write the HTML by hand and embed it.
 
 Use backticks to create an inline &lt;code&gt; span:
 
+    Press the `<Tab>` key, then type a `$`.
+
+Renders as:
+
 Press the `<Tab>` key, then type a `$`.
+
 (The backtick key is in the upper left corner of most keyboards.)
 
 Like code blocks, code spans will be displayed in a monospaced font. Markdown and HTML will not 
@@ -82,97 +87,157 @@ HTML within!
 
 End a line with two spaces to add a &lt;br/&gt; linebreak:
 
-How do I love thee?    
+How do I love thee?  
 Let me count the ways
-Italics and Bold
 
-*This is italicized*, and so is _this_.
-**This is bold**, and so is __this__.
+### Italics and Bold
+
+    *This is italicized*, and so is _this_.
+    **This is bold**, and so is __this__.
+    Use ***italics and bold together*** if you ___have to___.
+
+Renders as:
+
+*This is italicized*, and so is _this_.  
+**This is bold**, and so is __this__.  
 Use ***italics and bold together*** if you ___have to___.
 
-###Basic Links
+### Basic Links
 
 There are three ways to write links. Each is easier to read than the last:
 
-Here's an inline link to [Google](http://www.google.com/).
-Here's a reference-style link to [Google][1].
+    Here's an inline link to [Google](http://www.google.com/).
+    Here's a reference-style link to [Google][1].
+    Here's a very readable link to [Yahoo!][yahoo].
+    
+      [1]: http://www.google.com/
+      [yahoo]: http://www.yahoo.com/
+
+Renders as:
+
+Here's an inline link to [Google](http://www.google.com/).  
+Here's a reference-style link to [Google][1].  
 Here's a very readable link to [Yahoo!][yahoo].
 
   [1]: http://www.google.com/
   [yahoo]: http://www.yahoo.com/
+
 The link definitions can appear anywhere in the document -- before or after the place where you 
-use them. The link definition names [1] and [yahoo] can be any unique string, and are case-insensitive; 
-[yahoo] is the same as [YAHOO].
+use them. The link definition names `[1]` and `[yahoo]` can be any unique string, and are case-insensitive; 
+`[yahoo]` is the same as `[YAHOO]`.
 
 ### Advanced Links
 
 Links can have a title attribute, which will show up on hover. Title attributes can also be added; they 
 are helpful if the link itself is not descriptive enough to tell users where they're going.
 
-Here's a [poorly-named link](http://www.google.com/ "Google").
-Never write "[click here][^2]".
+    Here's a [poorly-named link](http://www.google.com/ "Google").
+    Never write "[click here][^2]".
+    Visit [us][web].
+    
+      [^2]: http://www.w3.org/QA/Tips/noClickHere
+            (Advice against the phrase "click here")
+      [web]: http://stackoverflow.com/ "Stack Overflow"
+
+Renders as:
+
+Here's a [poorly-named link](http://www.google.com/ "Google").  
+Never write "[click here][^2]".  
 Visit [us][web].
 
   [^2]: http://www.w3.org/QA/Tips/noClickHere
         (Advice against the phrase "click here")
   [web]: http://stackoverflow.com/ "Stack Overflow"
+
 You can also use standard HTML hyperlink syntax.
 
+    <a href="http://example.com" title="example">example</a>
+
+Renders as:
+
 <a href="http://example.com" title="example">example</a>
+
 ### Bare URLs
 
 We have modified our Markdown parser to support "naked" URLs (in most but not all cases -- beware of 
 unusual characters in your URLs); they will be converted to links automatically:
 
 I often visit http://example.com.
-Force URLs by enclosing them in angle brackets:
+
+Force URLs by enclosing them in angle brackets. For example:
+
+    Have you seen <http://example.com>?
+
+Renders as:
 
 Have you seen <http://example.com>?
+
 All URLs must be fully qualified path names. We do not support relative paths.
 
 ### Horizontal Rules
 
-Insert a horizontal rule &lt;hr/&gt; by putting three or more hyphens, asterisks, or underscores 
-on a line by themselves:
+Insert a horizontal rule `<hr />` by putting three or more hyphens, asterisks, or underscores 
+*on a line by themselves*:
 
-Rule #1
+Rule #1: ---
 
 ---
 
-Rule #2
+Rule #2: *******
 
 *******
 
-Rule #3
+Rule #3: ___
 
 ___
 
 Using spaces between the characters also works:
 
-Rule #4    
+Rule #4: - - - -
 
 - - - -
 
 ### Simple lists
 
-A bulleted &lt;ul&gt; list:
+A bulleted `<ul>` list:
+
+    - Use a minus sign for a bullet
+    + Or plus sign
+    * Or an asterisk
+
+Renders as:
 
 - Use a minus sign for a bullet
 + Or plus sign
 * Or an asterisk
-A numbered &lt;ol&gt; list:
+
+A numbered `<ol>` list:
+
+    1. Numbered lists are easy
+    2. Markdown keeps track of the numbers for you
+    7. So this will be item 3.
+
+Renders as:
 
 1. Numbered lists are easy
 2. Markdown keeps track of the numbers for you
 7. So this will be item 3.
+
 A double-spaced list:
 
-- This list gets wrapped in &lt;p&gt; tags
+    - This list gets wrapped in `<p>` tags
+    
+    - So there will be extra space between items
+
+Renders as:
+
+- This list gets wrapped in `<p>` tags
  
 - So there will be extra space between items
-Advanced lists: Nesting
 
-To put other Markdown blocks in a list; just indent four spaces for each nesting level:
+### Advanced lists: Nesting
+
+To put other Markdown blocks in a list, just indent four spaces for each nesting level:
 
 1. Lists in a list item:
     - Indented four spaces.
@@ -201,72 +266,132 @@ To put other Markdown blocks in a list; just indent four spaces for each nesting
         Skip a line and indent eight spaces.
         That's four spaces for the list
         and four to trigger the code block.
+
 ### Simple Blockquotes
 
-Add a > to the beginning of any line to create a &lt;blockquote&gt;.
+Add a `>` to the beginning of any line to create a `<blockquote>`.
+
+    > The syntax is based on the way email programs
+    > usually do quotations. You don't need to hard-wrap
+    > the paragraphs in your blockquotes, but it looks much nicer if you do.  Depends how lazy you feel.
+
+Renders as:
 
 > The syntax is based on the way email programs
 > usually do quotations. You don't need to hard-wrap
 > the paragraphs in your blockquotes, but it looks much nicer if you do.  Depends how lazy you feel.
-Advanced blockquotes: Nesting
 
-To put other Markdown blocks in a &lt;blockquote&gt;, just add a &gt; followed by a space:
+### Advanced blockquotes: Nesting
 
-> The > on the blank lines is optional.
+To put other Markdown blocks in a `<blockquote>`, just add a `>` followed by a space:
+
+> The `>` on the blank lines is optional.
 > Include it or don't; Markdown doesn't care.
 > 
 > But your plain text looks better to
 > humans if you include the extra `>`
 > between paragraphs.
-Blockquotes within a blockquote:
+
+### Blockquotes within a blockquote:
+
+    > A standard blockquote is indented
+    > > A nested blockquote is indented more
+    > > > > You can nest to any depth.
+
+Renders as:
 
 > A standard blockquote is indented
 > > A nested blockquote is indented more
 > > > > You can nest to any depth.
-Lists in a blockquote:
+
+
+### Lists in a blockquote:
+
+    > - A list in a blockquote
+    > - With a `>` and space in front of it
+    >    * A sublist
+
+Renders as:
 
 > - A list in a blockquote
-> - With a > and space in front of it
+> - With a `>` and space in front of it
 >    * A sublist
-Preformatted text in a blockquote:
+
+### Preformatted text in a blockquote:
+
+    >     Indent five spaces total.  The first
+    >     one is part of the blockquote designator.
+
+Renders as:
 
 >     Indent five spaces total.  The first
 >     one is part of the blockquote designator.
-Images
+
+### Images
 
 Images are exactly like links, but they have an exclamation point in front of them:
 
-![Valid XHTML](http://w3.org/Icons/valid-xhtml10).
+    ![Valid XHTML](http://w3.org/Icons/valid-xhtml10)
+
+Renders as:
+
+![Valid XHTML](http://w3.org/Icons/valid-xhtml10)
+
 The word in square brackets is the alt text, which gets displayed if the browser can't show 
 the image. Be sure to include meaningful alt text for screen-reading software.
 
 Just like links, images work with reference syntax and titles:
 
+    This page is ![valid XHTML][checkmark].
+     
+    [checkmark]: http://w3.org/Icons/valid-xhtml10
+                 "What are you smiling at?"
+
+Renders as:
+
 This page is ![valid XHTML][checkmark].
  
 [checkmark]: http://w3.org/Icons/valid-xhtml10
              "What are you smiling at?"
-Note: Markdown does not currently support the shortest reference syntax for images:
 
-Here's a broken ![checkmark].
-But you can use a slightly more verbose version of implicit reference names:
+Note: Markdown does not currently support the shortest reference syntax for images, but you can use a slightly
+more verbose version of implicit reference names:
 
+    Here's a broken ![checkmark].
+    This ![checkmark][] works.
+
+Renders as:
+
+Here's a broken ![checkmark].  
 This ![checkmark][] works.
+
 The reference name is also used as the alt text.
 
 ### Inline HTML
 
-If you need to do something that Markdown can't handle, use HTML. Note that we only support a very strict subset of HTML!
+If you need to do something that Markdown can't handle, use HTML. Note that we only support a very strict
+subset of HTML!
 
- Strikethrough humor is <strike>funny</strike>.
+    Strikethrough humor is <strike>funny</strike>.
+
+Renders as:
+
+Strikethrough humor is <strike>funny</strike>.
+
 Markdown is smart enough not to mangle your span-level HTML:
 
+    <u>Markdown works *fine* in here.</u>
+
+Renders as:
+
 <u>Markdown works *fine* in here.</u>
+
 Block-level HTML elements have a few restrictions:
 
-They must be separated from surrounding text by blank lines.
-The begin and end tags of the outermost block element must not be indented.
-Markdown can't be used within HTML blocks.
+* They must be separated from surrounding text by blank lines.
+* The begin and end tags of the outermost block element must not be indented.
+* Markdown can't be used within HTML blocks.
+
 <pre>
     You can <em>not</em> use Markdown in here.
 </pre>
