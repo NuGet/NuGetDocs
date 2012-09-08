@@ -38,7 +38,7 @@ Right click on the _Solution_ node in Solution Explorer and select _Enable NuGet
 **That's it!** You're all set.
 
 ## Details
-So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: NuGet.Bootstrapper for NuGet.exe and NuGet.Build for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task.
+So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: [NuGet.Bootstrapper](http://nuget.org/packages/nuget.bootstrapper) for NuGet.exe and [NuGet.Build](http://nuget.org/packages/nuget.build) for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task.
 
 ![New Solution folder with package restore files](images/package-restore-solution.png)
 
