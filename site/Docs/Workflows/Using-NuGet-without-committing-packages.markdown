@@ -38,19 +38,23 @@ Right click on the _Solution_ node in Solution Explorer and select _Enable NuGet
 **That's it!** You're all set.
 
 ## Details
-So what exactly did that do? It added a solution folder named `.nuget` containing `NuGet.exe` and a 
-`NuGet.targets` MsBuild file. It also changed every project in the solution to import the `NuGet.targets` 
-MsBuild task.
+So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: NuGet.Bootstrapper for NuGet.exe and NuGet.Build for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task.
 
 ![New Solution folder with package restore files](images/package-restore-solution.png)
 
-With this in place, any time a project is compiled, the build task will look at each project's 
-`packages.config` file and for each package in that file, ensure that the corresponding package 
-exists within the `packages` folder. For any missing package, the build task will download and 
-unpack the package.
+Finally, it added a NuGet.config file with the following XML:
 
-In the restore scenario, NuGet will grab the exact version when restoring a package. It will not 
-perform any upgrades.
+	<configuration>
+	  <solution>
+	    <add key="disableSourceControlIntegration" value="true" />
+	  </solution>
+	</configuration>
+
+The disableSourceControlIntegration setting instructs version control systems like TFS to not add the NuGet packages folder to the pending check-ins list.
+
+With this in place, any time a project is compiled, the build task will look at each project's packages.config file and for each package listed, ensure that the corresponding package exists within the packages folder. For any missing package, the build task will download and unpack the package.
+
+In this scenario, NuGet will grab the exact version when restoring a package. It will not perform any upgrades.
 
 ## Mono
 On mono you can run `xbuild` on the project file or on your solution and it should successfully 
