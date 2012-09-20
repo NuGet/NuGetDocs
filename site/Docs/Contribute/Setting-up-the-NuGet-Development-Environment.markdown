@@ -11,6 +11,7 @@ This will create a folder named "nuget" with the source.
 
 1. **Download and install the <a href="http://visualstudiogallery.msdn.microsoft.com/en-us/25622469-19d8-4959-8e5c-4025d1c9183d?SRC=VSIDE">Visual Studio 2010 SDK</a>** 
 1. **Run build.cmd** from a Command Prompt running with Administrator privileges
+1. For more information on using GIT, you may refer to <a href="http://think-like-a-git.net/">http://think-like-a-git.net/</a>
 
 ## Setup Debugging
 To debug the console and UI during development, following these steps:
