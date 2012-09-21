@@ -8,19 +8,19 @@ set up correctly so you can work on NuGet using Visual Studio 2010.
 This will create a folder named "nuget" with the source.
 
         git clone https://git01.codeplex.com/nuget
-
-1. **Download and install the <a href="http://visualstudiogallery.msdn.microsoft.com/en-us/25622469-19d8-4959-8e5c-4025d1c9183d?SRC=VSIDE">Visual Studio 2010 SDK</a>** 
-1. **Run build.cmd** from a Command Prompt running with Administrator privileges
+1. If you are using VS2010 then,
+    2. **Download and install the <a href="http://visualstudiogallery.msdn.microsoft.com/en-us/25622469-19d8-4959-8e5c-4025d1c9183d?SRC=VSIDE">Visual Studio 2010 SDK</a>** 
+    2. **Run build.cmd** from a Command Prompt running with Administrator privileges
 1. For more information on using GIT, you may refer to <a href="http://think-like-a-git.net/">http://think-like-a-git.net/</a>
 
-## Setup Debugging
+## Setup Debugging for VS2012/VS2010
 To debug the console and UI during development, following these steps:
 
 1. Launch Visual Studio as Administrator 
 1. Make sure that the NuGet Extension is UNINSTALLED from your primary instance of VS so your newly compiled one can load into the experimental instance.
 1. Set the **VsExtension** project as the startup project 
 1. Ensure you rebuild the **VsExtension** project. 
-1. Now you can run or debug the **VsExtension** project and this would launch a separate instance of VS2010 (called the Experimental instance) 
+1. Now you can run or debug the **VsExtension** project and this would launch a separate instance of VS2012/VS2010 (called the Experimental instance) 
 with a copy of the NuGet vsix installed. What you do in this instance don't affect the main VS instance. 
 
 
