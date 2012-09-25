@@ -34,7 +34,7 @@ NuGet.config files are searched for in the following order:
 2. Recursive walk from project folder to root
 3. Global nuget.config (%appdata%\NuGet\nuget.config)
 
-The configurations are than applied in the *reverse order*, meaning that based on the above ordering, the global nuget.config would be applied first, followed by the discovered nuget.config files from root to project folder, followed by .nuget\nuget.config.  This is particularly important if you’re using the <clear/> element to remove a set of items from config.
+The configurations are than applied in the *reverse order*, meaning that based on the above ordering, the global nuget.config would be applied first, followed by the discovered nuget.config files from root to project folder, followed by .nuget\nuget.config.  This is particularly important if you’re using the `<clear/>` element to remove a set of items from config.
 
 ## Specify ‘packages’ Folder Location
 In the past, NuGet has managed a solution’s packages from a known ‘packages’ folder found beneath the solution root directory.  For development teams that have many different solutions which have NuGet packages installed, this can result in the same package being installed in many different places on the file system.
