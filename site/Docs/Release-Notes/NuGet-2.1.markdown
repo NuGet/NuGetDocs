@@ -47,7 +47,7 @@ NuGet 2.1 provides more granular control over the location of the packages folde
       ... 
     </configuration>
 
-In this example, the shared nuget.config file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth.
+In this example, the shared nuget.config file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you will need to delete it before NuGet will place packages in the new location.
 
 ## Support for Portable Libraries
 [Portable libraries](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx) is a feature first introduced with .NET 4 that enables you to build assemblies that can work without modification on different Microsoft platforms, from versions of the.NET Framework to Silverlight to Windows Phone and even Xbox 360 (though at this time, NuGet does not support the Xbox portable library target).  By extending the [package conventions](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#Package_Conventions) for framework versions and profiles, NuGet 2.1 now supports portable libraries by enabling you to create packages that have compound framework and profile target lib folders. 
