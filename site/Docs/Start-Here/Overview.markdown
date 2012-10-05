@@ -52,6 +52,7 @@ For information about how to use the Package Manager Console, see
 The PowerShell cmdlets require PowerShell 
 2.0. Therefore, NuGet requires one of the following operating systems:
 
+* Windows 8
 * Windows 7
 * Windows Vista SP1
 * Windows Server 2008
