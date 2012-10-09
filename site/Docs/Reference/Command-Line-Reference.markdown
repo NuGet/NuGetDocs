@@ -1,7 +1,3 @@
-﻿# Command Line Reference
-
-You can download the command line tool from [here](http://nuget.codeplex.com/releases/view/58939)
-
 
 
 
@@ -22,17 +18,20 @@ Gets or sets NuGet config values.
         <td>Help</td>
         <td>help</td>
     </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
 </table>
 
 ### Examples
-    Setting a config value:
+
     nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
-    
-    Getting a config value:
     nuget.config HTTP_PROXY
-    
-    Clearing a config value:
-    nuget config -Set HTTP_PROXY=
 
 
 
@@ -63,6 +62,14 @@ Specify the Id and version of the package to delete from the server.
     <tr>
         <td>Help</td>
         <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
 
@@ -98,6 +105,14 @@ Pass a command name to display help information for that command.
         <td>Help</td>
         <td>help</td>
     </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -126,7 +141,7 @@ Specify the id and optionally the version of the package to install. If a path t
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of packages sources to use for the install. Delimiter is semi-colon.</td>
+        <td>A list of packages sources to use for the install.</td>
     </tr>
     <tr>
         <td>OutputDirectory</td>
@@ -149,8 +164,24 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>Disable looking up packages from local machine cache.</td>
     </tr>
     <tr>
+        <td>RequireConsent</td>
+        <td>Checks if package restore consent is granted before installing a package.</td>
+    </tr>
+    <tr>
+        <td>SolutionDirectory</td>
+        <td>Solution root for package restore.</td>
+    </tr>
+    <tr>
         <td>Help</td>
         <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
 
@@ -178,7 +209,7 @@ Specify optional search terms.
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of packages sources to search. Delimiter is semi-colon.</td>
+        <td>A list of packages sources to search.</td>
     </tr>
     <tr>
         <td>Verbose</td>
@@ -195,6 +226,14 @@ Specify optional search terms.
     <tr>
         <td>Help</td>
         <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
 
@@ -270,6 +309,14 @@ Specify the location of the nuspec or project file to create a package.
         <td>Help</td>
         <td>help</td>
     </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -288,43 +335,10 @@ Specify the location of the nuspec or project file to create a package.
 
 
 
-##  Publish Command
-
-Publishes a package that was uploaded to the server but not added to the feed.
-
-### Usage
-    nuget publish <package id> <package version> <API Key> [options]
-
-Specify the id and version of the package that will be published to the feed.
-### Options
-<table>
-    <tr>
-        <td>Source</td>
-        <td>Specifies the server URL.</td>
-    </tr>
-    <tr>
-        <td>Help</td>
-        <td>help</td>
-    </tr>
-</table>
-
-### Examples
-
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
-    
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://example.com/nuget-publish-endpoint
-    
-    nuget push foo.nupkg
-    
-    nuget push foo.nupkg.symbols
-
-
-
-
-
 ##  Push Command
 
 Pushes a package to the server and optionally publishes it.
+NuGet's default configuration is obtained by loading %AppData%\NuGet\NuGet.config, then loading any nuget.config or .nuget\nuget.config starting from root of drive and ending in current directory.
 
 ### Usage
     nuget push <package path> [API key] [options]
@@ -333,12 +347,8 @@ Specify the path to the package and your API key to push the package to the serv
 ### Options
 <table>
     <tr>
-        <td>CreateOnly</td>
-        <td>Specifies if the package should be created and uploaded to the server but not published to the server. False by default.</td>
-    </tr>
-    <tr>
         <td>Source</td>
-        <td>Specifies the server URL.</td>
+        <td>Specifies the server URL. If not specified, nuget.org is used unless DefaultPushSource config value is set in the NuGet config file.</td>
     </tr>
     <tr>
         <td>ApiKey</td>
@@ -351,6 +361,14 @@ Specify the path to the package and your API key to push the package to the serv
     <tr>
         <td>Help</td>
         <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
 
@@ -387,6 +405,14 @@ Specify the API key to save and an optional URL to the server that provided the 
     <tr>
         <td>Help</td>
         <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
 
@@ -429,6 +455,14 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
         <td>Help</td>
         <td>help</td>
     </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
 </table>
 
 
@@ -455,6 +489,14 @@ Generates a nuspec for a new package. If this command is run in the same folder 
         <td>Help</td>
         <td>help</td>
     </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -480,7 +522,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of package sources to search for updates. Delimiter is semi-colon.</td>
+        <td>A list of package sources to search for updates.</td>
     </tr>
     <tr>
         <td>Id</td>
@@ -509,6 +551,14 @@ Update packages to latest available versions. This command also updates NuGet.ex
     <tr>
         <td>Help</td>
         <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
 
