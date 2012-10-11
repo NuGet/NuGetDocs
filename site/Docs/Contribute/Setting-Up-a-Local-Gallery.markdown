@@ -1,6 +1,6 @@
 ﻿# Setting Up a Local NuGet Gallery
 
-**Note: the instructions below are for the older gallery. The newer one is available from [here](https://github.com/NuGet/NuGetGallery)**
+**Note: the instructions below are for the older gallery. The newer one is available from [here](https://github.com/NuGet/NuGetGallery/blob/master/README.markdown)**.
 
 You might want to set up a local NuGet Gallery (like the one hosted at [nuget.org](http://nuget.org)) either to host your own custon packages or just for testing. The following steps will walk you through the process of setting it up.
 
