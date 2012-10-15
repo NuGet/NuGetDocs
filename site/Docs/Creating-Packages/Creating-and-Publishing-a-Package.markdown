@@ -384,9 +384,10 @@ The following provides examples of common targets.
     <tr><td>.NET 4.0 Full Profile</td><td>net40-full</td><td>Requires full .NET profile</td></tr>
     <tr><td>.NET 4.0 Compact Framework</td><td>net40-cf</td><td>net40-compactframework also works.</td></tr>
     <tr><td>Silverlight 4.0</td><td>sl4</td><td></td></tr>
-    <tr><td>Windows Phone 7.0</td><td>sl3-wp</td><td></td></tr>
-    <tr><td>Windows Phone 7.1 (Mango)</td><td>sl4-windowsphone71</td><td></td></tr>
-    <tr><td>Windows RT</td><td>winrt45</td><td>This also applies to Javascript projects.</td></tr>
+    <tr><td>Windows Phone 7.0</td><td>sl3-wp</td><td>wp7 will work in NuGet 2.1+</td></tr>
+    <tr><td>Windows Phone 7.1 (Mango)</td><td>sl4-windowsphone71</td><td>wp71 will work in NuGet 2.1+</td></tr>
+    <tr><td>Windows Phone 8</td><td>windowsphone8</td><td>wp8 also works</td></tr>
+    <tr><td>Windows Store apps</td><td>netcore45</td><td>This also applies to Javascript projects.</td></tr>
 </table>
 
 ## Deleting packages
