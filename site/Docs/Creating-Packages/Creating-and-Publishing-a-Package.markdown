@@ -1,4 +1,4 @@
-﻿# Creating and Publishing a Package
+# Creating and Publishing a Package
 
 ## Getting Started
 
@@ -379,15 +379,24 @@ The following provides examples of common targets.
 
 <table class="reference">
     <tr><th>Tool</th><th>Target</th><th>Notes</th></tr>
+    <tr><td>.NET 3.5</td><td>net35</td><td>Just using '35' also works.</td></tr>
     <tr><td>.NET 4.0</td><td>net40</td><td>Just using '40' also works.</td></tr>
     <tr><td>.NET 4.0 Client Profile</td><td>net40-client</td><td></td></tr>
     <tr><td>.NET 4.0 Full Profile</td><td>net40-full</td><td>Requires full .NET profile</td></tr>
     <tr><td>.NET 4.0 Compact Framework</td><td>net40-cf</td><td>net40-compactframework also works.</td></tr>
+    <tr><td>.NET Micro Framework</td><td>netmf</td><td></td></tr>
+    <tr><td>Silverlight 3.0</td><td>sl3</td><td></td></tr>
     <tr><td>Silverlight 4.0</td><td>sl4</td><td></td></tr>
-    <tr><td>Windows Phone 7.0</td><td>sl3-wp</td><td>wp7 will work in NuGet 2.1+</td></tr>
-    <tr><td>Windows Phone 7.1 (Mango)</td><td>sl4-windowsphone71</td><td>wp71 will work in NuGet 2.1+</td></tr>
-    <tr><td>Windows Phone 8</td><td>windowsphone8</td><td>wp8 also works</td></tr>
-    <tr><td>Windows Store apps</td><td>netcore45</td><td>This also applies to Javascript projects.</td></tr>
+    <tr><td>Silverlight 5.0</td><td>sl5</td><td></td></tr>
+    <tr><td>Windows Phone 7.0</td><td>sl3-wp</td><td></td></tr>
+    <tr><td></td><td>wp7</td><td>Only in NuGet 2.1+</td></tr>
+    <tr><td>Windows Phone 7.1 (Mango)</td><td>sl4-windowsphone71</td><td></td></tr>
+    <tr><td></td><td>wp71</td><td>Only in NuGet 2.1+</td></tr>
+    <tr><td>Windows Phone 8</td><td>windowsphone8</td><td>Only in NuGet 2.1+</td></tr>
+    <tr><td>Windows Store apps (Javascript, C#, VB.NET)</td><td>netcore45</td><td></td></tr>
+    <tr><td></td><td>windows8</td><td>Only in NuGet 2.1+</td></tr>
+    <tr><td>Portable class library for Windows Store apps and .NET 4.5</td><td>portable-windows8+net45</td><td>Only in NuGet 2.1+</td></tr>
+    <tr><td>Portable class library for Windows Store apps, Silverlight 4.0 and Windows Phone 7.1</td><td>portable-sl4+wp71+windows8</td><td>Only in NuGet 2.1+</td></tr>
 </table>
 
 ## Deleting packages
