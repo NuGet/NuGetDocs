@@ -13,7 +13,7 @@ This will create a folder named "nuget" with the source.
     1. **Run build.cmd** from a Command Prompt
 1. If you are using VS2012 then,
     1. Uninstall the existing NuGet Extension from Visual Studio.
-    1. ** Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30668">Visual Studio 2012 SDK</a>**
+    1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30668">Visual Studio 2012 SDK</a>**
     1. **Run build.cmd** from a Command Prompt
 1. For more information on using GIT, you may refer to <a href="http://think-like-a-git.net/">http://think-like-a-git.net/</a>
 
