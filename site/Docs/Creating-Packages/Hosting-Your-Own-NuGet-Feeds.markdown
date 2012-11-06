@@ -108,11 +108,18 @@ NuGet.exe. After installing the package, the web.config file will contain a new 
 apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.
 
     <appSettings>
+         <!--
+            Determines if an Api Key is required to push\delete packages from the server. 
+        -->
+        <add key="requireApiKey" value="true" />
+
         <!-- Set the value here to allow people to push/delete packages from the server.
              NOTE: This is a shared key (password) for all users. -->
         <add key="apiKey" value="" />
     </appSettings>
 
+If however your server is already secured and \ or you do not require an api key to perform this operation, 
+set the **requireApiKey** value to false.
 
 ### Step 5: Deploy and run your brand new Package Feed!
 
@@ -134,6 +141,5 @@ as in the following screenshot.
 
 Note that the URL you need to put in is <a href="http://yourdomain/nuget/">http://yourdomain/nuget/</a> depending on how you deploy the site.
 
-Yes, it's that easy! Note that this feed is "read-only" in the sense that it doesn't support 
-publishing to it via the NuGet.exe command line tool. Instead, you need to add packages 
-to the **Packages** folder and they are automatically syndicated.
+Yes, it's that easy! An alternative way of publishing packages to this server is by simply placing the nupkg under the 
+the **Packages** folder and they are automatically syndicated.
