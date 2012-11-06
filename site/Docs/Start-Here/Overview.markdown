@@ -21,7 +21,7 @@ default source for NuGet, and you can contribute to that feed or create your own
 
 ## NuGet User Interface in Visual Studio
 
-NuGet runs in Visual Studio 2010, Visual Web Developer 2010, and Windows Phone Developer Tools 7.1. 
+NuGet runs in all versions of Visual Studio 2012, as well as Visual Studio 2010, Visual Web Developer 2010, and Windows Phone Developer Tools 7.1. 
 You can find, install, remove, and update packages by using the **Manage NuGet Packages** dialog box 
 or by using PowerShell command-line commands in the **Package Manager Console** dedicated Visual Studio window. 
 Both options are accessible from the Visual Studio main menu; you can 
