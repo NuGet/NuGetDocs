@@ -1,4 +1,4 @@
-# NuGet 2.1 Release Notes
+# NuGet 2.2 Release Notes
 
 ## Visual Studio Quick Launch
 One of the new features that was added in Visual Studio 2012 was the [quick launch dialog](http://msdn.microsoft.com/library/hh417697.aspx). NuGet 2.2 extends this dialog, allowing it to initialize the package manager dialog with the search terms entered in the quick launch. For example, entering 'jquery' in quick launch now includes an option in the results to search NuGet packages matching 'jquery'.
