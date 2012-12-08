@@ -160,13 +160,12 @@ are populated by the values within the project.
     </tr>
 </table>
 
-In addition to using replacement tokens to modify the metadata of the package, they can also be used for resolving paths when [specifying explicit assembly references](#specifying-explicit-assembly-references). When building the package using MSBuild, the properties defined for the build propagate through to the package build as values for replacement tokens. They will have the same names as the properties in MSBuild. This makes it possible to select files to be included depending on the current build configuration.
+In addition to using replacement tokens to modify the metadata of the package, they can also be used for resolving paths when [including files in the package](#specifying-files-to-include-in-the-package). When building the package using MSBuild, the properties defined for the build propagate through to the package build as values for replacement tokens. They will have the same names as the properties in MSBuild. This makes it possible to select files to be included depending on the current build configuration.
 For instance:
 
-    <references>
-      <reference file="bin\$configuration$\xunit.dll" />
-      <reference file="bin\$configuration$\xunit.extensions.dll" />
-    </references>
+    <files>
+      <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    </file>
 
 ## Specifying Dependencies
 
