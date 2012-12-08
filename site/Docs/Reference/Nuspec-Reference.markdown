@@ -160,7 +160,7 @@ are populated by the values within the project.
     </tr>
 </table>
 
-In addition to using Replacement Tokens to update the metadata of the package, they can also be used for resolving paths when [specifying explicit assembly references](#Specifying_Explicit_Assembly_References). When building the package using MSBuild, the properties defined for the build propagate through to these tokens. This makes it possible to include files depending on the current build configuration.
+In addition to using Replacement Tokens to update the metadata of the package, they can also be used for resolving paths when [specifying explicit assembly references](#specifying-explicit-assembly-references). When building the package using MSBuild, the properties defined for the build propagate through to these tokens. This makes it possible to include files depending on the current build configuration.
 For instance:
 
     <references>
