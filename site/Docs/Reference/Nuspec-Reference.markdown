@@ -164,8 +164,8 @@ In addition to using replacement tokens to modify the metadata of the package, t
 For instance:
 
     <references>
-      <reference file="bin\$configuration\xunit.dll" />
-      <reference file="bin\$configuration\xunit.extensions.dll" />
+      <reference file="bin\$configuration$\xunit.dll" />
+      <reference file="bin\$configuration$\xunit.extensions.dll" />
     </references>
 
 ## Specifying Dependencies
