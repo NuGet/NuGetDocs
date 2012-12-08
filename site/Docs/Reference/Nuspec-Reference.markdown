@@ -192,7 +192,7 @@ The following table lists attributes of the dependency element.
 </table>
 
 ## Specifying Dependencies in version 2.0 and above
-)
+
 Starting from version 2.0, package dependencies can be specified to vary according to the framework profile of the target project. The `<dependencies>` element contains a set of `<group>` elements. Each group contains zero or more `<dependency>` element and a target framework attribute. All dependencies inside a group are installed together if the target framework is compatible with the project's framework profile.
 
     <dependencies> 
