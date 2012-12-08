@@ -160,6 +160,14 @@ are populated by the values within the project.
     </tr>
 </table>
 
+In addition to using Replacement Tokens to update the metadata of the package, they can also be used for resolving paths when [specifying explicit assembly references](#Specifying_Explicit_Assembly_References). When building the package using MSBuild, the properties defined for the build propagate through to these tokens. This makes it possible to include files depending on the current build configuration.
+For instance:
+
+    <references>
+      <reference file="bin\$configuration\xunit.dll" />
+      <reference file="bin\$configuration\xunit.extensions.dll" />
+    </references>
+
 ## Specifying Dependencies
 
 The dependencies element is a child element of the metadata element and contains a set of dependency 
@@ -185,7 +193,7 @@ The following table lists attributes of the dependency element.
 </table>
 
 ## Specifying Dependencies in version 2.0 and above
-
+)
 Starting from version 2.0, package dependencies can be specified to vary according to the framework profile of the target project. The `<dependencies>` element contains a set of `<group>` elements. Each group contains zero or more `<dependency>` element and a target framework attribute. All dependencies inside a group are installed together if the target framework is compatible with the project's framework profile.
 
     <dependencies> 
