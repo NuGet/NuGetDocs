@@ -167,6 +167,12 @@ For instance:
       <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
     </file>
 
+Assuming you are building the project that produces an assembly called Foo in release mode this will produce the following transformed xml:
+	
+	<files>
+		<file src="bin\Release\Foo.pdb" target="lib\net40" />
+	</files>
+
 ## Specifying Dependencies
 
 The dependencies element is a child element of the metadata element and contains a set of dependency 
