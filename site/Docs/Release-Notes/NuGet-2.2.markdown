@@ -7,12 +7,12 @@ One of the new features that was added in Visual Studio 2012 was the [quick laun
 
 Selecting this option will launch the standard NuGet package manager search experience for the term 'jquery'.
 
-![Pre-populated NuGet Package Manager Dialog](pkg-mgr-search-from-quick-lanuch.png)
+![Pre-populated NuGet Package Manager Dialog](pkg-mgr-search-from-quick-launch.png)
 
 ## Specify Entire Folder for Package Contents
-NuGet 2.2 now allows you to specify an entire directory in the <file> element of the .nuspec file to include all of the contents of that directory. For example, the following will cause all scripts in the package's scripts folder to be added to the contents\scripts folder when the package is installed into a project.
+NuGet 2.2 now allows you to specify an entire directory in the `<file>` element of the .nuspec file to include all of the contents of that directory. For example, the following will cause all scripts in the package's scripts folder to be added to the contents\scripts folder when the package is installed into a project.
 
-<file src="scripts\" target="content\scripts"/>
+**`<file src="scripts\" target="content\scripts"/>`**
 
 This feature also enables package authors to easily create empty directories by specifying an empty directory in the NuSpec package. 
 
