@@ -137,7 +137,7 @@ PARAMETERS
         Returns every project in the solution.
         
         Required: false
-    </pre>
+</pre>
 ### Examples
 
     
@@ -248,7 +248,7 @@ PARAMETERS
         If specified, the target file is not overwritten.
         
         Required: false
-    </pre>
+</pre>
 ### Examples
 
     
@@ -306,7 +306,7 @@ PARAMETERS
         If specified, the cmdlet will return the value of the requested URL.
         
         Required: false
-    </pre>
+</pre>
 ### Examples
 
     
@@ -356,7 +356,7 @@ PARAMETERS
         The version of the package to uninstall. If omitted, defaults to the latest version.
         
         Required: false
-    </pre>
+</pre>
 ### Examples
 
     
