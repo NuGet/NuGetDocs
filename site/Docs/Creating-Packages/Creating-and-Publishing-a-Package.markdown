@@ -189,6 +189,23 @@ With the working directory in place with content, run the following command:
 
 To create your package.
 
+### Creating a solution-level package
+
+A solution-level package is one that installs a tool or additional commands
+for the Package Manager console, but does not add references or content
+to any projects in your solution. For example, the
+[psake](http://nuget.org/packages/psake) package installs Powershell scripts
+you can use to automate your build process.
+
+A package is considered a solution-level package if it does not contain
+any files in its __lib__ or __content__ directories.  If the package has
+dependencies, they also must not have files in their __lib__ or __content__
+directories.
+
+When a solution-level package is installed, it is tracked in a packages.config
+file in the .nuget directory, rather than in a packages.config file in a
+specific project.
+
 
 ## Publishing
 ### Create an account at NuGet.org
