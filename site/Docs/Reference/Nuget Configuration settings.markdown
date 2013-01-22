@@ -1,0 +1,138 @@
+# NuGet Configuration Settings
+There are a bunch of NuGet configuration values which can be set via the Nuget.config file.
+Below is the summary of the NuGet config keys and their usage.
+
+<table class="reference" border="1">
+<tbody>
+    <tr>
+        <th>Settings  </th> <th>Key Name</th> <th>Description</th>
+    </tr>
+    <tr>
+    <td> Repository path </td>
+    <td>"repositoryPath" </td>
+    <td>
+       Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder. <br/>
+       This key can be added to the NuGet.config file manually or using the <a href="./Command-Line-Reference#Config Command"> NuGet.exe Config -Set command.  </a>  <br/>
+       More details <a href="../Release-Notes/NuGet-2.1#Specify_'packages'_Folder_Location">here.</a>
+
+	<pre><code>
+    &lt;config&gt;
+     &lt;add key="repositorypath" value="C:\Temp" /&gt;
+    &lt;/config&gt;
+	</pre></code>
+	
+
+   
+    </td>
+    </tr>
+	<tr>
+	<td> Package Restore
+	</td>
+	<td> "enabled" under the section "packageRestore"
+
+	</td>
+	<td>
+	Allows you to restore missing packages from the NuGet source during build.<br/>
+	This key can be added to the NuGet.config manually or by setting "EnableNuGetPackageRestore" environment variable to "true" or from the package manager settings UI.<br/>
+	More details <a href="..\Workflows\Using-NuGet-without-committing-packages"> here.</a>
+
+	<pre><code>
+	&lt;packageRestore&gt;
+		&lt;add key="enabled" value="True" /&gt;
+	&lt;/packageRestore&gt;
+	</pre></code>
+
+	</td>	  
+	</tr>
+	<tr>
+	<td> Package sources
+	</td> 
+	<td> "activePackageSource" , "packageSources" , "disabledPackageSources"
+	</td>
+	<td>
+	   Allows you to specify the list of sources to be used while looking for packages. <br/>
+	   
+	- "PackageSources" section has the list of package sources. <br/> 
+	- "DisabledPackageSources" has the list of sources which are currently disabled currently.  <br/>
+	- "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would imply that all the current package sources except for the disabled ones are active.<br/></br> </br>
+
+		The values can be added to the config file directly or using the package manager settings UI ( which would in turn update the NuGet.config file) or using the <a href="command-line-reference#Sources_Command">NuGet.exe Sources command.</a>
+
+	<pre><code>
+	&lt;packageSources&gt;
+		&lt;add key="NuGet official package source" value="https://nuget.org/api/v2/" /&gt;
+		&lt;add key="TestSource" value="C:\Temp" /&gt;
+	&lt;/packageSources&gt;
+	&lt;disabledPackageSources /&gt;
+	&lt;activePackageSource&gt;
+		&lt;add key="All" value="(Aggregate source)"  /&gt;
+	&lt;/activePackageSource&gt;
+	</pre></code>
+
+	</td>
+	</tr>
+	<tr>
+	<td> Source control integration
+
+	</td>
+	<td> "disableSourceControlIntegration" under section "solution"
+	</td>
+    <td>
+	Allows you to disable source control integration for the "Packages" folder. This key works at the solution level and hence need to be added to the NuGet.config file present in the "$(SolutionDir)\.nuget directory". Enabling package restore from VS would add the .nuget\nuget.config file automatically. More details <a href="..\Workflows\Using-NuGet-without-committing-packages"> here.</a>
+    <br/>
+
+	The default value for this key is true.
+	<pre><code>
+	&lt;solution&gt;
+		&lt;add key="disableSourceControlIntegration" value="true" /&gt;
+	&lt;/solution&gt;
+	</pre></code>
+
+	</td>
+	</tr>
+	<tr>
+	<td>  Proxy settings
+	</td>
+	<td> "http_proxy" ,  "http_proxy.user", "http_proxy.password" 
+
+	</td>
+	<td>
+	Allows you to set the proxy settings to be used while connecting to your NuGet feed.
+	More details <a href="http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html">here.</a>
+	<br/>
+
+	This key can be added using <a href="./Command-Line-Reference#Config Command">Nuget.exe Config -Set command.</a> <br/><br/>It can also be set via environment variable "http_proxy". While setting env variable, the value should  be specified in the format 'http://[username]:[password]@proxy.com'.
+	Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. Hence it can not be added manually by directly updating the config file.
+
+	</td>
+	</tr>
+	<tr>
+	<td> Credentials for package source
+	</td>
+	<td>
+	</td>
+	<td>
+	Allows you to set the credentials to access the given package source. <br/>
+	This key has to be set using the <a href="command-line-reference#Sources_Command">NuGet.exe Sources command.</a> <br/>
+	It cannot be added manually to the config file as the password need to be encrypted. <br/> <br/>
+
+		Nuget.exe  Sources  Add  -Name  xxx  -UserName  xxx   -Password xxx  <br/>
+		Nuget.exe  Sources  Update  -Name  xxx  -UserName  xxx   -Password xxx <br/>
+
+	</td>
+	</tr>
+	<tr>
+	<td> API Key to access package source
+
+	</td>
+	<td>
+	</td>
+	<td>
+	Allows you to set the API Key corresponding to a specific package source.<br/>
+
+	This key  has to be set via <a href=".\command-line-reference#Setapikey_Command">NuGet -SetApiKey. </a>
+	</td>
+	</tr>
+
+   </tbody>
+   </table>
