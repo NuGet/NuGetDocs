@@ -5,7 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs.Core", "Docs.Core\Docs
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "site", "site\", "{19F167AB-BC25-40F4-ACCA-F121DE5F700E}"
 	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{EF9B878F-FCE0-4A92-8F6D-11E3146D0417}|Docs.Core.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/site"
@@ -22,7 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "site", "site\", "{19F167AB-
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-                VWDPort = "39120"
+		VWDPort = "39120"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
