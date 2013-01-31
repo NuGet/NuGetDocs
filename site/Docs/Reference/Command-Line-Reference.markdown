@@ -244,6 +244,68 @@ Specify optional search terms.
     nuget list -verbose -allversions
 
 
+##  Mirror Command
+
+Mirrors a package and its dependencies from the specified source repositories to the target repository.
+
+Note: to enable this command, navigate to [http://ci.nuget.org/](http://ci.nuget.org/) (there's a Guest log in option),
+copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same folder than NuGet.exe.
+
+### Usage
+    nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
+
+Specify the id of the package to mirror, the url to query the target repository (list command) and the url to push packages to the target repository.
+If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
+Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be 
+[http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
+
+### Options
+<table>
+    <tr>
+        <td>Source</td>
+        <td>A list of packages sources to use for the finding packages to mirror. 
+		If no sources are specified, the ones defined in the default NuGet config file are used. 
+		If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
+    </tr>
+    <tr>
+        <td>Version</td>
+        <td>The version of the package to install. If not specified, latest version is mirrored.</td>
+    </tr>
+    <tr>
+        <td>ApiKey</td>
+        <td>The API key for pushing to the target repository. If not specified, the one specified in the default NuGet config file is used.</td>
+    </tr>
+    <tr>
+        <td>Prerelease</td>
+        <td>When set, "latest" when specifying no version for a package id (as command argument or in packages.config) includes pre-release packages.</td>
+    </tr>
+	<tr>
+        <td>Timeout</td>
+        <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
+    </tr>
+	<tr>
+        <td>NoCache</td>
+        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
+		If you want to ensure only packages from the specified sources are used, set the NoCache option. 
+		If you want instead to maximize chances of finding packages, do not set this option.</td>
+    </tr>
+	<tr>
+        <td>NoOp</td>
+        <td>Log what would be done without actually doing it. Assumes success for push operations.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+</table>
+
+### Examples
+
+    nuget mirror packages.config  http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
+    
+    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -version 4.0.20505.0
+
+    nuget mirror Microsoft.Net.Http http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -prerelease
 
 
 
