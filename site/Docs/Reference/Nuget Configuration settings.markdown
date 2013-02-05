@@ -1,5 +1,5 @@
 # NuGet Configuration Settings
-There are a bunch of NuGet configuration values which can be set via the Nuget.config file.
+There are a bunch of NuGet configuration values which can be set via the nuget.config file.
 Below is the summary of the NuGet config keys and their usage.
 
 <table class="reference" border="1">
