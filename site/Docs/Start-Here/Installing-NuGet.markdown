@@ -52,12 +52,12 @@ Select NuGet in the list and click **Update**.  When the update is complete, clo
 # Installing a CI build
 
 If you want to run the very latest unreleased build of NuGet, you can
-[install it from the CI (Continuous Integration) machine](http://ci.nuget.org:8080/guestAuth/repository/download/bt4/.lastSuccessful/VisualStudioAddIn/NuGet.Tools.vsix).
+[install it from the Build Server](http://build.nuget.org/repository/download/bt4/.lastSuccessful/VisualStudioAddIn/NuGet.Tools.vsix).
 
-**Important note**: the official NuGet build is signed, while the one from the CI machine is not. For that reason, Visual Studio will not let you
+**Important note**: the official NuGet build is signed, while the one from the Build Server is not. For that reason, Visual Studio will not let you
 install a CI build if you already have an official build installed. If you do, you'll get an error that looks like:
 
 *The installed version of 'NuGet Package Manager' is signed, but the update version is not signed. Therefore, Extension Manager cannot install the update.*
 
-To avoid this issue, you need to uninstall the official build (from the VS extension manager) before installing the CI build. Likewise, please uninstall the CI build
-before going back to an official build. However, you don't need to do this from going to a CI build to a newer CI build. If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled), then you likely need to restart Visual Studio using "Run as Administrator."
+To avoid this issue, you need to uninstall the official build (from the VS extension manager) before installing the unsigned build. Likewise, please uninstall the unsigned build
+before going back to an official build. However, you don't need to do this from going to a unsigned build to a newer unsigned build. If Visual Studio won't allow you to uninstall the extension (the Uninstall button is disabled), then you likely need to restart Visual Studio using "Run as Administrator."
