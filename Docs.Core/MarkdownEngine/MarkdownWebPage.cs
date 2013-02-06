@@ -25,7 +25,7 @@ namespace Docs.Core.MarkdownEngine {
         public override void Execute() {
             InitalizeCache();
 
-            Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' '));
+            Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
