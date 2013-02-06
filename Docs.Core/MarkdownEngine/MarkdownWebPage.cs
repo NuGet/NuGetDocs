@@ -11,21 +11,25 @@ using System.Web.WebPages;
 using HtmlAgilityPack;
 using MarkdownSharp;
 
-namespace Docs.Core.MarkdownEngine {
+namespace Docs.Core.MarkdownEngine
+{
     /// <summary>
     /// Each markdown page is a web page that has this harcoded logic
     /// </summary>
-    public class MarkdownWebPage : WebPage {
+    public class MarkdownWebPage : WebPage
+    {
         private const int CacheTimeout = 24 * 60 * 60;
         private static List<string> _virtualPathDependencies = new List<string> { "~/Docs/_TableOfContents.cshtml", 
                                                                                   "~/_PageStart.cshtml", 
                                                                                   "~/_Layout.cshtml",
                                                                                   "~/Docs/_DocLayout.cshtml" };
 
-        public override void Execute() {
+        public override void Execute()
+        {
             InitalizeCache();
 
             Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
+            Page.Source = GetPhysicalFilePath();
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
@@ -37,7 +41,8 @@ namespace Docs.Core.MarkdownEngine {
             WriteLiteral(transformed);
         }
 
-        private void InitalizeCache() {
+        private void InitalizeCache()
+        {
             _virtualPathDependencies.Add(VirtualPath);
             CacheDependency cd = HostingEnvironment.VirtualPathProvider.GetCacheDependency(VirtualPath, _virtualPathDependencies.ToArray(), DateTime.UtcNow);
             Response.AddCacheDependency(cd);
@@ -47,7 +52,8 @@ namespace Docs.Core.MarkdownEngine {
         /// <summary>
         /// Transforms the raw markdown content into html
         /// </summary>
-        private string Transform(string content) {
+        private string Transform(string content)
+        {
             var markdown = new Markdown();
             var fileContents = markdown.Transform(ProcessUrls(content));
             var docteredHTML = ProcessTableOfContents(fileContents);
@@ -57,7 +63,8 @@ namespace Docs.Core.MarkdownEngine {
         /// <summary>
         /// Takes HTML and parses out all heading and sets IDs for each heading. Then sets the Headings property on the page.
         /// </summary>
-        private string ProcessTableOfContents(string content) {
+        private string ProcessTableOfContents(string content)
+        {
             var doc = new HtmlDocument();
             doc.OptionUseIdAttribute = true;
             doc.LoadHtml(content);
@@ -69,7 +76,8 @@ namespace Docs.Core.MarkdownEngine {
                 && !node.Name.Equals("hr", StringComparison.InvariantCultureIgnoreCase)).ToList();
 
             var headings = new List<Heading>();
-            foreach (var heading in allHeadingNodes) {
+            foreach (var heading in allHeadingNodes)
+            {
                 var id = heading.InnerHtml.Replace(" ", "_");
                 id = HttpUtility.HtmlAttributeEncode(HttpUtility.UrlEncode(id)); // TODO: What encoding should happen here?
                 heading.SetAttributeValue("id", id);
@@ -86,19 +94,46 @@ namespace Docs.Core.MarkdownEngine {
         /// <summary>
         /// Turns app relative urls (~/foo/bar) into the resolved version of that url for this page.
         /// </summary>
-        private string ProcessUrls(string content) {
+        private string ProcessUrls(string content)
+        {
             return Regex.Replace(content, @"\((?<url>~/.*?)\)", match => "(" + Href(match.Groups["url"].Value) + ")");
         }
 
         /// <summary>
         /// Returns the markdown content within this page
         /// </summary>
-        private string GetMarkdownContent() {
+        private string GetMarkdownContent()
+        {
             VirtualFile file = HostingEnvironment.VirtualPathProvider.GetFile(VirtualPath);
             Stream stream = file.Open();
-            using (var reader = new StreamReader(stream)) {
+            using (var reader = new StreamReader(stream))
+            {
                 return reader.ReadToEnd();
             }
+        }
+
+        /// <summary>
+        /// Returns the physical file path for the virtual path on the request, with case sensitivity.
+        /// </summary>
+        private string GetPhysicalFilePath()
+        {
+            string requestFilePath = VirtualPath;
+            Stack<string> pathSegments = new Stack<string>();
+
+            do
+            {
+                VirtualFile segment = HostingEnvironment.VirtualPathProvider.GetFile(requestFilePath);
+                pathSegments.Push(segment.Name);
+
+                int lastSlash = requestFilePath.LastIndexOf('/');
+                if (lastSlash > 0)
+                {
+                    requestFilePath = requestFilePath.Substring(0, lastSlash);
+                }
+            }
+            while (requestFilePath.Contains('/'));
+
+            return String.Join("/", pathSegments.ToArray());
         }
     }
 }

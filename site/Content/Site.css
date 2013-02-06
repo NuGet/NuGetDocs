@@ -147,9 +147,13 @@ nav {
                 font-size: .9em;
             }
     
-    footer#footer div.license {
+    footer#footer div.license, footer#footer div.pagesource {
         clear: both;
         font-size: .7em;
+    }
+
+    footer#footer div.pagesource {
+        margin-top: .7em;
     }
 
 /* Header

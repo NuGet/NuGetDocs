@@ -66,6 +66,13 @@
                 except where otherwise noted.
             </p>
         </div>
+        @if (Page.Source != null)
+        {
+            <div class="pagesource">
+                View or edit this page's source on GitHub:     
+                <a href="https://github.com/NuGet/NuGetDocs/tree/master/site/@Page.Source" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/site/@Page.Source</a>
+            </div>
+        }
     </footer>
 </div>
     <script type="text/javascript">
