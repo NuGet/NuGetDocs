@@ -1,4 +1,4 @@
-﻿# NuGet configuration file
+﻿# NuGet Configuration File
 
 NuGet's configuration file allows for persisting configuration settings and changing default configuration values.
 
@@ -12,7 +12,7 @@ APPDATA's value is OS, system drive, and current user dependent. For example: D:
 XML is used to store the configuration, and any text editor can be used to author it.
 Note: NuGet will silently ignore the entire configuration file is it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
 
-Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments:
+Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page](nuget-config-settings).
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -136,7 +136,7 @@ With these four NuGet config files present on the filesystem:
       </packageSources>
     </configuration>
 
-3) F:\Project2\NuGet.config with content:
+4) F:\Project2\NuGet.config with content:
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
