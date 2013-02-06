@@ -26,7 +26,7 @@ namespace Docs.Core.MarkdownEngine {
             InitalizeCache();
 
             Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
-            Page.Source = GetPhysicalFilePath();
+            Page.Source = GetSourcePath();
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
@@ -103,24 +103,39 @@ namespace Docs.Core.MarkdownEngine {
         }
 
         /// <summary>
-        /// Returns the physical file path for the virtual path on the request, with case sensitivity.
+        /// Returns the source file path for the virtual path on the request, with case sensitivity.
         /// </summary>
-        private string GetPhysicalFilePath() {
+        /// <remarks>
+        /// It's a shame nothing in the framework seems to do this for the path as a whole.  FileInfo
+        /// and DirectoryInfo, among others, return the path using the casing specified.  And
+        /// VirtualPathProvider.GetDirectory does not return the correct casing, but GetFile does.
+        /// <para>
+        /// So, we walk up the path and get the case sensitive name for each segment and then piece
+        /// it all back together.
+        /// </para>
+        /// </remarks>
+        private string GetSourcePath() {
             string requestFilePath = VirtualPath;
             Stack<string> pathSegments = new Stack<string>();
 
             do {
                 VirtualFile segment = HostingEnvironment.VirtualPathProvider.GetFile(requestFilePath);
-                pathSegments.Push(segment.Name);
+
+                if (segment != null && segment.Name != null) {
+                    pathSegments.Push(segment.Name);
+                }
 
                 int lastSlash = requestFilePath.LastIndexOf('/');
                 if (lastSlash > 0) {
                     requestFilePath = requestFilePath.Substring(0, lastSlash);
                 }
+                else {
+                    break;
+                }
             }
-            while (requestFilePath.Contains('/'));
+            while (requestFilePath != null && requestFilePath.Length > 1 && requestFilePath.Contains('/'));
 
-            return String.Join("/", pathSegments.ToArray());
+            return String.Join("/", pathSegments);
         }
     }
 }
