@@ -13,7 +13,7 @@ Below is the summary of the NuGet config keys and their usage.
     <td>
        Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder. <br/>
        This key can be added to the NuGet.config file manually or using the <a href="./Command-Line-Reference#Config Command"> NuGet.exe Config -Set command.  </a>  <br/>
-       More details <a href="../Release-Notes/NuGet-2.1#Specify_'packages'_Folder_Location">here.</a>
+       More details <a href="../Release-Notes/NuGet-2.1#Specify_%e2%80%98packages%e2%80%99_Folder_Location">here.</a>
 
 	<pre><code>
     &lt;config&gt;
