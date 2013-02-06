@@ -52,7 +52,7 @@ Select NuGet in the list and click **Update**.  When the update is complete, clo
 # Installing a CI build
 
 If you want to run the very latest unreleased build of NuGet, you can
-[install it from the Build Server](http://build.nuget.org/guestAuth/repository/download/bt4/.lastSuccessful/VisualStudioAddIn/NuGet.Tools.vsix ).
+[install it from the Build Server](http://build.nuget.org/NuGet.Tools.vsix).
 
 **Important note**: the official NuGet build is signed, while the one from the Build Server is not. For that reason, Visual Studio will not let you
 install a CI build if you already have an official build installed. If you do, you'll get an error that looks like:
