@@ -1,5 +1,7 @@
 # NuGet 2.2.1 Release Notes
 
+NuGet 2.2.1 was released on February 15, 2013.  The VS Extension version number is 2.2.40116.9051.
+
 ## Localization Refresh
 When NuGet shipped as part of Visual Studio 2012, it was fully localized into English + 13 other languages.  Since then, NuGet 2.1 and 2.2 have shipped but the localization had not been refreshed.  The NuGet 2.2.1 release refreshes our localization.
 
