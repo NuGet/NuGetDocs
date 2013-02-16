@@ -68,6 +68,10 @@ adding a [`WizardExtension`](http://msdn.microsoft.com/en-us/library/ms171411.as
     choice to upgrade the package to the latest version using NuGet is left 
     to the developer who is in the best position to assume the risks of upgrading 
     the package to the latest version.
+    
+    Starting with NuGet 2.2.1, the wizard also supports multiple `<packages>` elements.
+    This enables scenarios where some packages are installed from one repository, but
+    other packages are installed from a different repository.
 
 The remaining step is to specify the repository where NuGet can find the package
 files. As mentioned earlier, two package repository modes are supported:
