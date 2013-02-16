@@ -31,10 +31,11 @@ loads the list of packages that need to be installed and passes that information
 to the appropriate NuGet APIs.
 
 The template needs to specify where to find the package nupkg files. Currently
-two package repositories are supported:
+three package repositories are supported:
 
 1. Packages embedded inside of a VSIX package.
 2. Packages embedded inside of the project/item template itself.
+3. Packages installed on hard drive, with a registry key referencing the path.
 
 To add preinstalled packages to your project/item template you need to:
 
@@ -68,9 +69,13 @@ adding a [`WizardExtension`](http://msdn.microsoft.com/en-us/library/ms171411.as
     choice to upgrade the package to the latest version using NuGet is left 
     to the developer who is in the best position to assume the risks of upgrading 
     the package to the latest version.
+    
+    Starting with NuGet 2.2.1, the wizard also supports multiple `<packages>` elements.
+    This enables scenarios where some packages are installed from one repository, but
+    other packages are installed from a different repository.
 
 The remaining step is to specify the repository where NuGet can find the package
-files. As mentioned earlier, two package repository modes are supported:
+files. As mentioned earlier, three package repository modes are supported:
 
 ### VSIX package repository
 
@@ -125,6 +130,36 @@ size of the project/item template bundle.
     The `repository` attribute now has the value "template" and the `repositoryId`
     attribute is not longer required. The nupkg files need to be placed into the
     root directory of the project/item template zip file.
+
+### Registry-specified folder path
+
+Many SDKs are installed via MSI.  These MSIs have the ability to install NuGet packages on disk for efficient
+package installation during project creation, avoiding the need to extract the packages during
+project creation.  ASP.NET uses this approach for its preinstalled packages in project templates.
+
+This approach requires a few moving parts:
+
+1. Put the packages on disk during MSI installation
+    * You can install only the nupkg files or the nupkg files along with their expanded contents.
+    * If the expanded contents are also installed, this saves one additional step during project creation.
+    * The file/folder format matches the standard packages folder used by NuGet where the nupkg files are all at the root and then each package has a subfolder with the id/version pair as the subfolder name.
+2. Write a registry key that can be used to reference the package installation folder
+    * Use HKEY_LOCAL_MACHINE\SOFTWARE[\Wow6432Node]\NuGet\Repository for the key location.
+    * The key name must be something unique to you.  ASP.NET MVC 4 in VS 2012 uses "AspNetMvc4VS11" for instance.
+    * The value must be the full path to your packages folder.  ASP.NET MVC 4 uses "C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Packages\" for instance.
+3. Use the repository value of "registry" within the `<packages>` node
+    * Specifying your registry key name in the `keyName` attribute.
+    * If you have pre-unzipped your packages, use the `isPreunzipped="true"` attribute.
+
+Here's an example `<packages>` element using the registry-specified folder repository:
+<pre><code>&lt;packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true"&gt;
+    &lt;package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" /&gt;
+    ...
+&lt;/packages&gt;</code></pre>
+    
+Note that the above example also uses the `skipAssemblyReferences="true"` attribute, which is another performance
+optimization.  The VS template itself already includes this assembly reference, so we can tell NuGet to skip
+adding assembly references from the package.
 
 ## Best Practices
 
