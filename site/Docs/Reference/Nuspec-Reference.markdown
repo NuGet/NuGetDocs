@@ -525,7 +525,7 @@ The following example shows a simple .nuspec file that does not specify dependen
 The following example shows a .nuspec file that specifies dependencies.
 
     <?xml version="1.0" encoding="utf-8"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
         <id>sample</id>
         <version>1.0.0</version>
@@ -556,7 +556,7 @@ The following example shows a .nuspec file that specifies files.
 The following example shows a .nuspec file that specifies framework assemblies.
 
     <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
       <metadata>
         <id>PackageWithGacReferences</id>
         <version>1.0</version>
