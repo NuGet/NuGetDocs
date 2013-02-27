@@ -160,7 +160,7 @@ Returns a reference to every project in the solution.
 ## Install-Package
 Installs a package.
 
-   Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>]
 
 Installs a package and its dependencies into the project.
 
