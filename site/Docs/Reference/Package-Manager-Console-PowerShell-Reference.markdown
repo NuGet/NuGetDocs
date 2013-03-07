@@ -29,7 +29,7 @@ Adds binding redirects to the specified project, MyProjectName.
 ## Get-Package
 Gets the set of packages available from the package source. Use the -ListAvailable flag to list packages available from the package source.
 
-    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Recent] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions]
+    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions]
 
 Gets the set of packages available from the package source. Defaults to only showing the list of installed packages. 
 Use the -ListAvailable flag to list packages available from the package source.
@@ -44,11 +44,6 @@ PARAMETERS
         
     <strong>-ListAvailable</strong>
         Gets packages available from the online package source.
-        
-        Required: false
-        
-    <strong>-Recent</strong>
-        Gets the list of recently installed packages.
         
         Required: false
         
@@ -217,51 +212,6 @@ Installs version 1.0.0 of Glimpse into the project named MvcApplication1
     
 Installs the package, Ninject.Mvc3, but not its dependencies. It looks in the directory, 
 c:\temp\packages to find the package.
-
-## New-Package
-Creates a package.
-
-    New-Package [[-ProjectName] <string>] [-SpecFileName] <string> [-TargetFile] <string> [-NoClobber]
-
-Creates a new package when supplied with a Nuspec package specification file.
-
-<pre>    
-PARAMETERS
-    <strong>-ProjectName</strong> <string>
-        Specifies the project containing the NuSpec file to use when creating the package. If omitted, the current 
-        project selected in the console is used.
-        
-        Required: false
-        
-    <strong>-SpecFileName</strong> <string>
-        Specifies the NuSpec file used to create the package. If omitted, the NuSpec file within the current project 
-        is used if there is only one such file.
-        
-        Required: true
-        
-    <strong>-TargetFile</strong> <string>
-        Specifes the full name of the output NuPkg file.
-        
-        Required: true
-        
-    <strong>-NoClobber</strong>
-        If specified, the target file is not overwritten.
-        
-        Required: false
-</pre>
-### Examples
-
-    
-    PM> New-Package
-    
-    
-Creates a new package based on the current project using a Nuspec file within the project if only one such file is found.
-    
-    
-    PM> New-Package -Project MyProjectName -SpecFileName MyPackage.nuspec
-    
-    
-Creates a new package from the specified project, MyProjectName using the specified Nuspec file, MyPackage.nuspec.
 
 ## Open-PackagePage
 Open the browser pointing to ProjectUrl, LicenseUrl or ReportAbuseUrl of the specified package.
