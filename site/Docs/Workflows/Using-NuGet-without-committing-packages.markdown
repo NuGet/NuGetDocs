@@ -24,8 +24,8 @@ under **Options -> Package Manager -> General**.
 
 ![Allow NuGet to download missing packages setting](images/allow-package-restore-configuration.png)
 
-To enable package restore for build servers without Visual Studio installed, you can also set the
-environment variable `EnableNuGetPackageRestore` to "true".
+**To enable package restore for build servers without Visual Studio installed, you can also set the
+environment variable `EnableNuGetPackageRestore` to "true".**
 
 ## Project Setup
 Let’s assume that you have a solution that is either already using NuGet, or planning to use it, and that
@@ -38,7 +38,7 @@ Right click on the _Solution_ node in Solution Explorer and select _Enable NuGet
 **That's it!** You're all set.
 
 ## Details
-So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: [NuGet.Bootstrapper](http://nuget.org/packages/nuget.bootstrapper) for NuGet.exe and [NuGet.Build](http://nuget.org/packages/nuget.build) for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task.
+So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: [NuGet.Commandline](http://nuget.org/packages/nuget.commandline) for NuGet.exe and [NuGet.Build](http://nuget.org/packages/nuget.build) for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task. 
 
 ![New Solution folder with package restore files](images/package-restore-solution.png)
 
