@@ -91,7 +91,11 @@ Therefore, the following is an example from lowest to highest versions of a pack
 * `1.0.1`
 
 SemVer also introduces the concept of a build number for those creating daily or continous builds. This is not 
-supported in the public NuGet.org gallery.
+supported in the public NuGet.org gallery, so while this is allowed:
+* `1.0.1-build23`
+including the SemVer-compatible build number with dot notation is not allowed:
+* `1.0.1-build.23`
+
 
 ### Creating Prerelease Packages
 As mentioned before, to create a prerelease package, simply give it a version that has a prerelease string. 
@@ -110,12 +114,13 @@ NuGet will pick up this value instead of the one specified in the `AssemblyVersi
 attribute does not support SemVer which is why a different attribute was needed).
 
 ### Installing Prerelease Packages
-By default, NuGet does not display prerelease packages in the dialog or in the console. As of NuGet 1.6, 
-there is no way to install prerelease packages using the _Manage NuGet Packages_ dialog. This may change 
-in the future.
+By default, NuGet does not display prerelease packages in the dialog or in the console. The 
+_Manage NuGet Packages_ dialog supports the display and installation of prerelease versions
+via a drop down menu above the package list.  Selecting "Include Prelease" rather than the
+default "Stable Only" will allow you to install these pacakges.
 
-To allow installation of a prerelease package, use the _Package Manager Console_ and specify the 
-`-IncludePrerelease` flag.
+You can also use the _Package Manager Console_ and specify the 
+`-IncludePrerelease` flag as follows.
 
     Install-Package CoolStuff -IncludePrerelease
 
