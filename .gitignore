@@ -1,4 +1,6 @@
 # Build out put
+site/Bin
+site/Obj
 bin
 obj
 
