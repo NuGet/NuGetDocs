@@ -1,26 +1,29 @@
-# Nuget Package Search Syntax
+# NuGet Package Search Syntax
 
-The Nuget package search engine works the same whether accessed via the nuget.org website, or via package management tools (and Visual Studio), and understands several different types of queries.
+NuGet package search works the same whether you use the nuget.org website, or the Visual Studio Extensions.
 
 ## Search by Keywords
 
     modern UI javascript
 
-Enter your keywords, and search finds documents which contain as many of the three keywords as possible. Keyword search is usually case insensitive.
+Search will do its best effort to find relevant documents containing all 3 keywords, and return matching documents.
 
-## Search using Phrases
+## Search using Phrases and keywords
 
     "modern UI" package
 
-Entering a phrase between quotation marks ("") boosts documents that have exact phrase matches. This search can finds documents which contain the exact phrase "modern UI", including any variation on capitalization e.g. "Modern ui" and those documents should also contain the word "package".
+Entering a phrase between quotation marks ("") change the search to look for the particular phrase instead of separate keywords. 
+Matching documents should usually contain the exact phrase "modern UI", including variations on capitalization e.g. 
+"Modern ui", and also usually contain the word 'package'.
 
-## Searching within fields
+## Filtering on fields
 
-You can search based on a package ID (or 'Id' or 'id'), a package title, or certain other fields by prefixing search terms with the field name.
+You can search for a specific package ID (or 'Id' or 'id'), a package Title, or certain other fields by prefixing search terms with the field name.
 
-The searchable fields are 'Title', 'Id', 'Author', 'Description' and 'Tags'.
+Currently the searchable fields are 'Title', 'Id', 'Description', 'Tags', and 'Author'.
 
-[What's the difference between ID and Title? These are often but not always the same. The most typical deviation is that package titles contain spaces. Package IDs are not allowed to contain spaces.)]
+[What's the difference between ID and Title? ID is the name you use in package management console. Title is what is shown at the top of the package page in search results.
+Note that Titles often contain spaces but Package IDs are not allowed to contain spaces, and often contain dots.)]
 
 ### Examples:
 
@@ -37,8 +40,11 @@ You can also search for multiple keywords in a single field, here we wish to sea
 
     description:Metro description:modern
 
+And you can perform phrase searches
+
 ### More Examples:
 
     Title:MVC
-    author:Haack
-    tags:MVC4 description:validation
+    tags:MVC4
+	description:validation
+	description:"javascript library"
