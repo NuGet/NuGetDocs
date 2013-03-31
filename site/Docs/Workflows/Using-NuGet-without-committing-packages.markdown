@@ -4,7 +4,7 @@ Using distributed version control systems such as Mercurial or Git provide great
 caveat that commiting binaries into your source tree can grow the repository over time.  NuGet offers 
 a workflow that goes a long way to solving this problem and is easy to set up.
 
-The original NuGet workflow was been to commit the Packages folder into source control. The 
+The original NuGet workflow was to commit the Packages folder into source control. The 
 reasoning is that it matches what developers typically do when they don't have NuGet: they create a 
 `Lib` or `ExternalDependencies` folder, dump binaries into there and commit them to source control 
 to allow others to build.  If you choose, this method is still fully workable and you can continue
