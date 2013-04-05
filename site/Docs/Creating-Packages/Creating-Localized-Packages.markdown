@@ -4,8 +4,8 @@
 
 There are two options for providing a localized experience for your library package:
 
-1. Include your localized satellite assemblies in the same NuGet package as your runtime assemblies
-1. Create separate localized satellite packages that follow a very strict convention
+1. Include your localized satellite assemblies in the same NuGet package as your runtime assemblies.  This has always been supported.
+1. Create separate localized satellite packages that follow a very strict convention.  This approach has been supported since [NuGet 1.8](/docs/release-notes/nuget-1.8#Satellite_Packages_for_Localized_Resources).
 
 Different libraries have different localization requirements, so it's important to consider the differences between these two approaches.
 
@@ -202,7 +202,7 @@ If a developer installs this full set of packages, the same fully localized expe
 
 The satellite package approach offers the following benefits:
 
-1. **Package Size**.  The runtime package is kept trim, and package consumers can opt into pulling down the additional localized bits.
+1. **Package Size**.  The runtime package is kept trim, and package consumers can opt into pulling down the additional localized bits, language by language.
 1. **Package Metadata**.  Because there are now packages that have localized metadata, some users might be able to find your package more easily if you include a fully localized title, summary, and description for your package.
 1. **Deferred Localization**.  You have the opportunity to ship the satellite packages separately from your runtime, deferring localization until after you publish the runtime package.
 
@@ -219,7 +219,7 @@ Satellite packages work by way of a strict set of conventions.  Aside from these
 1. The Id of the package must match that of the runtime package, followed by a dot and then the target language as a prefix.  For example, "SuperAwesomeness.ja" is the Japanese satellite package for the "SuperAwesomeness" package.
 1. The Language element in the nuspec must be set to the target language.  Unless specific subcultures are being provided, the higher level culture is recommended.  For example, use "ja" instead of "ja-JP" for Japanese packages.  The language element's value must exactly match the language suffix on the package Id.
 1. The satellite package must have a dependency on the runtime package.  For example, the "SuperAwesomeness.ja" package must have a dependency on the "SuperAwesomeness" package.
-1. The dependency on the runtime package must be for an exact version and not a range.  This is specified using the square brackets in the dependency version.  For instance, the "SuperAwesomeness.ja" package's dependency on "SuperAwesomeness" uses the version range of \[1.0.0].  Note that the version of the satellite package doesn't need to match the version of the runtime package.  However, a satellite package can only target a single version of the runtime package.  Therefore, it's possible to have SuperAwesomeness.ja version 1.0.1 target (and therefore depend on) SuperAwesomeness version 1.0.0.
+1. The dependency on the runtime package must be for an exact version and not a range.  This is specified using the square brackets in the [dependency version](/docs/reference/versioning).  For instance, the "SuperAwesomeness.ja" package's dependency on "SuperAwesomeness" uses the version range of \[1.0.0\].  Note that the version of the satellite package doesn't need to match the version of the runtime package.  However, a satellite package can only target a single version of the runtime package.  Therefore, it's possible to have SuperAwesomeness.ja version 1.0.1 target (and therefore depend on) SuperAwesomeness version 1.0.0.
 1. Only culture-specific files within the lib folder will be recognized.  Referring to the SuperAwesomeness.ja.1.0.0.nupkg file above, the package illustrates having files under the \lib\ja\ folder.  These files will be recognized because they A) are under the \lib folder, and B) there's a subfolder named "ja" which matches the target language for the package.
 
 By following these conventions, NuGet recognizes that the package is a satellite package at the time of installation.  When that is identified, the localized files in the lib folder are copied into the runtime package's lib folder at the time of package installation.  When the satellite package is uninstalled, the localized files are removed from the runtime package's lib folder.  Once the localized files are copied into the runtime package's lib folder, Visual Studio and MSBuild do the rest of the work.
