@@ -22,7 +22,7 @@ Usually the simplest approach for localization is to include all of the localize
 * Description: Super Awesomeness provides lots of super awesome features that you can use in your application
 * Language: en-us
 
-
+    <pre>
     lib
     └───net40
         │   SuperAwesomeness.dll
@@ -51,6 +51,7 @@ Usually the simplest approach for localization is to include all of the localize
         └───zh-Hant
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 This package contains a single class library (SuperAwesomeness.dll) that contains the English strings as part of the runtime assembly.  The package also contains localized satellite assemblies and XML IntelliSense files for German, Italian, Japanese, Russian, Chinese (Simplified) and Chinese (Traditional).
 
