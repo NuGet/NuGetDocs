@@ -13,7 +13,7 @@ Different libraries have different localization requirements, so it's important 
 
 Usually the simplest approach for localization is to include all of the localized satellite assemblies and XML IntelliSense in the same package as your runtime.  Here's an example package layout that accomplishes this.
 
-**__SuperAwesomeness.1.0.0.nupkg__**
+**_SuperAwesomeness.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness
 * Version: 1.0.0
@@ -22,36 +22,35 @@ Usually the simplest approach for localization is to include all of the localize
 * Description: Super Awesomeness provides lots of super awesome features that you can use in your application
 * Language: en-us
 
-```
-lib
-└───net40
-    │   SuperAwesomeness.dll
-    │   SuperAwesomeness.xml
-    │
-    ├───de
-    │       SuperAwesomeness.resources.dll
-    │       SuperAwesomeness.xml
-    │
-    ├───it
-    │       SuperAwesomeness.resources.dll
-    │       SuperAwesomeness.xml
-    │
-    ├───ja
-    │       SuperAwesomeness.resources.dll
-    │       SuperAwesomeness.xml
-    │
-    ├───ru
-    │       SuperAwesomeness.resources.dll
-    │       SuperAwesomeness.xml
-    │
-    ├───zh-Hans
-    │       SuperAwesomeness.resources.dll
-    │       SuperAwesomeness.xml
-    │
-    └───zh-Hant
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
+
+    lib
+    └───net40
+        │   SuperAwesomeness.dll
+        │   SuperAwesomeness.xml
+        │
+        ├───de
+        │       SuperAwesomeness.resources.dll
+        │       SuperAwesomeness.xml
+        │
+        ├───it
+        │       SuperAwesomeness.resources.dll
+        │       SuperAwesomeness.xml
+        │
+        ├───ja
+        │       SuperAwesomeness.resources.dll
+        │       SuperAwesomeness.xml
+        │
+        ├───ru
+        │       SuperAwesomeness.resources.dll
+        │       SuperAwesomeness.xml
+        │
+        ├───zh-Hans
+        │       SuperAwesomeness.resources.dll
+        │       SuperAwesomeness.xml
+        │
+        └───zh-Hant
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
 
 This package contains a single class library (SuperAwesomeness.dll) that contains the English strings as part of the runtime assembly.  The package also contains localized satellite assemblies and XML IntelliSense files for German, Italian, Japanese, Russian, Chinese (Simplified) and Chinese (Traditional).
 
@@ -73,7 +72,7 @@ As of version 5.4.0 The [Microsoft.Data.OData package](http://nuget.org/packages
 
 The satellite package approach allows you to separate your localized resources from your runtime assemblies, much like the .NET Framework supports satellite assemblies.  Here is a sample package structure that includes all of the packages involved.
 
-**__SuperAwesomeness.1.0.0.nupkg__**
+**_SuperAwesomeness.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness
 * Version: 1.0.0
@@ -82,14 +81,12 @@ The satellite package approach allows you to separate your localized resources f
 * Description: Super Awesomeness provides lots of super awesome features that you can use in your application
 * Language: en-us
 
-```
-lib
-└───net40
-        SuperAwesomeness.dll
-        SuperAwesomeness.xml
-```
+    lib
+    └───net40
+            SuperAwesomeness.dll
+            SuperAwesomeness.xml
 
-**__SuperAwesomeness.de.1.0.0.nupkg__**
+**_SuperAwesomeness.de.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness.de
 * Version: 1.0.0
@@ -99,15 +96,13 @@ lib
 * Language: de
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-```
-lib
-└───net40
-    └───de
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
+    lib
+    └───net40
+        └───de
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
 
-**__SuperAwesomeness.it.1.0.0.nupkg__**
+**_SuperAwesomeness.it.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness.it
 * Version: 1.0.0
@@ -117,15 +112,13 @@ lib
 * Language: it
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-```
-lib
-└───net40
-    └───it
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
+    lib
+    └───net40
+        └───it
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
 
-**__SuperAwesomeness.ja.1.0.0.nupkg__**
+**_SuperAwesomeness.ja.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness.ja
 * Version: 1.0.0
@@ -135,15 +128,13 @@ lib
 * Language: ja
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-```
-lib
-└───net40
-    └───ja
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
+    lib
+    └───net40
+        └───ja
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
 
-**__SuperAwesomeness.ru.1.0.0.nupkg__**
+**_SuperAwesomeness.ru.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness.ru
 * Version: 1.0.0
@@ -153,15 +144,13 @@ lib
 * Language: ru
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-```
-lib
-└───net40
-    └───ru
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
+    lib
+    └───net40
+        └───ru
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
 
-**__SuperAwesomeness.zh-Hans.1.0.0.nupkg__**
+**_SuperAwesomeness.zh-Hans.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness.zh-Hans
 * Version: 1.0.0
@@ -171,14 +160,13 @@ lib
 * Language: zh-Hans
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-```
-lib
-└───net40
-    └───zh-Hans
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
-**__SuperAwesomeness.zh-Hant.1.0.0.nupkg__**
+    lib
+    └───net40
+        └───zh-Hans
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
+
+**_SuperAwesomeness.zh-Hant.1.0.0.nupkg_**
 
 * Id: SuperAwesomeness.zh-Hant
 * Version: 1.0.0
@@ -188,13 +176,12 @@ lib
 * Language: zh-Hant
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-```
-lib
-└───net40
-    └───zh-Hant
-            SuperAwesomeness.resources.dll
-            SuperAwesomeness.xml
-```
+
+    lib
+    └───net40
+        └───zh-Hant
+                SuperAwesomeness.resources.dll
+                SuperAwesomeness.xml
 
 If a developer installs this full set of packages, the same fully localized experience will be accomplished as the Single Package Approach.  The satellite assemblies and localized IntelliSense will be utilized.
 
