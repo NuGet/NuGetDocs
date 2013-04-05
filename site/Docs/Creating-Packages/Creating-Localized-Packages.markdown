@@ -9,7 +9,7 @@ There are two options for providing a localized experience for your library pack
 
 Different libraries have different localization requirements, so it's important to consider the differences between these two approaches.
 
-### Single Package Approach
+## Single Package Approach
 
 Usually the simplest approach for localization is to include all of the localized satellite assemblies and XML IntelliSense in the same package as your runtime.  Here's an example package layout that accomplishes this.
 
@@ -57,7 +57,7 @@ This package contains a single class library (SuperAwesomeness.dll) that contain
 
 Installing this package into your project will yield a fully localized experience in any of the languages it supports.
 
-#### Disadvantages to the Single Package Approach
+### Disadvantages to the Single Package Approach
 
 There are a few disadvantages to bundling your localized files into your runtime package.
 
@@ -65,11 +65,11 @@ There are a few disadvantages to bundling your localized files into your runtime
 1. **Package Metadata**.  This is typically the more concerning issue.  A NuGet package can only contain a single nuspec file that can only contain a single language's metadata.  There is no support for localized package metadata within a single NuGet package.
 1. **Simultaneous Shipping**.  Bundling your localized files into your runtime package requires that you simultaneously ship all assets in the single package.  There's no option to ship the default language first and later ship the localized experience.  Any update to your localized experience requires a new version of the runtime package even if the runtime assemblies didn't change.
 
-#### Example of the Single Package Approach
+### Example of the Single Package Approach
 
 As of version 5.4.0 The [Microsoft.Data.OData package](http://nuget.org/packages/Microsoft.Data.OData/5.4.0) utilizes the single package approach.
 
-### Satellite Package Approach
+## Satellite Package Approach
 
 Many product teams at Microsoft have opted for the satellite package approach where the localized experience is provided from a separate package.  Here is a sample package structure that includes all of the packages involved.
 
@@ -198,6 +198,8 @@ lib
 
 If a developer installs this full set of packages, the same fully localized experience will be accomplished as the Single Package Approach.  The satellite assemblies and localized IntelliSense will be utilized.
 
+### Benefits and Disadvantages to the Single Package Approach
+
 The satellite package approach offers the following benefits:
 
 1. **Package Size**.  The runtime package is kept trim, and package consumers can opt into pulling down the additional localized bits.
@@ -222,7 +224,7 @@ Satellite packages work by way of a strict set of conventions.  Aside from these
 
 By following these conventions, NuGet recognizes that the package is a satellite package at the time of installation.  When that is identified, the localized files in the lib folder are copied into the runtime package's lib folder at the time of package installation.  When the satellite package is uninstalled, the localized files are removed from the runtime package's lib folder.  Once the localized files are copied into the runtime package's lib folder, Visual Studio and MSBuild do the rest of the work.
 
-#### Example Satellite Packages
+### Example Satellite Packages
 
 ASP.NET MVC package is one example that utilizes the satellite package approach.  Here are some of the related packages:
 
