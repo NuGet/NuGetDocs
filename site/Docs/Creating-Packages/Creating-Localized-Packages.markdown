@@ -82,10 +82,12 @@ The satellite package approach allows you to separate your localized resources f
 * Description: Super Awesomeness provides lots of super awesome features that you can use in your application
 * Language: en-us
 
+    <pre>
     lib
     └───net40
             SuperAwesomeness.dll
             SuperAwesomeness.xml
+    </pre>
 
 **_SuperAwesomeness.de.1.0.0.nupkg_**
 
@@ -97,11 +99,13 @@ The satellite package approach allows you to separate your localized resources f
 * Language: de
 * Dependency: SuperAwesomeness \[1.0.0\]
 
+    <pre>
     lib
     └───net40
         └───de
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 **_SuperAwesomeness.it.1.0.0.nupkg_**
 
@@ -113,11 +117,13 @@ The satellite package approach allows you to separate your localized resources f
 * Language: it
 * Dependency: SuperAwesomeness \[1.0.0\]
 
+    <pre>
     lib
     └───net40
         └───it
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 **_SuperAwesomeness.ja.1.0.0.nupkg_**
 
@@ -129,11 +135,13 @@ The satellite package approach allows you to separate your localized resources f
 * Language: ja
 * Dependency: SuperAwesomeness \[1.0.0\]
 
+    <pre>
     lib
     └───net40
         └───ja
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 **_SuperAwesomeness.ru.1.0.0.nupkg_**
 
@@ -145,11 +153,13 @@ The satellite package approach allows you to separate your localized resources f
 * Language: ru
 * Dependency: SuperAwesomeness \[1.0.0\]
 
+    <pre>
     lib
     └───net40
         └───ru
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 **_SuperAwesomeness.zh-Hans.1.0.0.nupkg_**
 
@@ -161,11 +171,13 @@ The satellite package approach allows you to separate your localized resources f
 * Language: zh-Hans
 * Dependency: SuperAwesomeness \[1.0.0\]
 
+    <pre>
     lib
     └───net40
         └───zh-Hans
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 **_SuperAwesomeness.zh-Hant.1.0.0.nupkg_**
 
@@ -177,12 +189,13 @@ The satellite package approach allows you to separate your localized resources f
 * Language: zh-Hant
 * Dependency: SuperAwesomeness \[1.0.0\]
 
-
+    <pre>
     lib
     └───net40
         └───zh-Hant
                 SuperAwesomeness.resources.dll
                 SuperAwesomeness.xml
+    </pre>
 
 If a developer installs this full set of packages, the same fully localized experience will be accomplished as the Single Package Approach.  The satellite assemblies and localized IntelliSense will be utilized.
 
