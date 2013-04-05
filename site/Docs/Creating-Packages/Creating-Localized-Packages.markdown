@@ -71,7 +71,7 @@ As of version 5.4.0 The [Microsoft.Data.OData package](http://nuget.org/packages
 
 ## Satellite Package Approach
 
-Many product teams at Microsoft have opted for the satellite package approach where the localized experience is provided from a separate package.  Here is a sample package structure that includes all of the packages involved.
+The satellite package approach allows you to separate your localized resources from your runtime assemblies, much like the .NET Framework supports satellite assemblies.  Here is a sample package structure that includes all of the packages involved.
 
 **__SuperAwesomeness.1.0.0.nupkg__**
 
