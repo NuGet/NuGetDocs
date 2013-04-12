@@ -74,13 +74,17 @@
         <div class="pagesource">
         @if (Page.Source != null)
         {
+            <text>
             View or edit this page's source on GitHub:     
             <a href="https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)</a>
+            </text>
         }
         else
         {
+            <text>
             View or edit this site's source on GitHub:
             <a href="https://github.com/NuGet/NuGetDocs" target="edit">https://github.com/NuGet/NuGetDocs</a>
+            </text>
         }
         </div>
     </footer>
