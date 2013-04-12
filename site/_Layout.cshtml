@@ -53,26 +53,36 @@
                 <p>Read the Frequently Asked Questions about NuGet and see if your question made the list.</p>
             </li>
         </ul>
+        <div class="copyright">
+            <p>
+                <a href="http://outercurve.org"><img src="/images/outercurve.png" alt="Outercurve Foundation" /></a>
+            </p>
+            <p>
+                &copy; 2011-@DateTime.UtcNow.Year Outercurve Foundation
+            </p>
+        </div>
         <div class="license">
             <p>
                 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" title="CC BY 3.0">
-                    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" />
-                </a>
+                <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" />
+            </a>
             </p>
             <p>
-                <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">NuGet Documentation</span> by 
-                <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.outercurve.org/" property="cc:attributionName" rel="cc:attributionURL">Outercurve Foundation</a> 
-                is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> 
-                except where otherwise noted.
+                Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> except where otherwise noted.
             </p>
         </div>
+        <div class="pagesource">
         @if (Page.Source != null)
         {
-            <div class="pagesource">
-                View or edit this page's source on GitHub:     
-                <a href="https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)</a>
-            </div>
+            View or edit this page's source on GitHub:     
+            <a href="https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)</a>
         }
+        else
+        {
+            View or edit this site's source on GitHub:
+            <a href="https://github.com/NuGet/NuGetDocs" target="edit">https://github.com/NuGet/NuGetDocs</a>
+        }
+        </div>
     </footer>
 </div>
     <script type="text/javascript">
