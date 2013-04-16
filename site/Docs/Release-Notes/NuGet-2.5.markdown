@@ -56,19 +56,17 @@ When NuGet installs a package with \build files, it will add an MSBuild &lt;Impo
 
 Before 2.5, in .nuspec file, user can only specify the reference files, to be added for all framework. Now with this new feature in 2.5, user can author the &lt;reference/&gt; element for each of the supported platform, for example:
 
-    <pre>
-    &lt;references&gt; 
-        &lt;group targetFramework="net45"&gt; 
-            &lt;reference file="a.dll" /&gt;
-        &lt;/group&gt; 
-        &lt;group targetFramework="netcore45"&gt; 
-            &lt;reference file="b.dll" /&gt; 
-        &lt;/group&gt;
-        &lt;group&gt;
-            &lt;reference file="c.dll" /&gt;
-        &lt;/group&gt;
-    &lt;/references&gt;
-    </pre>
+    <references> 
+        <group targetFramework="net45"> 
+            <reference file="a.dll" />
+        </group> 
+        <group targetFramework="netcore45"> 
+            <reference file="b.dll" /> 
+        </group>
+        <group>
+            <reference file="c.dll" />
+        </group>
+    </references>
 
 Here is the flow for how NuGet adds references to projects based on the .nuspec file:
 
