@@ -18,7 +18,7 @@ If you encounter any problems with NuGet 2.5, especially any regressions, please
 
 We would like to thank the following external contributors for their significant contributions to NuGet 2.5:
 
-1. [Daniel Plaisted (dplaisted)](https://www.codeplex.com/site/users/view/dsplaisted) - Add MonoAndroid, MonoTouch, and MonoMac to the list of known target framework identifiers. [#2847](https://nuget.codeplex.com/workitem/2847)
+1. [Daniel Plaisted (dsplaisted)](https://www.codeplex.com/site/users/view/dsplaisted) - Add MonoAndroid, MonoTouch, and MonoMac to the list of known target framework identifiers. [#2847](https://nuget.codeplex.com/workitem/2847)
 1. [Andres G. Aragoneses (knocte)](https://www.codeplex.com/site/users/view/knocte) - Fix spelling of NuGet.targets for a case-sensitive OS [#2865](https://nuget.codeplex.com/workitem/2865)
 1. [David Fowler (dfowler)](https://www.codeplex.com/site/users/view/dfowler) - Make the solution build on Mono.
 1. [Andrew Theken (atheken)](https://www.codeplex.com/site/users/view/atheken) - Fix unit tests failing on Mono.
