@@ -21,7 +21,6 @@ We would like to thank the following external contributors for their significant
 1. [Andres G. Aragoneses (knocte)](https://www.codeplex.com/site/users/view/knocte) - Fix spelling of NuGet.targets for a case-sensitive OS [#2865](https://nuget.codeplex.com/workitem/2865)
 1. [David Fowler (dfowler)](https://www.codeplex.com/site/users/view/dfowler) - Make the solution build on Mono.
 1. [Andrew Theken (atheken)](https://www.codeplex.com/site/users/view/atheken) - Fix unit tests failing on Mono.
-1. [Evan Dontje (dontjee)](https://www.codeplex.com/site/users/view/dontjee) - Add "Manage NuGet Packages..." context menu to Windows Azure projects [#1343](https://nuget.codeplex.com/workitem/1343)
 1. [Olivier Dagenais (OliIsCool)](https://www.codeplex.com/site/users/view/OliIsCool) - nuget.exe pack command does not propagate Properties to msbuild [#2920](https://nuget.codeplex.com/workitem/2920)
 1. [Miroslav Bajtos (MiroslavBajtos)](https://www.codeplex.com/site/users/view/MiroslavBajtos) - Modified XML handling code to preserve formatting. [#1511](https://nuget.codeplex.com/workitem/1511)
 1. [Adam Ralph (adamralph)](https://www.codeplex.com/site/users/view/adamralph) - Added recognized words to custom dictionary to allow build.cmd to succeed.
