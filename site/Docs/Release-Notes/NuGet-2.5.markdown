@@ -111,7 +111,7 @@ A new metadata attribute called 'minClientVersion' can now indicate the minimum 
 
 This feature helps package author to specify that a package will work only after a particular version of NuGet. As new nuspec features are added after NuGet 2.5, packages will be able to claim a minimum NuGet version.
 
-    &lt;metadata minClientVersion="2.6"&gt;
+    <metadata minClientVersion="2.6">
 
 If the user has NuGet 2.5 installed and a package is identified as requiring 2.6, visual cues will be given to the user indicating the package will not be installable. The user will then be guided to update their version of NuGet.
 
