@@ -7,8 +7,7 @@ This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date
 With the many new features and behavioral changes, we invite you to update to NuGet 2.5 early and help us test it. We only have a little testing yet to do ourselves and we believe the quality of the release to be very high. If you would like to use 2.5 early, here are the helpful links.
 
 ## Release Candidate
-* [Visual Studio Extension](https://nuget.codeplex.com/downloads/get/649844) (signed build)
-* [NuGet.exe Command-Line](https://nuget.codeplex.com/downloads/get/649845)
+* [Download: Visual Studio Extension (signed build) and NuGet.exe Command-Line](https://nuget.codeplex.com/releases/view/104451)
 * [Open Issues](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Proposed|Active&release=NuGet%202.5)
 * [Fixes Being Tested](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Resolved&release=NuGet%202.5)
 
