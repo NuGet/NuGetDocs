@@ -4,9 +4,9 @@
 
 This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date, this is the largest release we've had for NuGet, with over [160 work items](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5) in the release.
 
-With the many new features and behavioral changes, we invite you to update to NuGet 2.5 early and help us beta test it. We only have a little testing yet to do ourselves and we believe the quality of the release to be very high. If you would like to use 2.5 early, here are the helpful links.
+With the many new features and behavioral changes, we invite you to update to NuGet 2.5 early and help us test it. We only have a little testing yet to do ourselves and we believe the quality of the release to be very high. If you would like to use 2.5 early, here are the helpful links.
 
-* Beta build:
+* Release Candidate:
     * [Visual Studio Extension](https://nuget.codeplex.com/downloads/get/649844) (signed build)
     * [NuGet.exe Command-Line](https://nuget.codeplex.com/downloads/get/649845)
 * [Open Issues](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Proposed|Active&release=NuGet%202.5)
@@ -31,7 +31,7 @@ We would like to thank the following external contributors for their significant
 1. [Maxime Brugidou (brugidou)](https://www.codeplex.com/site/users/view/brugidou) - Handle project dependencies when packing [#936](https://nuget.codeplex.com/workitem/936)
 1. [Xavier Decoster (XavierDecoster)](https://www.codeplex.com/site/users/view/XavierDecoster) - Support Clear Text Password when storing package source credentials in nuget.cofig files [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164)
 
-We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta that were approved and fixed before the final release:
+We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
 
 1. [Tony Wall (CodeChief)](https://www.codeplex.com/site/users/view/CodeChief) - MSTest broken with lastest NuGet 2.4 and 2.5 builds [#3200](https://nuget.codeplex.com/workitem/3200)
 
@@ -52,12 +52,6 @@ Set a default action when a file from a package already exists in the target pro
 A new conventional folder has been created at the top level of the NuGet package.  As a peer to \lib, \content, and \tools, you can now include a '\build' folder in your package.  Under this folder, you can place two files with fixed names, {packageid}.targets or {packageid}.props. These two files can be either directly under \build or under framework-specific folders just like the other folders. The rule for picking the best-matched framework folder is exactly the same as in those.
 
 When NuGet installs a package with \build files, it will add an MSBuild &lt;Import&gt; element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
-
-## Support for Native projects
-
-With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual Studio. Through a partnership with the [CoApp project](http://coapp.org), we anticipate the vast majority of native packages will be produced to utilize the automatic MSBuild imports feature above. For more information about how native NuGet packages can be created, read [the details about a tool to generate these packages](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) on the coapp.org website.
-
-While the \lib folder is not used for adding references to native projects, the target framework name of "native" is introduced for packages to specify native \build files.
 
 ## Specify different references per platform using &lt;References/&gt; element
 
@@ -166,9 +160,14 @@ The following command will now work:
 
 ## NuGet.exe supports explicitly-specified Config files
 
-All NuGet.exe commands now support a new '-ConfigFile' option, which forces a specific config file to be used in place of the default config file at %AppData%\nuget\nuget.config
+NuGet.exe commands that acccess configuration (all except 'spec' and 'pack') now support a new '-ConfigFile' option, which forces a specific config file to be used in place of the default config file at %AppData%\nuget\nuget.config.
 
 Example:
 
     NuGet.exe sources add -name test -source http://test -ConfigFile C:\test\.nuget\nuget.config
 
+## Support for Native projects
+
+With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual Studio. We expect most native packages will utilize the MSBuild imports feature above, using a tool created by the [CoApp project](http://coapp.org). For more information, read [the details about the tool](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) on the coapp.org website.
+
+The target framework name of "native" is introduced for packages to include files in \build, \content, and \tools when the package is installed into a native project.  The \lib folder is not used for native projects.
