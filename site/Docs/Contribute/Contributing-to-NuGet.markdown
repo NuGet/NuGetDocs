@@ -53,9 +53,7 @@ Note that some of these steps are unnecessary for small changes.
     * Fix a defect in the issue list (<a title="Up For Grabs" href="http://nuget.codeplex.com/workitem/list/advanced?keyword=UpForGrabs">do a search for &ldquo;UpForGrabs&rdquo;</a> or just find one with the &ldquo;Proposed&rdquo; status). Try something small first and work your way up to larger issues 
 2. Create a server-side Fork of the NuGet project in CodePlex.  
 Navigate to the <a title="NuGet Source Code Tab" href="http://nuget.codeplex.com/SourceControl/list/changesets">Source Code</a> tab and 
-click **Create Fork** to create the remote clone of the main repository. The MvcContrib project has 
-<a title="How to contribute to MvcContrib" href="http://mvccontrib.codeplex.com/wikipage?title=HowToContribute&amp;referringTitle=T4MVC_contrib">
-a great write-up of this process. 
+click **Create Fork** to create the remote clone of the main repository.
 3. Clone the fork you created in the previous step to your machine. 
 4. Run build.cmd from the command line to ensure packages are restored. 
 5. Make the relevant changes in your local clone (potentially adding a unit test if this is a bug fix).
