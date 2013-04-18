@@ -465,6 +465,33 @@ is a helper package that writes information out to a series of log files. You ca
 
 NuGetPSVariables displays the log files and uninstalls itself.
 
+<a name="#importtargets"></a>
+## Import MSBuild targets and props files into project (Requires NuGet 2.5 or above)
+
+A new conventional folder has been created at the top level of the NuGet package. As a peer to \lib, \content, and \tools, you can now 
+include a '\build' folder in your package. Under this folder, you can place two files with fixed names, **{packageid}.targets** or **{packageid}.props**. 
+These two files can be either directly under \build or under framework-specific folders just like the other folders. The rule for picking the 
+best-matched framework folder is exactly the same as in those.
+
+When NuGet installs a package with \build files, it will add an MSBuild <Import> element in the project file pointing to the .targets and .props files. 
+The .props file is added at the *top*, whereas the .targets file is added to the *bottom*.
+
+    \build
+        \Net40
+            \MyPackage.props
+            \MyPackage.targets
+        \Silverlight40
+            \MyPackage.props
+
+If this package is installed into a .NET 4.0 project, for example, both the .props and .targets files are imported into the target project.
+
+    <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+      <Import Project="..\packages\MyPackage.1.0.0\build\net40\MyPackage.props" Condition="Exists('..\packages\MyPackage.1.0.0\build\net40\MyPackage.props')" />
+      ...
+      ...
+      <Import Project="..\packages\MyPackage.1.0.0\build\net40\MyPackage.targets" Condition="Exists('..\packages\MyPackage.1.0.0\build\net40\MyPackage.targets')" />
+    </Project>
+
 ## Automatically Displaying a Readme.txt File During Package Installation
 
 A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.

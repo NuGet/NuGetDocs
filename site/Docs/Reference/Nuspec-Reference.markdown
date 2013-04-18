@@ -117,6 +117,10 @@ package is built (but without the element that lists files if that element was i
         <td>tags</td>
         <td>A space-delimited list of tags and keywords that describe the package. This information is used to help make sure users can find the package using searches in the <strong>Add Package Reference</strong> dialog box or filtering in the <strong>Package Manager Console</strong> window.</td>
     </tr>
+    <tr>
+        <td>minClientVersion</td>
+        <td>(<em>v2.5 or above</em>) Specifies the minimum version of the NuGet client that can install this package. This requirement is enforced by both the NuGet Visual Studio extension and nuget.exe program.</td>
+    </tr>
 </tbody>
 </table>
 
@@ -168,10 +172,10 @@ For instance:
     </file>
 
 Assuming you are building the project that produces an assembly called Foo in release mode this will produce the following transformed xml:
-	
-	<files>
-		<file src="bin\Release\Foo.pdb" target="lib\net40" />
-	</files>
+    
+    <files>
+        <file src="bin\Release\Foo.pdb" target="lib\net40" />
+    </files>
 
 ## Specifying Dependencies
 

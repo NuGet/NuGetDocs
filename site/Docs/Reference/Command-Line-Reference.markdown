@@ -263,8 +263,8 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
     <tr>
         <td>Source</td>
         <td>A list of packages sources to use for the finding packages to mirror. 
-		If no sources are specified, the ones defined in the default NuGet config file are used. 
-		If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
+        If no sources are specified, the ones defined in the default NuGet config file are used. 
+        If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
     </tr>
     <tr>
         <td>Version</td>
@@ -278,17 +278,17 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
         <td>Prerelease</td>
         <td>When set, "latest" when specifying no version for a package id (as command argument or in packages.config) includes pre-release packages.</td>
     </tr>
-	<tr>
+    <tr>
         <td>Timeout</td>
         <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
     </tr>
-	<tr>
+    <tr>
         <td>NoCache</td>
         <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
-		If you want to ensure only packages from the specified sources are used, set the NoCache option. 
-		If you want instead to maximize chances of finding packages, do not set this option.</td>
+        If you want to ensure only packages from the specified sources are used, set the NoCache option. 
+        If you want instead to maximize chances of finding packages, do not set this option.</td>
     </tr>
-	<tr>
+    <tr>
         <td>NoOp</td>
         <td>Log what would be done without actually doing it. Assumes success for push operations.</td>
     </tr>
@@ -378,6 +378,10 @@ Specify the location of the nuspec or project file to create a package.
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>MinClientVersion</td>
+        <td>Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -391,6 +395,8 @@ Specify the location of the nuspec or project file to create a package.
     nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release
     
     nuget pack foo.nuspec -Version 2.1.0
+
+    nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 
 
 
