@@ -1,5 +1,4 @@
 
-
 ##  Config Command
 
 Gets or sets NuGet config values.
@@ -400,6 +399,7 @@ Specify the location of the nuspec or project file to create a package.
 
 Pushes a package to the server and optionally publishes it.
 NuGet's default configuration is obtained by loading %AppData%\NuGet\NuGet.config, then loading any nuget.config or .nuget\nuget.config starting from root of drive and ending in current directory.
+Starting with NuGet 2.5, if NuGet.exe identifies a UNC/folder source, it will perform the file copy to the source.
 
 ### Usage
     nuget push <package path> [API key] [options]
@@ -447,7 +447,8 @@ Specify the path to the package and your API key to push the package to the serv
     
     nuget push *.nupkg
 
-
+    Starting with NuGet 2.5 you can now push to a UNC/Folder source
+    nuget.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg 
 
 
 ##  Setapikey Command
