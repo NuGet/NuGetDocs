@@ -1,4 +1,3 @@
-
 ##  Config Command
 
 Gets or sets NuGet config values.
@@ -183,7 +182,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>FileConflictAction</td>
-        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project.</td>
+        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
     </tr>
 </table>
 
@@ -627,7 +626,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
     </tr>
     <tr>
         <td>FileConflictAction</td>
-        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project.
+        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
     </tr>
 </table>
 
