@@ -409,7 +409,7 @@ Specify the path to the package and your API key to push the package to the serv
     <tr>
         <td>Source</td>
         <td>Specifies the server URL. If not specified, nuget.org is used unless DefaultPushSource config value is set in the NuGet config file.
-        
+        <br/>
         Starting with NuGet 2.5, if NuGet.exe identifies a UNC/folder source, it will perform the file copy to the source.
         </td>
     </tr>
