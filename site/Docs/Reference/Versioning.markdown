@@ -198,5 +198,7 @@ Starting with NuGet 2.5, if a dependency version is already satisifed, the depen
 
 •  NuGet will no longer update B, because it detects that the existing version 1.0.0 satisfies the dependency version constraint.
 
-For more background on this change, read the detailed [work item] (https://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread] (https://nuget.codeplex.com/discussions/436712).
+For more background on this change, read the detailed [work item](https://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread](https://nuget.codeplex.com/discussions/436712).
+
+
 
