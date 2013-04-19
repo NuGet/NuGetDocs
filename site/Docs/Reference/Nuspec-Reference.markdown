@@ -267,6 +267,45 @@ and should not be copied into the bin folder.
 Likewise, the feature can be used to for unit test frameworks such as XUnit which need its tools 
 assemblies to be located next to the runtime assemblies, but excluded from project references.
 
+## Specifying Explicit Assembly References in version 2.5 and above
+
+Starting from version 2.5, package assembly references can be specified to vary according to the framework profile of the target project. The `<references>` element contains a set of `<group>` elements. Each group contains zero or more `<reference>` element and a target framework attribute. All references inside a group are installed together if the target framework is compatible with the project's framework profile.
+
+    <references> 
+      <group targetFramework="net45"> 
+          <reference file="a.dll" />
+      </group> 
+      <group targetFramework="netcore45"> 
+        <reference file="b.dll" /> 
+      </group>
+      <group>
+        <reference file="c.dll" />
+      </group>
+    </references>
+
+
+The following table lists the attributes of a `<group>` element. 
+
+<table class="reference">
+    <tr><th>Attribute</th><th>Description</th></tr>
+    <tr>
+        <td><code>targetFramework</code></td>
+        <td>**Optional**. The target framework of the group. If not set, the group acts as a fallback group, which behaves exactly as before version 2.5.</td>
+    </tr>
+</table>
+
+The `<reference>` element is the same as described in previous section.
+
+A package can specify package dependencies in either two formats: either with a flat list of `<reference>` as in pre-2.5, or in groups. However, mixing the two formats is disallowed. For example, the following snippet is **invalid** and will be rejected by NuGet.
+    <references>
+      <reference file="xunit.dll" />
+      <reference file="xunit.extensions.dll" />
+      <group>
+        <reference file="c.dll" />
+      </group>
+    </references>
+    
+
 ## Specifying Framework Assembly References (GAC)
 
 In some cases, a package may depend on an assembly that’s in the .NET Framework. Strictly speaking, it’s 
