@@ -193,6 +193,7 @@ PARAMETERS
         stable packages are considered.
 
         Required: false
+        
     <strong>-FileConflictAction</strong>
         Specify the action to take, when asked to overwrite or ignore existing files referenced by the project.             
         Possible values are Overwrite, Ignore and None.
@@ -378,6 +379,7 @@ PARAMETERS
         stable packages are considered.
 
         Required: false
+        
     <strong>-FileConflictAction</strong>
         Specify the action to take, when asked to overwrite or ignore existing files referenced by the project. 
         Possible values are Overwrite, Ignore and None.
