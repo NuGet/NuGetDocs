@@ -86,7 +86,7 @@ Below is the summary of the NuGet config keys and their usage.
 	&lt;solution&gt;
 		&lt;add key="disableSourceControlIntegration" value="true" /&gt;
 	&lt;/solution&gt;
-	</pre></code>
+	</code></pre>
 
 	</td>
 	</tr>
@@ -109,16 +109,41 @@ Below is the summary of the NuGet config keys and their usage.
 	<tr>
 	<td> Credentials for package source
 	</td>
-	<td>
+	<td> "Username",  "Password" and "ClearTextPassword" under section "packageSourceCredentials" 
 	</td>
 	<td>
 	Allows you to set the credentials to access the given package source. <br/>
 	This key has to be set using the <a href="command-line-reference#Sources_Command">NuGet.exe Sources command.</a> <br/>
-	It cannot be added manually to the config file as the password need to be encrypted. <br/> <br/>
+	The default behavior is to store the password encrypted in the config file. <br/> <br/>
 
-		Nuget.exe  Sources  Add  -Name  xxx  -UserName  xxx   -Password xxx  <br/>
-		Nuget.exe  Sources  Update  -Name  xxx  -UserName  xxx   -Password xxx <br/>
+		<i>Nuget.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx   -Password &lt;secret&gt;  </i><br/>
+		<i>Nuget.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx   -Password &lt;secret&gt; </i><br/><br/>
 
+	This results in something similar to this:<br/>
+	<pre><code>
+		&lt;packageSourceCredentials&gt;
+			&lt;feedName&gt;
+				&lt;add key="Username" value="xxx" /&gt;
+				&lt;add key="Password" value="...encrypted..." /&gt;
+			&lt;/feedName&gt;
+		&lt;/packageSourceCredentials&gt;
+	</code></pre>
+
+	If you want to share the credentials with others then you might want to use the -StorePasswordInClearText option to disable password encryption.<br/>
+	Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new <a href="command-line-reference">-Config option</a>, and commit it to your VCS.<br/><br/>
+
+		<i>Nuget.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx  -Password  &lt;secret&gt;  -StorePasswordInClearText -Config &lt;path to nuget.config&gt;</i><br/>
+		<i>Nuget.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx  -Password &lt;secret&gt; <i>-StorePasswordInClearText</i> -Config &lt;path to nuget.config&gt;</i><br/><br/>
+
+	This results in something more readable (or even manually configurable):<br/>
+	<pre><code>
+		&lt;packageSourceCredentials&gt;
+			&lt;feedName&gt;
+				&lt;add key="Username" value="xxx" /&gt;
+				&lt;add key="ClearTextPassword" value="secret" /&gt;
+			&lt;/feedName&gt;
+		&lt;/packageSourceCredentials&gt;
+	</code></pre>
 	</td>
 	</tr>
 	<tr>
