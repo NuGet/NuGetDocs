@@ -297,6 +297,7 @@ The following table lists the attributes of a `<group>` element.
 The `<reference>` element is the same as described in previous section.
 
 A package can specify package dependencies in either two formats: either with a flat list of `<reference>` as in pre-2.5, or in groups. However, mixing the two formats is disallowed. For example, the following snippet is **invalid** and will be rejected by NuGet.
+
     <references>
       <reference file="xunit.dll" />
       <reference file="xunit.extensions.dll" />
