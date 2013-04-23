@@ -155,7 +155,7 @@ Returns a reference to every project in the solution.
 ## Install-Package
 Installs a package.
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-FileConflictAction]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>]
 
 Installs a package and its dependencies into the project.
 
@@ -192,12 +192,6 @@ PARAMETERS
         Indicates whether this command will consider prerelease packages. If omitted, only 
         stable packages are considered.
 
-        Required: false
-        
-    <strong>-FileConflictAction</strong>
-        Specify the action to take, when asked to overwrite or ignore existing files referenced by the project.             
-        Possible values are Overwrite, Ignore and None.
-        
         Required: false
 </pre>
 ### Examples
@@ -337,7 +331,7 @@ Uninstalls the Elmah package even if another package depends on it.
 ## Update-Package
 Updates a package.
 
-    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-FileConflictAction]
+    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe]
 
 Updates a package and its dependencies to a newer version.
     
@@ -378,12 +372,6 @@ PARAMETERS
         Indicates whether to include prereleases when searching for updates. If omitted, only 
         stable packages are considered.
 
-        Required: false
-        
-    <strong>-FileConflictAction</strong>
-        Specify the action to take, when asked to overwrite or ignore existing files referenced by the project. 
-        Possible values are Overwrite, Ignore and None.
-        
         Required: false
 </pre>
 ### Examples
