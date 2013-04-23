@@ -60,20 +60,14 @@ The _NuGet.config_ file contains the following XML:
 	  </solution>
 	</configuration>
 
-The `disableSourceControlIntegration` setting instructs version control systems like TFS to not 
-add the NuGet packages folder to the pending check-ins list.
+The `disableSourceControlIntegration` setting instructs version control systems like TFS to ignore 
+the NuGet packages folder to the pending check-ins list.
 
 With this in place, any time a project is compiled, the build task will look at each project's 
 _packages.config_ file and for each package listed, ensure that the corresponding package exists within 
 the packages folder. For any missing package, the build task will download and unpack the package.
 
 In this scenario, NuGet will grab the exact version when restoring a package. It will not perform any upgrades.
-
-<p class="caution"><b>Be sure to check in your _packages.config_ file.</b> Some version control systems, 
-such as SVN, may not allow you to exclude a path _and_ include a file, such as your _packages.config_ in 
-the subdirectory of "Packages". You'll need to agree with your team to include the folder from the root 
-of your solution, explicitly include the _packages.config_ file but _not_ check in any packages. Without 
-the file you may experience problems loading or building a solution with package restore enabled.</p>
 
 ## Mono
 On mono you can run `xbuild` on the project file or on your solution and it should successfully 
