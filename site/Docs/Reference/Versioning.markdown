@@ -177,3 +177,28 @@ in some helpful commands, and the second one runs one of those commands.
 After doing this, you’ll notice a new .nuget folder under your solution, containing
 nuget.exe plus a couple msbuild target files. Make sure you commit that folder to
 source control! You’ll also find a few changes in your csproj files to trigger the restore functionality when you build.
+
+## Dependencies are no longer unnecessarily updated during package installation
+
+Before NuGet 2.5, when a package was installed that depended on a package already installed in the project, the dependency would be updated as part of the new installation, even if the existing version satisfied the dependency.
+
+Starting with NuGet 2.5, if a dependency version is already satisifed, the dependency will not be updated during other package installations.
+
+`The scenario:`
+
+- The source repository contains package B with version 1.0.0 and 1.0.2. It also contains package A which has a dependency on B (>= 1.0.0).
+
+- Assume that the current project already has package B version 1.0.0 installed. Now you want to install package A. 
+
+`In NuGet 2.2 and older:`
+
+- When installing package A, NuGet will auto-update B to 1.0.2, even though the existing version 1.0.0 already satisfies the dependency version constraint, which is >= 1.0.0. 
+
+`In NuGet 2.5 and newer:`
+
+- NuGet will no longer update B, because it detects that the existing version 1.0.0 satisfies the dependency version constraint.
+
+For more background on this change, read the detailed [work item](https://nuget.codeplex.com/workitem/1681) as well as the related [discussion thread](https://nuget.codeplex.com/discussions/436712).
+
+
+
