@@ -155,7 +155,7 @@ Returns a reference to every project in the solution.
 ## Install-Package
 Installs a package.
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-FileConflictAction <string>]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-FileConflictAction]
 
 Installs a package and its dependencies into the project.
 
@@ -337,7 +337,7 @@ Uninstalls the Elmah package even if another package depends on it.
 ## Update-Package
 Updates a package.
 
-    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-FileConflictAction <string>]
+    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-FileConflictAction]
 
 Updates a package and its dependencies to a newer version.
     
