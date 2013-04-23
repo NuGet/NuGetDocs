@@ -61,7 +61,7 @@ The _NuGet.config_ file contains the following XML:
 	</configuration>
 
 The `disableSourceControlIntegration` setting instructs version control systems like TFS to ignore 
-the NuGet packages folder to the pending check-ins list.
+the NuGet packages folder when determining files to check in.
 
 With this in place, any time a project is compiled, the build task will look at each project's 
 _packages.config_ file and for each package listed, ensure that the corresponding package exists within 
