@@ -468,7 +468,7 @@ NuGetPSVariables displays the log files and uninstalls itself.
 <a name="#importtargets"></a>
 ## Import MSBuild targets and props files into project (Requires NuGet 2.5 or above)
 
-A new conventional folder has been created at the top level of the NuGet package. As a peer to \lib, \content, and \tools, you can now 
+A new convention has been added to the structure of NuGet packages. As a peer to \lib, \content, and \tools, you can now 
 include a '\build' folder in your package. Under this folder, you can place two files with fixed names, **{packageid}.targets** or **{packageid}.props**. 
 These two files can be either directly under \build or under framework-specific folders just like the other folders. The rule for picking the 
 best-matched framework folder is exactly the same as in those.
