@@ -1,17 +1,16 @@
-﻿# Using NuGet without committing packages to source control
+﻿# Using NuGet Without Committing Packages to Source Control
 
-The original NuGet workflow has been to commit the Packages folder into source control. The 
+Using distributed version control systems such as Mercurial or Git provide great benefits, with the
+caveat that commiting binaries into your source tree can grow the repository over time.  NuGet offers 
+a workflow that goes a long way to solving this problem and is easy to set up.
+
+The original NuGet workflow was to commit the Packages folder into source control. The 
 reasoning is that it matches what developers typically do when they don't have NuGet: they create a 
 `Lib` or `ExternalDependencies` folder, dump binaries into there and commit them to source control 
-to allow others to build.
+to allow others to build.  If you choose, this method is still fully workable and you can continue
+to employ it in your environment. 
 
-While this has worked fine for some users, we have also heard from many that committing packages 
-into source control is not what they want to do. When using a DVCS like Mercurial or Git, committing 
-binaries can grow the repository size like crazy over time, making cloning more and more painful. In 
-fact, this has been one of the top requests on NuGet our issue tracker.
-
-The good news is that NuGet now offers a workflow which goes a long way to solving this problem, and is
-really easy to set up. Here is the way to do it:
+However, if you do want to take advantage of binary-free commits, here is how you do it:
 
 ## Enabling Package Restore During Build
 
@@ -38,11 +37,22 @@ Right click on the _Solution_ node in Solution Explorer and select _Enable NuGet
 **That's it!** You're all set.
 
 ## Details
-So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: [NuGet.Commandline](http://nuget.org/packages/nuget.commandline) for NuGet.exe and [NuGet.Build](http://nuget.org/packages/nuget.build) for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task. 
+So what exactly did that do? It added a solution folder called _.nuget_ with the following three files:
+
+ 1. NuGet.exe
+ 1. NuGet.targets 
+ 1. NuGet.config
+
+More specifically, it downloaded and extracted two NuGet packages: [NuGet.Commandline](http://nuget.org/packages/nuget.commandline) 
+for _NuGet.exe_ and [NuGet.Build](http://nuget.org/packages/nuget.build) for _NuGet.targets_. It also changed 
+every project in the solution to import the _NuGet.targets_ MsBuild task, which you can see as a 
+single-line entry near the end of your project file:
+
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 
 ![New Solution folder with package restore files](images/package-restore-solution.png)
 
-Finally, it added a NuGet.config file with the following XML:
+The _NuGet.config_ file contains the following XML:
 
 	<configuration>
 	  <solution>
@@ -50,9 +60,12 @@ Finally, it added a NuGet.config file with the following XML:
 	  </solution>
 	</configuration>
 
-The disableSourceControlIntegration setting instructs version control systems like TFS to not add the NuGet packages folder to the pending check-ins list.
+The `disableSourceControlIntegration` setting instructs version control systems like TFS to ignore 
+the NuGet packages folder when determining files to check in.
 
-With this in place, any time a project is compiled, the build task will look at each project's packages.config file and for each package listed, ensure that the corresponding package exists within the packages folder. For any missing package, the build task will download and unpack the package.
+With this in place, any time a project is compiled, the build task will look at each project's 
+_packages.config_ file and for each package listed, ensure that the corresponding package exists within 
+the packages folder. For any missing package, the build task will download and unpack the package.
 
 In this scenario, NuGet will grab the exact version when restoring a package. It will not perform any upgrades.
 
