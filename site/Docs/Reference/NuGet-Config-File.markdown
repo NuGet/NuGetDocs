@@ -5,7 +5,10 @@ NuGet's configuration file allows for persisting configuration settings and chan
 ## Default Location
 
 The default location for NuGet's configuration file is %APPDATA%\NuGet\NuGet.Config (DOS) or $ENV:APPDATA\NuGet\NuGet.Config (PowerShell).
-APPDATA's value is OS, system drive, and current user dependent. For example: D:\Users\username\AppData\Roaming\NuGet\NuGet.config
+APPDATA's value is OS, system drive, and current user dependent. For example: D:\Users\username\AppData\Roaming\NuGet\NuGet.config.
+
+The default configuration file can be changed through -ConfigFile option. For example, 
+"-ConfigFile c:\my.config" means using file c:\my.config instead of %APPDATA%\NuGet\NuGet.Config as the default configuraion file.
 
 ## Config file reference
 
