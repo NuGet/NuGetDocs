@@ -98,6 +98,20 @@ Once your nuspec is ready, you can run:
 
 Note that you need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 
+If the project references other projects, you can add the referenced projects as part of the package, or as dependencies with -IncludeReferencedProjects option. This is done recursively. For example, suppose you have project A.csproj, which references B.csproj and C.csproj, while B.csproj references D.csproj & E.csproj, 
+C.csproj references F.csproj & G.csproj. Then, when you run 
+
+	nuget pack A.csproj -IncludeReferencedProjects
+	
+the generated package will contain files from projects B, C, D, E, F & G, in addition to files from project A.
+
+If a referenced project has a corresponding nuspec file with the same name, then that referenced project 
+is added as a dependency instead. Using the same exmaple, suppose now there is file C.nuspec in the same directory as project file C.csproj. When you run
+
+	nuget pack A.csproj -IncludeReferencedProjects
+	
+the generated package will contain files from projects B, D, E, in addition to files from project A, and the package has dependency on C.
+
 By default, NuGet will use the default build configuration set in the project file (typically Debug). To pack files from a different 
 build configuration (e.g., Release), you can run:
 
@@ -464,6 +478,33 @@ is a helper package that writes information out to a series of log files. You ca
     Install-Package NuGetPSVariables
 
 NuGetPSVariables displays the log files and uninstalls itself.
+
+<a name="#importtargets"></a>
+## Import MSBuild targets and props files into project (Requires NuGet 2.5 or above)
+
+A new convention has been added to the structure of NuGet packages. As a peer to \lib, \content, and \tools, you can now 
+include a '\build' folder in your package. Under this folder, you can place two files with fixed names, **{packageid}.targets** or **{packageid}.props**. 
+These two files can be either directly under \build or under framework-specific folders just like the other folders. The rule for picking the 
+best-matched framework folder is exactly the same as in those.
+
+When NuGet installs a package with \build files, it will add an MSBuild <Import> element in the project file pointing to the .targets and .props files. 
+The .props file is added at the *top*, whereas the .targets file is added to the *bottom*.
+
+    \build
+        \Net40
+            \MyPackage.props
+            \MyPackage.targets
+        \Silverlight40
+            \MyPackage.props
+
+If this package is installed into a .NET 4.0 project, for example, both the .props and .targets files are imported into the target project.
+
+    <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+      <Import Project="..\packages\MyPackage.1.0.0\build\net40\MyPackage.props" Condition="Exists('..\packages\MyPackage.1.0.0\build\net40\MyPackage.props')" />
+      ...
+      ...
+      <Import Project="..\packages\MyPackage.1.0.0\build\net40\MyPackage.targets" Condition="Exists('..\packages\MyPackage.1.0.0\build\net40\MyPackage.targets')" />
+    </Project>
 
 ## Automatically Displaying a Readme.txt File During Package Installation
 

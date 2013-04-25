@@ -117,6 +117,10 @@ package is built (but without the element that lists files if that element was i
         <td>tags</td>
         <td>A space-delimited list of tags and keywords that describe the package. This information is used to help make sure users can find the package using searches in the <strong>Add Package Reference</strong> dialog box or filtering in the <strong>Package Manager Console</strong> window.</td>
     </tr>
+    <tr>
+        <td>minClientVersion</td>
+        <td>(<em>v2.5 or above</em>) Specifies the minimum version of the NuGet client that can install this package. This requirement is enforced by both the NuGet Visual Studio extension and nuget.exe program.</td>
+    </tr>
 </tbody>
 </table>
 
@@ -168,10 +172,10 @@ For instance:
     </file>
 
 Assuming you are building the project that produces an assembly called Foo in release mode this will produce the following transformed xml:
-	
-	<files>
-		<file src="bin\Release\Foo.pdb" target="lib\net40" />
-	</files>
+    
+    <files>
+        <file src="bin\Release\Foo.pdb" target="lib\net40" />
+    </files>
 
 ## Specifying Dependencies
 
@@ -266,6 +270,46 @@ and should not be copied into the bin folder.
 
 Likewise, the feature can be used to for unit test frameworks such as XUnit which need its tools 
 assemblies to be located next to the runtime assemblies, but excluded from project references.
+
+## Specifying Explicit Assembly References in version 2.5 and above
+
+Starting from version 2.5, package assembly references can be specified to vary according to the framework profile of the target project. The `<references>` element contains a set of `<group>` elements. Each group contains zero or more `<reference>` element and a target framework attribute. All references inside a group are installed together if the target framework is compatible with the project's framework profile.
+
+    <references> 
+      <group targetFramework="net45"> 
+          <reference file="a.dll" />
+      </group> 
+      <group targetFramework="netcore45"> 
+        <reference file="b.dll" /> 
+      </group>
+      <group>
+        <reference file="c.dll" />
+      </group>
+    </references>
+
+
+The following table lists the attributes of a `<group>` element. 
+
+<table class="reference">
+    <tr><th>Attribute</th><th>Description</th></tr>
+    <tr>
+        <td><code>targetFramework</code></td>
+        <td>**Optional**. The target framework of the group. If not set, the group acts as a fallback group, which behaves exactly as before version 2.5.</td>
+    </tr>
+</table>
+
+The `<reference>` element is the same as described in previous section.
+
+A package can specify package references in either two formats: either with a flat list of `<reference>` as in pre-2.5, or in groups. However, mixing the two formats is disallowed. For example, the following snippet is **invalid** and will be rejected by NuGet.
+
+    <references>
+      <reference file="xunit.dll" />
+      <reference file="xunit.extensions.dll" />
+      <group>
+        <reference file="c.dll" />
+      </group>
+    </references>
+    
 
 ## Specifying Framework Assembly References (GAC)
 

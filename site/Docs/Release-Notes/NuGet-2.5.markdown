@@ -1,7 +1,5 @@
 # NuGet 2.5 Release Notes
 
-## THESE ARE THE PRELIMINARY RELEASE NOTES FOR THE 2.5 RELEASE
-
 This release was so big, we felt compelled to skip versions 2.3 and 2.4! To date, this is the largest release we've had for NuGet, with over [160 work items](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.5&status=all) in the release.
 
 With the many new features and behavioral changes, we invite you to update to NuGet 2.5 early and help us test it. We only have a little testing yet to do ourselves and we believe the quality of the release to be very high. If you would like to use 2.5 early, here are the helpful links.
