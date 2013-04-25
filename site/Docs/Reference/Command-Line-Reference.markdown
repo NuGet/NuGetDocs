@@ -568,6 +568,10 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
         <td>Password</td>
         <td>Password to be used when connecting to an authenticated source.</td>
     </tr>
+	<tr>
+        <td>StorePasswordInClearText</td>
+        <td>Do not encrypt the password and store it in clear text. (Default: False)</td>
+    </tr>
     <tr>
         <td>Help</td>
         <td>help</td>
