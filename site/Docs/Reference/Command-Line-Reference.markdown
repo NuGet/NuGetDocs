@@ -23,6 +23,11 @@ Gets or sets NuGet config values.
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -67,6 +72,11 @@ Specify the Id and version of the package to delete from the server.
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -184,6 +194,11 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>FileConflictAction</td>
         <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
     </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -235,6 +250,11 @@ Specify optional search terms.
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -361,6 +381,13 @@ Specify the location of the nuspec or project file to create a package.
         <td>Specify if the command should not run package analysis after building the package.</td>
     </tr>
     <tr>
+        <td>IncludeReferencedProjects</td>
+        <td>Include referenced projects either as dependencies or as part of the package. If a referenced 
+        project has a corresponding nuspec file that has the same name as the project, then that 
+        referenced project is added as a dependency. Otherwise, the referenced project is added as part 
+        of the package.</td>
+    </tr>
+    <tr>
         <td>ExcludeEmptyDirectories</td>
         <td>Prevent inclusion of empty directories when building the package.</td>
     </tr>
@@ -383,6 +410,11 @@ Specify the location of the nuspec or project file to create a package.
     <tr>
         <td>MinClientVersion</td>
         <td>Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -443,6 +475,11 @@ Specify the path to the package and your API key to push the package to the serv
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -488,6 +525,11 @@ Specify the API key to save and an optional URL to the server that provided the 
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -538,6 +580,11 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 
@@ -571,6 +618,11 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -638,6 +690,11 @@ Update packages to latest available versions. This command also updates NuGet.ex
     <tr>
         <td>FileConflictAction</td>
         <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 

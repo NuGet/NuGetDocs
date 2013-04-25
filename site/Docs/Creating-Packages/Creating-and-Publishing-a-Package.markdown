@@ -98,6 +98,20 @@ Once your nuspec is ready, you can run:
 
 Note that you need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 
+If the project references other projects, you can add the referenced projects as part of the package, or as dependencies with -IncludeReferencedProjects option. This is done recursively. For example, suppose you have project A.csproj, which references B.csproj and C.csproj, while B.csproj references D.csproj & E.csproj, 
+C.csproj references F.csproj & G.csproj. Then, when you run 
+
+	nuget pack A.csproj -IncludeReferencedProjects
+	
+the generated package will contain files from projects B, C, D, E, F & G, in addition to files from project A.
+
+If a referenced project has a corresponding nuspec file with the same name, then that referenced project 
+is added as a dependency instead. Using the same exmaple, suppose now there is file C.nuspec in the same directory as project file C.csproj. When you run
+
+	nuget pack A.csproj -IncludeReferencedProjects
+	
+the generated package will contain files from projects B, D, E, in addition to files from project A, and the package has dependency on C.
+
 By default, NuGet will use the default build configuration set in the project file (typically Debug). To pack files from a different 
 build configuration (e.g., Release), you can run:
 
