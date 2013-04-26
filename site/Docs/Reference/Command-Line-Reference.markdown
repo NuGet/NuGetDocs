@@ -1,5 +1,4 @@
 
-
 ##  Config Command
 
 Gets or sets NuGet config values.
@@ -271,7 +270,7 @@ Specify optional search terms.
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
-Note: to enable this command, navigate to [http://ci.nuget.org/](http://ci.nuget.org/) (there's a Guest log in option),
+Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
 copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same folder than NuGet.exe.
 
 ### Usage
