@@ -1,15 +1,8 @@
-﻿# NuGet Overview
+# NuGet Overview
 
-NuGet is a Visual Studio extension that makes it easy to add, remove, and update libraries and tools in 
-Visual Studio projects that use the .NET Framework. If you develop a library or tool that you want to share
-with other developers, you create a NuGet package and store the package in a NuGet repository. If you want to 
-use a library or tool that someone else has developed, you retrieve the package from the repository and install
-it in your Visual Studio project or solution.  
+NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery ([nuget.org](http://nuget.org)) is the central package repository used by all package authors and consumers.
 
-When you install the package, NuGet copies files 
-to your solution and automatically makes whatever changes are needed, such as adding 
-references and changing your app.config or web.config file. If you decide to remove the library, NuGet removes 
-files and reverses whatever changes it made in your project so that no clutter is left.
+When you install a package, NuGet copies files to your solution and automatically makes whatever changes are needed, such as adding references and changing your app.config or web.config file. If you decide to remove the library, NuGet removes files and reverses whatever changes it made in your project so that no clutter is left.
 
 ## NuGet Packages
 
