@@ -97,7 +97,7 @@ nav {
 
 #body {
     font-family: "Segoe UI", "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    padding-bottom: 175px;
+    padding-bottom: 245px;
 }
 
 #layout-footer {
@@ -107,8 +107,8 @@ nav {
     padding-top: 0px;
     padding-bottom: 0px;
     position: relative;
-	margin-top: -161px;
-	height: 180px;
+	margin-top: -241px;
+	height: 240px;
 	clear: both;
 }
 
@@ -147,7 +147,11 @@ nav {
                 font-size: .9em;
             }
     
-    footer#footer div.license, footer#footer div.pagesource {
+    footer#footer div.copyright {
+        margin-bottom: 1.8em;
+    }
+
+    footer#footer div.copyright, footer#footer div.license, footer#footer div.pagesource {
         clear: both;
         font-size: .7em;
     }
