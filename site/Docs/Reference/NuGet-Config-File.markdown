@@ -13,7 +13,7 @@ The default configuration file can be changed through -ConfigFile option. For ex
 ## Config file reference
 
 XML is used to store the configuration, and any text editor can be used to author it.
-Note: NuGet will silently ignore the entire configuration file is it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
+Note: NuGet will silently ignore the entire configuration file if it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
 
 Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page](nuget-config-settings).
 
