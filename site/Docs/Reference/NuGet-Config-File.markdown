@@ -152,3 +152,29 @@ NuGet will load:
 * **When invoked from F:\ or F:\tmp**: 1 and 2. The default repository on NuGet.org is used, package restore is enabled and packages get expanded in F:\tmp.
 * **When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositorypath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
 * **When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
+
+## NuGet config extensibility point
+NuGet config files are read in the following order, assuming  the current directory is c:\a\b\c:
+
+* c:\a\b\c\nuget.config
+* c:\a\b\nuget.config
+* c:\a\nuget.config
+* c:\nuget.config
+* User specific config file, %appdata%\nuget\nuget.config. 
+* Or the user specified file thru option -ConfigFile.
+
+The priority of files in this list is in the descending order, i.e. the highest first.
+
+Starting NuGet 2.6 with config extensibility point, a new location for machine wide config files located under directory %programdata%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
+
+* c:\a\b\c\nuget.config
+* c:\a\b\nuget.config
+* c:\a\nuget.config
+* c:\nuget.config
+* User specific config file, %appdata%\nuget\nuget.config. 
+* Or the user specified file thru option -ConfigFile.
+* %programdata%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config, e.g. %programdata%\NuGet\VisualStudio\{VSVersion}\Pro\a.config
+* %programdata%\NuGet\Config\{IDE}\{Version}\*.config
+* %programdata%\NuGet\Config\{IDE}\*.config
+* %programdata%\NuGet\Config*.config
+
