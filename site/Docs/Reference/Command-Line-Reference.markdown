@@ -1,3 +1,4 @@
+
 ##  Config Command
 
 Gets or sets NuGet config values.
@@ -22,6 +23,11 @@ Gets or sets NuGet config values.
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -67,6 +73,11 @@ Specify the Id and version of the package to delete from the server.
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -180,6 +191,15 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>FileConflictAction</td>
+        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -232,6 +252,11 @@ Specify optional search terms.
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -245,7 +270,7 @@ Specify optional search terms.
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
-Note: to enable this command, navigate to [http://ci.nuget.org/](http://ci.nuget.org/) (there's a Guest log in option),
+Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
 copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same folder than NuGet.exe.
 
 ### Usage
@@ -261,8 +286,8 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
     <tr>
         <td>Source</td>
         <td>A list of packages sources to use for the finding packages to mirror. 
-		If no sources are specified, the ones defined in the default NuGet config file are used. 
-		If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
+        If no sources are specified, the ones defined in the default NuGet config file are used. 
+        If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
     </tr>
     <tr>
         <td>Version</td>
@@ -276,17 +301,17 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
         <td>Prerelease</td>
         <td>When set, "latest" when specifying no version for a package id (as command argument or in packages.config) includes pre-release packages.</td>
     </tr>
-	<tr>
+    <tr>
         <td>Timeout</td>
         <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
     </tr>
-	<tr>
+    <tr>
         <td>NoCache</td>
         <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
-		If you want to ensure only packages from the specified sources are used, set the NoCache option. 
-		If you want instead to maximize chances of finding packages, do not set this option.</td>
+        If you want to ensure only packages from the specified sources are used, set the NoCache option. 
+        If you want instead to maximize chances of finding packages, do not set this option.</td>
     </tr>
-	<tr>
+    <tr>
         <td>NoOp</td>
         <td>Log what would be done without actually doing it. Assumes success for push operations.</td>
     </tr>
@@ -357,6 +382,13 @@ Specify the location of the nuspec or project file to create a package.
         <td>Specify if the command should not run package analysis after building the package.</td>
     </tr>
     <tr>
+        <td>IncludeReferencedProjects</td>
+        <td>Include referenced projects either as dependencies or as part of the package. If a referenced 
+        project has a corresponding nuspec file that has the same name as the project, then that 
+        referenced project is added as a dependency. Otherwise, the referenced project is added as part 
+        of the package.</td>
+    </tr>
+    <tr>
         <td>ExcludeEmptyDirectories</td>
         <td>Prevent inclusion of empty directories when building the package.</td>
     </tr>
@@ -376,6 +408,15 @@ Specify the location of the nuspec or project file to create a package.
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>MinClientVersion</td>
+        <td>Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -389,6 +430,8 @@ Specify the location of the nuspec or project file to create a package.
     nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release
     
     nuget pack foo.nuspec -Version 2.1.0
+
+    nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 
 
 
@@ -432,6 +475,11 @@ Specify the path to the package and your API key to push the package to the serv
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -479,6 +527,11 @@ Specify the API key to save and an optional URL to the server that provided the 
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
 ### Examples
@@ -516,6 +569,10 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
         <td>Password</td>
         <td>Password to be used when connecting to an authenticated source.</td>
     </tr>
+	<tr>
+        <td>StorePasswordInClearText</td>
+        <td>Do not encrypt the password and store it in clear text. (Default: False)</td>
+    </tr>
     <tr>
         <td>Help</td>
         <td>help</td>
@@ -527,6 +584,11 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -561,6 +623,11 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
@@ -624,6 +691,15 @@ Update packages to latest available versions. This command also updates NuGet.ex
     <tr>
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>FileConflictAction</td>
+        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
     </tr>
 </table>
 
