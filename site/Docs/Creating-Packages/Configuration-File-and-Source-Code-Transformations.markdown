@@ -166,7 +166,7 @@ the existing one.
 
 Starting NuGet Package Manager 2.6, XML-Document-Transform (XDT) is supported to transform XML files inside a project. The [XDT syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx) can be placed into *.install.xdt* and *.uninstall.xdt* file under the package's Content folder, which will be applied during package installation and uninstallation time, respectively.
 
-For example, to add MyNuModule to web.config file like what's illustratated above, the following section is in the web.config.install.xdt file:
+For example, to add MyNuModule to web.config file like what's illustrated above, the following section is in the web.config.install.xdt file:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
