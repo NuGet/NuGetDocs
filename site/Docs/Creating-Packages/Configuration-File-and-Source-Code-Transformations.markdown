@@ -164,6 +164,19 @@ with one matching element and other non-matching elements, so it added the new e
 the existing one.
 * A validation element has been added under the `<system.webserver>` element.
 
+Starting NuGet Package Manager 2.6, XML-Document-Transform (XDT) is supported to transform XML files inside a project. The [XDT syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx) can be placed into *.install.xdt* and *.uninstall.xdt* file under the package's Content folder, which will be applied during package installation and uninstallation time, respectively.
+
+For example, to add MyNuModule to web.config file like what's illustratated above, the following section is in the web.config.install.xdt file:
+
+    <?xml version="1.0"?>
+    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+        <system.webServer>
+            <modules>
+                <add name="MyNuModule" type="Sample.MyNuModule" xdt:Transform="Insert" />
+            </modules>
+        </system.webServer>
+    </configuration>
+
 ## Specifying Source Code Transformations
 
 NuGet also supports source-code transformations that work somewhat like Visual Studio project templates. 
@@ -203,3 +216,14 @@ An example of source code that you might need to customize in the target project
 would normally put in the **global.asax** file because it needs to run when the application starts. 
 For more information about how to achieve this effect without updating the **global.asax** file, see 
 [WebActivator](https://bitbucket.org/davidebbo/webactivator/wiki/Home).
+
+Please note that project properties can be used with XDT as well (starting NuGet Package Manager 2.6). The following example illustrates how to add app.config settings to a project, via the app.config.install.xdt file. 
+
+    <?xml version="1.0"?>
+    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+        <appSettings xdt:Transform="Insert">
+         <add key="FullPath" value="$FullPath$" />
+         <add key="FileName" value="$filename$" />
+         <add key="ActiveConfigurationSettings " value="$ActiveConfigurationSettings$" />
+        </appSettings>
+    </configuration>
