@@ -163,9 +163,7 @@ NuGet config files are read in the following order, assuming  the current direct
 * User specific config file, %appdata%\nuget\nuget.config. 
 * Or the user specified file thru option -ConfigFile.
 
-The priority of files in this list is in the descending order, i.e. the highest first.
-
-Starting NuGet 2.6 with config extensibility point, a new location for machine wide config files located under directory %programdata%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
+Starting from NuGet 2.6 with config extensibility point, a new location for machine wide config files located under directory %programdata%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
 
 * c:\a\b\c\nuget.config
 * c:\a\b\nuget.config
@@ -178,3 +176,5 @@ Starting NuGet 2.6 with config extensibility point, a new location for machine w
 * %programdata%\NuGet\Config\{IDE}\*.config
 * %programdata%\NuGet\Config*.config
 
+With NuGet 2.6, the machine wide package sources are now shown in Package Manage Settings dialog. Machine wide package sources are readonly and you can enable or disable them using this dialog.
+![NuGet Config File machine wide settings](images/NuGet-Config-File-machinewidesettings.PNG)
