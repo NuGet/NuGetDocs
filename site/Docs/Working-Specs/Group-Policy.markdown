@@ -1,5 +1,4 @@
 # Group Policy #
-----------
 
 ## Overview ##
 Enable NuGet to be centrally controlled by an administrator using group policy.
