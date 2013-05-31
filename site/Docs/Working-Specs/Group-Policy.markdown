@@ -89,4 +89,4 @@ Following are the list of issues and scenarios that are not planned for 2.7. Bas
 
 ##Discussion
 For comments, suggestions, or any other feedback on this working spec, please use the corresponding CodePlex discussion page here:
-https://nuget.codeplex.com/discussions/445625
+[https://nuget.codeplex.com/discussions/445625](https://nuget.codeplex.com/discussions/445625)
