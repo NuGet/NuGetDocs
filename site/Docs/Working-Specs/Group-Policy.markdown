@@ -86,3 +86,7 @@ Following are the list of issues and scenarios that are not planned for 2.7. Bas
 1. Supporting ‘Disabling of Package Sources’ via AllowedUriSchemes
 1. Supporting an Allowed List of package sources
 1. Supporting Publishable package sources
+
+##Discussion
+For comments, suggestions, or any other feedback on this working spec, please use the corresponding CodePlex discussion page here:
+https://nuget.codeplex.com/discussions/445625
