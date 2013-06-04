@@ -76,24 +76,25 @@ NuGetGroupPolicy.xml will support the following cases
 ###Sample###
 
 	<?xml version="1.0" encoding="UTF-8"?>
-	<!-- DefaultPushSource is similar to the DefaultPushSource that one can set in the NuGet.config file-->
-	<!-- This can be used by administrators to prevent accidental publishing of packages to 
-	     NuGet Official Feed which is a public feed -->
-	<config>
-		<add key="DefaultPushSource" value="http://contoso.com/packages/" />
-	</config>
 	<configuration>
-	<!-- Mandatory Package Sources -->
-	<!-- They cannot be deleted or modified but can be disabled/enabled by user -->
-	<MandatoryPackageSources>
-		<add key="Contoso Package Source" value="http://contoso.com/packages/" />
-	</MandatoryPackageSources>
-
-	<!-- Mandatory Package Sources that are Disabled by Default -->
-	<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
-	<DisabledByDefaultMandatoryPackageSources>
-		<add key="NuGet Official Feed" value="http://nuget.org/api/v2/" />
-	</DisabledByDefaultMandatoryPackageSources>
+		<!-- DefaultPushSource is similar to the DefaultPushSource that one can set in the NuGet.config file-->
+		<!-- This can be used by administrators to prevent accidental publishing of packages to 
+		     NuGet Official Feed which is a public feed -->
+		<config>
+			<add key="DefaultPushSource" value="http://contoso.com/packages/" />
+		</config>
+	
+		<!-- Mandatory Package Sources -->
+		<!-- They cannot be deleted or modified but can be disabled/enabled by user -->
+		<MandatoryPackageSources>
+			<add key="Contoso Package Source" value="http://contoso.com/packages/" />
+		</MandatoryPackageSources>
+	
+		<!-- Mandatory Package Sources that are Disabled by Default -->
+		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
+		<DisabledByDefaultMandatoryPackageSources>
+			<add key="NuGet Official Feed" value="http://nuget.org/api/v2/" />
+		</DisabledByDefaultMandatoryPackageSources>
 	</configuration>
 
 
