@@ -33,7 +33,7 @@ We would like to thank the following external contributors for their significant
 
 We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
 
-1. [Tony Wall](https://www.codeplex.com/site/users/view/CodeChief) - [@CodeChief](https://twitter.com/codechief)
+1. [Tony Wall](https://www.codeplex.com/site/users/view/CodeChief) ([@CodeChief](https://twitter.com/codechief))
     - [#3200](https://nuget.codeplex.com/workitem/3200) - MSTest broken with lastest NuGet 2.4 and 2.5 builds
 
 # Notable features in the release
