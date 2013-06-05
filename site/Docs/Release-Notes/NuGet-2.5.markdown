@@ -16,7 +16,7 @@ We would like to thank the following external contributors for their significant
 1. [Bruno Roggeri (broggeri)](https://www.codeplex.com/site/users/view/broggeri) - Fix unit tests when running in localized VS.
 1. [Gareth Evans (garethevans)](https://www.codeplex.com/site/users/view/garethevans) -  Extracted interface from PackageService
 1. [Maxime Brugidou (brugidou)](https://www.codeplex.com/site/users/view/brugidou) - Handle project dependencies when packing [#936](https://nuget.codeplex.com/workitem/936)
-1. [Xavier Decoster (XavierDecoster)](https://www.codeplex.com/site/users/view/XavierDecoster) - Support Clear Text Password when storing package source credentials in nuget.cofig files [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164)
+1. [Xavier Decoster (XavierDecoster)](https://www.codeplex.com/site/users/view/XavierDecoster) - Support Clear Text Password when storing package source credentials in nuget.config files [#2991](https://nuget.codeplex.com/workitem/2991), [#3164](https://nuget.codeplex.com/workitem/3164)
 
 We also appreciate the following individuals for finding bugs with NuGet 2.5 Beta/RC that were approved and fixed before the final release:
 
