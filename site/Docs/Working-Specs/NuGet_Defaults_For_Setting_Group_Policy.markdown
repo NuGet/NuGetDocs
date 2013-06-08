@@ -88,10 +88,10 @@ NuGetDefaults.config will support the following cases
 		<!-- Default Package Sources -->
 		<!-- They cannot be deleted or modified but can be disabled/enabled by user -->
 		<!-- The following section is similar to 'packageSources' section of NuGet.config schema -->
-		<DefaultPackageSources>
+		<packageSources>
 			<add key="Contoso Package Source" value="http://contoso.com/packages/" />
 			<add key="NuGet Official Feed" value="http://nuget.org/api/v2/" />
-		</DefaultPackageSources>
+		</packageSources>
 
 		<!-- Default Package Sources that are Disabled by Default -->
 		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
