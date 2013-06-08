@@ -1,4 +1,4 @@
-# Group Policy #
+#NuGet Defaults For Setting Group Policy#
 
 ## Overview ##
 Enable NuGet to be centrally controlled by an administrator using group policy.
@@ -53,48 +53,52 @@ Administrators can use the Windows Group Policy to set the aforementioned collec
 	2.	BAD: Though it is a non-goal to extend to non-windows platforms, using Windows Registry will prevent us from supporting non-windows platforms
 	3.	BAD: We already use XML files in NuGet.Config and it has worked well so far. Using Windows Registry for settings similar to what is supported in NuGet.Config is not a good idea
 
-So, a file will be used to maintain the collection of settings or policies to be honored by all the NuGet Clients. This will be the NuGet Group Policy File. NuGet Group Policy File overrides all the other settings at all times
+So, a file will be used to maintain the collection of settings or policies to be honored by all the NuGet Clients. This will be the NuGet Defaults Config File
 
-##NuGet Group Policy File##
+##NuGet Defaults Config File##
 
-NuGet Group Policy File, NuGetGroupPolicy.xml, will be located under %PROGRAMDATA%\NuGet\Config folder. Administrators
+NuGet Defaults Config File, NuGetDefaults.config, will be located under %PROGRAMDATA%\NuGet folder. Administrators
 are expected to set the correct permissions on this file based on the user and/or machine information
 
-NuGet Group Policy File, to begin with, will capture the default or mandatory package source(s) that the enterprise wants their developers to be using. These mandatory package sources cannot be deleted or modified but may be disabled.
-Today, if someone deletes the NuGet Official Package Feed from %appdata%, it is rehydrated as disabled if another package source exists or as enabled if no package source exists. In the same way, now, there will be a set of defaults or mandatory packages instead of just the 1 feed. Now, the NuGet Official Feed may very well be part of the default mandatory package sources list.
+NuGet Defaults Config File, to begin with, will capture the default package source(s) that the enterprise wants their developers to be using. These default package sources cannot be deleted or modified but may be disabled.
+Today, if someone deletes the NuGet Official Package Feed from %appdata%, it is rehydrated as disabled if another package source exists or as enabled if no package source exists. In the same way, now, there will be a set of default package sources instead of just the 1 feed. Note that we still fallback to NuGet Official Feed if there are no Default Package Sources.
+However, if there are DefaultPackageSources and NuGetOfficialFeed is NOT one of them, it WILL NOT BE REHYDRATED
 
-In addition, NuGet Group Policy File will also support DefaultPushSource. This will be the defaultPushSource if one is NOT provided in the command line argument of NuGet.exe.
+In addition, NuGet Defaults Config File will also support DefaultPushSource. This will be the defaultPushSource if one is NOT provided in the command line argument of NuGet.exe.
 Note that, today, by default, PushSource is the NuGet Official Feed. Using the new configuration though, administrators can change the PushSource used by default. This will help prevent accidental publishing of packages onto NuGet Official Feed which is a public feed.
-Unless, one explicitly uses the source parameter  for publishing, the DefaultPushSource set by administrator will get used
+Unless, one explicitly uses the source parameter for publishing, the DefaultPushSource set by administrator will get used
 
-NuGetGroupPolicy.xml will support the following cases
+NuGetDefaults.config will support the following cases
 
 1. Configure a DefaultPushSource that will get used over the NuGet Official Feed when using the commandline tool
-2. Configure the mandatory package sources that the enterprise wants their developers to be using.
-   Some of these mandatory package sources may be disabled by default too
+2. Configure the default package sources that the enterprise wants their developers to be using.
+   Some of these default package sources may be disabled by default too
 
 ###Sample###
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
-		<!-- DefaultPushSource is similar to the DefaultPushSource that one can set in the NuGet.config file-->
+		<!-- DefaultPushSource key is similar to the 'DefaultPushSource' key of NuGet.config schema-->
 		<!-- This can be used by administrators to prevent accidental publishing of packages to 
 		     NuGet Official Feed which is a public feed -->
 		<config>
 			<add key="DefaultPushSource" value="http://contoso.com/packages/" />
 		</config>
 	
-		<!-- Mandatory Package Sources -->
+		<!-- Default Package Sources -->
 		<!-- They cannot be deleted or modified but can be disabled/enabled by user -->
-		<MandatoryPackageSources>
+		<!-- The following section is similar to 'packageSources' section of NuGet.config schema -->
+		<DefaultPackageSources>
 			<add key="Contoso Package Source" value="http://contoso.com/packages/" />
-		</MandatoryPackageSources>
-	
-		<!-- Mandatory Package Sources that are Disabled by Default -->
-		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
-		<DisabledByDefaultMandatoryPackageSources>
 			<add key="NuGet Official Feed" value="http://nuget.org/api/v2/" />
-		</DisabledByDefaultMandatoryPackageSources>
+		</DefaultPackageSources>
+
+		<!-- Default Package Sources that are Disabled by Default -->
+		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
+		<!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema-->
+		<disabledPackageSources>
+			<add key="NuGet Official Feed" value="true" />
+		</disabledPackageSources>
 	</configuration>
 
 
