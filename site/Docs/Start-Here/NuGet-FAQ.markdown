@@ -5,21 +5,17 @@
 
 **What is required to run NuGet?**
 
-NuGet requires Visual Studio 2012 (all SKUs) or Visual Web Developer Express 2010.
+NuGet requires Visual Studio 2010 Pro/Premium/Ultimate (or newer), Visual Web Developer Express 2010, or any Express SKU of Visual Studio 2012 (or newer).
 The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.microsoft.com/kb/968929) be installed. 
 Powershell 2.0 is already installed if you have the following operating system:
 
-* Windows 8
-* Windows Server 2012
-* Windows 7 
-* Windows Server 2008 R2 
+* Windows 7 (or newer)
+* Windows Server 2008 R2 (or newer)
 
 If you have the following operating systems, you must [manually install Powershell 2.0](http://support.microsoft.com/kb/968929/en-us).
 
-* Windows XP SP3 
-* Windows Server 2003 SP2 
-* Windows Vista SP1 
-* Windows Server 2008 
+* Windows XP SP3 /Windows Vista SP1
+* Windows Server 2003 SP2/ Windows Server 2008 
 
 **Do I have to install ASP.NET MVC to get NuGet?**
 
@@ -43,14 +39,6 @@ the PowerShell-based **Package Manager Console** and the **Manage NuGet Packages
 Both are wrappers around the NuGet API, which is written in managed code.
 NuGet.exe is also used to create and publish packages.
 
-**Does NuGet work with Nu Gems, or does NuGet supersede Nu Gems?**
-
-**Sorry, no. But keep reading.** NuGet does not work with Nu Gems directly, because NuGet uses its own package format 
-(based on OPC) and cannot read *.gemspec* files directly. In essence, NuGet can be considered Nu Gems Version 2 and an 
-evolution of package management for Visual Studio and the .NET Framework platform.
-If you liked the Nu behavior of dealing with packages, 
-note that NuGet.exe behaves very similarly for those who want to 
-use NuGet outside of Visual Studio.
 
 
 ## NuGet With Visual Studio
@@ -71,7 +59,7 @@ NuGet supports C#, F#, Visual Basic and C++ projects. The C++ support has been a
 
 **What project templates are supported by NuGet?**
 
-NuGet has full support for a variety of project templates like Windows, Web, Silverlight,SharePoint, Wix and so on.  The support for LightSwitch and Cloud templates is minimal at this point of time.
+NuGet has full support for a variety of project templates like Windows, Web, Silverlight, SharePoint, Wix and so on.  The support for LightSwitch and Cloud templates is minimal at this point of time.
 
 **Can I use NuGet outside of Visual Studio?**
 
