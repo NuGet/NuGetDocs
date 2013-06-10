@@ -106,7 +106,7 @@ C.csproj references F.csproj & G.csproj. Then, when you run
 the generated package will contain files from projects B, C, D, E, F & G, in addition to files from project A.
 
 If a referenced project has a corresponding nuspec file with the same name, then that referenced project 
-is added as a dependency instead. Using the same exmaple, suppose now there is file C.nuspec in the same directory as project file C.csproj. When you run
+is added as a dependency instead. Using the same example, suppose now there is file C.nuspec in the same directory as project file C.csproj. When you run
 
 	nuget pack A.csproj -IncludeReferencedProjects
 	
