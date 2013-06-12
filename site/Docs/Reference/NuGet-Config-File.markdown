@@ -174,10 +174,13 @@ Starting from NuGet 2.6 with config extensibility point, a new location for mach
 * c:\nuget.config
 * User specific config file, %appdata%\nuget\nuget.config. 
 * Or the user specified file thru option -ConfigFile.
-* %programdata%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config, e.g. %programdata%\NuGet\VisualStudio\{VSVersion}\Pro\a.config
+* %programdata%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config, e.g. %programdata%\NuGet\Config\VisualStudio\{VSVersion}\Pro\a.config
 * %programdata%\NuGet\Config\{IDE}\{Version}\*.config
 * %programdata%\NuGet\Config\{IDE}\*.config
-* %programdata%\NuGet\Config*.config
+* %programdata%\NuGet\Config\*.config
+
+In the above path locations {IDE} can be VisualStudio and if you want to specify config for a particular SKU of Visual Studio {SKU} can be  Pro, IntegratedShell, VWDExpress, VPDExpress, VSWinExpress or VSWinDesktopExpress.
 
 With NuGet 2.6, the machine wide package sources are now shown in Package Manage Settings dialog. Machine wide package sources are readonly and you can enable or disable them using this dialog.
+
 ![NuGet Config File machine wide settings](images/NuGet-Config-File-machinewidesettings.PNG)
