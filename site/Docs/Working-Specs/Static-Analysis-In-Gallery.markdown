@@ -7,9 +7,9 @@ Package authors would like to make sure that a package meets certain basic valid
 
 We have few basic static analysis rules around package authoring convention as part of NuGet.exe and these warnings get displayed during "pack" command.
 
-The errors/warnings given by pack command (client side) gets ignored by authors most of times. Some times they are ignored intentionally as the default built-in rules are more of warnings than errors and some times accidentally as packages are created in bulk as part of build process.
+The errors/warnings given by pack command (client side) gets ignored by authors most of times. Some times they are ignored intentionally as the default built-in rules are more of warnings around packaging conventions than errors and some times accidentally as packages are created in bulk as part of build process.
 
-The proposal is to provide an extended set of static analysis rules which will be run on the server side when a package is submitted for publishing.
+The proposal is to provide an extended set of static analysis rules from what we today and make it run on the server side  as well when a package is submitted for publishing.
 
 # Few rules to begin with#
 
@@ -45,9 +45,10 @@ Note : We already have most of the rules implemented and they are being used for
               
 #### Open questions ####
 
-1. Running the analysis rules requires unzipping the nupkg file and we don't want to do it in the web role. If we can do it in web role, we can have 'static analysis' as step in the upload process and users can check out the results right before pushing the package.
+1. In addition to "Run static analysis" option in the upload wizard, should we have an option like "Upload my package only when static analysis rule suceeds". That way an user can chose not to push the package if it has errors and get it fixed. In that case should we have the nupkg files in a temp container until the static analysis rules are run ? 
+2. Running the analysis rules requires unzipping the nupkg file and we don't want to do it in the web role. If we can do it in web role, we can have 'static analysis' as step in the upload process and users can check out the results right before pushing the package.
 Any thoughts around this ?
-2. Should we have an option like "Upload my package only when static analysis rule suceeds". That way an user can chose not to push the package if it has errors (probably skip warnings) and get it fixed.
+
 
 # Extended scenarios : #
 
