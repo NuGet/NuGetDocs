@@ -23,10 +23,12 @@ The proposal is to provide an extended set of static analysis rules which will b
 This is because the package has a dependency on jQuery which conflicts with the jQuery version that comes with MVC template. Such issues can be caught before hand with a static analysis rule.
 
 4. Making sure the dependencies of the package are compatible with each other.
-5. Making sure that the LOC package versions are also uploaded with new ENU package version.
+5. Makinng sure if the target framework of the parent and the child matches. We have seen cases where package install fails and rolls back when the target framework of child didn't match the current project.
+6. Making sure that the LOC package versions are also uploaded with new ENU package version.
 
  Example:
   We once had a support request where the zh-Hans locale version of 'Microsoft.AspNet.Providers.Core' package was missing for it's latest stable version and we had to pushed the LOC packages latter.
+7. Other rules like : License checks and EULA validations, outdated dependencies and strong version cap ?
 
 Note : We already have most of the rules implemented and they are being used for our internal packages.
 
