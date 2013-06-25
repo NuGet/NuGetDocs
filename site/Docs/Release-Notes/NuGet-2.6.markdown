@@ -4,12 +4,13 @@
 
 ### Separate NuGet VSIX for Visual Studio 2010/2012 and Visual Studio 2013
 
-With 2.6 release, NuGet vsix is now getting split into two parts. This split is to allow NuGet to use Visual Studio 2013 specific assemblies for best experience for Visual Studio 2013 and future versions. This would also allow NuGet extension to have a smaller footprint and enables to use Visual Studio version specific optimizations.
+With 2.6 release, NuGet Installer is getting split into two. This allows NuGet to use Visual Studio 2013 specific assemblies to provide the best NuGet experience in Visual Studio 2013. This also allows NuGet extension to have a smaller footprint and enables to use Visual Studio version specific optimizations.
 
-Now with 2.6, there are two NuGet vsix :
+Starting with 2.6, we will build 2 VSIX as below:
 
-1. One for Visual Studio 2010 and Visual Studio 2012
-2. And second one for Visual Studio 2013 
+1. NuGet Package Manager for Visual Studio 2010 and Visual Studio 2012
+2. NuGet Package Manager for Visual Studio 2013
+
 
 You can find more information [here on installing NuGet on different clients](http://docs.nuget.org/docs/start-here/installing-nuget).
 
