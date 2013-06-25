@@ -1,14 +1,28 @@
-﻿# Installing NuGet
-NuGet can be installed and updated using the Visual Studio **Extension Manager**. To check if your copy 
-of Visual Studio already has the NuGet extension, look for **Library Package Manager** in the Tools menu 
-of your copy of Visual Studio.
+# NuGet Clients
+NuGet is available for the following clients:
 
-![Menu](images/Menu.png)
+1. Visual Studio 2010 and 2012
+1. WebMatrix 3
+1. Command-Line 
 
-If your copy of Visual Studio does not already have the Library Package Manager (NuGet) extension, you 
-can install it using the Extension Manager.
+## Visual Studio 2010 and 2012
+For Visual Studio 2010, NuGet is available through the Visual Studio Extension Manager.  The extension can be installed into the Professional, Premium, and Ultimate editions.  Additionally, the extension can be installed into Visual Web Developer 2010 Express
 
-## Using the Extension Manager
+Starting with Visual Studio 2012, NuGet is included in every edition (except Team Foundation Server) by default.  Updates to NuGet can be found through the Extension Manager.
+
+To check if your copy of Visual Studio already has the NuGet extension, look for *Library Package Manager* in the Tools menu of Visual Studio.  If your copy of Visual Studio does not already have the Library Package Manager (NuGet) extension, you can install it using the Extension Manager.
+
+To download the extension for Visual Studio 2010 and 2012 directly, it can be found on the [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c).
+
+## WebMatrix 3
+The NuGet Package Manager feature is integrated into WebMatrix 3 as a preinstalled extension with the id of 'NuGetPackageManager'.  That extension can be found on the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
+
+## Command-Line Utility
+A command-line NuGet utility is also available.  This utility can be used to create, publish, and download packages.  This utility is also used for NuGet Package Restore which allows packages to be omitted from source control but downloaded as part of your build.
+
+The latest version of the nuget.exe command-line tool is always available from http://nuget.org/nuget.exe.
+
+# Using the Visual Studio Extension Manager
 
 In Visual Studio, click **Tools** and then **Extension Manager**.
 
@@ -28,20 +42,8 @@ When installation is complete, close and re-open Visual Studio.
 
 NuGet is now ready to use.
 
-## Using the Visual Studio Gallery
-
-[vsg]:http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c
-
-You can also install NuGet from the [Visual Studio Gallery][vsg] by downloading and executing the extension installer.  
-
-![Screen shot of NuGet on the Visual Studio Gallery on MSDN](images/Visual-Studio-Gallery-Download.PNG)
-
-Download and run the VSIX file.  You'll need to agree to the terms, wait for the install to complete and then exit.  Close all open instances of Visual Studio and restart.
-
-NuGet is now ready to use.
-
-# Updating NuGet
-You can update NuGet using the Visual Studio **Extension Manager**.  Navigate to the Extension Manager and click on the Updates tab to check for updates.
+# Updating NuGet in Visual Studio
+You can update NuGet using the Visual Studio *Extension Manager*.  Navigate to the Extension Manager and click on the Updates tab to check for updates.
 
 If there is a new version of NuGet you will see it in the list of available updates.
 
