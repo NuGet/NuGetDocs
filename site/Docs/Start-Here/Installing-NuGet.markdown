@@ -1,9 +1,9 @@
 # NuGet Clients
 NuGet is available for the following clients:
 
-1. Visual Studio 2010 and 2012
-1. WebMatrix 3
-1. Command-Line Utility
+1. *Visual Studio 2010 and 2012*<br />[Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
+1. *WebMatrix 3*<br />[WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/)
+1. *Command-Line Utility*<br />[Direct Download](http://nuget.org/nuget.exe)
 
 ## Visual Studio 2010 and 2012
 For Visual Studio 2010, NuGet is available through the Visual Studio Extension Manager.  The extension can be installed into the Professional, Premium, and Ultimate editions.  Additionally, the extension can be installed into Visual Web Developer 2010 Express
@@ -20,7 +20,7 @@ The NuGet Package Manager feature is integrated into WebMatrix 3 as a preinstall
 ## Command-Line Utility
 A command-line NuGet utility is also available.  This utility can be used to create, publish, and download packages.  This utility is also used for NuGet Package Restore which allows packages to be omitted from source control but downloaded as part of your build.
 
-The latest version of the nuget.exe command-line tool is always available from http://nuget.org/nuget.exe.
+The latest version of the nuget.exe command-line tool is always available from [http://nuget.org/nuget.exe].
 
 # Using the Visual Studio Extension Manager
 
