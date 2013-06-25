@@ -3,7 +3,7 @@ NuGet is available for the following clients:
 
 1. Visual Studio 2010 and 2012
 1. WebMatrix 3
-1. Command-Line 
+1. Command-Line Utility
 
 ## Visual Studio 2010 and 2012
 For Visual Studio 2010, NuGet is available through the Visual Studio Extension Manager.  The extension can be installed into the Professional, Premium, and Ultimate editions.  Additionally, the extension can be installed into Visual Web Developer 2010 Express
