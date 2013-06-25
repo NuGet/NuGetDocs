@@ -50,7 +50,7 @@ p img.left  { float: left; margin: 0.923em 0.923em 0.923em 0; padding: 0; }
 p img.right { float: right; margin: 0.923em 0 0.923em 0.923em; }
 
 a                 { color:#0071bc; text-decoration: none; outline: none; }
-#body a:visited   { color:#777; }
+#body a:visited   { color:#0071bc; }
 #body a:hover     { text-decoration: underline;}
 
 blockquote  { margin: 0.923em; color: #666; font-style: italic; }
