@@ -2,6 +2,17 @@
 
 ## Notable features in the release
 
+### Separate NuGet VSIX for Visual Studio 2010/2012 and Visual Studio 2013
+
+With 2.6 release, NuGet vsix is now getting split into two parts. This split is to allow NuGet to use Visual Studio 2013 specific assemblies for best experience for Visual Studio 2013 and future versions. This would also allow NuGet extension to have a smaller footprint and enables to use Visual Studio version specific optimizations.
+
+Now with 2.6, there are two NuGet vsix :
+
+1. One for Visual Studio 2010 and Visual Studio 2012
+2. And second one for Visual Studio 2013 
+
+You can find more information [here on installing NuGet on different clients](http://docs.nuget.org/docs/start-here/installing-nuget).
+
 ### XDT Support
 One of the most highly requested features for the NuGet client has been to support more powerful XML transformations using the XDT transformation engine which is used in Visual Studio [build configuration transformations](http://msdn.microsoft.com/en-us/library/dd465318(v=vs.100).aspx). In April, 2013, we made two big announcements regarding NuGet support for XDT. The first was that the XDT library itself was being itself [released as a NuGet package](https://nuget.org/packages/Microsoft.Web.Xdt) and [open sourced on CodePlex](http://xdt.codeplex.com/). This step enabled the XDT engine to be used freely by other open-source software, including the NuGet client. The second announcement was the plan to support use of the XDT engine for transformations in the NuGet client. NuGet 2.6 includes this integration.
 
