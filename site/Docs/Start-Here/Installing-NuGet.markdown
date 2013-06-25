@@ -1,4 +1,4 @@
-# NuGet Clients
+# NuGet Client Tools
 NuGet is available for the following clients:
 
 1. **Visual Studio 2010 and 2012**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
