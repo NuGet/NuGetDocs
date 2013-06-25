@@ -24,11 +24,7 @@ The latest version of the nuget.exe command-line tool is always available from h
 
 # Using the Visual Studio Extension Manager
 
-In Visual Studio, click **Tools** and then **Extension Manager**.
-
-In the **Extension Manager** dialog box, select the **Online Gallery** tab, and enter "nuget" in the search box to find the **NuGet Package Manager** extension.
-
-Select **NuGet Package Manager** and then click **Download**.
+In Visual Studio, click **Tools** and then **Extension Manager**.  Naviging to **Online**, find the **NuGet Package Manager** extension and click **Download**.
 
 ![Extension Manager showing NuGet](images/extension-manager-with-nuget.png)
 
@@ -56,7 +52,7 @@ Select NuGet in the list and click **Update**.  When the update is complete, clo
 If you want to run the very latest unreleased build of NuGet, you can
 [install it from the Build Server](http://build.nuget.org/NuGet.Tools.vsix).
 
-**Important note**: the official NuGet build is signed, while the one from the Build Server is not. For that reason, Visual Studio will not let you
+**Important note**: the official NuGet build is signed by Microsoft, while the one from the Build Server is not. For that reason, Visual Studio will not let you
 install a CI build if you already have an official build installed. If you do, you'll get an error that looks like:
 
 *The installed version of 'NuGet Package Manager' is signed, but the update version is not signed. Therefore, Extension Manager cannot install the update.*
