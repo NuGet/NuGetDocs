@@ -8,8 +8,8 @@ With 2.6 release, NuGet Installer is getting split into two. This allows NuGet t
 
 Starting with 2.6, we will build two VSIX as below:
 
-1. [NuGet Package Manager for Visual Studio 2010 and Visual Studio 2012] (http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/30/NuGet.Tools.vsix)
-2. [NuGet Package Manager for Visual Studio 2013] (http://docs.nuget.org/docs/start-here/installing-nuget)
+1. [NuGet Package Manager for Visual Studio 2010 and Visual Studio 2012](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/30/NuGet.Tools.vsix)
+2. [NuGet Package Manager for Visual Studio 2013](http://docs.nuget.org/docs/start-here/installing-nuget)
 
 
 You can also find more information [here on installing NuGet on different clients](http://docs.nuget.org/docs/start-here/installing-nuget).
