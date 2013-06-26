@@ -16,13 +16,13 @@ sizes as small as possible, we are producing a separate extension for Visual Stu
 Starting with NuGet 2.6, we will publish two extensions as below:
 
 1. [NuGet Package Manager](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c/file/37502/30/NuGet.Tools.vsix) (applies to Visual Studio 2010 and 2012)
-2. [NuGet Package Manager for Visual Studio 2013](http://docs.nuget.org/docs/start-here/installing-nuget)
+2. [NuGet Package Manager for Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 
 With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
 will now take you to the [installing NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)
 page, where you can find more information about installing the different NuGet clients.
 
-### XDT Support
+### XDT Web.config transformation support
 
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual
