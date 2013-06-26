@@ -1,5 +1,16 @@
 # Known Issues with NuGet 
 
+## Build failure after package update in VS 2012
+The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message: 
+"One or more packages could not be completed uninstalled." and you are prompted to restart 
+Visual Studio. After VS restart, you get weird build errors.
+
+The cause is that certain files in the old packages are locked by a background MSBuild process.
+Even after VS restart, the background MSBuild process still uses the files in the old packages, 
+causing the build failures.
+
+The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=38188).
+
 ## Upgrading to latest NuGet from an older version causes a signature verification error
 
 If you are running VS 2010 SP1, you might run into the following error message when attempting to upgrade 

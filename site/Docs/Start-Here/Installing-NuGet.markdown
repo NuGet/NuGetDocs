@@ -1,20 +1,30 @@
-﻿# Installing NuGet
-NuGet can be installed and updated using the Visual Studio **Extension Manager**. To check if your copy 
-of Visual Studio already has the NuGet extension, look for **Library Package Manager** in the Tools menu 
-of your copy of Visual Studio.
+# Installing NuGet
+NuGet is available for the following clients:
 
-![Menu](images/Menu.png)
+1. **Visual Studio 2010 and 2012**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
+1. **WebMatrix 3**: [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/)
+1. **Command-Line Utility**: [Direct Download](http://nuget.org/nuget.exe)
 
-If your copy of Visual Studio does not already have the Library Package Manager (NuGet) extension, you 
-can install it using the Extension Manager.
+## Visual Studio 2010 and 2012
+For Visual Studio 2010, NuGet is available through the Visual Studio Extension Manager.  The extension can be installed into the Professional, Premium, and Ultimate editions.  Additionally, the extension can be installed into Visual Web Developer 2010 Express
 
-## Using the Extension Manager
+Starting with Visual Studio 2012, NuGet is included in every edition (except Team Foundation Server) by default.  Updates to NuGet can be found through the Extension Manager.
 
-In Visual Studio, click **Tools** and then **Extension Manager**.
+To check if your copy of Visual Studio already has the NuGet extension, look for *Library Package Manager* in the Tools menu of Visual Studio.  If your copy of Visual Studio does not already have the Library Package Manager (NuGet) extension, you can install it using the Extension Manager.
 
-In the **Extension Manager** dialog box, select the **Online Gallery** tab, and enter "nuget" in the search box to find the **NuGet Package Manager** extension.
+To download the extension for Visual Studio 2010 and 2012 directly, it can be found on the [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c).
 
-Select **NuGet Package Manager** and then click **Download**.
+## WebMatrix 3
+The NuGet Package Manager feature is integrated into WebMatrix 3 as a preinstalled extension with the id of 'NuGetPackageManager'.  That extension can be found on the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
+
+## Command-Line Utility
+A command-line NuGet utility is also available.  This utility can be used to create, publish, and download packages.  This utility is also used for NuGet Package Restore which allows packages to be omitted from source control but downloaded as part of your build.
+
+The latest version of the nuget.exe command-line tool is always available from [http://nuget.org/nuget.exe](http://nuget.org/nuget.exe).
+
+# Using the Visual Studio Extension Manager
+
+In Visual Studio, click **Tools** and then **Extension Manager**.  Naviging to **Online**, find the **NuGet Package Manager** extension and click **Download**.
 
 ![Extension Manager showing NuGet](images/extension-manager-with-nuget.png)
 
@@ -28,20 +38,8 @@ When installation is complete, close and re-open Visual Studio.
 
 NuGet is now ready to use.
 
-## Using the Visual Studio Gallery
-
-[vsg]:http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c
-
-You can also install NuGet from the [Visual Studio Gallery][vsg] by downloading and executing the extension installer.  
-
-![Screen shot of NuGet on the Visual Studio Gallery on MSDN](images/Visual-Studio-Gallery-Download.PNG)
-
-Download and run the VSIX file.  You'll need to agree to the terms, wait for the install to complete and then exit.  Close all open instances of Visual Studio and restart.
-
-NuGet is now ready to use.
-
-# Updating NuGet
-You can update NuGet using the Visual Studio **Extension Manager**.  Navigate to the Extension Manager and click on the Updates tab to check for updates.
+# Updating NuGet in Visual Studio
+You can update NuGet using the Visual Studio *Extension Manager*.  Navigate to the Extension Manager and click on the Updates tab to check for updates.
 
 If there is a new version of NuGet you will see it in the list of available updates.
 
@@ -54,7 +52,7 @@ Select NuGet in the list and click **Update**.  When the update is complete, clo
 If you want to run the very latest unreleased build of NuGet, you can
 [install it from the Build Server](http://build.nuget.org/NuGet.Tools.vsix).
 
-**Important note**: the official NuGet build is signed, while the one from the Build Server is not. For that reason, Visual Studio will not let you
+**Important note**: the official NuGet build is signed by Microsoft, while the one from the Build Server is not. For that reason, Visual Studio will not let you
 install a CI build if you already have an official build installed. If you do, you'll get an error that looks like:
 
 *The installed version of 'NuGet Package Manager' is signed, but the update version is not signed. Therefore, Extension Manager cannot install the update.*
