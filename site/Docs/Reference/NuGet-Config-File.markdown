@@ -155,3 +155,34 @@ NuGet will load:
 * **When invoked from F:\ or F:\tmp**: 1 and 2. The default repository on NuGet.org is used, package restore is enabled and packages get expanded in F:\tmp.
 * **When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositorypath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
 * **When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
+
+## NuGet config extensibility point
+NuGet config files are read in the following order, assuming the solution directory is c:\a\b\c:
+
+* c:\a\b\c\.nuget\nuget.config
+* c:\a\b\c\nuget.config
+* c:\a\b\nuget.config
+* c:\a\nuget.config
+* c:\nuget.config
+* User specific config file, %AppData%\NuGet\nuget.config. 
+* Or the user specified file thru option -ConfigFile.
+
+Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
+
+* c:\a\b\c\.nuget\nuget.config
+* c:\a\b\c\nuget.config
+* c:\a\b\nuget.config
+* c:\a\nuget.config
+* c:\nuget.config
+* User specific config file, %AppData%\NuGet\nuget.config
+* Or the user specified file thru option -ConfigFile
+* %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config, e.g. %ProgramData%\NuGet\Config\VisualStudio\{VSVersion}\Pro\a.config
+* %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
+* %ProgramData%\NuGet\Config\{IDE}\*.config
+* %ProgramData%\NuGet\Config\*.config
+
+In the above path locations {IDE} can be VisualStudio and if you want to specify config for a particular SKU of Visual Studio {SKU} can be Pro, VWDExpress, VPDExpress, VSWinExpress or VSWinDesktopExpress.
+
+With NuGet 2.6, the machine wide package sources are now shown in Package Manage Settings dialog. Machine wide package sources are readonly and you can enable or disable them using this dialog.
+
+![NuGet Config File machine wide settings](images/NuGet-Config-File-Machine-Wide.png)
