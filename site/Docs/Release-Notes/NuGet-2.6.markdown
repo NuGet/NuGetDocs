@@ -23,6 +23,7 @@ will now take you to the [installing NuGet](http://docs.nuget.org/docs/start-her
 page, where you can find more information about installing the different NuGet clients.
 
 ### XDT Support
+
 One of the most highly-requested features for the NuGet client has been to support more
 powerful XML transformations using the XDT transformation engine which is used in Visual
 Studio [build configuration transformations](http://msdn.microsoft.com/en-us/library/dd465318(v=vs.100).aspx).
@@ -34,6 +35,7 @@ announcement was the plan to support use of the XDT engine for transformations i
 NuGet client. NuGet 2.6 includes this integration.
 
 #### How it works
+
 To take advantage of NuGet’s XDT support, the mechanics look similar to those of the
 [current config transformation feature](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 Transformation files are added to the package’s content folder. However, while config
@@ -60,6 +62,7 @@ whether that means adding, updating, or removing attributes, placing a new eleme
 location, or replacing or removing the entire element and its children.
 
 ### Machine-Wide Configuration
+
 One of the great strengths of NuGet is that it breaks down an otherwise large executable
 or library into a set of modular components which can be integrated, and most importantly
 maintained and versioned independently. One side effect of this, however, is that the
@@ -139,5 +142,6 @@ installation.  A future update to the NuGet Gallery will expose that data within
 package authors to fully understand how developers are installing their packages.
 
 ## Bug Fixes
+
 NuGet 2.6 also includes several bug fixes. For a full list of work items fixed in NuGet 2.6, please view
 the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
