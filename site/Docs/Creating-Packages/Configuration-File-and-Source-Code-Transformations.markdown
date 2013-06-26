@@ -166,9 +166,13 @@ the existing one.
 
 ## Support for XML-Document-Transform (XDT) 
 
-Starting with NuGet Package Manager 2.6, XDT is supported to transform XML files inside a project. The [XDT syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx) can be utilized in the *.install.xdt* and *.uninstall.xdt* file(s) under the package's Content folder, which will be applied during package installation and uninstallation time, respectively.
+Starting with NuGet 2.6, XDT is supported to transform XML files inside a project. The
+[XDT syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx) can be utilized in the *.install.xdt* and
+*.uninstall.xdt* file(s) under the package's Content folder, which will be applied during package installation
+and uninstallation time, respectively.
 
-For example, to add MyNuModule to web.config file like what's illustrated above, the following section can be used in the web.config.install.xdt file:
+For example, to add MyNuModule to web.config file like what's illustrated above, the following section can be
+used in the web.config.install.xdt file:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
@@ -179,7 +183,8 @@ For example, to add MyNuModule to web.config file like what's illustrated above,
         </system.webServer>
     </configuration>
     
-On the other hand, to remove only the MyNuModule element during package uninstall, the following section can be used in the web.config.uninstall.xdt file:
+On the other hand, to remove only the MyNuModule element during package uninstall, the following section can be
+used in the web.config.uninstall.xdt file:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
@@ -189,6 +194,20 @@ On the other hand, to remove only the MyNuModule element during package uninstal
             </modules>
         </system.webServer>
     </configuration>
+
+#### What you can do with XDT
+
+One of XDT’s greatest strengths is its [simple but powerful syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx)
+for manipulating the structure of an XML DOM. Rather than simply overlaying one fixed document
+structure onto another structure, XDT provides controls for matching elements in a variety of
+ways, from simple attribute name matching to full XPath support. Once a matching element or
+set of elements is found, XDT provides a rich set of functions for manipulating the elements,
+whether that means adding, updating, or removing attributes, placing a new element at a specific
+location, or replacing or removing the entire element and its children.
+While this is a very basic example, you now have the full power of XDT at your disposal for web.config transforms.
+This will allow your packages to conditionally insert, remove, or modify elements and attribute values.  Like the
+PowerShell install.ps1 and uninstall.ps1 support though, package uninstallation should make a best effort to
+return the web.config file to its previous state in all scenarios.
 
 ## Specifying Source Code Transformations
 
@@ -230,7 +249,8 @@ would normally put in the **global.asax** file because it needs to run when the 
 For more information about how to achieve this effect without updating the **global.asax** file, see 
 [WebActivator](https://bitbucket.org/davidebbo/webactivator/wiki/Home).
 
-Please note that project properties can be used with XDT as well (starting with NuGet Package Manager 2.6). The following example illustrates how to add app.config settings to a project, via the app.config.install.xdt file. 
+Please note that project properties can be used with XDT as well (starting with NuGet 2.6).  The following
+example illustrates how to add app.config settings to a project, via the app.config.install.xdt file. 
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
