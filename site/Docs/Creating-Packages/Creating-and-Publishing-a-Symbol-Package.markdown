@@ -70,10 +70,10 @@ Apart from the `lib` folder, a symbol package would need to contain this layout:
 		\Full
 			\Properties
 				\AssemblyInfo.cs
-			\Silverlight
-				\Properties
-					\AssemblyInfo.cs
-				\MySilverlightExtensions.cs
+		\Silverlight
+			\Properties
+				\AssemblyInfo.cs
+			\MySilverlightExtensions.cs
 
 ## Specifying Symbol Package Contents
 
