@@ -55,7 +55,7 @@ Powershell host including the version.
 
 **What languages are supported by NuGet?**
 
-NuGet supports C#, F#, Visual Basic and C++ projects. The C++ support has been added recently. Check out our [blog post](http://blog.nuget.org/20130426/native-support.html) for more details.
+The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects. Support for C++ is a recent addition, check out our [blog post](http://blog.nuget.org/20130426/native-support.html) for more details.
 
 **What project templates are supported by NuGet?**
 
