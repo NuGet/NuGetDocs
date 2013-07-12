@@ -7,7 +7,7 @@
 
 NuGet requires Visual Studio 2010 Pro/Premium/Ultimate (or newer), Visual Web Developer Express 2010, or any Express SKU of Visual Studio 2012 (or newer).
 The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.microsoft.com/kb/968929) be installed. 
-Powershell 2.0 is already installed if you have the following operating system:
+Powershell 2.0 is already installed if you have the following operating systems:
 
 * Windows 7 (or newer)
 * Windows Server 2008 R2 (or newer)
@@ -15,7 +15,7 @@ Powershell 2.0 is already installed if you have the following operating system:
 If you have the following operating systems, you must [manually install Powershell 2.0](http://support.microsoft.com/kb/968929/en-us).
 
 * Windows XP SP3 /Windows Vista SP1
-* Windows Server 2003 SP2/ Windows Server 2008 
+* Windows Server 2003 SP2/ Windows Server 2008
 
 **Do I have to install ASP.NET MVC to get NuGet?**
 
@@ -26,6 +26,8 @@ If you have the following operating systems, you must [manually install Powershe
 The command-line application (*nuget.exe*) builds and runs under Mono and allows you to create packages in Mono.
 This is especially true for Mono on Windows, but there are some known issues for Mono on Linux and OS X.  To review
 the known issues, [search for Mono in our issue list](http://nuget.codeplex.com/workitem/list/basic?field=Votes&direction=Descending&issuesToDisplay=Open&keywords=mono&emailSubscribedItemsOnly=false).
+
+Also, [a graphical client is available as an add-in for MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin).
 
 **Is there a command-line tool for NuGet?**
 
@@ -38,8 +40,6 @@ Within Visual Studio, there are two clients for NuGet:
 the PowerShell-based **Package Manager Console** and the **Manage NuGet Packages** dialog box. 
 Both are wrappers around the NuGet API, which is written in managed code.
 NuGet.exe is also used to create and publish packages.
-
-
 
 ## NuGet With Visual Studio
 
@@ -61,7 +61,15 @@ The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix
 
 NuGet has full support for a variety of project templates like Windows, Web, Silverlight, SharePoint, Wix and so on.  The support for LightSwitch and Cloud templates is minimal at this point of time.
 
-**Can I use NuGet outside of Visual Studio?**
+**How do I update packages that are part of visual studio templates ?**
+
+You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](http://docs.nuget.org/docs/release-notes/nuget-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
+
+However, if you want to update the template in one go, instead of doing it for every project, you will have to manually update the template repository. Check out [Xavier Decoster's blog on the same.](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)
+
+Please be noted that manually updating the template repository should be done at your own risk. It might corrupt the template files or the latest version of the packages may not be compatible with each other.
+
+## Can I use NuGet outside of Visual Studio?
 
 **You sure can!** As discussed in the question on command line tools for NuGet, the primary focus 
 of NuGet is Visual Studio, but the core NuGet API has no dependencies on Visual Studio. 
@@ -70,14 +78,7 @@ There are multiple NuGet clients that work completely outside of Visual Studio:
 * [SharpDevelop Alpha](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx). (See a demo of this in [Phil Haack's MvcConf talk](http://bit.ly/fzrJDa).) 
 * ASP.NET Web Pages in WebMatrix. (See a demo of this in [Phil Haack's MvcConf talk](http://bit.ly/fzrJDa).) 
 * [NuGet.exe](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html) 
-
-**How do I update packages that are part of visual studio templates ?**
-
-You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](http://docs.nuget.org/docs/release-notes/nuget-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
-
-However, if you want to update the template in one go, instead of doing it for every project, you will have to manually update the template repository. Check out [Xavier Decoster's blog on the same.](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)
-
-Please be noted that manually updating the template repository should be done at your own risk. It might corrupt the template files or the latest version of the packages may not be compatible with each other.
+* [MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin) and Xamarin Studio add-in
 
 ## NuGet CommandLine
 
@@ -183,7 +184,7 @@ It is not possible to squat package names. If you feel that an existing package 
 
 **How do I claim ownership for packages ?**
 
-Check out the blog post [Managing Package Owners on nuget.org] (http://blog.nuget.org/20130205/managing-package-owners.html) for details.
+Check out the blog post [Managing Package Owners on nuget.org](http://blog.nuget.org/20130205/managing-package-owners.html) for details.
 
 
 **Is it recommended to upload my test packages to NuGet.org ?**
