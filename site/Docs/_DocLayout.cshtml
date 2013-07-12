@@ -15,9 +15,12 @@
 
 <script>
     $(document).ready(function () {
-        if (!$('pre').attr('class') == 'none') {
-            $('pre').addClass('prettyprint');
-        }
+        //for each pre element that has a code element child...
+        $("pre > code").parent().each(function () {
+            if (!$(this).hasClass("prettyprint") && !$(this).hasClass("none")) {
+                $(this).addClass("prettyprint");
+            }
+        });
         prettyPrint();
     });
 </script>
