@@ -508,7 +508,9 @@ If this package is installed into a .NET 4.0 project, for example, both the .pro
 
 ## Automatically Displaying a Readme.txt File During Package Installation
 
-A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.
+A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed. 
+
+    <file src="readme.txt" target="" />
 
 If the package is installed because it is a dependency of another package, the *readme.txt* file will not be opened. Only the *readme.txt* file of the package that the user is explicitly installing will be shown.
 
