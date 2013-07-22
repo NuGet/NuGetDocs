@@ -1,4 +1,3 @@
-
 ##  Config Command
 
 Gets or sets NuGet config values.
@@ -439,7 +438,7 @@ Specify the location of the nuspec or project file to create a package.
 
 ##  Push Command
 
-Pushes a package to the server and optionally publishes it.
+Pushes a package to the server and publishes it.
 NuGet's default configuration is obtained by loading %AppData%\NuGet\NuGet.config, then loading any nuget.config or .nuget\nuget.config starting from root of drive and ending in current directory.
 
 
