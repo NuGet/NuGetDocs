@@ -211,6 +211,129 @@ Specify the id and optionally the version of the package to install. If a path t
 
 
 
+## Restore command
+### Usage
+    nuget restore [<solution>|<packages.config file>] [options]
+
+### Options
+<table>
+    <tr>
+        <td>Source</td>
+        <td>A list of packages sources to use for the install.</td>
+    </tr>
+    <tr>
+        <td>NoCache</td>
+        <td>Disable using the machine cache as the first package source.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>Specifies the user specific configuration file. If omitted,
+        %appdata%\NuGet\nuget.config is used as the user specific
+        configuration file. </td>
+    </tr>
+    <tr>
+        <td>RequireConsent</td>
+        <td>Checks if package consent is granted before installing a
+        package.</td>
+    </tr>
+    <tr>
+        <td>PackagesDirectory</td>
+        <td>Specifies the pacakges folder. -OutputDirectory is an
+        alias of this option.</td>
+    </tr>
+    <tr>
+        <td>SolutionDirectory</td>
+        <td>Specifies the solution directory. Not valid when restoring
+        packages for a solution.</td>
+    </tr>
+    <tr>
+        <td>DisableParallelProcessing</td>
+        <td>Disable parallel nuget package restores.</td>
+    </tr>
+	    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+</table>
+
+### Notes
+The restore command is executed in the following steps:
+
+1. Determine the operation mode of the restore command.
+    * If a packages.config file is specified, nuget restores packages
+    listed in the packages.config file.
+    * If &lt;solution> is specified, nuget restores packages of
+    a solution file. In this case, NuGet needs to locate the solution
+    file.
+        * If &lt;solution> is a file, that file is used as the solution
+        file.
+        * nuget searches for *.sln files in directory &lt;solution>. If
+        exactly one file is found, that file is used as the solution
+        file. Otherwise, nuget displays error message and exits.
+    * If no argument is provided,
+        * Nuget first looks for solution files in the current
+        directory. If there is just one solution file, nuget will
+        restore packages for that solution. If there are multiple
+        solution files, an error message is displayed and nuget.exe
+        exits. 
+        * If there are no solution files, nuget then searches for the
+        packages.config file in the current directory. If the file
+        exists, nuget will restore packages listed in the
+        packages.config file. 
+        * If there are no solution files and no packages.config file in
+        the current directory, an error message is displayed and
+        nuget.exe exits.
+  
+  If the operation mode is restoring for a solution, then
+  -SolutionDirectory option is not applicable. In this case, nuget
+  displays an error message and exits.
+
+1. Read nuget configuration. If nuget is restoring packages for a solution file,
+  $(SolutionDir)\.nuget is used as the starting directory. If nuget is
+  restoring packages from packages.config file, the directory of that
+  file is used as the starting directory.
+
+1. Calculate the packages folder:
+    * If -PackagesDirectory &lt;packagesDirectory> is specified,
+    &lt;packagesDirectory> is used as the packages folder.
+    * If config key repositoryPath exists in nuget configuration, its
+    value is used as the packages folder.
+    * If -SolutionDirectory &lt;solutionDirectory> is specified,
+    &lt;solutionDirectory>\packages is used as the packages folder.
+    * If nuget is restoring packages for a solution, the
+    $(SolutionDir)\packages is used as the packages folder.
+    * Otherwise, an error message is displayed and nuget exits.
+
+1. If nuget is restoring packages for a solution,
+    * nuget loads the solution file.
+    * restores solution level packages: nuget restores packages listed in
+    $(SolutionDir)\\.nuget\packages.config file.
+    * for reach project contained in the solution file, nuget restores
+    packages listed in $(ProjectDir)\packages.config file.
+
+  See next step for how nuget restores packages from a packages.config file.
+
+1. Otherwise, nuget is restoring packages listed in the packages.config
+file.
+    * nuget loads the packages.config file to get the list of packages
+    to restore.
+    * for each package in the list of packages, restores the package. If
+    -DisableParallelProcessing is off, the restore is done in parallel.
+        * Download the package from package sources.
+        * Unzip the package to the packages folder.
+
+### Examples
+
+    nuget restore a.sln
+	nuget restore proj1\packages.config -PackagesDirectory ..\packages
 
 
 ##  List Command
@@ -263,7 +386,6 @@ Specify optional search terms.
     nuget list
     
     nuget list -verbose -allversions
-
 
 ##  Mirror Command
 
