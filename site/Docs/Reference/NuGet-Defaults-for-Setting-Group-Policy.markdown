@@ -104,12 +104,8 @@ NuGetDefaults.config will support the following cases
 
 ##Open Issues and Scenarios##
 
-Following are the list of issues and scenarios that are not planned for 2.7. Based on customer feedback, we might include it in 2.7 or might do add this in the future
+Following are the list of issues and scenarios that are not planned for 2.7. Based on customer feedback, we might add this in the future
 
 1. Supporting ‘Disabling of Package Sources’ via AllowedUriSchemes
 1. Supporting an Allowed List of package sources
 1. Supporting Publishable package sources
-
-##Discussion
-For comments, suggestions, or any other feedback on this working spec, please use the corresponding CodePlex discussion page here:
-[https://nuget.codeplex.com/discussions/445625](https://nuget.codeplex.com/discussions/445625)
