@@ -90,26 +90,22 @@ NuGetDefaults.config will support the following cases
 		<!-- The following section is similar to 'packageSources' section of NuGet.config schema -->
 		<packageSources>
 			<add key="Contoso Package Source" value="http://contoso.com/packages/" />
-			<add key="NuGet Official Feed" value="http://nuget.org/api/v2/" />
+			<add key="nuget.org" value="https://www.nuget.org/api/v2/" />
 		</packageSources>
 
 		<!-- Default Package Sources that are Disabled by Default -->
 		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
 		<!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema-->
 		<disabledPackageSources>
-			<add key="NuGet Official Feed" value="true" />
+			<add key="nuget.org" value="true" />
 		</disabledPackageSources>
 	</configuration>
 
 
 ##Open Issues and Scenarios##
 
-Following are the list of issues and scenarios that are not planned for 2.7. Based on customer feedback, we might include it in 2.7 or might do add this in the future
+Following are the list of issues and scenarios that are not planned for 2.7. Based on customer feedback, we might add this in the future
 
 1. Supporting ‘Disabling of Package Sources’ via AllowedUriSchemes
 1. Supporting an Allowed List of package sources
 1. Supporting Publishable package sources
-
-##Discussion
-For comments, suggestions, or any other feedback on this working spec, please use the corresponding CodePlex discussion page here:
-[https://nuget.codeplex.com/discussions/445625](https://nuget.codeplex.com/discussions/445625)
