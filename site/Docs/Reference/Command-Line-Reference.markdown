@@ -430,7 +430,7 @@ Starting from version 2.7, the pack command will ignore &lt;package> entries in 
 		<package id="microsoft-web-helpers" version="1.15" />
 	</packages>
 
-When running the pack command on this project, the created package will have a dependency on **jQuery** and **microsoft-web-helpers**, but will *not* have dependency on the **Modernizer**.
+When running the pack command on this project, the created package will have a dependency on **jQuery** and **microsoft-web-helpers**, but will *not* have dependency on the **Modernizr**.
 
 
 ### Examples
