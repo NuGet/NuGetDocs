@@ -160,7 +160,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>ExcludeVersion</td>
-        <td>If set, the destination folder will contain only the package name, not the version number</td>
+        <td>If set, the destination directory will contain only the package name, not the version number</td>
     </tr>
     <tr>
         <td>Prerelease</td>
@@ -233,12 +233,12 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>RequireConsent</td>
-        <td>Checks if package consent is granted before installing a
+        <td>Checks if package restore consent is granted before restoring a
         package.</td>
     </tr>
     <tr>
         <td>PackagesDirectory</td>
-        <td>Specifies the pacakges folder. -OutputDirectory is an
+        <td>Specifies the packages directory. -OutputDirectory is an
         alias of this option.</td>
     </tr>
     <tr>
@@ -268,29 +268,29 @@ Specify the id and optionally the version of the package to install. If a path t
 The restore command is executed in the following steps:
 
 1. Determine the operation mode of the restore command.
-    * If a packages.config file is specified, nuget restores packages
+    * If &lt;packages.config file> is specified, nuget restores packages
     listed in the packages.config file.
-    * If &lt;solution> is specified, nuget restores packages of
-    a solution file. In this case, NuGet needs to locate the solution
+    * If &lt;solution> is specified, nuget restores packages for the
+    solution's projects. In this case, nuget needs to locate the solution
     file.
         * If &lt;solution> is a file, that file is used as the solution
         file.
-        * nuget searches for *.sln files in directory &lt;solution>. If
-        exactly one file is found, that file is used as the solution
-        file. Otherwise, nuget displays error message and exits.
+        * If &lt;solution> is a directory, then nuget searches for a *.sln
+        file in that directory. If exactly one file is found, that file is
+        used as the solution file. Otherwise, nuget displays an error
+        message and exits.
     * If no argument is provided,
-        * Nuget first looks for solution files in the current
+        * nuget first looks for solution files in the current
         directory. If there is just one solution file, nuget will
         restore packages for that solution. If there are multiple
-        solution files, an error message is displayed and nuget.exe
-        exits. 
+        solution files, an error message is displayed and nuget exits. 
         * If there are no solution files, nuget then searches for the
         packages.config file in the current directory. If the file
         exists, nuget will restore packages listed in the
         packages.config file. 
         * If there are no solution files and no packages.config file in
         the current directory, an error message is displayed and
-        nuget.exe exits.
+        nuget exits.
   
   If the operation mode is restoring for a solution, then
   -SolutionDirectory option is not applicable. In this case, nuget
@@ -301,39 +301,40 @@ The restore command is executed in the following steps:
   restoring packages from packages.config file, the directory of that
   file is used as the starting directory.
 
-1. Calculate the packages folder:
+1. Calculate the packages directory:
     * If -PackagesDirectory &lt;packagesDirectory> is specified,
-    &lt;packagesDirectory> is used as the packages folder.
+    &lt;packagesDirectory> is used as the packages directory.
     * If config key repositoryPath exists in nuget configuration, its
-    value is used as the packages folder.
+    value is used as the packages directory.
     * If -SolutionDirectory &lt;solutionDirectory> is specified,
-    &lt;solutionDirectory>\packages is used as the packages folder.
+    &lt;solutionDirectory>\packages is used as the packages directory.
     * If nuget is restoring packages for a solution, the
-    $(SolutionDir)\packages is used as the packages folder.
-    * Otherwise, an error message is displayed and nuget exits.
+    $(SolutionDir)\packages is used as the packages directory.
+    * If the packages directory cannot be determined, an error message is
+    displayed and nuget exits.
 
-1. If nuget is restoring packages for a solution,
+1. When nuget is restoring packages for a solution:
     * nuget loads the solution file.
     * restores solution level packages: nuget restores packages listed in
     $(SolutionDir)\\.nuget\packages.config file.
-    * for reach project contained in the solution file, nuget restores
+    * for each project contained in the solution file, nuget restores
     packages listed in $(ProjectDir)\packages.config file.
 
   See next step for how nuget restores packages from a packages.config file.
 
-1. Otherwise, nuget is restoring packages listed in the packages.config
-file.
+1. When nuget is restoring packages listed in the packages.config
+file:
     * nuget loads the packages.config file to get the list of packages
     to restore.
-    * for each package in the list of packages, restores the package. If
-    -DisableParallelProcessing is off, the restore is done in parallel.
+    * for each package in the list, nuget restores the package. Unless
+    -DisableParallelProcessing is specified, the restore is done in parallel.
         * Download the package from package sources.
-        * Unzip the package to the packages folder.
+        * Unzip the package to the packages directory.
 
 ### Examples
 
     nuget restore a.sln
-	nuget restore proj1\packages.config -PackagesDirectory ..\packages
+	nuget restore proj1\packages.config -PackagesDirectory .\packages
 
 
 ##  List Command
@@ -392,7 +393,7 @@ Specify optional search terms.
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
 Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
-copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same folder than NuGet.exe.
+copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same directory as NuGet.exe.
 
 ### Usage
     nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
