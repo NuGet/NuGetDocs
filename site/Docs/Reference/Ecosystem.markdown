@@ -100,10 +100,12 @@ More info:
 WebMatrix 3 also has a NuGet Package Manager Extension which you can download using the built-in extension manager or directly from the WebMatrix Extensions Gallery at [http://extensions.webmatrix.com/packages/NuGetPackageManager/](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
 
 ## NuGet Package Explorer
-One of the developers of the core NuGet team at Microsoft created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](http://docs.nuget.org/docs/creating-packages/using-a-gui-to-build-packages), download and inspect NuGet packages and their metadata.
+One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https://twitter.com/dotnetjunky "dotnetjunky"), created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](http://docs.nuget.org/docs/creating-packages/using-a-gui-to-build-packages), download and inspect NuGet packages and their metadata.
 
-* Click-once (desktop) application: [http://npe.codeplex.com](http://npe.codeplex.com)
+* Click-Once (desktop) application: [http://npe.codeplex.com](http://npe.codeplex.com)
 * Windows 8 app: [http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19/m/ROW](http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19/m/ROW)
+* Windows Phone 8 app: [http://www.windowsphone.com/en-us/store/app/nuget-package-explorer/3cb19574-1565-4f1c-aa42-f5cccc385053](http://www.windowsphone.com/en-us/store/app/nuget-package-explorer/3cb19574-1565-4f1c-aa42-f5cccc385053)
+* Silverlight: [http://dotnetjunky.info/slnpe.html](http://dotnetjunky.info/slnpe.html)
 
 ## MyGet (or NuGet-as-a-Service)
 MyGet is a NuGet server that allows you to create and host your own NuGet feeds. It is hosted on Windows Azure and has a freemium offering, meaning you can use it for free (within the constrains of [the free plan](https://www.myget.org/plans)) or subscribe to one of the paying plans if you require more resources or features. More info at [https://www.myget.org](https://www.myget.org).
