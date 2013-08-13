@@ -320,3 +320,6 @@ The following pointers should help you get the maximum out of NuGet:
 * MSDN article: [Top 10 NuGet (anti-)patterns](http://msdn.microsoft.com/en-us/magazine/jj851071.aspx)
 * Book: [Apress Pro NuGet](http://bit.ly/ProNuGet)
 * Xavier Decoster's blog: [http://www.xavierdecoster.com/tagged/NuGet](http://www.xavierdecoster.com/tagged/NuGet)
+ 
+## Adding Your Project
+If you have a NuGet ecosystem project that would be a valuable addition to this page, please feel free to submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs/Reference/Ecosystem.markdown).
