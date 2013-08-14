@@ -542,18 +542,18 @@ Specify the location of the nuspec or project file to create a package.
 </table>
 
 
-### Excluding dependencies from created packages
+### Excluding development dependencies when creating packages
 
-Starting from version 2.7, the pack command will ignore &lt;package> entries in the packages.config file which have an attribute **developmentDependency** set to **true** and will not include that package as a dependency in the created package. For example, consider the following packages.config file in the source project:
+Some NuGet packages are useful as development dependencies, which help you author your own library, but aren't necessarily needed as actual package dependencies. Some examples are code-based packages or tooling packages that don't provide assemblies your package needs to reference at runtime. Starting from version 2.7, the pack command will ignore &lt;package> entries in the packages.config file which have an attribute **developmentDependency** set to **true** and will not include that package as a dependency in the created package. For example, consider the following packages.config file in the source project:
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<packages>
 		<package id="jQuery" version="1.5.2" />
-		<package id="Modernizr" version="1.7" developmentDependency="true" />
+		<package id="netfx-Guard" version="1.3.3.2" developmentDependency="true" />
 		<package id="microsoft-web-helpers" version="1.15" />
 	</packages>
 
-When running the pack command on this project, the created package will have a dependency on **jQuery** and **microsoft-web-helpers**, but will *not* have dependency on the **Modernizr**.
+When running the pack command on this project, the created package will have a dependency on **jQuery** and **microsoft-web-helpers**, but will *not* have dependency on **netfx-Guard**.
 
 
 ### Examples
