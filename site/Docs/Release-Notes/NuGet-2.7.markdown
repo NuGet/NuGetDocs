@@ -117,7 +117,7 @@ While not required to use this feature, we expect companies to deploy NuGetDefau
 
 *Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
 
-See [NuGet Configuration Defaults](/docs/reference/configuration-defaults) for more information about this feature.
+See [NuGet Configuration Defaults](/docs/reference/nuget-config-defaults) for more information about this feature.
 
 ### Renaming the Default Package Source
 
