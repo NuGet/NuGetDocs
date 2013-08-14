@@ -1,6 +1,17 @@
 # NuGet 2.7 Release Notes
 
-## THESE ARE THE PRELIMINARY RELEASE NOTES FOR THE 2.7 RELEASE
+# THESE ARE THE PRELIMINARY RELEASE NOTES FOR THE 2.7 RELEASE
+
+## Release Candidate
+
+The NuGet 2.7 Release Candidate is now available, with an expected release before the end of August.
+
+* [Download: Visual Studio Extensions and NuGet.exe Command-Line](https://nuget.codeplex.com/releases/view/107605)
+* [All Work Items for the Release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all)
+* [Open Issues](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Proposed|Active&release=NuGet%202.7)
+* [Work Items Being Tested](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Resolved&release=NuGet%202.7)
+
+If you encounter any problems with NuGet 2.7, especially any regressions, please file an issue on [CodePlex](http://nuget.codeplex.com) right away and prefix the issue with "\[NuGet 2.7\]".
 
 ## Acknowledgements
 
@@ -159,4 +170,4 @@ Since we are unsure how many developers are still using NuGet in that version/ed
 
 ### Bug Fixes
 
-In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.7&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
+In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all).
