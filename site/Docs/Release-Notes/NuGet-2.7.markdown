@@ -151,6 +151,12 @@ We added some new APIs to our extensibility services to fill the gap of missing 
 
 This feature was contributed by [Adam Ralph](https://twitter.com/adamralph) and it allows package authors to declare dependencies that were only used at development time and don't require package dependencies. By adding a `developmentDependency="true"` attribute to a package in packages.config, nuget.exe pack will no longer include that package as a dependency.
 
+### Removed Support for Visual Studio 2010 Express for Windows Phone
+
+The new package restore model in 2.7 is implemented by a new VSPackage which is different from the main NuGet VSPackage. Due to a technical issue, this new VSPackage doesn’t work correctly in the Visual Studio 2010 Express for Windows Phone SKU as we share the same code base with other supported Visual Studio SKUs. Therefore, starting with NuGet 2.7, we are dropping support for Visual Studio 2010 Express for Windows Phone from the published extension.
+
+Since we are unsure how many developers are still using NuGet in that version/edition of Visual Studio, we are publishing a separate Visual Studio extension specifically for those users and publishing it on CodePlex (rather than the Visual Studio Extension Gallery). We don't plan to continue to maintain that extension, but if this affects you please let us know by filing an issue on CodePlex.
+
 ### Bug Fixes
 
 In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.7&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
