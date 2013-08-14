@@ -132,7 +132,7 @@ See [NuGet Configuration Defaults](/docs/reference/nuget-config-defaults) for mo
 
 ### Renaming the Default Package Source
 
-NuGet has always registered a default package source called "NuGet official package source" that points to nuget.org. That name was verbose and it also didn't specify where it was actually pointing. To address those two issues, we've renamed this package source to simply "nuget.org" in the UI. The URL for the package source hasn't changed--just its name.
+NuGet has always registered a default package source called "NuGet official package source" that points to nuget.org. That name was verbose and it also didn't specify where it was actually pointing. To address those two issues, we've renamed this package source to simply "nuget.org" in the UI. The URL for the package source was also changed to include the "www." prefix. After using NuGet 2.7, your existing "NuGet official package source" will automatically be updated to "nuget.org" as its name and "https://www.nuget.org/api/v2/" as its URL.
 
 ### Performance Improvements
 
