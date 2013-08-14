@@ -168,6 +168,8 @@ The new package restore model in 2.7 is implemented by a new VSPackage which is 
 
 Since we are unsure how many developers are still using NuGet in that version/edition of Visual Studio, we are publishing a separate Visual Studio extension specifically for those users and publishing it on CodePlex (rather than the Visual Studio Extension Gallery). We don't plan to continue to maintain that extension, but if this affects you please let us know by filing an issue on CodePlex.
 
+To download the NuGet Package Manager (for Visual Studio 2010 Express for Windows Phone), visit the [NuGet 2.7 Downloads](https://nuget.codeplex.com/releases/view/107605) page.
+
 ### Bug Fixes
 
 In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all).
