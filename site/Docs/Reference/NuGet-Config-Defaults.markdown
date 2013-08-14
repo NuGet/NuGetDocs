@@ -5,42 +5,45 @@
 Many companies are using NuGet internally, but have had a hard time guiding their developers to use internal package sources instead of nuget.org. NuGet 2.7 introduces a Configuration Defaults feature that allows machine-wide defaults to be specified for:
 
 1. Enabled package sources
-1. Registered, but disabled package sources
+1. Registered, but disabled-by-default package sources
 1. The default nuget.exe push source
 
 Each of these can now be configured within a file located at %ProgramData%\NuGet\NuGetDefaults.config. If this config file specifies package sources, then the default nuget.org package source will not be registered automatically, and the ones in NuGetDefaults.config will be registered instead.
 
-While not required to use this feature, we expect companies to deploy NuGetDefaults.config files using Group Policy.
+While not required, we expect many companies to use Group Policy to deploy NuGetDefaults.config files to developers' machines.
 
-*Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
+*Note that this feature will never cause a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
 
 ## NuGet Config Defaults File
 
-NuGet Config Defaults file, NuGetDefaults.config, is located under %ProgramData%\NuGet folder, which is machine-wide and requires Administrator permissions. Administrators are expected to set the correct permissions on this file based on the user and/or machine information.
+NuGet Config Defaults file, NuGetDefaults.config, is located under %ProgramData%\NuGet folder, which is machine-wide and typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on this file based on the user and/or machine information.
 
 ### Default Package Sources
 
-NuGet Config Defaults File will capture the default package source(s) that the should be used by all users on the machine. These default package sources cannot be deleted or modified but may be disabled. When the NuGet Config Defaults file is absent, if someone deletes the nuget.org package source from %AppData%, it is rehydrated as disabled if another package source exists or as enabled if no package source exists. In the same way, with a NuGet Config Defaults file present, there will be a set of default package sources instead of just the 1 feed. Note that we still fallback to default nuget.org package source if there are no default package sources. However, if there are any default package sources specified in the NuGet Config Defaults file and the nuget.org package source is *not* one of them, it *will not be rehydrated*.
+NuGet has always had the notion of a default package source that the user could not delete--it has always been the nuget.org package source. Without any default package sources specified in the NuGet Config Defaults file, NuGet will continue to use nuget.org as the default package source. However, if the NuGet Config Defaults file specifies default package sources, those defaults will be used in place of nuget.org, and those package sources will be added to the users' settings when they use NuGet.
 
-This approach essentially allows administrators to replace the default nuget.org package source with their own package sources.
+This feature essentially allows administrators to replace the default nuget.org package source with their own package source(s).
 
-### Default Push Source
+#### Enabled Package Sources
 
-The NuGet Config Defaults file also allows specification of the Default Push Source. This will be the defaultPushSource if one is NOT provided in the command line argument of NuGet.exe. Note that today, by default, Push Source is the nuget.org package source. Using the new configuration though, administrators can change the Push Source used by default. This will help prevent accidental publishing of packages to nuget.org. Unless the user explicitly uses the source parameter for publishing, the Default Push Source set by administrator will get used.
+Within the NuGet Config Defaults, default package sources can be specified as either enabled or disabled by default. The simplest scenario is to specify the package sources as enabled by default. These package sources will be added to each user's NuGet configuration as enabled package sources the next time NuGet is used.
 
-NuGetDefaults.config will support the following cases
+#### Registered, but Disabled-by-Default Package Sources
 
-1. Configure a DefaultPushSource that will get used over the NuGet Official Feed when using the commandline tool
-2. Configure the default package sources that the enterprise wants their developers to be using.
-   Some of these default package sources may be disabled by default too
+The NuGet Config Defaults file also allows default package sources to be added as disabled. In the scenario where the user has not previously registered one of these package sources, it will be added to the user's configuration and marked a disabled. The user will then be able to easily enable this package source if needed.
 
-###Sample###
+There are various scenarios where this will be useful, but one example is when a company wants to register their internal package source as the only enabled package source by default, but allow developers to easily re-enable the nuget.org package source without having to hunt on the internet for its URL. Another scenario is when a company has multiple internal package sources matching their organization hierarchy, and by default the developer's team package source should be enabled, but other team's package sources should be available when needed.
+
+### Default NuGet.exe Push Source
+
+The NuGet Config Defaults file also allows specification of the Default Push Source. This will be the default push source if one is not provided in the command line argument of nuget.exe. Without a default push source specifid in the NuGet Config Defaults file, nuget.org is the default nuget.exe push source. Using the new configuration though, administrators can change the default push source to an internal package soure. This will help prevent accidental publishing of packages to nuget.org.
+
+## Sample NuGetDefaults.config
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
 		<!-- DefaultPushSource key is similar to the 'DefaultPushSource' key of NuGet.config schema-->
-		<!-- This can be used by administrators to prevent accidental publishing of packages to 
-		     NuGet Official Feed which is a public feed -->
+		<!-- This can be used by administrators to prevent accidental publishing of packages to nuget.org -->
 		<config>
 			<add key="DefaultPushSource" value="http://contoso.com/packages/" />
 		</config>
@@ -55,17 +58,14 @@ NuGetDefaults.config will support the following cases
 
 		<!-- Default Package Sources that are Disabled by Default -->
 		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
-		<!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema-->
+		<!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema -->
 		<disabledPackageSources>
 			<add key="nuget.org" value="true" />
 		</disabledPackageSources>
 	</configuration>
 
+## Preventing Access to nuget.org
 
-##Open Issues and Scenarios##
+The NuGet Config Defaults feature cannot prevent access to nuget.org or any other package sources. Rather, this feature provides a mechanism for users' default NuGet package sources to be configured automatically, simplifying developers' on-ramp to using NuGet internally.
 
-Following are the list of issues and scenarios that are not planned for 2.7. Based on customer feedback, we might add this in the future
-
-1. Supporting ‘Disabling of Package Sources’ via AllowedUriSchemes
-1. Supporting an Allowed List of package sources
-1. Supporting Publishable package sources
+NuGet does not (and will not) provide any features to prevent access to a package source as it would be easy for a user to sidestep NuGet's tooling and download packages through the browser. Therefore to prevent access to nuget.org, companies must employ other techniques.
