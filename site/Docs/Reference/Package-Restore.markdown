@@ -19,7 +19,7 @@ Beginning with NuGet 2.7, the NuGet Visual Studio extension integrates into Visu
 Here's how it works:
 
 1. Upon a project or solution build, Visual Studio raises an event that a build is beginning within the solution.
-1. NuGet responds to this event and checks for packages.config files included in the project(s) being built.
+1. NuGet responds to this event and checks for packages.config files included in the solution.
 1. For each packages.config file found, its packages are enumerated and checked for existence in the solution's `packages` folder.
 1. Any missing packages are downloaded from the user's configured (and enabled) package sources, respecting the order of the package sources.
 1. As packages are downloaded, they are unzipped into the solution's `packages` folder.
@@ -31,11 +31,14 @@ Before any of the above steps are taken however, NuGet verifies that consent is 
 
 These two options are available on the **Package Manager** General settings in Visual Studios options.
 
+Additionally, if NuGet recognizes that the MSBuild-Integrated package restore approach is enabled for the solution, automatic package restore is skipped. MSBuild-Integrated package restore is identified by checking the existence of the .nuget\\NuGet.targets file at the solution root.
+
 This approach to package restore offers several advantages:
 
 1. No need to enable it for your project or solution. Visual Studio will automatically download missing packages before your projects are built and team members don't need to understand NuGet Package Restore.
 1. No artifacts required within your project or solution.
 1. Packages are restored before MSBuild is invoked by Visual Studio. This allows packages that extend MSBuild though targets/props file imports to be restored before MSBuild starts, ensuring a successful build.
+1. Compatibility with ASP.NET Web Site projects created in Visual Studio.
 
 ### Command-Line Package Restore
 
