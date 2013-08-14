@@ -17,7 +17,7 @@ Reinstalling a package is a simple act of uninstalling a package and installing 
 1. **Package Update Broke the Project**: You updated a package and this broke your project. The failure is generally caused by a dependency package which may have gotten updated directly or because of another package update causing a dependency update. All you want is to go back to a state where the older version of the dependency package where things were fine.
 1. **Improved NuGet Package Development cycle**: Package authors often need to reinstall the same version of package they are developing to test the behavior. The command Install-Package does not provide ‘-force’ option, that could forcefully reinstall a package. So, `Update-Package -reinstall` is added to meet that requirement.
 
-## When to and when NOT to use it?
+## When to Reinstall Packages and What to Watch for
 
 Reinstalling packages seem pretty straightforward. But, it can get very tricky since the following may affect or be affected by it:
 
