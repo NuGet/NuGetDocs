@@ -28,17 +28,21 @@ Below is the summary of the NuGet config keys and their usage.
 	<tr>
 	<td> Package Restore
 	</td>
-	<td> "enabled" under the section "packageRestore"
+	<td> "enabled" and "automatic" under the section "packageRestore"
 
 	</td>
 	<td>
 	Allows you to restore missing packages from the NuGet source during build.<br/>
-	This key can be added to the NuGet.config manually or by setting "EnableNuGetPackageRestore" environment variable to "true" or from the package manager settings UI.<br/>
-	More details <a href="..\Workflows\Using-NuGet-without-committing-packages"> here.</a>
+	The environment variable "EnableNuGetPackageRestore" with a value of "true" can be used in place of the "enabled" key in the config file.<br/>
+	More details <a href="../Reference/Package-Restore"> here.</a>
 
 	<pre><code>
 	&lt;packageRestore&gt;
+		&lt;!-- Allow NuGet to download missing packages --&gt;
 		&lt;add key="enabled" value="True" /&gt;
+
+		&lt;!-- Automatically check for missing packages during build in Visual Studio --&gt;
+		&lt;add key="automatic" value="True" /&gt;
 	&lt;/packageRestore&gt;
 	</pre></code>
 

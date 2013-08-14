@@ -39,9 +39,12 @@ Below an example of NuGet configuration file that specifies some of the availabl
 		<add key="http_proxy.user" value="username" />
 		<add key="http_proxy.password" value="encrypted_password" />
       </config>
-	  <!-- If specified, package restore is enabled -->
 	  <packageRestore>
+        <!-- Allow NuGet to download missing packages -->
         <add key="enabled" value="True" />
+
+        <!-- Automatically check for missing packages during build in Visual Studio -->
+        <add key="automatic" value="True" />
       </packageRestore>
 	  <!--
 	  Used to specify the default Sources for list, install and update.
