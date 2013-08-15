@@ -308,6 +308,11 @@ PARAMETERS
         
         Required: false
         
+    <strong>-Force</strong>
+        Forces a package to be uninstalled, even if there are dependencies on it.
+        
+        Required: false
+        
     <strong>-Version</strong> <string>
         The version of the package to uninstall. If omitted, defaults to the latest version.
         
