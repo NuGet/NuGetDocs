@@ -75,7 +75,7 @@ Drawbacks:
 * License: Apache v2 
 * Sources: https://github.com/NuGet/Concierge 
 
-[http://concierge.nuget.org/](NuGet Concierge) is a package recommendation service: upload a packages.config file and NuGet Concierge will recommend you packages you may find useful.
+[NuGet Concierge](http://concierge.nuget.org/) is a package recommendation service: upload a packages.config file and NuGet Concierge will recommend you packages you may find useful.
 
 More info: [http://blog.nuget.org/20130816/introducung-nuget-concierge.html](http://blog.nuget.org/20130816/introducung-nuget-concierge.html)
 
