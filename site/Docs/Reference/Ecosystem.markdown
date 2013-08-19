@@ -71,6 +71,14 @@ Drawbacks:
 * requires you to fetch the sources, compile everything and configure quite a lot in source code and configuration files (and repeat this step if you want to upgrade to a newer version)
 * there's a [NuGet Gallery Operations Toolkit](https://github.com/NuGet/NuGetOperations), but it's not designed nor intended to work with every NuGetGallery installation
 
+### NuGet Concierge
+* License: Apache v2 
+* Sources: https://github.com/NuGet/Concierge 
+
+[http://concierge.nuget.org/](NuGet Concierge) is a package recommendation service: upload a packages.config file and NuGet Concierge will recommend you packages you may find useful.
+
+More info: [http://blog.nuget.org/20130816/introducung-nuget-concierge.html](http://blog.nuget.org/20130816/introducung-nuget-concierge.html)
+
 ## Microsoft
 Microsoft has extensively contributed to the development of the NuGet project. All contributions made by Microsoft employees are also open source and are donated (including copyrights) to the Outercurve Foundation.
 
