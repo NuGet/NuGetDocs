@@ -1,18 +1,5 @@
 # NuGet 2.7 Release Notes
 
-# THESE ARE THE PRELIMINARY RELEASE NOTES FOR THE 2.7 RELEASE
-
-## Release Candidate
-
-The NuGet 2.7 Release Candidate is now available, with an expected release before the end of August.
-
-* [Download: Visual Studio Extensions and NuGet.exe Command-Line](https://nuget.codeplex.com/releases/view/107605)
-* [All Work Items for the Release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all)
-* [Open Issues](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Proposed|Active&release=NuGet%202.7)
-* [Work Items Being Tested](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Resolved&release=NuGet%202.7)
-
-If you encounter any problems with NuGet 2.7, especially any regressions, please file an issue on [CodePlex](http://nuget.codeplex.com) right away and prefix the issue with "\[NuGet 2.7\]".
-
 ## Acknowledgements
 
 We would like to thank the following external contributors for their significant contributions to NuGet 2.7:
@@ -105,6 +92,13 @@ In addition to the work we've done ourselves, we're also working with some impor
 * AppHarbor - They are working to allow you to push your repo to Azure and have `nuget.exe restore` called before your solution is build.
 
 With each of the partners above, they would use their own copy of nuget.exe and you would not need to carry nuget.exe in your solution.
+
+#### Known Issues
+
+There are two known issues with nuget.exe restore with the 2.7 release, and these will be fixed soon and the nuget.exe download will be updated along with the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).
+
+1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
+1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
 
 ### Project Retargeting and Upgrade Build Errors/Warnings
 
