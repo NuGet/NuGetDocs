@@ -162,7 +162,7 @@ NuGet will load:
 ## NuGet config extensibility point
 NuGet config files are read in the following order, assuming the solution directory is c:\a\b\c:
 
-* c:\a\b\c\.nuget\nuget.config
+* c:\a\b\c\\.nuget\nuget.config
 * c:\a\b\c\nuget.config
 * c:\a\b\nuget.config
 * c:\a\nuget.config
