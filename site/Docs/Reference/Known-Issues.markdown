@@ -21,7 +21,7 @@ NuGet if you have an older version installed.
 When viewing the logs, you might see a mention of a `SignatureMismatchException`.
 
 To prevent this from occurring, there is a [Visual Studio 2010 SP1 hotfix](http://bit.ly/vsixcertfix) you can install.
-Alternatively, the workaround is to simply uninstall NuGet and then install it from the VS Extension Gallery.  See
+Alternatively, the workaround is to simply uninstall NuGet (while running Visual Studio as Administrator) and then install it from the VS Extension Gallery.  See
 <a href="http://support.microsoft.com/kb/2581019">http://support.microsoft.com/kb/2581019</a> for more information.
 
 ## Package Manager Console throws an exception when the Reflector Visual Studio Add-In is also installed.
