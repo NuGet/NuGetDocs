@@ -3,6 +3,7 @@ NuGet Config File
 NuGet Config Settings
 NuGet Config Defaults
 Package Restore
+Package Restore with Team Build
 Versioning
 Version Range Specification
 Command Line Reference
