@@ -10,7 +10,7 @@ Although this walkthrough is specific for the scenario of using [Team Foundation
 
 [Team Foundation Service]: http://tfs.visualstudio.com/
 
-## The general approach
+## The General Approach
 
 An advantage of using NuGet is that you can use it to avoid checking in binaries to your version control system.
 
@@ -31,7 +31,7 @@ The cure to this problem is making sure that packages are restored as the first 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files 
 
 <p class="info">
-<strong>Note:</strong> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in <strong>.targets</strong> files so that developers can simply open the solution without having to restore packages first. 
+<strong>Note:</strong> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in <strong>.targets</strong> files so that other developers can simply open the solution without having to restore packages first. 
 </p> 
 
 The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. Finally, I'll show how you can setup an automated build on the [Team Foundation Service] for this sample project.
@@ -75,9 +75,9 @@ We have, however, checked-in the `nuget.exe` as it's needed during the build. Fo
 
 The source code is under the `src` folder. Although our demo only uses a single solution, you can easily imagine that this folder contains more than one solution.
 
-We've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
+In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
 
-Since we already made the decision to never to check-in the target files we've also added a line to our `.gitignore` file so that packages folders are completely ignored:
+The `.gitignore` file looks as follows:
 
 	syntax: glob
 	*.user
@@ -108,8 +108,6 @@ TF version control supports a very similar mechanism via the [.tfignore][TfIgnor
 [TfIgnore]: http://msdn.microsoft.com/en-us/library/ms245454.aspx
 
 ## build.proj
-
-Since we need to restore the packages before building the solution, we need an outer build. Most projects will already have a build process that drives the build.
  
 For our demo, we keep the build process fairly simple. We'll create an MSBuild project that builds all solutions while making sure that packages are restored before building the solutions.
 
@@ -169,7 +167,7 @@ The result looks as follows:
 
 Team Build offers various process templates. For this demonstration, we're using the [Team Foundation Service]. On premise installations of TFS will be very similar though.
 
-Git and TF Version Control have different Team Build templates. In both cases, all you need is selecting the outer build.proj as the project you want to build.
+Git and TF Version Control have different Team Build templates, so the following steps will vary depending on which version control system you are using. In both cases, all you need is selecting the build.proj as the project you want to build.
 
 First, let's look at the process template for git. In the git based template the build is selected via the property `1. Solution to build`:
 
