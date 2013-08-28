@@ -54,7 +54,7 @@ These three use cases are the most common, but other scenarios do exist. For mor
 
 ### Command-Line Package Restore wrapped in MSBuild
 
-In order to use the command line based approach with existing build servers, such as [Team Foundation Build], it's often desirable to wrap the command line in a regular MSBuild project as this has the following advantages:
+In order to use the command line based approach with existing build servers, such as [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx), it's often desirable to wrap the command line in a regular MSBuild project as this has the following advantages:
 
 1. Existing build servers already have support for running MSBuild projects
 2. Many projects already have their own MSBuild-based build process
@@ -62,10 +62,7 @@ In order to use the command line based approach with existing build servers, suc
 
 This approach differs from the MSBuild-Integrated Package Restore as this doesn't run *while* building the sources. Instead, it runs this *before* anything else is being built. 
 
-You can find a more detailed walkthrough [here][TeamBuildWalkthrough].
-
-[Team Foundation Build]: http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx
-[TeamBuildWalkthrough]: /docs/reference/package-restore-team-build.markdown 
+You can find a more detailed walkthrough [here](/docs/reference/package-restore-with-team-build).
 
 ### MSBuild-Integrated Package Restore
 
