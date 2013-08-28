@@ -100,6 +100,8 @@ There are two known issues with nuget.exe restore with the 2.7 release, and thes
 1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
 1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
 
+There is also a known issue with the new package restore workflow whereby [automatic package restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue will be fixed in NuGet 2.8.
+
 ### Project Retargeting and Upgrade Build Errors/Warnings
 
 Many times after retargeting or upgrading your project, you find that some NuGet packages aren't functioning properly. Unfortunately, there is no indication of this and then there's no guidance on how to address it. With NuGet 2.7, we now use some Visual Studio events to recognize when you've retargeted or upgraded your project in a way that affects your installed NuGet packages.
