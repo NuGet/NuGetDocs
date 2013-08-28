@@ -52,6 +52,21 @@ Usage of NuGet.exe's [Restore Command](/docs/reference/command-line-reference#Re
 
 These three use cases are the most common, but other scenarios do exist. For more information on the Restore and Install commands, see the [Command-Line Reference](/docs/reference/command-line-reference).
 
+### Command-Line Package Restore wrapped in MSBuild
+
+In order to use the command line based approach with existing build servers, such as [Team Foundation Build], it's often desirable to wrap the command line in a regular MSBuild project as this has the following advantages:
+
+1. Existing build servers already have support for running MSBuild projects
+2. Many projects already have their own MSBuild-based build process
+3. It provides built-in support for aggregated logging and error reporting  
+
+This approach differs from the MSBuild-Integrated Package Restore as this doesn't run *while* building the sources. Instead, it runs this *before* anything else is being built. 
+
+You can find a more detailed walkthrough [here][TeamBuildWalkthrough].
+
+[Team Foundation Build]: http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx
+[TeamBuildWalkthrough]: /docs/reference/package-restore-team-build.markdown 
+
 ### MSBuild-Integrated Package Restore
 
 Prior to NuGet 2.7, an MSBuild-Integrated Package Restore approach was used and promoted. While this approach is still available, the NuGet team suggests using the Automatic Package Restore and Command-Line Package Restore instead.
