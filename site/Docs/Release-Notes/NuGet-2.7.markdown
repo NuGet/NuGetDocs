@@ -89,7 +89,7 @@ In addition to the work we've done ourselves, we're also working with some impor
 * Team Foundation Service - They are working to integrate the call to `nuget.exe restore` into the default build scenarios.
 * Windows Azure Web Sites - They are working to allow you to push your project to Azure and have `nuget.exe restore` called before your web site is built.
 * TeamCity - They are updating their NuGet Installer plugin for TeamCity 8.x
-* AppHarbor - They are working to allow you to push your repo to Azure and have `nuget.exe restore` called before your solution is build.
+* AppHarbor - They are working to allow you to push your repo to AppHarbor and have `nuget.exe restore` called before your solution is build.
 
 With each of the partners above, they would use their own copy of nuget.exe and you would not need to carry nuget.exe in your solution.
 
