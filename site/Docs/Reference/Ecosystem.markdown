@@ -317,6 +317,7 @@ There are quite a few other tools and utilities building further on top of NuGet
 * [NuGet Fight!](http://www.nugetfight.com/)
 * [NuGit](http://nugit.org/)
 * [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
+* [HotNuget](http://hotnuget.com) (Compare package usage)
 
 ## Training Materials and References
 Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steap learning curve it all! In fact, anyone can [get started consuming packages in no time](http://www.youtube.com/watch?feature=player_embedded&v=PboPfoptU2c). Authoring packages however, and especially authoring good packages, as well as embracing NuGet in your automated build and deployment processes requires some research in order to get things right.
