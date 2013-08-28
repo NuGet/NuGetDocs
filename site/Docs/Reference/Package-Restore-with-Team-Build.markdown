@@ -1,32 +1,20 @@
 # Package Restore with Team Foundation Build
 
-This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build] both, for [git] as well as [TF Version Control].
+This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx) both, for [git](http://en.wikipedia.org/wiki/Git_(software)) as well as [TF Version Control](http://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx).
 
-[Team Foundation Build]: http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx
-[git]: http://en.wikipedia.org/wiki/Git_(software)
-[TF Version Control]: http://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx
-
-Although this walkthrough is specific for the scenario of using [Team Foundation Service], the concepts also apply to other version control- and build systems.
-
-[Team Foundation Service]: http://tfs.visualstudio.com/
+Although this walkthrough is specific for the scenario of using [Team Foundation Service](http://tfs.visualstudio.com/), the concepts also apply to other version control- and build systems.
 
 ## The General Approach
 
 An advantage of using NuGet is that you can use it to avoid checking in binaries to your version control system.
 
-This is especially interesting if you are using a [distributed version control] system like git because developers need to clone the entire repository, including the full history, before they can start working locally. Checking in binaries can cause significant repository bloat as binary files are typically stored without delta compression.
+This is especially interesting if you are using a [distributed version control](http://en.wikipedia.org/wiki/Distributed_revision_control) system like git because developers need to clone the entire repository, including the full history, before they can start working locally. Checking in binaries can cause significant repository bloat as binary files are typically stored without delta compression.
 
-[distributed version control]: http://en.wikipedia.org/wiki/Distributed_revision_control
+NuGet has supported [restoring packages][http://docs.nuget.org/docs/reference/package-restore] as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this a inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
 
-NuGet has supported [restoring packages][package restore] as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this a inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
-
-[package restore]: http://docs.nuget.org/docs/reference/package-restore
-
-The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7 makes this super easy via a [simplified command line]. In order to restore packages for an entire solution all you need is to execute a command line like this:
+The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7 makes this super easy via a [simplified command line](http://docs.nuget.org/docs/release-notes/nuget-2.7#Simplified_Package_Restore_from_the_Command-Line). In order to restore packages for an entire solution all you need is to execute a command line like this:
 
 	nuget.exe restore path\to\solution.sln
-
-[simplified command line]: http://docs.nuget.org/docs/release-notes/nuget-2.7#Simplified_Package_Restore_from_the_Command-Line
 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files 
 
@@ -38,13 +26,7 @@ The following demo project shows how to set up the build in such a way that the 
 
 ## Repository Structure
 
-Our demo project is a simple command line tool that uses the command line argument to query Bing. It targets the .NET Framework 4 and uses many of the [BCL packages] ([Microsoft.Net.Http], [Microsoft.Bcl], [Microsoft.Bcl.Async], and [Microsoft.Bcl.Build]).
-
-[BCL Packages]: http://www.nuget.org/profiles/dotnetframework/
-[Microsoft.Net.Http]: http://www.nuget.org/packages/Microsoft.Net.Http
-[Microsoft.Bcl]: http://www.nuget.org/packages/Microsoft.Bcl
-[Microsoft.Bcl.Async]: http://www.nuget.org/packages/Microsoft.Bcl.Async
-[Microsoft.Bcl.Build]: http://www.nuget.org/packages/Microsoft.Bcl.Build
+Our demo project is a simple command line tool that uses the command line argument to query Bing. It targets the .NET Framework 4 and uses many of the [BCL packages](http://www.nuget.org/profiles/dotnetframework/) ([Microsoft.Net.Http](http://www.nuget.org/packages/Microsoft.Net.Http), [Microsoft.Bcl](http://www.nuget.org/packages/Microsoft.Bcl), [Microsoft.Bcl.Async](http://www.nuget.org/packages/Microsoft.Bcl.Async), and [Microsoft.Bcl.Build](http://www.nuget.org/packages/Microsoft.Bcl.Build)).
 
 The structure of the repository looks as follows:
 
@@ -86,26 +68,20 @@ The `.gitignore` file looks as follows:
 	obj
 	packages
 
-The `.gitignore` file is [quite powerful][GitIgnore]. For example, if you want to generally not check-in the contents of the `packages` folder but want to go with previous guidance of checking in the **.targets** files you could have the following rule instead:
+The `.gitignore` file is [quite powerful](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html). For example, if you want to generally not check-in the contents of the `packages` folder but want to go with previous guidance of checking in the **.targets** files you could have the following rule instead:
 
 	packages
 	!packages/**/*.targets
 
-[GitIgnore]: https://www.kernel.org/pub/software/scm/git/docs/gitignore.html
+This will exclude all `packages` folders but will re-include all contained **.targets** files. By the way, you can find a template for `.gitignore` files that is specifically tailored for the needs of Visual Studio developers [here](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
-This will exclude all `packages` folders but will re-include all contained **.targets** files. By the way, you can find a template for `.gitignore` files that is specifically tailored for the needs of Visual Studio developers [here][GitIgnoreVS].
-
-[GitIgnoreVS]: https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
-
-TF version control supports a very similar mechanism via the [.tfignore][TfIgnore] file. The syntax is virtually the same:
+TF version control supports a very similar mechanism via the [.tfignore](http://msdn.microsoft.com/en-us/library/ms245454.aspx) file. The syntax is virtually the same:
 
 	*.user
 	*.suo
 	bin
 	obj
 	packages
-
-[TfIgnore]: http://msdn.microsoft.com/en-us/library/ms245454.aspx
 
 ## build.proj
  
@@ -115,9 +91,7 @@ This project will have the three conventional targets `Clean`, `Build` and `Rebu
 
 - The `Build` and `Rebuild` targets both depend on `RestorePackages`. This makes sure that you can both run `Build` and `Rebuild` and rely on packages being restored.
 - `Clean`, `Build` and `Rebuild` invoke the corresponding MSBuild target on all solution files.
-- The `RestorePackages` target invokes `nuget.exe` for each solution file. This is accomplished by using [MSBuild's batching functionality][MSBuild Batching].
-
-[MSBuild Batching]: http://msdn.microsoft.com/en-us/library/ms171473.aspx
+- The `RestorePackages` target invokes `nuget.exe` for each solution file. This is accomplished by using [MSBuild's batching functionality](http://msdn.microsoft.com/en-us/library/ms171473.aspx).
 
 The result looks as follows:
 
@@ -171,12 +145,12 @@ Git and TF Version Control have different Team Build templates, so the following
 
 First, let's look at the process template for git. In the git based template the build is selected via the property `1. Solution to build`:
 
-![Build Process for git](http://docs.nuget.org/docs/reference/images/PackageRestoreTeamBuildGit.png)
+![Build Process for git](images/PackageRestoreTeamBuildGit.png)
 
 Please note that this property is a location in your repository. Since our `build.proj` is in the root, we simply used `build.proj`. If you place the build file under a folder called `tools`, the value would be `tools\build.proj`.
 
 In the TF version control template the project is selected via the property `1. Projects`:
 
-![Build Process for TFVC](http://docs.nuget.org/docs/reference/images/PackageRestoreTeamBuildTFVC.png)
+![Build Process for TFVC](images/PackageRestoreTeamBuildTFVC.png)
 
 In contrast to the git based template the TF version control supports pickers (the button on the right hand side with the three dots). So in order to avoid any typing errors we suggest you use them to select the project. 
