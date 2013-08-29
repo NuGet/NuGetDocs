@@ -85,6 +85,36 @@ The MSBuild-integrated approach to package restore has some drawbacks that vary 
 
 For more information on the MSBuild-integrated package restore approach, visit the [Using NuGet without committing packages](/docs/workflows/using-nuget-without-committing-packages) page.
 
+
+### Migrating MSBuild-Integrated solutions to use Automatic Package Restore
+
+Solutions currently using MSBuild-Integrated package restore can be migrated to Automatic Package Restore. Prior to migrating, it can help to understand some of the differences between the two approaches.
+
+As mentioned in the previous section, projects that use the MSBuild-Integrated package typically contain a .nuget folder with three files:
+
+1. NuGet.Config
+1. NuGet.exe
+1. NuGet.targets
+
+Since the presence of a NuGet.targets file determines whether NuGet will continue to use the MSBuild-Integrated approach, this file must be removed. Also, as the .nuget\NuGet.exe file is not used by Automatic Package Restore, it likewise can be removed.
+
+By default, the NuGet.Config file instructs NuGet to bypass adding package binaries to source control. Automatic Package Restore will honor this as long as you leave this file in place.
+
+In addition to these files, NuGet modifies the project files in the solution to reference the NuGet.targets file so it can participate in the build process. When migrating to Automatic Package Restore, these references must also be removed.
+
+With these details in mind, follow these steps to complete the migration:
+
+1. REMOVE the NuGet.exe and NuGet.targets files from the solution's .nuget folder. Make sure the files themselves are also removed from the solution workspace.
+1. RETAIN the NuGet.Config to continue to bypass adding packages to source control.
+1. EDIT each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. To do so, search for Nuget.targets and remove the entire <Import Project> line where it is referenced.
+
+To test the migration:
+
+1. Save the solution and close Visual Studio
+1. Remove the packages folder located under the solution root
+1. Reopen the solution in Visual Studio
+1. Rebuild the solution. Automatic Package Restore should a) Download and unzip each package, and; b) Ignore adding the packages to source control.
+
 ## Package Restore Consent
 
 As mentioned above, Automatic Package Restore in Visual Studio and the MSBuild-Integrated Package Restore both verify that the user has granted consent before packages are downloaded from the user's configured package sources (which likely includes a package source from the public nuget.org gallery). The concept of package restore consent was introduced in NuGet 2.0 (which was included in Visual Studio 2012). Package restore consent was revised with NuGet 2.7 to address feedback received and improve the usability of package restore.
