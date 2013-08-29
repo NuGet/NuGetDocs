@@ -90,7 +90,7 @@ For more information on the MSBuild-integrated package restore approach, visit t
 
 Solutions currently using MSBuild-Integrated package restore can be migrated to Automatic Package Restore. Prior to migrating, it can help to understand some of the differences between the two approaches.
 
-As mentioned in the previous section, projects that use the MSBuild-Integrated package typically contain a .nuget folder with three files:
+As mentioned in the previous section, projects that use MSBuild-Integrated package restore typically contain a .nuget folder with three files:
 
 1. NuGet.Config
 1. NuGet.exe
