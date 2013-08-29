@@ -104,15 +104,15 @@ In addition to these files, NuGet modifies the project files in the solution to 
 
 With these details in mind, follow these steps to complete the migration:
 
-1. REMOVE the NuGet.exe and NuGet.targets files from the solution's .nuget folder. Make sure the files themselves are also removed from the solution workspace.
-1. RETAIN the NuGet.Config file to continue to bypass adding packages to source control.
-1. EDIT each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. To do so, search for Nuget.targets and remove the entire <Import Project> line where it is referenced.
+1. Remove the NuGet.exe and NuGet.targets files from the solution's .nuget folder. Make sure the files themselves are also removed from the solution workspace.
+1. Retain the NuGet.Config file to continue to bypass adding packages to source control.
+1. Edit each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. To do so, search for Nuget.targets and remove the entire &lt;Import Project&gt; line where it is referenced.
 
 To test the migration:
 
-1. Save the solution and close Visual Studio
-1. Remove the packages folder located under the solution root
-1. Reopen the solution in Visual Studio
+1. Save the solution and close Visual Studio.
+1. Remove the packages folder located under the solution root.
+1. Reopen the solution in Visual Studio.
 1. Rebuild the solution. Automatic Package Restore should a) Download and unzip each package, and; b) Ignore adding the packages to source control.
 
 ## Package Restore Consent
