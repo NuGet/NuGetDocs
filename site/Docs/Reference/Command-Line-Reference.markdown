@@ -333,9 +333,14 @@ file:
 
 ### Examples
 
+    # Restore packages for a solution file
     nuget restore a.sln
-	nuget restore proj1\packages.config -PackagesDirectory .\packages
-    nuget restore -Source -source https://nuget.org/api/v2;https://www.myget.org/F/nuget
+    
+    # Restore packages for a project's packages.config file, with the packages folder at the parent
+    nuget restore proj1\packages.config -PackagesDirectory ..\packages
+    
+    # Restore packages for the solution in the current folder, specifying package sources
+    nuget restore -Source -source https://www.nuget.org/api/v2;https://www.myget.org/F/nuget
 
 
 ##  List Command
