@@ -335,6 +335,7 @@ file:
 
     nuget restore a.sln
 	nuget restore proj1\packages.config -PackagesDirectory .\packages
+    nuget restore -Source -source https://nuget.org/api/v2;https://www.myget.org/F/nuget
 
 
 ##  List Command
