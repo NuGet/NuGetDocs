@@ -2,10 +2,10 @@
 
 Gets or sets NuGet config values.
 
-### Usage
+### Config Command Usage
     nuget config -Set name=value
 
-### Options
+### Config Command Options
 <table>
     <tr>
         <td>Set</td>
@@ -30,7 +30,7 @@ Gets or sets NuGet config values.
     </tr>
 </table>
 
-### Examples
+### Config Command Examples
 
     nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
     nuget.config HTTP_PROXY
@@ -43,11 +43,11 @@ Gets or sets NuGet config values.
 
 Deletes a package from the server.
 
-### Usage
+### Delete Command Usage
     nuget delete <package Id> <package version> [API Key] [options]
 
 Specify the Id and version of the package to delete from the server.
-### Options
+### Delete Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -80,7 +80,7 @@ Specify the Id and version of the package to delete from the server.
     </tr>
 </table>
 
-### Examples
+### Delete Command Examples
 
     nuget delete MyPackage 1.0
         
@@ -94,11 +94,11 @@ Specify the Id and version of the package to delete from the server.
 
 Displays general help information and help information about other commands.
 
-### Usage
+### Help Command Usage
     nuget help [command]
 
 Pass a command name to display help information for that command.
-### Options
+### Help Command Options
 <table>
     <tr>
         <td>All</td>
@@ -122,7 +122,7 @@ Pass a command name to display help information for that command.
     </tr>
 </table>
 
-### Examples
+### Help Command Examples
 
     nuget help
     
@@ -140,11 +140,12 @@ Pass a command name to display help information for that command.
 
 Installs a package using the specified sources. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used.  If NuGet.config specifies no sources, uses the default NuGet feed.
 
-### Usage
+### Install Command Usage
     nuget install packageId|pathToPackagesConfig [options]
 
 Specify the id and optionally the version of the package to install. If a path to a packages.config file is used instead of an id, all the packages it contains are installed.
-### Options
+
+### Install Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -201,7 +202,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
 </table>
 
-### Examples
+### Install Command Examples
 
     nuget install elmah
     
@@ -212,10 +213,13 @@ Specify the id and optionally the version of the package to install. If a path t
 
 
 ## Restore command
-### Usage
+
+Downloads and unzips (restores) any packages missing from the packages folder.
+
+### Restore Command Usage
     nuget restore [<solution>|<packages.config file>] [options]
 
-### Options
+### Restore Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -264,7 +268,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
 </table>
 
-### Notes
+### Restore Command Notes
 The restore command is executed in the following steps:
 
 1. Determine the operation mode of the restore command.
@@ -331,7 +335,7 @@ file:
         * Download the package from package sources.
         * Unzip the package to the packages directory.
 
-### Examples
+### Restore Command Examples
 
     # Restore packages for a solution file
     nuget restore a.sln
@@ -347,11 +351,12 @@ file:
 
 Displays a list of packages from a given source. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used. If NuGet.config specifies no sources, uses the default NuGet feed.
 
-### Usage
+### List Command Usage
     nuget list [search terms] [options]
 
 Specify optional search terms.
-### Options
+
+### List Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -388,7 +393,7 @@ Specify optional search terms.
     </tr>
 </table>
 
-### Examples
+### List Command Examples
 
     nuget list
     
@@ -401,7 +406,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
 copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same directory as NuGet.exe.
 
-### Usage
+### Mirror Command Usage
     nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
 
 Specify the id of the package to mirror, the url to query the target repository (list command) and the url to push packages to the target repository.
@@ -409,7 +414,7 @@ If a path to a packages.config file is used instead of a package id, all the pac
 Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be 
 [http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
 
-### Options
+### Mirror Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -449,7 +454,7 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
     </tr>
 </table>
 
-### Examples
+### Mirror Command Examples
 
     nuget mirror packages.config  http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
     
@@ -463,11 +468,12 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
 
 Creates a NuGet package based on the specified nuspec or project file.
 
-### Usage
+### Pack Command Usage
     nuget pack <nuspec | project> [options]
 
 Specify the location of the nuspec or project file to create a package.
-### Options
+
+### Pack Command Options
 <table>
     <tr>
         <td>OutputDirectory</td>
@@ -562,7 +568,7 @@ Some NuGet packages are useful as development dependencies, which help you autho
 When running the pack command on this project, the created package will have a dependency on **jQuery** and **microsoft-web-helpers**, but will *not* have dependency on **netfx-Guard**.
 
 
-### Examples
+### Pack Command Examples
 
     nuget pack
     
@@ -585,12 +591,12 @@ When running the pack command on this project, the created package will have a d
 Pushes a package to the server and publishes it.
 NuGet's default configuration is obtained by loading %AppData%\NuGet\NuGet.config, then loading any nuget.config or .nuget\nuget.config starting from root of drive and ending in current directory.
 
-
-### Usage
+### Push Command Usage
     nuget push <package path> [API key] [options]
 
 Specify the path to the package and your API key to push the package to the server.
-### Options
+
+### Push Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -626,7 +632,7 @@ Specify the path to the package and your API key to push the package to the serv
     </tr>
 </table>
 
-### Examples
+### Push Command Examples
 
     nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
     
@@ -644,15 +650,16 @@ Specify the path to the package and your API key to push the package to the serv
     nuget.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg 
 
 
-##  Setapikey Command
+##  SetApiKey Command
 
 Saves an API key for a given server URL. When no URL is provided API key is saved for the NuGet gallery.
 
-### Usage
+### SetApiKey Command Usage
     nuget setapikey <API key> [options]
 
 Specify the API key to save and an optional URL to the server that provided the API key.
-### Options
+
+### SetApiKey Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -677,7 +684,7 @@ Specify the API key to save and an optional URL to the server that provided the 
     </tr>
 </table>
 
-### Examples
+### SetApiKey Command Examples
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
     
@@ -691,10 +698,10 @@ Specify the API key to save and an optional URL to the server that provided the 
 
 Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet.config
 
-### Usage
+### Sources Command Usage
     nuget sources <List|Add|Remove|Enable|Disable|Update> -Name [name] -Source [source]
 
-### Options
+### Sources Command Options
 <table>
     <tr>
         <td>Name</td>
@@ -736,16 +743,14 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
 </table>
 
 
-
-
 ##  Spec Command
 
 Generates a nuspec for a new package. If this command is run in the same folder as a project file (.csproj, .vbproj, .fsproj), it will create a tokenized nuspec file.
 
-### Usage
+### Spec Command Usage
     nuget spec [package id]
 
-### Options
+### Spec Command Options
 <table>
     <tr>
         <td>AssemblyPath</td>
@@ -774,7 +779,7 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     </tr>
 </table>
 
-### Examples
+### Spec Command Examples
 
     nuget spec
     
@@ -783,17 +788,14 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     nuget spec -a MyAssembly.dll
 
 
-
-
-
 ##  Update Command
 
 Update packages to latest available versions. This command also updates NuGet.exe itself.
 
-### Usage
+### Update Command Usage
     nuget update <packages.config|solution>
 
-### Options
+### Update Command Options
 <table>
     <tr>
         <td>Source</td>
@@ -846,7 +848,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
     </tr>
 </table>
 
-### Examples
+### Update Command Examples
 
     nuget update
         
