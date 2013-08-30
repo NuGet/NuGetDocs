@@ -107,6 +107,7 @@ There are two ways to opt into package restore consent, as needed by NuGet 2.0-2
 Starting with NuGet 2.7, package restore consent is **ON** by default. This means that all users are implicitly opted into restoring missing packages during build. This eliminates hurdles encountered by users when attempting to build projects that use NuGet, especially if the user is unfamiliar with NuGet and the package restore consent concept. When building a solution in Visual Studio, any missing packages will be automatically downloaded during build, and a cancellable progress window will be shown. Additionally, a message will be written to the Output window to indicate that package restore executed.
 
 #### Omitting Packages from Source Control
+
 Even though package restore *consent* is on by default, users still need to choose to omit their packages from source control before package restore is engaged. By default, source control systems will include the `packages` folder in your repository, and you need to take action to omit the packages from source control.
 
 ##### Git
@@ -140,3 +141,14 @@ To accomplish this, NuGet's [config extensibility point](/docs/reference/nuget-c
 	    <add key="automatic" value="False" />
 	  </packageRestore>
 	</configuration>
+
+### Package Restore Consent Errors with NuGet 2.7+
+
+If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of NuGet.exe in your solution's .nuget folder is version 2.6 or earlier, where package restore consent was still OFF by default.
+
+If you have upgraded to NuGet 2.7+ but your solution fails to build stating that you haven't given consent, you have a few options for proceeding:
+
+1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your %AppData%\NuGet\NuGet.config file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
+1. **Update the version of NuGet.exe in your .nuget folder.** To do this, run `nuget.exe update -self` from your .nuget folder, which will download the latest version of NuGet.exe and replace the version in the .nuget folder. The latest version of NuGet.exe will infer consent to be ON even when not explicitly saved in the NuGet.config file.
+1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](/docs/workflows/migrating-to-automatic-package-restore).
+
