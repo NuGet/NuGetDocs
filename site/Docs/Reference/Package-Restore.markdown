@@ -85,6 +85,8 @@ The MSBuild-integrated approach to package restore has some drawbacks that vary 
 
 For more information on the MSBuild-integrated package restore approach, visit the [Using NuGet without committing packages](/docs/workflows/using-nuget-without-committing-packages) page.
 
+To switch from MSBuild-integrated to automatic package restore, see the walkthrough of [migrating to Automatic Package Restore](/docs/workflows/migrating-to-automatic-package-restore).
+
 ## Package Restore Consent
 
 As mentioned above, Automatic Package Restore in Visual Studio and the MSBuild-Integrated Package Restore both verify that the user has granted consent before packages are downloaded from the user's configured package sources (which likely includes a package source from the public nuget.org gallery). The concept of package restore consent was introduced in NuGet 2.0 (which was included in Visual Studio 2012). Package restore consent was revised with NuGet 2.7 to address feedback received and improve the usability of package restore.
