@@ -142,7 +142,7 @@ To accomplish this, NuGet's [config extensibility point](/docs/reference/nuget-c
 	  </packageRestore>
 	</configuration>
 
-### Package Restore Consent Errors with NuGet 2.7+
+### Package Restore Consent Errors with NuGet 2.7
 
 If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of NuGet.exe in your solution's .nuget folder is version 2.6 or earlier, where package restore consent was still OFF by default.
 
