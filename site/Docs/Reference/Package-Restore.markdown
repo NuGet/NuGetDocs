@@ -106,6 +106,17 @@ There are two ways to opt into package restore consent, as needed by NuGet 2.0-2
 
 Starting with NuGet 2.7, package restore consent is **ON** by default. This means that all users are implicitly opted into restoring missing packages during build. This eliminates hurdles encountered by users when attempting to build projects that use NuGet, especially if the user is unfamiliar with NuGet and the package restore consent concept. When building a solution in Visual Studio, any missing packages will be automatically downloaded during build, and a cancellable progress window will be shown. Additionally, a message will be written to the Output window to indicate that package restore executed.
 
+#### Omitting Packages from Source Control
+Even though package restore *consent* is on by default, users still need to choose to omit their packages from source control before package restore is engaged. By default, source control systems will include the `packages` folder in your repository, and you need to take action to omit the packages from source control.
+
+##### Git
+Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder.
+
+##### TFS
+Use the .nuget\NuGet.config file to disable source control integration, as explained on the [NuGet Config Settings](/docs/reference/nuget-config-settings) document under the "Source control integration" section.
+
+Using this approach, rather than cloaking the `packages` folder or otherwise ignoring it, allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
+
 #### Opting Out
 
 Users uncomfortable automatically downloading missing packages during build have two levels for opting out of this feature, both included in the *Package Manager* General settings in Visual Studio:
