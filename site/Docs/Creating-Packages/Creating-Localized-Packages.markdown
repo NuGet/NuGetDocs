@@ -199,7 +199,7 @@ The satellite package approach allows you to separate your localized resources f
 
 If a developer installs this full set of packages, the same fully localized experience will be accomplished as the Single Package Approach.  The satellite assemblies and localized IntelliSense will be utilized.
 
-### Benefits and Disadvantages to the Single Package Approach
+### Benefits and Disadvantages to the Satellite Package Approach
 
 The satellite package approach offers the following benefits:
 
