@@ -64,7 +64,9 @@ In order to use Automatic Package Restore in Visual Studio, you only need to tak
 
 1. Don't check in your `packages` folder
 
-While all users are implicitly opted into automatic package restore, you can easily opt out through the Package Manager settings in Visual Studio.
+There are several ways to omit your `packages` folder from source control. For more information, see the [Omitting Packages from Source Control](/docs/reference/package-restore#Omitting_Packages_from_Source_Control) section of the [Package Restore](/docs/reference/package-restore) documentation.
+
+While all users are implicitly opted into automatic package restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
 ![Package Manager Settings](Images/NuGet-2.7/package-manager-settings.png)
 
