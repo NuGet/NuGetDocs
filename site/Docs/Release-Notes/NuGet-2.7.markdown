@@ -162,7 +162,7 @@ This feature was contributed by [Adam Ralph](https://twitter.com/adamralph) and 
 
 ### Removed Support for Visual Studio 2010 Express for Windows Phone
 
-The new package restore model in 2.7 is implemented by a new VSPackage which is different from the main NuGet VSPackage. Due to a technical issue, this new VSPackage doesn’t work correctly in the Visual Studio 2010 Express for Windows Phone SKU as we share the same code base with other supported Visual Studio SKUs. Therefore, starting with NuGet 2.7, we are dropping support for Visual Studio 2010 Express for Windows Phone from the published extension.
+The new package restore model in 2.7 is implemented by a new VSPackage which is different from the main NuGet VSPackage. Due to a technical issue, this new VSPackage doesn’t work correctly in the *Visual Studio 2010 Express for Windows Phone* SKU as we share the same code base with other supported Visual Studio SKUs. Therefore, starting with NuGet 2.7, we are dropping support for *Visual Studio 2010 Express for Windows Phone* from the published extension. Support for *Visual Studio 2010 Express for Web* is still included in the primary extension published to the Visual Studio Extension Gallery.
 
 Since we are unsure how many developers are still using NuGet in that version/edition of Visual Studio, we are publishing a separate Visual Studio extension specifically for those users and publishing it on CodePlex (rather than the Visual Studio Extension Gallery). We don't plan to continue to maintain that extension, but if this affects you please let us know by filing an issue on CodePlex.
 
