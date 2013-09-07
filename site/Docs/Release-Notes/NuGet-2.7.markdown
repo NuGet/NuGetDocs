@@ -97,7 +97,9 @@ With each of the partners above, they would use their own copy of nuget.exe and 
 
 #### Known Issues
 
-There are two known issues with nuget.exe restore with the 2.7 release, and these will be fixed soon and the nuget.exe download will be updated along with the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).
+There were two known issues with nuget.exe restore with the initial 2.7 release, but they were fixed on 9/6/2013 with an update to the [NuGet.CommandLine package](http://www.nuget.org/packages/NuGet.CommandLine/).  This update is also available on the [NuGet 2.7 download page](https://nuget.codeplex.com/releases/view/107605) on CodePlex.  Running `nuget.exe update -self` will update to the latest release.
+
+The fixed were:
 
 1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
 1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
