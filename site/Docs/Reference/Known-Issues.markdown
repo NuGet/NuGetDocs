@@ -1,5 +1,37 @@
 # Known Issues with NuGet 
 
+## Error installing packages with NuGet 2.7
+
+**Problem:**
+
+In NuGet 2.7 or above, when you attempt to install any package which contains assembly references, you may receive the error message **"Input string was not in a correct format."**, like below: 
+
+	PM> install-package log4net 
+	 Installing 'log4net 2.0.0'. 
+	 Successfully installed 'log4net 2.0.0'. 
+	 Adding 'log4net 2.0.0' to Tyson.OperatorUpload. 
+	 Install failed. Rolling back... 
+	 install-package : Input string was not in a correct format. 
+	 At line:1 char:1
+	◾install-package log4net
+	◾ ~~~~~~~~~~~~~~~~~~~~~~~
+	◾CategoryInfo : NotSpecified: (:) [Install-Package], FormatException
+	◾ FullyQualifiedErrorId : NuGetCmdletUnhandledException,NuGet.PowerShell.Commands.InstallPackageCommand
+
+
+This is caused by the type library for the VSLangProj.dll COM component being unregistered on your system. This can happen, for example, when you have two versions of Visual Studio installed side-by-side and you then uninstall the older version. Doing so may inadvertently unregister the above COM library.
+
+**Solution:**:
+
+Run this command from an **elevated prompt** to re-register the type library for VSLangProj.dll
+
+    regsvr32 "C:\Program Files (x86)\Common Files\microsoft shared\MSEnv\VsLangproj.olb"
+
+If the command fails, check to see if the file exists in that location.
+
+For more information about this error, see this [work item](https://nuget.codeplex.com/workitem/3609 "Work item 3609").
+
+
 ## Build failure after package update in VS 2012
 The problem: You are using VS 2012 RTM. When updating NuGet packages, you get this message: 
 "One or more packages could not be completed uninstalled." and you are prompted to restart 
