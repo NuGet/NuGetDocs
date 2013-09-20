@@ -11,11 +11,11 @@ Some people like to store multiple projects in the same directory, which poses a
 
 **Solution:**
 
-1. If the project contains **packages.<project name>.config**, we will use it to load packages and store new packages.  
+1. If the project contains **packages.&lt;project name&gt;.config**, we will use it to load packages and store new packages.  
 
 2. Otherwise, continue to use **packages.config**. 
 
-3. Users are required to manually rename it to **packages.<project name>.config**. There’s no support from NuGet. 
+3. Users are required to manually rename it to **packages.&lt;project name&gt;.config**. There’s no support from NuGet. 
 
 
 **Project name normalization:**
