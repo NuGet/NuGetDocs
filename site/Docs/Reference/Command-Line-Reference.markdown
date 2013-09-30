@@ -640,7 +640,7 @@ Specify the path to the package and your API key to push the package to the serv
     
     nuget push foo.nupkg
     
-    nuget push foo.nupkg.symbols
+    nuget push foo.symbols.nupkg
     
     nuget push foo.nupkg -Timeout 360
     
