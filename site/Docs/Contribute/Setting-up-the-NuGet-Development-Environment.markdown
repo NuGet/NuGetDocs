@@ -28,6 +28,37 @@ To debug the console and UI during development, following these steps:
 with a copy of the NuGet vsix installed. What you do in this instance don't affect the main VS instance. 
 
 ## Developing NuGet on Linux
+
+### Developing on OpenSUSE
+The easiest distribution to use is OpenSUSE. Install OpenSUSE 12.3, then follow these steps:
+
+1. **Install Git**
+
+        sudo zypper install git
+1. **Install Mono**
+Open firefox, go to <a href="http://software.opensuse.org/find">http://software.opensuse.org/find</a>. 
+Search package "mono-complete". In the result page, click "Show other versions". 
+Install version 3.2.3 from repository openSUE Factory. 
+
+1. **Import Trusted Root Certificates**. By default, Mono trusts no one. 
+The NuGet build needs to install some packages from https://www.nuget.org, 
+and without neccessary root certificates this will fail. Run
+this command to import trusted root certificates from Mozilla's LXR into 
+Mono's certificate store:
+
+        mozroots --sync --import
+1. **Clone the repository** 
+
+        git clone https://git01.codeplex.com/nuget
+
+1. **Build NuGet**
+Cd to the nuget source code direcotry, run
+
+        ./build.sh
+This will build NuGet.exe successfully.
+
+### Developing on Debian
+
 To build NuGet code on Linux Mint 14.1, follow these steps:
 
 1. **Install Git**. 
@@ -47,8 +78,8 @@ Then run `hash -r` to clear bash's cache so that the new version of git will get
         git clone https://git01.codeplex.com/nuget
 1. **Build Mono**. Do not use apt-get to install Mono since the installed 
 version is 2.X, which cannot build the NuGet code successfully. 
-NuGet requires Mono 3.0.
-  1. Get the Mono 3.0 source code tarball from <a href='http://download.mono-project.com/sources/mono/'>http://download.mono-project.com/sources/mono/</a>.
+Building NuGet requires Mono >= 3.2.
+  1. Get the Mono 3.2.3 source code tarball from <a href='http://download.mono-project.com/sources/mono/'>http://download.mono-project.com/sources/mono/</a>.
   1. Unzip the tarball using `tar -xjvf mono-xxx.tar.bz2`.
   1. Compile and install Mono.
     <pre><code>sudo apt-get install g++
@@ -58,10 +89,7 @@ make
 sudo make install
 </code></pre>
 
-1. **Import Trusted Root Certificates**. By default, Mono trusts no one. 
-The NuGet build needs to install some packages from https://www.nuget.org, 
-and without neccessary root certificates this will fail. Run
-this command to import trusted root certificates from Mozilla's LXR into 
+1. **Import Trusted Root Certificates**. Import trusted root certificates from Mozilla's LXR into 
 Mono's certificate store:
 
         mozroots --sync --import
@@ -69,8 +97,7 @@ Mono's certificate store:
 Now we can finally build NuGet. Cd to the nuget source code direcotry, run
 
         ./build.sh
-This will build NuGet.exe successfully. Note that currently there are many 
-failing unit tests that need to be fixed.
+This will build NuGet.exe successfully. 
 
  
 
