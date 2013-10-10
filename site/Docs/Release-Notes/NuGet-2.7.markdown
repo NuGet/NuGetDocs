@@ -104,7 +104,7 @@ The fixed were:
 1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
 1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
 
-There is also a known issue with the new package restore workflow whereby [automatic package restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue will be fixed in NuGet 2.8.
+There is also a known issue with the new package restore workflow whereby [automatic package restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue was fixed in NuGet 2.7.1.
 
 ### Project Retargeting and Upgrade Build Errors/Warnings
 
