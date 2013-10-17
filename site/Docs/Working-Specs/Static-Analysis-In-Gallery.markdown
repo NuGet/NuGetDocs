@@ -1,7 +1,7 @@
-# Scenario Overview #
+# Scenario Overview
 Run static analysis rules before pushing a package and notify the user about the errors and warnings.
 
-# Problem #
+## Problem
 
 Package authors would like to make sure that a package meets certain basic validation checks before publishing it. Similarly package consumers would like to know before intalling it.
 
@@ -11,7 +11,7 @@ The errors/warnings given by pack command (client side) gets ignored by authors 
 
 The proposal is to provide an extended set of static analysis rules from what we today and make it run on the server side  as well when a package is submitted for publishing.
 
-# Few rules to begin with#
+## Few rules to begin with
 
 
 1. Making sure all the assemblies and powershell script files in the package are strong name signed.
@@ -33,7 +33,7 @@ This is because the package has a dependency on jQuery which conflicts with the 
 Note : We already have most of the rules implemented and they are being used for our internal packages.
 
 
-# Work flow #
+## Work flow
 
 1. User uploads a package in nuget.org.
 2. In the upload wizard, have a checkboxes for the below option
@@ -43,13 +43,13 @@ Note : We already have most of the rules implemented and they are being used for
 3. Have a worker task which would run every 5 minutes and executes the analysis rules on newly submitted packages (with a high watermark) . The task should send mail notification to the owner about the errors and warnings.
 
               
-#### Open questions ####
+## Open questions
 
 1. In addition to "Run static analysis" option in the upload wizard, should we have an option like "Upload my package only when static analysis rule suceeds". That way an user can chose not to push the package if it has errors and get it fixed. In that case, should the package be in a temp container in blob ( and temp table in DB ) until the rules are run ?
 2. Other alternative would be to run the rules as part of the upload process ( like we have a "Verify" section in thwe upload wizard) and show instant results to the user. But running the analysis rules requires unzipping the nupkg file and we don't want to do it in the web role. Any thoughts around this ?
 
 
-# Extended scenarios : #
+## Extended scenarios:
 
 1. Store the results of static analysis in Gallery and make it available in the package page (if package consumers would like to look at it ? )
 
