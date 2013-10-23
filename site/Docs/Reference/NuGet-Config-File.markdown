@@ -24,9 +24,8 @@ Below an example of NuGet configuration file that specifies some of the availabl
 		Used to specify the default location to expand packages.
 		See: NuGet.exe help install
 		See: NuGet.exe help update
-		If value starts with "$\" then location is relative to this conf file.
 		-->
-        <add key="repositorypath" value="$\External\Packages" />
+        <add key="repositorypath" value="External\Packages" />
 		<!-- 
 		Used to specify default source for the push command.
 		See: NuGet.exe help push
