@@ -133,7 +133,7 @@ With these four NuGet config files present on the filesystem:
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
-        <add key="repositorypath" value="$\External\Packages" />
+        <add key="repositorypath" value="External\Packages" />
         <add key="DefaultPushSource" value="http://MyPrivateRepo/ES/api/v2/package" />
       </config>
       <packageSources>
