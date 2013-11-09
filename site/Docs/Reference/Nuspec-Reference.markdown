@@ -133,7 +133,8 @@ For example, when using the command:
     nuget pack MyProject.csproj
 
 The `MyProject.nuspec` file adjacent to the `MyProject.csproj` file may contain the following replacement tokens which 
-are populated by the values within the project.
+are populated by the values within the project.  The file may also contain other replacement tokens that will be specified
+using the [nuget pack -Properties](http://docs.nuget.org/docs/reference/command-line-reference#Pack_Command) feature.
 
 <table class="reference">
     <tr><th>Token</th><th>Source</th></tr>
