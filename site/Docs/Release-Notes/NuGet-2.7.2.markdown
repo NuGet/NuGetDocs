@@ -3,7 +3,7 @@
 ### Noteworthy Bug Fixes and Features
 
 ## License Text 
-For quite some time, Microsoft has included the NuGet packages for several popular open-source libraries as a part of the default templates for Web application projects in Visual Studio. JQuery is probably the most well-known example of this type of library. Because of the support agreement associated with components that are delivered along with a product, the package's script file contains different license text than the script file found in the same package on the public nuget.org gallery. This difference in text can cause prevent package updates from proceeding as a result of the different license text blocks causing the script files to have different content hash values (and therefore to be treated as modified by NuGet).
+For quite some time, Microsoft has included the NuGet packages for several popular open-source libraries as a part of the default templates for Web application projects in Visual Studio. jQuery is probably the most well-known example of this type of library. Because of the support agreement associated with components that are delivered along with a product, the package's script file contains different license text than the script file found in the same package on the public nuget.org gallery. This difference in text can prevent package updates from proceeding as a result of the different license text blocks causing the script files to have different content hash values (and therefore to be treated as modified within the project).
 
 To mitigate this issue, NuGet 2.7.2 allows the script author to include the license text block within a specially marked section which looks as follows.
 
@@ -13,7 +13,9 @@ To mitigate this issue, NuGet 2.7.2 allows the script author to include the lice
      * only.
      ************** NUGET: END LICENSE TEXT ***************/
 
-When updating packages with content files containing this block, NuGet does not factor the contents of the block into the comparison with the version on the NuGet gallery, and can therefore delete and update the content file as though it matches the original copy. 
+When updating packages with content files containing this block, NuGet does not factor the contents of the block into the comparison with the version on the NuGet gallery, and can therefore delete and update the content file as though it matches the original copy.
+
+This block is identified by the text "NUGET: BEGIN LICENSE TEXT" and "NUGET: END LICENSE TEXT" occurring anywhere on the beginning and ending lines.
 
 ## Add Binding Redirects for non-Framework Assemblies
 For assemblies that are part of the .NET Framework, NuGet skips adding binding redirects into the application's configuration file when updating the package. This fix addresses a regression in NuGet 2.7 whereby binding redirects were not being added for some assemblies, even though those assemblies are not considered a part of the .NET Framework. NuGet 2.7.2 restores the previous NuGet 2.5 and 2.6 behavior and adds the binding redirects.
