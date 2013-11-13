@@ -15,7 +15,7 @@ To mitigate this issue, NuGet 2.7.2 allows the script author to include the lice
 
 When updating packages with content files containing this block, NuGet does not factor the contents of the block into the comparison with the version on the NuGet gallery, and can therefore delete and update the content file as though it matches the original copy.
 
-This block is identified by the text "NUGET: BEGIN LICENSE TEXT" and "NUGET: END LICENSE TEXT" occurring anywhere on the beginning and ending lines.
+This block is identified by the text "NUGET: BEGIN LICENSE TEXT" and "NUGET: END LICENSE TEXT" occurring anywhere on the beginning and ending lines.  No other formatting requirements exist, allowing this feature to be used in any type of text file regardless of language.
 
 ## Add Binding Redirects for non-Framework Assemblies
 For assemblies that are part of the .NET Framework, NuGet skips adding binding redirects into the application's configuration file when updating the package. This fix addresses a regression in NuGet 2.7 whereby binding redirects were not being added for some assemblies, even though those assemblies are not considered a part of the .NET Framework. NuGet 2.7.2 restores the previous NuGet 2.5 and 2.6 behavior and adds the binding redirects.
