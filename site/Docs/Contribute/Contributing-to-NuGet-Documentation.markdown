@@ -395,5 +395,3 @@ Block-level HTML elements have a few restrictions:
 <pre>
     You can <em>not</em> use Markdown in here.
 </pre>
-
-** This is a temporary update for demonstration **
