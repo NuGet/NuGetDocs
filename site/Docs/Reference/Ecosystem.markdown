@@ -332,5 +332,12 @@ The following pointers should help you get the maximum out of NuGet:
 * Book: [Apress Pro NuGet](http://bit.ly/ProNuGet)
 * Xavier Decoster's blog: [http://www.xavierdecoster.com/tagged/NuGet](http://www.xavierdecoster.com/tagged/NuGet)
  
+## Documentation for Individual Packages
+
+[NuDoq](http://nudoq.org) provides the missing link between straightforward access and updates to NuGet packages, and their corresponding API documentation. 
+
+NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and update the site accordingly.
+
+
 ## Adding Your Project
 If you have a NuGet ecosystem project that would be a valuable addition to this page, please feel free to submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs/Reference/Ecosystem.markdown).
