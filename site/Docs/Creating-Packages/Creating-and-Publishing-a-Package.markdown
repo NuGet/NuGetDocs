@@ -98,7 +98,7 @@ Once your nuspec is ready, you can run:
 
 Note that you need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 
-If the project references other projects, you can add the referenced projects as part of the package, or as dependencies with -IncludeReferencedProjects option. This is done recursively. For example, suppose you have project A.csproj, which references B.csproj and C.csproj, while B.csproj references D.csproj & E.csproj, 
+If the project references other projects, you can add the referenced projects as part of the package, or as dependencies with [-IncludeReferencedProjects option](../Reference/Command-Line-Reference#Pack_Command_Options). This is done recursively. For example, suppose you have project A.csproj, which references B.csproj and C.csproj, while B.csproj references D.csproj & E.csproj, 
 C.csproj references F.csproj & G.csproj. Then, when you run 
 
 	nuget pack A.csproj -IncludeReferencedProjects
