@@ -13,6 +13,16 @@ package is built (but without the element that lists files if that element was i
 ## Metadata Section
 
 <table class="reference">
+    <tbody>
+        <tr><th>Attribute</th> <th>Description</th></tr>
+        <tr>
+            <td>minClientVersion</td>
+            <td>(<em>v2.5 or above</em>) Specifies the minimum version of the NuGet client that can install this package. This requirement is enforced by both the NuGet Visual Studio extension and nuget.exe program.</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<table class="reference">
 <tbody>
     <tr>
         <th>Element</th> <th>Description</th>
@@ -116,10 +126,6 @@ package is built (but without the element that lists files if that element was i
     <tr>
         <td>tags</td>
         <td>A space-delimited list of tags and keywords that describe the package. This information is used to help make sure users can find the package using searches in the <strong>Add Package Reference</strong> dialog box or filtering in the <strong>Package Manager Console</strong> window.</td>
-    </tr>
-    <tr>
-        <td>minClientVersion</td>
-        <td>(<em>v2.5 or above</em>) Specifies the minimum version of the NuGet client that can install this package. This requirement is enforced by both the NuGet Visual Studio extension and nuget.exe program.</td>
     </tr>
 </tbody>
 </table>
