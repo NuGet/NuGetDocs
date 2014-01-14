@@ -60,22 +60,26 @@ It is not uncommon to install a prerelease version of a package in order to inve
 Many different types of capabilities can be delivered as NuGet packages - including tools that are used for optimizing the development process. These components, while they can be instrumental in developing a new package, should not be considered a dependency of the new package when it is later published. NuGet 2.8 enables a package to identify itself in the .nuspec file as a developmentDependency. When installed, this metadata will also be added to the packages.config file of the project into which the package was installed. When that packages.config file is later analyzed for NuGet dependencies during `nuget.exe pack`, it will exclude those dependences marked as development dependencies.
 
 ### Individual packages.config Files for Different Platforms
+When developing applications for multiple target platforms, it is common to have different project files for each of the respective build environments. It is also common to consume different NuGet packages in different project files, as packages have varying levels of support for different platforms. NuGet 2.8 provides improved support for this scenario by creating different packages.config files for different platform-specific project files.
 
-1. multiple project files in the same folder (for x-plat like monomac, monotouch). We now allow you to have a packages.config per project file. If you're installing a package for mono-android, it will register those packages in a packages.<FX>.config file.  (GET SCREEN SHOT DEEPAK V)
+![Multiple package.config files](Images/NuGet-2.8/multiple-packageconfigs.png)
 
 ### Fallback to Local Cache
+Though NuGet packages are typically consumed from a remote gallery such as [the NuGet gallery](http://www.nuget.org/) using a network connection, there are many scenarios where the client is not connected. Without a network connection, the NuGet client was not able to sucesfully install packages - even when those packages were already on the client's machine in the local NuGet cache. NuGet 2.8 adds automatic cache fallback to the package manager console. For example, when disconnecting the network adaptor and installing jQuery, the console shows the following:
 
-7. not connected - look for packages in the nuget local cache
-   by default now, if nuget.org is unreachable, we will fall back to the cache
-   this only works in the PowerShell console (bummer) because otherwise, the cache would show up in the UI as a package source
+```
+PM> Install-Package jquery
+The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
+Installing 'jQuery 2.0.3'.
+Successfully installed 'jQuery 2.0.3'.
+Adding 'jQuery 2.0.3' to WebApplication18.
+Successfully added 'jQuery 2.0.3' to WebApplication18.
+```
+
+The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
 
 ### WebMatrix NuGet Client Updates
-
-9. WebMatrix gets 2.5 features
-   update all
-   min client version
-   overwrite
+Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](http://docs.nuget.org/docs/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 ### Bug Fixes
-
 In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
