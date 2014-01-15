@@ -25,7 +25,7 @@ Gets or sets NuGet config values.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
