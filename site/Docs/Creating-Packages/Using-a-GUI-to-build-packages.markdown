@@ -9,7 +9,7 @@ If you&#8217;re integrating building packages into a build system, then [using N
 and publish packages](~/docs/creating-packages/Creating-and-Publishing-a-Package) is a better choice.
 
 ## Installation
-Installing Package Explorer is easy, [click here and you&#8217;re done](http://nuget.codeplex.com/releases/59864/clickOnce/NuGetPackageExplorer.application)!
+Installing Package Explorer is easy, [click here and you&#8217;re done](https://npe.codeplex.com/downloads/get/clickOnce/NuGetPackageExplorer.application)!
 
 Package Explorer is a click-once application which means every time you launch it, it will 
 check for updates and allow you to keep the application up to date.
