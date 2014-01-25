@@ -153,6 +153,7 @@ the NuGet conventions.
 After the folder is copied to the target project, it is added to the `$env:Path (PATH) environment variable. 
 * __lib__ - Assemblies (*.dll* files) in the *lib* folder are added as assembly references when the package is installed.
 * __content__ - Files in the *content* folder are copied to the root of your application when the package is installed. 
+* __build__ - The *build* folder of a package is for MSBuild targets files that are automatically inserted into the *.csproj* file of the application.
 
 __Think of the _Content_ folder as the root of your target application__. For example, if I want 
 a package to add an image in the _/images_ directory of the target application, make 
