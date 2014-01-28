@@ -82,4 +82,4 @@ The cache fallback feature does not require any specific command arguments. Addi
 Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](http://docs.nuget.org/docs/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 ### Bug Fixes
-In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
+In addition to these features, this release of NuGet also includes many other bug fixes. There were 75 total issues addressed in the release. For a full list of work items fixed in NuGet 2.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
