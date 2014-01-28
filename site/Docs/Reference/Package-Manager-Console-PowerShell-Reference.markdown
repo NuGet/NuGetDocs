@@ -220,7 +220,7 @@ With NuGet 2.8 client or higher, Install-Package can be used to downgrade the ex
 
 Let's say you had 5.1.0-rc1 version of Microsoft.AspNet.MVC in your project but would like to go back to 5.0.0 version you could type the following command in PMC.
 
-     PM> Install-Package Microsoft.AspNet.MVC -Version 4.0.0. 
+     PM> Install-Package Microsoft.AspNet.MVC -Version 5.0.0. 
 
 In NuGet 2.7 or lower clients, if you try to downgrade a package, you would get an error message saying that a newer version is already installed.
 
