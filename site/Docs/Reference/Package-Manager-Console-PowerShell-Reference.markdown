@@ -219,6 +219,14 @@ Installs version 1.0.0 of Glimpse into the project named MvcApplication1
 Installs the package, Ninject.Mvc3, but not its dependencies. It looks in the directory, 
 c:\temp\packages to find the package.
 
+With NuGet 2.8 client or higher, Install-Package can be used to downgrade the existing packages in your project, if necessary. For example, if you had installed a pre-release version of a package to try out new features but would like to go back to a previous stable version you can do so using Install-Package.
+
+Let's say you had 5.0.0-beta1 version of Microsoft.AspNet.MVC in your project but would like to go back to 4.0.0 version you could type the following command in PMC.
+
+Install-Package Microsoft.AspNet.MVC -Version 4.0.0. 
+
+In NuGet 2.7 or lower clients, if you try to downgrade a package, you would get an error message saying that a newer version is already installed.
+
 ## Open-PackagePage
 Open the browser pointing to ProjectUrl, LicenseUrl or ReportAbuseUrl of the specified package.
 
