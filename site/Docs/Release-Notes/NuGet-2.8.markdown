@@ -38,7 +38,7 @@ Though NuGet 2.8 changes the _default_ behavior for resolving dependencies, it a
 ![DependencyVersion Switch](Images/NuGet-2.8/dependencyversion.png)
 
 ### DependencyVersion Attribute
-In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value if the -DependencyVersion switch is not specified in an invocation of install-package.  This value will also be respected by theNuGet Package Manager Dialouge for any install package commands.  To set this value add the attribute below to your nuget.config file:
+In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value if the -DependencyVersion switch is not specified in an invocation of install-package.  This value will also be respected by the NuGet Package Manager Dialouge for any install package commands.  To set this value add the attribute below to your nuget.config file:
 
 ```
     <config>
