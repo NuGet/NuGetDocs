@@ -38,7 +38,7 @@ Though NuGet 2.8 changes the _default_ behavior for resolving dependencies, it a
 ![DependencyVersion Switch](Images/NuGet-2.8/dependencyversion.png)
 
 ### DependencyVersion Attribute
-In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package commands. To set this value add the attribute below to your nuget.config file:
+In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your nuget.config file:
 
 ```
     <config>
@@ -91,6 +91,6 @@ The cache fallback feature does not require any specific command arguments. Addi
 Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](http://docs.nuget.org/docs/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 ### Bug Fixes
-One of the major bug fixes made was a significant perfomance improvement in the <code>update-package -reinstall</code> command.
+One of the major bug fixes made was perfomance improvement in the <code>update-package -reinstall</code> command.
 
 In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
