@@ -216,7 +216,7 @@ Installs version 1.0.0 of Glimpse into the project named MvcApplication1
 Installs the package, Ninject.Mvc3, but not its dependencies. It looks in the directory, 
 c:\temp\packages to find the package.
 
-With NuGet 2.8 client or higher, Install-Package can be used to downgrade the existing packages in your project, if necessary. For example, if you had installed a pre-release version of a package to try out new features but would like to go back to a previous stable version you can do so using Install-Package.
+With NuGet 2.8 client or higher, Install-Package can be used to downgrade the existing packages in your project, if necessary. For example, if you had installed a pre-release version of a package to try out new features but would like to go back to a previous stable version you can do so using Install-Package (or Update-Package).
 
 Let's say you had 5.1.0-rc1 version of Microsoft.AspNet.MVC in your project but would like to go back to 5.0.0 version you could type the following command in PMC.
 
@@ -423,3 +423,11 @@ Updates every package in the MvcApplication1 project.
 Updates Elmah to the highest "safe" version. For example, if Elmah version 1.0.0 of a package 
 is installed, and versions 1.0.1, 1.0.2, and 1.1 are available in the feed, the `-Safe` 
 flag updates the package to 1.0.2 instead of 1.1 as it would without the flag.
+
+With NuGet 2.8 client or higher, Update-Package can be used to downgrade the existing packages in your project, if necessary. For example, if you had installed a pre-release version of a package to try out new features but would like to go back to a previous stable version you can do so using Install-Package or Update-Package
+
+Let's say you had 5.1.0-rc1 version of Microsoft.AspNet.MVC in your project but would like to go back to 5.0.0 version you could type the following command in PMC.
+
+     PM> Update-Package Microsoft.AspNet.MVC -Version 5.0.0. 
+
+In NuGet 2.7 or lower clients, if you try to downgrade a package, you would get an error message saying that a newer version is already installed.
