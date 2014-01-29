@@ -155,7 +155,7 @@ Returns a reference to every project in the solution.
 ## Install-Package
 Installs a package.
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-FileConflictAction]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
 
 Installs a package and its dependencies into the project.
 
@@ -198,6 +198,40 @@ PARAMETERS
         Specify the action to take, when asked to overwrite or ignore existing files referenced by the project.             
         Possible values are Overwrite, Ignore and None.
         
+        Required: false
+		
+	<strong>-DependencyVersion</strong>
+		Specifies the version of the dependency package to be selected from the list of valid
+		dependency packages. The defult value is Lowest. You can override this default value
+		by specifying a new default value in nuget.config file:
+          &lt;configuration>
+		    &lt;config>
+              &lt;add key="DependencyVersion" value="HighestPatch" />
+            &lt;/config>
+          &lt;/configuration>
+		  
+        Note that for NuGet 2.7.2 or ealier, the default value is HighestPatch, and it cannot be
+		changed.
+		
+		Possible values are:
+		- Lowest: the lowest version;
+		- HighestPatch: the version with the lowest major, lowest minor, highest patch;
+		- HighestMinor: the version with the lowest major, highest minor, highest patch;
+		- Highest: the highest version;
+		
+		For example, package A has a dependency on package B >= 2.0. Available versions of package
+		B are: 1.0, 2.1.1, 2.1.2, 2.2.1, 2.2.2, 3.0.1, 3.0.2.
+		The version of package b selected will be:
+		- 2.1.1, when DependencyVersion is Lowest;
+		- 2.1.2, when DependencyVersion is HighestPatch;
+		- 2.2.2, when DependencyVersion is HighestMinor;
+		- 3.0.2, when DependencyVersion is Highest;
+		
+        Required: false
+
+    <strong>-WhatIf</strong>
+        Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
         Required: false
 </pre>
 ### Examples
@@ -292,7 +326,7 @@ Assigns the license URL to the variable, $url, without opening the URL in a brow
 ## Uninstall-Package
 Uninstalls a package.
 
-    Uninstall-Package [-Id] <string> [-RemoveDependencies] [-Force] [-Version <string>]
+    Uninstall-Package [-Id] <string> [-RemoveDependencies] [-Force] [-Version <string>] [-WhatIf]
 
 Uninstalls a package. If other packages depend on this package, the command will fail unless the –Force option is specified.
 <pre>    
@@ -322,6 +356,11 @@ PARAMETERS
         The version of the package to uninstall. If omitted, defaults to the latest version.
         
         Required: false
+
+    <strong>-WhatIf</strong>
+        Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+        Required: false
 </pre>
 ### Examples
 
@@ -347,7 +386,7 @@ Uninstalls the Elmah package even if another package depends on it.
 ## Update-Package
 Updates a package.
 
-    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-FileConflictAction]
+    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-FileConflictAction] [-WhatIf]
 
 Updates a package and its dependencies to a newer version.
     
@@ -394,6 +433,11 @@ PARAMETERS
         Specify the action to take, when asked to overwrite or ignore existing files referenced by the project. 
         Possible values are Overwrite, Ignore and None.
         
+        Required: false
+
+    <strong>-WhatIf</strong>
+        Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
         Required: false
 </pre>
 ### Examples
