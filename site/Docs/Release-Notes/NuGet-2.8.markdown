@@ -33,9 +33,18 @@ Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
 In this example, even though Developer1 and Developer2 installed PackageA@1.0.0, each ended up with a different version of PackageB. NuGet 2.8 changes this default behavior such that the dependency resolution behavior for patch versions is consistent with the behavior for major and minor versions. In the above example, then, PackageB@1.0.0 would be installed as a result of installing PackageA@1.0.0, regardless of the newer patch version.
 
 ### -DependencyVersion Switch
-Though NuGet 2.8 changes the _default_ behavior for resolving dependencies, it also adds more precise control over dependency resolution process via the -DependencyVersion switch in the package manager console. The switch enables resolving dependencies to the lowest possible version (default behavior), the highest possible version, or the highest minor or patch version.
+Though NuGet 2.8 changes the _default_ behavior for resolving dependencies, it also adds more precise control over dependency resolution process via the -DependencyVersion switch in the package manager console. The switch enables resolving dependencies to the lowest possible version (default behavior), the highest possible version, or the highest minor or patch version.  This switch only works for install-package in the powershell command.
 
 ![DependencyVersion Switch](Images/NuGet-2.8/dependencyversion.png)
+
+### DependencyVersion Attribute
+In addition to the -DependencyVersion switch detailed above, NuGet has also allowed for the ability to set a new attribute in the nuget.config file defining what the default value if the -DependencyVersion switch is not specified in an invocation of install-package.  This value will also be respected by the NuGet Package Manager Dialog for any install package commands.  To set this value add the attribute below to your nuget.config file:
+
+```
+    <config>
+        <add key="dependencyversion" value="Highest" />
+    </config>
+```
 
 ### Preview NuGet Operations With -whatif
 Some NuGet packages can have deep dependency graphs, and as such, it can be helpful during an install, uninstall, or update operation to first see what will happen. NuGet 2.8 adds the standard PowerShell -what if switch to the install-package, uninstall-package, and update-package commands to enable visualizing the entire closure of packages to which the command will be applied. For example, running `install-package Microsoft.AspNet.WebApi -whatif` in an empty ASP.NET Web application yields the following.
@@ -82,4 +91,6 @@ The cache fallback feature does not require any specific command arguments. Addi
 Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](http://docs.nuget.org/docs/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 ### Bug Fixes
-In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
+One of the major bug fixes made was a significant perfomance improvement in the <code>update-package -reinstall</code> command.
+
+In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
