@@ -2,18 +2,18 @@
 
 ## Acknowledgements
 
-1. [leppie](https://www.codeplex.com/site/users/view/leppie)
+1. [Llewellyn Pritchard](https://www.codeplex.com/site/users/view/leppie) ([@leppie](https://twitter.com/leppie))
     - [#3466](https://nuget.codeplex.com/workitem/3466) - When packing packages, verifying Id of dependency packages.
-1. [maartenba](https://www.codeplex.com/site/users/view/maartenba) ([@Maarten Balliauw](https://twitter.com/maartenballiauw))
+1. [Maarten Balliauw](https://www.codeplex.com/site/users/view/maartenba) ([@maartenballiauw](https://twitter.com/maartenballiauw))
     - [#2379](https://nuget.codeplex.com/workitem/2379) - Remove the $metadata suffix when persistening feed credentials.
-1. [FilipDeVos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@Filip De Vos](https://twitter.com/foxtricks))
+1. [Filip De Vos](https://www.codeplex.com/site/users/view/FilipDeVos) ([@foxtricks](https://twitter.com/foxtricks))
     - [#3538](http://nuget.codeplex.com/workitem/3538) - Support specifying project file for the nuget.exe update command.
-1. [jjgonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
+1. [Juan Gonzalez](https://www.codeplex.com/site/users/view/jjgonzalez)
     - [#3536](http://nuget.codeplex.com/workitem/3536) - Replacement tokens not passed with -IncludeReferencedProjects.
-1. [Sarkie](https://www.codeplex.com/site/users/view/Sarkie)
+1. [David Poole](https://www.codeplex.com/site/users/view/Sarkie) ([@Sarkie_Dave](https://twitter.com/Sarkie_Dave))
     - [#3677](http://nuget.codeplex.com/workitem/3677) - Fix nuget.push throwing OutOfMemoryException when pushing large package.
-1. [Despostes](https://www.codeplex.com/site/users/view/Despostes)
-    - [#3666](http://nuget.codeplex.com/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
+1. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
+	- [#3666](http://nuget.codeplex.com/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
 
 ## Notable features in the release
 
@@ -86,9 +86,6 @@ Successfully added 'jQuery 2.0.3' to WebApplication18.
 ```
 
 The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
-
-### WebMatrix NuGet Client Updates
-Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](http://docs.nuget.org/docs/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
 
 ### Bug Fixes
 One of the major bug fixes made was perfomance improvement in the <code>update-package -reinstall</code> command.
