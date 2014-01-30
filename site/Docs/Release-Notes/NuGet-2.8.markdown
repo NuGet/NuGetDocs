@@ -87,6 +87,17 @@ Successfully added 'jQuery 2.0.3' to WebApplication18.
 
 The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
 
+### WebMatrix NuGet Client Updates
+Along with NuGet 2.8, the NuGet extension for WebMatrix was also updated to include many of the major features delivered with [NuGet 2.5](http://docs.nuget.org/docs/release-notes/nuget-2.5). New capabilities include those such as 'Update All', 'Minimum NuGet Version', and allowing for overwriting of content files.
+
+To update your NuGet Package Manager extension in WebMatrix 3:
+
+1. Open WebMatrix 3
+2. Click the Extensions icon in the ribbon
+3. Select the Updates tab
+4. Click to update NuGet Package Manager to 2.5.0
+5. Close and restart WebMatrix 3
+
 ### Bug Fixes
 One of the major bug fixes made was performance improvement in the <code>update-package -reinstall</code> command.
 
