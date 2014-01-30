@@ -18,7 +18,7 @@
 ## Notable features in the release
 
 ### Patch Resolution for Dependencies
-When resolving package dependencies, NuGet has historically implemented a strategy of selecting the lowest major and minor package version which satisfies the dependencies on the package. Unlike the major and minor verison, however, the patch version was always resolved to the highest version. Though the behavior was well-intentioned, it created a lack of determinism for installing packages with dependencies. Consider the following example:
+When resolving package dependencies, NuGet has historically implemented a strategy of selecting the lowest major and minor package version which satisfies the dependencies on the package. Unlike the major and minor version, however, the patch version was always resolved to the highest version. Though the behavior was well-intentioned, it created a lack of determinism for installing packages with dependencies. Consider the following example:
 
 ```
 PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
@@ -88,6 +88,6 @@ Successfully added 'jQuery 2.0.3' to WebApplication18.
 The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
 
 ### Bug Fixes
-One of the major bug fixes made was perfomance improvement in the <code>update-package -reinstall</code> command.
+One of the major bug fixes made was performance improvement in the <code>update-package -reinstall</code> command.
 
 In addition to these features and the aforementioned performance fix, this release of NuGet also includes many other bug fixes. There were 181 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.8&status=all).
