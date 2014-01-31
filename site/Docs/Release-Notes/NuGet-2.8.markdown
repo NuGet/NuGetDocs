@@ -14,6 +14,13 @@
     - [#3677](http://nuget.codeplex.com/workitem/3677) - Fix nuget.push throwing OutOfMemoryException when pushing large package.
 1. [Wouter Ouwens](https://www.codeplex.com/site/users/view/Despotes)
 	- [#3666](http://nuget.codeplex.com/workitem/3666) - Fix incorrect target path when project references another CLI/C++ project.
+1. [Adam Ralph](http://www.codeplex.com/site/users/view/adamralph) ([@adamralph](https://twitter.com/adamralph))
+    - [#3639](https://nuget.codeplex.com/workitem/3639) - Allow packages to be installed as development dependencies by default
+1. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
+    - [#3717](https://nuget.codeplex.com/workitem/3717) - Remove implicit upgrades to the latest patch version
+1. Gregory Vandenbrouck
+    - Several bug fixes and improvements for NuGet.Server, the nuget.exe mirror command, and others.
+    - This work was done over several months, with Gregory working with us on the right timing to integrate into master for 2.8.
 
 ## Notable features in the release
 
@@ -97,6 +104,8 @@ To update your NuGet Package Manager extension in WebMatrix 3:
 3. Select the Updates tab
 4. Click to update NuGet Package Manager to 2.5.0
 5. Close and restart WebMatrix 3
+
+This is the NuGet team's first release of the NuGet Package Manager extension for WebMatrix.  The code was recently contributed by Microsoft into the open-source Outercurve NuGet project.  Previously, the NuGet integration was built into WebMatrix, and it could not be updated out of band from WebMatrix.  We now have the capability to further update it alongside the rest of NuGet's client tools.
 
 ### Bug Fixes
 One of the major bug fixes made was performance improvement in the <code>update-package -reinstall</code> command.
