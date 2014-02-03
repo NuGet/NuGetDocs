@@ -18,7 +18,7 @@
     - [#3639](https://nuget.codeplex.com/workitem/3639) - Allow packages to be installed as development dependencies by default
 1. [David Fowler](https://www.codeplex.com/site/users/view/dfowler) ([@davidfowl](https://twitter.com/davidfowl))
     - [#3717](https://nuget.codeplex.com/workitem/3717) - Remove implicit upgrades to the latest patch version
-1. Gregory Vandenbrouck
+1. [Gregory Vandenbrouck](https://www.codeplex.com/site/users/view/vdbg)
     - Several bug fixes and improvements for NuGet.Server, the nuget.exe mirror command, and others.
     - This work was done over several months, with Gregory working with us on the right timing to integrate into master for 2.8.
 
