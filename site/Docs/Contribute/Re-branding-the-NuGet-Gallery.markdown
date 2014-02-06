@@ -11,16 +11,20 @@ At a high level re-branding the gallery is as simple as these three steps.
 
 ###Clone the Gallery
 
-Follow the instructions on setting up a local version of the NuGet Gallery [here](https://github.com/NuGet/NuGetGallery/blob/master/README.markdown)
+Follow the instructions on setting up a local version of the NuGet Gallery [here](https://github.com/NuGet/NuGetGallery/blob/master/README.markdown), with the following changes:
+
+1. First fork the gallery from the main fork to your own version.  This can be accomplished be clicking the fork button at the top of the github page for the NuGet Gallery Repository.
+2. When you clone down, you will use the url of your own fork of the gallery, not the main NuGetGallery fork.
+3. After cloning add a reference to the main NuGetGallery repository by typing `git add remote nuget https://gitub.com/NuGet/NuGetGallery.git` in your GitBash/Powershell terminal.
 
 ###Modify the web.config
 
 In addition to any modifications made as part of the process to get your gallery running locally in the instructions above, find the `Gallery.Brand` and the `Gallery.GalleryOwner` references and modify them with the new values for your re-branded Gallery.
 
 	<add key="Gallery.Brand" value="Rebranded Gallery" />
-    <add key="Gallery.GalleryOwner" value="Rebranded NuGet Gallery &lt;nugetgallery@outercurve.org&gt;" />
+    <add key="Gallery.GalleryOwner" value="Rebranded NuGet Gallery &lt;your_email@youremailhoster.com&gt;" />
 
-###New files/styles
+###New Files and Styles
 
 For adding any new Views to the re-branded Gallery use the following instructions:
 
@@ -41,9 +45,9 @@ For adding any new Content files to the re-branded Gallery use the following ins
 3. Note that these files will be appended to the matched Content file, with normal css rules being used (later overwrites of the same rule will win).
 4. This means that it is possible that pulling down the latest gallery version from git can change your styling as more specific rules can be added in the pull request.
 
-##Staying up to date
+##Pulling the Latest NuGet Gallery into the Re-Branded Gallery
 
-The goal of re-branding the gallery in the steps outlined above is that you can continue to pull updated versions of the gallery code without worrying about your views and content being overwritten.  Additionally, you can use the existing git infrastructure of the gallery to do your own source control within your team.  When you are ready to pull the latest changes from the main fork of the gallery just do a `git pull origin master` and you will get the latest gallery bits.  
+The goal of re-branding the gallery in the steps outlined above is that you can continue to pull updated versions of the gallery code without worrying about your views and content being overwritten.  Additionally, you can use the existing git infrastructure of the gallery to do your own source control within your team.  When you are ready to pull the latest changes from the main fork of the gallery just do a `git pull nuget master` and you will get the latest gallery bits.  
 
 **Note**: the web.config can cause a merge conflict (if it has been modified in master), and when resolving the merge conflict you should make sure to preserve any updates you have made, while being aware of any new settings added in master.
 
@@ -51,21 +55,21 @@ The goal of re-branding the gallery in the steps outlined above is that you can 
 
 This section has in depth walkthroughs and examples of the different processes involved in re-branding the gallery detailed above.
 
-###Modifying the Web.Config
+###Modifying the web.config
 
-Open the web.config file of the NuGetGallery project.  Then search for the Brand and GalleryOwner attributes in the file
+Open the web.config file of the NuGetGallery project.  Then search for the Brand and GalleryOwner attributes in the file.
 
 ![screenshot of the web.config file (with line numbers) with the Brand and GalleryOwner attributes highlighted](./images/webconfig1.jpg)
 
-Modify these two attributes to the new values for your re-branded Gallery
+Modify these two attributes to the new values for your re-branded Gallery.
 
 ![screenshot of the web.config file with the Brand and GalleryOwner modified from above](./images/webconfig2.jpg)
 
-###Creating/Overriding a new View
+###Creating/Overriding a New View
 
-In this example, the uploadPackage page will be re-branded to contain unique language for the re-branded site.
+In this example, the Upload Package page will be re-branded to contain unique language for the re-branded site.
 
-First note the folder structure of the original uploadPackage page.
+First note the folder structure of the original Upload Package page.
 
 ![picture of the folder structure under views of Packages/uploadPackage](./images/uploadPackage1.jpg)
 
