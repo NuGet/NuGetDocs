@@ -79,7 +79,7 @@ Also notice that on F5, if you navigate to `http://nuget.localtest.me/packages/u
 
 Create a matching folder structure (including the Views folder, under branding)
 
-![picture showing before and after of the new folders (Views and Packages) created under the Branding folder](./images/uploadPackage3.jpg)
+![picture showing the new folders (Views and Packages) created under the Branding folder](./images/uploadPackage3.jpg)
 
 Create a new .cshtml file named `uploadPackage.cshtml` under the new `Branding/Views/Packages` Area path.  Then modify the file to the new desired values.
 
