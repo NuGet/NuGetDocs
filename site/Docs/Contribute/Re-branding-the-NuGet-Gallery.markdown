@@ -45,6 +45,8 @@ For adding any new Content files to the re-branded Gallery use the following ins
 3. Note that these files will be appended to the matched Content file, with normal css rules being used (later overwrites of the same rule will win).
 4. This means that it is possible that pulling down the latest gallery version from git can change your styling as more specific rules can be added in the pull request.
 
+Note: there is a current [bug](https://github.com/NuGet/NuGetGallery/issues/1888) related to content re-branding getting served.  Workaround steps are provided there
+
 ##Pulling the Latest NuGet Gallery into the Re-Branded Gallery
 
 The goal of re-branding the gallery in the steps outlined above is that you can continue to pull updated versions of the gallery code without worrying about your views and content being overwritten.  Additionally, you can use the existing git infrastructure of the gallery to do your own source control within your team.  When you are ready to pull the latest changes from the main fork of the gallery just do a `git pull nuget master` and you will get the latest gallery bits.  
@@ -91,7 +93,15 @@ When we now refresh the `http://nuget.localtest.me/packages/upload` page in the 
 
 That's all.
 
-###Adding custom Content/Styling
+###Adding Custom CSS
+
+Identify which content file the styling you are overriding comes from (Layout, Site, or PageStylings). Create a new css file with the same name in the `Branding/Content` folder.  In this example some styling from the Layout page is being overridden, so that file is created.
+
+![Screenshot of a new Layout.css file in the Branding/Content folder](./images/customcontent1.jpg)
+
+Now add your css rule as normal (either for overriding or for creating new styling rules).  In this example, the footer background color is modified from a peaceful teal to a blinding yellow.
+
+![Screenshot of the new rule on the left and the nuget homepage with the new footer styling on the right](./images/customcontent2.jpg)
 
 ##Tips for how to Re-Brand
 
@@ -104,16 +114,12 @@ Pre-reqs:
 - Visual Studio 2013 Pro, Premium or Ultimate
 - [WebEssentials](http://visualstudiogallery.msdn.microsoft.com/56633663-6799-41d7-9df7-0f2a504ca361)
 
-Go into Visual Studio, and run the NuGetGallery (F5).  In the browser navigate to the page you want to alter.  In this example we will use the Statistics page.
+Go into Visual Studio, and run the NuGetGallery (F5).  In the browser navigate to the page you want to alter.  In this example we will use the Upload Package page. Notice at the bottom left of the browser window there is a semi-transparent overlay.
 
-![Screenshot of the browser on the nuget.localtest.me/stats page](./images/browserlink1.jpg)
+![Screenshot of the browser on the nuget.localtest.me/packages/upload page](./images/browserlink1.jpg)
 
-Notice at the bottom left of the browser window there is a semi-transparent overlay.
+Either click the inspect element or use the keyboard shortcut (`Ctrl+Alt+I`).  Make sure that you can see both Visual Studio and the browser.  Now hover over the page to see which file generated which parts of the page.
 
-![Screenshot of the WebEssentials overlay highlighted in the browser](./images/browserlink2.jpg)
-
-Either click the inspect element or use the keyboard shortcut.  Make sure that you can see both Visual Studio and the browser.  Now hover over the page to see which file generated which parts of the page
-
-![Screenshot of hovering over an element in the browser in inspectmode, with the VS also visible and having that element in the IDE highlighted](./images/browserlink3.jpg)
+![Screenshot of hovering over an element in the browser in inspectmode (1), with the VS also visible and having that element in the IDE highlighted(2)](./images/browserlink2.jpg)
 
 You now know which file you need to create a override of in the Branding folder.
