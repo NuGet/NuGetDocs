@@ -28,13 +28,13 @@
 When resolving package dependencies, NuGet has historically implemented a strategy of selecting the lowest major and minor package version which satisfies the dependencies on the package. Unlike the major and minor version, however, the patch version was always resolved to the highest version. Though the behavior was well-intentioned, it created a lack of determinism for installing packages with dependencies. Consider the following example:
 
 ```
-PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
+    PackageA@1.0.0 -[ >=1.0.0 ]-> PackageB@1.0.0
 
-Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
+    Developer1 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.0
 
-PackageB@1.0.1 is published 
+    PackageB@1.0.1 is published 
 
-Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
+    Developer2 installs PackageA@1.0.0: installed PackageA@1.0.0 and PackageB@1.0.1
 ```
 
 In this example, even though Developer1 and Developer2 installed PackageA@1.0.0, each ended up with a different version of PackageB. NuGet 2.8 changes this default behavior such that the dependency resolution behavior for patch versions is consistent with the behavior for major and minor versions. In the above example, then, PackageB@1.0.0 would be installed as a result of installing PackageA@1.0.0, regardless of the newer patch version.
@@ -54,19 +54,19 @@ In addition to the -DependencyVersion switch detailed above, NuGet has also allo
 ```
 
 ### Preview NuGet Operations With -whatif
-Some NuGet packages can have deep dependency graphs, and as such, it can be helpful during an install, uninstall, or update operation to first see what will happen. NuGet 2.8 adds the standard PowerShell -what if switch to the install-package, uninstall-package, and update-package commands to enable visualizing the entire closure of packages to which the command will be applied. For example, running `install-package Microsoft.AspNet.WebApi -whatif` in an empty ASP.NET Web application yields the following.
+Some NuGet packages can have deep dependency graphs, and as such, it can be helpful during an install, uninstall, or update operation to first see what will happen. NuGet 2.8 adds the standard PowerShell -whatif switch to the install-package, uninstall-package, and update-package commands to enable visualizing the entire closure of packages to which the command will be applied. For example, running `install-package Microsoft.AspNet.WebApi -whatif` in an empty ASP.NET Web application yields the following.
 
 ```
-PM> install-package Microsoft.AspNet.WebApi -whatif
-Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
-Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
-Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
-Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
-Install Newtonsoft.Json 4.5.11
-Install Microsoft.AspNet.WebApi.Client 5.0.0
-Install Microsoft.AspNet.WebApi.Core 5.0.0
-Install Microsoft.AspNet.WebApi.WebHost 5.0.0
-Install Microsoft.AspNet.WebApi 5.0.0
+    PM> install-package Microsoft.AspNet.WebApi -whatif
+    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.WebHost (≥ 5.0.0)'.
+    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Core (≥ 5.0.0)'.
+    Attempting to resolve dependency 'Microsoft.AspNet.WebApi.Client (≥ 5.0.0)'.
+    Attempting to resolve dependency 'Newtonsoft.Json (≥ 4.5.11)'.
+    Install Newtonsoft.Json 4.5.11
+    Install Microsoft.AspNet.WebApi.Client 5.0.0
+    Install Microsoft.AspNet.WebApi.Core 5.0.0
+    Install Microsoft.AspNet.WebApi.WebHost 5.0.0
+    Install Microsoft.AspNet.WebApi 5.0.0
 ```
 
 ### Downgrade Package
@@ -84,12 +84,12 @@ When developing applications for multiple target platforms, it is common to have
 Though NuGet packages are typically consumed from a remote gallery such as [the NuGet gallery](http://www.nuget.org/) using a network connection, there are many scenarios where the client is not connected. Without a network connection, the NuGet client was not able to successfully install packages - even when those packages were already on the client's machine in the local NuGet cache. NuGet 2.8 adds automatic cache fallback to the package manager console. For example, when disconnecting the network adapter and installing jQuery, the console shows the following:
 
 ```
-PM> Install-Package jquery
-The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
-Installing 'jQuery 2.0.3'.
-Successfully installed 'jQuery 2.0.3'.
-Adding 'jQuery 2.0.3' to WebApplication18.
-Successfully added 'jQuery 2.0.3' to WebApplication18.
+    PM> Install-Package jquery
+    The source at nuget.org [https://www.nuget.org/api/v2/] is unreachable. Falling back to NuGet Local Cache at C:\Users\me\AppData\Local\NuGet\Cache
+    Installing 'jQuery 2.0.3'.
+    Successfully installed 'jQuery 2.0.3'.
+    Adding 'jQuery 2.0.3' to WebApplication18.
+    Successfully added 'jQuery 2.0.3' to WebApplication18.
 ```
 
 The cache fallback feature does not require any specific command arguments. Additionally, cache fallback currently works only in the package manager console - the behavior does not currently work in the package manager dialog.
