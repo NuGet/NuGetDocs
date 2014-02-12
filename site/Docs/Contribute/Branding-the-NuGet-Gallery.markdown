@@ -1,4 +1,4 @@
-#Re-branding the NuGet Gallery
+#Branding the NuGet Gallery
 This doc covers the general instructions for re-branding the NuGet Gallery (based on API v2) so that a separate gallery with new branding (and content, style, etc.) can be quickly and easily set up.  Additionally, it will be possible to continue taking pulls from the main git repository as the files will not conflict with the existing gallery.
 
 ##What You Need to Do
