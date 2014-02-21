@@ -296,6 +296,12 @@ As of v8.0 of [ReSharper](http://www.jetbrains.com/resharper/),  the built-in ex
 
 More info: [http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-teamcity/](http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-teamcity/)
 
+## AppVeyor CI
+
+[AppVeyor](http://www.appveyor.com) is Continuous Integration service for Windows developers to securely build and test code in parallel and deploy successful bits to on-premise or cloud environments. Every AppVeyor account comes with a private NuGet feed aggregating packages from all build artifacts and supporting publishing of your own packages.
+
+More info: [http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/](http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/)
+
 ## Artifactory
 Artifactory is a repository manager with built-in support for various artifacts, including NuGet packages.
 
@@ -305,28 +311,6 @@ More info: [http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories](http
 Nexus is another repository manager with built-in support for NuGet and they even provide a "[What is NuGet for Java Developers](http://blog.sonatype.com/people/2012/02/what-is-nuget-for-java-developers/)" on their blog.
 
 More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://books.sonatype.com/nexus-book/reference/nuget.html)
-
-## AppVeyor CI
-
-[AppVeyor](http://www.appveyor.com) is Continuous Integration service for Windows developers to securely build and test code in parallel and deploy successful bits to on-premise or cloud environment. AppVeyor gives you full control over build servers while minimizing costs of hosting and maintenance of your own environment. It is tightly integrated with GitHub and BitBucket, and works for web, desktop or mobile apps.
-
-* Documentation: [http://www.appveyor.com/docs](http://www.appveyor.com/docs)
-* Forums: [http://help.appveyor.com](http://help.appveyor.com)
-* Blog: [http://blog.appveyor.com](http://blog.appveyor.com)
-* Twitter: [@AppVeyor](https://twitter.com/appveyor)
-
-Provides:
-
-* GitHub, BitBucket and Kiln integration
-* Dedicated build VMs with admin access
-* Build matrix and parallel testing
-* Project NuGet feeds with packages pushed to build artifacts
-* Account NuGet feed aggregating packages from all projects and allowing publishing of your custom packages
-* Real-time build console with test results reporting for MSTest, NUnit and xUnit
-* Artifacts management
-* Deployment to multiple environments: FTP, Web Deploy, Azure Blob, Azure Cloud Services, Amazon S3, NuGet, Agent
-* REST API
-* Free plan for open-source projects with public repositories
 
 ## Other NuGet-based utilities
 There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
