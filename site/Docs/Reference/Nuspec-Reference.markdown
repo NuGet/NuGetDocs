@@ -127,6 +127,10 @@ package is built (but without the element that lists files if that element was i
         <td>tags</td>
         <td>A space-delimited list of tags and keywords that describe the package. This information is used to help make sure users can find the package using searches in the <strong>Add Package Reference</strong> dialog box or filtering in the <strong>Package Manager Console</strong> window.</td>
     </tr>
+    <tr>
+        <td>developmentDependency</td>
+        <td>(v<em>2.8</em>) A Boolean value that specifies whether the package will be marked as a <a href="http://docs.nuget.org/docs/release-notes/nuget-2.7#Development-Only_Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
+    </tr>
 </tbody>
 </table>
 
