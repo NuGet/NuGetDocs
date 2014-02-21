@@ -296,6 +296,12 @@ As of v8.0 of [ReSharper](http://www.jetbrains.com/resharper/),  the built-in ex
 
 More info: [http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-teamcity/](http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-teamcity/)
 
+## AppVeyor CI
+
+[AppVeyor](http://www.appveyor.com) is Continuous Integration service for Windows developers to securely build and test code in parallel and deploy successful bits to on-premise or cloud environments. Every AppVeyor account comes with a private NuGet feed aggregating packages from all build artifacts and supporting publishing of your own packages.
+
+More info: [http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/](http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/)
+
 ## Artifactory
 Artifactory is a repository manager with built-in support for various artifacts, including NuGet packages.
 
