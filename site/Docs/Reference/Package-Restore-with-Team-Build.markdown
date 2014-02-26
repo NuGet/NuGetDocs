@@ -4,6 +4,8 @@ This section will provide a detailed walkthrough on how to restore packages as p
 
 Although this walkthrough is specific for the scenario of using [Team Foundation Service](http://tfs.visualstudio.com/), the concepts also apply to other version control- and build systems.
 
+<p class="info">For Team Foundation Build 2013 on-premises and Visual Studio Online (formerly Team Foundation Service), the default Build Process Templates already implement the NuGet Package Restore workflow without any special configuration. The following information only applies to Team Foundation Build 2012 and earlier, or to Build Process Templates that have been customized and had the NuGet Restore functionality removed.</p>
+
 ## The General Approach
 
 An advantage of using NuGet is that you can use it to avoid checking in binaries to your version control system.
