@@ -42,7 +42,7 @@ NuGet 2.1 provides more granular control over the location of the packages folde
 
     <configuration>
       <config>
-        <add key=" repositoryPath" value=" C:\myteam\teampackages" />
+        <add key="repositoryPath" value="C:\myteam\teampackages" />
       </config>
       ... 
     </configuration>
