@@ -546,11 +546,6 @@ Specify the location of the nuspec or project file to create a package.
         <td>MinClientVersion</td>
         <td>Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
     </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
-        is used as configuration file.</td>
-    </tr>
 </table>
 
 
