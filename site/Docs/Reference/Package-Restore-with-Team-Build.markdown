@@ -62,7 +62,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 ### Ignore Files
 
 <p class="info">
-<strong>Note:</strong> There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the <code>packages</code> folder to version control.
+<strong>Note:</strong> There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the <code>packages</code> folder to version control. A workaround is to disable the source control integration by placing a nuget.config file <a href="http://docs.nuget.org/docs/release-notes/nuget-2.1#Hierarchical_Nuget.config">in the root of your repostitory</a>. For more details have a look the <a href="http://docs.nuget.org/docs/reference/nuget-config-settings">documentation on config settings</a>.
 </p>
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
