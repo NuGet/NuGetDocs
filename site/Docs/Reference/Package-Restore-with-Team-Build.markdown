@@ -59,6 +59,12 @@ We have, however, checked-in the `nuget.exe` as it's needed during the build. Fo
 
 The source code is under the `src` folder. Although our demo only uses a single solution, you can easily imagine that this folder contains more than one solution.
 
+### Ignore Files
+
+<p class="info">
+<strong>Note:</strong> There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the <code>packages</code> folder to version control.
+</p>
+
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.
 
 The `.gitignore` file looks as follows:
