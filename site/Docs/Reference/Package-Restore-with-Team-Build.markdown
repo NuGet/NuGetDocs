@@ -99,39 +99,39 @@ The result looks as follows:
 	<Project ToolsVersion="4.0"
 	         DefaultTargets="Build"
 	         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
+    
 	  <PropertyGroup>
 	    <OutDir Condition=" '$(OutDir)'=='' ">$(MSBuildThisFileDirectory)bin\</OutDir>
 	    <Configuration Condition=" '$(Configuration)'=='' ">Release</Configuration>
 	    <SourceHome Condition=" '$(SourceHome)'=='' ">$(MSBuildThisFileDirectory)src\</SourceHome>
 	    <ToolsHome Condition=" '$(ToolsHome)'=='' ">$(MSBuildThisFileDirectory)tools\</ToolsHome>
 	  </PropertyGroup>
-
+    
 	  <ItemGroup>
 	    <Solution Include="$(SourceHome)*.sln">
 	      <AdditionalProperties>OutDir=$(OutDir);Configuration=$(Configuration)</AdditionalProperties>
 	    </Solution>
 	  </ItemGroup>
-
+    
 	  <Target Name="RestorePackages">
 	    <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
 	  </Target>
-
+    
 	  <Target Name="Clean">
 	    <MSBuild Targets="Clean"
 	             Projects="@(Solution)" />
 	  </Target>
-
+    
 	  <Target Name="Build" DependsOnTargets="RestorePackages">
 	    <MSBuild Targets="Build"
 	             Projects="@(Solution)" />
 	  </Target>
-
+    
 	  <Target Name="Rebuild" DependsOnTargets="RestorePackages">
 	    <MSBuild Targets="Rebuild"
 	             Projects="@(Solution)" />
 	  </Target>
-
+    
 	</Project>
 
 ## Configuring Team Build
