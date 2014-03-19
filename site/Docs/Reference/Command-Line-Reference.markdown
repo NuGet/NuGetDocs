@@ -785,7 +785,7 @@ Generates a nuspec for a new package. If this command is run in the same folder 
 
 ##  Update Command
 
-Update packages to latest available versions. This command also updates NuGet.exe itself. Please note that the presense of Packages folder is required to run the Update command. A good way is to run NuGet.exe Restore command first before running the Update command.
+Update packages to latest available versions. This command also updates NuGet.exe itself. Please note that the presence of Packages folder is required to run the Update command. A recommended way is to run NuGet.exe Restore command first before running the Update command.
 
 ### Update Command Usage
     nuget update <packages.config|solution>
