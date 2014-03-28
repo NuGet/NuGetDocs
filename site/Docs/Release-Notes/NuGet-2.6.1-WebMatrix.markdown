@@ -1,29 +1,44 @@
 # NuGet Package Manager for WebMatrix 2.6.1 Release Notes
 
-The NuGet team released an updated NuGet Package Manager extension for WebMatrix on March 26, 2014.  This release addresses two of the most reported issues with NuGet in WebMatrix.  This update can be installed from the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
+The NuGet team released an updated NuGet Package Manager extension for WebMatrix on March 26, 2014.  This update can be installed from the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/) using the following steps:
 
-This latest release brings the NuGet Extension for WebMatrix up to version 2.6.1.
+1. Open WebMatrix 3
+2. Click the Extensions icon in the Home ribbon
+3. Select the Updates tab
+4. Click to update NuGet Package Manager to 2.6.1
+6. Close and restart WebMatrix 3
 
-To Update NuGet Package Manager for WebMatrix, use the following steps:
+## Notable Changes
 
-1. Open WebMatrix
-2. Click on the 'Extensions' icon in the Home ribbon
-3. Select 'Updates' on the left and then 'NuGet Package Manager' on the right and click Update
-4. Agree to install NuGet Package Manager 2.6.1
-5. Review and accept the license terms to install
-6. Restart WebMatrix
+This extension update addresses two of the biggest issues users have faced consuming NuGet packages within WebMatrix.  The first was a NuGet schema version error and the second was a bug leading to zero-byte DLLs in the bin folder.
 
-## Zero-Byte DLLs in bin Folder
-
-Some users have reported that after installing NuGet packages in WebMatrix that include DLLs that get copied to bin, that the DLLs show up in the bin folder as 0-byte files.  This breaks the application at runtime.
-
-[This issue](https://nuget.codeplex.com/workitem/4060) has now been fixed.
-
-## NuGet Schema Version Error
+### NuGet Schema Version Error
 
 Since WebMatrix 3 was released, new features have been introduced into NuGet that require a new schema version for the NuGet packages.  When trying to manage your NuGet packages in your web site, these new packages can lead to errors that you'll see in WebMatrix.
 
 ![An error occurred. The schema version is incompatible. Please upgrade NuGet to the latest version.](Images/NuGet-2.8/webmatrix-schema-version.png)
 
-This latest release provides compatibility with the newest NuGet packages, preventing this error from occurring. New versions of packages including Microsoft.AspNet.WebPages can now be installed in WebMatrix.
+This latest release provides compatibility with the newest NuGet packages, preventing this error from occurring. New versions of packages including Microsoft.AspNet.WebPages can now be installed in WebMatrix.  Some of these packages were using NuGet features such as [XDT config transforms](http://docs.nuget.org/docs/release-notes/nuget-2.6#XDT_Web.config_transformation_support), which wasn't supported in WebMatrix until now.
+
+### Zero-Byte DLLs in bin Folder
+
+Some users have reported that after installing NuGet packages in WebMatrix that include DLLs that get copied to bin, that the DLLs show up in the bin folder as 0-byte files.  This breaks the application at runtime.
+
+[This issue](https://nuget.codeplex.com/workitem/4060) has now been fixed.
+
+## Other Recent Improvements
+
+When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](http://docs.nuget.org/docs/release-notes/nuget-2.8#WebMatrix_NuGet_Client_Updates), we didn't mention the specific new features that update introduced.
+
+### Update All
+
+You can now update all of your web site's packages in one step!  When you open the NuGet extension in WebMatrix, you see the list of all packages on the gallery, those installed, and the ones with updates available.  Previously, every package would have to be updated individually but now there is a useful "Update All" button that shows up on the Updates tab.
+
+![Click Update All to update all packages with available updates](Images/NuGet-2.8/webmatrix-update-all.png)
+
+### Overwrite Existing Files
+
+When installing packages that contain files that already exist in your web site, NuGet has always just silently ignored those files (leaving your existing files alone).  This could lead to the impression that a package was installed or updated correctly when in fact it wasn't.  NuGet will now prompt for files to be overwritten.
+
+![File Conflict Resolution](Images/NuGet-2.8/webmatrix-overwrite-file.png)
 
