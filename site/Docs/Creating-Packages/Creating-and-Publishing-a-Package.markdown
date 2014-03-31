@@ -329,6 +329,9 @@ The following is a list of valid framework names and abbreviation:
     <tr><td>.NET Framework</td><td>net</td></tr>
     <tr><td>Silverlight</td><td>sl</td></tr>
     <tr><td>.NETMicroFramework</td><td>netmf</td></tr>
+    <tr><td>Windows Store</td><td>win</td></tr>
+    <tr><td>Windows Phone (8 and below)</td><td>wp</td></tr>
+    <tr><td>Windows Phone (8.1 and above)</td><td>wpa</td></tr>
 </table>
 
 ### Assemblies that are not Specific to a Framework Version
