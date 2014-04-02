@@ -6,7 +6,7 @@
 This release now supports the following new target framework monikers which can be used to target Windows Phone 8.1 projects:
 
 * WindowsPhone81 / WP81 (for Silverlight-based Windows Phone projects)
-* WindowsPhoneApp81 / WPA81 (for WinRT-based Windows Phone Application projects)
+* WindowsPhoneApp81 / WPA81 (for WinRT-based Windows Phone App projects)
 
 Additionally, 
 
