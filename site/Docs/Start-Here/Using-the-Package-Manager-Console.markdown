@@ -171,6 +171,6 @@ Here is a simple example of adding a command that allows you to set the font.
 Save the profile file and then restart Visual Studio. The next time you open the Package Manager Console, 
 you will be able to make use of the `Set-Font` command.
 
-    PM> Set-Font 24
+    PM> Set-FontSize 24
 
 That makes for much more readable code!
