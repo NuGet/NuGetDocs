@@ -8,8 +8,6 @@ This release now supports the following new target framework monikers which can 
 * WindowsPhone81 / WP81 (for Silverlight-based Windows Phone projects)
 * WindowsPhoneApp81 / WPA81 (for WinRT-based Windows Phone App projects)
 
-Additionally, 
-
 ### Update of the NuGet WebMatrix Extension
 This release updates the NuGet client found in WebMatrix to [NuGet.Core](https://www.nuget.org/packages/Nuget.Core/2.6.1) 2.6.1 and brings with it features such as XDT transformations. More importantly, the 2.6.1 core update enables the WebMatrix client to install NuGet packages which contain more recent versions of the nuspec schema, which includes the ASP.NET NuGet packages.
 
