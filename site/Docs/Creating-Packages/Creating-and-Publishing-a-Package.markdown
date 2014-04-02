@@ -329,6 +329,9 @@ The following is a list of valid framework names and abbreviation:
     <tr><td>.NET Framework</td><td>net</td></tr>
     <tr><td>Silverlight</td><td>sl</td></tr>
     <tr><td>.NETMicroFramework</td><td>netmf</td></tr>
+    <tr><td>Windows Store</td><td>win</td></tr>
+    <tr><td>Windows Phone (8 and below)</td><td>wp</td></tr>
+    <tr><td>Windows Phone (8.1 and above)</td><td>wpa</td></tr>
 </table>
 
 ### Assemblies that are not Specific to a Framework Version
@@ -425,6 +428,11 @@ The following provides examples of common targets.
     <tr><td>Windows Phone 7.1 (Mango)</td><td>sl4-windowsphone71</td><td></td></tr>
     <tr><td></td><td>wp71</td><td>Only in NuGet 2.1+</td></tr>
     <tr><td>Windows Phone 8</td><td>windowsphone8</td><td>Only in NuGet 2.1+</td></tr>
+    <tr>
+        <td>Windows Phone 8.1</td>
+        <td>wpa</td>
+        <td>Only in NuGet 2.8.1+</td>
+    </tr>
     <tr><td>Windows Store apps (Javascript, C#, VB.NET)</td><td>netcore45</td><td></td></tr>
     <tr><td></td><td>windows8</td><td>Only in NuGet 2.1+</td></tr>
     <tr><td>Portable class library for Windows Store apps and .NET 4.5</td><td>portable-windows8+net45</td><td>Only in NuGet 2.1+</td></tr>
