@@ -386,7 +386,7 @@ Uninstalls the Elmah package even if another package depends on it.
 ## Update-Package
 Updates a package.
 
-    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-FileConflictAction] [-WhatIf]
+    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-IncludePrerelease] [-Reinstall] [-FileConflictAction] [-WhatIf]
 
 Updates a package and its dependencies to a newer version.
     
@@ -426,6 +426,11 @@ PARAMETERS
     <strong>-IncludePrerelease</strong>
         Indicates whether to include prereleases when searching for updates. If omitted, only 
         stable packages are considered.
+
+        Required: false
+        
+    <strong>-Reinstall</strong>
+        Reinstall packages with the existing versions.
 
         Required: false
         
