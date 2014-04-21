@@ -180,7 +180,7 @@ For instance:
 
     <files>
       <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
-    </file>
+    </files>
 
 Assuming you are building the project that produces an assembly called Foo in release mode this will produce the following transformed xml:
     
