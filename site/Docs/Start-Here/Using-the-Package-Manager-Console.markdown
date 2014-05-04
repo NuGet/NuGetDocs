@@ -22,7 +22,7 @@ The two drop-down lists set default values that let you omit parameters from the
 * In the **Default project** list, select the default project that you want your commands to work with. (The default value will be the first project in the solution, not necessarily the one you have selected in **Solution Explorer** when you open the window.)
 
 When you enter commands, you can override these defaults.
-In the **Package Manager Console** window, enter `Get-Package -ListAvailale` at the prompt to see a list of all packages 
+In the **Package Manager Console** window, enter `Get-Package -ListAvailable` at the prompt to see a list of all packages 
 that are available in the selected package source.
 
 ![Get-Package -ListAvailable command](images/package-manager-console-get-package-remote.png)
