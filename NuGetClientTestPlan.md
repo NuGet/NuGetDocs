@@ -1,9 +1,9 @@
 
-NuGet Client Test Plan
+# NuGet Client Test Plan
 
 # 
 
-# Visual Studio Versions
+## Visual Studio Versions
 
 *    Visual Studio 2010
 *    Visual Studio 2012
@@ -13,7 +13,7 @@ NuGet Client Test Plan
 
 # 
 
-# Visual Studio SKUs
+## Visual Studio SKUs
 
 *    Visual Studio Express For Web
 *    Visual Studio Express for Desktop
@@ -26,13 +26,13 @@ NuGet Client Test Plan
 
 # 
 
-# Other
+## Other
 
 *    WebMatrix 3
 
 # 
 
-# OS
+## OS
 *    Windows XP
 *    Windows 7
 *    Windows 8
@@ -40,7 +40,7 @@ NuGet Client Test Plan
 
 # 
 
-# Pivots
+## Pivots
 
 *    Functional
 *    Performance
@@ -71,8 +71,8 @@ NuGet Client Test Plan
     *    Packages with Framework Specific libraries, profile specific libraries and GAC references
     *    Pre-Release packages
     *    Packages with SemVer
-*    <references> in nuspec
-*    empty <files /> in nuspec
+*    &lt;references&gt; in nuspec
+*    empty &lt;files /&gt; in nuspec
 *    exclude file in nuspec
 *    Satellite packages for localized resources
 *    Group dependencies by Target Framework
@@ -220,9 +220,8 @@ NuGet Client Test Plan
 ## 
 
 ## Package Manager Dialog 
-_
-__Package Management/ UI_
 
+###Package Management/ UI
 *    User is able to effectively use UI to manage packages in a solution/project
 *    User is able to launch the dialog on any supported project type and Solutions with supported project types
 *    User is able to see list of installed packages and manage/uninstall/search them for project level and solution level"
@@ -232,16 +231,14 @@ __Package Management/ UI_
 *    Performance of the dialog for solutions containing large number of projects is acceptable
 *    Shows correctly the packages installed for a project/solution
 *    Filter projects for compatible packages in Solution Level dialog
-_
-__Search_
+
+###Search
 *    User is able to search packages and use tags while searching 
 *    User is able to filter packages with various options like pre-release, sort by download 
 *    User is able to find relevant results for his search terms
-_
-__Project Operations_
 
+###Project Operations
 *    For large projects (project with large number of files/content) installing a package perf is acceptable
-*    
 *    Pulls in dependencies correctly
 *    Uninstall/Reinstall scenario works fine 
 *    Shows errors correctly if there was an issue installing a package or its dependency and rolls back. Error message is understandable and has good details
