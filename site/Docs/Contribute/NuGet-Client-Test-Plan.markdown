@@ -214,7 +214,8 @@
 *    Install packages with leading zeroes in Version
 
 ## NuGet PowerShell Console
-*    (Most of the NuGet Package Manager Dialog tests apply here)
+(Most of the NuGet Package Manager Dialog tests apply here)
+
 *    Test against PS V2 and V3
 *    User is able to use various controls on the NuGet PowerShell console 
 *    Powershell intellisense for packages & command options are shown correctly
