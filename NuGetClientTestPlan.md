@@ -1,20 +1,13 @@
-
 # NuGet Client Test Plan
-
 # 
 
 ## Visual Studio Versions
-
 *    Visual Studio 2010
 *    Visual Studio 2012
 *    Visual Studio 2013
 *    In-Development Visual Studio Release
 
-
-# 
-
 ## Visual Studio SKUs
-
 *    Visual Studio Express For Web
 *    Visual Studio Express for Desktop
 *    Visual Studio Express for Phone
@@ -23,25 +16,15 @@
 *    Visual Studio Professional 
 *    Visual Studio Ultimate
 
-
-# 
-
 ## Other
-
 *    WebMatrix 3
-
-# 
 
 ## OS
 *    Windows XP
 *    Windows 7
 *    Windows 8
 
-
-# 
-
 ## Pivots
-
 *    Functional
 *    Performance
 *    Stress
@@ -51,9 +34,6 @@
 *    Globalization
 *    Installation
 *    End-to-end 
-
-
-## 
 
 ## Package Types
 
@@ -79,9 +59,6 @@
 *    Grouping content files and PS by Target Framework
 *    Web config transform
 
-
-## 
-
 ## Project Types
 
 *    Web Application Projects (MVC, Webforms)
@@ -95,9 +72,6 @@
 *    Native Projects
 *    Xamarin Projects
 *    Universal Apps
-
-
-## 
 
 ## NuGet.Config
 
@@ -116,9 +90,6 @@
     *    Registered, but disabled package sources
     *    The default nuget.exe push source
 *    DependencyVersion attribute 
-
-
-## 
 
 ## NuGet.exe
 
@@ -171,9 +142,6 @@
     *    Able to push to Official Source/ Private Sources with APIKey/ Credentials
     *    Able to push to UNC/ Local Sources
 
-
-## 
-
 ## NuGet.Server
 
 *    Enable Windows Authentication, enable ASP.NET impersonation. Grant access to the packages folder to user A and deny access for user B
@@ -187,9 +155,6 @@
 *    Verify new packages show up in search after a push, or after manually copying the nupkg into the packages folder.
 *    Verify web.config switches are used
 
-
-## 
-
 ## Authentication
 
 *    User is able to use feed sources while behind proxy/authentication
@@ -197,9 +162,6 @@
 *    User is able to use nuget features behind a proxy requiring authentication
 *    Proxies requiring authentication
 *    Repositories requiring authentication
-
-
-## 
 
 ## Feed Sources
 
@@ -216,8 +178,6 @@
     *    NuGet.Config
     *    Visual Studio ‘Package Manager Settings’ dialog
 
-
-## 
 
 ## Package Manager Dialog 
 
@@ -253,11 +213,8 @@
 *    Development Dependency attribute in Packages.Config
 *    Install packages with leading zeroes in Version
 
-
-## 
-
-## NuGet PowerShell Console (Most of the NuGet Package Manager Dialog tests apply here). Test against PS V2 and V3
-
+## NuGet PowerShell Console (Most of the NuGet Package Manager Dialog tests apply here)
+*    Test against PS V2 and V3
 *    User is able to use various controls on the NuGet PowerShell console 
 *    Powershell intellisense for packages & command options are shown correctly
 *    User can switch between different package source from the source dropdown
@@ -274,26 +231,16 @@
 *    User is able to control the patch version using DependencyVersion switch
 *    User is able to use WhatIf switch to review the operations that will be performed on PSC commands
 
-
-## 
-
 ## Package Restore
-
-*    User is able to restore packages after a solution (without packages folder) is pulled down from TFS and is able get a project in working state (build) 
-*    User is able to enable package restore on the solution  
-*    Package manager shows package restore yellow bar when packages are missing
-*    Package manager console shows package restore yellow bar
-*    With parallel build package restore works fine
-*    Package manager downloads packages only when the consent from tools->options->package manager settings is on
+*    User is able to restore packages after a solution, withoug packages folder, is pulled down from TFS and is able to get the project to build
+*    Package Manager shows package restore yellow bar when packages are missing
+*    Package Manager Consoles shows package restore yellow bar when packages are missing
+*    Package restore works fine with parallel builds
+*    Package Manager downloads packages onlu when the consent from tools->options->package manager settings is on (It is on by default)
 *    Package restore for a solution which contains packages that are now deprecated/ unlisted works
-*    Package Restore Consent scenarios
-*    Projects under Solution Folder
+*    Package Restore Consent Scenarios
+*    Projects under Solution folder
 *    Projects in nested folder structure
-
-
->
-
-## 
 
 ## Miscellaneous
 
