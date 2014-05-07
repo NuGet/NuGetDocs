@@ -181,7 +181,7 @@
 
 ## Package Manager Dialog 
 
-###Package Management/ UI
+###Package Management/UI
 *    User is able to effectively use UI to manage packages in a solution/project
 *    User is able to launch the dialog on any supported project type and Solutions with supported project types
 *    User is able to see list of installed packages and manage/uninstall/search them for project level and solution level"
@@ -213,7 +213,8 @@
 *    Development Dependency attribute in Packages.Config
 *    Install packages with leading zeroes in Version
 
-## NuGet PowerShell Console (Most of the NuGet Package Manager Dialog tests apply here)
+## NuGet PowerShell Console
+*    (Most of the NuGet Package Manager Dialog tests apply here)
 *    Test against PS V2 and V3
 *    User is able to use various controls on the NuGet PowerShell console 
 *    Powershell intellisense for packages & command options are shown correctly
