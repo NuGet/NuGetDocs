@@ -398,9 +398,6 @@ Profiles supported by NuGet include:
 * Full - Full Profile
 * WP - Windows Phone
 
-At the time of this writing, to target the Windows Phone profile, the Silverlight 3 framework must be specified. 
-It is anticipated that in the future, later versions of Silverlight will be supported on the phone.
-
 <table class="reference">
     <tr><th>Profile Name</th><th>Abbreviations</th></tr>
     <tr><td>Client</td><td>client</td></tr>
@@ -439,10 +436,19 @@ The following provides examples of common targets.
     <tr><td>Portable class library for Windows Store apps, Silverlight 4.0 and Windows Phone 7.1</td><td>portable-sl4+wp71+windows8</td><td>Only in NuGet 2.1+</td></tr>
 </table>
 
+### Determining which NuGet Target to use
+
+When packaging libraries targeting the Portable Class Library it can sometimes to be tricky to determine which NuGet Target you should use in your folder names and manifest files especially if targeting only a subset of the PCL.  Here are some links to useful external resources to help you with this:
+
+* [Framework Profiles in .Net](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
+* [Portable Class Library Profiles](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) - Table enumerating PCL profiles and their equivalent NuGet targets
+* [Portable Library Profiles Tool](https://github.com/StephenCleary/PortableLibraryProfiles) - Command line tool for determining PCL profiles available on your system
+
+
 ## Deleting packages
 
 NuGet.org does not support permanent deletion of packages, because that would break anyone who is depending on it
-remaining available. This is particularily true when using the workflow that restores packages on build.
+remaining available. This is particularly true when using the workflow that restores packages on build.
 
 Instead, NuGet.org supports a way to 'unlist' a package, which can be done in the package management page on the
 web site. When a package is unlisted, it no longer shows up in search and in any package listing, both on NuGet.org
@@ -450,7 +456,7 @@ and from the NuGet Visual Studio extension (or nuget.exe). However, it remains d
 version, which is what allows the Restore workflow to continue working.
 
 If you run into an exceptional situation where you think one of your packages must be deleted, this can be handled
-manually by the NuGet team. e.g. if there is a copyright infrigement issue, or potentially harmful content, that could
+manually by the NuGet team. e.g. if there is a copyright infringement issue, or potentially harmful content, that could
 be a valid reason to delete it.
 
 <a name="#powershell"></a>

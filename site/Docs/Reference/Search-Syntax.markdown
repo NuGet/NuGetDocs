@@ -18,12 +18,11 @@ Matching documents should usually contain the exact phrase "modern UI", includin
 
 ## Filtering on fields
 
-You can search for a specific package ID (or 'Id' or 'id'), a package Title, or certain other fields by prefixing search terms with the field name.
+You can search for a specific package ID (or 'Id' or 'id'), or certain other fields by prefixing search terms with the field name.
 
-Currently the searchable fields are 'Title', 'Id', 'Description', 'Tags', and 'Author'.
+Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', and 'Owner'.
 
-[What's the difference between ID and Title? ID is the name you use in package management console. Title is what is shown at the top of the package page in search results.
-Note that Titles often contain spaces but Package IDs are not allowed to contain spaces, and often contain dots.)]
+[What's the difference between ID and Title? ID is the name you use in package management console. Title is what is shown at the top of the package page in search results.]
 
 ### Examples:
 
@@ -36,15 +35,27 @@ finds packages with "jQuery" or "NuGet.Core" in their ID field respectively.
 
 is another way to find packages with "NuGet.Core" in their ID field.
 
-You can also search for multiple keywords in a single field, here we wish to search only the package description for two keywords 'Metro' and 'modern':
+The 'Id' filter is a substring match, so if you search for the following:
 
-    description:Metro description:modern
+    Id:jquery
+    
+You'll get results like 'jQuery.UI.Combined' and 'jQuery.Validation'. If you want to perform an exact search, use the 'packageid' field. This will filter to show **only** the one package with the ID you specified (or nothing if there is no package with that ID). For example:
 
-And you can perform phrase searches
+    PackageId:jquery
 
-### More Examples:
+You can also search for multiple keywords in a single field. Or mix and match fields.
 
-    Title:MVC
-    tags:MVC4
-	description:validation
-	description:"javascript library"
+    id:jquery tags:validation
+    id:jquery id:ui
+
+And you can perform phrase searches:
+
+    id:"jquery.ui"
+    
+Finally, if you use a field we don't support, such as 'title', we'll just ignore it and search all the fields. So the following query
+
+    title:jquery ui
+    
+Is interpreted exactly the same as this query:
+
+    jquery ui
