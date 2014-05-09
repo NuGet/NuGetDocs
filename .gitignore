@@ -16,6 +16,7 @@ _ReSharper*
 # Test Results
 *.results.xml
 TestResults/
+PrecompiledWeb/
 
 # Other
 *.bak
