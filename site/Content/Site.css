@@ -113,13 +113,17 @@ aside#toc{
         color: #B8B8B8;
     }
 
-@media all AND (max-width: 1367px) {
+@media all AND (max-width: 1599px) {
     aside#toc {
-        width: 300px;
+        width: 280px;
     }
 
     article#doc {
-        margin-right: 320px;
+        margin-right: 300px;
+    }
+
+    aside#toc h2 {
+        margin: 0px 20px 20px 20px;
     }
 
     aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6 {
