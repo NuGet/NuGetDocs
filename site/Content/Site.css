@@ -69,7 +69,7 @@ aside#toc{
     float: right;
     font-size: .95em;
     height: auto;
-    margin: 0 -20px 10px 15px;
+    margin: 0px 0px 10px 15px;
     padding-top: 20px;
     width: 380px;
 }
@@ -90,16 +90,17 @@ aside#toc{
 
     aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6 {
         border-top: 1px solid #ECEEEF;
-        padding: 20px 42px;
+        border-left: 4px solid transparent;
+        padding: 20px 42px 20px 38px;
         margin: 0px;
         font-family: 'Segoe UI Semibold', 'Segoe UI', 'Trebuchet MS', Arial;
         font-size: 12pt;
     }
 
     aside#toc h3 {
-        border-left: 5px solid #00B294;
+        border-left: 4px solid #00B294;
     }
-    
+
     aside#toc h5, aside#toc h6 {
         background-color: #F7F9F9;
     }
@@ -111,6 +112,30 @@ aside#toc{
     aside#toc h5 a, aside#toc h6 a {
         color: #B8B8B8;
     }
+
+@media all AND (max-width: 1367px) {
+    aside#toc {
+        width: 300px;
+    }
+
+    article#doc {
+        margin-right: 320px;
+    }
+
+    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6 {
+        padding: 20px 22px 20px 18px;
+    }
+}
+
+@media all AND (max-width: 1279px) {
+    aside#toc {
+        display: none;
+    }
+
+    article#doc {
+        margin-right: 0px;
+    }
+}
 
 /* Topics
 ***************************************************************/
