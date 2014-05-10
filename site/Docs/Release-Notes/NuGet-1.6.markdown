@@ -48,3 +48,4 @@ features.
 
 For a full list of work items fixed in NuGet 1.6, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.6&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
 
+[See NuGet 1.5 Release Notes](/docs/release-notes/nuget-1.5)

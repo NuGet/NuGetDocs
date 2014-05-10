@@ -35,3 +35,4 @@ NuGet 2.2.1 includes a few targeted bug fixes. For a list of work items fixed in
 
 If you are extending ASP.NET project templates, all preinstalled package repositories must use the same value for the `isPreunzipped` attribute.
 
+[See NuGet 2.2 Release Notes](/docs/release-notes/nuget-2.2)

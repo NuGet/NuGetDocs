@@ -121,3 +121,5 @@ friendly by sorting packages alphabetically and removing extra whitespace.
 `Install-Package 1.0` works on a package with the version `1.0.0`.
 * [Issue 1060](http://nuget.codeplex.com/workitem/1060): When creating a package using NuGet.exe, 
 the `-Version` flag overrides the `<version />` element.
+
+[See NuGet 1.4 Release Notes](/docs/release-notes/nuget-1.4)

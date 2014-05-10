@@ -1,3 +1,6 @@
+<style type="text/css">
+	#subnav-overview a { color: black; }
+</style>
 # NuGet Overview
 
 NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery ([nuget.org](http://nuget.org)) is the central package repository used by all package authors and consumers.

@@ -1,4 +1,7 @@
-﻿# Contributing to NuGet
+﻿<style type="text/css">
+	#subnav-contribute a { color: black; }
+</style>
+# Contributing to NuGet
 
 So you want to contribute to NuGet. Great! We can use the help and appreciate the help!
 

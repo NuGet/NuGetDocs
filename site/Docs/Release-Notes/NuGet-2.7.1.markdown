@@ -4,6 +4,4 @@
 
 The complete set of features in 2.7 can be found in the [release notes](http://docs.nuget.org/docs/release-notes/nuget-2.7) here.
 
-
-
-
+[See NuGet 2.7 Release Notes](/docs/release-notes/nuget-2.7)

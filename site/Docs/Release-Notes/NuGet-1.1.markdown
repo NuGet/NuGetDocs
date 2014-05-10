@@ -1,4 +1,4 @@
-﻿# NuGet 1.1 and 1.0 Release Notes
+﻿# NuGet 1.0 and 1.1 Release Notes
 
 ## Overview
 

@@ -15,3 +15,5 @@ For more information about the WebMatrix Extension update, see those specific [r
 
 ### Bug Fixes
 In addition to these features, this release of NuGet includes other bug fixes. There were 16 total issues addressed in the release. For a full list of the work items fixed in NuGet 2.8.1, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%202.8.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
+
+[See NuGet 2.6.1 for WebMatrix Release Notes](/docs/release-notes/nuget-2.6.1-for-webmatrix)

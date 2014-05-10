@@ -24,3 +24,5 @@ When attempting to install a NuGet package into an F# project using the package 
 
 ## Bug Fixes
 NuGet 2.2 includes many bug fixes. For a full list of work items fixed in NuGet 2.2, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.2&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
+
+[See NuGet 2.1 Release Notes](/docs/release-notes/nuget-2.1)

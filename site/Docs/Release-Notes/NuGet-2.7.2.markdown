@@ -29,3 +29,5 @@ When using hierarchical nuget.config files, the repositoryPath key was not being
 ### Bug Fixes
 
 For a full list of work items fixed in NuGet 2.7.2, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%202.7.2&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=Fixed).
+
+[See NuGet 2.7.1 Release Notes](/docs/release-notes/nuget-2.7.1)

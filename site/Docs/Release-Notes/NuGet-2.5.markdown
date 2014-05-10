@@ -170,3 +170,5 @@ Example:
 With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual Studio. We expect most native packages will utilize the MSBuild imports feature above, using a tool created by the [CoApp project](http://coapp.org). For more information, read [the details about the tool](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) on the coapp.org website.
 
 The target framework name of "native" is introduced for packages to include files in \build, \content, and \tools when the package is installed into a native project.  The \lib folder is not used for native projects.
+
+[See NuGet 2.2.1 Release Notes](/docs/release-notes/nuget-2.2.1)

@@ -11,6 +11,37 @@
     <script src="@Href("~/Scripts/autocolumn.min.js")"></script>
     <script src="@Href("~/Scripts/Helpers.js")"></script>
     @RenderSection("head", required: false)
+
+@{
+    string subnav = null;
+
+    if (Request.Path.ToLowerInvariant() == "/")
+    {
+        subnav = "index";
+    }
+
+    if (Request.Path.ToLowerInvariant() == "/docs/start-here/overview")
+    {
+        subnav = "overview";
+    }
+
+    if (Request.Path.ToLowerInvariant() == "/docs/contribute/contributing-to-nuget")
+    {
+        subnav = "contribute";
+    }
+    
+    if (Request.Path.ToLowerInvariant().StartsWith("/docs/release-notes/"))
+    {
+        subnav = "releasenotes";
+    }
+    
+    if (subnav != null)
+    {
+        <style type="text/css">
+            #subnav-@subnav a { color: black; }
+        </style>
+    }
+}
 </head>
 <body>
     <div class="header">
@@ -35,12 +66,10 @@
     <div class="subnav">
         <nav class="sub">
             <ul>
-                <li><a href="@Href("~/")">Index</a></li>
-                <li><a href="@Href("~/docs/Start-Here/Overview")">Consume</a></li>
-                <li><a href="@Href("~/docs/Creating-Packages/Creating-and-Publishing-a-Package")">Create</a></li>
-                <li><a href="@Href("~/docs/Contribute/Contributing-to-NuGet")">Contribute</a></li>
-                <li><a href="@Href("~/docs/Start-Here/NuGet-FAQ")">FAQ</a></li>
-                <li><a href="@Href("~/docs/Release-Notes/NuGet-2.8.1")">Release Notes</a></li>
+                <li id="subnav-index"><a href="@Href("~/")">Index</a></li>
+                <li id="subnav-overview"><a href="@Href("~/docs/Start-Here/Overview")">Overview</a></li>
+                <li id="subnav-contribute"><a href="@Href("~/docs/Contribute/Contributing-to-NuGet")">Contribute</a></li>
+                <li id="subnav-releasenotes"><a href="@Href("~/docs/Release-Notes/NuGet-2.8.1")">Release Notes</a></li>
             </ul>
         </nav>
         <div class="twitter">

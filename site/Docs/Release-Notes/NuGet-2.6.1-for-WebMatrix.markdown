@@ -42,3 +42,4 @@ When installing packages that contain files that already exist in your web site,
 
 ![File Conflict Resolution](Images/NuGet-2.8/webmatrix-overwrite-file.png)
 
+[See NuGet 2.8 Release Notes](/docs/release-notes/nuget-2.8)
