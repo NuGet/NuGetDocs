@@ -6,7 +6,7 @@
 }
 
 <aside id="toc">
-    <h2><a id="toc-heading" href="#" title="Click here to hide the document outline.">Doc Outline</a></h2>
+    <h2>Doc outline<a id="toc-hide" href="#" title="Click here to hide the document outline."><img src="@Href("~/images/close.png")" border="0" /></a></h2>
     <ol id="toc-body">
         @for (int i = 0; i < headings.Count; i++) {
             var heading = headings[i];
@@ -48,19 +48,10 @@
 
 <script type="text/javascript">
     $(function () {
-        var cookieKey = "NuGet_Docs_TOC_Show",
-            $tocBody = $("#toc-body");
-        if ($.cookie(cookieKey) === "false") {
-            $("#toc-body").hide();
-        }
-
-        $("#toc-heading").click(function (e) {
+        $("#toc-hide").click(function (e) {
             e.preventDefault();
-            $("#toc-body").toggle("fast", function () {
-                var visible = $("#toc-body").is(':visible');
-                $("#toc-heading").attr("title", "Click here to " + (visible ? "hide" : "show") + " the document outline.");
-                $.cookie(cookieKey, visible.toString().toLowerCase(), { expires: 366 });
-            });
+            $("#toc").hide();
+            $("#doc").css("margin-right", "0px");
             return false;
         });
     });

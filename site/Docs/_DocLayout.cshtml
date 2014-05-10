@@ -8,11 +8,14 @@
     <link href="@Href("~/Content/prettify.css")" rel="stylesheet" type="text/css" />
 }
 
-<section id="doc">
-    @RenderPage("~/docs/_TableOfContents.cshtml")
-    @RenderBody()
-</section>
+@RenderPage("~/docs/_TableOfContents.cshtml")
 
+<article id="doc">
+    <section>
+        @RenderBody()
+    </section>
+</article>
+<div style="clear:both;"></div>
 <script>
     $(document).ready(function () {
         //for each pre element that has a code element child...

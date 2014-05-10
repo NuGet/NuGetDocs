@@ -57,65 +57,52 @@ section {
         
 /* Document Structure
 ***************************************************************/
+article#doc{
+    margin-right: 400px;
+}
+article#doc section {
+    clear: left;
+}
+
 aside#toc{
-    background-color: #ebebeb;
-    border: solid 1px #cfcfcf;
+    background-color: white;
     float: right;
     font-size: .95em;
     height: auto;
     margin: 0 -20px 10px 15px;
-    padding: 9px 5px 9px 10px;
-    width: 225px;
-    
-    
-    /*CSS3 properties*/
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+    padding: 20px 0px;
+    width: 380px;
 }
 
     aside#toc h2 {
         font-size: 2.4em;
-        margin-top: 0;
+        margin: 0px 42px;
     }
 
-        aside#toc h2 a {
-            background: url(../images/outline.png) 0% 50% no-repeat; 
-            display: block;
-            padding-left: 40px;
-        }
-
-    aside#toc a {
-        color: #494a52;
+    aside#toc #toc-hide {
+        float: right;
     }
-    
-        aside#toc a:visited {
-            color: #494a52;
-        }
-    
+
+    aside#toc #toc-hide img {
+        vertical-align: top;
+        margin-top: 12px;
+    }
+
     aside#toc ol {
         list-style-type: none;
         list-style-position:outside;
         padding: 0;
     }
-    
-        aside#toc ol ol {
-            padding-left: 7px;
-        }
-    
-        aside#toc li {
-            padding-bottom: 9px;
-        }
-        
-        aside#toc li:last-child {
-            padding-bottom: 0;
-        }
-    
-        aside#toc ol ol li:before {
-	        content: "\00BB \0020";
-	    }
-    
-    
+
+    aside#toc ol#toc-body li {
+        border-top: 1px solid #ECEEEF;
+        padding: 0px;
+    }
+
+    aside#toc ol#toc-body li a {
+        padding: 0px 42px;
+    }
+
 /* Topics
 ***************************************************************/
 ol.topics {

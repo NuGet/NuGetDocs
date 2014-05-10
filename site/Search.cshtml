@@ -56,23 +56,27 @@
 @if ((int)jsonResult.SearchResponse.Web.Total == 0) {
     <h1>There is no result for '@originalQuery'.</h1>
 }
-else { 
+else
+{
     int totalResults = (int)jsonResult.SearchResponse.Web.Total;
     int startResult = (int)jsonResult.SearchResponse.Web.Offset + 1;
     int endResult = startResult + (int)jsonResult.SearchResponse.Web.Results.Length - 1;
-    
-    <h1>Search results for '@originalQuery'.</h1>
-    <h2>@startResult-@endResult of @totalResults results.</h2>
-    <section class="results">
-        @foreach (var result in jsonResult.SearchResponse.Web.Results) {
-            <section class="result">
-                <h2><a href="@result.Url">@result.Title</a></h2>
-                <p>@result.Description</p>
-                <aside>@result.DisplayUrl</aside>
-            </section>
-        }
-        <footer>
-            @PaginationHelper.RenderPagination(pageValue, totalResults, resultsPerPage, linkTemplate)            
-        </footer>
-    </section>
+
+    <article>
+        <h1>Search results for '@originalQuery'.</h1>
+        <h2>@startResult-@endResult of @totalResults results.</h2>
+        <section class="results">
+            @foreach (var result in jsonResult.SearchResponse.Web.Results)
+            {
+                <section class="result">
+                    <h2><a href="@result.Url">@result.Title</a></h2>
+                    <p>@result.Description</p>
+                    <aside>@result.DisplayUrl</aside>
+                </section>
+            }
+            <footer>
+                @PaginationHelper.RenderPagination(pageValue, totalResults, resultsPerPage, linkTemplate)
+            </footer>
+        </section>
+    </article>
 }

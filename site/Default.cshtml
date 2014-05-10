@@ -1,18 +1,23 @@
 ﻿@using Docs.Core
 @{ Page.Title = "NuGet Docs"; }
-<h1>Documentation Index</h1>
+<article>
+    <h1>Documentation Index</h1>
 
-<ol class="topics">
-    @foreach (var topic in Topic.GetTopics("~/docs")) {
-        <li class="topic">
-        <h2>@topic.Title</h2>
-        @if (topic.SubTopics.Any()) {
-            <ol class="subTopics">
-                @foreach (var subTopic in topic.SubTopics) {
-                    <li class="subTopic"><h3><a href="@subTopic.Url">@subTopic.Title</a></h3></li>
+    <ol class="topics">
+        @foreach (var topic in Topic.GetTopics("~/docs"))
+        {
+            <li class="topic">
+                <h2>@topic.Title</h2>
+                @if (topic.SubTopics.Any())
+                {
+                    <ol class="subTopics">
+                        @foreach (var subTopic in topic.SubTopics)
+                        {
+                            <li class="subTopic"><h3><a href="@subTopic.Url">@subTopic.Title</a></h3></li>
+                        }
+                    </ol>
                 }
-            </ol>
+            </li>
         }
-        </li>
-    }
-</ol>
+    </ol>
+</article>
