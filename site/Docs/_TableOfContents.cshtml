@@ -1,49 +1,20 @@
 ﻿@using Docs.Core
 @{
     List<Heading> headings = Page.Headings;
-    int previousLevel = 1;
-    Stack<string> toClose = new Stack<string>();
+    /* Normalize the heading levels to start at 3 in the TOC. */
+    var minHeading = headings.Min(h => h.Level);
+    var deltaTo3 = 3 - minHeading;
 }
 
 <aside id="toc">
     <h2>Doc outline<a id="toc-hide" href="#" title="Click here to hide the document outline."><img src="@Href("~/images/close.png")" border="0" /></a></h2>
-    <ol id="toc-body">
-        @for (int i = 0; i < headings.Count; i++) {
-            var heading = headings[i];
-            int lvlDiff = previousLevel - heading.Level;
-            if (lvlDiff > 0) {
-                int foo = lvlDiff * 2;
-                while (foo-- >= 0) {
-                    WriteLiteral(toClose.Pop());
-                }
-                toClose.Push("</li>");
-                WriteLiteral("<li>");
-                <a href="#@heading.ID">@heading.Text</a>
-            }
-
-            else if (lvlDiff < 0) {
-                toClose.Push("</ol>");
-                toClose.Push("</li>");
-                WriteLiteral("<ol>");
-                WriteLiteral("<li>");
-                <a href="#@heading.ID">@heading.Text</a>
-            }
-            else {
-                if (toClose.Any()) {
-                    WriteLiteral(toClose.Pop());
-                }
-                toClose.Push("</li>");
-                WriteLiteral("<li>");
-                <a href="#@heading.ID">@heading.Text</a>
-            }
-            previousLevel = heading.Level;
-        }
-
-
-        @while (toClose.Any()) {
-            WriteLiteral(toClose.Pop());
-        }
-    </ol>
+    @for (int i = 0; i < headings.Count; i++) {
+        var heading = headings[i];
+        var hTag = "h" + (heading.Level + deltaTo3).ToString();
+        WriteLiteral("<" + hTag + ">");
+        <a href="#@heading.ID">@heading.Text</a>
+        WriteLiteral("</" + hTag + ">");
+    }
 </aside>
 
 <script type="text/javascript">

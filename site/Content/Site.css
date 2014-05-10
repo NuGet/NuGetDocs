@@ -70,13 +70,13 @@ aside#toc{
     font-size: .95em;
     height: auto;
     margin: 0 -20px 10px 15px;
-    padding: 20px 0px;
+    padding-top: 20px;
     width: 380px;
 }
 
     aside#toc h2 {
         font-size: 2.4em;
-        margin: 0px 42px;
+        margin: 0px 40px 20px 40px;
     }
 
     aside#toc #toc-hide {
@@ -88,19 +88,28 @@ aside#toc{
         margin-top: 12px;
     }
 
-    aside#toc ol {
-        list-style-type: none;
-        list-style-position:outside;
-        padding: 0;
-    }
-
-    aside#toc ol#toc-body li {
+    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6 {
         border-top: 1px solid #ECEEEF;
-        padding: 0px;
+        padding: 20px 42px;
+        margin: 0px;
+        font-family: 'Segoe UI Semibold', 'Segoe UI', 'Trebuchet MS', Arial;
+        font-size: 12pt;
     }
 
-    aside#toc ol#toc-body li a {
-        padding: 0px 42px;
+    aside#toc h3 {
+        border-left: 5px solid #00B294;
+    }
+    
+    aside#toc h5, aside#toc h6 {
+        background-color: #F7F9F9;
+    }
+
+    aside#toc h3 a, aside#toc h4 a {
+        color: black;
+    }
+
+    aside#toc h5 a, aside#toc h6 a {
+        color: #B8B8B8;
     }
 
 /* Topics
