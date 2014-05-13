@@ -1,5 +1,4 @@
 # NuGet Client Test Plan
-# 
 
 ## Visual Studio Versions
 *    Visual Studio 2010
