@@ -10,7 +10,7 @@ h6 { font-size: 1em; }
 
 textarea, input {
     /* Hide Safari's oval outline */
-    outline: none;
+    -webkit-appearance: none;
 }
 
 h1 img, h2 img, h3 img,
