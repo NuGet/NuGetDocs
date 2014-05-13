@@ -8,6 +8,11 @@ h4 { font-size: 1.4em; }
 h5 { font-size: 1.1em; }
 h6 { font-size: 1em; }
 
+textarea, input {
+    /* Hide Safari's oval outline */
+    outline: none;
+}
+
 h1 img, h2 img, h3 img,
 h4 img, h5 img, h6 img {
   margin: 0;
