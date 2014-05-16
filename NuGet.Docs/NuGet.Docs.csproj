@@ -127,7 +127,7 @@
     <Content Include="$(MSBuildProjectDirectory)\**\*.png" />
     <Content Include="$(MSBuildProjectDirectory)\**\*.ico" />
     <Content Include="$(MSBuildProjectDirectory)\js\*.js" />
-    <Content Include="$(MSBuildProjectDirectory)\css\*.js" />
+    <Content Include="$(MSBuildProjectDirectory)\css\*.css" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
