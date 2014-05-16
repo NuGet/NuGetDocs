@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Default.cshtml" />
+    <Content Include="App_Code\PaginationHelper.cshtml" />
     <None Include="Consume\Package-Manager-Dialog.md" />
     <None Include="Consume\Package-Manager-Console.md" />
     <Content Include="Consume\Default.cshtml" />
@@ -151,6 +152,7 @@
     <None Include="Release-Notes\NuGet-2.7.md" />
     <None Include="Release-Notes\NuGet-2.8.1.md" />
     <None Include="Release-Notes\NuGet-2.8.md" />
+    <Content Include="Search.cshtml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

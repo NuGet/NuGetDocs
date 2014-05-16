@@ -1,0 +1,21 @@
+﻿@helper RenderPagination(int currentPage, int totalResult, int resultsPerPage, string urlTemplate) {
+    if (currentPage > 0) { 
+        <a href="@(urlTemplate + (currentPage - 1))">Prev</a>
+    }
+    
+    int totalPage = (totalResult + resultsPerPage - 1) / resultsPerPage;
+    currentPage = Math.Min(currentPage, totalPage - 1);
+
+    for (int i = Math.Max(0, currentPage - 4); i < totalPage && i <= currentPage + 4; ++i) {
+        if (i == currentPage) {
+            <span>@(i+1)</span>
+        }
+        else { 
+            <a href="@(urlTemplate + i)">@(i+1)</a>
+        }
+    }
+
+    if (currentPage * resultsPerPage + resultsPerPage < totalResult) { 
+        <a href="@(urlTemplate + (currentPage + 1))">Next</a>
+    }
+}
