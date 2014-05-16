@@ -65,9 +65,12 @@ In this scenario, NuGet will grab the exact version when restoring a package. It
 such as Subversion (a.k.a. SVN), may require additional configuration to allow you to selectively ignore an arbitrary set of files in a path, _but_ include a specific file, such as your _repositories.config_ in that path.
 <br/>
 For SVN specifically, you may use SVN:IGNORE to prevent paths with certain patterns from being committed (and making a mess in your pending changes views).
-By adding the following pattern as an SVN:IGNORE to your "packages" directory, the repositories.config will be committed, but nuget package directories will be ignored.
+By adding the following patterns as an SVN:IGNORE to your "packages" directory, the repositories.config will be committed, but nuget package directories will be ignored.
 <br/>
-*[0-9]*
+<pre><code>
+*[!c][!o][!n][!f][!i][!g]
+*.config?*
+</code></pre>
 <br/>
 Similar ignore patterns are probably available for most source control systems.
 <br/>
