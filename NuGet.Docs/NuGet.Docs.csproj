@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="ContentFiles.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -159,6 +160,8 @@
     <Content Include="Release-Notes\NuGet-2.8.1.md" />
     <Content Include="Release-Notes\NuGet-2.8.md" />
     <Content Include="Search.cshtml" />
+    <Content Include="ContentFiles.props" />
+    <Content Include="Create\Package-Conventions.md" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -322,7 +325,6 @@
     <Content Include="Docs\Creating-Packages\Creating-and-Publishing-a-Symbol-Package.markdown" />
     <Content Include="Docs\Creating-Packages\Creating-Localized-Packages.markdown" />
     <Content Include="Docs\Creating-Packages\Hosting-Your-Own-NuGet-Feeds.markdown" />
-    <Content Include="Create\Package-Conventions.md" />
     <Content Include="Docs\Creating-Packages\Using-a-GUI-to-build-packages.markdown" />
     <Content Include="Docs\Creating-Packages\_metadata" />
     <Content Include="Docs\Reference\Command-Line-Reference.markdown" />
@@ -392,7 +394,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>34554</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
