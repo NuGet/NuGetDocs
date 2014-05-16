@@ -62,6 +62,17 @@ section {
         
 /* Document Structure
 ***************************************************************/
+.article-boxes {
+    width: 100%;
+}
+
+.article-boxes article {
+    float: left;
+    margin-top: 40px;
+    margin-right: 20px;
+    width: 40%;
+}
+
 article#doc{
     margin-right: 400px;
 }

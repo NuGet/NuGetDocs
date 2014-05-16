@@ -151,6 +151,8 @@ nav ul li a:hover {
 
 .twitter {
     float: right;
+    margin-top: 2px;
+    height: 24px;
 }
 
 .content {
@@ -167,6 +169,7 @@ nav ul li a:hover {
 
 .content article {
     background-color: white;
+    margin-top: 40px;
     padding: 0px 40px 20px 40px;
 }
 
