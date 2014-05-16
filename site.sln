@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs.Core", "Docs.Core\Docs.Core.csproj", "{EF9B878F-FCE0-4A92-8F6D-11E3146D0417}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "site", "site\", "{19F167AB-BC25-40F4-ACCA-F121DE5F700E}"
@@ -22,8 +24,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "site", "site\", "{19F167AB-
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "39120"
+		SlnRelativePath = "site\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Docs", "NuGet.Docs\NuGet.Docs.csproj", "{C9C3A778-DF54-4574-A147-D7F8949BCD08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +44,10 @@ Global
 		{19F167AB-BC25-40F4-ACCA-F121DE5F700E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F167AB-BC25-40F4-ACCA-F121DE5F700E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F167AB-BC25-40F4-ACCA-F121DE5F700E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C9C3A778-DF54-4574-A147-D7F8949BCD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C3A778-DF54-4574-A147-D7F8949BCD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C3A778-DF54-4574-A147-D7F8949BCD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C3A778-DF54-4574-A147-D7F8949BCD08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

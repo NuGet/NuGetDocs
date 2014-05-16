@@ -3,6 +3,7 @@ site/Bin/
 site/Obj/
 bin/
 obj/
+packages/
 
 # User files
 *.user

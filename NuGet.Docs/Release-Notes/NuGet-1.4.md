@@ -159,4 +159,4 @@ The specific version number of this update to 1.4 is 1.4.20615.9020.
 * [Issue 1220](http://nuget.codeplex.com/workitem/1220): Update-Package doesnt execute install.ps1/uninstall.ps1 in all projects when there is more than one project
 * [Issue 1156](http://nuget.codeplex.com/workitem/1156): Package Manager Consol stuck on W2K3/XP (when Powershell 2 is not installed)
 
-[See NuGet 1.3 Release Notes](/docs/release-notes/nuget-1.3)
+[See NuGet 1.3 Release Notes](nuget-1.3)

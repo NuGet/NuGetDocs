@@ -135,4 +135,4 @@ In previous versions of NuGet, updating a package source from within the Visual 
 ## Bug Fixes
 NuGet 2.1 includes many bug fixes. For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Fixed&type=All&priority=All&release=NuGet%202.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
 
-[See NuGet 2.0 Release Notes](/docs/release-notes/nuget-2.0)
+[See NuGet 2.0 Release Notes](nuget-2.0)

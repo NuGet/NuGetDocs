@@ -171,4 +171,4 @@ With NuGet 2.5, the NuGet tooling is now available for Native projects in Visual
 
 The target framework name of "native" is introduced for packages to include files in \build, \content, and \tools when the package is installed into a native project.  The \lib folder is not used for native projects.
 
-[See NuGet 2.2.1 Release Notes](/docs/release-notes/nuget-2.2.1)
+[See NuGet 2.2.1 Release Notes](nuget-2.2.1)

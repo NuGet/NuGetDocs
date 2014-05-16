@@ -1,0 +1,37 @@
+﻿@using NuGet.Docs
+@{
+    Layout = "~/_Layout.cshtml";
+
+    List<Heading> headings = Page.Headings;
+    bool hasHeadings = headings != null && headings.Count > 0;
+    string articleId = null;
+
+    if (hasHeadings)
+    {
+        // If we have headings, then give the article an id for styling to prepare for the TOC
+        articleId = "doc";
+        
+        // Normalize the heading levels to start at 3 in the TOC.
+        var minHeading = headings.Min(h => h.Level);
+        var deltaTo3 = 3 - minHeading;
+
+        <aside id="toc">
+            <h2>Doc outline<a id="toc-hide" href="#" title="Click here to hide the document outline."><img src="~/images/close.png" border="0" /></a></h2>
+            @for (int i = 0; i < headings.Count; i++)
+            {
+                var heading = headings[i];
+                var hTag = "h" + (heading.Level + deltaTo3).ToString();
+                WriteLiteral("<" + hTag + ">");
+                <a href="#@heading.ID">@heading.Text</a>
+                WriteLiteral("</" + hTag + ">");
+            }
+        </aside>
+    }
+}
+
+<article id="@articleId">
+    <section>
+        @RenderBody()
+    </section>
+</article>
+<div style="clear:both;"></div>

@@ -82,4 +82,4 @@ which provides more details. The issue only affects those running Visual Studio 
 1.0 installed that was incorrectly signed. This version was only made available from the CodePlex website for a brief 
 period so this issue shouldn't affect too many people.
 
-[See NuGet 1.0 and 1.1 Release Notes](/docs/release-notes/nuget-1.1)
+[See NuGet 1.0 and 1.1 Release Notes](nuget-1.1)

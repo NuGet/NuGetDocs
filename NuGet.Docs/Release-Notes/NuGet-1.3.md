@@ -84,4 +84,4 @@ For a full list of bug fixes, please view the [NuGet Issue Tracker for this rele
 * Packages with source files work in both Websites and in Web Application Projects. 
 For Websites, source files are copied into the `App_Code` folder
 
-[See NuGet 1.2 Release Notes](/docs/release-notes/nuget-1.2)
+[See NuGet 1.2 Release Notes](nuget-1.2)
