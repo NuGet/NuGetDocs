@@ -321,7 +321,6 @@
     <Content Include="Release-Notes\Images\releasenotes-21-vsdlg-search.png" />
     <Content Include="Web.config" />
     <Content Include="Docs\Creating-Packages\Configuration-File-and-Source-Code-Transformations.markdown" />
-    <Content Include="Docs\Creating-Packages\Creating-and-Publishing-a-Package.markdown" />
     <Content Include="Docs\Creating-Packages\Creating-and-Publishing-a-Symbol-Package.markdown" />
     <Content Include="Docs\Creating-Packages\Creating-Localized-Packages.markdown" />
     <Content Include="Docs\Creating-Packages\Hosting-Your-Own-NuGet-Feeds.markdown" />
