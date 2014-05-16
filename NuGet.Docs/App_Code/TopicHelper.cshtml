@@ -15,7 +15,7 @@
     </ol>
 }
 
-@helper RenderSubTopics(string topicFolder) { 
+@helper RenderSubTopics(string topicFolder) {
     <ol class="subTopics">
         @foreach (var subTopic in NuGet.Docs.Topic.GetSubTopics(topicFolder))
         {
