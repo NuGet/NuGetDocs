@@ -29,6 +29,10 @@
     }
 }
 
+@section footer {
+    <p>Page generated at @Page.GeneratedDateTime using @Page.Generator</p>
+}
+
 <article id="@articleId">
     @RenderBody()
 </article>

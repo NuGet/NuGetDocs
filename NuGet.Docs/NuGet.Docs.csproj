@@ -105,6 +105,7 @@
     <Content Include="packages.config" />
     <Content Include="Default.cshtml" />
     <Content Include="App_Code\PaginationHelper.cshtml" />
+    <Content Include="Errors\404.cshtml" />
     <None Include="Consume\Package-Manager-Dialog.md" />
     <None Include="Consume\Package-Manager-Console.md" />
     <Content Include="Consume\Default.cshtml" />
@@ -132,6 +133,9 @@
     <Content Include="Docs\Release-Notes\NuGet-1.6.cshtml" />
     <Content Include="Docs\Start-Here\Using-the-Package-Manager-Console.cshtml" />
     <Content Include="Docs\Start-Here\Managing-NuGet-Packages-Using-The-Dialog.cshtml" />
+    <Content Include="Errors\Default.cshtml" />
+    <Content Include="Create\Default.cshtml" />
+    <Content Include="Contribute\Default.cshtml" />
     <None Include="Release-Notes\NuGet-1.1.md" />
     <None Include="Release-Notes\NuGet-1.2.md" />
     <None Include="Release-Notes\NuGet-1.3.md" />
@@ -374,9 +378,7 @@
     <Compile Include="MarkdownEngine\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Create\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

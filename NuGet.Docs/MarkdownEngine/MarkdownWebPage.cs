@@ -41,6 +41,7 @@ namespace NuGet.Docs
 
             Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
             Page.Source = GetSourcePath();
+            Page.GeneratedDateTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss tt UTC");
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
@@ -77,6 +78,7 @@ namespace NuGet.Docs
                 if (request.IsCompleted)
                 {
                     fileContents = request.Result;
+                    Page.Generator = "GitHub";
                 }
             }
             catch
@@ -89,6 +91,7 @@ namespace NuGet.Docs
                 if (fileContents == null)
                 {
                     fileContents = new Markdown().Transform(content);
+                    Page.Generator = "MarkdownSharp";
                 }
             }
 
