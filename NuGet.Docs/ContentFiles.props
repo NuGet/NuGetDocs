@@ -1,8 +1,0 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup Label="MarkdownContent">
-    <Content Include="$(MSBuildProjectDirectory)\**\*.cshtml" />
-    <Content Include="$(MSBuildProjectDirectory)\**\*.md" />
-    <Content Include="$(MSBuildProjectDirectory)\**\*.markdown" />
-    <Content Include="$(MSBuildProjectDirectory)\**\_metadata" />
-  </ItemGroup>
-</Project>
