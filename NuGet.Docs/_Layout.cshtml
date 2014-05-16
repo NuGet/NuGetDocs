@@ -12,29 +12,9 @@
     @RenderSection("head", required: false)
 
 @{
-    string subnav = null;
+    string subnav = Request.Path.ToLowerInvariant().TrimStart('/').Replace("/","-");
 
-    if (Request.Path.ToLowerInvariant() == "/")
-    {
-        subnav = "index";
-    }
-
-    if (Request.Path.ToLowerInvariant() == "/docs/start-here/overview")
-    {
-        subnav = "overview";
-    }
-
-    if (Request.Path.ToLowerInvariant() == "/docs/contribute/contributing-to-nuget")
-    {
-        subnav = "contribute";
-    }
-    
-    if (Request.Path.ToLowerInvariant().StartsWith("/docs/release-notes/"))
-    {
-        subnav = "releasenotes";
-    }
-    
-    if (subnav != null)
+    if (!String.IsNullOrEmpty(subnav))
     {
         <style type="text/css">
             #subnav-@subnav a { color: black; }
@@ -69,7 +49,7 @@
                 <li id="subnav-consume"><a href="~/consume">Using NuGet</a></li>
                 <li id="subnav-create"><a href="~/create">Creating Packages</a></li>
                 <li id="subnav-contribute"><a href="~/contribute">Contributing to NuGet</a></li>
-                <li id="subnav-reference"><a href="~/reference">References</a></li>
+                <li id="subnav-reference"><a href="~/reference">Reference</a></li>
             </ul>
         </nav>
         <div class="twitter">

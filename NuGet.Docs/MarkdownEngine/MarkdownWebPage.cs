@@ -21,16 +21,17 @@ namespace NuGet.Docs
     {
         // Set the cache timeout to 1 day (we'll also have cache dependencies)
         private const int CacheTimeout = 24 * 60 * 60;
+        private const string OutlineLayout = "~/_Layout-Outline.cshtml";
         private static List<string> _virtualPathDependencies = new List<string>
         {
             "~/_PageStart.cshtml", 
             "~/_Layout.cshtml",
-            "~/_Layout-Markdown.cshtml"
+            OutlineLayout
         };
 
         public override void ExecutePageHierarchy()
         {
-            this.Layout = "~/_Layout-Markdown.cshtml";
+            this.Layout = OutlineLayout;
             base.ExecutePageHierarchy();
         }
 

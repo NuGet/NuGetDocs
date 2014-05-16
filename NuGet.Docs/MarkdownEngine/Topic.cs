@@ -23,7 +23,7 @@ namespace NuGet.Docs
         /// <summary>
         /// Gets a list of topics from the a directory. Only supports one level of nesting.
         /// </summary>
-        public static IEnumerable<Topic> GetTopics(string virtualPath)
+        public static IEnumerable<Topic> GetTopicsWithSubTopics(string virtualPath)
         {
             VirtualDirectory topicDir = HostingEnvironment.VirtualPathProvider.GetDirectory(virtualPath);
             Func<string, Metadata> getTopicMetadata = GetMetadataMapping(virtualPath);
@@ -49,6 +49,24 @@ namespace NuGet.Docs
                                    }
                    };
 
+        }
+
+        public static IEnumerable<Topic> GetSubTopics(string virtualPath)
+        {
+            VirtualDirectory topicDir = HostingEnvironment.VirtualPathProvider.GetDirectory(virtualPath);
+            Func<string, Metadata> getTopicMetadata = GetMetadataMapping(virtualPath);
+
+            return from file in topicDir.Files.Cast<VirtualFile>()
+                   let subTitle = GetTitle(file)
+                   let subMetadata = getTopicMetadata(subTitle)
+                   where !subTitle.Equals(MetadataFile, StringComparison.OrdinalIgnoreCase)
+                        && (Path.GetExtension(file.Name) == ".md" || Path.GetExtension(file.Name) == ".markdown")
+                   orderby subMetadata.Order, subTitle
+                   select new Topic
+                   {
+                       Title = subTitle,
+                       Url = GetUrl(file)
+                   };
         }
 
         /// <summary>
