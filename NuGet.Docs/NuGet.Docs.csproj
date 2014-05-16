@@ -136,6 +136,7 @@
     <Content Include="Errors\Default.cshtml" />
     <Content Include="Create\Default.cshtml" />
     <Content Include="Contribute\Default.cshtml" />
+    <Content Include="Docs\Creating-Packages\Package-Conventions.cshtml" />
     <None Include="Release-Notes\NuGet-1.1.md" />
     <None Include="Release-Notes\NuGet-1.2.md" />
     <None Include="Release-Notes\NuGet-1.3.md" />
@@ -320,7 +321,7 @@
     <Content Include="Docs\Creating-Packages\Creating-and-Publishing-a-Symbol-Package.markdown" />
     <Content Include="Docs\Creating-Packages\Creating-Localized-Packages.markdown" />
     <Content Include="Docs\Creating-Packages\Hosting-Your-Own-NuGet-Feeds.markdown" />
-    <Content Include="Docs\Creating-Packages\Package-Conventions.markdown" />
+    <None Include="Create\Package-Conventions.md" />
     <Content Include="Docs\Creating-Packages\Using-a-GUI-to-build-packages.markdown" />
     <Content Include="Docs\Creating-Packages\_metadata" />
     <Content Include="Docs\Reference\Command-Line-Reference.markdown" />
