@@ -6,7 +6,7 @@ h2 { font-size: 2em; margin-bottom: 2px;}
 h3 { font-size: 1.6em; margin-bottom: 0; }
 h4 { font-size: 1.4em; }
 h5 { font-size: 1.1em; }
-h6 { font-size: 1em; }
+h6, h7, h8, h9 { font-size: 1em; }
 
 textarea, input {
     /* Hide Safari's oval outline */
@@ -14,14 +14,15 @@ textarea, input {
 }
 
 h1 img, h2 img, h3 img,
-h4 img, h5 img, h6 img {
+h4 img, h5 img, h6 img,
+h7 img, h8 img, h9 img {
   margin: 0;
 }
 
 /* Aside Headings */
 aside h1 { font-size: 1.154em; }
 aside h2 { font-size: 1.077em; }
-aside h3, aside h4, aside h5, aside h6 { font-size: 1em; }
+aside h3, aside h4, aside h5, aside h6, aside h7, aside h8, aside h9 { font-size: 1em; }
 
 /* Lists */
 li ul, li ol { margin:0 }
@@ -104,7 +105,8 @@ aside#toc{
         margin-top: 12px;
     }
 
-    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6 {
+    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+        display: block;
         border-top: 1px solid #ECEEEF;
         border-left: 4px solid transparent;
         padding: 20px 42px 20px 38px;
@@ -117,7 +119,7 @@ aside#toc{
         border-left: 4px solid #00B294;
     }
 
-    aside#toc h5, aside#toc h6 {
+    aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
         background-color: #F7F9F9;
     }
 
@@ -125,7 +127,7 @@ aside#toc{
         color: black;
     }
 
-    aside#toc h5 a, aside#toc h6 a {
+    aside#toc h5 a, aside#toc h6 a, aside#toc h7 a, aside#toc h8 a, aside#toc h9 a {
         color: #B8B8B8;
     }
 
@@ -142,7 +144,7 @@ aside#toc{
         margin: 0px 20px 20px 20px;
     }
 
-    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6 {
+    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
         padding: 20px 22px 20px 18px;
     }
 }

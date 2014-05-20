@@ -152,3 +152,10 @@ If you have upgraded to NuGet 2.7+ but your solution fails to build stating that
 1. **Update the version of NuGet.exe in your .nuget folder.** To do this, run `nuget.exe update -self` from your .nuget folder, which will download the latest version of NuGet.exe and replace the version in the .nuget folder. The latest version of NuGet.exe will infer consent to be ON even when not explicitly saved in the NuGet.config file.
 1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](/docs/workflows/migrating-to-automatic-package-restore).
 
+## Further Reading
+
+[Package Restore with Team Build](package-restore/team-build)
+
+[Migrating to Automatic Package Restore](package-restore/migrating-to-automatic-package-restore)
+
+[MSBuild-Integrated Package Restore](package-restore/msbuild-integrated)
