@@ -114,44 +114,41 @@ The result looks as follows:
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<Project ToolsVersion="4.0"
-	         DefaultTargets="Build" 
+	         DefaultTargets="Build"
 	         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	
+    	
 	  <PropertyGroup>
-	    <OutDir>$(MSBuildThisFileDirectory)bin</OutDir>
-	    <Configuration>Release</Configuration>
-	    <ProjectProperties>
-	        OutDir=$(OutDir);
-	        Configuration=$(Configuration);
-	    </ProjectProperties>
+	    <OutDir Condition=" '$(OutDir)'=='' ">$(MSBuildThisFileDirectory)bin\</OutDir>
+	    <Configuration Condition=" '$(Configuration)'=='' ">Release</Configuration>
+	    <SourceHome Condition=" '$(SourceHome)'=='' ">$(MSBuildThisFileDirectory)src\</SourceHome>
+	    <ToolsHome Condition=" '$(ToolsHome)'=='' ">$(MSBuildThisFileDirectory)tools\</ToolsHome>
 	  </PropertyGroup>
-	
+    	
 	  <ItemGroup>
-	    <Solution Include="$(MSBuildThisFileDirectory)src\*.sln" />
+	    <Solution Include="$(SourceHome)*.sln">
+	      <AdditionalProperties>OutDir=$(OutDir);Configuration=$(Configuration)</AdditionalProperties>
+	    </Solution>
 	  </ItemGroup>
-	
+    	
 	  <Target Name="RestorePackages">
-	    <Exec Command="&quot;$(MSBuildThisFileDirectory)tools\NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
+	    <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
 	  </Target>
-	
+    	
 	  <Target Name="Clean">
 	    <MSBuild Targets="Clean"
-	             Projects="@(Solution)"
-	             Properties="$(ProjectProperties)" />
+	             Projects="@(Solution)" />
 	  </Target>
-	
+    	
 	  <Target Name="Build" DependsOnTargets="RestorePackages">
 	    <MSBuild Targets="Build"
-	             Projects="@(Solution)"
-	             Properties="$(ProjectProperties)" />
+	             Projects="@(Solution)" />
 	  </Target>
-	
+    	
 	  <Target Name="Rebuild" DependsOnTargets="RestorePackages">
 	    <MSBuild Targets="Rebuild"
-	             Projects="@(Solution)"
-	             Properties="$(ProjectProperties)" />
+	             Projects="@(Solution)" />
 	  </Target>
-	
+    	
 	</Project>
 
 ## Configuring Team Build
