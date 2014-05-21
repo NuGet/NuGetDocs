@@ -1,4 +1,4 @@
-﻿# Hosting Your Own NuGet Feeds
+# Hosting Your Own NuGet Feeds
 
 Some companies restrict which third-party libraries their developers may use.
 Therefore, they might not want developers to have access to everything in the official
@@ -7,8 +7,20 @@ in addition to the official feed.
 
 In these scenarios, you can set up a custom NuGet feed, and you can configure
 Visual Studio to offer that feed instead of or in addition to the official feed.
-A feed can be local (a folder on the local machine or a network folder) or remote
-(an internet URL).
+A feed can be local (a folder on the local machine or a network folder), or remote
+(an intranet or internet URL).
+
+There are several third-party NuGet Servers available that make remote private feeds easy
+to configure and set-up, including [MyGet](http://myget.org), 
+[Inedo's ProGet](http://inedo.com/proget), 
+[JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview), and 
+[Sonatype's Nexus](http://www.sonatype.org/nexus/). See
+[An Overview of the NuGet Ecosystem](../reference/ecosystem) to learn more about these 
+options. 
+
+Otherwise, you can create a local feed on disk or build your own remote feed using NuGet's 
+server components by following the instructions below.
+
 
 ## Creating Local Feeds
 
