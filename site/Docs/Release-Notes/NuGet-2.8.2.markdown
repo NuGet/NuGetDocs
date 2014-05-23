@@ -16,7 +16,7 @@ The most notable updates were in the NuGet.exe command-line and the NuGet.Server
 
 1. [Wrong value of IsAbsoluteLatestVersion returned by NuGet.Server](https://nuget.codeplex.com/workitem/4147)
 
-### Packages Updated
+## Packages Updated
 
 The NuGet.exe command-line and NuGet.Server fixes are shipped as NuGet package updates.  There were other packages updated with 2.8.2 as well.
 
@@ -28,5 +28,5 @@ Here's the list of updated packages:
 1. [NuGet.Build](https://www.nuget.org/packages/NuGet.Build/)
 1. [NuGet.VisualStudio](https://www.nuget.org/packages/NuGet.VisualStudio/) (the package, not the extension)
 
-### All Changes
+## All Changes
 There were 9 issues addressed in the release. For a full list of the work items fixed in NuGet 2.8.2, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=All&type=All&priority=All&release=NuGet%202.8.2&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
