@@ -1,4 +1,4 @@
-# NuGet 2.8.1 Release Notes
+# NuGet 2.8.2 Release Notes
 
 ## Notable features in the release
 
