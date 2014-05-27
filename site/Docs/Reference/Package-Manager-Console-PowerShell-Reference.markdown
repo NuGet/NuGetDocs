@@ -27,7 +27,7 @@ PARAMETERS
 Adds binding redirects to the specified project, MyProjectName.
 
 ## Get-Package
-Gets the set of packages available from the package source. Use the -ListAvailable flag to list packages available from the package source.
+Gets the set of packages available from the local repository folder. Use the -ListAvailable flag to list packages available from the online package source.
 
     Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions]
 
