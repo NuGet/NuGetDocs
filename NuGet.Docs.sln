@@ -8,7 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NuGet.Docs", "http://localhost:50550", "{64E2B1F4-E6B0-4602-8E71-484A259BA84C}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{68b89add-a928-4b5c-8173-ec38c282c918}|NuGet.Docs.MarkdownPages.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50550"
 		Debug.AspNetCompiler.PhysicalPath = "NuGet.Docs\"
