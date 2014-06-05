@@ -312,6 +312,10 @@ Nexus is another repository manager with built-in support for NuGet and they eve
 
 More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://books.sonatype.com/nexus-book/reference/nuget.html)
 
+## NuGet Server
+
+Fully functional [NuGet Server](http://nugetserver.net/) installed using a wizard and hosted as a Windows Service.
+
 ## Other NuGet-based utilities
 There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
 
