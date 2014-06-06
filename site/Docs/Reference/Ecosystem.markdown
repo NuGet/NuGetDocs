@@ -314,7 +314,11 @@ More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://bo
 
 ## NuGet Server
 
-Fully functional [NuGet Server](http://nugetserver.net/) installed using a wizard and hosted as a Windows Service.
+[NuGet Server](http://nugetserver.net/) is a fully functional NuGet server for hosting NuGet packages on your own server. The product is setup using a Windows installer, where a wizard will guide you through the process of running a NuGet server as a Windows service.
+
+NuGet Server is basically a wrapper of the [NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) package, but installed through a wizard. NuGet Server is distributed with its own web server, why you don't need IIS installed.
+
+More info: [http://nugetserver.net/](http://nugetserver.net/)
 
 ## Other NuGet-based utilities
 There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
