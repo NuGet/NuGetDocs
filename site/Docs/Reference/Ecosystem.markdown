@@ -314,9 +314,7 @@ More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://bo
 
 ## NuGet Server
 
-[NuGet Server](http://nugetserver.net/) is a fully functional NuGet server you install as a Windows service. Purchase, download and double click the installer. Our wizard will guide you through the rest. To start serving your packages, simply place your NuGet packages in the Packages folder and start supporting NuGet in your company today!
-
-NuGet Server is basically a wrapper of the [NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) package, but installed through a wizard. NuGet Server is distributed with its own web server, why you don't need IIS installed.
+[NuGet Server](http://nugetserver.net/) is a fully functional NuGet server you install as a Windows service. Purchase for $5 US, download and double click the installer. NuGet Server is basically a wrapper of the [NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) package, but installed through a wizard. NuGet Server is distributed with its own web server, so you don't need IIS.
 
 More info: [http://nugetserver.net/](http://nugetserver.net/)
 
