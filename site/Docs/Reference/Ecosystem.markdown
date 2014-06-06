@@ -312,6 +312,14 @@ Nexus is another repository manager with built-in support for NuGet and they eve
 
 More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://books.sonatype.com/nexus-book/reference/nuget.html)
 
+## NuGet Server
+
+[NuGet Server](http://nugetserver.net/) is a fully functional NuGet server you install as a Windows service. Purchase, download and double click the installer. Our wizard will guide you through the rest. To start serving your packages, simply place your NuGet packages in the Packages folder and start supporting NuGet in your company today!
+
+NuGet Server is basically a wrapper of the [NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) package, but installed through a wizard. NuGet Server is distributed with its own web server, why you don't need IIS installed.
+
+More info: [http://nugetserver.net/](http://nugetserver.net/)
+
 ## Other NuGet-based utilities
 There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
 
