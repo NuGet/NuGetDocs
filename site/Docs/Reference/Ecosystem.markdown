@@ -318,6 +318,9 @@ More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://bo
 
 More info: [http://nugetserver.net/](http://nugetserver.net/)
 
+## scriptcs
+[scriptcs](http://scriptcs.net/) offers a cross-platform scripting environment for authoring C#. Scripts can be created via a text editor or executing interactively in the scriptcs REPL. scriptcs allows script authors to install  nuget packages and use them in their scripts. Scriptcs also leverages for nuget extensibility as [script packs] (https://github.com/scriptcs/scriptcs/wiki/Script-Packs) and modules are installed as nuget packages.
+
 ## Other NuGet-based utilities
 There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
 
