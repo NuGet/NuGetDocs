@@ -38,7 +38,7 @@ The easiest distribution to use is OpenSUSE. Install OpenSUSE 12.3, then follow 
 1. **Install Mono**
 Open firefox, go to <a href="http://software.opensuse.org/find">http://software.opensuse.org/find</a>. 
 Search package "mono-complete". In the result page, click "Show other versions". 
-Install version 3.2.3 from repository openSUE Factory. 
+Install version 3.2.3 from repository openSUSE Factory. 
 
 1. **Import Trusted Root Certificates**. By default, Mono trusts no one. 
 The NuGet build needs to install some packages from https://www.nuget.org, 
