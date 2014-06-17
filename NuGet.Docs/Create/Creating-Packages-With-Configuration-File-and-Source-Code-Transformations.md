@@ -75,7 +75,7 @@ installation is ELMAH (Error Logging Modules and Handlers for ASP.NET). ELMAH re
 HTTP modules and HTTP handlers be registered in the web.config file. The ELMAH package includes a 
 file named web.config.transform that specifies how to register them.
 
-![](images/web.config.transform.png)
+![](/images/create/web.config.transform.png)
 
 Suppose the XML in the web.config.transform file looks like the following example:
 
@@ -234,7 +234,7 @@ in the project might look like the following example (the rootnamespace project 
 In order to enable the transformation process for a source-code file, you append the .pp file extension 
 to the name of the file, as shown in the following example
 
-![](images/pp.files.png)
+![](/images/create/pp.files.png)
 
 When the source-code files illustrated in the figure are installed, NuGet transforms the files, removes 
 the .pp extension, and adds them to the target project’s ~/Models directory.

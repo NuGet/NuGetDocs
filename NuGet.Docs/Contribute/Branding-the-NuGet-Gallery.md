@@ -61,11 +61,11 @@ This section has in depth walkthroughs and examples of the different processes i
 
 Open the web.config file of the NuGetGallery project.  Then search for the Brand and GalleryOwner attributes in the file.
 
-![screenshot of the web.config file (with line numbers) with the Brand and GalleryOwner attributes highlighted](./images/webconfig1.jpg)
+![screenshot of the web.config file (with line numbers) with the Brand and GalleryOwner attributes highlighted](/images/contribute/webconfig1.jpg)
 
 Modify these two attributes to the new values for your re-branded Gallery.
 
-![screenshot of the web.config file with the Brand and GalleryOwner modified from above](./images/webconfig2.jpg)
+![screenshot of the web.config file with the Brand and GalleryOwner modified from above](/images/contribute/webconfig2.jpg)
 
 ###Creating/Overriding a New View
 
@@ -73,23 +73,23 @@ In this example, the Upload Package page will be re-branded to contain unique la
 
 First note the folder structure of the original Upload Package page.
 
-![picture of the folder structure under views of Packages/uploadPackage](./images/uploadPackage1.jpg)
+![picture of the folder structure under views of Packages/uploadPackage](/images/contribute/uploadPackage1.jpg)
 
 Also notice that on F5, if you navigate to `http://nuget.localtest.me/packages/upload` you see the content from the uploadPackage page.
 
-![screenshot of http://nuget.localtest.me/packages/upload](./images/uploadPackage2.jpg)
+![screenshot of http://nuget.localtest.me/packages/upload] (/images/contribute/uploadPackage2.jpg)
 
 Create a matching folder structure (including the Views folder, under branding)
 
-![picture showing the new folders (Views and Packages) created under the Branding folder](./images/uploadPackage3.jpg)
+![picture showing the new folders (Views and Packages) created under the Branding folder](/images/contribute/uploadPackage3.jpg)
 
 Create a new .cshtml file named `uploadPackage.cshtml` under the new `Branding/Views/Packages` Area path.  Then modify the file to the new desired values.
 
-![screenshot showing both the editor and the solution explorer with the new Branding/Views/Packages/uploadPackage.cshtml page](./images/uploadPackage4.jpg)
+![screenshot showing both the editor and the solution explorer with the new Branding/Views/Packages/uploadPackage.cshtml page](/images/contribute/uploadPackage4.jpg)
 
 When we now refresh the `http://nuget.localtest.me/packages/upload` page in the browser, the new content from the `Branding/Views/Packages/uploadPackage.cshtml` is displayed.
 
-![screenshot of the browser displaying the new http://nuget.localtest.me/packages/upload page, with the re-branding override](./images/uploadPackage5.jpg)
+![screenshot of the browser displaying the new http://nuget.localtest.me/packages/upload page, with the re-branding override](/images/contribute/uploadPackage5.jpg)
 
 That's all.
 
@@ -97,11 +97,11 @@ That's all.
 
 Identify which content file the styling you are overriding comes from (Layout, Site, or PageStylings). Create a new css file with the same name in the `Branding/Content` folder.  In this example some styling from the Layout page is being overridden, so that file is created.
 
-![Screenshot of a new Layout.css file in the Branding/Content folder](./images/customcontent1.jpg)
+![Screenshot of a new Layout.css file in the Branding/Content folder](/images/contribute/customcontent1.jpg)
 
 Now add your css rule as normal (either for overriding or for creating new styling rules).  In this example, the footer background color is modified from a peaceful teal to a blinding yellow.
 
-![Screenshot of the new rule on the left and the nuget homepage with the new footer styling on the right](./images/customcontent2.jpg)
+![Screenshot of the new rule on the left and the nuget homepage with the new footer styling on the right](/images/contribute/customcontent2.jpg)
 
 ##Tips for how to Re-Brand
 
@@ -116,10 +116,10 @@ Pre-reqs:
 
 Go into Visual Studio, and run the NuGetGallery (F5).  In the browser navigate to the page you want to alter.  In this example we will use the Upload Package page. Notice at the bottom left of the browser window there is a semi-transparent overlay.
 
-![Screenshot of the browser on the nuget.localtest.me/packages/upload page](./images/browserlink1.jpg)
+![Screenshot of the browser on the nuget.localtest.me/packages/upload page](/images/contribute/browserlink1.jpg)
 
 Either click the inspect element or use the keyboard shortcut (`Ctrl+Alt+I`).  Make sure that you can see both Visual Studio and the browser.  Now hover over the page to see which file generated which parts of the page.
 
-![Screenshot of hovering over an element in the browser in inspectmode (1), with the VS also visible and having that element in the IDE highlighted(2)](./images/browserlink2.jpg)
+![Screenshot of hovering over an element in the browser in inspectmode (1), with the VS also visible and having that element in the IDE highlighted(2)] (/images/contribute/browserlink2.jpg)
 
 You now know which file you need to create a override of in the Branding folder.

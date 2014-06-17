@@ -27,7 +27,7 @@ each machine that builds the project.
 In Visual Studio, enable "Allow NuGet to download missing packages during build". This setting lives
 under **Options -> Package Manager -> General**.
 
-![Allow NuGet to download missing packages setting](images/allow-package-restore-configuration.png)
+![Allow NuGet to download missing packages setting](/images/consume/allow-package-restore-configuration.png)
 
 **To enable package restore for build servers without Visual Studio installed, you can also set the
 environment variable `EnableNuGetPackageRestore` to "true".**
@@ -38,14 +38,14 @@ you want to set up the no-commit workflow.
 
 Right click on the _Solution_ node in Solution Explorer and select _Enable NuGet Package Restore_.
 
-![Enable NuGet Package Restore Context Menu item](images/enable-package-restore.png)
+![Enable NuGet Package Restore Context Menu item](/images/consume/enable-package-restore.png)
 
 **That's it!** You're all set.
 
 ## Details
 So what exactly did that do? It added a solution folder named .nuget containing NuGet.exe and a NuGet.targets MsBuild file. More specifically, it downloaded and extracted two NuGet packages: [NuGet.Commandline](http://nuget.org/packages/nuget.commandline) for NuGet.exe and [NuGet.Build](http://nuget.org/packages/nuget.build) for NuGet.targets. It also changed every project in the solution to import the NuGet.targets MsBuild task. 
 
-![New Solution folder with package restore files](images/package-restore-solution.png)
+![New Solution folder with package restore files](/images/consume/package-restore-solution.png)
 
 Finally, it added a NuGet.config file with the following XML:
 

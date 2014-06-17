@@ -14,17 +14,17 @@ Installing Package Explorer is easy, [click here and you&#8217;re done](https://
 Package Explorer is a click-once application which means every time you launch it, it will 
 check for updates and allow you to keep the application up to date.
 
-![Package Explorer Update Available](images/package-explorer-update-available.png)
+![Package Explorer Update Available](/images/create/package-explorer-update-available.png)
 
 ## Creating a Package
 To create a package, launch Package Explorer and select **File** > **New** menu option 
 (or hit CTRL + N).
 
-![Creating a new package](images/package-explorer-file-new.png)
+![Creating a new package](/images/create/package-explorer-file-new.png)
 
 Then select the **Edit** > **Edit Package Metadata** menu option (or CTRL + K) to edit the package metadata.
 
-![Editing Metadata with the Package Explorer](images/package-explorer-metadata.png)
+![Editing Metadata with the Package Explorer](/images/create/package-explorer-metadata.png)
 
 The metadata editor provides a GUI editor for editing the underlying nuspec file. For more 
 details about these fields, read the [NuSpec reference](~/docs/reference/nuspec-reference).
@@ -36,15 +36,15 @@ the correct directory within the package.
 For example, if you drag an assembly into the Package contents window, it will prompt you to place 
 the assembly in the **lib** folder.
 
-![Package Explorer Infers content location](images/package-explorer-content-inference.png)
+![Package Explorer Infers content location](/images/create/package-explorer-content-inference.png)
 
 And clicking **OK** places the file in the appropriate folder.
 
-![Package Explorer Lib Folder](images/package-explorer-lib-folder.png)
+![Package Explorer Lib Folder](/images/create/package-explorer-lib-folder.png)
 
 You can also explicitly add the special folders via the **Content** menu.
 
-![Package Explorer Content](images/package-explorer-content.png)
+![Package Explorer Content](/images/create/package-explorer-content.png)
 
 Don&#8217;t forget to save your package via the **File** > **Save** menu option (or CTRL + S).
 
@@ -55,7 +55,7 @@ Once you've created and saved your package, navigate to the **File** > **Publish
 
 This brings up the **Publish Package** dialog.
 
-![Publish Package Dialog](images/package-explorer-publish.png)
+![Publish Package Dialog](/images/create/package-explorer-publish.png)
 
 Enter your API Key and click **Publish** to publish your package to the NuGet package feed. 
 If you don&#8217;t have an account yet, visit [the NuGet Gallery](http://nuget.org/) and register 

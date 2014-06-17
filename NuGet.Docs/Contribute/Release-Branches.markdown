@@ -14,22 +14,22 @@ A branch is just like a named changeset. To update to the 1.0 branch use `hg up 
 
 When we start making new changes, default and 1.0 will naturally diverge.
 
-![default and 1.0 diverge](images/default-and-1.0-diverge.jpg)
+![default and 1.0 diverge](/images/contribute/default-and-1.0-diverge.jpg)
 
 When you go to make a bug fix that we want for 1.0, update to the 1.0 branch, make the fix and commit it.
 
-![1.0 update to 1.0 branch](images/1.0-update-to-1.0-branch.jpg)
+![1.0 update to 1.0 branch](/images/contribute/1.0-update-to-1.0-branch.jpg)
 
 To port a bug to default from 1.0, we first update to default (using `hg up default`), then merge with the 1.0 branch (`hg merge 1.0`). Don't forget to commit the merge.
 
-![merge with 1.0 branch](images/merge-with-1.0-branch.jpg)
+![merge with 1.0 branch](/images/contribute/merge-with-1.0-branch.jpg)
 
 We can continue to make changes on default and further bug fixes on the 1.0 branch and merge as necessary.
 
-![further bug fixes on 1.0 branch](images/further-bug-fixes-on-1.0-branch.jpg)
+![further bug fixes on 1.0 branch](/images/contribute/further-bug-fixes-on-1.0-branch.jpg)
 
 One helpful feature in Tortoise is the branch selection drop down, which hides all the changes that are not in the branch you care about, so you just see one head:
 
-![branch selection drop-down](images/branch-selection-drop-down.jpg)
+![branch selection drop-down](/images/contribute/branch-selection-drop-down.jpg)
 
 Click the All radio button on the far left to go back to unfiltered view.

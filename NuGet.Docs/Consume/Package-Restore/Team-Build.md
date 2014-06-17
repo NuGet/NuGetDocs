@@ -159,13 +159,13 @@ Git and TF Version Control have different Team Build templates, so the following
 
 First, let's look at the process template for git. In the git based template the build is selected via the property `1. Solution to build`:
 
-![Build Process for git](images/PackageRestoreTeamBuildGit.png)
+![Build Process for git](/images/consume/PackageRestoreTeamBuildGit.png)
 
 Please note that this property is a location in your repository. Since our `build.proj` is in the root, we simply used `build.proj`. If you place the build file under a folder called `tools`, the value would be `tools\build.proj`.
 
 In the TF version control template the project is selected via the property `1. Projects`:
 
-![Build Process for TFVC](images/PackageRestoreTeamBuildTFVC.png)
+![Build Process for TFVC](/images/consume/PackageRestoreTeamBuildTFVC.png)
 
 In contrast to the git based template the TF version control supports pickers (the button on the right hand side with the three dots). So in order to avoid any typing errors we suggest you use them to select the project. 
-== 
+

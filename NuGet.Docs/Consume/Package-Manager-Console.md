@@ -10,11 +10,11 @@ Using PowerShell commands is required if you want to install a package without h
 
 From the **Tools** menu, select **Library Package Manager** and then click **Package Manager Console**.
 
-![Package Manager Console in menu](images/package-manager-console-in-menu.png)
+![Package Manager Console in menu](/images/consume/package-manager-console-in-menu.png)
 
 The **Package Manager Console** window is displayed.
 
-![Package Manager Console](images/package-manager-console-empty-window.png)
+![Package Manager Console](/images/consume/package-manager-console-empty-window.png)
 
 The two drop-down lists set default values that let you omit parameters from the commands you enter in the window:
 
@@ -25,7 +25,7 @@ When you enter commands, you can override these defaults.
 In the **Package Manager Console** window, enter `Get-Package -ListAvailable` at the prompt to see a list of all packages 
 that are available in the selected package source.
 
-![Get-Package -ListAvailable command](images/package-manager-console-get-package-remote.png)
+![Get-Package -ListAvailable command](/images/consume/package-manager-console-get-package-remote.png)
 
 For the default package source, that command is going to list thousands of packages. It makes better sense to specify 
 a filter.
@@ -33,7 +33,7 @@ a filter.
 For example, to find the logging package ELMAH, enter `Get-Package -ListAvailable -Filter elmah` (the name of the package) 
 or `Get-Package -Filter Logging -ListAvailable` (a keyword in the package description).
 
-![Get-Package command with filter](images/package-manager-console-Get-Package-with-filter.png)
+![Get-Package command with filter](/images/consume/package-manager-console-Get-Package-with-filter.png)
 
 For more options that you can specify with the `Get-Package` command, enter `Get-Help Get-Package`, or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
 
@@ -42,7 +42,7 @@ For more options that you can specify with the `Get-Package` command, enter `Get
 After you have found a package that you want to install, use the `Install-Package` command with the name of the package.
 For example, enter the command `Install-Package elmah` as shown in the following example:
 
-![Install-Package command](images/package-manager-console-install-package.png)
+![Install-Package command](/images/consume/package-manager-console-install-package.png)
 
 For more options that you can specify with the `Install-Package` command, enter `get-help Install-Package` or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
 
@@ -58,36 +58,36 @@ NuGet installs them also if they are not already installed.
 If the package requires license acceptance, you will not be prompted in a dialog box. 
 Instead, a message states that your use of the library constitutes license acceptance.
 
-![License acceptance text in Package Manager Console](images/package-manager-console-license-acceptance.png)
+![License acceptance text in Package Manager Console](/images/consume/package-manager-console-license-acceptance.png)
 
 In **Solution Explorer**, you can see references that Visual Studio has added for the installed library or libraries.
 
-![Elmah reference in Solution Explorer](images/elmah-reference-in-solution-explorer.png)
+![Elmah reference in Solution Explorer](/images/consume/elmah-reference-in-solution-explorer.png)
 
 If your *app.config* or *web.config* file required changes, those have been applied. 
 The following example shows some of the changes for ELMAH.
 
-![Web.config changes for elmah](images/elmah-web.config-changes.png)
+![Web.config changes for elmah](/images/consume/elmah-web.config-changes.png)
 
 A new folder named *packages* is created in your solution folder. 
 (If your project does not have a solution folder, the *packages* folder is created in the project folder.)
 
-![packages folder](images/packages-folder.png)
+![packages folder](/images/consume/packages-folder.png)
 
 The *packages* folder contains a subfolder for each installed package. 
 This subfolder contains the files installed by the package. 
 It also contains the package file itself (the *.nupkg* file, which is a *.zip* file 
 that contains all of the files included in the package).
 
-![elmah folder in packages folder](images/elmah-folder-in-packages-folder.png)
+![elmah folder in packages folder](/images/consume/elmah-folder-in-packages-folder.png)
 
 You can now use the library in your project. 
 IntelliSense works when you enter code, and library features such as the ELMAH logging information page 
 work when you run the project.
 
-![elmah IntelliSense](images/elmah-intellisense.png)
+![elmah IntelliSense](/images/consume/elmah-intellisense.png)
 
-![elmah Error Log page](images/elmah-errorr-log-page.png)
+![elmah Error Log page](/images/consume/elmah-errorr-log-page.png)
 
 ## Extending The Package Manager Console With Packages
 
@@ -96,7 +96,7 @@ One example of such a package is `MvcScaffolding`, which creates commands you ca
 controllers and views. The following illustration shows that installing MvcScaffolding creates a new command 
 `Scaffold`, complete with tab expansion.
 
-![Installing and using MvcScaffold](images/package-manager-console-install-mvcscaffold.png)
+![Installing and using MvcScaffold](/images/consume/package-manager-console-install-mvcscaffold.png)
 
 ## Removing a Package
 
@@ -104,12 +104,12 @@ From the *Tools* menu, select *Library Package Manager* and then click *Package 
 If you do not already know the name of the package you want to remove, enter `Get-Package` at the prompt 
 without any flags to see a list of all of the packages that are currently installed.
 
-![Package Manager Console showing installed packages](images/package-manager-console-get-package-listing-installed-packages.png)
+![Package Manager Console showing installed packages](/images/consume/package-manager-console-get-package-listing-installed-packages.png)
 
 To remove a package, use the `Uninstall-Package` command with the name of the package. 
 For example, use the `Uninstall-Package elmah` command as shown in the following example:
 
-![uninstall package command](images/package-manager-console-uninstall-package.png)
+![uninstall package command](/images/consume/package-manager-console-uninstall-package.png)
 
 For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
 
@@ -126,12 +126,12 @@ If other packages were installed because they were dependencies of the package t
 From the **Tools** menu, select **Library Package Manager** and then click **Package Manager Console**.
 To check if there are newer versions available for any installed packages, enter `Get-Package -updates` at the prompt.
 
-![Get-Package command](images/package-manager-console-get-package-showing-updates.png)
+![Get-Package command](/images/consume/package-manager-console-get-package-showing-updates.png)
 
 To update a package, enter `Update-Package` with the package ID. For example, enter the command `Update-Package jQuery`.
 For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see (../Reference/Package-manager-Console-Commands).
 
-![update-package command](images/package-manager-console-update-package.png)
+![update-package command](/images/consume/package-manager-console-update-package.png)
 
 # Setting up a NuGet Powershell Profile
 Powershell supports the concept of profiles which allow you to have commonly used PS commands available to you wherever you 

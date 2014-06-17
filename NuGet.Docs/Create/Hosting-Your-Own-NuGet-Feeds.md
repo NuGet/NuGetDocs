@@ -29,36 +29,36 @@ and then putting them all into a folder. In the following example, a folder has
 been created in the local *c:* drive.
 The folder contains a single package (.nupkg file).
 
-![LocalNuGetFeed-folder.png](images/LocalNuGetFeed-folder.png)
+![LocalNuGetFeed-folder.png](/images/create/LocalNuGetFeed-folder.png)
 
 Next, specify that folder as the location of a NuGet feed. In Visual Studio,
 from the **Tools** menu select **Library Package Manager** and then click
 **Package Manager Settings**.
 
-![Package Manager Settings in menu](images/Package-Manager-Settings-in-menu.png)
+![Package Manager Settings in menu](/images/create/Package-Manager-Settings-in-menu.png)
 
 The **Options** dialog box is displayed.
 
-![Options dialog box](images/Options-dialog-box.png)
+![Options dialog box](/images/create/Options-dialog-box.png)
 
 In the **Name** box, enter a name for your feed.
 In the **Source** box enter the path of your packages folder.
 
-![Available Package Sources dialog box without new feed](images/Available-Package-Sources-without-new-feed.png)
+![Available Package Sources dialog box without new feed](/images/create/Available-Package-Sources-without-new-feed.png)
 
 Click **Add**. Your local folder is now another NuGet feed source.
 
-![Available Package Sources dialog box with new feed](images/Available-Package-Sources-with-new-feed.png)
+![Available Package Sources dialog box with new feed](/images/create/Available-Package-Sources-with-new-feed.png)
 
 To install a package using the new feed, in the **Package Manager Console** window,
 select the new feed in the **Package source** list.
 
-![Selecting local feed in Package Manager Console](images/Selecting-local-feed-in-Package-Manager-Console.png)
+![Selecting local feed in Package Manager Console](/images/create/Selecting-local-feed-in-Package-Manager-Console.png)
 
 You can also select the new feed in the **Online** tab of the
 **Manage NuGet Packages** dialog box.
 
-![Selecting local feed in the Manage NuGet Packages dialog](images/Selecting-local-feed-in-Add-Library-Package-Reference.png)
+![Selecting local feed in the Manage NuGet Packages dialog](/images/create/Selecting-local-feed-in-Add-Library-Package-Reference.png)
 
 ## Creating Remote Feeds
 
@@ -72,11 +72,11 @@ Go to the **File** | **New** | **Project** menu option (or just hit CTRL + SHIFT
 which will bring up the new project dialog and
 select **ASP.NET Empty Web Application** as in the following screenshot.
 
-![New Project dialog box](images/New-Project-dialog-box.png)
+![New Project dialog box](/images/create/New-Project-dialog-box.png)
 
 This results in a very empty project template.
 
-![New project in Solution Explorer](images/New-project-in-Solution-Explorer.png)
+![New project in Solution Explorer](/images/create/New-project-in-Solution-Explorer.png)
 
 ### Step 2: Install the NuGet.Server Package
 
@@ -87,7 +87,7 @@ type `Install-Package NuGet.Server`).
 Click the **Online** tab and then type **NuGet.Server** in the top right search box.
 Click **Install** on the **NuGet.Server** package as shown in the following image.
 
-![NuGet.Server package](images/NuGet.Server-package.png)
+![NuGet.Server package](/images/create/NuGet.Server-package.png)
 
 ### Step 3: Configure the Packages folder
 
@@ -108,7 +108,7 @@ Just add packages into the Packages folder and they'll show up.
 In the following screenshot, you can see that I've manually added a few packages to the default **Packages**
 folder.  
 
-![Adding packages to the packages folder](images/Adding-packages-to-the-packages-folder.png)
+![Adding packages to the packages folder](/images/create/Adding-packages-to-the-packages-folder.png)
 
 <p class="info">If you want these packages to be published (such as when selecting Build -> Publish from
 the application menu) you'll also need to select the .nupkg files in Solution Explorer
@@ -137,11 +137,11 @@ set the **requireApiKey** value to false.
 
 I can hit CTRL + F5 to run the site and it'll provide some instructions on what to do next.
 
-![Package feed home page](images/Package-feed-home-page.png)
+![Package feed home page](/images/create/Package-feed-home-page.png)
 
 Clicking on "here" shows the OData over ATOM feed of packages.
 
-![OData over ATOM package feed](images/OData-over-ATOM-package-feed.png)
+![OData over ATOM package feed](/images/create/OData-over-ATOM-package-feed.png)
 
 Now all I need to do is deploy this website as I would any other site and then
 I can click the Settings button and add this feed to my set of package sources
@@ -149,7 +149,7 @@ as in the following screenshot.
 
 
 
-![Adding new feed to package sources](images/Adding-new-feed-to-package-sources.png)
+![Adding new feed to package sources](/images/create/Adding-new-feed-to-package-sources.png)
 
 Note that the URL you need to put in is <a href="http://yourdomain/nuget/">http://yourdomain/nuget/</a> depending on how you deploy the site.
 

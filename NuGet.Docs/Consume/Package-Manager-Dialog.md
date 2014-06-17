@@ -13,11 +13,11 @@ on [Managing Packages for the Solution](#Managing_Packages_for_the_Solution).
 In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
 (Note, in a Website project, right click on the **Bin** node.)
 
-![Manage NuGet Packages menu option](images/manage-nuget-packages-menu-option.png)
+![Manage NuGet Packages menu option](/images/consume/manage-nuget-packages-menu-option.png)
 
 Click the **Online** tab to display the list of available packages.
 
-![Manage NuGet Packages Dialog Online tab](images/manage-nuget-packages-online-tab.png)
+![Manage NuGet Packages Dialog Online tab](/images/consume/manage-nuget-packages-online-tab.png)
 
 Browse through the list, or search for a package using the search box at the top right of the dialog box. 
 For example, to find the logging package named ELMAH, enter "elmah" or "logging".
@@ -30,24 +30,24 @@ When you select a package, an **Install** button appears, and a description is s
 NuGet can display packages from multiple package sources. To add a package source, click on the **Settings** 
 button in the dialog to launch the Options dialog. Make sure the **Package Sources** node is selected in the dialog.
 
-![Package Sources Dialog](images/package-sources.png)
+![Package Sources Dialog](/images/consume/package-sources.png)
 
 Type in the name of a source as well as its URL or folder path (a folder containing NuGet package 
 files is a valid package source) and then click the **Add** button.
 
-![Package Sources Dialog with a custom source](images/package-sources-with-custom-source.png)
+![Package Sources Dialog with a custom source](/images/consume/package-sources-with-custom-source.png)
 
 The package source will be listed under the **All** node. Click on the package source to view 
 packages from that source. The **All** node displays an aggregated view of packages from all 
 package sources.
 
-![Manage NuGet Packages Dialog with a custom package source](images/manage-nuget-packagse-with-custom-source.png)
+![Manage NuGet Packages Dialog with a custom package source](/images/consume/manage-nuget-packagse-with-custom-source.png)
 
 If you want to temporarily disable a package source, just uncheck the package source in the 
 dialog. This is useful if a package source is temporarily down for some reason and you need to 
 keep it from being included in the aggregate feed.
 
-![Package Sources Dialog with a disabled source](images/package-source-with-disabled-source.png)
+![Package Sources Dialog with a disabled source](/images/consume/package-source-with-disabled-source.png)
 
 ## Installing a Package
 
@@ -58,48 +58,48 @@ the project *app.config* or *web.config* file might be updated, etc.
 
 You might be asked to accept license terms.
 
-![License Acceptance dialog box](images/License-acceptance.png)
+![License Acceptance dialog box](/images/consume/License-acceptance.png)
 
 When the installation completes, the **Install** button turns into a green check mark to indicate 
 that the package was installed correctly.
 
-![Green check mark indicating elmah is installed](images/elmah-installed.png)
+![Green check mark indicating elmah is installed](/images/consume/elmah-installed.png)
 
 In **Solution Explorer**, you can see references that Visual Studio has added for the installed library or libraries.
 
-![Elmah reference in Solution Explorer](images/elmah-reference-in-solution-explorer.png)
+![Elmah reference in Solution Explorer](/images/consume/elmah-reference-in-solution-explorer.png)
 
 If your *app.config* or *web.config* file required changes, those have been applied. 
 The following example shows some of the changes for ELMAH.
 
-![Web.config changes for elmah](images/elmah-web.config-changes.png)
+![Web.config changes for elmah](/images/consume/elmah-web.config-changes.png)
 
 A new folder named *packages* is created in your solution folder. 
 (If your project does not have a solution folder, the *packages* folder is created in the project folder.)
 
-![packages folder](images/packages-folder.png)
+![packages folder](/images/consume/packages-folder.png)
 
 The *packages* folder contains a subfolder for each installed package. 
 This subfolder contains the files installed by the package. 
 It also contains the package file itself (the *.nupkg* file, which is a *.zip* file 
 that contains all of the files included in the package).
 
-![elmah folder in packages folder](images/elmah-folder-in-packages-folder.png)
+![elmah folder in packages folder](/images/consume/elmah-folder-in-packages-folder.png)
 
 You can now use the library in your project. 
 IntelliSense works when you enter code, and library features such as the ELMAH logging information page 
 work when you run the project.
 
-![elmah IntelliSense](images/elmah-intellisense.png)
+![elmah IntelliSense](/images/consume/elmah-intellisense.png)
 
-![elmah Error Log page](images/elmah-errorr-log-page.png)
+![elmah Error Log page](/images/consume/elmah-errorr-log-page.png)
 
 ## Removing a Package
 
 Open the **Manage NuGet Packages** dialog and make sure the **Installed Packages** tab is selected to display 
 the list of installed packages.
 
-![Manage NuGet Packages Dialog showing installed packages](images/manage-nuget-packages-installed.png)
+![Manage NuGet Packages Dialog showing installed packages](/images/consume/manage-nuget-packages-installed.png)
 
 Select the package you want to uninstall and then click **Uninstall** to remove the package.
 
@@ -114,7 +114,7 @@ If other packages were installed because they were dependencies of the package t
 If a package has dependencies, NuGet prompts offering the choice to remove the package's 
 dependencies.
 
-![Removing dependent packages](../Start-Here/images/remove-dependent-packages.png)
+![Removing dependent packages](/images/consume/remove-dependent-packages.png)
 
 ## Updating a Package
 
@@ -124,7 +124,7 @@ the list of packages that have newer versions available.
 If any packages have updates available, they will be listed in the center pane. The following screenshot 
 shows a newer version of jQuery available.
 
-![Manage NuGet Packages Dialog showing updates available](images/manage-nuget-packages-showing-updates.png)
+![Manage NuGet Packages Dialog showing updates available](/images/consume/manage-nuget-packages-showing-updates.png)
 
 Select the package you want to update and click **Update** to update the package to the latest version. 
 
@@ -139,12 +139,12 @@ packages in multiple projects at the same time.
 
 Just right click on the Solution and select **Manage NuGet Packages**. You can also launch this dialog from 
 
-![Manage NuGet Packages Solution level menu](images/manage-nuget-packages-solution-menu.png)
+![Manage NuGet Packages Solution level menu](/images/consume/manage-nuget-packages-solution-menu.png)
 
 The dialog looks the same as it does when launched from a project, but notice the title bar indicates 
 that the scope of the dialog is the solution.
 
-![Manage NuGet Packages Dialog for the solution](images/manage-nuget-packages-solution-dialog.png)
+![Manage NuGet Packages Dialog for the solution](/images/consume/manage-nuget-packages-solution-dialog.png)
 
 The key difference is that each operation lets you select which projects it applies to.
 
@@ -152,16 +152,16 @@ The key difference is that each operation lets you select which projects it appl
 When the **Online** tab is selected, clicking the **Install** button allows selecting the set of projects 
 to install the package into.
 
-![Manage NuGet Packages Project Selection](images/manage-nuget-packages-project-selection.png)
+![Manage NuGet Packages Project Selection](/images/consume/manage-nuget-packages-project-selection.png)
 
 ## Managing Installed Packages
 When the **Installed** tab is selected, clicking the **Manage** button allows toggling whether or not the package 
 is installed for each project.
 
-![Manage NuGet Packages Project Selection](images/manage-nuget-packages-install-project-selection.png)
+![Manage NuGet Packages Project Selection](/images/consume/manage-nuget-packages-install-project-selection.png)
 
 ## Updating Packages
 When the **Updates** tab is selected, clicking the **Update** button allows selecting the set of projects 
 to install the update into.
 
-![Manage NuGet Packages Project Selection](images/manage-nuget-packages-update-project-selection.png)
+![Manage NuGet Packages Project Selection](/images/consume/manage-nuget-packages-update-project-selection.png)

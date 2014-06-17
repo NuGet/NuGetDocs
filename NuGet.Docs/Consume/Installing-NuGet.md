@@ -28,15 +28,15 @@ The latest version of the nuget.exe command-line tool is always available from [
 
 In Visual Studio, click **Tools** and then **Extension Manager**.  Naviging to **Online**, find the **NuGet Package Manager** extension and click **Download**.
 
-![Extension Manager showing NuGet](images/extension-manager-with-nuget.png)
+![Extension Manager showing NuGet](/images/consume/extension-manager-with-nuget.png)
 
 In the **Installer** dialog box, click **Install**.
 
-![Visual Studio Extension Installer](images/visual-studio-extension-installer.png)
+![Visual Studio Extension Installer](/images/consume/visual-studio-extension-installer.png)
 
 When installation is complete, close and re-open Visual Studio.
 
-![Visual Studio Extension Installer Complete](images/visual-studio-extension-installer-complete.png)
+![Visual Studio Extension Installer Complete](/images/consume/visual-studio-extension-installer-complete.png)
 
 NuGet is now ready to use.
 
@@ -45,7 +45,7 @@ You can update NuGet using the Visual Studio *Extension Manager*.  Navigate to t
 
 If there is a new version of NuGet you will see it in the list of available updates.
 
-![Extension Manager showing a new version of NuGet available](images/visual-studio-extension-update-check.png)
+![Extension Manager showing a new version of NuGet available](/images/consume/visual-studio-extension-update-check.png)
 
 Select NuGet in the list and click **Update**.  When the update is complete, close and re-open all open instances of Visual Studio.
 
