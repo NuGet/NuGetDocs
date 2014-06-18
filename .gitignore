@@ -3,7 +3,7 @@ site/Bin/
 site/Obj/
 bin/
 obj/
-packages/
+# packages/ - Gonna see if things work better with packages included
 
 # User files
 *.user
