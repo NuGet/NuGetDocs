@@ -1,4 +1,4 @@
-# Installing NuGet
+# Installing and Updating NuGet Client
 NuGet is available for the following clients:
 
 1. **Visual Studio 2013**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)

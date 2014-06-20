@@ -1,6 +1,3 @@
-<style type="text/css">
-	#subnav-overview a { color: black; }
-</style>
 # NuGet Overview
 
 NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery ([nuget.org](http://nuget.org)) is the central package repository used by all package authors and consumers.
@@ -17,28 +14,31 @@ default source for NuGet, and you can contribute to that feed or create your own
 
 ## NuGet User Interface in Visual Studio
 
-NuGet runs in all versions of Visual Studio 2012, as well as Visual Studio 2010, Visual Web Developer 2010, and Windows Phone Developer Tools 7.1. 
+NuGet runs in all versions and SKUs of Visual Studio 2010, Visual Studio 2012 and Visual Studio 2013. 
+For Visual Studio 2012 and Visual Studio 2013, NuGet is shipped in-the-box. For Visual Studio 2010, NuGet can be downloaded 
+from the ![Visual Studio Extension Gallery] (http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c).
+
 You can find, install, remove, and update packages by using the **Manage NuGet Packages** dialog box 
 or by using PowerShell command-line commands in the **Package Manager Console** dedicated Visual Studio window. 
-Both options are accessible from the Visual Studio main menu; you can 
+Both options are accessible from the Visual Studio main menu. You can 
 also open the dialog box from a Solution Explorer context menu. 
 
-### The Manage NuGet Packages Dialog Box
+### Manage NuGet Packages Using the Dialog
 
 The following 
 illustration shows the **Manage NuGet Packages** dialog box. Click on the **Online** tab to see 
 packages available in the official feed.
 
-![Manage NuGet Packages dialog](/images/consume/Manage-NuGet-Packages-Dialog.png)
+![Manage NuGet Packages dialog](/images/consume/Manage-NuGet-Packages-Dialog-new.png)
 
 For information about how to use the **Manage NuGet Packages** dialog box, see
 [Using the Manage NuGet Packages Dialog Box](Managing-NuGet-Packages-Using-The-Dialog)
 
-## The Package Manager Console Window
+## TManage NuGet Packages Using the Console
 
 The following illustration shows the **Package Manager Console** window.
 
-![Package Manager Console](/images/consume/package-console.png)
+![Package Manager Console](/images/consume/package-console-new.png)
 
 For information about how to use the Package Manager Console, see 
 [Using the Package Manager Console](Using-the-Package-Manager-Console)

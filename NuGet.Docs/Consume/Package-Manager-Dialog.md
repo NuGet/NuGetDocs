@@ -3,7 +3,7 @@
 This topic describes how to find, install, remove, and update NuGet packages using the **Manage NuGet Packages** 
 dialog box. To use this dialog box, you must have a solution open in Visual Studio.
 As an alternative, you can install packages using PowerShell commands. 
-For more information, see [Using the Package Manager Console](Using-the-Package-Manager-Console).
+For more information, see [Using the Package Manager Console](Package-Manager-Console).
 
 Note, for managing packages within multiple projects in the solution at the same time, skip to the section 
 on [Managing Packages for the Solution](#Managing_Packages_for_the_Solution).
