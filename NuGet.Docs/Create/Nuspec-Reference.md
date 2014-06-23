@@ -17,7 +17,7 @@ package is built (but without the element that lists files if that element was i
         <tr><th>Attribute</th> <th>Description</th></tr>
         <tr>
             <td>minClientVersion</td>
-            <td>(<em>v2.5 or above</em>) Specifies the minimum version of the NuGet client that can install this package. This requirement is enforced by both the NuGet Visual Studio extension and nuget.exe program.</td>
+            <td> <a href="/Release-Notes/NuGet-2.5">v2.5</a> or above Specifies the minimum version of the NuGet client that can install this package. This requirement is enforced by both the NuGet Visual Studio extension and nuget.exe program.</td>
         </tr>
     </tbody>
 </table>
@@ -72,7 +72,7 @@ package is built (but without the element that lists files if that element was i
     <tr>
         <td>releaseNotes</td>
         <td>
-            (v<em>1.5</em>)
+            <a href="/Release-Notes/NuGet-1.5">v1.5</a>
             A description of the changes made in each release of the package. This field 
             only shows up when the _Updates_ tab is selected and the package is an update 
             to a previously installed package. It is displayed where the Description would 
@@ -105,7 +105,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>copyright</td>
-        <td>(v<em>1.5</em>) Copyright details for the package.</td>
+        <td><a href="/Release-Notes/NuGet-1.5">v1.5</a> Copyright details for the package.</td>
     </tr>
     <tr>
         <td>requireLicenseAcceptance</td>
@@ -117,11 +117,11 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>references</td>
-        <td>(v<em>1.5</em>) Names of assemblies under lib that are added as project references. If unspecified, all references in lib are added as project references. When specifying a reference, only specify the name and not the path inside the package.</td>
+        <td><a href="/Release-Notes/NuGet-1.5">v1.5</a> Names of assemblies under lib that are added as project references. If unspecified, all references in lib are added as project references. When specifying a reference, only specify the name and not the path inside the package.</td>
     </tr>
     <tr>
         <td>frameworkAssemblies</td>
-        <td>(v<em>1.2</em>) The list of .NET Framework assembly references that this package requires. These are references to assemblies that exist in the .NET Framework and thus should already be in the GAC for any machine. Specifying framework assembly references  ensures these references are added when installing the package.</td>
+        <td><a href="/Release-Notes/NuGet-1.2">v1.2</a> The list of .NET Framework assembly references that this package requires. These are references to assemblies that exist in the .NET Framework and thus should already be in the GAC for any machine. Specifying framework assembly references  ensures these references are added when installing the package.</td>
     </tr>
     <tr>
         <td>tags</td>
@@ -129,14 +129,14 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>developmentDependency</td>
-        <td>(v<em>2.8</em>) A Boolean value that specifies whether the package will be marked as a <a href="http://docs.nuget.org/docs/release-notes/nuget-2.7#Development-Only_Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
+        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="http://docs.nuget.org/docs/release-notes/nuget-2.7#Development-Only_Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
     </tr>
 </tbody>
 </table>
 
 ### Replacement Tokens
 Replacement tokens can be used in place of values within the Metadata section of 
-the NuSpec file [when creating a package from a project file](../creating-packages/creating-and-publishing-a-package#From_a_project)
+the NuSpec file [when creating a package from a project file](/create/creating-and-publishing-a-package#From_a_project)
 
 For example, when using the command:
 
@@ -214,7 +214,7 @@ The following table lists attributes of the dependency element.
 
 ## Specifying Dependencies in version 2.0 and above
 
-Starting from version 2.0, package dependencies can be specified to vary according to the framework profile of the target project. The `<dependencies>` element contains a set of `<group>` elements. Each group contains zero or more `<dependency>` element and a target framework attribute. All dependencies inside a group are installed together if the target framework is compatible with the project's framework profile.
+Starting from [version 2.0] (/Release-Notes/NuGet-2.0), package dependencies can be specified to vary according to the framework profile of the target project. The `<dependencies>` element contains a set of `<group>` elements. Each group contains zero or more `<dependency>` element and a target framework attribute. All dependencies inside a group are installed together if the target framework is compatible with the project's framework profile.
 
     <dependencies> 
        <group>
@@ -237,7 +237,7 @@ The following table lists the attributes of a `<group>` element.
     <tr><th>Attribute</th><th>Description</th></tr>
     <tr>
         <td><code>targetFramework</code></td>
-        <td>**Optional**. The target framework of the group. If not set, the group acts as a fallback group, which behaves exactly as before version 2.0.</td>
+        <td>**Optional**. The target framework of the group. If not set, the group acts as a fallback group, which behaves exactly as before <a href="/Release-Notes/NuGet-2.0">version 2.0 </a></td>
     </tr>
 </table>
 
@@ -284,7 +284,7 @@ assemblies to be located next to the runtime assemblies, but excluded from proje
 
 ## Specifying Explicit Assembly References in version 2.5 and above
 
-Starting from version 2.5, package assembly references can be specified to vary according to the framework profile of the target project. The `<references>` element contains a set of `<group>` elements. Each group contains zero or more `<reference>` element and a target framework attribute. All references inside a group are installed together if the target framework is compatible with the project's framework profile.
+Starting from [version 2.5] (/Release-Notes/NuGet-2.5), package assembly references can be specified to vary according to the framework profile of the target project. The `<references>` element contains a set of `<group>` elements. Each group contains zero or more `<reference>` element and a target framework attribute. All references inside a group are installed together if the target framework is compatible with the project's framework profile.
 
     <references> 
       <group targetFramework="net45"> 

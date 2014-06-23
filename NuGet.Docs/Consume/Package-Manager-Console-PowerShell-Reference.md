@@ -430,7 +430,7 @@ PARAMETERS
         Required: false
         
     <strong>-Reinstall</strong>
-        Reinstall packages with the existing versions.
+        [Reinstall packages with the existing versions] (/Consume/Reinstalling-Packages).
 
         Required: false
         

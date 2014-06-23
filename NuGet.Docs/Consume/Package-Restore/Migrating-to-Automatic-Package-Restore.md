@@ -1,6 +1,6 @@
 # Migrating MSBuild-Integrated solutions to use Automatic Package Restore
 
-Solutions currently using MSBuild-Integrated package restore can be migrated to Automatic Package Restore. Prior to migrating, it can help to understand some of the differences between the two approaches.
+Solutions currently using MSBuild-Integrated package restore can be migrated to [Automatic Package Restore] (/consume/package-restore). Prior to migrating, it can help to understand some of the differences between the two approaches.
 
 ## MSBuild-Integrated package restore vs. Automatic Package Restore
 Projects that use MSBuild-Integrated package restore typically contain a .nuget folder with three files:

@@ -1,4 +1,4 @@
-﻿# Using A GUI (Package Explorer) to build packages
+﻿# NuGet Package Explorer - GUI tool for building packages
 
 Not everyone is a command line junkie. Some folks actually prefer the comfort of a 
 Windows GUI application for performing tasks such as package creation. The NuGet Package 
@@ -10,6 +10,7 @@ and publish packages](~/docs/creating-packages/Creating-and-Publishing-a-Package
 
 ## Installation
 Installing Package Explorer is easy, [click here and you&#8217;re done](https://npe.codeplex.com/downloads/get/clickOnce/NuGetPackageExplorer.application)!
+For Windows8 version of NuGet Package Explorer, please go [here] (http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19)
 
 Package Explorer is a click-once application which means every time you launch it, it will 
 check for updates and allow you to keep the application up to date.

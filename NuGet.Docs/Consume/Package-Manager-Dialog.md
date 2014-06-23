@@ -6,11 +6,11 @@ As an alternative, you can install packages using PowerShell commands.
 For more information, see [Using the Package Manager Console](Package-Manager-Console).
 
 Note, for managing packages within multiple projects in the solution at the same time, skip to the section 
-on [Managing Packages for the Solution](#Managing_Packages_for_the_Solution).
+on [Managing Packages for the Solution](#managing-packages-for-the-solution).
 
 ## Finding a Package
 
-In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
+In **Solution Explorer**, right-click the **Project** or **References** node and click **Manage NuGet Packages...**. 
 (Note, in a Website project, right click on the **Bin** node.)
 
 ![Manage NuGet Packages menu option](/images/consume/manage-nuget-packages-menu-option.png)
@@ -25,29 +25,6 @@ For example, to find the logging package named ELMAH, enter "elmah" or "logging"
 Long lists are divided into pages. Use the paging links at the bottom to move from page to page.
 
 When you select a package, an **Install** button appears, and a description is shown in the right-hand pane.
-
-## Package Sources
-NuGet can display packages from multiple package sources. To add a package source, click on the **Settings** 
-button in the dialog to launch the Options dialog. Make sure the **Package Sources** node is selected in the dialog.
-
-![Package Sources Dialog](/images/consume/package-sources.png)
-
-Type in the name of a source as well as its URL or folder path (a folder containing NuGet package 
-files is a valid package source) and then click the **Add** button.
-
-![Package Sources Dialog with a custom source](/images/consume/package-sources-with-custom-source.png)
-
-The package source will be listed under the **All** node. Click on the package source to view 
-packages from that source. The **All** node displays an aggregated view of packages from all 
-package sources.
-
-![Manage NuGet Packages Dialog with a custom package source](/images/consume/manage-nuget-packagse-with-custom-source.png)
-
-If you want to temporarily disable a package source, just uncheck the package source in the 
-dialog. This is useful if a package source is temporarily down for some reason and you need to 
-keep it from being included in the aggregate feed.
-
-![Package Sources Dialog with a disabled source](/images/consume/package-source-with-disabled-source.png)
 
 ## Installing a Package
 
@@ -165,3 +142,26 @@ When the **Updates** tab is selected, clicking the **Update** button allows sele
 to install the update into.
 
 ![Manage NuGet Packages Project Selection](/images/consume/manage-nuget-packages-update-project-selection.png)
+
+## Package Sources
+NuGet can display packages from multiple package sources. To add a package source, click on the **Settings** 
+button in the dialog to launch the Options dialog. Make sure the **Package Sources** node is selected in the dialog.
+
+![Package Sources Dialog](/images/consume/package-sources.png)
+
+Type in the name of a source as well as its URL or folder path (a folder containing NuGet package 
+files is a valid package source) and then click the **Add** button.
+
+![Package Sources Dialog with a custom source](/images/consume/package-sources-with-custom-source.png)
+
+The package source will be listed under the **All** node. Click on the package source to view 
+packages from that source. The **All** node displays an aggregated view of packages from all 
+package sources.
+
+![Manage NuGet Packages Dialog with a custom package source](/images/consume/manage-nuget-packagse-with-custom-source.png)
+
+If you want to temporarily disable a package source, just uncheck the package source in the 
+dialog. This is useful if a package source is temporarily down for some reason and you need to 
+keep it from being included in the aggregate feed.
+
+![Package Sources Dialog with a disabled source](/images/consume/package-source-with-disabled-source.png)

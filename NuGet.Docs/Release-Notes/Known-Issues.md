@@ -205,3 +205,7 @@ Windows Phone Tools does not have support for the Visual Studio Extension Manage
 uninstall NuGet, run the following command.
 
      vsixinstaller.exe /uninstall:NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5
+
+## Reporting Issues
+For reporting issues on NuGet Clients, please go [here] (https://nuget.codeplex.com/WorkItem/Create)
+For reporting issues on NuGet Gallery, please go [here] (https://github.com/nuget/nugetgallery/issues)

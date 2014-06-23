@@ -44,7 +44,7 @@ For example, enter the command `Install-Package elmah` as shown in the following
 
 ![Install-Package command](/images/consume/package-manager-console-install-package.png)
 
-For more options that you can specify with the `Install-Package` command, enter `get-help Install-Package` or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
+Refer [here] (Package-Manager-Console-PowerShell-Reference#Install-Package) for a complete list of PowerShell Reference on Install
 
 NuGet retrieves the package from the specified package source and installs it in the project 
 that is selected in the **Default project** drop-down list 
@@ -98,7 +98,7 @@ controllers and views. The following illustration shows that installing MvcScaff
 
 ![Installing and using MvcScaffold](/images/consume/package-manager-console-install-mvcscaffold.png)
 
-## Removing a Package
+## Removing a Package 
 
 From the *Tools* menu, select *Library Package Manager* and then click *Package Manager Console*. 
 If you do not already know the name of the package you want to remove, enter `Get-Package` at the prompt 
@@ -111,8 +111,6 @@ For example, use the `Uninstall-Package elmah` command as shown in the following
 
 ![uninstall package command](/images/consume/package-manager-console-uninstall-package.png)
 
-For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
-
 The following package elements are removed:
 
 * References in the project. In **Solution Explorer**, you no longer see the library in the *References* folder or the *bin* folder. (You might have to build the project to see it removed from the *bin* folder.)
@@ -121,7 +119,9 @@ The following package elements are removed:
 
 If other packages were installed because they were dependencies of the package that you removed, and if no other packages remain that are dependent on the dependency packages, the dependency packages are also removed.
 
-## Updating a Package
+Refer [here] (Package-Manager-Console-PowerShell-Reference#Uninstall-Package) for a complete list of PowerShell Reference on Uninstall
+
+## Updating a Package 
 
 From the **Tools** menu, select **Library Package Manager** and then click **Package Manager Console**.
 To check if there are newer versions available for any installed packages, enter `Get-Package -updates` at the prompt.
@@ -132,6 +132,8 @@ To update a package, enter `Update-Package` with the package ID. For example, en
 For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see (../Reference/Package-manager-Console-Commands).
 
 ![update-package command](/images/consume/package-manager-console-update-package.png)
+
+Refer [here] (Package-Manager-Console-PowerShell-Reference#Update-Package) for a complete list of PowerShell Reference on Update
 
 # Setting up a NuGet Powershell Profile
 For customizing your PowerShell console, click [here] (Setting-up-NuGet-PowerShell-Profile.md)

@@ -17,9 +17,8 @@ If you have the following operating systems, you must [manually install Powershe
 * Windows XP SP3 /Windows Vista SP1
 * Windows Server 2003 SP2/ Windows Server 2008
 
-**Do I have to install ASP.NET MVC to get NuGet?**
-
-**Not at all**. For information about how to install NuGet without MVC , see [Installing NuGet](Installing-NuGet).
+**Are there any known issues with NuGet?
+Please check out the [Known Issues](/Release-Notes/Known-Issues) page. 
 
 **Does NuGet support Mono?**
 
@@ -55,7 +54,7 @@ Powershell host including the version.
 
 **What languages are supported by NuGet?**
 
-The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects. Support for C++ is a recent addition, check out our [blog post](http://blog.nuget.org/20130426/native-support.html) for more details.
+The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects. For learning more about support for C++, check out our [blog post](http://blog.nuget.org/20130426/native-support.html) for more details.
 
 **What project templates are supported by NuGet?**
 
@@ -99,11 +98,11 @@ Check out [this post](http://devlicious.com/blogs/rob_reynolds/archive/2011/07/1
 **How do I get access to the DTE object in the Package Manager console?**
 
 The console provides a variable named `$DTE` that returns the `DTE` object. See the `Get-Project` command in 
-[Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
+[Package Manager Console Powershell Reference](/Consume/Package-Manager-Console-PowerShell-Reference).
 
 **Why does the Package Manager Console or the Manage NuGet Packages dialog box crash or show an exception?**
 
-Check the [Known Issues](../Reference/Known-Issues) page. Typically, the issue is due to having an older version of the Reflector add-in installed or not having PowerShell 2.0 installed (as in the case of Windows XP).
+Check the [Known Issues](/Release-Notes/Known-Issues) page. Typically, the issue is due to having an older version of the Reflector add-in installed or not having PowerShell 2.0 installed (as in the case of Windows XP).
 
 **I try to cast the $DTE variable to the type DTE2, but I get an error: Cannot convert the "EnvDTE.DTEClass" value of type "EnvDTE.DTEClass" to type "EnvDTE80.DTE2". What's wrong?**
 
@@ -116,15 +115,15 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I get my package in the feed?**
 
-See the [Creating and publishing a package](../creating-packages/creating-and-publishing-a-package) page.
+See the [Creating and publishing a package](/Create/creating-and-publishing-a-package) page.
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
-See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](../creating-packages/creating-and-publishing-a-package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles).
+See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](/create/creating-and-publishing-a-package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles).
 
 **How do I set up a local repository or feed?**
 
-See [Hosting Your Own NuGet Feeds](../Creating-Packages/Hosting-Your-Own-NuGet-Feeds).
+See [Hosting Your Own NuGet Feeds](/Create/Hosting-Your-Own-NuGet-Feeds).
 
 **How can I bulk upload packages to my NuGet feed ?**
 
@@ -132,7 +131,7 @@ See [Bulk Publishing NuGet Packages](http://jeffhandley.com/archive/2012/12/13/B
 	
 **How can I create package out of a project or solution ?**
 
-You can use Nuget.exe [Pack command](http://docs.nuget.org/docs/reference/command-line-reference#Pack_Command) to create a NuGet package out a project.
+You can use Nuget.exe [Pack command](/consume/command-line-reference#pack-command-examples) to create a NuGet package out a project.
 
 This command will take care adding all the NuGet packages installed in the project as package dependencies and referenced projects as "Reference" assemblies in the package.
 You can invoke this command in post build event to automate the build process.
@@ -155,7 +154,7 @@ Typically, a solution-level package installs new commands that can be called fro
 **How to install packages in a different location from the default "Packages" folder?**
 
 This can be done by setting the "repositoryPath" settings in nuget.config.
-More details [here.](http://docs.nuget.org/docs/release-notes/nuget-2.1)
+More details [here.](/release-notes/nuget-2.1)
 
 **How do I avoid checking in packages folder to source control?**
 
@@ -184,7 +183,7 @@ It is not possible to squat package names. If you feel that an existing package 
 
 **How do I claim ownership for packages ?**
 
-Check out the blog post [Managing Package Owners on nuget.org](http://blog.nuget.org/20130205/managing-package-owners.html) for details.
+Check out Managing Package Owners on nuget.org](/Create/Managing-Package-Owners) for details.
 
 
 **Is it recommended to upload my test packages to NuGet.org ?**
