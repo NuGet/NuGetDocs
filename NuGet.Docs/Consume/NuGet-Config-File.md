@@ -188,3 +188,96 @@ In the above path locations {IDE} can be VisualStudio and if you want to specify
 With NuGet 2.6, the machine wide package sources are now shown in Package Manage Settings dialog. Machine wide package sources are readonly and you can enable or disable them using this dialog.
 
 ![NuGet Config File machine wide settings](/images/consume/NuGet-Config-File-Machine-Wide.png)
+
+
+# NuGet Configuration Settings
+There are a bunch of NuGet configuration values which can be set via the nuget.config file.
+Below is the summary of the NuGet config keys and their usage.
+
+<h3> Repository Path </h3>
+ Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder.
+ This key can be added to the NuGet.config file manually or using the [NuGet Config Set] (/Consume/Command-Line-Reference#Config-Command) command. 
+ More details [here] (/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
+ <add key="repositorypath" value="C:\Temp" />
+  
+<h3>Package Restore </h3>
+Allows you to restore missing packages from the NuGet source during build.
+
+	<packageRestore>
+		<!--Allow NuGet to download missing packages -->
+		<add key="enabled" value="True" />
+		<!-- Automatically check for missing packages during build in Visual Studio -->
+		<add key="automatic" value="True" />
+	</packageRestore>
+
+<h3>Package Sources</h3>
+Allows you to specify the list of sources to be used while looking for packages. 
+* "PackageSources" section has the list of package sources 
+* "DisabledPackageSources" has the list of sources which are currently disabled currently 
+* "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would 
+imply that all the current package sources except for the disabled ones are active
+
+The values can be added to the config file directly or using the package manager settings UI (which would in turn update the NuGet.config file) or 
+using the <a href="/Consume/command-line-reference#Sources-Command">NuGet.exe Sources command.</a>
+
+	<packageSources>
+		<add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+		<add key="TestSource" value="C:\Temp" />
+	</packageSources>
+	<disabledPackageSources />
+	<activePackageSource>
+		<add key="All" value="(Aggregate source)"  />
+	</activePackageSource>
+
+<h3>Source Control Integration </h3>
+"disableSourceControlIntegration" under section "solution" allows you to disable source control integration for the "Packages" folder. 
+This key works at the solution level and hence need to be added in a NuGet.config file in the "$(SolutionDir)\.nuget directory". 
+The default value for this key is true.
+
+	<solution>
+		<add key="disableSourceControlIntegration" value="true" />
+	</solution>
+
+<h3>Proxy Settings</h3>
+Allows you to set the proxy settings to be used while connecting to your NuGet feed.
+This key can be added using <a href="command-line-reference#Set-Command">Nuget.exe Config -Set command</a>. 
+It can also be set via environment variable "http_proxy". While setting environment variable, the value should be specified in the 
+format 'http://[username]:[password]@proxy.com'. Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. 
+Hence it cannot be added manually by directly updating the config file.
+
+<h3Credentials for package source</h3>
+Allows you to set the credentials to access the given package source
+This key has to be set using the <a href="command-line-reference#Sources-Command">NuGet.exe Sources command.</a>
+The default behavior is to store the password encrypted in the config file
+
+	Nuget.exe Sources Add -Name feedName -UserName user -Password secret  
+	Nuget.exe Sources Update -Name feedName -UserName user -Password secret 
+
+This results in something similar to this:
+
+	<packageSourceCredentials>
+		<feedName>
+			<add key="Username" value="user" />
+			<add key="Password" value="...encrypted..." />
+		</feedName>
+	</packageSourceCredentials>
+
+If you want to share the credentials with others then you might want to use the -StorePasswordInClearText option to disable password encryption. 
+Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new 
+<a href="/Consume/command-line-reference">-Config option</a>, and commit it to your source control.
+
+Nuget.exe Sources Add -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
+Nuget.exe Sources Update -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
+
+This results in something more readable (or even manually configurable):
+
+	<packageSourceCredentials>
+		<feedName>
+			<add key="Username" value="user" />
+			<add key="ClearTextPassword" value="secret" />
+		</feedName>
+	</packageSourceCredentials>
+
+<h3>API Key to access package source</h3>
+Allows you to set the API Key corresponding to a specific package source.
+This key  has to be set via <a href="/Consume/command-line-reference#Setapikey-Command">NuGet -SetApiKey</a>

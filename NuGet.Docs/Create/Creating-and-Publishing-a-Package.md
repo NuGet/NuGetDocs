@@ -2,35 +2,10 @@
 
 ## Getting Started
 
-1. [Download NuGet.exe](http://nuget.codeplex.com/releases/view/58939)
+1. [Download NuGet.exe](http://nuget.codeplex.com/releases/view/121838)
 2. Make sure NuGet.exe is in your path
 
-If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/docs/creating-packages/using-a-gui-to-build-packages).
-
-## Share your Package
-Upgrade to the latest version of NuGet.exe (_[or download it here](http://nuget.codeplex.com/releases/view/58939)_)
-
-    NuGet Update -self
-
-Store your [API Key](#api-key)
-
-    NuGet SetApiKey Your-API-Key
-
-Build your NuGet Package
-
-    NuGet Pack YourPackage.nuspec
-
-Publish your package
-
-    NuGet Push YourPackage.nupkg
-
-## Installing NuGet.exe
-1. [Download NuGet.exe](http://nuget.codeplex.com/releases/view/58939)
-2. Place NuGet in a well known location such as c:\utils on your machine
-3. Make sure that NuGet.exe is in your path
-
-To learn about the nuget commands, run <code>nuget help</code> or refer to 
-the [NuGet.exe Command Line Reference](~/docs/reference/command-line-reference).
+If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/Create/using-a-gui-to-build-packages).
 
 ## Creating a Package
 There are a few approaches to creating a package. Most packages are very simple and contain 
@@ -98,7 +73,9 @@ Once your nuspec is ready, you can run:
 
 Note that you need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 
-If the project references other projects, you can add the referenced projects as part of the package, or as dependencies with [-IncludeReferencedProjects option](../Reference/Command-Line-Reference#Pack_Command_Options). This is done recursively. For example, suppose you have project A.csproj, which references B.csproj and C.csproj, while B.csproj references D.csproj & E.csproj, 
+If the project references other projects, you can add the referenced projects as part of the package, or as dependencies 
+with [-IncludeReferencedProjects option](/Consume/Command-Line-Reference#Pack-Command-Options). 
+This is done recursively. For example, suppose you have project A.csproj, which references B.csproj and C.csproj, while B.csproj references D.csproj & E.csproj, 
 C.csproj references F.csproj & G.csproj. Then, when you run 
 
 	nuget pack A.csproj -IncludeReferencedProjects
@@ -121,11 +98,11 @@ To change the project default for future packaging calls, modify the project fil
 convenient method of altering this setting in the project properties GUI. To edit this file in Visual Studio, first unload it by
 right-clicking the project and choosing "Unload Project".
 
-![Unloading a project in Visual Studio](images/Unloading-project.png)
+![Unloading a project in Visual Studio](/images/Create/Unloading-project.png)
 
 To edit the project file, right-click the unloaded project and choose "Edit {your-project-name}.{cs|vb|etc.}proj".
 
-![Editing unloaded project file in Visual Studio](images/Editing-unloaded-project-file.png)
+![Editing unloaded project file in Visual Studio](/images/Create/Editing-unloaded-project-file.png)
 
 In typical project files, the first `<Project><PropertyGroup>` will contain a 
 `<Configuration>` element that can be modified to choose your preferred build configuration (typically Release).
@@ -144,7 +121,7 @@ Some packages contain more than just assemblies. They may contain
 
 1. Content and source code that should be injected into the target project.
 2. [PowerShell scripts](#powershell) and executables.
-3. [Configuration file and source code transformations](~/docs/creating-packages/Configuration-File-and-Source-Code-Transformations).
+3. [Configuration file and source code transformations](/Create/Creating-Packages-With-Configuration-File-and-Source-Code-Transformations).
 
 To create a package in this way, you can layout a directory structure that follows 
 the NuGet conventions.
@@ -222,11 +199,17 @@ file in the .nuget directory, rather than in a packages.config file in a
 specific project.
 
 
-## Publishing
+## Publishing in NuGet Gallery
 ### Create an account at NuGet.org
-<a name="api-key"></a>
-Head over to http://nuget.org/ and register for an account. Once you do that, 
-click on "My Account" to see an API Key that was generated for you.
+
+Head over to http://nuget.org/ and register for an account. Once you do that, use the Upload Package UI to 
+upload your package to the NuGet Gallery
+
+##Publishing using NuGet Command Line
+### Create an account at NuGet.org
+
+Head over to http://nuget.org/ and register for an account.
+Once you do that, click on "My Account" to see an API Key that was generated for you.
 
 In a command console, run the command:
 
@@ -235,229 +218,21 @@ In a command console, run the command:
 This will store your API key so that you never need to do this step again on 
 this machine.
 
+Push your package to NuGet Gallery using the command:
+	
+	nuget push YourPackage.nupkg
+
 ## Package Conventions
 
 There are two types of conventions that apply when creating packages. 
 The conventions listed in this page are *enforced conventions* which have to follow 
-when building packages. 
+when building packages. For information about enforced conventions, see the [Enforced Package Conventions] (/Create/Enforced-Package-Conventions) page.
+
 There are also *community* (or *optional*) conventions, which have been formed by 
 the community in order to make it easier for others to understand what your package is all about 
 and make use of it immediately. For information about community conventions, see the 
 [Package Conventions](Package-Conventions) page. This page will continue to be updated as new 
 conventions are defined.
-
-
-## Supporting Multiple .NET Framework Versions and Profiles
-
-Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's 
-specific to Silverlight, and another version of the same library that takes advantage of .NET Framework 4 features. 
-You do not need to create separate packages for each of these versions. NuGet supports putting multiple versions of the 
-same library in a single package keeping them in separate folders within the package.
-
-### Framework Version Folder Structure
-
-When NuGet installs an assembly from a package, it checks the target .NET Framework version of the project 
-you are adding the package to. NuGet then selects the correct version of the assembly in the package by selecting 
-the correct subfolder within the *lib* folder. 
-
-To enable NuGet to do this, you use the following naming convention to indicate which assemblies go 
-with which framework versions:
-
-    lib\{framework name}{version}
-
-The following example shows a folder structure that supports four versions of a library:
-
-    \lib
-        \net11
-            \MyAssembly.dll
-        \net20
-            \MyAssembly.dll
-        \net40
-            \MyAssembly.dll
-        \sl40
-            \MyAssembly.dll
-
-### New in NuGet version 2.0 and above
-
-Starting in NuGet 2.0, in addition to assembly references, content files as well as PowerShell scripts can be grouped by target frameworks too. The framework folder structure inside `lib` folder as described above  applies exactly the same to `content` and `tools` folders.
-
-    \content
-        \net11
-            \MyContent.txt
-        \net20
-            \MyContent20.txt
-        \net40
-        \sl40
-            \MySilverlightContent.html
-
-    \tools
-        init.ps1
-        \net40
-            install.ps1
-            uninstall.ps1
-        \sl40
-            install.ps1
-            uninstall.ps1
-
-
-A new feature in NuGet 2.0 is that a framework folder can be *empty*, in which case, NuGet will not add assembly references or content files or run the PowerShell scripts for the particular framework version.
-
-**Note**: Because **`init.ps1`** is executed at the solution level and not dependent on project, it must be placed directly under the `tools` folder. If placed under a framework folder, it will be ignored.
-
-### Framework Names
-
-NuGet attempts to parse the folder name into a <a href="http://msdn.microsoft.com/en-us/library/dd414023.aspx">FrameworkName</a> 
-object. Names are case insensitive, and you can use abbreviations for both framework name and version number.
- 
-If you omit the framework name, the .NET Framework is assumed. For example, the following folder structure 
-is equivalent to the previous one:
-
-    \lib
-        \11
-            \MyAssembly.dll
-        \20
-            \MyAssembly.dll
-        \40
-            \MyAssembly.dll
-        \sl4
-            \MyAssembly.dll
-
-The following is a list of valid framework names and abbreviation:
-
-<table class="reference">
-    <tr><th>Framework Name</th><th>Abbreviations</th></tr>
-    <tr><td>.NET Framework</td><td>net</td></tr>
-    <tr><td>Silverlight</td><td>sl</td></tr>
-    <tr><td>.NETMicroFramework</td><td>netmf</td></tr>
-    <tr><td>Windows Store</td><td>win</td></tr>
-    <tr><td>Windows Phone (Silverlight-based)</td><td>wp</td></tr>
-    <tr><td>Windows Phone App (WinRT-based)</td><td>wpa</td></tr>
-</table>
-
-### Assemblies that are not Specific to a Framework Version
-
-Assemblies that have no associated framework name or version are stored directly in the *lib* folder.
-
-### Matching Assembly Version to the Target Framework of a Project
-
-When NuGet installs a package that has multiple assembly versions, it tries to match the framework name of the 
-assembly with the target framework of the project. 
-If a match is not found, NuGet copies the assembly that's for the highest version that is less than or 
-equal to the project's target framework. 
-For example, if you install a package that has the *lib* folder structure shown in the previous example 
-in a project that targets the .NET Framework 3.5, 
-the assembly in the *2* folder (for .NET Framework 2.0) is selected.
-
-### Grouping Assemblies by Framework Version
-
-NuGet copies assemblies from only a single library folder. For example, suppose a package has the following folder structure:
-
-    \lib
-        \Net20
-            \MyAssembly.dll (v1.0)
-            \MyAssembly.Core.dll (v1.0)
-        \Net40
-            \MyAssembly.dll (v2.0)
-
-When the package is installed in a project that targets the .NET Framework 4, *MyAssembly.dll (v2.0)* is the only 
-assembly installed. *MyAssembly.Core.dll (v1.0)* is not installed. 
-(One reason why NuGet behaves this way is that *MyAssembly.Core* might have been merged 
-into version 2.0 of *MyAssembly*.) 
-
-In this example, 
-if you want *MyAssembly.Core.dll* to be installed in a project that targets the .NET Framework 4, 
-you must include it in the *Net40* folder as well as in the *Net20* folder.
-
-The rule about copying assemblies from only one folder also applies to the root *lib* folder. 
-Suppose a package has the following folder structure:
-
-    \lib
-        \MyAssembly.dll (v1.0)
-        \MyAssembly.Core.dll (v1.0)
-        \Net40
-            \MyAssembly.dll (v2.0)
-
-In projects that target the .NET Framework 2.0 and the .NET Framework 3.5, NuGet copies 
-both *MyAssembly.dll* and *MyAssembly.Core.dll*. But as was true of the previous example, 
-in projects that target the .NET Framework 4, only *MyAssembly.dll *from the *Net40* folder will be copied. 
-
-As in the previous example, if you want *MyAssembly.Core.dll* to be installed in a project that targets 
-the .NET Framework 4, you must include it in the *Net40* folder.
-
-### Grouping Assemblies by Framework Profile
-
-NuGet also supports targeting a specific framework profile by appending a dash and the profile name to the end of the folder.
-
-    lib\{framework name}-{profile}
-
-For example, to target the Windows Phone profile, place your assembly in a folder named *sl3-wp*.
-
-Profiles supported by NuGet include:
-
-* Client - Client Profile
-* Full - Full Profile
-* WP - Windows Phone
-
-<table class="reference">
-    <tr><th>Profile Name</th><th>Abbreviations</th></tr>
-    <tr><td>Client</td><td>client</td></tr>
-    <tr><td>WindowsPhone</td><td>wp</td></tr>
-    <tr><td>CompactFramework</td><td>cf</td></tr>
-    <tr><td>Full</td><td>full</td></tr>
-</table>
-
-### Common Framework and Profile Targeting Examples
-The following provides examples of common targets.
-
-<table class="reference">
-    <tr><th>Tool</th><th>Target</th><th>Notes</th></tr>
-    <tr><td>.NET 3.5</td><td>net35</td><td>Just using '35' also works.</td></tr>
-    <tr><td>.NET 4.0</td><td>net40</td><td>Just using '40' also works.</td></tr>
-    <tr><td>.NET 4.0 Client Profile</td><td>net40-client</td><td></td></tr>
-    <tr><td>.NET 4.0 Full Profile</td><td>net40-full</td><td>Requires full .NET profile</td></tr>
-    <tr><td>.NET 4.0 Compact Framework</td><td>net40-cf</td><td>net40-compactframework also works.</td></tr>
-    <tr><td>.NET Micro Framework</td><td>netmf</td><td></td></tr>
-    <tr><td>Silverlight 3.0</td><td>sl3</td><td></td></tr>
-    <tr><td>Silverlight 4.0</td><td>sl4</td><td></td></tr>
-    <tr><td>Silverlight 5.0</td><td>sl5</td><td></td></tr>
-    <tr><td>Windows Phone 7.0</td><td>sl3-wp</td><td></td></tr>
-    <tr><td></td><td>wp7</td><td>Only in NuGet 2.1+</td></tr>
-    <tr><td>Windows Phone 7.1 (Mango)</td><td>sl4-windowsphone71</td><td></td></tr>
-    <tr><td></td><td>wp71</td><td>Only in NuGet 2.1+</td></tr>
-    <tr><td>Windows Phone 8 (Silverlight-based)</td><td>windowsphone8</td><td>Only in NuGet 2.1+</td></tr>
-    <tr>
-        <td>Windows Phone App 8.1 (WinRT-based)</td>
-        <td>wpa</td>
-        <td>Only in NuGet 2.8.1+</td>
-    </tr>
-    <tr><td>Windows Store apps (Javascript, C#, VB.NET)</td><td>netcore45</td><td></td></tr>
-    <tr><td></td><td>windows8</td><td>Only in NuGet 2.1+</td></tr>
-    <tr><td>Portable class library for Windows Store apps and .NET 4.5</td><td>portable-windows8+net45</td><td>Only in NuGet 2.1+</td></tr>
-    <tr><td>Portable class library for Windows Store apps, Silverlight 4.0 and Windows Phone 7.1</td><td>portable-sl4+wp71+windows8</td><td>Only in NuGet 2.1+</td></tr>
-</table>
-
-### Determining which NuGet Target to use
-
-When packaging libraries targeting the Portable Class Library it can sometimes to be tricky to determine which NuGet Target you should use in your folder names and manifest files especially if targeting only a subset of the PCL.  Here are some links to useful external resources to help you with this:
-
-* [Framework Profiles in .Net](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
-* [Portable Class Library Profiles](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY/preview) - Table enumerating PCL profiles and their equivalent NuGet targets
-* [Portable Library Profiles Tool](https://github.com/StephenCleary/PortableLibraryProfiles) - Command line tool for determining PCL profiles available on your system
-
-
-## Deleting packages
-
-NuGet.org does not support permanent deletion of packages, because that would break anyone who is depending on it
-remaining available. This is particularly true when using the workflow that restores packages on build.
-
-Instead, NuGet.org supports a way to 'unlist' a package, which can be done in the package management page on the
-web site. When a package is unlisted, it no longer shows up in search and in any package listing, both on NuGet.org
-and from the NuGet Visual Studio extension (or nuget.exe). However, it remains downloadable by specifying its exact
-version, which is what allows the Restore workflow to continue working.
-
-If you run into an exceptional situation where you think one of your packages must be deleted, this can be handled
-manually by the NuGet team. e.g. if there is a copyright infringement issue, or potentially harmful content, that could
-be a valid reason to delete it.
 
 <a name="#powershell"></a>
 ## Automatically Running PowerShell Scripts During Package Installation and Removal
@@ -495,7 +270,9 @@ is a helper package that writes information out to a series of log files. You ca
 NuGetPSVariables displays the log files and uninstalls itself.
 
 <a name="#importtargets"></a>
-## Import MSBuild targets and props files into project (Requires NuGet 2.5 or above)
+## Import MSBuild targets and props files into project 
+
+Requires [NuGet 2.5] (/Release-Notes/NuGet-2.5) or above
 
 A new convention has been added to the structure of NuGet packages. As a peer to \lib, \content, and \tools, you can now 
 include a '\build' folder in your package. Under this folder, you can place two files with fixed names, **{packageid}.targets** or **{packageid}.props**. 
@@ -529,4 +306,4 @@ A package can include a *readme.txt* file in the root of the package. This file 
 
 If the package is installed because it is a dependency of another package, the *readme.txt* file will not be opened. Only the *readme.txt* file of the package that the user is explicitly installing will be shown.
 
-This feature was added in NuGet 1.7. If the client is older than NuGet 1.7 the *readme.txt* file will be ignored.
+This feature was added in [NuGet 1.7] (/Release-Notes/NuGet-1.7). If the client is older than NuGet 1.7 the *readme.txt* file will be ignored.
