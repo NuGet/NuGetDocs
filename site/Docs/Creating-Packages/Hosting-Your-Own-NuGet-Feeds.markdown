@@ -70,7 +70,7 @@ You can also host a remote (or internal) feed on a server that runs IIS.
 
 Go to the **File** | **New** | **Project** menu option (or just hit CTRL + SHIFT + N)
 which will bring up the new project dialog and
-select **ASP.NET Empty Web Application** as in the following screenshot.
+select **ASP.NET Empty Web Application** as in the following screenshot. Please note that the steps here including NuGet.Server package are intended for use with C# project only.
 
 ![New Project dialog box](images/New-Project-dialog-box.png)
 
