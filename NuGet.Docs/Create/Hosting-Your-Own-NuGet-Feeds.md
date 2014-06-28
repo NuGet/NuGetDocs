@@ -37,18 +37,16 @@ from the **Tools** menu select **Library Package Manager** and then click
 
 ![Package Manager Settings in menu](/images/create/Package-Manager-Settings-in-menu.png)
 
-The **Options** dialog box is displayed.
+The **Package Sources** under **Package Manager** node in **Options** dialog box is displayed.
 
-![Options dialog box](/images/create/Options-dialog-box.png)
+![Options dialog box](/images/create/Package-Sources.png)
 
 In the **Name** box, enter a name for your feed.
 In the **Source** box enter the path of your packages folder.
 
-![Available Package Sources dialog box without new feed](/images/create/Available-Package-Sources-without-new-feed.png)
+![Available Package Sources dialog box without new feed](/images/create/Package-Sources-With-Custom-Feed.png)
 
-Click **Add**. Your local folder is now another NuGet feed source.
-
-![Available Package Sources dialog box with new feed](/images/create/Available-Package-Sources-with-new-feed.png)
+Click **Update**. Your local folder is now another NuGet feed source.
 
 To install a package using the new feed, in the **Package Manager Console** window,
 select the new feed in the **Package source** list.
@@ -64,7 +62,7 @@ You can also select the new feed in the **Online** tab of the
 
 You can also host a remote (or internal) feed on a server that runs IIS.
 
-<p class="caution">Make sure you're running NuGet 1.4 or higher!</p>
+<p class="caution">Make sure you're running [NuGet 1.4] (/Release-Notes/NuGet-1.4) or higher!</p>
 
 ### Step 1: Create a new Empty Web Application in Visual Studio
 
@@ -144,12 +142,7 @@ Clicking on "here" shows the OData over ATOM feed of packages.
 ![OData over ATOM package feed](/images/create/OData-over-ATOM-package-feed.png)
 
 Now all I need to do is deploy this website as I would any other site and then
-I can click the Settings button and add this feed to my set of package sources
-as in the following screenshot.
-
-
-
-![Adding new feed to package sources](/images/create/Adding-new-feed-to-package-sources.png)
+I can click the Settings button and add this feed to my set of package sources.
 
 Note that the URL you need to put in is <a href="http://yourdomain/nuget/">http://yourdomain/nuget/</a> depending on how you deploy the site.
 
