@@ -120,8 +120,8 @@ Below is the summary of the NuGet config keys and their usage.
 	This key has to be set using the <a href="command-line-reference#Sources_Command">NuGet.exe Sources command.</a> <br/>
 	The default behavior is to store the password encrypted in the config file. <br/> <br/>
 
-		<i>Nuget.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx   -Password &lt;secret&gt;  </i><br/>
-		<i>Nuget.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx   -Password &lt;secret&gt; </i><br/><br/>
+		<i>Nuget.exe  Sources  Add  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx   -Password &lt;secret&gt;  </i><br/>
+		<i>Nuget.exe  Sources  Update  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx   -Password &lt;secret&gt; </i><br/><br/>
 
 	This results in something similar to this:<br/>
 	<pre><code>
