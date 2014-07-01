@@ -136,8 +136,8 @@ Below is the summary of the NuGet config keys and their usage.
 	If you want to share the credentials with others then you might want to use the -StorePasswordInClearText option to disable password encryption.<br/>
 	Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new <a href="command-line-reference">-Config option</a>, and commit it to your VCS.<br/><br/>
 
-		<i>NuGet.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx  -Password  &lt;secret&gt;  -StorePasswordInClearText -Config &lt;path to nuget.config&gt;</i><br/>
-		<i>NuGet.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx  -Password &lt;secret&gt; <i>-StorePasswordInClearText</i> -Config &lt;path to nuget.config&gt;</i><br/><br/>
+		<i>NuGet.exe  Sources  Add  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx  -Password  &lt;secret&gt;  -StorePasswordInClearText -Config &lt;path to nuget.config&gt;</i><br/>
+		<i>NuGet.exe  Sources  Update  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx  -Password &lt;secret&gt; <i>-StorePasswordInClearText</i> -Config &lt;path to nuget.config&gt;</i><br/><br/>
 
 	This results in something more readable (or even manually configurable):<br/>
 	<pre><code>
