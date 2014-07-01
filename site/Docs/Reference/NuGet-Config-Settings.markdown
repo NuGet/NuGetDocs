@@ -105,7 +105,7 @@ Below is the summary of the NuGet config keys and their usage.
 	More details <a href="http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html">here.</a>
 	<br/>
 
-	This key can be added using <a href="./Command-Line-Reference#Config Command">Nuget.exe Config -Set command.</a> <br/><br/>It can also be set via environment variable "http_proxy". While setting env variable, the value should  be specified in the format 'http://[username]:[password]@proxy.com'.
+	This key can be added using <a href="./Command-Line-Reference#Config Command">NuGet.exe Config -Set command.</a> <br/><br/>It can also be set via environment variable "http_proxy". While setting env variable, the value should  be specified in the format 'http://[username]:[password]@proxy.com'.
 	Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. Hence it can not be added manually by directly updating the config file.
 
 	</td>
@@ -120,8 +120,8 @@ Below is the summary of the NuGet config keys and their usage.
 	This key has to be set using the <a href="command-line-reference#Sources_Command">NuGet.exe Sources command.</a> <br/>
 	The default behavior is to store the password encrypted in the config file. <br/> <br/>
 
-		<i>Nuget.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx   -Password &lt;secret&gt;  </i><br/>
-		<i>Nuget.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx   -Password &lt;secret&gt; </i><br/><br/>
+		<i>NuGet.exe  Sources  Add  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx   -Password &lt;secret&gt;  </i><br/>
+		<i>NuGet.exe  Sources  Update  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx   -Password &lt;secret&gt; </i><br/><br/>
 
 	This results in something similar to this:<br/>
 	<pre><code>
@@ -136,8 +136,8 @@ Below is the summary of the NuGet config keys and their usage.
 	If you want to share the credentials with others then you might want to use the -StorePasswordInClearText option to disable password encryption.<br/>
 	Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new <a href="command-line-reference">-Config option</a>, and commit it to your VCS.<br/><br/>
 
-		<i>Nuget.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx  -Password  &lt;secret&gt;  -StorePasswordInClearText -Config &lt;path to nuget.config&gt;</i><br/>
-		<i>Nuget.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx  -Password &lt;secret&gt; <i>-StorePasswordInClearText</i> -Config &lt;path to nuget.config&gt;</i><br/><br/>
+		<i>NuGet.exe  Sources  Add  -Name  &lt;feedName&gt;  -UserName  xxx  -Password  &lt;secret&gt;  -StorePasswordInClearText -Config &lt;path to nuget.config&gt;</i><br/>
+		<i>NuGet.exe  Sources  Update  -Name  &lt;feedName&gt;  -UserName  xxx  -Password &lt;secret&gt; <i>-StorePasswordInClearText</i> -Config &lt;path to nuget.config&gt;</i><br/><br/>
 
 	This results in something more readable (or even manually configurable):<br/>
 	<pre><code>
