@@ -1,6 +1,6 @@
 ﻿# Setting up the NuGet Development Environment
 So you want to hack on NuGet? These notes will help you get your development environment 
-set up correctly so you can work on NuGet using Visual Studio 2010.
+set up correctly so you can work on NuGet using Visual Studio 2010, Visual Studio 2012 or Visual Studio 2013.
 
 ## Get and Build the code
 1. **Install Git.** Install [Git for Windows](http://code.google.com/p/msysgit/downloads/list?can=3) and then optionally install [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
