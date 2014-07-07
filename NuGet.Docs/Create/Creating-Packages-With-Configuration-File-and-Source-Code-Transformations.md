@@ -95,7 +95,7 @@ in the project might look like the following example (the rootnamespace project 
 In order to enable the transformation process for a source-code file, you append the .pp file extension 
 to the name of the file, as shown in the following example
 
-![](/images/create/pp.files.png)
+![](../images/create/pp.files.png)
 
 When the source-code files illustrated in the figure are installed, NuGet transforms the files, removes 
 the .pp extension, and adds them to the target project’s ~/Models directory.
