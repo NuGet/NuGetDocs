@@ -30,7 +30,7 @@ Starting with NuGet 2.6, XDT is supported to transform XML files inside a projec
 *.uninstall.xdt* file(s) under the package's Content folder, which will be applied during package installation
 and uninstallation time, respectively.
 
-For example, suppose the starting project contains the following web.config file:
+For example, suppose the starting project A contains the following web.config file:
 
     <configuration>
         <system.webServer>
@@ -51,6 +51,17 @@ To add `MyNuModule` element to the `modules` section of web.config, the web.conf
         </system.webServer>
     </configuration>
     
+After installing the package, the resulting web.config of project A will look like the following:
+
+    <configuration>
+        <system.webServer>
+            <modules>
+                <add name="MyModule" type="Sample.MyModule" />
+                <add name="MyNuModule" type="Sample.MyNuModule" /> 
+            </modules>
+        <system.webServer>
+    </configuration>
+
 On the other hand, to remove only the `MyNuModule` element during package uninstall, the web.config.uninstall.xdt file can be written as:
 
     <?xml version="1.0"?>
