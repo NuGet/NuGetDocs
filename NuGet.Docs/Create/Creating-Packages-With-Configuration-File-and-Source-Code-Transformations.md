@@ -30,8 +30,17 @@ Starting with NuGet 2.6, XDT is supported to transform XML files inside a projec
 *.uninstall.xdt* file(s) under the package's Content folder, which will be applied during package installation
 and uninstallation time, respectively.
 
-For example, to add MyNuModule to web.config file like what's illustrated above, the following section can be
-used in the web.config.install.xdt file:
+For example, suppose the package is installed in a project that contains the following web.config file:
+
+    <configuration>
+        <system.webServer>
+            <modules>
+                <add name="MyModule" type="Sample.MyModule" />
+            </modules>
+        <system.webServer>
+    </configuration>
+    
+To add `<MyNuModule>` element to the `<modules>` section of web.config, the web.config.install.xdt file can be written as:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
@@ -42,8 +51,7 @@ used in the web.config.install.xdt file:
         </system.webServer>
     </configuration>
     
-On the other hand, to remove only the MyNuModule element during package uninstall, the following section can be
-used in the web.config.uninstall.xdt file:
+On the other hand, to remove only the MyNuModule element during package uninstall, the web.config.uninstall.xdt file can be written as:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
@@ -68,7 +76,7 @@ This will allow your packages to conditionally insert, remove, or modify element
 PowerShell install.ps1 and uninstall.ps1 support though, package uninstallation should make a best effort to
 return the web.config file to its previous state in all scenarios.
 
-In addition to XDT transformation, NuGet also supports the traditional way of transforming configuration files. For more information, please refer to the doc of [Transform Web.Config using .transform Files](Transforming-Configuration-Files-Using-dotTransform-Files.md).
+In addition to XDT transformation, NuGet also supports the traditional way of transforming web.config files. For more information, please refer to this doc of [Transform Web.Config using .transform Files](Transforming-Configuration-Files-Using-dotTransform-Files.md).
 
 ## Specifying Source Code Transformations
 
@@ -95,7 +103,7 @@ in the project might look like the following example (the rootnamespace project 
 In order to enable the transformation process for a source-code file, you append the .pp file extension 
 to the name of the file, as shown in the following example
 
-![](../images/create/pp.files.png)
+![](../images/Create/pp.files.png)
 
 When the source-code files illustrated in the figure are installed, NuGet transforms the files, removes 
 the .pp extension, and adds them to the target project’s ~/Models directory.
