@@ -50,7 +50,7 @@ installation is ELMAH (Error Logging Modules and Handlers for ASP.NET). ELMAH re
 HTTP modules and HTTP handlers be registered in the web.config file. The ELMAH package includes a 
 file named web.config.transform that specifies how to register them.
 
-![](/images/Create/web.config.transform.png)
+![](../images/Create/web.config.transform.png)
 
 Suppose the XML in the web.config.transform file looks like the following example:
 
