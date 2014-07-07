@@ -4,7 +4,7 @@
 
 We have a functional test framework written in powershell that we use to verify the NuGet's behavior in Visual Studio.
 
-After [setting up your environment and running the experimental instance of VS](/Setting-up-the-NuGet-Development-Environment.md ), you can run the tests by running the cmdlet *Run-Test*. You can run a specific test by specifying the name of the test as a 
+After [setting up your environment and running the experimental instance of VS](Setting-up-the-NuGet-Development-Environment.md ), you can run the tests by running the cmdlet *Run-Test*. You can run a specific test by specifying the name of the test as a 
 parameter to *Run-Test* (we also show IntelliSense for test names).
 
 ### Writing Tests
