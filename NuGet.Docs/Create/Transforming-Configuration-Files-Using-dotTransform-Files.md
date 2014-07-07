@@ -35,7 +35,7 @@ changed line is highlighted:
         <system.webServer>
             <modules>
                 <add name="MyModule" type="Sample.MyModule" />
-                <p background="red"><add name="MyNuModule" type="Sample.MyNuModule" /></p>
+                <add name="MyNuModule" type="Sample.MyNuModule" />
             </modules>
         <system.webServer>
     </configuration>
