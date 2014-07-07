@@ -190,40 +190,40 @@ You can also create Solution folders and create projects within solution folders
 	
 ## For NuGet Gallery
 
-The automated functional tests for NuGet Gallery live under %RepositoryRoot%\Gallery\test folder. Within that folder, there is a NuGetGallery.FunctionalTests.sln file, which can be opened in Visual Studio. The functional test solution consists of gallery functional tests written on top of the [Microsoft Unit Test Framework](http://msdn.microsoft.com/en-us/library/ms182532.aspx). Many of the tests issue Http Web requests to the Gallery in testing and then verify the web responses that are received back. The Fluent tests are authored using the [Fluent Automation framework](https://www.nuget.org/packages/FluentAutomation.SeleniumWebDriver/), which belongs to the category of UI Automation and will start web browsers to run. 
+The automated functional tests for NuGet Gallery live under %RepositoryRoot%\Gallery\test folder. Within that folder, there is a NuGetGallery.FunctionalTests.sln file, which can be opened in Visual Studio. The functional test solution consists of gallery functional tests written on top of the [Microsoft Unit Test Framework](http://msdn.microsoft.com/en-us/library/ms182532.aspx). Many of the tests issue Http Web requests to the Gallery in testing and then verify the web responses that are received back. The Fluent tests are authored using the [Fluent Automation framework](https://www.nuget.org/packages/FluentAutomation.SeleniumWebDriver/), which will start web browsers to run. 
 
 ### Test By Kinds
 
 In order to test different layers of the gallery such as OData query, API, UI and client integration, the functional tests have been written in different ways, which include:
-	1. OData tests
-	2. Web UI tests
-	3. Client integration tests
-	4. Fluent tests
+* OData tests
+* Web UI tests
+* Client integration tests
+* Fluent tests
 
 ### Tests by Scenarios
 
 Within each kind of the tests above, there are tests that cover one or more of the following gallery scenarios:
-	1. AccountManagement
-	2. BasicPages
-	3. EditableMetadata
-	4. PackageManagement
-	5. UploadAndDownload
-	6. Search(UI and syntax)
-	7. Statistics
-	8. ReadOnlyMode
-	9. Feed
+* AccountManagement
+* BasicPages
+* EditableMetadata
+* PackageManagement
+* UploadAndDownload
+* Search(UI and syntax)
+* Statistics
+* ReadOnlyMode
+* Feed
 
 ### How to Run functional Tests Locally using Scripts
 
 Under %RepositoryRoot%\Gallery\tests\scripts folder, there are 4 .cmd files that can be used for running functional tests, while each of them may server a different purpose. 
 
-1. TestRunSetupScript.cmd - as of now the functional tests requires the following environmental variables to be set for tests to run properly: RunFunctionalTests, TestAccountName, TestAccountPassword, TestEmailServerHost. This script set these variables and also the target URL to run tests against, as well as the APIKey for uploading packages. Note that this script should be run before the other scripts.
-2. RunEverythingy.cmd - this script runs all of the tests inside NuGetGallery.FunctionalTests.sln, including Fluent tests.
-3. RunByTestList.cmd - this script runs functional tests by test lists, by specifying P0Tests, P1Tests, P2Tests or ReadOnlyModeTests as the 1st parameter. 
-4. RunSpecificTests.cmd - this scripts runs specific tests filtered by 1st parameter of criteria and 2nd parameter of test kind. For example, to run fluent test of EditAndSearch, type "runspecifictests.cmd editandsearch fluent" on a command prompt.
+- TestRunSetupScript.cmd - as of now the functional tests requires the following environmental variables to be set for tests to run properly: RunFunctionalTests, TestAccountName, TestAccountPassword, TestEmailServerHost. This script set these variables and also the target URL to run tests against, as well as the APIKey for uploading packages. Note that this script should be run before the other scripts.
+- RunEverythingy.cmd - this script runs all of the tests inside NuGetGallery.FunctionalTests.sln, including Fluent tests.
+- RunByTestList.cmd - this script runs functional tests by test lists, by specifying the test list name as the 1st parameter. 
+- RunSpecificTests.cmd - this scripts runs specific tests filtered by 1st parameter of criteria and 2nd parameter of test kind. For example, to run fluent test of EditAndSearch, type "runspecifictests.cmd editandsearch fluent" on a command prompt.
 
 ### Known Issues/Tips about Running the Gallery Functional Tests 
-1. The 4 environmental variables above needs to be defined before running the tests.
-2. The fluent tests will start browser and take control of the screen while running. It's recommended to not use the mouse and keyboard during the run and wait for the tests to complete.
+- The 4 environmental variables above needs to be defined before running the tests.
+- The fluent tests will start browser and take control of the screen while running. It's recommended to not use the mouse and keyboard during the run and wait for the tests to complete.
 
 
