@@ -68,7 +68,7 @@ This will allow your packages to conditionally insert, remove, or modify element
 PowerShell install.ps1 and uninstall.ps1 support though, package uninstallation should make a best effort to
 return the web.config file to its previous state in all scenarios.
 
-In addition to XDT transformation, NuGet also supports the traditional way of transforming configuration files. For more information, please refer to the doc of [Transform Web.Config using .transform Files](~/Transforming-Configuration-Files-Using-dotTransform-Files.md).
+In addition to XDT transformation, NuGet also supports the traditional way of transforming configuration files. For more information, please refer to the doc of [Transform Web.Config using .transform Files](Transforming-Configuration-Files-Using-dotTransform-Files.md).
 
 ## Specifying Source Code Transformations
 
