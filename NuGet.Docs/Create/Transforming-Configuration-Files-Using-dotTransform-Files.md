@@ -1,4 +1,4 @@
-## Transform Configuration Files Using .transform Files
+## Transform Web.Config Using .transform Files
 
 In NuGet's traditional way of configuration-file transformation, you add a file to your package's content and give it 
 the same name as the file you want to transform, followed by a .transform extension. For example, 
