@@ -30,7 +30,7 @@ Starting with NuGet 2.6, XDT is supported to transform XML files inside a projec
 *.uninstall.xdt* file(s) under the package's Content folder, which will be applied during package installation
 and uninstallation time, respectively.
 
-For example, suppose the package is installed in a project that contains the following web.config file:
+For example, suppose the starting project contains the following web.config file:
 
     <configuration>
         <system.webServer>
@@ -40,7 +40,7 @@ For example, suppose the package is installed in a project that contains the fol
         <system.webServer>
     </configuration>
     
-To add `<MyNuModule>` element to the `<modules>` section of web.config, the web.config.install.xdt file can be written as:
+To add `MyNuModule` element to the `modules` section of web.config, the web.config.install.xdt file can be written as:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
@@ -51,7 +51,7 @@ To add `<MyNuModule>` element to the `<modules>` section of web.config, the web.
         </system.webServer>
     </configuration>
     
-On the other hand, to remove only the MyNuModule element during package uninstall, the web.config.uninstall.xdt file can be written as:
+On the other hand, to remove only the `MyNuModule` element during package uninstall, the web.config.uninstall.xdt file can be written as:
 
     <?xml version="1.0"?>
     <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
