@@ -1,139 +1,4 @@
-##  Config Command
-
-Gets or sets NuGet config values.
-
-### Config Command Usage
-    nuget config -Set name=value
-
-### Config Command Options
-<table>
-    <tr>
-        <td>Set</td>
-        <td>One on more key-value pairs to be set in config.</td>
-    </tr>
-    <tr>
-        <td>Help</td>
-        <td>help</td>
-    </tr>
-    <tr>
-        <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
-    </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config 
-        is used as configuration file.</td>
-    </tr>
-</table>
-
-### Config Command Examples
-
-    nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
-    nuget.config HTTP_PROXY
-
-
-
-
-
-##  Delete Command
-
-Deletes a package from the server.
-
-### Delete Command Usage
-    nuget delete <package Id> <package version> [API Key] [options]
-
-Specify the Id and version of the package to delete from the server.
-### Delete Command Options
-<table>
-    <tr>
-        <td>Source</td>
-        <td>Specifies the server URL.</td>
-    </tr>
-    <tr>
-        <td>NoPrompt</td>
-        <td>Do not prompt when deleting.</td>
-    </tr>
-    <tr>
-        <td>ApiKey</td>
-        <td>The API key for the server.</td>
-    </tr>
-    <tr>
-        <td>Help</td>
-        <td>help</td>
-    </tr>
-    <tr>
-        <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
-    </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
-        is used as configuration file.</td>
-    </tr>
-</table>
-
-### Delete Command Examples
-
-    nuget delete MyPackage 1.0
-        
-    nuget delete MyPackage 1.0 -NoPrompt
-
-
-
-
-
-##  Help Command
-
-Displays general help information and help information about other commands.
-
-### Help Command Usage
-    nuget help [command]
-
-Pass a command name to display help information for that command.
-### Help Command Options
-<table>
-    <tr>
-        <td>All</td>
-        <td>Print detailed help for all available commands.</td>
-    </tr>
-    <tr>
-        <td>Markdown</td>
-        <td>Print detailed all help in markdown format.</td>
-    </tr>
-    <tr>
-        <td>Help</td>
-        <td>help</td>
-    </tr>
-    <tr>
-        <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
-    </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-</table>
-
-### Help Command Examples
-
-    nuget help
-    
-    nuget help push
-    
-    nuget ?
-    
-    nuget push -?
-
-
-
+# Package Management Commands
 
 
 ##  Install Command
@@ -210,6 +75,74 @@ Specify the id and optionally the version of the package to install. If a path t
     
     nuget install ninject -o c:\foo
 
+
+##  Update Command
+
+Update packages to latest available versions. This command also updates NuGet.exe itself. Please note that the presence of Packages folder is required to run the Update command. A recommended way is to run NuGet.exe Restore command first before running the Update command.
+
+### Update Command Usage
+    nuget update <packages.config|solution>
+
+### Update Command Options
+<table>
+    <tr>
+        <td>Source</td>
+        <td>A list of package sources to search for updates.</td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>Package ids to update.</td>
+    </tr>
+    <tr>
+        <td>RepositoryPath</td>
+        <td>Path to the local packages folder (location where packages are installed).</td>
+    </tr>
+    <tr>
+        <td>Safe</td>
+        <td>Looks for updates with the highest version available within the same major and minor version as the installed package.</td>
+    </tr>
+    <tr>
+        <td>Self</td>
+        <td>Update the running NuGet.exe to the newest version available from the server.</td>
+    </tr>
+    <tr>
+        <td>Verbose</td>
+        <td>Show verbose output while updating.</td>
+    </tr>
+    <tr>
+        <td>Prerelease</td>
+        <td>Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>FileConflictAction</td>
+        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Update Command Examples
+
+    nuget update
+        
+    nuget update -Safe
+    
+    nuget update -Self
 
 
 ## Restore command
@@ -347,6 +280,54 @@ file:
     nuget restore -source "https://www.nuget.org/api/v2;https://www.myget.org/F/nuget"
 
 
+##  Delete Command
+
+Deletes a package from the server.
+
+### Delete Command Usage
+    nuget delete <package Id> <package version> [API Key] [options]
+
+Specify the Id and version of the package to delete from the server.
+### Delete Command Options
+<table>
+    <tr>
+        <td>Source</td>
+        <td>Specifies the server URL.</td>
+    </tr>
+    <tr>
+        <td>NoPrompt</td>
+        <td>Do not prompt when deleting.</td>
+    </tr>
+    <tr>
+        <td>ApiKey</td>
+        <td>The API key for the server.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Delete Command Examples
+
+    nuget delete MyPackage 1.0
+        
+    nuget delete MyPackage 1.0 -NoPrompt
+
+
 ##  List Command
 
 Displays a list of packages from a given source. If no sources are specified, all sources defined in %AppData%\NuGet\NuGet.config are used. If NuGet.config specifies no sources, uses the default NuGet feed.
@@ -399,69 +380,103 @@ Specify optional search terms.
     
     nuget list -verbose -allversions
 
-##  Mirror Command
 
-Mirrors a package and its dependencies from the specified source repositories to the target repository.
+##  Sources Command
 
-Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
-copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same directory as NuGet.exe.
+Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet.config
 
-### Mirror Command Usage
-    nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
+### Sources Command Usage
+    nuget sources <List|Add|Remove|Enable|Disable|Update> -Name [name] -Source [source]
 
-Specify the id of the package to mirror, the url to query the target repository (list command) and the url to push packages to the target repository.
-If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
-Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be 
-[http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
-
-### Mirror Command Options
+### Sources Command Options
 <table>
     <tr>
+        <td>Name</td>
+        <td>Name of the source.</td>
+    </tr>
+    <tr>
         <td>Source</td>
-        <td>A list of packages sources to use for the finding packages to mirror. 
-        If no sources are specified, the ones defined in the default NuGet config file are used. 
-        If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
+        <td>Path to the package(s) source.</td>
     </tr>
     <tr>
-        <td>Version</td>
-        <td>The version of the package to install. If not specified, latest version is mirrored.</td>
+        <td>UserName</td>
+        <td>UserName to be used when connecting to an authenticated source.</td>
     </tr>
     <tr>
-        <td>ApiKey</td>
-        <td>The API key for pushing to the target repository. If not specified, the one specified in the default NuGet config file is used.</td>
+        <td>Password</td>
+        <td>Password to be used when connecting to an authenticated source.</td>
     </tr>
-    <tr>
-        <td>Prerelease</td>
-        <td>When set, "latest" when specifying no version for a package id (as command argument or in packages.config) includes pre-release packages.</td>
-    </tr>
-    <tr>
-        <td>Timeout</td>
-        <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
-    </tr>
-    <tr>
-        <td>NoCache</td>
-        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
-        If you want to ensure only packages from the specified sources are used, set the NoCache option. 
-        If you want instead to maximize chances of finding packages, do not set this option.</td>
-    </tr>
-    <tr>
-        <td>NoOp</td>
-        <td>Log what would be done without actually doing it. Assumes success for push operations.</td>
+	<tr>
+        <td>StorePasswordInClearText</td>
+        <td>Do not encrypt the password and store it in clear text. (Default: False)</td>
     </tr>
     <tr>
         <td>Help</td>
         <td>help</td>
     </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
 </table>
 
-### Mirror Command Examples
 
-    nuget mirror packages.config  http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
+
+# Package Authoring Commands
+
+
+##  Spec Command
+
+Generates a nuspec for a new package. If this command is run in the same folder as a project file (.csproj, .vbproj, .fsproj), it will create a tokenized nuspec file.
+
+### Spec Command Usage
+    nuget spec [package id]
+
+### Spec Command Options
+<table>
+    <tr>
+        <td>AssemblyPath</td>
+        <td>Assembly to use for metadata.</td>
+    </tr>
+    <tr>
+        <td>Force</td>
+        <td>Overwrite nuspec file if it exists.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Spec Command Examples
+
+    nuget spec
     
-    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -version 4.0.20505.0
-
-    nuget mirror Microsoft.Net.Http http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -prerelease
-
+    nuget spec MyPackage
+    
+    nuget spec -a MyAssembly.dll
 
 
 ##  Pack Command
@@ -578,9 +593,6 @@ When running the pack command on this project, the created package will have a d
     nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
 
 
-
-
-
 ##  Push Command
 
 Pushes a package to the server and publishes it.
@@ -684,39 +696,23 @@ Specify the API key to save and an optional URL to the server that provided the 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
     
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
+    
 
 
+# Admin/Settings Commands
 
+##  Config Command
 
+Gets or sets NuGet config values.
 
-##  Sources Command
+### Config Command Usage
+    nuget config -Set name=value
 
-Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet.config
-
-### Sources Command Usage
-    nuget sources <List|Add|Remove|Enable|Disable|Update> -Name [name] -Source [source]
-
-### Sources Command Options
+### Config Command Options
 <table>
     <tr>
-        <td>Name</td>
-        <td>Name of the source.</td>
-    </tr>
-    <tr>
-        <td>Source</td>
-        <td>Path to the package(s) source.</td>
-    </tr>
-    <tr>
-        <td>UserName</td>
-        <td>UserName to be used when connecting to an authenticated source.</td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td>Password to be used when connecting to an authenticated source.</td>
-    </tr>
-	<tr>
-        <td>StorePasswordInClearText</td>
-        <td>Do not encrypt the password and store it in clear text. (Default: False)</td>
+        <td>Set</td>
+        <td>One on more key-value pairs to be set in config.</td>
     </tr>
     <tr>
         <td>Help</td>
@@ -732,93 +728,98 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
 
+### Config Command Examples
 
-##  Spec Command
-
-Generates a nuspec for a new package. If this command is run in the same folder as a project file (.csproj, .vbproj, .fsproj), it will create a tokenized nuspec file.
-
-### Spec Command Usage
-    nuget spec [package id]
-
-### Spec Command Options
-<table>
-    <tr>
-        <td>AssemblyPath</td>
-        <td>Assembly to use for metadata.</td>
-    </tr>
-    <tr>
-        <td>Force</td>
-        <td>Overwrite nuspec file if it exists.</td>
-    </tr>
-    <tr>
-        <td>Help</td>
-        <td>help</td>
-    </tr>
-    <tr>
-        <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
-    </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
-        is used as configuration file.</td>
-    </tr>
-</table>
-
-### Spec Command Examples
-
-    nuget spec
-    
-    nuget spec MyPackage
-    
-    nuget spec -a MyAssembly.dll
+    nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
+    nuget.config HTTP_PROXY
 
 
-##  Update Command
+##  Mirror Command
 
-Update packages to latest available versions. This command also updates NuGet.exe itself. Please note that the presence of Packages folder is required to run the Update command. A recommended way is to run NuGet.exe Restore command first before running the Update command.
+Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
-### Update Command Usage
-    nuget update <packages.config|solution>
+Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
+copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same directory as NuGet.exe.
 
-### Update Command Options
+### Mirror Command Usage
+    nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
+
+Specify the id of the package to mirror, the url to query the target repository (list command) and the url to push packages to the target repository.
+If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
+Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be 
+[http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
+
+### Mirror Command Options
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of package sources to search for updates.</td>
+        <td>A list of packages sources to use for the finding packages to mirror. 
+        If no sources are specified, the ones defined in the default NuGet config file are used. 
+        If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
     </tr>
     <tr>
-        <td>Id</td>
-        <td>Package ids to update.</td>
+        <td>Version</td>
+        <td>The version of the package to install. If not specified, latest version is mirrored.</td>
     </tr>
     <tr>
-        <td>RepositoryPath</td>
-        <td>Path to the local packages folder (location where packages are installed).</td>
-    </tr>
-    <tr>
-        <td>Safe</td>
-        <td>Looks for updates with the highest version available within the same major and minor version as the installed package.</td>
-    </tr>
-    <tr>
-        <td>Self</td>
-        <td>Update the running NuGet.exe to the newest version available from the server.</td>
-    </tr>
-    <tr>
-        <td>Verbose</td>
-        <td>Show verbose output while updating.</td>
+        <td>ApiKey</td>
+        <td>The API key for pushing to the target repository. If not specified, the one specified in the default NuGet config file is used.</td>
     </tr>
     <tr>
         <td>Prerelease</td>
-        <td>Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.</td>
+        <td>When set, "latest" when specifying no version for a package id (as command argument or in packages.config) includes pre-release packages.</td>
+    </tr>
+    <tr>
+        <td>Timeout</td>
+        <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
+    </tr>
+    <tr>
+        <td>NoCache</td>
+        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
+        If you want to ensure only packages from the specified sources are used, set the NoCache option. 
+        If you want instead to maximize chances of finding packages, do not set this option.</td>
+    </tr>
+    <tr>
+        <td>NoOp</td>
+        <td>Log what would be done without actually doing it. Assumes success for push operations.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+</table>
+
+### Mirror Command Examples
+
+    nuget mirror packages.config  http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
+    
+    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -version 4.0.20505.0
+
+    nuget mirror Microsoft.Net.Http http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -prerelease
+
+
+##  Help Command
+
+Displays general help information and help information about other commands.
+
+### Help Command Usage
+    nuget help [command]
+
+Pass a command name to display help information for that command.
+### Help Command Options
+<table>
+    <tr>
+        <td>All</td>
+        <td>Print detailed help for all available commands.</td>
+    </tr>
+    <tr>
+        <td>Markdown</td>
+        <td>Print detailed all help in markdown format.</td>
     </tr>
     <tr>
         <td>Help</td>
@@ -832,23 +833,19 @@ Update packages to latest available versions. This command also updates NuGet.ex
         <td>NonInteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
-    <tr>
-        <td>FileConflictAction</td>
-        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
-    </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
-        is used as configuration file.</td>
-    </tr>
 </table>
 
-### Update Command Examples
+### Help Command Examples
 
-    nuget update
-        
-    nuget update -Safe
+    nuget help
     
-    nuget update -Self
+    nuget help push
+    
+    nuget ?
+    
+    nuget push -?
+
+
+
 
 
