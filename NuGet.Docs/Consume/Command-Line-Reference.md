@@ -50,7 +50,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -58,11 +58,11 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>FileConflictAction</td>
-        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
+        <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -103,7 +103,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
     </tr>
     <tr>
         <td>Self</td>
-        <td>Update the running NuGet.exe to the newest version available from the server.</td>
+        <td>(v<em>1.4</em>) Update the running NuGet.exe to the newest version available from the server.</td>
     </tr>
     <tr>
         <td>Verbose</td>
@@ -119,7 +119,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -127,11 +127,11 @@ Update packages to latest available versions. This command also updates NuGet.ex
     </tr>
     <tr>
         <td>FileConflictAction</td>
-        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
+        <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -147,7 +147,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
 
 ## Restore command
 
-Downloads and unzips (restores) any packages missing from the packages folder.
+(v<em>2.7 or above</em>) Downloads and unzips (restores) any packages missing from the packages folder.
 
 ### Restore Command Usage
     nuget restore [<solution>|<packages.config file>] [options]
@@ -193,7 +193,7 @@ Downloads and unzips (restores) any packages missing from the packages folder.
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -308,7 +308,7 @@ Specify the Id and version of the package to delete from the server.
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -316,7 +316,7 @@ Specify the Id and version of the package to delete from the server.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -361,7 +361,7 @@ Specify optional search terms.
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -369,7 +369,7 @@ Specify optional search terms.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -416,7 +416,7 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -424,7 +424,7 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -457,7 +457,7 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -465,7 +465,7 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -508,11 +508,11 @@ Specify the location of the nuspec or project file to create a package.
     </tr>
     <tr>
         <td>Exclude</td>
-        <td>Specifies one or more wildcard patterns to exclude when creating a package.</td>
+        <td>(v<em>1.3</em>) Specifies one or more wildcard patterns to exclude when creating a package.</td>
     </tr>
     <tr>
         <td>Symbols</td>
-        <td>Determines if a package containing sources and symbols should be created. When specified with a nuspec, creates a regular NuGet package file and the corresponding symbols package.</td>
+        <td>(v<em>1.4</em>) Determines if a package containing sources and symbols should be created. When specified with a nuspec, creates a regular NuGet package file and the corresponding symbols package.</td>
     </tr>
     <tr>
         <td>Tool</td>
@@ -524,7 +524,7 @@ Specify the location of the nuspec or project file to create a package.
     </tr>
     <tr>
         <td>NoDefaultExcludes</td>
-        <td>Prevent default exclusion of NuGet package files and files and folders starting with a dot e.g. .svn.</td>
+        <td>(v<em>1.3</em>) Prevent default exclusion of NuGet package files and files and folders starting with a dot e.g. .svn.</td>
     </tr>
     <tr>
         <td>NoPackageAnalysis</td>
@@ -532,7 +532,7 @@ Specify the location of the nuspec or project file to create a package.
     </tr>
     <tr>
         <td>IncludeReferencedProjects</td>
-        <td>Include referenced projects either as dependencies or as part of the package. If a referenced 
+        <td>(v<em>2.5</em>) Include referenced projects either as dependencies or as part of the package. If a referenced 
         project has a corresponding nuspec file that has the same name as the project, then that 
         referenced project is added as a dependency. Otherwise, the referenced project is added as part 
         of the package.</td>
@@ -551,7 +551,7 @@ Specify the location of the nuspec or project file to create a package.
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -559,7 +559,7 @@ Specify the location of the nuspec or project file to create a package.
     </tr>
     <tr>
         <td>MinClientVersion</td>
-        <td>Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
+        <td>(v<em>2.5</em>) Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
     </tr>
 </table>
 
@@ -626,7 +626,7 @@ Specify the path to the package and your API key to push the package to the serv
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -634,7 +634,7 @@ Specify the path to the package and your API key to push the package to the serv
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -659,7 +659,7 @@ Specify the path to the package and your API key to push the package to the serv
 
 ##  SetApiKey Command
 
-Saves an API key for a given server URL. When no URL is provided API key is saved for the NuGet gallery.
+(v<em>1.2 or above</em>) Saves an API key for a given server URL. When no URL is provided API key is saved for the NuGet gallery.
 
 ### SetApiKey Command Usage
     nuget setapikey <API key> [options]
@@ -678,7 +678,7 @@ Specify the API key to save and an optional URL to the server that provided the 
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -686,7 +686,7 @@ Specify the API key to save and an optional URL to the server that provided the 
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -720,7 +720,7 @@ Gets or sets NuGet config values.
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -728,7 +728,7 @@ Gets or sets NuGet config values.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
     </tr>
 </table>
@@ -827,7 +827,7 @@ Pass a command name to display help information for that command.
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
