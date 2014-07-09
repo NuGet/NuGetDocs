@@ -20,7 +20,7 @@ In addition to these files, NuGet modifies the project files in the solution to 
 With these details in mind, follow the steps below for your particular setup.
 
 ### Close down Visual Studio
-If the solution you are trying to migrate is open in Visual Studio, then changes to .csproj files will fail. Visual Studio 2010 is quite notorious with caching .csproj/.vbproj/msbuild files so your changes will be overwritten unless you shut down the solution in Visual Studio. Later versions may not excibit the same behavior, but it is recommended that you shut down the solution anyway.
+If the solution you are trying to migrate is open in Visual Studio, then changes may be lost. Visual Studio may overwrite/ignore your changes in some cases and the NuGet extension will also try to re-enable Package Restore when it sees some projects in the solution are missing it.
 
 ### If you are using TFS
 
