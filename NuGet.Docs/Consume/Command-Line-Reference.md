@@ -1,3 +1,10 @@
+## Installing
+The NuGet command line may be installed onto a machine in a few possible ways.
+
+1. Direct download of the executable from [https://www.nuget.org/nuget.exe](https://www.nuget.org/nuget.exe). The executable may be placed anywhere on the file system, and in most cases should be placed in a directory that is listed in the PATH environment variable.
+1. Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the NuGet Visual Studio client and either move nuget.exe to a common location or execute it in the context of your project.
+1. Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the Chocolatey client. More information on Chocolatey can be found at [http://chocolatey.org].
+
 ##  Config Command
 
 Gets or sets NuGet config values.
