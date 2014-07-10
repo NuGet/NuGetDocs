@@ -61,8 +61,8 @@ With this in place, any time a project is compiled, the build task will look at 
 
 In this scenario, NuGet will grab the exact version when restoring a package. It will not perform any upgrades.
 
-<p class="caution"><b>Be sure to check in your _repositories.config_ file.</b> Some version control systems, 
-such as Subversion (a.k.a. SVN), may require additional configuration to allow you to selectively ignore an arbitrary set of files in a path, _but_ include a specific file, such as your _repositories.config_ in that path.
+<p class="caution"><b>Be sure to check in your <em>repositories.config</em> file.</b> Some version control systems, 
+such as Subversion (a.k.a. SVN), may require additional configuration to allow you to selectively ignore an arbitrary set of files in a path, <em>but</em> include a specific file, such as your <em>repositories.config</em> in that path.
 <br/>
 For SVN specifically, you may use SVN:IGNORE to prevent paths with certain patterns from being committed (and making a mess in your pending changes views).
 By adding the following patterns as an SVN:IGNORE to your "packages" directory, the repositories.config will be committed, but nuget package directories will be ignored.
