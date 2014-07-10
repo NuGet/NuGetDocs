@@ -106,7 +106,7 @@ Pass a command name to display help information for that command.
     </tr>
     <tr>
         <td>Markdown</td>
-        <td>Print detailed all help in markdown format.</td>
+        <td>Print detailed all help in Markdown format.</td>
     </tr>
     <tr>
         <td>Help</td>
