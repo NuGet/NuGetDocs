@@ -1,32 +1,27 @@
 ﻿# Contributing to NuGet Documentation
 
-These docs are written in markdown. For an introduction to markdown, see [our sample markdown](#Sample_Markdown). For documentation conventions, see [our documentation  conventions](#Documentation_Conventions).
+These docs are written in Markdown. For an introduction to Markdown, see [our sample markdown](#Sample_Markdown). For documentation conventions, see [our documentation conventions](#Documentation_Conventions).
 
 ## Making a change to existing documentation
 The basic workflow for contributing to NuGet Docs is simple.
 
-1. Visit the [NuGet Docs project on Github](https://github.com/NuGet/NuGetDocs/)
-
-2. Fork the project. There's a big Fork button towards the upper right. That creates a copy of this project under your account. It's really fast and lets you make edits without worrying that you're affecting the real site.
-
-3. Find the page you want to edit within the /site/Docs folder. This folder contains all of the documentation markdown files. For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
-
-4. Click the link labelled "Edit this file".
-
-5. Edit the markdown, type in a commit message below, and click "Commit Changes".
-
-6. Send a pull request for your change. There's a button near the top of the page that says "Pull Request". That's it!
+1. Find the page you want to edit within the [`site/Docs`](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs) folder of the [NuGet Docs project on GitHub](https://github.com/NuGet/NuGetDocs/). This folder contains all of the documentation Markdown files. For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/site/Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
+2. Click the "Edit" button which will automatically fork (copy) the project and allow you to propose changes.
+3. Edit the Markdown, type in a commit message below, and click "Propose file change".
+4. Send a pull request for your change. That's it!
 
 ## Adding a new document
 
-Adding a new document requires that you use Git to clone the repository and send a pull request. 
-If you don't know what that means or how to use Git, feel free to propose that the NuGet team add a new page for you to edit.
+1. Visit the [`site/Docs`](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs) folder of the [NuGet Docs project on GitHub](https://github.com/NuGet/NuGetDocs/).
+2. Navigate to the correct subfolder and select the create new file plus button (as [demonstrated in the GitHub help article](https://help.github.com/articles/creating-new-files)).
+3. Edit the Markdown, type in a commit message below, and click "Propose file change".
+4. Send a pull request for your change. That's it!
 
 ## Documentation Conventions
 
-1. All documentation is placed under the "docs" folder in the site.
+1. All documentation is placed under the [`site/Docs`](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs) folder in the site.
 2. Folder/File names use dashes (Tilde Slash) as separators.
-3. Use relative URL for images and links (tilde slash will be resolved if you use it).
+3. Use relative URL for images and links (Tilde Slash will be resolved if you use it).
 
 
 ## Sample Markdown
