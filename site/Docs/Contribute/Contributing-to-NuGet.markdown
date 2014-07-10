@@ -5,9 +5,7 @@ So you want to contribute to NuGet. Great! We can use the help and appreciate th
 ## Ways to Contribute
 
 While writing code is certainly glamorous and gets all the attention, it's not the only way to contribute to NuGet. 
-In many cases, it's not even the most **valuable** way to contribute. 
-If you would like to contribute to NuGet to help the project along, consider these options 
-(which are valid for any OSS project, not just NuGet):
+In many cases, it's not even the most **valuable** way to contribute. If you would like to contribute to NuGet to help the project along, consider these options (which are valid for any OSS project, not just NuGet):
 
 * Improve our [documentation](Contributing-to-NuGet-Documentation). Documentation often gets little love and attention in an Open Source project, but those who help with documentation receive tremendous love and kudos from the team. 
 * Submit a <a title="NuGet Issues" href="http://nuget.codeplex.com/WorkItem/Create">bug report</a> (for an excellent guide on submitting good bug reports, read <a title="Painless Bug Tracking" href="http://www.joelonsoftware.com/articles/fog0000000029.html">Painless Bug Tracking</a>). 
@@ -20,16 +18,15 @@ If you would like to contribute to NuGet to help the project along, consider the
 
 ## Contributing Code
 
-<p class="info">Contributing code refers to making a contribution to the source code for NuGet itself 
-and does not pertain to adding packages to a NuGet feed.
+<p class="info">Contributing code refers to making a contribution to the source code for NuGet itself and does not pertain to adding packages to a NuGet feed.</p>
 
-Miguel de Icaza has a good post 
-on <a href="http://tirania.org/blog/archive/2010/Dec-31.html">Open Source Contribution Etiquette</a> that is worth reading, 
-as the guidance he gives applies well to NuGet.
+Miguel de Icaza has a good post on [Open Source Contribution Etiquette](http://tirania.org/blog/archive/2010/Dec-31.html) that is worth reading, as the guidance he gives applies well to NuGet.
 
 ### Getting Started
 
 The first order of business is to get yourself familiar with the product (and depending on the type of contribution you wish to make, the code).
+
+
 
 1. Subscribe to the NuGet <a title="NuGet Discussions" href="http://nuget.codeplex.com/discussions">discussion list</a> by making sure you have a CodePlex.com account and turning on notifications for the **Discussions** tab. 
 2. Download the latest release and try the product out. 
@@ -42,9 +39,7 @@ The first order of business is to get yourself familiar with the product (and de
 
 ### Contributing a Bug Fix or Feature
 
-Now that you've read through our **Getting Started** section above and have set up your development environment accordingly, you're ready to start 
-contributing code! Please follow the following steps each time you take on a feature or bug fix. 
-Note that some of these steps are unnecessary for small changes.
+Now that you've read through our **Getting Started** section above and have set up your development environment accordingly, you're ready to start contributing code! Please follow the following steps each time you take on a feature or bug fix. Note that some of these steps are unnecessary for small changes.
 
 1. Decide what feature or bug fix you plan to take on and start a discussion with the title of the bug so we know someone is already working on it. e.g. "I'm going to fix issue 59: Something's Broken." If you're just starting out, pick something small to fix such as:
     * Add a missing unit test 
@@ -67,9 +62,7 @@ your change, go to step 7.
 12. Push to your server fork and send a pull request. Note, you can push to your server fork at any 
 time if you want to backup your code on the server, but don't send the pull request until your review is approved.
  
-<p class="info">If you're contributing a new non-trivial feature, we will ask you to fill out a Contributor License Agreement 
-form before we merge your change into the core. It doesn't take long and you can email us the form. 
-There's no need to deal with stamps and sending anything over snail mail.</p> 
+<p class="info">If you're contributing a new non-trivial feature, we will ask you to fill out a Contributor License Agreement form before we merge your change into the core. It doesn't take long and you can email us the form. There's no need to deal with stamps and sending anything over snail mail.</p> 
 
 ## General Guidelines
 
