@@ -1,7 +1,6 @@
 ﻿# Update as of NuGet 2.7
 
-**With NuGet 2.7, a new Automatic Package Restore approach has been introduced. For more information about
-that approach as well as a new NuGet.exe Restore Command, see the [Package Restore reference document](/docs/reference/package-restore).**
+**This document discusses the old MSBuild-integrated package restore approach. With NuGet 2.7, a new Automatic Package Restore approach has been introduced. For more information about that approach as well as a new NuGet.exe Restore Command, see the [Package Restore reference document](/docs/reference/package-restore).**
 
 # Using NuGet without committing packages to source control
 
