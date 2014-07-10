@@ -44,7 +44,7 @@ Markdown and HTML is ignored within a code block:
 
 ### Message Boxes
 We have added support for some well know classes to add styles to draw attention to items you want 
-to call out in a document. Unfortunately mark down does not have a way to added class attributes 
+to call out in a document. Unfortunately Markdown does not have a way to added class attributes 
 so you will have to write the HTML by hand and embed it.
 
 #### Information
