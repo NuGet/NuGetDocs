@@ -1,7 +1,7 @@
 # An Overview of the NuGet Ecosystem
 First introduced in 2010, NuGet has been around for a few years now and many people and organizations are starting to realize that NuGet presents a great opportunity to improve and automate different aspects of the development processes. Because the NuGet project is open source under a permissive [Apache v2 license](http://choosealicense.com/licenses/apache/), other projects can leverage NuGet and companies can build support for it in their products. Whether for open source projects or enterprise application development, NuGet plus the ever-growing set of applications built on and around NuGet, provide a broad selection of tools for improving your software development process.
 
-All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - you. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, and writing documentation. 
+All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - You. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
 
 ## Outercurve Foundation Projects
 The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools ([NuGet Command Line](http://docs.nuget.org/docs/reference/command-line-reference) and (NuGet Visual Studio Extension)[http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c?SRC=Home]), as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [Outercurve Foundation](http://www.outercurve.org/) and is a part of the ASP.NET Open Source Gallery.
@@ -12,7 +12,7 @@ The sources for the NuGet clients can be found on [Codeplex](http://nuget.codepl
 * License: Apache v2
 * Sources: [https://nuget.codeplex.com](https://nuget.codeplex.com/)
 
-Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If you are building a NuGet client, the fastest way to get started is by either fetching and building the NuGet.Core project's [sources from Codeplex](https://nuget.codeplex.com/), or using the NuGet.Core binaries directly by installing [NuGet.Core package](http://www.nuget.org/packages/Nuget.Core/) into your project with the following command.
+Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If you are building a NuGet client, the fastest way to get started is by either fetching and building the NuGet.Core project's [sources from Codeplex](https://nuget.codeplex.com/), or using the NuGet.Core binaries directly by installing the [NuGet.Core package](http://www.nuget.org/packages/Nuget.Core/) into your project. The following command installs the NuGet.Core package using the Visual Studio Package Manager Console.
 
     Install-Package NuGet.Core
 
