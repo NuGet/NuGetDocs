@@ -1,4 +1,4 @@
-﻿# Project Guidelines
+﻿# Project Contribution Guidelines
 
 ## Developer Workflow
 
@@ -8,6 +8,7 @@ Developers should follow the following workflow when working on items.
 * Developer creates a fork for this change (or reuses one of his existing forks) 
 * Developer clones the fork to his or her local machine and makes the changes, committing to their local repository and pushing to the fork on their server as needed. This can continue until all work is finished (The purpose of pushing to the fork is to keep changes on the server). 
 * Developer pulls and rebases (using the <a title="Rebase Extension" href="http://hgtip.com/tips/advanced/2010-02-11-merging-mq-patches-with-rebase/">rebase extension</a>) his or her fork until it&rsquo;s up to date with Main. 
+* Developr runs [functional automated tests](Functional-Testing.md) and fix any failures caused by his/her code changes, as to ensure no regressions have been brought into existing functionalities. 
 * Developer requests a code review 
 * Once code review is finished, developer sends a pull request for Main. 
 * One of the members of the integration team commits the changes to Main. 
