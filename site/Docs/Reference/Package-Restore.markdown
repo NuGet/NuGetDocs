@@ -14,7 +14,7 @@ NuGet offers two approaches to using package restore. Automatic Package Restore 
 
 ### Automatic Package Restore in Visual Studio
 
-Beginning with NuGet 2.7, the NuGet Visual Studio extension integrates into Visual Studio's build events and restores missing packages when a build begins. This feature is enabled by default, but developers can [opt out](#opting_out) if desired.
+Beginning with NuGet 2.7, the NuGet Visual Studio extension integrates into Visual Studio's build events and restores missing packages when a build begins. This feature is enabled by default, but developers can [opt out](#Opting_Out) if desired.
 
 Here's how it works:
 
