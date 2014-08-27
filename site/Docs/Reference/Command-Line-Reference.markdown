@@ -192,10 +192,6 @@ Specify the id and optionally the version of the package to install. If a path t
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>FileConflictAction</td>
-        <td>The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
-    </tr>
-    <tr>
         <td>ConfigFile</td>
         <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
         is used as configuration file.</td>
