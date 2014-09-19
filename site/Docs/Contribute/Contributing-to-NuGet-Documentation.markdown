@@ -10,6 +10,8 @@ The basic workflow for contributing to NuGet Docs is simple.
 3. Edit the Markdown, type in a commit message below, and click "Propose file change".
 4. Send a pull request for your change. That's it!
 
+Note that in the footer of each page on the documentation site, there is a link directly to the Markdown source for that page.  For instance, scroll to the bottom of this page and you'll see the link to view/edit its source.
+
 ## Adding a new document
 
 1. Visit the [`site/Docs`](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs) folder of the [NuGet Docs project on GitHub](https://github.com/NuGet/NuGetDocs/).
