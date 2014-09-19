@@ -416,6 +416,8 @@ The following provides examples of common targets.
     <tr><td>.NET 4.0 Client Profile</td><td>net40-client</td><td></td></tr>
     <tr><td>.NET 4.0 Full Profile</td><td>net40-full</td><td>Requires full .NET profile</td></tr>
     <tr><td>.NET 4.0 Compact Framework</td><td>net40-cf</td><td>net40-compactframework also works.</td></tr>
+    <tr><td>.NET 4.5 Framework</td><td>net45</td><td>Just using '45' also works.</td></tr>
+    <tr><td>.NET 4.5.1 Framework</td><td>net451</td><td>Just using '451' also works.</td></tr>
     <tr><td>.NET Micro Framework</td><td>netmf</td><td></td></tr>
     <tr><td>Silverlight 3.0</td><td>sl3</td><td></td></tr>
     <tr><td>Silverlight 4.0</td><td>sl4</td><td></td></tr>
