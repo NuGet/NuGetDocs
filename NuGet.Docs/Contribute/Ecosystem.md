@@ -1,20 +1,18 @@
 # An Overview of the NuGet Ecosystem
-First introduced in 2010, NuGet has been around for a few years now and many people and organizations are starting to realize that NuGet presents a great opportunity to improve and automate parts of the development processes. Whether you work on open source projects or in an enterprise environment, NuGet is here to stay, but you have a way bigger NuGet ecosystem at your disposal today.
+First introduced in 2010, NuGet has been around for a few years now and many people and organizations are starting to realize that NuGet presents a great opportunity to improve and automate different aspects of the development processes. Because the NuGet project is open source under a permissive [Apache v2 license](http://choosealicense.com/licenses/apache/), other projects can leverage NuGet and companies can build support for it in their products. Whether for open source projects or enterprise application development, NuGet plus the ever-growing set of applications built on and around NuGet, provide a broad selection of tools for improving your software development process.
 
-Because the NuGet project is open source under a permissive [Apache v2 license](http://choosealicense.com/licenses/apache/), other projects can leverage NuGet and companies can build support for it in their products. All of them extend the NuGet ecosystem to what it is today.
+All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - You. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
 
-It is great to see how NuGet adoption is growing, especially when people come up with innovative ideas that facilitate our work even further. And if any of you has a way to improve the NuGet tools, whether the Outercurve, Microsoft or any other NuGet-based product, then please tell them about your ideas. Report defects, log feature requests, provide feedback, write documentation or submit a pull request and experience eternal gratitude from an entire community.
+## Outercurve Foundation Projects
+The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools ([NuGet Command Line](http://docs.nuget.org/docs/reference/command-line-reference) and (NuGet Visual Studio Extension)[http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c?SRC=Home]), as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [Outercurve Foundation](http://www.outercurve.org/) and is a part of the ASP.NET Open Source Gallery.
 
-## Outercurve Foundation
-The NuGet project provides a free, open source package management system for .NET and consists out of a few client tools (NuGet Command Line and NuGet Visual Studio Extension) and the official NuGet Gallery hosted at [http://www.nuget.org](http://www.nuget.org). Combined, these tools and the gallery form the NuGet project, governed by [Outercurve Foundation](http://www.outercurve.org/) and part of the ASP.NET Open Source Gallery.
-
-The sources for the Outercurve NuGet clients can be found on [Codeplex](http://nuget.codeplex.com/), while the NuGet Gallery sources are available on [GitHub](https://github.com/NuGet/NuGetGallery).
+The sources for the NuGet clients can be found on [Codeplex](http://nuget.codeplex.com/), while sources for NuGet Gallery  services are available on [GitHub](https://github.com/NuGet/).
 
 ### NuGet Core project
 * License: Apache v2
 * Sources: [https://nuget.codeplex.com](https://nuget.codeplex.com/)
 
-Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If you want to build your own NuGet client, your best bet is to fetch the NuGet.Core project's [sources from Codeplex](https://nuget.codeplex.com/), or to run the following command in the Package Manager Console to install the [NuGet.Core package](http://www.nuget.org/packages/Nuget.Core/):
+Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If you are building a NuGet client, the fastest way to get started is by either fetching and building the NuGet.Core project's [sources from Codeplex](https://nuget.codeplex.com/), or using the NuGet.Core binaries directly by installing the [NuGet.Core package](http://www.nuget.org/packages/Nuget.Core/) into your project. The following command installs the NuGet.Core package using the Visual Studio Package Manager Console.
 
     Install-Package NuGet.Core
 
@@ -48,11 +46,11 @@ Drawbacks:
 * no fine-grained security
 * single NuGet feed per NuGet.Server application
 
-### Official NuGet Gallery
+### Official NuGet Gallery Services
 * License: Apache v2
-* Sources: [https://github.com/NuGet/NuGetGallery](https://github.com/NuGet/NuGetGallery)
+* Sources: [https://github.com/NuGet/NuGetGallery](https://github.com/NuGet/)
 
-The official NuGet Gallery is hosted at [http://www.nuget.org](http://www.nuget.org).
+The official NuGet Gallery Web site is hosted at [http://www.nuget.org](http://www.nuget.org).
 Availability info: [http://status.nuget.org/](http://status.nuget.org/)
 Statistics: [http://www.nuget.org/stats](http://www.nuget.org/stats)
 
@@ -60,16 +58,18 @@ To set up your own NuGet Gallery, fetch the sources from GitHub and follow the i
 
 Benefits:
 
+* micro-service architecture enables fine-grained control over the desired NuGet gallery services
 * indexed storage (faster querying)
 * simple user system (authentication, API-key per user, manage own packages, emails)
 * supports SSL
 
 Drawbacks:
 
+* gallery is comprised of several independent, loosely-coupled services, requiring fetching, building, and deploying code from multiple repositories
 * requires proper infrastructure (IIS, SqlServer)
 * requires .NET Framework 4.5 (.NET 4.5 is an in-place upgrade)
-* requires you to fetch the sources, compile everything and configure quite a lot in source code and configuration files (and repeat this step if you want to upgrade to a newer version)
-* there's a [NuGet Gallery Operations Toolkit](https://github.com/NuGet/NuGetOperations), but it's not designed nor intended to work with every NuGetGallery installation
+* requires you to fetch the sources, compile everything and configure quite a lot in source code and configuration files
+* upgrading to new versions of the gallery requires repeating the fetch/update/build/deploy loop
 
 ### NuGet Concierge
 * License: Apache v2 
@@ -79,7 +79,7 @@ Drawbacks:
 
 More info: [http://blog.nuget.org/20130816/introducung-nuget-concierge.html](http://blog.nuget.org/20130816/introducung-nuget-concierge.html)
 
-## Microsoft
+## Microsoft Projects
 Microsoft has extensively contributed to the development of the NuGet project. All contributions made by Microsoft employees are also open source and are donated (including copyrights) to the Outercurve Foundation.
 
 ### NuGet-based Microsoft Package Manager for Visual Studio 2013
@@ -107,7 +107,10 @@ More info:
 ### WebMatrix 3 NuGetPackageManager Extension
 WebMatrix 3 also has a NuGet Package Manager Extension which you can download using the built-in extension manager or directly from the WebMatrix Extensions Gallery at [http://extensions.webmatrix.com/packages/NuGetPackageManager/](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
 
-## NuGet Package Explorer
+## Non-Microsoft Projects
+In addition to Microsoft, many other individuals and companies have made significant contributions to the NuGet ecosystem. Each project listed here may have a different license than the core NuGet components so please confirm that the license terms are acceptable prior to use. 
+
+### NuGet Package Explorer
 One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https://twitter.com/dotnetjunky "dotnetjunky"), created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](http://docs.nuget.org/docs/creating-packages/using-a-gui-to-build-packages), download and inspect NuGet packages and their metadata.
 
 * Click-Once (desktop) application: [http://npe.codeplex.com](http://npe.codeplex.com)
@@ -115,7 +118,7 @@ One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https:/
 * Windows Phone 8 app: [http://www.windowsphone.com/en-us/store/app/nuget-package-explorer/3cb19574-1565-4f1c-aa42-f5cccc385053](http://www.windowsphone.com/en-us/store/app/nuget-package-explorer/3cb19574-1565-4f1c-aa42-f5cccc385053)
 * Silverlight: [http://dotnetjunky.info/slnpe.html](http://dotnetjunky.info/slnpe.html)
 
-## MyGet (or NuGet-as-a-Service)
+### MyGet (or NuGet-as-a-Service)
 MyGet is a NuGet server that allows you to create and host your own NuGet feeds. It is hosted on Windows Azure and has a freemium offering, meaning you can use it for free (within the constrains of [the free plan](https://www.myget.org/plans)) or subscribe to one of the paying plans if you require more resources or features. More info at [https://www.myget.org](https://www.myget.org).
 
 * Availability and history: [http://status.myget.org](http://status.myget.org).
@@ -165,7 +168,7 @@ Provides:
   * build failure notifications through email and downloadable build logs 
 * custom logo and domain name
 
-## Chocolatey
+### Chocolatey
 * License: Apache v2
 * Sources: [https://github.com/chocolatey](https://github.com/chocolatey)
 
@@ -190,7 +193,7 @@ Provides:
   * CygWin
   * Python
 
-## OctopusDeploy
+### OctopusDeploy
 [OctopusDeploy](http://octopusdeploy.com/) is a convention-based automated deployment solution using NuGet as a protocol. You can use the Community edition for free (limited to 1 project) or [buy](http://octopusdeploy.com/purchase) one of the paying editions.
 
 * Documentation: [http://octopusdeploy.com/documentation](http://octopusdeploy.com/documentation)
@@ -214,12 +217,12 @@ Provides:
 * Retention policies
 * Automation of common tasks for ASP.NET deployments (IIS configuration) and Windows Services
 
-## RedGate Deployment Manager 
+### RedGate Deployment Manager 
 [RedGate's Deployment Manager](http://www.red-gate.com/delivery/deployment-manager/) is a custom fork of the OctopusDeploy project. History separates shortly after v1.0 of OctopusDeploy, as explained in this post: [http://octopusdeploy.com/support/red-gate](http://octopusdeploy.com/support/red-gate)
 
 More info: [http://www.red-gate.com/delivery/deployment-manager/](http://www.red-gate.com/delivery/deployment-manager/)
 
-## SymbolSource
+### SymbolSource
 [SymbolSource](http://www.symbolsource.org/) is a hosted symbolserver that integrates with NuGet and is configurable in Visual Studio, allowing you to debug NuGet packages by downloading the symbols and sources on-demand.
 
 * Documentation: [http://www.symbolsource.org/Public/Wiki/Index](http://www.symbolsource.org/Public/Wiki/Index)
@@ -236,7 +239,7 @@ Provides:
 * Integration with MyGet.org (shared credentials and feed/repository security settings)
 * Integration with NuGet.org (default symbols repository)
 
-## CoApp
+### CoApp
 * License: Apache v2
 * Sources: [https://github.com/coapp/](https://github.com/coapp/)
 
@@ -247,7 +250,7 @@ The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post
 * Documentation: [http://coapp.org/pages/reference.html](http://coapp.org/pages/reference.html)
 * Twitter: [@CoApp](https://twitter.com/#!/coapp)
 
-## ProGet (Inedo)
+### ProGet (Inedo)
 [ProGet](http://inedo.com/proget/overview) is an on-premise NuGet server with a freemium model that also provides integration with the Inedo BuildMaster product.
 
 * Documentation: [http://inedo.com/support/documentation/table-of-contents](http://inedo.com/support/documentation/table-of-contents)
@@ -278,36 +281,36 @@ Provides:
 
 More info: [http://boxstarter.codeplex.com/documentation](http://boxstarter.codeplex.com/documentation)
 
-## SharpDevelop
+### SharpDevelop
 SharpDevelop was amongst the first IDEs other than Visual Studio to support NuGet.
 
 More info: [http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx)
 
-## Xamarin and MonoDevelop
+### Xamarin and MonoDevelop
 Xamarin Studio and MonoDevelop also have a NuGet extension, built on top of a custom build of the NuGet.Core.dll and a custom build of Microsoft's XML Document Transformation (XDT) library.
 
 More info: [https://github.com/mrward/monodevelop-nuget-addin](https://github.com/mrward/monodevelop-nuget-addin)
 
-## JetBrains ReSharper
+### JetBrains ReSharper
 As of v8.0 of [ReSharper](http://www.jetbrains.com/resharper/),  the built-in extension manager allows you to fetch ReSharper plug-in packages from a custom NuGet Gallery hosted at [https://resharper-plugins.jetbrains.com](https://resharper-plugins.jetbrains.com/). 
 
-## JetBrains TeamCity
+### JetBrains TeamCity
 [TeamCity](http://www.jetbrains.com/teamcity/) has a few build steps specifically designed to deal with NuGet package consumption, creation and publication. In addition, it also comes with a built-in NuGet feed collecting all packages produced in your build artifacts.
 
 More info: [http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-teamcity/](http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-teamcity/)
 
-## AppVeyor CI
+### AppVeyor CI
 
 [AppVeyor](http://www.appveyor.com) is Continuous Integration service for Windows developers to securely build and test code in parallel and deploy successful bits to on-premise or cloud environments. Every AppVeyor account comes with a private NuGet feed aggregating packages from all build artifacts and supporting publishing of your own packages.
 
 More info: [http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/](http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/)
 
-## Artifactory
+### Artifactory
 Artifactory is a repository manager with built-in support for various artifacts, including NuGet packages.
 
 More info: [http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
 
-## Sonatype Nexus
+### Sonatype Nexus
 Nexus is another repository manager with built-in support for NuGet and they even provide a "[What is NuGet for Java Developers](http://blog.sonatype.com/people/2012/02/what-is-nuget-for-java-developers/)" on their blog.
 
 More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://books.sonatype.com/nexus-book/reference/nuget.html)
@@ -335,7 +338,9 @@ The following pointers should help you get the maximum out of NuGet:
 * NuGet team on Twitter: [@nuget](http://twitter.com/nuget)
 * JabbR chat: [https://jabbr.net/#rooms/nuget](https://jabbr.net/#rooms/nuget)
 * MSDN article: [Top 10 NuGet (anti-)patterns](http://msdn.microsoft.com/en-us/magazine/jj851071.aspx)
-* Book: [Apress Pro NuGet](http://bit.ly/ProNuGet)
+* Books
+  * [Apress Pro NuGet](http://bit.ly/ProNuGet)
+  * [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
 * Xavier Decoster's blog: [http://www.xavierdecoster.com/tagged/NuGet](http://www.xavierdecoster.com/tagged/NuGet)
  
 ## Documentation for Individual Packages
@@ -344,6 +349,5 @@ The following pointers should help you get the maximum out of NuGet:
 
 NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and update the site accordingly.
 
-
 ## Adding Your Project
-If you have a NuGet ecosystem project that would be a valuable addition to this page, please feel free to submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs/Reference/Ecosystem.markdown).
+If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs/Reference/Ecosystem.markdown).
