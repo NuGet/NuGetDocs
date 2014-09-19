@@ -56,6 +56,10 @@ If the solution you are trying to migrate is open in Visual Studio, then changes
             <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
         </Target>
 
+### Migration Script
+
+Many users have requested a migration tool to disable the MSBuild-based package restore and convert to Automatic package restore. The NuGet team has decided not to provide a supported tool for this because of the high probability of edge cases that would be unhandled. However, [Owen Johnson](https://github.com/owen2) has authored a [PowerShell script](https://github.com/owen2/AutomaticPackageRestoreMigrationScript) that can work in many cases. It's available on GitHub and can be used at your own risk. In other words, before to commit to source control before running it, just in case it doesn't work in your scenario.
+
 ## Testing the migration
 
 1. Save the solution and close Visual Studio.
