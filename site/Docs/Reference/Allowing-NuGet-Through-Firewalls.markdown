@@ -24,6 +24,4 @@ The repository of packages at nuget.org is community curated. There’s no guara
 
 ## What Is In a Package?
 
-The packages are served as .nupkg files, which are themselves ZIP files ([OPC](http://en.wikipedia.org/wiki/Open_Packaging_Conventions#File_formats_using_the_OPC) to be specific). These .nupkg files will contain .js files, .dll files, .exe files, and other forms of executable code.
-
-If your firewall is performing scanning of the contents of the .nupkg, you should expect these (and other) forms of files to be included.
+The packages are served as .nupkg files, which are themselves ZIP files ([OPC](http://en.wikipedia.org/wiki/Open_Packaging_Conventions#File_formats_using_the_OPC) to be specific). These .nupkg files will contain .js files, .dll files, .exe files, and other forms of executable code. If your firewall is performing scanning of the contents of the .nupkg, you should expect these (and other) forms of files to be included.
