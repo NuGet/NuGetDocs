@@ -1,15 +1,10 @@
 # NuGet 2.8.3 Release Notes
 
-This release only included changes 
-## Notable Updates
+NuGet 2.8.3 is a minor update to our 2.8.1 release with some targeted fixes. 
 
-The most notable updates were in the NuGet.exe command-line and the NuGet.Server package (for self-hosted NuGet feeds).
+In this release, the support for NuGet Package Manager dialog was added for [ASP.NET vNext](http://www.asp.net/vnext), [DevExtreme](http://js.devexpress.com/) and [BizTalk (.btproj)](http://msdn.microsoft.com/en-us/library/aa577497.aspx) project types. It also includes reliability bug fixes related to enabling package restore and saving package manager options.  
 
-### Important NuGet.exe Bug Fixes
 
-1. [NuGet.exe Push fails and keeps retrying](https://nuget.codeplex.com/workitem/4000)
-1. [NuGet.exe Push does not send Basic Auth credentials correctly](https://nuget.codeplex.com/workitem/4109)
-1. [NuGet.exe Push won't follow temporary redirect](https://nuget.codeplex.com/workitem/4050)
 
 
 
