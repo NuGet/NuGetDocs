@@ -13,5 +13,6 @@ Invoking NuGet Services from inside Visual Studio
 Extensibility APIs
 Support for Native Projects
 Search Syntax
+Allowing NuGet Through Firewalls
 Known Issues
 Ecosystem
