@@ -10,7 +10,7 @@ on [Managing Packages for the Solution](#Managing_Packages_for_the_Solution).
 
 ## Finding a Package
 
-In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
+In Visual Studio **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
 (Note, in a Website project, right click on the **Bin** node.)
 
 ![Manage NuGet Packages menu option](images/manage-nuget-packages-menu-option.png)
