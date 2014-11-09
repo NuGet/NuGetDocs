@@ -12,9 +12,9 @@ An advantage of using NuGet is that you can use it to avoid checking in binaries
 
 This is especially interesting if you are using a [distributed version control](http://en.wikipedia.org/wiki/Distributed_revision_control) system like git because developers need to clone the entire repository, including the full history, before they can start working locally. Checking in binaries can cause significant repository bloat as binary files are typically stored without delta compression.
 
-NuGet has supported [restoring packages](http://docs.nuget.org/docs/reference/package-restore) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
+NuGet has supported [restoring packages](../Reference/Package-Restore) as part of the build for a long time now. The previous implementation had a chicken-and-egg problem for packages that want to extend the build process because NuGet restored packages while building the project. However, MSBuild doesn't allow extending the build during the build; one could argue that this an issue in MSBuild but I would argue that this is an inherent problem. Depending on which aspect you need to extend it might be too late to register by the time your package is restored.
 
-The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7 makes this super easy via a [simplified command line](http://docs.nuget.org/docs/release-notes/nuget-2.7#Simplified_Package_Restore_from_the_Command-Line). In order to restore packages for an entire solution all you need is to execute a command line like this:
+The cure to this problem is making sure that packages are restored as the first step in the build process. NuGet 2.7 makes this super easy via a [simplified command line](../Release-Notes/NuGet-2.7#Simplified_Package_Restore_from_the_Command-Line). In order to restore packages for an entire solution all you need is to execute a command line like this:
 
 	nuget.exe restore path\to\solution.sln
 
@@ -71,7 +71,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 &lt;/configuration>
 </code></pre>
 
-For more details have a look at the <a href="http://docs.nuget.org/docs/reference/nuget-config-settings">documentation on config settings</a>.
+For more details have a look at the [NuGet Config Settings](../Reference/NuGet-Config-Settings).
 </p>
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.

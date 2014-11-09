@@ -48,7 +48,7 @@ NuGet.exe is also used to create and publish packages.
 In Visual Studio go to the _Help_ > _About Microsoft Visual Studio_ menu and look for NuGet Package Manager. The version is 
 displayed next to that entry.
 
-![NuGet Version in the Visual Studio Extension Manager](images/nuget-version.png)
+![NuGet Version in the Visual Studio Extension Manager](Images/nuget-version.png)
 
 Alternatively, you can launch the Package Manager Console and type in `$host` to output information about NuGet 
 Powershell host including the version.
@@ -63,7 +63,7 @@ NuGet has full support for a variety of project templates like Windows, Web, Sil
 
 **How do I update packages that are part of visual studio templates ?**
 
-You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](http://docs.nuget.org/docs/release-notes/nuget-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
+You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](../Release-Notes/NuGet-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
 
 However, if you want to update the template in one go, instead of doing it for every project, you will have to manually update the template repository. Check out [Xavier Decoster's blog on the same.](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)
 
@@ -116,11 +116,11 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I get my package in the feed?**
 
-See the [Creating and publishing a package](../creating-packages/creating-and-publishing-a-package) page.
+See the [Creating and publishing a package](../Creating-Packages/Creating-and-Publishing-a-Package) page.
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
-See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](../creating-packages/creating-and-publishing-a-package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles).
+See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](../Creating-Packages/Creating-and-Publishing-a-Package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles).
 
 **How do I set up a local repository or feed?**
 
@@ -132,7 +132,7 @@ See [Bulk Publishing NuGet Packages](http://jeffhandley.com/archive/2012/12/13/B
 	
 **How can I create package out of a project or solution ?**
 
-You can use Nuget.exe [Pack command](http://docs.nuget.org/docs/reference/command-line-reference#Pack_Command) to create a NuGet package out a project.
+You can use Nuget.exe [Pack command](../Reference/Command-Line-Reference#Pack_Command) to create a NuGet package out a project.
 
 This command will take care adding all the NuGet packages installed in the project as package dependencies and referenced projects as "Reference" assemblies in the package.
 You can invoke this command in post build event to automate the build process.
@@ -155,7 +155,7 @@ Typically, a solution-level package installs new commands that can be called fro
 **How to install packages in a different location from the default "Packages" folder?**
 
 This can be done by setting the "repositoryPath" settings in nuget.config.
-More details [here.](http://docs.nuget.org/docs/release-notes/nuget-2.1)
+More details [here.](../Release-Notes/NuGet-2.1)
 
 **How do I avoid checking in packages folder to source control?**
 

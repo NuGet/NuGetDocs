@@ -71,13 +71,13 @@ menu option, enables you to easily visualize all the projects and their package 
 _**Important Note:** This feature takes advantage of the DGML support in Visual Studio. Creating the visualization is only 
 supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in Visual Studio Premium or Higher._
 
-![Package Visualizer](../workflows/Images/package-visualizer.png)
+![Package Visualizer](../Workflows/Images/package-visualizer.png)
 
-See the documentation on the [Package Visualizer](../workflows/package-visualizer) for more details.
+See the documentation on the [Package Visualizer](../Workflows/Package-Visualizer) for more details.
 
 ### Automatic Update Check for the NuGet Dialog
 Some versions of NuGet introduce new features expressed via the NuSpec file which are not understood by older versions of the NuGet dialog. 
-One example is the introduction in NuGet 1.4 for [specifying framework assemblies](http://localhost:34190/site/docs/release-notes/nuget-1.2#Specifying_Framework_Assembly_References_(GAC)). 
+One example is the introduction in NuGet 1.4 for [specifying framework assemblies](http://localhost:34190/site/Docs/Release-Notes/NuGet-1.2#Specifying_Framework_Assembly_References_(GAC)). 
 Because of this, it's important to use the latest version of NuGet to ensure you can use packages taking advantage of the latest features. 
 To make updates to NuGet more visible, the NuGet dialog contains logic to highlight when a newer version is available. 
 
@@ -119,7 +119,7 @@ in a path to the `packages.config` file and will attempt to update packages. Not
 ** Run Powershell scripts within the package.
 
 ### NuGet Server Support for Pushing Packages using NuGet.exe
-NuGet includes a simple way to host a [lightweight web based NuGet repository](http://docs.nuget.org/docs/creating-packages/hosting-your-own-nuget-feeds#Creating_Remote_Feeds) 
+NuGet includes a simple way to host a [lightweight web based NuGet repository](../Creating-Packages/Hosting-Your-Own-NuGet-Feeds#Creating_Remote_Feeds) 
 via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using NuGet.exe. 
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages 
 to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.

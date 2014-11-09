@@ -1,6 +1,6 @@
 # Supported extensitiblity APIs
 
-This page contains the comprehensive list of the supported extensibility API that are exported via MEF by the NuGet Visual Studio extension. Refer to [this tutorial](invoking-nuget-services-from-inside-visual-studio "Invoke NuGEt Services from inside Visual Studio") to learn how to invoke them.
+This page contains the comprehensive list of the supported extensibility API that are exported via MEF by the NuGet Visual Studio extension. Refer to [this tutorial](Invoking-NuGet-Services-from-inside-Visual-Studio "Invoke NuGEt Services from inside Visual Studio") to learn how to invoke them.
 
 ## IVsPackageInstaller interface
 

@@ -26,7 +26,7 @@ The following
 illustration shows the **Manage NuGet Packages** dialog box. Click on the **Online** tab to see 
 packages available in the official feed.
 
-![Manage NuGet Packages dialog](images/Manage-NuGet-Packages-Dialog.png)
+![Manage NuGet Packages dialog](Images/Manage-NuGet-Packages-Dialog.png)
 
 For information about how to use the **Manage NuGet Packages** dialog box, see
 [Using the Manage NuGet Packages Dialog Box](Managing-NuGet-Packages-Using-The-Dialog)
@@ -35,7 +35,7 @@ For information about how to use the **Manage NuGet Packages** dialog box, see
 
 The following illustration shows the **Package Manager Console** window.
 
-![Package Manager Console](images/package-console.png)
+![Package Manager Console](Images/package-console.png)
 
 For information about how to use the Package Manager Console, see 
 [Using the Package Manager Console](Using-the-Package-Manager-Console)

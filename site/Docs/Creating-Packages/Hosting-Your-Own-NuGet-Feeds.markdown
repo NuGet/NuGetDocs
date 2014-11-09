@@ -15,7 +15,7 @@ to configure and set-up, including [MyGet](http://myget.org),
 [Inedo's ProGet](http://inedo.com/proget), 
 [JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview), and 
 [Sonatype's Nexus](http://www.sonatype.org/nexus/). See
-[An Overview of the NuGet Ecosystem](../reference/ecosystem) to learn more about these 
+[An Overview of the NuGet Ecosystem](../Reference/Ecosystem) to learn more about these 
 options. 
 
 Otherwise, you can create a local feed on disk or build your own remote feed using NuGet's 

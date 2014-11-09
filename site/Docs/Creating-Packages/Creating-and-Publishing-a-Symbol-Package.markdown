@@ -31,7 +31,7 @@ or from a project file:
 ## Symbol Package Structure
 
 A symbol package can target multiple target frameworks in the same way that a library package does, so the 
-structure of the `lib` folder should look exactly as described in [Creating and Publishing a Package](~/docs/creating-packages/Creating-and-Publishing-a-Package),
+structure of the `lib` folder should look exactly as described in [Creating and Publishing a Package](~/Docs/Creating-Packages/Creating-and-Publishing-a-Package),
 plus it should contain PDB files alongside DLLs. An example symbol package that targets .NET 4.0 and Silverlight 
 4 would have this layout:
 	
