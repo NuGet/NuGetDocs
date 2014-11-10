@@ -26,7 +26,7 @@ In order to have the team’s internal package repository available for all proj
 
 We can now see that the source was added by running the ‘nuget.exe sources’ command from any directory beneath c:\myteam as shown below:
 
-![Package sources from parent nuget config](images/releasenotes-21-cfg-hierarchy.png)
+![Package sources from parent nuget config](Images/releasenotes-21-cfg-hierarchy.png)
  
 NuGet.config files are searched for in the following order:
 
@@ -50,17 +50,17 @@ NuGet 2.1 provides more granular control over the location of the packages folde
 In this example, the shared nuget.config file specifies a shared packages folder for every project that is created beneath C:\myteam, regardless of depth. Note that if you have an existing packages folder underneath your solution root, you will need to delete it before NuGet will place packages in the new location.
 
 ## Support for Portable Libraries
-[Portable libraries](http://msdn.microsoft.com/en-us/library/gg597391.aspx) is a feature first introduced with .NET 4 that enables you to build assemblies that can work without modification on different Microsoft platforms, from versions of the.NET Framework to Silverlight to Windows Phone and even Xbox 360 (though at this time, NuGet does not support the Xbox portable library target).  By extending the [package conventions](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#Package_Conventions) for framework versions and profiles, NuGet 2.1 now supports portable libraries by enabling you to create packages that have compound framework and profile target lib folders. 
+[Portable libraries](http://msdn.microsoft.com/en-us/library/gg597391.aspx) is a feature first introduced with .NET 4 that enables you to build assemblies that can work without modification on different Microsoft platforms, from versions of the.NET Framework to Silverlight to Windows Phone and even Xbox 360 (though at this time, NuGet does not support the Xbox portable library target).  By extending the [package conventions](../Creating-Packages/Creating-and-Publishing-a-Package#Package_Conventions) for framework versions and profiles, NuGet 2.1 now supports portable libraries by enabling you to create packages that have compound framework and profile target lib folders. 
 
 As an example, consider the following portable class library’s available target platforms.
 
-![Portable library creation dialog](images/releasenotes-21-plib.png)
+![Portable library creation dialog](Images/releasenotes-21-plib.png)
  
 After the library is built and the command ‘nuget.exe pack MyPortableProject.csproj’ is run, the new portable library package folder structure can be seen by examining the contents of the generated NuGet package.
 
-![Portable library package layout](images/releasenotes-21-plib-layout.png)
+![Portable library package layout](Images/releasenotes-21-plib-layout.png)
 
-As you can see, the portable library folder name convention follows the pattern ‘portable-{framework 1}+{framework n}’ where the framework identifiers follow the existing [framework name and version conventions](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#Framework_Names). One exception to the name and version conventions is found in the framework identifier used for Windows Phone.  This moniker should use the framework name ‘wp’ (wp7, wp71 or wp8). Using ‘silverlight-wp7’, for example, will result in an error.
+As you can see, the portable library folder name convention follows the pattern ‘portable-{framework 1}+{framework n}’ where the framework identifiers follow the existing [framework name and version conventions](../Creating-Packages/Creating-and-Publishing-a-Package#Framework_Names). One exception to the name and version conventions is found in the framework identifier used for Windows Phone.  This moniker should use the framework name ‘wp’ (wp7, wp71 or wp8). Using ‘silverlight-wp7’, for example, will result in an error.
 
 When installing the package that is created from this folder structure, NuGet can now apply its framework and profile rules to multiple targets, as specified in the folder name.  Behind NuGet’s matching rules is the principle that “more specific” targets will take precedence over “less specific” ones.  This means that monikers targeting a specific platform will always be preferred over portable ones if they are both compatible with a project.  Additionally, if multiple portable targets are compatible with a project, NuGet will prefer the one where the set of platforms supported is “closest” to the project referencing the package.
 
@@ -109,7 +109,7 @@ In all of the above changes, the old framework names will continue to be fully s
 ## Improved Search in Package Manager Dialog
 Over the past several iterations, changes have been introduced to the NuGet gallery that greatly improved the speed and relevance of package searches.  However, these improvements were limited to the nuget.org Web site.  NuGet 2.1 makes the improved search experience available through the NuGet package manager dialog.  As an example, imagine that you wanted to find the Windows Azure Caching Preview package.  A reasonable search query for this package may be “Azure Cache”.  In previous versions of the package manager dialog, the desired package would not even be listed on the first page of results.  However, in NuGet 2.1, the desired package now shows up at the top of the search results.
 
-![Package manager dialog search](images/releasenotes-21-vsdlg-search.png)
+![Package manager dialog search](Images/releasenotes-21-vsdlg-search.png)
  
 ## Force Package Update
 Prior to NuGet 2.1, NuGet would skip updating a package when there was a not a high version number.  This introduced friction for certain scenarios – particularly in the case of build or CI scenarios where the team did not want to increment the package version number with each build.  The desired behavior was to force an update regardless.  NuGet 2.1 addresses this with the ‘reinstall’ flag.  For example, previous versions of NuGet would result in the following when attempting to update a package that did not have a more recent package version:
@@ -130,7 +130,7 @@ Another scenario where the reinstall flag proves beneficial is that of framework
 ## Edit Package Sources Within Visual Studio
 In previous versions of NuGet, updating a package source from within the Visual Studio options dialog required deleting and re-adding the package source.  NuGet 2.1 improves this workflow by supporting update as a first class function of the configuration user interface.
 
-![Package manager configuration dialog](images/releasenotes-21-edit-pkg-source.png)
+![Package manager configuration dialog](Images/releasenotes-21-edit-pkg-source.png)
  
 ## Bug Fixes
 NuGet 2.1 includes many bug fixes. For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Fixed&type=All&priority=All&release=NuGet%202.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).

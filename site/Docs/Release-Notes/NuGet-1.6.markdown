@@ -40,7 +40,7 @@ for when you want to add it back in.
 
 NuGet 1.6 allows unchecking a package source to disable it, but keep it around.
 
-![Disabling a package](../Start-Here/images/package-source-with-disabled-source.png)
+![Disabling a package](../Start-Here/Images/package-source-with-disabled-source.png)
 
 ## Bug Fixes
 NuGet 1.6 had a total of 106 work items fixed. 95 of those were classified as bugs and 10 of those were 

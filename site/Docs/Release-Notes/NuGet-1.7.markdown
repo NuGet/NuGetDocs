@@ -20,7 +20,7 @@ automatically open this file after it's finished installing your package.
 The Manage NuGet Packages dialog now includes a dropdown which provides option to show prerelease 
 packages.
 
-![Showing prerelease packages](images/prerelease-dropdown.png)
+![Showing prerelease packages](Images/prerelease-dropdown.PNG)
 
 ### Show Package Restore button when package files are missing
 When you open the Package Manager console or the Manager NuGet packages dialog, NuGet will check 
@@ -29,9 +29,9 @@ from the <b>packages</b> folder. If these two conditions are met, NuGet will not
 convenient Restore button. Clicking this button will trigger NuGet to restore all the missing 
 packages.
 
-![Package restore button on dialog](images/packagerestore-dialog.png)
+![Package restore button on dialog](Images/packagerestore-dialog.PNG)
 
-![Package restore button on console](images/packagerestore-console.png)
+![Package restore button on console](Images/packagerestore-console.PNG)
 
 ### Add solution-level packages.config file
 In previous versions of NuGet, each project has a <b>packages.config</b> file which keeps track of what 

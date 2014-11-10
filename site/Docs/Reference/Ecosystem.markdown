@@ -24,7 +24,7 @@ Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If
 
 This is a command line wrapper around NuGet.Core.
 
-More info: [NuGet Command Line Reference](http://docs.nuget.org/reference/command-line-reference)
+More info: [NuGet Command Line Reference](Command-Line-Reference)
 
 ### NuGet Server project
 * License: Apache v2
@@ -34,7 +34,7 @@ To create a basic NuGet server and point it to a local folder or network share, 
 
     Install-Package NuGet.Server
 
-More info: [Install the NuGet.Server package](http://docs.nuget.org/docs/creating-packages/hosting-your-own-nuget-feeds#Step_2%3a_Install_the_NuGet.Server_Package)
+More info: [Install the NuGet.Server package](../Creating-Packages/Hosting-Your-Own-NuGet-Feeds#Step_2%3a_Install_the_NuGet.Server_Package)
 
 Benefits:
 
@@ -90,8 +90,8 @@ You can download this Visual Studio extension using the Visual Studio Extension 
 
 More info:
 
-* Using the [Manage NuGet Packages Dialog](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog)
-* Using the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+* Using the [Manage NuGet Packages Dialog](../Start-Here/managing-nuget-packages-using-the-dialog)
+* Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
 ### NuGet-based Microsoft Package Manager for Visual Studio 2012/2010
 * License: [Microsoft Software License (custom)](http://visualstudiogallery.msdn.microsoft.com/site/27077b70-9dad-4c64-adcf-c7cf6bc9970c/eula?licenseType=None)
@@ -101,14 +101,14 @@ You can download this Visual Studio extension using the Visual Studio Extension 
 
 More info:
 
-* Using the [Manage NuGet Packages Dialog](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog)
-* Using the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+* Using the [Manage NuGet Packages Dialog](../Start-Here/managing-nuget-packages-using-the-dialog)
+* Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
 ### WebMatrix 3 NuGetPackageManager Extension
 WebMatrix 3 also has a NuGet Package Manager Extension which you can download using the built-in extension manager or directly from the WebMatrix Extensions Gallery at [http://extensions.webmatrix.com/packages/NuGetPackageManager/](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
 
 ## NuGet Package Explorer
-One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https://twitter.com/dotnetjunky "dotnetjunky"), created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](http://docs.nuget.org/docs/creating-packages/using-a-gui-to-build-packages), download and inspect NuGet packages and their metadata.
+One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https://twitter.com/dotnetjunky "dotnetjunky"), created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](../Creating-Packages/Using-a-GUI-to-build-packages), download and inspect NuGet packages and their metadata.
 
 * Click-Once (desktop) application: [http://npe.codeplex.com](http://npe.codeplex.com)
 * Windows 8 app: [http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19/m/ROW](http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19/m/ROW)
@@ -242,7 +242,7 @@ Provides:
 
 The [CoApp](http://coapp.org/) project originally aimed to create a vibrant Open Source ecosystem on Windows by providing the technologies needed to build a complete community-driven Package Management System, along with tools to enable developers to take advantage of features of the Windows platform. 
 
-The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) to mesh with the NuGet project and the collaborative result is visible in NuGet 2.5 where [support for native packages](http://docs.nuget.org/docs/release-notes/nuget-2.5#Support_for_Native_projects) was first introduced. The CoApp project is still building [additional tools](http://coapp.org/pages/releases.html) to enhance C/C++ support in NuGet. 
+The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) to mesh with the NuGet project and the collaborative result is visible in NuGet 2.5 where [support for native packages](../Release-Notes/NuGet-2.5#Support_for_Native_projects) was first introduced. The CoApp project is still building [additional tools](http://coapp.org/pages/releases.html) to enhance C/C++ support in NuGet. 
 
 * Documentation: [http://coapp.org/pages/reference.html](http://coapp.org/pages/reference.html)
 * Twitter: [@CoApp](https://twitter.com/#!/coapp)

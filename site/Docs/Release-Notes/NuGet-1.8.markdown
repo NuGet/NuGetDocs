@@ -27,15 +27,15 @@ NuGet 1.8 now supports the ability to create separate packages for localized res
 
 To install a package with localized resources, a developer explicitly selects the localized package from the repository. At present, the NuGet gallery does not give any kind of special treatment to satellite packages.
 
-![Package manager dialog with localized pacakges](images/dlg-w-loc-packs.png)
+![Package manager dialog with localized pacakges](Images/dlg-w-loc-packs.png)
  
 Because the satellite package lists a dependency to its core package, both the satellite and core packages are pulled into the NuGet packages folder and installed.  
 
-![Packages folder with localized packages](images/fldr-loc-packs.png)
+![Packages folder with localized packages](Images/fldr-loc-packs.png)
  
 Additionally, while installing the satellite package, NuGet also recognizes the culture string naming convention and then copies the localized resource assembly into the correct subfolder within the core package so that it can be picked by the .NET Framework.
 
-![Core package folder with copied resource folder](images/fldr-copied-loc.png)
+![Core package folder with copied resource folder](Images/fldr-copied-loc.png)
  
 One existing bug to note with satellite packages is that NuGet does not copy localized resources to the bin folder for Web site projects.  This issue will be fixed in the next release of NuGet.
 
@@ -46,7 +46,7 @@ In NuGet 1.8, we laid the groundwork for supporting an important constraint on p
 
 There are 2 ways to provide this consent. The first can be found in the package manager configuration dialog as shown below.  This method is primarily intended for developer machines.
 
-![Package manager configuration dialog](images/pr-consent-configdlg.png)
+![Package manager configuration dialog](Images/pr-consent-configdlg.png)
  
 The second method is to set the environment variable “EnableNuGetPackageRestore” to the value “true”.  This method is intended for unattended machines such as CI or build servers.
 

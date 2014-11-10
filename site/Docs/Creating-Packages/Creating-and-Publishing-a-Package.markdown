@@ -5,7 +5,7 @@
 1. [Download NuGet.exe](http://nuget.codeplex.com/releases/view/58939)
 2. Make sure NuGet.exe is in your path
 
-If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/docs/creating-packages/using-a-gui-to-build-packages).
+If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](Using-a-GUI-to-build-packages).
 
 ## Share your Package
 Upgrade to the latest version of NuGet.exe (_[or download it here](http://nuget.codeplex.com/releases/view/58939)_)
@@ -30,7 +30,7 @@ Publish your package
 3. Make sure that NuGet.exe is in your path
 
 To learn about the nuget commands, run <code>nuget help</code> or refer to 
-the [NuGet.exe Command Line Reference](~/docs/reference/command-line-reference).
+the [NuGet.exe Command Line Reference](~/Docs/Reference/Command-Line-Reference).
 
 ## Creating a Package
 There are a few approaches to creating a package. Most packages are very simple and contain 
@@ -144,7 +144,7 @@ Some packages contain more than just assemblies. They may contain
 
 1. Content and source code that should be injected into the target project.
 2. [PowerShell scripts](#powershell) and executables.
-3. [Configuration file and source code transformations](~/docs/creating-packages/Configuration-File-and-Source-Code-Transformations).
+3. [Configuration file and source code transformations](~/Docs/Creating-Packages/Configuration-File-and-Source-Code-Transformations).
 
 To create a package in this way, you can layout a directory structure that follows 
 the NuGet conventions.

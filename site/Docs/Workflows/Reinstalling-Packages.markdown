@@ -6,7 +6,7 @@ Reinstalling a package is a simple act of uninstalling a package and installing 
 
 ## Background and Reference
 
-1.	[Package can support multiple .NET Framework Versions and Profiles](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles)
+1.	[Package can support multiple .NET Framework Versions and Profiles](../Creating-Packages/Creating-and-Publishing-a-Package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles)
 2.	[Original Codeplex discussion on –reinstall switch](https://nuget.codeplex.com/discussions/256212)
 3.	[Codeplex Issue with info on various cases involved with -reinstall switch](http://nuget.codeplex.com/workitem/1779)
 4.	[Blog Post: A quick tutorial on the Update-Package command](http://blog.nuget.org/20121231/a-quick-tutorial-on-update-package-command.html)

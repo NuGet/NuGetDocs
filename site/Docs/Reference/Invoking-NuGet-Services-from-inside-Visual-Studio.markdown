@@ -19,7 +19,7 @@ Contains methods to install NuGet packages into projects.
 
 - **IVsTemplateWizard** - This interface is designed for project/item templates to include pre-installed packages, and is *not* meant to be invoked from code.
 
-Here I will not discuss the detailed APIs in each of the interfaces. You can find detailed references of them [here](extensibility-apis "Extensibility API references").
+Here I will not discuss the detailed APIs in each of the interfaces. You can find detailed references of them [here](Extensibility-APIs "Extensibility API references").
 
 Instead I will show you a step-by-step guide on how to reference the interfaces and use them in your code.
 
