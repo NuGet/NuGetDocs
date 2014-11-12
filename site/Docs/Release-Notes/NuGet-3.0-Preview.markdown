@@ -30,7 +30,7 @@ We now have a combined experience, where you can install, update, or uninstall a
 
 ![Uninstall a Package](Images/NuGet-3.0-Preview/uninstall-package.png)
 
-By using the "Installed" filter, you can then easy see your installed packages, which ones have updates available, and then you can either uninstall or update the package by changing the version selection to see change the action available.
+By using the "Installed" filter, you can then easily see your installed packages, which ones have updates available, and then you can either uninstall or update the package by changing the version selection to see change the action available.
 
 ![Update a Package](Images/NuGet-3.0-Preview/update-package.png)
 
