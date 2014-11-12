@@ -28,9 +28,9 @@ Our previous UI had 3 tabs for Installed, Online, and Updates. The packages list
 
 We now have a combined experience, where you can install, update, or uninstall a package regardless of how you got the package selected. To assist with the specific workflows, we now have a Filter dropdown that lets you filter the packages visible, but then the actions available for the package are consistent.
 
-By using the "Installed" filter, you can then easy see your installed packages, which ones have updates available, and then you can either uninstall or update the package by changing the version selection to see change the action available.
-
 ![Uninstall a Package](Images/NuGet-3.0-Preview/uninstall-package.png)
+
+By using the "Installed" filter, you can then easy see your installed packages, which ones have updates available, and then you can either uninstall or update the package by changing the version selection to see change the action available.
 
 ![Update a Package](Images/NuGet-3.0-Preview/update-package.png)
 
@@ -44,9 +44,11 @@ In the example below, we can see that installing Microsoft.AspNet.SignalR will r
 
 ### Installation Options
 
-Using the PowerShell Console, you've had control over a couple of notable installation options. We've now brought those features into the UI as well. You can now control the dependency resolution behavior for how versions of the dependencies are selected. You can also specify the action to take when content files from packages conflict with files already in your project.
+Using the PowerShell Console, you've had control over a couple of notable installation options. We've now brought those features into the UI as well. You can now control the dependency resolution behavior for how versions of the dependencies are selected.
 
 ![Dependency Behavior](Images/NuGet-3.0-Preview/dependency-behavior.png)
+
+You can also specify the action to take when content files from packages conflict with files already in your project.
 
 ![File Conflict Action](Images/NuGet-3.0-Preview/file-conflict-action.png)
 
