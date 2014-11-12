@@ -139,9 +139,10 @@ If you have installed Visual Studio 2010 SP1 Beta, you may notice that if you le
 and close Visual Studio, it will crash. This is a known issue of Visual Studio and will be fixed in SP1 RTM release. 
 For now, just ignore the crash or uninstall SP1 Beta if you can.
 
-## The element 'metadata' in namespace 'schemas.microsoft.com/packaging/2010/07/nuspec.xsd' has invalid child element exception occurs
+## The element 'metadata' ... has invalid child element exception occurs
 
-If you installed packages built with a pre-release version of NuGet, you might encounter this error message when 
+If you installed packages built with a pre-release version of NuGet, you might encounter an error message stating
+"The element 'metadata' in namespace 'schemas.microsoft.com/packaging/2010/07/nuspec.xsd' has invalid child element" when 
 running the RTM version of NuGet with that project. You'll need to uninstall and then re-install each package 
 using the RTM version of NuGet.
 

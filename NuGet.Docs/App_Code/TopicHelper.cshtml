@@ -4,11 +4,13 @@
         @foreach (var topic in Topic.GetTopicsWithSubTopics(folder).Where(t => t.SubTopics.Any()))
         {
             <li class="topic">
-                <h2><a name="@topic.Title.Replace(" ", "-")"></a>@topic.Title</h2>
+                <header>
+                    <h1><a name="@topic.Title.Replace(" ", "-")"></a>@topic.Title</h1>
+                </header>
                 <ol class="subTopics">
                     @foreach (var subTopic in topic.SubTopics)
                     {
-                        <li class="subTopic"><h3><a href="@subTopic.Url">@subTopic.Title</a></h3></li>
+                        <li class="subTopic"><h2><a href="@subTopic.Url">@subTopic.Title</a></h2></li>
                     }
                 </ol>
             </li>
@@ -20,7 +22,7 @@
     <ol class="subTopics">
         @foreach (var subTopic in Topic.GetSubTopics(topicFolder))
         {
-            <li class="subTopic"><h3><a href="@subTopic.Url">@subTopic.Title</a></h3></li>
+            <li class="subTopic"><h2><a href="@subTopic.Url">@subTopic.Title</a></h2></li>
         }
     </ol>
 }

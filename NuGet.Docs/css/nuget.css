@@ -6,7 +6,7 @@ html {
 body {
     background-color: #D4D6D7;
     min-width: 600px;
-    margin: 0px auto;
+    margin: 0 auto;
     font-family: 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Sans-Serif';
 }
 
@@ -51,13 +51,13 @@ a:hover {
 }
 
 .header .logo {
-    margin: 20px 20px 0px 0px;
+    margin: 20px 20px 0 0;
     width: 120px;
 }
 
 .header .search {
     float: right;
-    margin: 24px 0px 0px 0px;
+    margin: 24px 0 0 0;
     height: 30px;
     border: 1px solid #0085B2;
     white-space: nowrap;
@@ -99,7 +99,7 @@ a:hover {
     height: 30px;
     background-image: url(/images/search-button.png);
     border: 0px;
-    margin: 0px 0px 0px -4px;
+    margin: 0 0 0 -4px;
     padding: 0px;
 }
 
@@ -151,8 +151,6 @@ nav ul li a:hover {
 
 .twitter {
     float: right;
-    margin-top: 2px;
-    height: 24px;
 }
 
 .content {
@@ -167,10 +165,24 @@ nav ul li a:hover {
     clear: both;
 }
 
+.content header h1 {
+    font-family: 'Segoe UI Semibold','Segoe UI','Arial';
+    font-size: 18pt;
+    padding-top: 10px;
+}
+
+.content h2 {
+    font-size: 12pt;
+}
+
 .content article {
     background-color: white;
-    margin-top: 40px;
-    padding: 0px 40px 20px 40px;
+    padding: 0 40px 20px 40px;
+}
+
+.content article:first-child {
+    background-color: white;
+    padding: 0 40px 20px 40px;
 }
 
 footer {
@@ -182,6 +194,6 @@ footer {
 
 footer p {
     text-align: center;
-    margin: 0px auto 5px auto;
+    margin: 0 auto 5px auto;
     font-size: .7em;
 }        
