@@ -34,6 +34,22 @@ By using the "Installed" filter, you can then easily see your installed packages
 
 ![Update a Package](Images/NuGet-3.0-Preview/update-package.png)
 
+### Version Consolidation
+
+It's common to have the same package installed into multiple projects within your solution. Sometimes the versions installed into each project can drift apart and it is necessary to consolidate the versions in use. NuGet 3.0 Preview introduces a new feature for just this scenario.
+
+The solution-level package management window can be accessed by right-clicking on the solution and choosing Manage NuGet Packages for Solution. From there, if you select a package that is installed into multiple projects, but with different versions in use, a new "Consolidate" action becomes available. In the screen shot below, `Newtonsoft.Json` was installed into the `SamplesClassLibrary` with version `6.0.4` and installed into `SamplesConsoleApp` with version `5.0.4`.
+
+![Consolidate Versions](Images/NuGet-3.0-Preview/consolidate.png)
+
+Here's the workflow for consolidating onto a single version.
+
+1. Select the `Newtonsoft.Json` package in the list
+1. Choose `Consolidate` from the `Action` dropdown
+1. Use the `Version` dropdown to select the version to be consolidated onto
+1. Check the boxes for the projects that should be consolidated onto that version (note that projects already on the selected version will be greyed out)
+1. Click the `Consolidate` button to perform the consolidation
+
 ### Operation Previews
 
 Regardless of which operation you're performing--install/update/uninstall--the new UI now offers a way to preview the changes that will be made to your project. This preview will show any new packages that will be installed, packages that will be updated, and packages that will be uninstalled, along with packages that will be unchanged during the operation.
