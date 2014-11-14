@@ -318,6 +318,24 @@ More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://bo
 
 More info: [http://nugetserver.net/](http://nugetserver.net/)
 
+## Klondike
+
+[Klondike](https://github.com/themotleyfool/Klondike) is a fully functional NuGet server that can be installed
+as an IIS site or as a Windows Service (using OWIN self-hosting). Klondike aims to be an alternative to
+[NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) that offers much faster performance by indexing
+all package metadata with Lucene.Net.
+
+Klondike is an open source alternative that's faster than NuGet.Server and easier to deploy than NuGet Gallery.
+
+Provides:
+
+* Windows Authentication
+* API Key Authentication
+* Automatic mirroring of packages from a public feed
+* Symbol Package and symbol server support
+
+More info: [https://github.com/themotleyfool/Klondike](https://github.com/themotleyfool/Klondike)
+
 ## scriptcs
 [scriptcs](http://scriptcs.net/) offers a cross-platform scripting environment for authoring C#. Scripts can be created via a text editor and executed or code can be executed interactively in the scriptcs [REPL] (https://github.com/scriptcs/scriptcs/wiki/REPL). scriptcs allows script authors to install NuGet packages and use them in their scripts. scriptcs also leverages NuGet for extensibility as [script packs] (https://github.com/scriptcs/scriptcs/wiki/Script-Packs) and [modules] (https://github.com/scriptcs/scriptcs/wiki/Modules) are installed as NuGet packages.
 
