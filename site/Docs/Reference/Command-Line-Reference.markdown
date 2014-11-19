@@ -86,10 +86,6 @@ Specify the Id and version of the package to delete from the server.
         
     nuget delete MyPackage 1.0 -NoPrompt
 
-
-
-
-
 ##  Help Command
 
 Displays general help information and help information about other commands.
@@ -399,8 +395,16 @@ Specify optional search terms.
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
-Note: to enable this command, navigate to [http://build.nuget.org/](http://build.nuget.org/) (there's a Guest log in option),
-copy NuGet.ServerExtensions.dll from Artifacts,CommandLine.ServerExtensions to your local disk in the same directory as NuGet.exe.
+### Mirror Command Setup
+
+To enable this command:
+
+1. Navigate to the NuGet TeamCity [Build Server](http://build.nuget.org/)
+1. Click the [Log in as a guest](http://build.nuget.org/guestLogin.html?guest=1) link at the bottom of the login screen
+1. Navigate to the _Client_ -> _NuGet for Visual Studio_ -> _NuGet for Visual Studio 2013_ build and browse the build artifacts
+	- click the _Artifacts_ link; or 
+	- pull down the arrow beside the _Artifacts_ link
+1. Download `NuGet.ServerExtensions.dll` to your local disk and save to the same directory as `NuGet.exe`.
 
 ### Mirror Command Usage
     nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
