@@ -144,7 +144,7 @@ namespace NuGet.Docs
                 // Skip the heading if the id ended up empty somehow (like an empty heading)
                 if (id != null)
                 {
-                    anchor.SetAttributeValue("name", HttpUtility.HtmlAttributeEncode(id.ToLowerInvariant()));
+                    anchor.SetAttributeValue("name", HttpUtility.HtmlAttributeEncode(id.ToLowerInvariant().Trim()));
                     headings.Add(new Heading(id, Convert.ToInt32(heading.Name[1]), heading.InnerText));
                 }
             }
