@@ -19,16 +19,46 @@ In addition to these files, NuGet modifies the project files in the solution to 
 
 With these details in mind, follow the steps below for your particular setup.
 
+### Close down Visual Studio
+If the solution you are trying to migrate is open in Visual Studio, then changes may be lost. Visual Studio may overwrite/ignore your changes in some cases and the NuGet extension will also try to re-enable Package Restore when it sees some projects in the solution are missing it.
+
 ### If you are using TFS
 
 1. Remove the NuGet.exe and NuGet.targets files from the solution's .nuget folder. Make sure the files themselves are also removed from the solution workspace.
-1. Retain the NuGet.Config file to continue to bypass adding packages to source control.
-1. Edit each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. To do so, search for Nuget.targets and remove the entire &lt;Import Project&gt; line where it is referenced.
+2. Retain the NuGet.Config file to continue to bypass adding packages to source control.
+3. Edit each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. Open the project file(s) in the editor of  your choice and remove the following settings:
+
+        <RestorePackages>true</RestorePackages>  
+        ...
+        <Import Project="$(SolutionDir)\.nuget\nuget.targets" />  
+        ...
+        <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">  
+            <PropertyGroup>
+                <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+            </PropertyGroup>
+            <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+        </Target>
+
 
 ### If you are not using TFS
 
 1. Remove the .nuget folder from your solution. Make sure the folder itself is also removed from the solution workspace.
-1. Edit each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. To do so, search for Nuget.targets and remove the entire &lt;Import Project&gt; line where it is referenced.
+2. Edit each project file (e.g., .csproj, .vbproj) in the solution and remove any references to the NuGet.targets file. Open the project file(s) in the editor of  your choice and remove the following settings:
+
+        <RestorePackages>true</RestorePackages>  
+        ...
+        <Import Project="$(SolutionDir)\.nuget\nuget.targets" />  
+        ...
+        <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">  
+            <PropertyGroup>
+                <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+            </PropertyGroup>
+            <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+        </Target>
+
+### Migration Script
+
+Many users have requested a migration tool to disable the MSBuild-based package restore and convert to Automatic package restore. The NuGet team has decided not to provide a supported tool for this because of the high probability of edge cases that would be unhandled. However, [Owen Johnson](https://github.com/owen2) has authored a [PowerShell script](https://github.com/owen2/AutomaticPackageRestoreMigrationScript) that can work in many cases. It's available on GitHub and can be used at your own risk. In other words, be sure to commit to source control before running it, just in case it doesn't work in your scenario.
 
 ## Testing the migration
 

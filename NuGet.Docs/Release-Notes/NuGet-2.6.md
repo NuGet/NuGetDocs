@@ -19,7 +19,7 @@ Starting with NuGet 2.6, we will publish two extensions as below:
 2. [NuGet Package Manager for Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 
 With this split, the [nuget.org](https://nuget.org) home page's "Install NuGet" button
-will now take you to the [installing NuGet](http://docs.nuget.org/docs/start-here/installing-nuget)
+will now take you to the [installing NuGet](../Start-Here/installing-nuget)
 page, where you can find more information about installing the different NuGet clients.
 
 ### XDT Web.config transformation support
@@ -37,7 +37,7 @@ NuGet client. NuGet 2.6 includes this integration.
 #### How it works
 
 To take advantage of NuGet’s XDT support, the mechanics look similar to those of the
-[current config transformation feature](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
+[current config transformation feature](../Creating-Packages/Configuration-File-and-Source-Code-Transformations).
 Transformation files are added to the package’s content folder. However, while config
 transformations use a single file for both installation and uninstallation, XDT
 transformations enable fine-grained control over both of these processes using the
@@ -103,7 +103,7 @@ This feature is utilized by Visual Studio 2013, where a file is installed at:
 
 Within this file, a new package source called ".NET Framework Packages" is configured.
 
-![NuGet Config File machine wide settings](../reference/images/NuGet-Config-File-Machine-Wide.png)
+![NuGet Config File machine wide settings](../Reference/Images/NuGet-Config-File-Machine-Wide.png)
 
 ### Contextualizing Search
 

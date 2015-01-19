@@ -1,6 +1,6 @@
 # Support for Native Projects
 
-In the [NuGet 2.5 release notes](http://docs.nuget.org/docs/release-notes/nuget-2.5), we called out that NuGet now has support for native projects.
+In the [NuGet 2.5 release notes](../Release-Notes/NuGet-2.5), we called out that NuGet now has support for native projects.
 
 ## Visual Studio Support
 

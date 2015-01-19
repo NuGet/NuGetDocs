@@ -18,7 +18,7 @@ Since WebMatrix 3 was released, new features have been introduced into NuGet tha
 
 ![An error occurred. The schema version is incompatible. Please upgrade NuGet to the latest version.](Images/NuGet-2.8/webmatrix-schema-version.png)
 
-This latest release provides compatibility with the newest NuGet packages, preventing this error from occurring. New versions of packages including Microsoft.AspNet.WebPages can now be installed in WebMatrix.  Some of these packages were using NuGet features such as [XDT config transforms](http://docs.nuget.org/docs/release-notes/nuget-2.6#XDT_Web.config_transformation_support), which wasn't supported in WebMatrix until now.
+This latest release provides compatibility with the newest NuGet packages, preventing this error from occurring. New versions of packages including Microsoft.AspNet.WebPages can now be installed in WebMatrix.  Some of these packages were using NuGet features such as [XDT config transforms](../Release-Notes/NuGet-2.6#XDT_Web.config_transformation_support), which wasn't supported in WebMatrix until now.
 
 ### Zero-Byte DLLs in bin Folder
 
@@ -28,7 +28,7 @@ Some users have reported that after installing NuGet packages in WebMatrix that 
 
 ## Other Recent Improvements
 
-When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](http://docs.nuget.org/docs/release-notes/nuget-2.8#WebMatrix_NuGet_Client_Updates), we didn't mention the specific new features that update introduced.
+When NuGet Package Manager 2.8 was released for Visual Studio, we also released NuGet Package Manager 2.5.0 for WebMatrix.  While this was mentioned in the [NuGet 2.8 Release Notes](../Release-Notes/NuGet-2.8#WebMatrix_NuGet_Client_Updates), we didn't mention the specific new features that update introduced.
 
 ### Update All
 

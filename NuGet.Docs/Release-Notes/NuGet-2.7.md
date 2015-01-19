@@ -66,7 +66,7 @@ In order to use Automatic Package Restore in Visual Studio, you only need to tak
 
 1. Don't check in your `packages` folder
 
-There are several ways to omit your `packages` folder from source control. For more information, see the [Omitting Packages from Source Control](/docs/reference/package-restore#Omitting_Packages_from_Source_Control) section of the [Package Restore](/docs/reference/package-restore) documentation.
+There are several ways to omit your `packages` folder from source control. For more information, see the [Omitting Packages from Source Control](../Reference/Package-Restore#Omitting_Packages_from_Source_Control) section of the [Package Restore](../Reference/Package-Restore) documentation.
 
 While all users are implicitly opted into automatic package restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
@@ -82,11 +82,11 @@ This new Restore command allows you to easily restore all packages for a solutio
 1. nuget.exe restore .
 1. nuget.exe restore
 
-The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](http://docs.nuget.org/docs/reference/command-line-reference#Restore_Command).
+The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](../Reference/Command-Line-Reference#Restore_Command).
 
 #### The New Package Restore Workflow
 
-We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](http://docs.nuget.org/docs/release-notes/nuget-2.5#Automatic_import_of_msbuild_targets_and_props_files) from the \build folder.
+We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../Release-Notes/NuGet-2.5#Automatic_import_of_msbuild_targets_and_props_files) from the \build folder.
 
 In addition to the work we've done ourselves, we're also working with some important partners to round this new approach out. We don't have concrete timelines for any of these yet, but each partner is as excited as we are about the new approach.
 
@@ -114,7 +114,7 @@ Many times after retargeting or upgrading your project, you find that some NuGet
 
 If we detect that any of your packages were affected by the retargeting or upgrade, we'll produce immediate build errors to let you know. In addition to the immediate build error, we also persist a `requireReinstallation="true"` flag in your packages.config file for all packages that were affected by the retargeting, and each subsequent build in Visual Studio will raise a build warnings for those packages.
 
-While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](/docs/workflows/reinstalling-packages) that these error messages direct you to.
+While NuGet cannot take automatic action to reinstall affected packages, we hope this indication and warning will guide help you discover when you need to reinstall packages. We are also working on [package reinstallation guidance documentation](../Workflows/reinstalling-packages) that these error messages direct you to.
 
 ### NuGet Configuration Defaults
 
@@ -130,7 +130,7 @@ While not required to use this feature, we expect companies to deploy NuGetDefau
 
 *Note that this feature will never cause a package source to be removed from a developer's NuGet settings. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
 
-See [NuGet Configuration Defaults](/docs/reference/nuget-config-defaults) for more information about this feature.
+See [NuGet Configuration Defaults](../Reference/NuGet-Config-Defaults) for more information about this feature.
 
 ### Renaming the Default Package Source
 

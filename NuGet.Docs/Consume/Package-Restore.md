@@ -2,7 +2,7 @@
 
 Many developers like to omit binaries from their source control repository. This can be beneficial in multiple ways:
 
-1. Distributed version control systems (DCVS) include every version of every file within the repository, and binary files that are updated frequently can lead to significant repository bloat and more time required to clone the repository.
+1. Distributed version control systems (DVCS) include every version of every file within the repository, and binary files that are updated frequently can lead to significant repository bloat and more time required to clone the repository.
 1. With the packages included in the repository, team members may add references directly to package contents on disk rather than referencing packages through NuGet.
 1. It becomes harder to "clean" your solution of any unused package folders, as you need to ensure you don't delete any package folders still in use.
 
@@ -10,17 +10,17 @@ To promote a cleaner developer environment while also reducing repository size, 
 
 ## Package Restore Approaches
 
-NuGet offers two approaches to using package restore. Automatic Package Restore is the NuGet team's recommended approach to Package Restore within Visual Studio, and it was introduced in NuGet 2.7. Command-Line Package Restore is required when building a solution from the command-line; it was introduced in early versions of NuGet, but was improved in NuGet 2.7. The MSBuild-integrated package restore approach is the original Package Restore implementation and though it continues to work in many scenarios, it does not cover some full set of scenarios addressed by the other two approaches.
+NuGet offers two approaches to using package restore. Automatic Package Restore is the NuGet team's recommended approach to Package Restore within Visual Studio, and it was introduced in NuGet 2.7. Command-Line Package Restore is required when building a solution from the command-line; it was introduced in early versions of NuGet, but was improved in NuGet 2.7. The MSBuild-integrated package restore approach is the original Package Restore implementation and though it continues to work in many scenarios, it does not cover the full set of scenarios addressed by the other two approaches.
 
 ### Automatic Package Restore in Visual Studio
 
-Beginning with NuGet 2.7, the NuGet Visual Studio extension integrates into Visual Studio's build events and restores missing packages when a build begins. This feature is enabled by default, but developers can [opt out](#opting_out) if desired.
+Beginning with NuGet 2.7, the NuGet Visual Studio extension integrates into Visual Studio's build events and restores missing packages when a build begins. This feature is enabled by default, but developers can [opt out](#Opting_Out) if desired.
 
 Here's how it works:
 
 1. On project or solution build, Visual Studio raises an event that a build is beginning within the solution.
-1. NuGet responds to this event and checks for packages.config files included in the solution.
-1. For each packages.config file found, its packages are enumerated and checked for existence in the solution's `packages` folder.
+1. NuGet responds to this event and checks for `packages.config` files included in the solution.
+1. For each `packages.config` file found, its packages are enumerated and checked for existence in the solution's `packages` folder.
 1. Any missing packages are downloaded from the user's configured (and enabled) package sources, respecting the order of the package sources.
 1. As packages are downloaded, they are unzipped into the solution's `packages` folder.
 
@@ -31,7 +31,7 @@ Before any of the above steps are taken however, NuGet verifies that consent is 
 
 These two options are available on the **Package Manager** General settings in Visual Studios options.
 
-Additionally, if NuGet recognizes that the MSBuild-Integrated package restore approach is enabled for the solution, automatic package restore is skipped. MSBuild-Integrated package restore is identified by checking the existence of the .nuget\\NuGet.targets file at the solution root.
+Additionally, if NuGet recognizes that the MSBuild-Integrated package restore approach is enabled for the solution, automatic package restore is skipped. MSBuild-Integrated package restore is identified by checking the existence of the `.nuget\NuGet.targets` file at the solution root.
 
 This approach to package restore offers several advantages:
 
@@ -42,15 +42,15 @@ This approach to package restore offers several advantages:
 
 ### Command-Line Package Restore
 
-As a complement to Automatic Package Restore, NuGet offers a simple command-line approach to restoring packages before invoking MSBuild, ensuring that all referenced NuGet packages are available before the build starts. NuGet 2.7 introduced a new [Restore Command](/docs/reference/command-line-reference#Restore_command) that provides a single command that restores all packages for an entire solution. Prior to NuGet 2.7, the [Install Command](/docs/reference/command-line-reference#Install_command) was used to restore packages, but only for a single packages.config file.
+As a complement to Automatic Package Restore, NuGet offers a simple command-line approach to restoring packages before invoking MSBuild, ensuring that all referenced NuGet packages are available before the build starts. NuGet 2.7 introduced a new [Restore Command](Command-Line-Reference#Restore_command) that provides a single command that restores all packages for an entire solution. Prior to NuGet 2.7, the [Install Command](Command-Line-Reference#Install_command) was used to restore packages, but only for a single `packages.config` file.
 
-Usage of NuGet.exe's [Restore Command](/docs/reference/command-line-reference#Restore_command) is very straightforward. Given a folder D:\\projects\\contoso that contains a single solution file contoso.sln, the following variations of the command will each restore all packages used by projects within the solution:
+Usage of `NuGet.exe`'s [Restore Command](Command-Line-Reference#Restore_command) is very straightforward. Given a folder `D:\projects\contoso` that contains a single solution file contoso.sln, the following variations of the command will each restore all packages used by projects within the solution:
 
-1. D:\\projects\\contoso\\> nuget.exe restore
-1. D:\\projects\\contoso\\> nuget.exe restore contoso.sln
-1. D:\\projects\\> nuget.exe restore contoso
+1. `D:\projects\contoso\> nuget.exe restore`
+1. `D:\projects\contoso\> nuget.exe restore contoso.sln`
+1. `D:\projects\> nuget.exe restore contoso`
 
-These three use cases are the most common, but other scenarios do exist. For more information on the Restore and Install commands, see the [Command-Line Reference](/docs/reference/command-line-reference).
+These three use cases are the most common, but other scenarios do exist. For more information on the Restore and Install commands, see the [Command-Line Reference](Command-Line-Reference).
 
 ### Command-Line Package Restore wrapped in MSBuild
 
@@ -60,9 +60,9 @@ In order to use the command line based approach with existing build servers, suc
 2. Many projects already have their own MSBuild-based build process
 3. It provides built-in support for aggregated logging and error reporting  
 
-This approach differs from the MSBuild-Integrated Package Restore as this doesn't run *while* building the sources. Instead, it runs this *before* anything else is being built. 
+This approach differs from the MSBuild-Integrated Package Restore as this doesn't run *while* building the sources but instead it runs this *before* anything else is built. 
 
-You can find a more detailed walkthrough [here](/docs/reference/package-restore-with-team-build).
+You can find a more detailed walkthrough on the [Package Restore with Team Foundation Build](package-restore/team-build).
 
 ### MSBuild-Integrated Package Restore
 
@@ -70,22 +70,22 @@ Prior to NuGet 2.7, an MSBuild-Integrated Package Restore approach was used and 
 
 The MSBuild-Integrated approach requires user action to enable it for a solution. This is done from within the Visual Studio Solution Explorer by right-clicking on the solution and choosing 'Enable NuGet Package Restore'. On this gesture, the following actions occur:
 
-1. NuGet downloads a copy of NuGet.exe and NuGet.targets from https://www.nuget.org.
-1. NuGet saves these files, along with a NuGet.config file, into a .nuget folder at the root of the solution.
-1. NuGet updates all projects in the soluton to have them import the .nuget\NuGet.targets file, extending MSBuild to invoke NuGet.exe's [Install Command](/docs/reference/command-line-reference#Install_Command) during build.
+1. NuGet downloads a copy of `NuGet.exe` and `NuGet.targets` from https://www.nuget.org.
+1. NuGet saves these files, along with a `NuGet.config` file, into a `.nuget` folder at the root of the solution.
+1. NuGet updates all projects in the soluton to have them import the `.nuget\NuGet.targets` file, extending MSBuild to invoke `NuGet.exe`'s [Install Command](Command-Line-Reference#Install_Command) during build.
 
-After that initial setup, building the solution through either Visual Studio or MSBuild from the command-line will restore packages during the build. NuGet.exe verifies package restore consent before downloading any missing packages, verifying only the 'Allow NuGet to download missing packages' setting.
+After that initial setup, building the solution through either Visual Studio or MSBuild from the command-line will restore packages during the build. `NuGet.exe` verifies package restore consent before downloading any missing packages, verifying only the 'Allow NuGet to download missing packages' setting.
 
 The MSBuild-integrated approach to package restore has some drawbacks that vary in severity by situation.
 
 1. Requires additional files within the solution folder.
 1. Requires a targets file to be imported into all projects in the solution; this can introduce issues when projects are shared among multiple solutions.
-1. Projects fail to load if the NuGet.targets file cannot be found.
+1. Projects fail to load if the `NuGet.targets` file cannot be found.
 1. Projects don't build successfully if any of the restored NuGet packages extend MSBuild through a targets/props file import.
 
-For more information on the MSBuild-integrated package restore approach, visit the [Using NuGet without committing packages](/docs/workflows/using-nuget-without-committing-packages) page.
+For more information on the MSBuild-Integrated Package Restore approach, visit the [Using NuGet without committing packages](../Docs/Workflows/Using-NuGet-without-committing-packages) page.
 
-To switch from MSBuild-integrated to automatic package restore, see the walkthrough of [migrating to Automatic Package Restore](/docs/workflows/migrating-to-automatic-package-restore).
+To switch from MSBuild-Integrated Package Restore to Automatic Package Restore, see the walkthrough of [migrating to Automatic Package Restore](../Docs/Workflows/Migrating-to-Automatic-Package-Restore).
 
 ## Package Restore Consent
 
@@ -99,7 +99,7 @@ Starting with NuGet 2.0 and continuing through NuGet 2.6, package restore consen
 
 There are two ways to opt into package restore consent, as needed by NuGet 2.0-2.6.
 
-1. From Visual Studio's options, select the `Package Manager` node and its "General" settings. Check the box to "Allow NuGet to download missing packages during build" and click OK. *Note that in NuGet 2.7, the phrase "during build" was removed from this setting.* This setting is stored in the user's %AppData%\NuGet\NuGet.config file, but it can also be specified in any NuGet.config file that applies to the solution being built, as documented on the [NuGet Config File] page.
+1. From Visual Studio's options, select the `Package Manager` node and its "General" settings. Check the box to "Allow NuGet to download missing packages during build" and click OK. *Note that in NuGet 2.7, the phrase "during build" was removed from this setting.* This setting is stored in the user's `%AppData%\NuGet\NuGet.config` file, but it can also be specified in any `NuGet.config` file that applies to the solution being built, as documented on the [NuGet Config File] page.
 1. Specify an environment variable called `EnableNuGetPackageRestore` with a value of `true` before launching Visual Studio or MSBuild. 
 
 ### NuGet 2.7+
@@ -114,7 +114,7 @@ Even though package restore *consent* is on by default, users still need to choo
 Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder.
 
 ##### TFS
-Use the .nuget\NuGet.config file to disable source control integration, as explained on the [NuGet Config Settings](/docs/reference/nuget-config-settings) document under the "Source control integration" section.
+Use the `.nuget\NuGet.config` file to disable source control integration, as explained on the [NuGet Config Settings](NuGet-Config-Settings) document under the "Source control integration" section.
 
 Using this approach, rather than cloaking the `packages` folder or otherwise ignoring it, allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
 
@@ -129,7 +129,7 @@ Users uncomfortable automatically downloading missing packages during build have
 
 If desired, a user or company can employ machine-wide NuGet configuration to opt all users out of package restore consent by default. While users will still be able to apply additional NuGet configuration to re-enable package restore consent, it can provide a good default experience in some environments.
 
-To accomplish this, NuGet's [config extensibility point](/docs/reference/nuget-config-file#NuGet_config_extensibility_point) can be utilized to specify one or both of the opt out settings. Here's a sample NuGet.config file that opts users out of both global package restore consent as well as automatic package restore.
+To accomplish this, NuGet's [config extensibility point](NuGet-Config-File#NuGet_config_extensibility_point) can be utilized to specify one or both of the opt out settings. Here's a sample `NuGet.config` file that opts users out of both global package restore consent as well as automatic package restore.
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<configuration>
@@ -144,13 +144,13 @@ To accomplish this, NuGet's [config extensibility point](/docs/reference/nuget-c
 
 ### Package Restore Consent Errors with NuGet 2.7
 
-If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of NuGet.exe in your solution's .nuget folder is version 2.6 or earlier, where package restore consent was still OFF by default.
+If you are using NuGet 2.7+, but you are working in a solution that had enabled package restore through the MSBuild-integrated approach, it's possible that package restore will still fail due to a lack of package restore consent. This happens when the version of `NuGet.exe` in your solution's `.nuget` folder is version 2.6 or earlier, where package restore consent was still OFF by default.
 
 If you have upgraded to NuGet 2.7+ but your solution fails to build stating that you haven't given consent, you have a few options for proceeding:
 
-1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your %AppData%\NuGet\NuGet.config file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
-1. **Update the version of NuGet.exe in your .nuget folder.** To do this, run `nuget.exe update -self` from your .nuget folder, which will download the latest version of NuGet.exe and replace the version in the .nuget folder. The latest version of NuGet.exe will infer consent to be ON even when not explicitly saved in the NuGet.config file.
-1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](/docs/workflows/migrating-to-automatic-package-restore).
+1. **Force save your NuGet settings with consent given.** To do this, open Visual Studio's options and under Package Manager, choose General. Uncheck and then re-check the boxes for consent and click OK. This forces your `%AppData%\NuGet\NuGet.config` file to be saved with consent explicitly given, allowing NuGet 2.6 and earlier to see that you've given consent.
+1. **Update the version of `NuGet.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `NuGet.exe` and replace the version in the `.nuget` folder. The latest version of `NuGet.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.config` file.
+1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../Docs/Workflows/Migrating-to-Automatic-Package-Restore).
 
 ## Further Reading
 

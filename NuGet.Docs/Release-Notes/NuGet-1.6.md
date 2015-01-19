@@ -14,12 +14,12 @@ then you likely need to restart Visual Studio using "Run as Administrator."
 
 ### Support for Semantic Versioning and Prerelease Packages
 NuGet 1.6 introduces support for Semantic Versioning (SemVer). For more details on how it uses 
-SemVer, read the [Versioning documentation](../Reference/Versioning).
+SemVer, read the [Versioning documentation](../Create/Versioning).
 
 ### Using NuGet Without Checking In Packages (Package Restore)
 NuGet 1.6 now has first class support for the workflow in which NuGet packages are not added 
 to source control, but instead are restored at build time if missing. For more details, read 
-the [Using NuGet without committing packages to source control](../Workflows/Using-NuGet-without-committing-packages) 
+the [Using NuGet without committing packages to source control](../Docs/Workflows/Using-NuGet-without-committing-packages) 
 topic.
 
 ### Item Templates That Install NuGet Packages 
@@ -28,7 +28,7 @@ NuGet 1.6 also adds support for Visual Studio item templates. Item templates can
 NuGet packages that are installed when the template in invoked.
 
 For more details on how to change a project/item template to install NuGet packages, read the 
-[Packages in Visual Studio Templates](../Reference/Packages-in-Visual-Studio-Templates) topic.
+[Packages in Visual Studio Templates](../Create/Packages-in-Visual-Studio-Templates) topic.
 
 ### Support for disabling package sources
 When multiple package sources are configured, NuGet will look in each one for packages during 
@@ -40,7 +40,7 @@ for when you want to add it back in.
 
 NuGet 1.6 allows unchecking a package source to disable it, but keep it around.
 
-![Disabling a package](../Start-Here/images/package-source-with-disabled-source.png)
+![Disabling a package](../Docs/Start-Here/Images/package-source-with-disabled-source.png)
 
 ## Bug Fixes
 NuGet 1.6 had a total of 106 work items fixed. 95 of those were classified as bugs and 10 of those were 

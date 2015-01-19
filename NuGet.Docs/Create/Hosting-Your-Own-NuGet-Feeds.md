@@ -13,7 +13,8 @@ A feed can be local (a folder on the local machine or a network folder), or remo
 There are several third-party NuGet Servers available that make remote private feeds easy
 to configure and set-up, including [MyGet](http://myget.org), 
 [Inedo's ProGet](http://inedo.com/proget), 
-[JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview), and 
+[JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview),
+[NuGet Server](http://nugetserver.net/), and 
 [Sonatype's Nexus](http://www.sonatype.org/nexus/). See
 [An Overview of the NuGet Ecosystem](/Contribute/Ecosystem) to learn more about these 
 options. 
@@ -68,7 +69,7 @@ You can also host a remote (or internal) feed on a server that runs IIS.
 
 Go to the **File** | **New** | **Project** menu option (or just hit CTRL + SHIFT + N)
 which will bring up the new project dialog and
-select **ASP.NET Empty Web Application** as in the following screenshot.
+select **ASP.NET Empty Web Application** as in the following screenshot. Please note that the steps here including NuGet.Server package are intended for use with C# project only.
 
 ![New Project dialog box](/images/create/New-Project-dialog-box.png)
 

@@ -10,7 +10,7 @@ on [Managing Packages for the Solution](#managing-packages-for-the-solution).
 
 ## Finding a Package
 
-In **Solution Explorer**, right-click the **Project** or **References** node and click **Manage NuGet Packages...**. 
+In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
 (Note, in a Website project, right click on the **Bin** node.)
 
 ![Manage NuGet Packages menu option](/images/consume/manage-nuget-packages-menu-option.png)
@@ -105,7 +105,7 @@ shows a newer version of jQuery available.
 
 Select the package you want to update and click **Update** to update the package to the latest version. 
 
-If a [package includes release notes](../reference/nuspec-reference), they will show up in place of the 
+If a [package includes release notes](../Docs/Reference/Nuspec-Reference), they will show up in place of the 
 description in the right pane. 
 
 # Managing Packages for the Solution

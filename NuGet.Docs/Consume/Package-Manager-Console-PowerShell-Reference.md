@@ -398,7 +398,7 @@ PARAMETERS
         Required: false
         
     <strong>-IgnoreDependencies</strong>
-        Updates all of the package’s dependencies to the latest version. False by default.
+        Updates none of the package’s dependencies to the latest version. False by default.
         
         Required: false
         

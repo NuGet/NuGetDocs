@@ -13,7 +13,7 @@ At a high level re-branding the gallery is as simple as these three steps.
 
 Follow the instructions on setting up a local version of the NuGet Gallery [here](https://github.com/NuGet/NuGetGallery/blob/master/README.markdown), with the following changes:
 
-1. First fork the gallery from the main fork to your own version.  This can be accomplished be clicking the fork button at the top of the github page for the NuGet Gallery Repository.
+1. First fork the gallery from the main fork to your own version.  This can be accomplished be clicking the fork button at the top of the GitHub page for the NuGet Gallery Repository.
 2. When you clone down, you will use the url of your own fork of the gallery, not the main NuGetGallery fork.
 3. After cloning add a reference to the main NuGetGallery repository by typing `git add remote nuget https://gitub.com/NuGet/NuGetGallery.git` in your GitBash/Powershell terminal.
 
@@ -122,4 +122,3 @@ Either click the inspect element or use the keyboard shortcut (`Ctrl+Alt+I`).  M
 
 ![Screenshot of hovering over an element in the browser in inspectmode (1), with the VS also visible and having that element in the IDE highlighted(2)] (/images/contribute/browserlink2.jpg)
 
-You now know which file you need to create a override of in the Branding folder.

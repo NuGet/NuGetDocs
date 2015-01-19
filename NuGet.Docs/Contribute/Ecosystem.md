@@ -22,7 +22,7 @@ Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If
 
 This is a command line wrapper around NuGet.Core.
 
-More info: [NuGet Command Line Reference](http://docs.nuget.org/reference/command-line-reference)
+More info: [NuGet Command Line Reference](Command-Line-Reference)
 
 ### NuGet Server project
 * License: Apache v2
@@ -32,7 +32,7 @@ To create a basic NuGet server and point it to a local folder or network share, 
 
     Install-Package NuGet.Server
 
-More info: [Install the NuGet.Server package](http://docs.nuget.org/docs/creating-packages/hosting-your-own-nuget-feeds#Step_2%3a_Install_the_NuGet.Server_Package)
+More info: [Install the NuGet.Server package](../Creating-Packages/Hosting-Your-Own-NuGet-Feeds#Step_2%3a_Install_the_NuGet.Server_Package)
 
 Benefits:
 
@@ -90,8 +90,8 @@ You can download this Visual Studio extension using the Visual Studio Extension 
 
 More info:
 
-* Using the [Manage NuGet Packages Dialog](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog)
-* Using the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+* Using the [Manage NuGet Packages Dialog](../Start-Here/managing-nuget-packages-using-the-dialog)
+* Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
 ### NuGet-based Microsoft Package Manager for Visual Studio 2012/2010
 * License: [Microsoft Software License (custom)](http://visualstudiogallery.msdn.microsoft.com/site/27077b70-9dad-4c64-adcf-c7cf6bc9970c/eula?licenseType=None)
@@ -101,8 +101,8 @@ You can download this Visual Studio extension using the Visual Studio Extension 
 
 More info:
 
-* Using the [Manage NuGet Packages Dialog](http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog)
-* Using the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+* Using the [Manage NuGet Packages Dialog](../Start-Here/managing-nuget-packages-using-the-dialog)
+* Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
 ### WebMatrix 3 NuGetPackageManager Extension
 WebMatrix 3 also has a NuGet Package Manager Extension which you can download using the built-in extension manager or directly from the WebMatrix Extensions Gallery at [http://extensions.webmatrix.com/packages/NuGetPackageManager/](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
@@ -245,7 +245,7 @@ Provides:
 
 The [CoApp](http://coapp.org/) project originally aimed to create a vibrant Open Source ecosystem on Windows by providing the technologies needed to build a complete community-driven Package Management System, along with tools to enable developers to take advantage of features of the Windows platform. 
 
-The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) to mesh with the NuGet project and the collaborative result is visible in NuGet 2.5 where [support for native packages](http://docs.nuget.org/docs/release-notes/nuget-2.5#Support_for_Native_projects) was first introduced. The CoApp project is still building [additional tools](http://coapp.org/pages/releases.html) to enhance C/C++ support in NuGet. 
+The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) to mesh with the NuGet project and the collaborative result is visible in NuGet 2.5 where [support for native packages](../Release-Notes/NuGet-2.5#Support_for_Native_projects) was first introduced. The CoApp project is still building [additional tools](http://coapp.org/pages/releases.html) to enhance C/C++ support in NuGet. 
 
 * Documentation: [http://coapp.org/pages/reference.html](http://coapp.org/pages/reference.html)
 * Twitter: [@CoApp](https://twitter.com/#!/coapp)
@@ -315,6 +315,33 @@ Nexus is another repository manager with built-in support for NuGet and they eve
 
 More info: [http://books.sonatype.com/nexus-book/reference/nuget.html](http://books.sonatype.com/nexus-book/reference/nuget.html)
 
+## NuGet Server
+
+[NuGet Server](http://nugetserver.net/) is a fully functional NuGet server you install as a Windows service. Purchase for $5 US, download and double click the installer. NuGet Server is basically a wrapper of the [NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) package, but installed through a wizard. NuGet Server is distributed with its own web server, so you don't need IIS.
+
+More info: [http://nugetserver.net/](http://nugetserver.net/)
+
+## Klondike
+
+[Klondike](https://github.com/themotleyfool/Klondike) is a fully functional NuGet server that can be installed
+as an IIS site or as a Windows Service (using OWIN self-hosting). Klondike aims to be an alternative to
+[NuGet.Server](http://www.nuget.org/packages/NuGet.Server/) that offers much faster performance by indexing
+all package metadata with Lucene.Net.
+
+Klondike is an open source alternative that's faster than NuGet.Server and easier to deploy than NuGet Gallery.
+
+Provides:
+
+* Windows Authentication
+* API Key Authentication
+* Automatic mirroring of packages from a public feed
+* Symbol Package and symbol server support
+
+More info: [https://github.com/themotleyfool/Klondike](https://github.com/themotleyfool/Klondike)
+
+## scriptcs
+[scriptcs](http://scriptcs.net/) offers a cross-platform scripting environment for authoring C#. Scripts can be created via a text editor and executed or code can be executed interactively in the scriptcs [REPL] (https://github.com/scriptcs/scriptcs/wiki/REPL). scriptcs allows script authors to install NuGet packages and use them in their scripts. scriptcs also leverages NuGet for extensibility as [script packs] (https://github.com/scriptcs/scriptcs/wiki/Script-Packs) and [modules] (https://github.com/scriptcs/scriptcs/wiki/Modules) are installed as NuGet packages.
+
 ## Other NuGet-based utilities
 There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
 
@@ -327,6 +354,7 @@ There are quite a few other tools and utilities building further on top of NuGet
 * [NuGit](http://nugit.org/)
 * [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
 * [HotNuget](http://hotnuget.com) (Compare package usage)
+* [DefinitelyTyped](http://definitelytyped.org/) ([Automatic](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript Type [Definitions published to NuGet](http://www.nuget.org/packages?q=DefinitelyTyped))
 
 ## Training Materials and References
 Using a new tool or technology usually comes with a learning curve. Luckily for you, NuGet has no steap learning curve it all! In fact, anyone can [get started consuming packages in no time](http://www.youtube.com/watch?feature=player_embedded&v=PboPfoptU2c). Authoring packages however, and especially authoring good packages, as well as embracing NuGet in your automated build and deployment processes requires some research in order to get things right.

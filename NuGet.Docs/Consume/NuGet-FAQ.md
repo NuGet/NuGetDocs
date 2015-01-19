@@ -22,7 +22,7 @@ Please check out the [Known Issues](/Release-Notes/Known-Issues) page.
 
 **Does NuGet support Mono?**
 
-The command-line application (*nuget.exe*) builds and runs under Mono and allows you to create packages in Mono.
+The command-line application (*nuget.exe*) builds and runs under Mono (version 3.2 or later) and allows you to create packages in Mono.
 This is especially true for Mono on Windows, but there are some known issues for Mono on Linux and OS X.  To review
 the known issues, [search for Mono in our issue list](http://nuget.codeplex.com/workitem/list/basic?field=Votes&direction=Descending&issuesToDisplay=Open&keywords=mono&emailSubscribedItemsOnly=false).
 
@@ -62,7 +62,7 @@ NuGet has full support for a variety of project templates like Windows, Web, Sil
 
 **How do I update packages that are part of visual studio templates ?**
 
-You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](http://docs.nuget.org/docs/release-notes/nuget-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
+You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](../Release-Notes/NuGet-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
 
 However, if you want to update the template in one go, instead of doing it for every project, you will have to manually update the template repository. Check out [Xavier Decoster's blog on the same.](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)
 

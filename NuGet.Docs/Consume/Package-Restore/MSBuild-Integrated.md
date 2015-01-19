@@ -1,7 +1,6 @@
 ﻿# Update as of NuGet 2.7
 
-**With NuGet 2.7, a new Automatic Package Restore approach has been introduced. For more information about
-that approach as well as a new NuGet.exe Restore Command, see the [Package Restore reference document](/docs/reference/package-restore).**
+**This document discusses the old MSBuild-integrated package restore approach. With NuGet 2.7, a new Automatic Package Restore approach has been introduced. For more information about that approach as well as a new NuGet.exe Restore Command, see the [Package Restore reference document](../../Docs/Reference/Package-Restore).**
 
 # Using NuGet without committing packages to source control
 
@@ -60,23 +59,6 @@ The disableSourceControlIntegration setting instructs version control systems li
 With this in place, any time a project is compiled, the build task will look at each project's packages.config file and for each package listed, ensure that the corresponding package exists within the packages folder. For any missing package, the build task will download and unpack the package.
 
 In this scenario, NuGet will grab the exact version when restoring a package. It will not perform any upgrades.
-
-<p class="caution"><b>Be sure to check in your _repositories.config_ file.</b> Some version control systems, 
-such as Subversion (a.k.a. SVN), may require additional configuration to allow you to selectively ignore an arbitrary set of files in a path, _but_ include a specific file, such as your _repositories.config_ in that path.
-<br/>
-For SVN specifically, you may use SVN:IGNORE to prevent paths with certain patterns from being committed (and making a mess in your pending changes views).
-By adding the following patterns as an SVN:IGNORE to your "packages" directory, the repositories.config will be committed, but nuget package directories will be ignored.
-<br/>
-<pre><code>
-*[!c][!o][!n][!f][!i][!g]
-*.config?*
-</code></pre>
-<br/>
-Similar ignore patterns are probably available for most source control systems.
-<br/>
-In rare cases, you'll need to agree with your team to include the folder from the root of your solution, explicitly include the _repositories.config_ file but _not_ check in any packages. Without 
-the file you may experience problems loading or building a multi-project solution with package restore enabled.
-</p>
 
 ## Mono
 On mono you can run `xbuild` on the project file or on your solution and it should successfully 

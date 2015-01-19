@@ -111,6 +111,8 @@ For example, use the `Uninstall-Package elmah` command as shown in the following
 
 ![uninstall package command](/images/consume/package-manager-console-uninstall-package.png)
 
+For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
+
 The following package elements are removed:
 
 * References in the project. In **Solution Explorer**, you no longer see the library in the *References* folder or the *bin* folder. (You might have to build the project to see it removed from the *bin* folder.)

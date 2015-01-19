@@ -184,15 +184,15 @@ To create your package.
 ### Creating a solution-level package
 
 A solution-level package is one that installs a tool or additional commands
-for the Package Manager console, but does not add references or content
-to any projects in your solution. For example, the
+for the Package Manager console, but does not add references, content, or
+build customizations to any projects in your solution. For example, the
 [psake](http://nuget.org/packages/psake) package installs Powershell scripts
 you can use to automate your build process.
 
 A package is considered a solution-level package if it does not contain
-any files in its __lib__ or __content__ directories.  If the package has
-dependencies, they also must not have files in their __lib__ or __content__
-directories.
+any files in its __lib__, __content__, or __build__ directories.  If the package
+has dependencies, they also must not have files in their __lib__, __content__,
+or __build__ directories.
 
 When a solution-level package is installed, it is tracked in a packages.config
 file in the .nuget directory, rather than in a packages.config file in a
@@ -243,8 +243,8 @@ NuGet automatically runs scripts based on their file names using the following c
 * ***Init.ps1*** runs the first time a package is installed in a solution. 
     * If the same package is installed into additional projects in the solution, the script is not 
     run during those installations. 
-    * The script also runs every time the solution is opened. For example, if you install a package, 
-    close Visual Studio, and then start Visual Studio and open the solution, the *Init.ps1* script runs again.
+    * The script also runs every time the solution is opened (Package Manager Console window has to be open at the same for the script to run). For example, if you install a package, 
+    close Visual Studio, and then start Visual Studio and open the solution with Package Manager Console window, the *Init.ps1* script runs again.
 * ***Install.ps1*** runs when a package is installed in a project. 
     * If the same package is installed in multiple projects in a solution, the script runs each time the 
     package is installed. 

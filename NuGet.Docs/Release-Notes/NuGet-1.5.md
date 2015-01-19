@@ -25,7 +25,7 @@ For example, if you add the following:
     </references>
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate 
-[framework/profile subdirectory](../creating-packages/creating-and-publishing-a-package#Grouping_Assemblies_by_Framework_Version) 
+[framework/profile subdirectory](../Create/Enforced-Package-Conventions#Grouping_Assemblies_by_Framework_Version) 
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly 
@@ -66,7 +66,7 @@ Or use a wild card to exclude a set of files such as all backup files
 When uninstalling a package with dependencies, NuGet prompts, allowing the removal of a package's 
 dependencies along with the package.
 
-![Removing dependent packages](../Start-Here/images/remove-dependent-packages.png)
+![Removing dependent packages](../Docs/Start-Here/Images/remove-dependent-packages.png)
 
 
 ### `Get-Package` command improvement
@@ -81,7 +81,7 @@ When using NuGet behind a proxy that requires authentication, NuGet will now pro
 proxy credentials. Entering credentials allows NuGet to connect to the remote repository.
 
 ### Support for Repositories that require authentication
-NuGet now supports connecting to [private repositories](../creating-packages/hosting-your-own-nuget-feeds) 
+NuGet now supports connecting to [private repositories](../Create/Hosting-Your-Own-NuGet-Feeds) 
 that require basic or NTLM authentication.
 
 Support for Digest authentication will be added in a future release.
@@ -99,7 +99,7 @@ NuGet packages now include support for release notes. The release notes only sho
 when viewing _Updates_ for a package, so it doesn't make sense to add them to your 
 first release.
 
-![Release Notes within the Updates tab](../Start-Here/Images/manage-nuget-packages-release-notes.png)
+![Release Notes within the Updates tab](../Docs/Start-Here/Images/manage-nuget-packages-release-notes.png)
 
 To add release notes to a package, use the new `<releaseNotes />` metadata element in your 
 NuSpec file.

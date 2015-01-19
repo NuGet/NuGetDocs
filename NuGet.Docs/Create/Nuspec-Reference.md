@@ -129,7 +129,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>developmentDependency</td>
-        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="http://docs.nuget.org/docs/release-notes/nuget-2.7#Development-Only_Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
+        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="../Release-Notes/NuGet-2.7#Development-Only_Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
     </tr>
 </tbody>
 </table>
@@ -144,7 +144,7 @@ For example, when using the command:
 
 The `MyProject.nuspec` file adjacent to the `MyProject.csproj` file may contain the following replacement tokens which 
 are populated by the values within the project.  The file may also contain other replacement tokens that will be specified
-using the [nuget pack -Properties](http://docs.nuget.org/docs/reference/command-line-reference#Pack_Command) feature.
+using the [nuget pack -Properties](../Consume/Command-Line-Reference#Pack_Command) feature.
 
 <table class="reference">
     <tr><th>Token</th><th>Source</th></tr>
@@ -266,7 +266,7 @@ For example, if you add the following:
     </references>
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate 
-[framework/profile subdirectory](../creating-packages/creating-and-publishing-a-package#Grouping_Assemblies_by_Framework_Version) 
+[framework/profile subdirectory](../Create/Enforced-Package-Conventions#Grouping_Assemblies_by_Framework_Version) 
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly 
