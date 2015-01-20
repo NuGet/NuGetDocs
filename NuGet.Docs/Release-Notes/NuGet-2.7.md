@@ -66,7 +66,7 @@ In order to use Automatic Package Restore in Visual Studio, you only need to tak
 
 1. Don't check in your `packages` folder
 
-There are several ways to omit your `packages` folder from source control. For more information, see the [Omitting Packages from Source Control](../Reference/Package-Restore#Omitting_Packages_from_Source_Control) section of the [Package Restore](../Reference/Package-Restore) documentation.
+There are several ways to omit your `packages` folder from source control. For more information, see the [Omitting Packages from Source Control](../Reference/Package-Restore#Omitting-Packages-from-Source-Control) section of the [Package Restore](../Reference/Package-Restore) documentation.
 
 While all users are implicitly opted into automatic package restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
@@ -82,11 +82,11 @@ This new Restore command allows you to easily restore all packages for a solutio
 1. nuget.exe restore .
 1. nuget.exe restore
 
-The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](../Reference/Command-Line-Reference#Restore_Command).
+The Restore command will open the solution file and find all projects within the solution. From there, it will find the packages.config files for each of the projects and restore all of the packages found. It also restores solution-level packages found in the .nuget\packages.config file. More information about the new Restore command can be found in the [Command-Line Reference](../Reference/Command-Line-Reference#Restore-Command).
 
 #### The New Package Restore Workflow
 
-We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../Release-Notes/NuGet-2.5#Automatic_import_of_msbuild_targets_and_props_files) from the \build folder.
+We are excited about these changes to Package Restore, as it introduces a new workflow. If you want to omit your packages from source control you simply don't commit the `packages` folder. Visual Studio users who open and build the solution will see the packages automatically restored. For command-line builds, simply invoke `nuget.exe restore` before invoking `msbuild`. You'll no longer need to remember to use the "Enable NuGet Package Restore" gesture on your solution, and we'll no longer need to modify your projects to alter the build. And this also yields a much improved experience for packages that include MSBuild imports, especially for imports added through NuGet's recent feature for [automatically importing props/targets files](../Release-Notes/NuGet-2.5#Automatic-import-of-msbuild-targets-and-props-files) from the \build folder.
 
 In addition to the work we've done ourselves, we're also working with some important partners to round this new approach out. We don't have concrete timelines for any of these yet, but each partner is as excited as we are about the new approach.
 

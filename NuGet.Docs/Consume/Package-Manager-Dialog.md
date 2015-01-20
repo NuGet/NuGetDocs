@@ -105,7 +105,7 @@ shows a newer version of jQuery available.
 
 Select the package you want to update and click **Update** to update the package to the latest version. 
 
-If a [package includes release notes](../Docs/Reference/Nuspec-Reference), they will show up in place of the 
+If a [package includes release notes](../Create/Nuspec-Reference), they will show up in place of the 
 description in the right pane. 
 
 # Managing Packages for the Solution

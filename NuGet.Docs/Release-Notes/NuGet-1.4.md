@@ -36,14 +36,14 @@ the dialog once per project.
 NuGet 1.4 adds support for installing/uninstalling/updating packages in multiple projects at the same time. Simply launch 
 the by right clicking the Solution and selecting the **Manage NuGet Packages** menu option.
 
-![Solution Level Manage NuGet Packages dialog](../Docs/Start-Here/Images/manage-nuget-packages-solution-dialog.png)
+![Solution Level Manage NuGet Packages dialog](../images/Consume/manage-nuget-packages-solution-dialog.png)
 
 Notice that in the title bar of the dialog, the name of the solution is displayed, not the name of a project. 
 Package operations now provide a list of checkboxes with the list of projects the operation should apply to.
 
-![Manage NuGet Packages Project Selection](../Docs/Start-Here/Images/manage-nuget-packages-project-selection.png)
+![Manage NuGet Packages Project Selection](../images/Consume/manage-nuget-packages-project-selection.png)
 
-For more details, see the topic on [Managing Packages for the Solution](../Docs/Start-Here/Managing-NuGet-Packages-Using-The-Dialog#Managing_Packages_for_the_Solution).
+For more details, see the topic on [Managing Packages for the Solution](../Docs/Start-Here/Managing-NuGet-Packages-Using-The-Dialog#Managing-Packages-for-the-Solution).
 
 ### Constraining Upgrades To Allowed Versions
 By default, when running the `Update-Package` command on a package (or updating the package using dialog), it will be 
@@ -71,13 +71,13 @@ menu option, enables you to easily visualize all the projects and their package 
 _**Important Note:** This feature takes advantage of the DGML support in Visual Studio. Creating the visualization is only 
 supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in Visual Studio Premium or Higher._
 
-![Package Visualizer](../Docs/Workflows/Images/package-visualizer.png)
+![Package Visualizer](../images/Consume/package-visualizer.png)
 
-See the documentation on the [Package Visualizer](../Docs/Workflows/Package-Visualizer) for more details.
+See the documentation on the [Package Visualizer](../Consume/Package-Visualizer) for more details.
 
 ### Automatic Update Check for the NuGet Dialog
 Some versions of NuGet introduce new features expressed via the NuSpec file which are not understood by older versions of the NuGet dialog. 
-One example is the introduction in NuGet 1.4 for [specifying framework assemblies](http://localhost:34190/site/Docs/Release-Notes/NuGet-1.2#Specifying_Framework_Assembly_References_(GAC)). 
+One example is the introduction in NuGet 1.4 for [specifying framework assemblies](NuGet-1.2#Specifying-Framework-Assembly-References-(GAC)). 
 Because of this, it's important to use the latest version of NuGet to ensure you can use packages taking advantage of the latest features. 
 To make updates to NuGet more visible, the NuGet dialog contains logic to highlight when a newer version is available. 
 
@@ -119,7 +119,7 @@ in a path to the `packages.config` file and will attempt to update packages. Not
 ** Run Powershell scripts within the package.
 
 ### NuGet Server Support for Pushing Packages using NuGet.exe
-NuGet includes a simple way to host a [lightweight web based NuGet repository](../Create/Hosting-Your-Own-NuGet-Feeds#Creating_Remote_Feeds) 
+NuGet includes a simple way to host a [lightweight web based NuGet repository](../Create/Hosting-Your-Own-NuGet-Feeds#Creating-Remote-Feeds) 
 via the `NuGet.Server` NuGet package. With NuGet 1.4, the lightweight server supports pushing and deleting packages using NuGet.exe. 
 The latest version of `NuGet.Server` adds a new `appSetting`, named `apiKey`. When the key is omitted or left blank, pushing packages 
 to the feed is disabled. Setting the apiKey to a value (ideally a strong password) enables pushing packages using NuGet.exe.

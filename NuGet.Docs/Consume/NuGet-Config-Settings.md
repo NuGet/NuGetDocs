@@ -13,7 +13,7 @@ Below is the summary of the NuGet config keys and their usage.
     <td>
        Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder. <br/>
        This key can be added to the NuGet.config file manually or using the <a href="Command-Line-Reference#Config Command"> NuGet.exe Config -Set command.  </a>  <br/>
-       More details <a href="../Release-Notes/NuGet-2.1#Specify_%e2%80%98packages%e2%80%99_Folder_Location">here.</a>
+       More details <a href="../Release-Notes/NuGet-2.1#Specify-%e2%80%98packages%e2%80%99-Folder-Location">here.</a>
 
 	<pre><code>
     &lt;config&gt;
@@ -60,7 +60,7 @@ Below is the summary of the NuGet config keys and their usage.
 	- "DisabledPackageSources" has the list of sources which are currently disabled currently.  <br/>
 	- "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would imply that all the current package sources except for the disabled ones are active.<br/></br> </br>
 
-		The values can be added to the config file directly or using the package manager settings UI ( which would in turn update the NuGet.config file) or using the <a href="Command-Line-Reference#Sources_Command">NuGet.exe Sources command.</a>
+		The values can be added to the config file directly or using the package manager settings UI ( which would in turn update the NuGet.config file) or using the <a href="Command-Line-Reference#Sources-Command">NuGet.exe Sources command.</a>
 
 	<pre><code>
 	&lt;packageSources&gt;
@@ -117,7 +117,7 @@ Below is the summary of the NuGet config keys and their usage.
 	</td>
 	<td>
 	Allows you to set the credentials to access the given package source. <br/>
-	This key has to be set using the <a href="Command-Line-Reference#Sources_Command">NuGet.exe Sources command.</a> <br/>
+	This key has to be set using the <a href="Command-Line-Reference#Sources-Command">NuGet.exe Sources command.</a> <br/>
 	The default behavior is to store the password encrypted in the config file. <br/> <br/>
 
 		<i>NuGet.exe  Sources  Add  -Name  &lt;feedName&gt; -Source &lt;pathToPackageSource&gt; -UserName  xxx   -Password &lt;secret&gt;  </i><br/>
@@ -159,7 +159,7 @@ Below is the summary of the NuGet config keys and their usage.
 	<td>
 	Allows you to set the API Key corresponding to a specific package source.<br/>
 
-	This key  has to be set via <a href=".\Command-Line-Reference#Setapikey_Command">NuGet -SetApiKey. </a>
+	This key  has to be set via <a href=".\Command-Line-Reference#Setapikey-Command">NuGet -SetApiKey. </a>
 	</td>
 	</tr>
 

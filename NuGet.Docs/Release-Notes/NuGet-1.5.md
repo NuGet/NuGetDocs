@@ -25,7 +25,7 @@ For example, if you add the following:
     </references>
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate 
-[framework/profile subdirectory](../Create/Enforced-Package-Conventions#Grouping_Assemblies_by_Framework_Version) 
+[framework/profile subdirectory](../Create/Enforced-Package-Conventions#Grouping-Assemblies-by-Framework-Version) 
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly 

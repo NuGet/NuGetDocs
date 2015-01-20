@@ -43,7 +43,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
         <td>
             <em>Optional</em>. Allows specifying a framework and profile name (or alias) that this framework assembly 
             applies to such as "net40" or "sl4". Uses the same format described in the section 
-            <a href="../Create/Enforced-Package-Conventions#Supporting_Multiple_.NET_Framework_Versions_and_Profiles" title="Supporting Multiple .NET Framework Versions">Supporting Multiple .NET Framework Versions</a> 
+            <a href="../Create/Enforced-Package-Conventions#Supporting-Multiple-.NET-Framework-Versions-and-Profiles" title="Supporting Multiple .NET Framework Versions">Supporting Multiple .NET Framework Versions</a> 
             of the <a href="../Create/Creating-and-Publishing-a-Package" title="Creating a package page">Creating an Publishing a Package</a> page.
         </td>
     </tr>
@@ -58,7 +58,7 @@ Framework. The following table lists attributes of the `frameworkAssembly` eleme
 
 When using the NuGet.exe command line tool, you can now use the SetApiKey command to store your API key. That way, 
 you won’t need to specify it every time you push a package. For more details on saving your API key with NuGet.exe, 
-[read the documentation on creating a package](../Create/Creating-and-Publishing-a-Package#Create_an_account_at_NuGet.org).
+[read the documentation on creating a package](../Create/Creating-and-Publishing-a-Package#Create-an-account-at-NuGet.org).
 
 ### Package Explorer
 Package Explorer has been updated to support NuGet 1.2. For more information, check out the 

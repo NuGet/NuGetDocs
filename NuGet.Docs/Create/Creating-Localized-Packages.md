@@ -5,7 +5,7 @@
 There are two options for providing a localized experience for your library package:
 
 1. Include your localized satellite assemblies in the same NuGet package as your runtime assemblies.  This has always been supported.
-1. Create separate localized satellite packages that follow a very strict convention.  This approach has been supported since [NuGet 1.8](../Release-Notes/NuGet-1.8#Satellite_Packages_for_Localized_Resources).
+1. Create separate localized satellite packages that follow a very strict convention.  This approach has been supported since [NuGet 1.8](../Release-Notes/NuGet-1.8#Satellite-Packages-for-Localized-Resources).
 
 Different libraries have different localization requirements, so it's important to consider the differences between these two approaches.
 

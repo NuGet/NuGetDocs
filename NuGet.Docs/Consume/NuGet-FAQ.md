@@ -119,7 +119,7 @@ See the [Creating and publishing a package](/Create/creating-and-publishing-a-pa
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
-See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](/create/creating-and-publishing-a-package#Supporting_Multiple_.NET_Framework_Versions_and_Profiles).
+See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](/Create/Enforced-Package-Conventions#supporting-multiple-.net-framework-versions-and-profiles).
 
 **How do I set up a local repository or feed?**
 

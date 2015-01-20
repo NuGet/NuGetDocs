@@ -113,7 +113,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>dependencies</td>
-        <td>The list of dependencies for the package. For more information, see <a href="#Specifying_Dependencies">Specifying Dependencies</a> later in this document.</td>
+        <td>The list of dependencies for the package. For more information, see <a href="#Specifying-Dependencies">Specifying Dependencies</a> later in this document.</td>
     </tr>
     <tr>
         <td>references</td>
@@ -129,14 +129,14 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>developmentDependency</td>
-        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="../Release-Notes/NuGet-2.7#Development-Only_Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
+        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="../Release-Notes/NuGet-2.7#Development-Only-Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
     </tr>
 </tbody>
 </table>
 
 ### Replacement Tokens
 Replacement tokens can be used in place of values within the Metadata section of 
-the NuSpec file [when creating a package from a project file](/create/creating-and-publishing-a-package#From_a_project)
+the NuSpec file [when creating a package from a project file](/create/creating-and-publishing-a-package#From-a-project)
 
 For example, when using the command:
 
@@ -144,7 +144,7 @@ For example, when using the command:
 
 The `MyProject.nuspec` file adjacent to the `MyProject.csproj` file may contain the following replacement tokens which 
 are populated by the values within the project.  The file may also contain other replacement tokens that will be specified
-using the [nuget pack -Properties](../Consume/Command-Line-Reference#Pack_Command) feature.
+using the [nuget pack -Properties](../Consume/Command-Line-Reference#Pack-Command) feature.
 
 <table class="reference">
     <tr><th>Token</th><th>Source</th></tr>
@@ -208,7 +208,7 @@ The following table lists attributes of the dependency element.
     </tr>
     <tr>
         <td><code>version</code></td>
-        <td>The range of versions acceptable as a dependency. Typically this is just a version number which represents a minimum version. However a more explicit <a href="versioning#Specifying_Version_Ranges_in_.nuspec_Files">version range syntax</a> is supported.</td>
+        <td>The range of versions acceptable as a dependency. Typically this is just a version number which represents a minimum version. However a more explicit <a href="versioning#Specifying-Version-Ranges-in-.nuspec-Files">version range syntax</a> is supported.</td>
     </tr>
 </table>
 
@@ -266,7 +266,7 @@ For example, if you add the following:
     </references>
 
 Then only the _xunit.dll_ and _xunit.extensions.dll_ will be referenced from the appropriate 
-[framework/profile subdirectory](../Create/Enforced-Package-Conventions#Grouping_Assemblies_by_Framework_Version) 
+[framework/profile subdirectory](../Create/Enforced-Package-Conventions#Grouping-Assemblies-by-Framework-Version) 
 of the `lib` folder even if there are other assemblies in the folder.
 
 If this element is omitted, then the usual behavior applies, which is to reference every assembly 

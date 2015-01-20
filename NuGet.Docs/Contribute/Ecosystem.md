@@ -32,7 +32,7 @@ To create a basic NuGet server and point it to a local folder or network share, 
 
     Install-Package NuGet.Server
 
-More info: [Install the NuGet.Server package](../Creating-Packages/Hosting-Your-Own-NuGet-Feeds#Step_2%3a_Install_the_NuGet.Server_Package)
+More info: [Install the NuGet.Server package](../Create/Hosting-Your-Own-NuGet-Feeds#Step-2%3a-Install-the-NuGet.Server-Package)
 
 Benefits:
 
@@ -245,7 +245,7 @@ Provides:
 
 The [CoApp](http://coapp.org/) project originally aimed to create a vibrant Open Source ecosystem on Windows by providing the technologies needed to build a complete community-driven Package Management System, along with tools to enable developers to take advantage of features of the Windows platform. 
 
-The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) to mesh with the NuGet project and the collaborative result is visible in NuGet 2.5 where [support for native packages](../Release-Notes/NuGet-2.5#Support_for_Native_projects) was first introduced. The CoApp project is still building [additional tools](http://coapp.org/pages/releases.html) to enhance C/C++ support in NuGet. 
+The project has [pivoted](http://coapp.org/news/2013-03-27-The-Long-Awaited-post.html) to mesh with the NuGet project and the collaborative result is visible in NuGet 2.5 where [support for native packages](../Release-Notes/NuGet-2.5#Support-for-Native-projects) was first introduced. The CoApp project is still building [additional tools](http://coapp.org/pages/releases.html) to enhance C/C++ support in NuGet. 
 
 * Documentation: [http://coapp.org/pages/reference.html](http://coapp.org/pages/reference.html)
 * Twitter: [@CoApp](https://twitter.com/#!/coapp)

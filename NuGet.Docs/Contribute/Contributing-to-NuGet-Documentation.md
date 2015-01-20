@@ -1,6 +1,6 @@
 ﻿# Contributing to NuGet Documentation
 
-These docs are written in Markdown. For an introduction to Markdown, see [our sample markdown](#Sample_Markdown). For documentation conventions, see [our documentation conventions](#Documentation_Conventions).
+These docs are written in Markdown. For an introduction to Markdown, see [our sample markdown](#Sample-Markdown). For documentation conventions, see [our documentation conventions](#Documentation-Conventions).
 
 ## Making a change to existing documentation
 The basic workflow for contributing to NuGet Docs is simple.
