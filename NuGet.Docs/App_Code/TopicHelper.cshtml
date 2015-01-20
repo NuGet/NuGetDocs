@@ -1,24 +1,22 @@
 ﻿@using NuGet.Docs
-@helper RenderTopicsWithSubTopics(string folder) {
-    <ol class="topics">
-        @foreach (var topic in Topic.GetTopicsWithSubTopics(folder).Where(t => t.SubTopics.Any()))
-        {
-            <li class="topic">
-                <header>
-                    <h1><a name="@topic.Title.Replace(" ", "-")"></a>@topic.Title</h1>
-                </header>
-                <ol class="subTopics">
-                    @foreach (var subTopic in topic.SubTopics)
-                    {
-                        <li class="subTopic"><h2><a href="@subTopic.Url">@subTopic.Title</a></h2></li>
-                    }
-                </ol>
-            </li>
-        }
-    </ol>
+@helper RenderIndex(string folder)
+{
+    foreach (var topic in Topic.GetTopicsWithSubTopics(folder).Where(t => t.SubTopics.Any()))
+    {
+        <article>
+            <div>
+                <header><h1><a name="@topic.Title.Replace(" ", "-")"></a>@topic.Title</h1></header>
+                @foreach (var subTopic in topic.SubTopics)
+                {
+                    <h2><a href="@subTopic.Url">@subTopic.Title</a></h2>
+                }
+            </div>
+        </article>
+    }
 }
 
-@helper RenderSubTopics(string topicFolder) {
+@helper RenderSubTopics(string topicFolder)
+{
     <ol class="subTopics">
         @foreach (var subTopic in Topic.GetSubTopics(topicFolder))
         {
