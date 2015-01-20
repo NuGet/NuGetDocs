@@ -439,8 +439,8 @@ Copies a set of assemblies within the `bin\release` folder into the package&#821
 
 Source contains: 
 
-* `bin\releases\MyLib.dll`
-* `bin\releases\CoolLib.dll`
+* `bin\release\MyLib.dll`
+* `bin\release\CoolLib.dll`
 
 NuSpec File Element
 
