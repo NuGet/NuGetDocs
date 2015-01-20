@@ -66,7 +66,7 @@ Or use a wild card to exclude a set of files such as all backup files
 When uninstalling a package with dependencies, NuGet prompts, allowing the removal of a package's 
 dependencies along with the package.
 
-![Removing dependent packages](../Docs/Start-Here/Images/remove-dependent-packages.png)
+![Removing dependent packages](../images/Consume/remove-dependent-packages.png)
 
 
 ### `Get-Package` command improvement
@@ -99,7 +99,7 @@ NuGet packages now include support for release notes. The release notes only sho
 when viewing _Updates_ for a package, so it doesn't make sense to add them to your 
 first release.
 
-![Release Notes within the Updates tab](../Docs/Start-Here/Images/manage-nuget-packages-release-notes.png)
+![Release Notes within the Updates tab](../images/Consume/manage-nuget-packages-release-notes.png)
 
 To add release notes to a package, use the new `<releaseNotes />` metadata element in your 
 NuSpec file.

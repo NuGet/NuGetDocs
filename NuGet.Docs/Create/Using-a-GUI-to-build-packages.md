@@ -6,7 +6,7 @@ Explorer click-once application makes creating packages very easy. It's also a g
 to examine packages and learn how packages are structured.
 
 If you&#8217;re integrating building packages into a build system, then [using NuGet.exe to create 
-and publish packages](~/Docs/Creating-Packages/Creating-and-Publishing-a-Package) is a better choice.
+and publish packages](Creating-and-Publishing-a-Package) is a better choice.
 
 ## Installation
 Installing Package Explorer is easy, [click here and you&#8217;re done](https://npe.codeplex.com/downloads/get/clickOnce/NuGetPackageExplorer.application)!
@@ -28,7 +28,7 @@ Then select the **Edit** > **Edit Package Metadata** menu option (or CTRL + K) t
 ![Editing Metadata with the Package Explorer](/images/create/package-explorer-metadata.png)
 
 The metadata editor provides a GUI editor for editing the underlying nuspec file. For more 
-details about these fields, read the [NuSpec reference](~/Docs/Reference/Nuspec-Reference).
+details about these fields, read the [NuSpec reference](Nuspec-Reference).
 
 The final step is to drag in the contents of your package into the **Package contents** pane. 
 Package Explorer will attempt to infer where the content belongs and prompt you to place it in 
@@ -62,5 +62,4 @@ Enter your API Key and click **Publish** to publish your package to the NuGet pa
 If you don&#8217;t have an account yet, visit [the NuGet Gallery](http://nuget.org/) and register 
 for an account.
 
-After you register and login, click on the **[My Account**](http://nuget.org/Contribute/MyAccount) 
-link to see your API access key.
+After you register and login, click on the **[My Account](http://nuget.org/Contribute/MyAccount)** link to see your API access key.

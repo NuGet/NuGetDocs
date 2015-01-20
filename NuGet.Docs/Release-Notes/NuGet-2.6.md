@@ -37,7 +37,7 @@ NuGet client. NuGet 2.6 includes this integration.
 #### How it works
 
 To take advantage of NuGet’s XDT support, the mechanics look similar to those of the
-[current config transformation feature](../Creating-Packages/Configuration-File-and-Source-Code-Transformations).
+[current config transformation feature](../Create/Creating-Packages-With-Configuration-File-and-Source-Code-Tranformations).
 Transformation files are added to the package’s content folder. However, while config
 transformations use a single file for both installation and uninstallation, XDT
 transformations enable fine-grained control over both of these processes using the
@@ -103,7 +103,7 @@ This feature is utilized by Visual Studio 2013, where a file is installed at:
 
 Within this file, a new package source called ".NET Framework Packages" is configured.
 
-![NuGet Config File machine wide settings](../Reference/Images/NuGet-Config-File-Machine-Wide.png)
+![NuGet Config File machine wide settings](../images/Consume/NuGet-Config-File-Machine-Wide.png)
 
 ### Contextualizing Search
 

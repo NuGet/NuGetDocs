@@ -43,7 +43,7 @@ Package operations now provide a list of checkboxes with the list of projects th
 
 ![Manage NuGet Packages Project Selection](../images/Consume/manage-nuget-packages-project-selection.png)
 
-For more details, see the topic on [Managing Packages for the Solution](../Docs/Start-Here/Managing-NuGet-Packages-Using-The-Dialog#Managing-Packages-for-the-Solution).
+For more details, see the topic on [Managing Packages for the Solution](../Consume/Package-Manager-Dialog#Managing-Packages-for-the-Solution).
 
 ### Constraining Upgrades To Allowed Versions
 By default, when running the `Update-Package` command on a package (or updating the package using dialog), it will be 
@@ -54,7 +54,7 @@ only work with version 2.* of a package, but not 3.0 and above. In order to prev
 `packages.config` file using the new `allowedVersions` attribute.
 
 For example, the following example shows how to lock the `SomePackage` package the version range 2.0 - 3.0 (exclusive). 
-The `allowedVersions` attribute accepts values using the [version range format](../Reference/Version-Range-Specification).
+The `allowedVersions` attribute accepts values using the [version range format](../Create/Versioning).
 
     <?xml version="1.0" encoding="utf-8"?>
     <packages>

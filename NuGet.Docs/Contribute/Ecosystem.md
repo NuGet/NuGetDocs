@@ -4,7 +4,7 @@ First introduced in 2010, NuGet has been around for a few years now and many peo
 All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - You. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
 
 ## Outercurve Foundation Projects
-The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools ([NuGet Command Line](http://docs.nuget.org/docs/reference/command-line-reference) and (NuGet Visual Studio Extension)[http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c?SRC=Home]), as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [Outercurve Foundation](http://www.outercurve.org/) and is a part of the ASP.NET Open Source Gallery.
+The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools ([NuGet Command Line](/Consume/Command-Line-Reference) and (NuGet Visual Studio Extension)[http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c?SRC=Home]), as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [Outercurve Foundation](http://www.outercurve.org/) and is a part of the ASP.NET Open Source Gallery.
 
 The sources for the NuGet clients can be found on [Codeplex](http://nuget.codeplex.com/), while sources for NuGet Gallery  services are available on [GitHub](https://github.com/NuGet/).
 
@@ -111,7 +111,7 @@ WebMatrix 3 also has a NuGet Package Manager Extension which you can download us
 In addition to Microsoft, many other individuals and companies have made significant contributions to the NuGet ecosystem. Each project listed here may have a different license than the core NuGet components so please confirm that the license terms are acceptable prior to use. 
 
 ### NuGet Package Explorer
-One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https://twitter.com/dotnetjunky "dotnetjunky"), created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](http://docs.nuget.org/docs/creating-packages/using-a-gui-to-build-packages), download and inspect NuGet packages and their metadata.
+One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https://twitter.com/dotnetjunky "dotnetjunky"), created a great graphical tool to work with NuGet packages. The GUI allows you to very easily [create, publish](/Create/Using-a-GUI-to-build-packages), download and inspect NuGet packages and their metadata.
 
 * Click-Once (desktop) application: [http://npe.codeplex.com](http://npe.codeplex.com)
 * Windows 8 app: [http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19/m/ROW](http://apps.microsoft.com/windows/en-us/app/nuget-package-explorer/3148c5ae-7307-454b-9eca-359fff93ea19/m/ROW)
@@ -378,4 +378,4 @@ The following pointers should help you get the maximum out of NuGet:
 NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and update the site accordingly.
 
 ## Adding Your Project
-If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/site/Docs/Reference/Ecosystem.markdown).
+If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/Contribute/Ecosystem.markdown).

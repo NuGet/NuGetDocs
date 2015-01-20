@@ -19,7 +19,7 @@ SemVer, read the [Versioning documentation](../Create/Versioning).
 ### Using NuGet Without Checking In Packages (Package Restore)
 NuGet 1.6 now has first class support for the workflow in which NuGet packages are not added 
 to source control, but instead are restored at build time if missing. For more details, read 
-the [Using NuGet without committing packages to source control](../Docs/Workflows/Using-NuGet-without-committing-packages) 
+the [Using NuGet without committing packages to source control](../Consume/Package-Restore/MSBuild-Integrated) 
 topic.
 
 ### Item Templates That Install NuGet Packages 
@@ -40,7 +40,7 @@ for when you want to add it back in.
 
 NuGet 1.6 allows unchecking a package source to disable it, but keep it around.
 
-![Disabling a package](../Docs/Start-Here/Images/package-source-with-disabled-source.png)
+![Disabling a package](../images/Consume/package-source-with-disabled-source.png)
 
 ## Bug Fixes
 NuGet 1.6 had a total of 106 work items fixed. 95 of those were classified as bugs and 10 of those were 

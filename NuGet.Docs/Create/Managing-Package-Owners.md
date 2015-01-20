@@ -1,6 +1,6 @@
 # Managing Package Owners on nuget.org
 
-While each NuGet package's [nuspec metadata](../Docs/Reference/Nuspec-Reference) defines the package's owner(s), the NuGet gallery at nuget.org ignores that piece of nuspec metadata.  Instead, ownership of a package is defined by who publishes the package to the gallery.  Sometimes this metadata needs to be managed beyond the initial package publishing too, which means the owner metadata needs to be mutable while the package itself is not.
+While each NuGet package's [nuspec metadata](../Create/Nuspec-Reference) defines the package's owner(s), the NuGet gallery at nuget.org ignores that piece of nuspec metadata.  Instead, ownership of a package is defined by who publishes the package to the gallery.  Sometimes this metadata needs to be managed beyond the initial package publishing too, which means the owner metadata needs to be mutable while the package itself is not.
 
 ## Setting a Package's Initial Owner ##
 When a brand new package is published to nuget.org, its initial owner is defined by the user that published the package.

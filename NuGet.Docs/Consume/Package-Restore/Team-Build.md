@@ -71,7 +71,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 &lt;/configuration>
 </code></pre>
 
-For more details have a look at the [NuGet Config Settings](../Reference/NuGet-Config-Settings).
+For more details have a look at the <a href="../NuGet-Config-Settings">NuGet Config Settings</a>.
 </p>
 
 In order to communicate to the version control that we don’t intent to check-in the **packages** folders, we've also added ignore files for both git (`.gitignore`) as well as TF version control (`.tfignore`). These files describes patterns of files you don't want to check-in.

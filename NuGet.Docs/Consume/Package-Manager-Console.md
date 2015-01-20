@@ -18,7 +18,7 @@ The **Package Manager Console** window is displayed.
 
 The two drop-down lists set default values that let you omit parameters from the commands you enter in the window:
 
-* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](../Creating-Packages/Hosting-Your-Own-NuGet-Feeds).
+* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](../Create/Hosting-Your-Own-NuGet-Feeds).
 * In the **Default project** list, select the default project that you want your commands to work with. (The default value will be the first project in the solution, not necessarily the one you have selected in **Solution Explorer** when you open the window.)
 
 When you enter commands, you can override these defaults.
@@ -35,7 +35,7 @@ or `Get-Package -Filter Logging -ListAvailable` (a keyword in the package descri
 
 ![Get-Package command with filter](/images/consume/package-manager-console-Get-Package-with-filter.png)
 
-For more options that you can specify with the `Get-Package` command, enter `Get-Help Get-Package`, or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
+For more options that you can specify with the `Get-Package` command, enter `Get-Help Get-Package`, or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
 
 ## Installing a Package
 
@@ -111,7 +111,7 @@ For example, use the `Uninstall-Package elmah` command as shown in the following
 
 ![uninstall package command](/images/consume/package-manager-console-uninstall-package.png)
 
-For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](../Reference/Package-Manager-Console-PowerShell-Reference).
+For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
 
 The following package elements are removed:
 
@@ -131,7 +131,7 @@ To check if there are newer versions available for any installed packages, enter
 ![Get-Package command](/images/consume/package-manager-console-get-package-showing-updates.png)
 
 To update a package, enter `Update-Package` with the package ID. For example, enter the command `Update-Package jQuery`.
-For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see (../Reference/Package-manager-Console-Commands).
+For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see (Package-Manager-Console-PowerShell-Reference#update-package).
 
 ![update-package command](/images/consume/package-manager-console-update-package.png)
 

@@ -48,7 +48,7 @@ The fix is to install VS 2012 Update, e.g. [VS 2012 Update 2](http://www.microso
 If you are running VS 2010 SP1, you might run into the following error message when attempting to upgrade 
 NuGet if you have an older version installed.
 
-![Visual Studio Extension Installer](images/Visual-Studio-Extension-Installer.png)
+![Visual Studio Extension Installer](../images/Consume/Visual-Studio-Extension-Installer.png)
 
 When viewing the logs, you might see a mention of a `SignatureMismatchException`.
 
@@ -196,7 +196,7 @@ When attempting to install NuGet using the Visual Studio Extension Manager and n
 as an administrator, the &#8220;Run As&#8221; dialog is displayed with the checkbox labeled 
 &#8220;Run this program with restricted access&#8221; checked by default.
 
-![Run As Restricted Dialog](images/RunAsRestricted.png)
+![Run As Restricted Dialog](../images/Consume/RunAsRestricted.png)
 
 Clicking OK with that checked crashes Visual Studio. Make sure to uncheck that option before 
 installing NuGet.

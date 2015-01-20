@@ -34,7 +34,7 @@ Below is the summary of the NuGet config keys and their usage.
 	<td>
 	Allows you to restore missing packages from the NuGet source during build.<br/>
 	The environment variable "EnableNuGetPackageRestore" with a value of "true" can be used in place of the "enabled" key in the config file.<br/>
-	More details <a href="../Reference/Package-Restore"> here.</a>
+	More details <a href="Package-Restore"> here.</a>
 
 	<pre><code>
 	&lt;packageRestore&gt;
