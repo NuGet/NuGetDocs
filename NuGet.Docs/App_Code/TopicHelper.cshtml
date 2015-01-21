@@ -1,12 +1,12 @@
 ﻿@using NuGet.Docs
-@helper RenderIndex(string folder)
+@helper RenderDocumentationIndex()
 {
     // Normalize the heading levels to start at 3 in the TOC.
     const int minHeading = 3;
     // Maximum depth of the index topic-tree
     const int maxLevels = 3;
-    
-    var topics = Topic.GetTopicsWithSubTopics(folder).Where(t => t.SubTopics.Any());
+
+    var topics = Topic.GetTopicsWithSubTopics("~/").Where(t => t.SubTopics.Any());
     @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
 }
 
@@ -25,12 +25,18 @@
     }
 }
 
-@helper RenderSubTopics(string topicFolder)
+@helper RenderReleaseNotesIndex()
 {
-    <ol class="subTopics">
-        @foreach (var subTopic in Topic.GetSubTopics(topicFolder))
-        {
-            <li class="subTopic"><h2><a href="@subTopic.Url">@subTopic.Title</a></h2></li>
-        }
-    </ol>
+    foreach (var subTopic in Topic.GetSubTopics("~/Release-Notes"))
+    {
+        <p><a href="@subTopic.Url">@subTopic.Title</a></p>
+    }
+}
+
+@helper RenderWorkingSpecsIndex()
+{
+    foreach (var subTopic in Topic.GetSubTopics("~/Working-Specs"))
+    {
+        <p><a href="@subTopic.Url">@subTopic.Title</a></p>
+    }
 }
