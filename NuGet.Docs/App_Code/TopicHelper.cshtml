@@ -1,17 +1,27 @@
 ﻿@using NuGet.Docs
 @helper RenderIndex(string folder)
 {
-    foreach (var topic in Topic.GetTopicsWithSubTopics(folder).Where(t => t.SubTopics.Any()))
+    // Normalize the heading levels to start at 3 in the TOC.
+    const int minHeading = 3;
+    // Maximum depth of the index topic-tree
+    const int maxLevels = 3;
+    
+    var topics = Topic.GetTopicsWithSubTopics(folder).Where(t => t.SubTopics.Any());
+    @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
+}
+
+@helper RenderIndexTopics(IEnumerable<Topic> topics, int level, int maxDepth)
+{
+    foreach (Topic topic in topics)
     {
-        <article>
-            <div>
-                <header><h1><a name="@topic.Title.Replace(" ", "-")"></a>@topic.Title</h1></header>
-                @foreach (var subTopic in topic.SubTopics)
-                {
-                    <h2><a href="@subTopic.Url">@subTopic.Title</a></h2>
-                }
-            </div>
-        </article>
+        @Html.Raw("<h" + level + ">");
+        <a href="@topic.Url">@topic.Title</a>
+        @Html.Raw("</h" + level + ">");
+
+        if (level < maxDepth)
+        {
+            @RenderIndexTopics(topic.SubTopics, level + 1, maxDepth);
+        }
     }
 }
 

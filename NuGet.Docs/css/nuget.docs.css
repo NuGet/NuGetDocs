@@ -1,4 +1,8 @@
-﻿/* Headings */
+﻿body {
+    width: 1370px;
+}
+
+/* Headings */
 h1,h2,h3,h4,h5,h6 { font-weight: normal; margin:.6em 0;}
 
 h1 { font-size: 2.6em; }
@@ -10,6 +14,12 @@ h6, h7, h8, h9 { font-size: 1em; }
 
 .content #doc h2 {
     font-size: 2em;
+}
+
+.content #doc h1:first-child {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 28px; 
 }
 
 textarea, input {
@@ -69,17 +79,59 @@ section {
 ***************************************************************/
 .article-boxes {
     width: 100%;
+    margin-top: 40px;
 }
 
 .article-boxes article {
     float: left;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-right: 20px;
-    width: 40%;
+    padding: 0;
+}
+
+.article-boxes article:first-child {
+    padding: 0;
+    margin: 0;
+}
+
+article.box {
+    width: 800px;
+}
+
+    article.box.wide {
+        width: 100%;   
+    }
+
+article.box header {
+    padding: 18px 40px 24px 40px;
+}
+article.box header h1 {
+    padding: 0;
+    margin: 0;
+}
+article.box p {
+    padding: 0 40px;
+}
+article.box p:last-child {
+    padding: 0 40px 30px 40px;
+}
+article.box footer {
+    padding: 0 40px;
+    min-height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+article.box.links {
+    background-color: #f7f9f9;
+    border-bottom: 1px solid #D2D2D2;
+}
+article.box.links footer {
+    background-color: #ffffff;
 }
 
 article#doc{
-    margin-right: 400px;
+    margin: 40px 400px 0 0;
 }
 article#doc section {
     clear: left;
@@ -90,14 +142,16 @@ aside#toc{
     float: right;
     font-size: .95em;
     height: auto;
-    margin: 0px 0px 10px 15px;
-    padding-top: 20px;
     width: 380px;
 }
 
     aside#toc h2 {
         font-size: 2.4em;
-        margin: 0px 40px 20px 40px;
+        padding: 0 40px;
+        height: 60px;
+        line-height: 60px;
+        vertical-align: middle;
+        margin: 0;
     }
 
     aside#toc #toc-hide {
@@ -113,29 +167,55 @@ aside#toc{
         display: block;
         border-top: 1px solid #ECEEEF;
         border-left: 4px solid transparent;
-        padding: 20px 42px 20px 38px;
-        margin: 0px;
+        margin: 0;
         font-family: 'Segoe UI Semibold', 'Segoe UI', 'Trebuchet MS', Arial;
-        font-size: 12pt;
     }
 
+
     aside#toc h3 {
+        padding: 20px 42px 20px 38px;
+        font-size: 16pt;
         border-left: 4px solid #00B294;
     }
 
-    aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+    aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+        padding: 10px 42px 10px 38px;
         background-color: #F7F9F9;
-    }
-
-    aside#toc h3 a, aside#toc h4 a {
-        color: black;
-    }
-
-    aside#toc h5 a, aside#toc h6 a, aside#toc h7 a, aside#toc h8 a, aside#toc h9 a {
+        font-size: 12pt;
         color: #B8B8B8;
     }
 
-@media all AND (max-width: 1599px) {
+    aside#toc h3 a {
+        color: black;
+    }
+
+    aside#toc h4 a, aside#toc h5 a, aside#toc h6 a, aside#toc h7 a, aside#toc h8 a, aside#toc h9 a {
+        color: #B8B8B8;
+    }
+
+@media all AND (min-width: 1280px) AND (max-width: 1599px) {
+    body {
+        width: 1200px;
+    }
+
+    .content section {
+        padding-top: 20px;
+    }
+
+    article.box header {
+        padding: 18px 20px 24px 20px;
+    }
+
+    article.box p {
+        padding: 0 20px;
+    }
+    article.box p:last-child {
+        padding: 0 20px 30px 20px;
+    }
+    article.box footer {
+        padding: 0 20px;
+    }
+
     aside#toc {
         width: 280px;
     }
@@ -148,18 +228,34 @@ aside#toc{
         margin: 0px 20px 20px 20px;
     }
 
-    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+    aside#toc h3 {
         padding: 20px 22px 20px 18px;
+    }
+
+    aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+        padding: 10px 22px 10px 18px;
+    }
+
+    article.box {
+        width: 770px;
     }
 }
 
 @media all AND (max-width: 1279px) {
+    body {
+        width: 100%;
+    }
+
+    article.box {
+        width: 100%;
+    }
+
     aside#toc {
         display: none;
     }
 
     article#doc {
-        margin-right: 0px;
+        margin-right: 0;
     }
 }
 
