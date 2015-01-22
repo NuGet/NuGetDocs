@@ -96,6 +96,7 @@ section {
 
 article.box {
     width: 800px;
+    border-bottom: 1px solid #D2D2D2;
 }
 
     article.box.wide {
@@ -124,7 +125,6 @@ article.box footer {
 
 article.box.links {
     background-color: #f7f9f9;
-    border-bottom: 1px solid #D2D2D2;
 }
 article.box.links footer {
     background-color: #ffffff;
@@ -255,43 +255,6 @@ aside#toc{
         margin-right: 0;
     }
 }
-
-/* Topics
-***************************************************************/
-ol.topics {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-    ol.topics a {
-        color: #0071BC;
-        text-decoration: underline;
-    }
-
-    ol.topics li {
-      border-bottom: solid 1px #ccc; 
-    }
-    
-        ol.subTopics {
-            list-style: none;
-            margin: 0;
-            padding: 0 10px 10px 10px;
-        }
-        
-            ol.subTopics li {
-                border: none;
-            }
-
-.topic h2 {
-    font-size: 1.75em;
-    font-weight: bold;
-}
-
-.topic h3 {
-    font-size: 1.25em;
-}
-    
 
 /* Message Blocks  
 ***************************************************************/
