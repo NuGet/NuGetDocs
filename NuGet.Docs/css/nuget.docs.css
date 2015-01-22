@@ -138,6 +138,22 @@ article#doc{
 article#doc section {
     clear: left;
 }
+article#doc div.summary {
+    background-color: #f7f9f9;
+    margin: 0 -40px 0 -40px;
+    padding: 0 40px 50px 40px;
+    border-top: 1px solid #D2D2D2;
+}
+
+article#doc div.summary:first-child {
+    border-top: 0;
+}
+
+article#doc h2 {
+    border-top: 1px solid #D2D2D2;
+    margin: 0 -40px 0 -40px;
+    padding: 20px 40px 28px 40px;
+}
 
 aside#toc{
     background-color: white;

@@ -115,6 +115,7 @@ namespace NuGet.Docs
                     && Char.IsDigit(node.Name[1]));
 
             var headings = new List<Heading>();
+            var containerDictionary = new Dictionary<HtmlNode, IEnumerable<HtmlNode>>();
             foreach (var heading in allHeadingNodes)
             {
                 string id = heading.InnerText.Replace(" ", "-").ToLowerInvariant(); ;
@@ -145,8 +146,52 @@ namespace NuGet.Docs
                 if (id != null)
                 {
                     anchor.SetAttributeValue("name", HttpUtility.HtmlAttributeEncode(id.ToLowerInvariant().Trim()));
-                    headings.Add(new Heading(id, Convert.ToInt32(heading.Name[1]), heading.InnerText));
+                    var headingLevel = int.Parse(heading.Name[1].ToString());
+
+                    // When encountering a h1 element, we should wrap it in a summary container for CSS.
+                    // Build up the dictionary to allow delayed modification of the collection being enumerated.
+                    if (headingLevel == 1)
+                    {
+                        var div = HtmlAgilityPack.HtmlNode.CreateNode("<div class=\"summary\"></div>");
+
+                        var elementsToMove = new List<HtmlNode>();
+                        elementsToMove.Add(heading);
+
+                        // All elements after the h1 element should be wrapped within the same container, until the next heading is encountered (any level).
+                        var nextElement = heading.NextSibling;
+
+                        while (nextElement != null &&
+                            !(nextElement.Name.Length == 2
+                            && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
+                            && Char.IsDigit(nextElement.Name[1])))
+                        {
+                            elementsToMove.Add(nextElement);
+
+                            nextElement = nextElement.NextSibling;
+                        }
+
+                        containerDictionary.Add(div, elementsToMove);
+                    }
+
+                    headings.Add(new Heading(id, headingLevel, heading.InnerText));
                 }
+            }
+
+            // Wrap h1 content in container divs.
+            foreach (var nodes in containerDictionary)
+            {
+                var div = nodes.Key;
+                var heading = nodes.Value.First();
+                var parentNode = heading.ParentNode;
+
+                div.AppendChild(heading);
+                foreach (HtmlNode element in nodes.Value.Skip(1))
+                {
+                    div.AppendChild(element);
+                    parentNode.RemoveChild(element);
+                }
+                
+                parentNode.ReplaceChild(div, heading);
             }
 
             Page.Headings = headings;
