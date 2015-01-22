@@ -32,11 +32,3 @@
         <p><a href="@subTopic.Url">@subTopic.Title</a></p>
     }
 }
-
-@helper RenderWorkingSpecsIndex()
-{
-    foreach (var subTopic in Topic.GetSubTopics("~/Working-Specs"))
-    {
-        <p><a href="@subTopic.Url">@subTopic.Title</a></p>
-    }
-}
