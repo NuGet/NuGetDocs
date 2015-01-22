@@ -6,7 +6,7 @@
     // Maximum depth of the index topic-tree
     const int maxLevels = 3;
 
-    var topics = Topic.GetTopicsWithSubTopics("~/").Where(t => t.SubTopics.Any());
+    var topics = Topic.GetTopicsWithSubTopics("~/").Where(t => t.SubTopics.Any() && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
     @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
 }
 
