@@ -122,6 +122,7 @@ article.box footer {
     min-height: 60px;
     line-height: 60px;
     vertical-align: middle;
+    border-top: 0;
 }
 
 article.box.links {
