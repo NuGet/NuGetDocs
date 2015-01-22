@@ -105,6 +105,7 @@ article.box {
 
 article.box header {
     padding: 18px 40px 24px 40px;
+    vertical-align: middle;
 }
 article.box header h1 {
     padding: 0;
@@ -429,4 +430,28 @@ table.reference tr td:first-child {
     top: 0;
     text-indent: -9999px;
     width: 220px;
+}
+
+/* ICONS
+***************************************************************/
+.icon {
+    text-indent: 47px;
+    display: inline-block;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.icon.contribute {
+    background-image: url("../images/contribute-nuget.png");
+}
+.icon.overview {
+    background-image: url("../images/What-is-nuget.png");
+}
+.icon.quick-link {
+    background-image: url("../images/quick-links.png");
+}
+.icon.upload {
+    background-image: url("../images/upload.png");
+}
+.icon.most-installed {
+    background-image: url("../images/most-installed.png");
 }
