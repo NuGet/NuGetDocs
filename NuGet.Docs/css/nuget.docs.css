@@ -5,8 +5,8 @@
 /* Headings */
 h1,h2,h3,h4,h5,h6 { font-weight: normal; margin:.6em 0;}
 
-h1 { font-size: 2.6em; }
-h2 { font-size: 2em; margin-bottom: 2px;}
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; margin-bottom: 2px;}
 h3 { font-size: 1.6em; margin-bottom: 0; }
 h4 { font-size: 1.4em; }
 h5 { font-size: 1.1em; }
@@ -161,8 +161,9 @@ aside#toc{
     }
 
     aside#toc #toc-hide img {
-        vertical-align: top;
-        margin-top: 12px;
+        vertical-align: middle;
+        margin-bottom: 12px;
+        margin-right: -24px;
     }
 
     aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
@@ -223,8 +224,12 @@ aside#toc{
     }
 
     aside#toc h2 {
-        margin: 0 20px 20px 20px;
+        margin: 0 20px 0 20px;
         padding: 0;
+    }
+
+    aside#toc #toc-hide img {
+        margin-right: 0;
     }
 
     aside#toc h3 {
