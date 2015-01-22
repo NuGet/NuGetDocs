@@ -22,6 +22,14 @@ h6, h7, h8, h9 { font-size: 1em; }
     padding-bottom: 28px; 
 }
 
+.content #doc > pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}
+
 textarea, input {
     /* Hide Safari's oval outline */
     -webkit-appearance: none;
@@ -295,12 +303,14 @@ pre > code, .code {
     word-wrap: break-word;
     
      /*CSS3 properties*/
-    border-radius: 4px;
+    -ms-border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    box-shadow: 2px 2px 5px #888;
+    border-radius: 4px;
+    -ms-box-shadow: 2px 2px 5px #888;
     -webkit-box-shadow: 2px 2px 5px #888;
     -moz-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 5px #888;
 }
 
 /* Output */
@@ -316,12 +326,14 @@ pre > code, .code {
     line-height: 1.462em;
     
      /*CSS3 properties*/
-    border-radius: 4px;
+    -ms-border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    box-shadow: 2px 2px 5px #888;
+    border-radius: 4px;
+    -ms-box-shadow: 2px 2px 5px #888;
     -webkit-box-shadow: 2px 2px 5px #888;
     -moz-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 5px #888;
 }
 
 /* Information */
@@ -333,12 +345,14 @@ pre > code, .code {
     overflow: auto;
     
      /*CSS3 properties*/
-    border-radius: 4px;
+    -ms-border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    box-shadow: 2px 2px 5px #888;
+    border-radius: 4px;
+    -ms-box-shadow: 2px 2px 5px #888;
     -webkit-box-shadow: 2px 2px 5px #888;
     -moz-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 5px #888;
 }
 
 .info {
