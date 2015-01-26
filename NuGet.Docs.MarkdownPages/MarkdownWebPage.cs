@@ -148,36 +148,64 @@ namespace NuGet.Docs
                     anchor.SetAttributeValue("name", HttpUtility.HtmlAttributeEncode(id.ToLowerInvariant().Trim()));
                     var headingLevel = int.Parse(heading.Name[1].ToString());
 
-                    // When encountering a h1 element, we should wrap it in a summary container for CSS.
-                    // Build up the dictionary to allow delayed modification of the collection being enumerated.
+                    // When encountering a heading element, wrap it in a HTML container and apply a CSS class.
                     if (headingLevel == 1)
                     {
-                        var div = HtmlAgilityPack.HtmlNode.CreateNode("<div class=\"summary\"></div>");
-
-                        var elementsToMove = new List<HtmlNode>();
-                        elementsToMove.Add(heading);
-
-                        // All elements after the h1 element should be wrapped within the same container, until the next heading is encountered (any level).
-                        var nextElement = heading.NextSibling;
-
-                        while (nextElement != null &&
-                            !(nextElement.Name.Length == 2
-                            && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
-                            && Char.IsDigit(nextElement.Name[1])))
-                        {
-                            elementsToMove.Add(nextElement);
-
-                            nextElement = nextElement.NextSibling;
-                        }
-
-                        containerDictionary.Add(div, elementsToMove);
+                        BuildHeadingDiv(heading, containerDictionary, cssClass: "topic");
+                    }
+                    else if (headingLevel == 2)
+                    {
+                        BuildHeadingDiv(heading, containerDictionary, cssClass: "sub-topic");
                     }
 
                     headings.Add(new Heading(id, headingLevel, heading.InnerText));
                 }
             }
 
-            // Wrap h1 content in container divs.
+            PostProcessHeadingContainers(containerDictionary);
+
+            Page.Headings = headings;
+
+            var docteredHTML = new StringWriter();
+            doc.Save(docteredHTML);
+            return docteredHTML.ToString();
+        }
+
+        /// <summary>
+        /// Build up a dictionary to allow post-processing of the HTML node collection being enumerated.
+        /// </summary>
+        /// <param name="heading">The HTML heading node.</param>
+        /// <param name="containerDictionary">The dictionary to add the wrapping HTML container and its elements into.</param>
+        /// <param name="cssClass">The CSS class to be applied to the wrapping HTML container.</param>
+        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, string cssClass)
+        {
+            var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<div class=\"{0}\"></div>", cssClass));
+
+            var elementsToMove = new List<HtmlNode>();
+            elementsToMove.Add(heading);
+
+            // All elements after the heading element should be wrapped within the same container, until the next heading is encountered (any level).
+            var nextElement = heading.NextSibling;
+
+            while (nextElement != null &&
+                   !(nextElement.Name.Length == 2
+                     && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
+                     && Char.IsDigit(nextElement.Name[1])))
+            {
+                elementsToMove.Add(nextElement);
+
+                nextElement = nextElement.NextSibling;
+            }
+
+            containerDictionary.Add(div, elementsToMove);
+        }
+
+        /// <summary>
+        /// Wrap heading content in container divs
+        /// </summary>
+        /// <param name="containerDictionary">The dictionary of heading elements and their contents.</param>
+        private static void PostProcessHeadingContainers(Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary)
+        {
             foreach (var nodes in containerDictionary)
             {
                 var div = nodes.Key;
@@ -190,15 +218,9 @@ namespace NuGet.Docs
                     div.AppendChild(element);
                     parentNode.RemoveChild(element);
                 }
-                
+
                 parentNode.ReplaceChild(div, heading);
             }
-
-            Page.Headings = headings;
-
-            var docteredHTML = new StringWriter();
-            doc.Save(docteredHTML);
-            return docteredHTML.ToString();
         }
 
         /// <summary>
