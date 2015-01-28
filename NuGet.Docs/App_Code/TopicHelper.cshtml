@@ -1,0 +1,37 @@
+﻿@using NuGet.Docs
+@helper RenderDocumentationIndex()
+{
+    // Normalize the heading levels to start at 3 in the TOC.
+    const int minHeading = 3;
+    // Maximum depth of the index topic-tree
+    const int maxLevels = 3;
+
+    var topics = Topic.GetTopicsWithSubTopics("~/")
+        .Where(t => t.SubTopics.Any()
+            && !String.Equals(t.Title.ToLowerInvariant(), "release notes"))
+        .OrderBy(t => t.Title.ToLowerInvariant() == "consume" ? 1 : t.Title.ToLowerInvariant() == "create" ? 2 : 3);
+    @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
+}
+
+@helper RenderIndexTopics(IEnumerable<Topic> topics, int level, int maxDepth)
+{
+    foreach (Topic topic in topics)
+    {
+        @Html.Raw("<h" + level + ">");
+        <a href="@topic.Url">@topic.Title</a>
+        @Html.Raw("</h" + level + ">");
+
+        if (level < maxDepth)
+        {
+            @RenderIndexTopics(topic.SubTopics, level + 1, maxDepth);
+        }
+    }
+}
+
+@helper RenderReleaseNotesIndex()
+{
+    foreach (var subTopic in Topic.GetSubTopics("~/Release-Notes"))
+    {
+        <p><a href="@subTopic.Url">@subTopic.Title</a></p>
+    }
+}

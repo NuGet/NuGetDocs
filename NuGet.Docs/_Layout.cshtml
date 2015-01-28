@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@Page.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/css/nuget.css?2015-01-27" rel="stylesheet" type="text/css" />
+    <link href="~/css/nuget.docs.css?2015-01-26" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+    <script src="~/js/nuget.docs.js"></script>
+    @RenderSection("head", required: false)
+
+@{
+    string subnav = Request.Path.ToLowerInvariant().TrimStart('/').Replace("/","-");
+
+    if (!String.IsNullOrEmpty(subnav))
+    {
+        <style type="text/css">
+            #subnav-@subnav a { color: black; }
+        </style>
+    }
+}
+</head>
+<body>
+    <div class="header">
+        <a href="~/"><img class="logo" src="~/images/logo.png" border="0" /></a>
+        <div class="search">
+            <form action="~/search" method="get" novalidate="novalidate">
+                <input id="searchbox" type="search" name="q" placeholder="SEARCH DOCS" autocomplete="off" value="@PageData["query"]" />
+                <input type="submit" id="searchbutton" value=" " />
+            </form>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="//www.nuget.org">Home</a></li>
+                <li><a href="//www.nuget.org/packages">Packages</a></li>
+                <li class="current"><a href="~/">Documentation</a></li>
+                <li><a href="http://blog.nuget.org">Blog</a></li>
+                <li><a href="//www.nuget.org/policies/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="clear:both"></div>
+    </div>
+    <div class="subnav">
+        <nav class="sub">
+            <ul>
+                <li id="subnav-consume"><a href="~/consume">Consume</a></li>
+                <li id="subnav-create"><a href="~/create">Create</a></li>
+                <li id="subnav-contribute"><a href="~/contribute">Contribute</a></li>
+                <li id="subnav-releaseNotes"><a href="~/release-notes">Release Notes</a></li>
+            </ul>
+        </nav>
+        <div class="twitter">
+            <a href="https://twitter.com/nuget" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @@nuget</a>
+            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="content">
+        <section>
+            @RenderBody()
+            <div style="clear:both;"></div>
+        </section>
+    </div>
+    <footer class="page">
+        <p>
+            <a href="http://outercurve.org"><img src="~/images/outercurve.png" alt="Outercurve Foundation" style="border-width:0" /></a>
+        </p>
+        <p>
+            &copy; 2011-@DateTime.UtcNow.Year Outercurve Foundation - <a href="//www.nuget.org/policies/terms">Terms of Use</a> - <a href="//www.nuget.org/policies/privacy">Privacy Policy</a>
+        </p>
+        @if (Page.Source != null)
+        {
+            <p>
+                View or edit this page's source on GitHub:
+                <a href="https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/site/@HttpUtility.UrlPathEncode(Page.Source)</a>
+            </p>
+        }
+        else
+        {
+            <p>
+                View or edit this site's source on GitHub:
+                <a href="https://github.com/NuGet/NuGetDocs" target="edit">https://github.com/NuGet/NuGetDocs</a>
+            </p>
+        }
+        @RenderSection("footer", required: false)
+    </footer>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-30016961-3', 'nuget.org');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>

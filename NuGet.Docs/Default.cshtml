@@ -1,0 +1,104 @@
+﻿@{ Page.Title = "NuGet Docs"; }
+
+<aside id="toc">
+    @TopicHelper.RenderDocumentationIndex()
+</aside>
+
+<div class="article-boxes">
+    <article class="box">
+        <header>
+            <h1><span class="icon overview">Overview</span></h1>
+        </header>
+        <p>
+            Welcome to the NuGet Docs. As the name implies, this site contains all the information that you will need to get up and running with NuGet, whether you are new to NuGet and need information for installing and managing pacakges, whether you are a seasoned contriubtor to one of the NuGet projects, or whether you are at some point in between.
+        </p>
+        <p>
+            Based on the amount and diversity of content, the site has been organized into 3 top level content groups based on the top 3 types of ways in which people tend to experience NuGet: as a package <i>consumer</i>, a package <i>creator</i>, or a project <i>contributor</i>. Please select one of these options to begin exploring the related body of content.
+        </p>
+        <p>
+            Finally, please note that this site itself is an open source project, and contains the wealth of information that it does because people like you have contributed to it. If you find any information that is incorrect on the site, or if there is a topic that you believe should be added to the site, please visit our <a href="https://github.com/nuget/nugetdocs" target="_blank">GitHub repository</a> and either file an issue on the issue tracker or, better yet, send us a pull request and contribute your knowledge to the rest of the NuGet community.
+        </p>
+    </article>
+
+    <article class="box links">
+        <header>
+            <h1><span class="icon quick-link">Latest Preview Release: 3.0 Preview</span></h1>
+        </header>
+        <p>
+            NuGet 3.0 Preview was released on November 12, 2014 as part of the Visual Studio 2015 Preview release. This is a big release for us (albeit a preview), and we're excited to start getting feedback on our changes.
+        </p>
+        <p>
+            The first thing you'll notice about NuGet 3.0 Preview is our brand new UI. It's no longer a modal dialog; it's now a full Visual Studio document window. This allows you to open the UI for multiple projects (and/or the solution) at once, tear the window off to another monitor, dock it however you'd like, etc.
+        </p>
+        <p>
+            Beyond the usability differences because of abandoning the modal dialog, we also have lots of new features in the new UI.
+        </p>
+        <footer>
+            <a href="~/release-notes/nuget-3.0-preview" title="View Release Notes">View Release Notes</a>
+        </footer>
+    </article>
+
+    <article class="box links">
+        <header>
+            <h1><span class="icon quick-link">Latest Stable Release: 2.8.3</span></h1>
+        </header>
+        <p>
+            NuGet 2.8.3 was released on October 17, 2014.
+        </p>
+        <p>
+            NuGet 2.8.3 is a minor update to our 2.8.1 VSIX with some targeted fixes. In this release, the support for NuGet Package Manager dialog was added for <a href="http://www.asp.net/vnext">ASP.NET vNext</a>, <a href="http://js.devexpress.com/">DevExtreme</a> and <a href="http://msdn.microsoft.com/en-us/library/aa577497.aspx">BizTalk (.btproj)</a> project types.
+        </p>
+        <p>
+            It also includes reliability bug fixes related to the scenarios of enabling package restore and saving package manager options.
+        </p>
+        <footer>
+            <a href="~/release-notes/nuget-2.8.3" title="View Release Notes">View Release Notes</a>
+            <span>&nbsp;&#124;&nbsp;</span>
+            <a href="https://nuget.codeplex.com/releases/view/133091" title="Download">Download</a>
+        </footer>
+    </article>
+
+    <article class="box links">
+        <header>
+            <h1><span class="icon most-installed">Consume</span></h1>
+        </header>
+        <p>
+            Package consumption is far and away the most common type of activity for NuGet users. This section of NuGet documentation provides everything needed to get started with installing and using NuGet to install and manage packages in a project.
+        </p>
+        <p>Topics range from installing NuGet to using the different client tools to using the package restore workflow.</p>
+        <footer>
+            <a href="~/consume" title="Consume Packages">Consume</a>
+        </footer>
+    </article>
+
+    <article class="box links">
+        <header>
+            <h1><span class="icon upload">Create</span></h1>
+        </header>
+        <p>
+            After having built projects that use NuGet packages for different pieces of functionality, many users wish to componentize their own projects as NuGet packages and distribute them, either interally to their organziation or publically on the NuGet gallery. This process of using components to build new components is where the true power of NuGet packages can be seen.
+        </p>
+        <p>
+            Topics in this section range from creating packages with the nuget.exe command to leveraging NuGet's package metadata format and package structure conventions to publishing a package to an online gallery.
+        </p>
+        <footer>
+            <a href="~/create" title="Create Packages">Create</a>
+        </footer>
+    </article>
+
+    <article class="box links">
+        <header>
+            <h1><span class="icon contribute">Contribute</span></h1>
+        </header>
+        <p>
+            As an open-source project, NuGet's success is largely dependent on the support of its users. There are several different facets of the NuGet project, and several different ways that you can contribute to each of them.
+        </p>
+        <p>
+            This section walks through those different methods of contribution. Additionally, for code contribution, there are also specific guidelines for coding, branching structure, setting up a development environment, and writing and running tests.
+        </p>
+        <footer>
+            <a href="~/contribute" title="Contribute">Contribute</a>
+        </footer>
+    </article>
+    <div style="clear:both"></div>
+</div>
