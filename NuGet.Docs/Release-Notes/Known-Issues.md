@@ -218,5 +218,5 @@ communicate with existing users of your package about the break that may occur t
 build-time package restore.
 
 ## Reporting Issues
-For reporting issues on NuGet Clients, please go [here] (https://nuget.codeplex.com/WorkItem/Create)
-For reporting issues on NuGet Gallery, please go [here] (https://github.com/nuget/nugetgallery/issues)
+For reporting issues on NuGet Clients, please go [here](https://nuget.codeplex.com/WorkItem/Create).
+For reporting issues on NuGet Gallery, please go [here](https://github.com/nuget/nugetgallery/issues).
