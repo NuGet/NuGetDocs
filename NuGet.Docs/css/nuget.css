@@ -30,6 +30,10 @@ a:hover {
     padding-right: 85px;
 }
 
+.subnav {
+    height: 24px;
+}
+
 @media all and (max-width: 1367px) {
     .header, .subnav, .content {
         padding-left: 65px;
