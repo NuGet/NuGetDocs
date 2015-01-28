@@ -99,8 +99,9 @@ a:hover {
     height: 30px;
     background-image: url(/images/search-button.png);
     border: 0px;
-    margin: 0 0 0 -4px;
+    margin: 0 0 0 0;
     padding: 0px;
+    float: right;
 }
 
 nav {
@@ -163,16 +164,6 @@ nav ul li a:hover {
 
 .content section {
     clear: both;
-}
-
-.content header h1 {
-    font-family: 'Segoe UI Semibold','Segoe UI','Arial';
-    font-size: 18pt;
-    padding-top: 10px;
-}
-
-.content h2 {
-    font-size: 12pt;
 }
 
 .content article {
