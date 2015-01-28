@@ -137,6 +137,7 @@ article.box footer {
     line-height: 60px;
     vertical-align: middle;
     border-top: 0;
+    font-size: 14px;
 }
 
 article.box.links {
@@ -254,6 +255,7 @@ body {
         padding: 0 20px 30px 20px;
     }
     article.box footer {
+        font-size: 14px;
         padding: 0 20px;
     }
 
