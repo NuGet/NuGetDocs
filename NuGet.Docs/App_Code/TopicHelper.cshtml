@@ -7,8 +7,9 @@
     const int maxLevels = 3;
 
     var topics = Topic.GetTopicsWithSubTopics("~/")
-        .Where(t => t.SubTopics.Any() 
-            && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
+        .Where(t => t.SubTopics.Any()
+            && !String.Equals(t.Title.ToLowerInvariant(), "release notes"))
+        .OrderBy(t => t.Title.ToLowerInvariant() == "consume" ? 1 : t.Title.ToLowerInvariant() == "create" ? 2 : 3);
     @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
 }
 
