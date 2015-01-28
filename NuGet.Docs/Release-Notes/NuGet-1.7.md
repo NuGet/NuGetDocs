@@ -1,5 +1,9 @@
 ﻿# NuGet 1.7 Release Notes
 
+[NuGet 1.6 Release Notes](nuget-1.6) | [NuGet 1.8 Release Notes](nuget-1.8)
+
+NuGet 1.7 was released on April 4, 2012.
+
 ## Known Installation Issue
 If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade 
 NuGet if you have an older version installed.
@@ -50,5 +54,3 @@ NuGet 1.7 has fixed many bugs around the Package Restore workflow and Network/So
 scenarios.
 
 For a full list of work items fixed in NuGet 1.7, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.7&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
-
-[See NuGet 1.6 Release Notes](nuget-1.6)

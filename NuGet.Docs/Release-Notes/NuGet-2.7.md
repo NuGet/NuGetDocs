@@ -1,5 +1,9 @@
 # NuGet 2.7 Release Notes
 
+[NuGet 2.6.1 for WebMatrix Release Notes](nuget-2.6.1-for-webmatrix) | [NuGet 2.7.1 Release Notes](nuget-2.7.1)
+
+NuGet 2.7 was released on August 22, 2013.
+
 ## Acknowledgements
 
 We would like to thank the following external contributors for their significant contributions to NuGet 2.7:
@@ -175,5 +179,3 @@ To download the NuGet Package Manager (for Visual Studio 2010 Express for Window
 ### Bug Fixes
 
 In addition to these features, this release of NuGet also includes many other bug fixes. There were 97 total issues addressed in the release. For a full list of work items fixed in NuGet 2.7, please view the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?release=NuGet%202.7&status=all).
-
-[See NuGet 2.6 Release Notes](nuget-2.6)

@@ -1,5 +1,9 @@
 # NuGet 1.8 Release Notes
 
+[NuGet 1.7 Release Notes](nuget-1.7) | [NuGet 2.0 Release Notes](nuget-2.0)
+
+NuGet 1.8 was released on May 23, 2012.
+
 ## Known Installation Issue
 If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade 
 NuGet if you have an older version installed.
@@ -60,5 +64,3 @@ By modifying the install command to download and install packages in parallel, N
 ## Bug Fixes
 NuGet 1.8 includes quite a few bug fixes with an emphasis on the package manager console and package restore workflow, particularly as it relates to package restore consent and Windows 8 Express integration.
 For a full list of work items fixed in NuGet 1.8, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.8&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
-
-[See NuGet 1.7 Release Notes](nuget-1.7)

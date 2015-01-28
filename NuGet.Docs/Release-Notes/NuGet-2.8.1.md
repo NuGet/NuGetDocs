@@ -1,5 +1,9 @@
 # NuGet 2.8.1 Release Notes
 
+[NuGet 2.8 Release Notes](nuget-2.8) | [NuGet 2.8.2 Release Notes](nuget-2.8.2)
+
+NuGet 2.8.1 was released on April 2, 2014.
+
 ## Notable features in the release
 
 ### Support for Windows Phone 8.1 Projects

@@ -1,5 +1,9 @@
 ﻿# NuGet 1.3 Release Notes
 
+[NuGet 1.2 Release Notes](nuget-1.2) | [NuGet 1.4 Release Notes](nuget-1.4)
+
+NuGet 1.3 was released on April 25, 2011.
+
 ## New Features
 
 ### Streamlined Package Creation with symbol server integration
@@ -83,5 +87,3 @@ For a full list of bug fixes, please view the [NuGet Issue Tracker for this rele
 
 * Packages with source files work in both Websites and in Web Application Projects. 
 For Websites, source files are copied into the `App_Code` folder
-
-[See NuGet 1.2 Release Notes](nuget-1.2)

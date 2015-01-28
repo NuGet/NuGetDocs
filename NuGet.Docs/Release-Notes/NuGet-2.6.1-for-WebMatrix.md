@@ -1,5 +1,7 @@
 # NuGet 2.6.1 for WebMatrix Release Notes
 
+[NuGet 2.6 Release Notes](nuget-2.6) | [NuGet 2.7 Release Notes](nuget-2.7)
+
 The NuGet team released an updated NuGet Package Manager extension for WebMatrix on March 26, 2014.  This update can be installed from the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/) using the following steps:
 
 1. Open WebMatrix 3
@@ -41,5 +43,3 @@ You can now update all of your web site's packages in one step!  When you open t
 When installing packages that contain files that already exist in your web site, NuGet has always just silently ignored those files (leaving your existing files alone).  This could lead to the impression that a package was installed or updated correctly when in fact it wasn't.  NuGet will now prompt for files to be overwritten.
 
 ![File Conflict Resolution](Images/NuGet-2.8/webmatrix-overwrite-file.png)
-
-[See NuGet 2.8 Release Notes](nuget-2.8)

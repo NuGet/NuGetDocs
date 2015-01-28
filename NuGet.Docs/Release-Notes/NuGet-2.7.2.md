@@ -1,5 +1,9 @@
 # NuGet 2.7.2 Release Notes
 
+[NuGet 2.7.1 Release Notes](nuget-2.7.1) | [NuGet 2.8 Release Notes](nuget-2.8)
+
+NuGet 2.7.2 was released on November 11, 2013.
+
 ## Noteworthy Bug Fixes and Features
 
 ### License Text 

@@ -1,5 +1,9 @@
 # NuGet 2.2 Release Notes
 
+[NuGet 2.1 Release Notes](nuget-2.1) | [NuGet 2.2.1 Release Notes](nuget-2.2.1)
+
+NuGet 2.2 was released on December 12, 2012.
+
 ## Visual Studio Quick Launch
 One of the new features that was added in Visual Studio 2012 was the [quick launch dialog](http://msdn.microsoft.com/library/hh417697.aspx). NuGet 2.2 extends this dialog, allowing it to initialize the package manager dialog with the search terms entered in the quick launch. For example, entering 'jquery' in quick launch now includes an option in the results to search NuGet packages matching 'jquery'.
 
@@ -24,5 +28,3 @@ When attempting to install a NuGet package into an F# project using the package 
 
 ## Bug Fixes
 NuGet 2.2 includes many bug fixes. For a full list of work items fixed in NuGet 2.2, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.2&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
-
-[See NuGet 2.1 Release Notes](nuget-2.1)

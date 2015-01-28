@@ -1,5 +1,9 @@
 ﻿# NuGet 1.0 and 1.1 Release Notes
 
+[NuGet 1.2 Release Notes](nuget-1.2)
+
+NuGet 1.0 was released on January 13, 2011.  NuGet 1.1 was released on February 12, 2011.
+
 ## Overview
 
 This document contains the release notes for the various releases of NuGet 1.0 grouped according to major preview release.

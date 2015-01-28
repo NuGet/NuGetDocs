@@ -15,7 +15,7 @@ h6, h7, h8, h9 { font-size: 1em; }
 .content #doc h1:first-child {
     margin: 0;
     padding-top: 20px;
-    padding-bottom: 28px; 
+    padding-bottom: 8px; 
 }
 
 .content #doc > pre {
@@ -156,7 +156,7 @@ article#doc section {
 article#doc div.topic {
     background-color: #f7f9f9;
     margin: 0 -40px 0 -40px;
-    padding: 0 40px 50px 40px;
+    padding: 0 40px 5px 40px;
     border-top: 1px solid #D2D2D2;
 }
 
@@ -165,13 +165,13 @@ article#doc div.topic:first-child {
 }
 
 article#doc div.sub-topic {
-    padding-bottom: 60px;
+    padding-bottom: 4px;
 }
 
 article#doc div.sub-topic h2 {
     border-top: 1px solid #D2D2D2;
     margin: 60px -40px 0 -40px;
-    padding: 20px 40px 28px 40px;
+    padding: 20px 40px 0 40px;
 }
 
 article#doc div.sub-topic h2:first-of-type {

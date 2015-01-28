@@ -1,5 +1,9 @@
 # NuGet 2.6 Release Notes
 
+[NuGet 2.5 Release Notes](nuget-2.5) | [NuGet 2.6.1 for WebMatrix Release Notes](nuget-2.6.1-for-webmatrix)
+
+NuGet 2.6 was released on June 26, 2013.
+
 ## Notable features in the release
 
 ### Support for Visual Studio 2013
@@ -145,5 +149,3 @@ package authors to fully understand how developers are installing their packages
 
 NuGet 2.6 also includes several bug fixes. For a full list of work items fixed in NuGet 2.6, please view
 the [NuGet Issue Tracker for this release](https://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%202.6&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0&reasonClosed=All).
-
-[See NuGet 2.5 Release Notes](nuget-2.5)

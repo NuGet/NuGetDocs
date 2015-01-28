@@ -1,5 +1,7 @@
 # NuGet 2.2.1 Release Notes
 
+[NuGet 2.2 Release Notes](nuget-2.2) | [NuGet 2.5 Release Notes](nuget-2.5)
+
 NuGet 2.2.1 was released on February 15, 2013.  The VS Extension version number is 2.2.40116.9051.
 
 ## Localization Refresh
@@ -34,5 +36,3 @@ NuGet 2.2.1 includes a few targeted bug fixes. For a list of work items fixed in
 ## Known Issues
 
 If you are extending ASP.NET project templates, all preinstalled package repositories must use the same value for the `isPreunzipped` attribute.
-
-[See NuGet 2.2 Release Notes](nuget-2.2)

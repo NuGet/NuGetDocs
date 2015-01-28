@@ -1,5 +1,9 @@
 # NuGet 2.1 Release Notes
 
+[NuGet 2.0 Release Notes](nuget-2.0) | [NuGet 2.2 Release Notes](nuget-2.2)
+
+NuGet 2.1 was released on October 4, 2012.
+
 ## Hierarchical Nuget.config
 NuGet 2.1 gives you greater flexibility in controlling NuGet settings by way of recursively walking up the directory structure looking for NuGet.config files and then building the configuration from the set of all found files.  As an example, consider the scenario where a team has an internal package repository for CI builds of other internal dependencies. The directory structure for an individual project might look like the following:
 
@@ -134,5 +138,3 @@ In previous versions of NuGet, updating a package source from within the Visual 
  
 ## Bug Fixes
 NuGet 2.1 includes many bug fixes. For a full list of work items fixed in NuGet 2.0, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Fixed&type=All&priority=All&release=NuGet%202.1&assignedTo=All&component=All&sortField=LastUpdatedDate&sortDirection=Descending&page=0).
-
-[See NuGet 2.0 Release Notes](nuget-2.0)

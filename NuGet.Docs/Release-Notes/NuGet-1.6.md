@@ -1,5 +1,9 @@
 ﻿# NuGet 1.6 Release Notes
 
+[NuGet 1.5 Release Notes](nuget-1.5) | [NuGet 1.7 Release Notes](nuget-1.7)
+
+NuGet 1.6 was released on December 13, 2011.
+
 ## Known Installation Issue
 If you are running VS 2010 SP1, you might run into an installation error when attempting to upgrade 
 NuGet if you have an older version installed.
@@ -47,5 +51,3 @@ NuGet 1.6 had a total of 106 work items fixed. 95 of those were classified as bu
 features.
 
 For a full list of work items fixed in NuGet 1.6, please view the [NuGet Issue Tracker for this release](http://nuget.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=NuGet%201.6&assignedTo=All&component=All&sortField=Votes&sortDirection=Descending&page=0).
-
-[See NuGet 1.5 Release Notes](nuget-1.5)
