@@ -9,6 +9,7 @@ obj/
 *.user
 *.suo
 *.sln.cache
+*.sln.ide
 *.vs10x
 *.psess
 *.docstates
