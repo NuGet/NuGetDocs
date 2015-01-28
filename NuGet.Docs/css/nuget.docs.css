@@ -30,6 +30,16 @@ h6, h7, h8, h9 { font-size: 1em; }
     word-wrap: break-word; /* IE 5.5+ */
 }
 
+.content header h1 {
+    font-family: 'Segoe UI Semibold','Segoe UI','Arial';
+    font-size: 18pt;
+    padding-top: 10px;
+}
+
+.content h2 {
+    font-size: 12pt;
+}
+
 textarea, input {
     /* Hide Safari's oval outline */
     -webkit-appearance: none;
