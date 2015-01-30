@@ -131,7 +131,7 @@ To check if there are newer versions available for any installed packages, enter
 ![Get-Package command](/images/consume/package-manager-console-get-package-showing-updates.png)
 
 To update a package, enter `Update-Package` with the package ID. For example, enter the command `Update-Package jQuery`.
-For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see (Package-Manager-Console-PowerShell-Reference#update-package).
+For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see [here](Package-Manager-Console-PowerShell-Reference#update-package).
 
 ![update-package command](/images/consume/package-manager-console-update-package.png)
 
