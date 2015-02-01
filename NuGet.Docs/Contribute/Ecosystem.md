@@ -378,4 +378,4 @@ The following pointers should help you get the maximum out of NuGet:
 NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and update the site accordingly.
 
 ## Adding Your Project
-If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/Contribute/Ecosystem.markdown).
+If you have a NuGet ecosystem project that would be a valuable addition to this page, please  submit a pull request with an edit to [this page](https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/Contribute/Ecosystem.md).
