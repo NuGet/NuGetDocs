@@ -5,7 +5,7 @@ These docs are written in Markdown. For an introduction to Markdown, see [our sa
 ## Making a change to existing documentation
 The basic workflow for contributing to NuGet Docs is simple.
 
-1. Find the page you want to edit within the [`subfolders`](https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs) of the [NuGet Docs project on GitHub](https://github.com/NuGet/NuGetDocs/). This project contains subfolders with all of the documentation Markdown files. For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/NuGet.Docs/Contribute/Contributing-to-NuGet-Documentation.markdown).
+1. Find the page you want to edit within the [`subfolders`](https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs) of the [NuGet Docs project on GitHub](https://github.com/NuGet/NuGetDocs/). This project contains subfolders with all of the documentation Markdown files. For example, the page you're [reading is here](https://github.com/NuGet/NuGetDocs/blob/master/NuGet.Docs/Contribute/Contributing-to-NuGet-Documentation.md).
 2. Click the "Edit" button which will automatically fork (copy) the project and allow you to propose changes.
 3. Edit the Markdown, type in a commit message below, and click "Propose file change".
 4. Send a pull request for your change. That's it!
