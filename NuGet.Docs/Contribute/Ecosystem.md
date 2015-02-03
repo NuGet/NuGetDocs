@@ -306,9 +306,9 @@ More info: [http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-te
 More info: [http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/](http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/)
 
 ### Artifactory
-Artifactory is a repository manager with built-in support for various artifacts, including NuGet packages.
+Artifactory is a first and only Binary Repository Manager with 1st class support for .NET development in general and NuGet packages in particular, including proxing remote feeds, hosting in-house packages, security and user management, promotion, browsing the content of the packages, custom metadata and full search for packages.
 
-More info: [http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
+More info: [Article](http://www.jfrog.com/article/nuget-repositories/), [White Paper](http://bit.ly/ZS5IrA), [Reference Documentation](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories), [number of blog posts](http://www.jfrog.com/tag/nuget/)
 
 ### Sonatype Nexus
 Nexus is another repository manager with built-in support for NuGet and they even provide a "[What is NuGet for Java Developers](http://blog.sonatype.com/people/2012/02/what-is-nuget-for-java-developers/)" on their blog.
