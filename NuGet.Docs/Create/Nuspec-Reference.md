@@ -129,7 +129,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>developmentDependency</td>
-        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="../Release-Notes/NuGet-2.7#Development-Only-Dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
+        <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="../Release-Notes/NuGet-2.7#development-only-dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
     </tr>
 </tbody>
 </table>
