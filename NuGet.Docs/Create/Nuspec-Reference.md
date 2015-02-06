@@ -144,7 +144,7 @@ For example, when using the command:
 
 The `MyProject.nuspec` file adjacent to the `MyProject.csproj` file may contain the following replacement tokens which 
 are populated by the values within the project.  The file may also contain other replacement tokens that will be specified
-using the [nuget pack -Properties](../Consume/Command-Line-Reference#Pack-Command) feature.
+using the [nuget pack -Properties](../Consume/Command-Line-Reference#pack-command) feature.
 
 <table class="reference">
     <tr><th>Token</th><th>Source</th></tr>
