@@ -113,7 +113,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>dependencies</td>
-        <td>The list of dependencies for the package. For more information, see <a href="#Specifying-Dependencies">Specifying Dependencies</a> later in this document.</td>
+        <td>The list of dependencies for the package. For more information, see <a href="#specifying-dependencies">Specifying Dependencies</a> later in this document.</td>
     </tr>
     <tr>
         <td>references</td>
