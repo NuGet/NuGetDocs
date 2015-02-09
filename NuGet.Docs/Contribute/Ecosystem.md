@@ -306,7 +306,7 @@ More info: [http://blogs.jetbrains.com/dotnet/2011/08/native-nuget-support-in-te
 More info: [http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/](http://blog.appveyor.com/2014/02/21/nuget-support-in-appveyor-ci/)
 
 ### Artifactory
-Artifactory is a first and only Binary Repository Manager with 1st class support for .NET development in general and NuGet packages in particular, including proxing remote feeds, hosting in-house packages, security and user management, promotion, browsing the content of the packages, custom metadata and full search for packages.
+Artifactory is the first and only Binary Repository Manager with 1st class support for .NET development in general and NuGet packages in particular, including proxying remote feeds, hosting in-house packages, security and user management, promotion, browsing the content of packages, custom metadata and full search for packages.
 
 More info: [Article](http://www.jfrog.com/article/nuget-repositories/), [White Paper](http://bit.ly/ZS5IrA), [Reference Documentation](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories), [number of blog posts](http://www.jfrog.com/tag/nuget/)
 
