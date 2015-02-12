@@ -350,8 +350,6 @@ There are quite a few other tools and utilities building further on top of NuGet
 * [NuGetFeed](http://nugetfeed.org/) (build a list of favorite packages) 
 * [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)  
 * [Java implementation of NuGet Server](http://blog.jonnyzzz.name/2012/03/nuget-server-in-pure-java.html)
-* [NuGet Fight!](http://www.nugetfight.com/)
-* [NuGit](http://nugit.org/)
 * [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
 * [HotNuget](http://hotnuget.com) (Compare package usage)
 * [DefinitelyTyped](http://definitelytyped.org/) ([Automatic](https://github.com/DefinitelyTyped/NugetAutomation/) TypeScript Type [Definitions published to NuGet](http://www.nuget.org/packages?q=DefinitelyTyped))
