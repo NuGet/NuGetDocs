@@ -60,7 +60,7 @@ Starting with NuGet 2.7, package restore consent is ON by default while allowing
 
 #### Automatic Package Restore in Visual Studio
 
-Starting with NuGet 2.7, NuGet will automatically download missing packages during build in Visual Studio, even if package restore hasn't been explicitly enabled for the solution. This automatic package restore happens in Visual Studio when you build a project or the solution, but before MSBuild is invoked. This yields a few significant benefits:
+Starting with NuGet 2.7, NuGet will automatically download missing packages during build in Visual Studio, even if package restore hasn't been explicitly enabled for the solution. This Automatic Package Restore happens in Visual Studio when you build a project or the solution, but before MSBuild is invoked. This yields a few significant benefits:
 
 1. No further need to use the "Enable NuGet Package Restore" gesture on your solution
 1. Projects don't need to be modified, and NuGet won't make changes to your project to ensure package restore is enabled
@@ -72,7 +72,7 @@ In order to use Automatic Package Restore in Visual Studio, you only need to tak
 
 There are several ways to omit your `packages` folder from source control. For more information, see the [Omitting Packages from Source Control](../Consume/Package-Restore#omitting-packages-from-source-control) section of the [Package Restore](../Consume/Package-Restore) documentation.
 
-While all users are implicitly opted into automatic package restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
+While all users are implicitly opted into Automatic Package Restore consent, you can easily opt out through the Package Manager settings in Visual Studio.
 
 ![Package Manager Settings](Images/NuGet-2.7/package-manager-settings.png)
 
@@ -110,7 +110,7 @@ The fixed were:
 1. [New package restore doesn't work on Mono when using SLN file](https://nuget.codeplex.com/workitem/3596)
 1. [New package restore doesn't work with Wix projects](https://nuget.codeplex.com/workitem/3598)
 
-There is also a known issue with the new package restore workflow whereby [automatic package restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue was fixed in NuGet 2.7.1.
+There is also a known issue with the new package restore workflow whereby [Automatic Package Restore does not work for projects under a solution folder](https://nuget.codeplex.com/workitem/3625). This issue was fixed in NuGet 2.7.1.
 
 ### Project Retargeting and Upgrade Build Errors/Warnings
 

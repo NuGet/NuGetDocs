@@ -31,7 +31,7 @@ Before any of the above steps are taken however, NuGet verifies that consent is 
 
 These two options are available on the **Package Manager** General settings in Visual Studios options.
 
-Additionally, if NuGet recognizes that the MSBuild-Integrated package restore approach is enabled for the solution, automatic package restore is skipped. MSBuild-Integrated package restore is identified by checking the existence of the `.nuget\NuGet.targets` file at the solution root.
+Additionally, if NuGet recognizes that the MSBuild-Integrated package restore approach is enabled for the solution, Automatic Package Restore is skipped. MSBuild-Integrated package restore is identified by checking the existence of the `.nuget\NuGet.targets` file at the solution root.
 
 This approach to package restore offers several advantages:
 
@@ -129,7 +129,7 @@ Users uncomfortable automatically downloading missing packages during build have
 
 If desired, a user or company can employ machine-wide NuGet configuration to opt all users out of package restore consent by default. While users will still be able to apply additional NuGet configuration to re-enable package restore consent, it can provide a good default experience in some environments.
 
-To accomplish this, NuGet's [config extensibility point](NuGet-Config-File#NuGet-config-extensibility-point) can be utilized to specify one or both of the opt out settings. Here's a sample `NuGet.config` file that opts users out of both global package restore consent as well as automatic package restore.
+To accomplish this, NuGet's [config extensibility point](NuGet-Config-File#NuGet-config-extensibility-point) can be utilized to specify one or both of the opt out settings. Here's a sample `NuGet.config` file that opts users out of both global package restore consent as well as Automatic Package Restore.
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<configuration>
