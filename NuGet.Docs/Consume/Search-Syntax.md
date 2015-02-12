@@ -1,6 +1,6 @@
 # NuGet Package Search Syntax
 
-NuGet package search works the same whether you use the nuget.org website, or the Visual Studio Extensions.
+NuGet package search works the same whether you use the NuGet Gallery, or the NuGet Package Manager extension for Visual Studio. In other words: the NuGet Gallery, the NuGet commandline, the Package Manager Console and Dialogs all share the same search formats.
 
 ## Search by Keywords
 
