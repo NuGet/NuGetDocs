@@ -1,4 +1,4 @@
-﻿# Packages in Visual Studio Templates
+﻿# Authoring Visual Studio Templates with NuGet Dependencies
 
 NuGet supports adding NuGet packages to Visual Studio project templates and item 
 templates. When Visual Studio creates a project using a template that contains these 
