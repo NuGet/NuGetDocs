@@ -1,10 +1,10 @@
 # Invoking NuGet Services from inside Visual Studio
 
-One of the best kept secrets of the NuGet extension is that besides the UI that everyone has become familiar with, it also exports some useful services, via [MEF](http://msdn.microsoft.com/en-us/library/dd460648.aspx "MEF"), which allow other components in VS to interact with NuGet. These include installing packages, uninstalling packages and querying for installed packages.
+Besides the UI that everyone has become familiar with, the NuGet extension also exports some useful services, via [MEF](http://msdn.microsoft.com/en-us/library/dd460648.aspx "MEF"), which allow other components in VS to interact with NuGet. These include installing packages, uninstalling packages and querying for installed packages.
 
 Over the past year, the NuGet team has received many inquiries from various teams inside and outside Microsoft asking us how to perform such tasks from their components. We have solidified the guidance over time and wanted to share it broadly.
 
-As of the current version (2.0), NuGet exports six interfaces/services via MEF, all of which reside in the **NuGet.VisualStudio** namespace in the **NuGet.VisualStudio.dll** assembly:
+As of NuGet 2.0, NuGet exports six interfaces/services via MEF, all of which reside in the **NuGet.VisualStudio** namespace in the **NuGet.VisualStudio.dll** assembly:
 
 - **IVsPackageInstaller** - 
 Contains methods to install NuGet packages into projects.
