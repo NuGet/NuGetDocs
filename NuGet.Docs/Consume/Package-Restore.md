@@ -1,5 +1,7 @@
 # NuGet Package Restore
 
+> **Important**: Nuget Automatic Package Restore has changed in Nuget 2.7+. Do not mix 'old' and new methods for automatic package restoration. For more information, see Common Issues with Automatic Package Restore, below.
+
 Many developers like to omit binaries from their source control repository. This can be beneficial in multiple ways:
 
 1. Distributed version control systems (DVCS) include every version of every file within the repository, and binary files that are updated frequently can lead to significant repository bloat and more time required to clone the repository.
@@ -152,6 +154,33 @@ If you have upgraded to NuGet 2.7+ but your solution fails to build stating that
 1. **Update the version of `NuGet.exe` in your `.nuget` folder.** To do this, run `nuget.exe update -self` from your `.nuget` folder, which will download the latest version of `NuGet.exe` and replace the version in the `.nuget` folder. The latest version of `NuGet.exe` will infer consent to be ON even when not explicitly saved in the `NuGet.config` file.
 1. **Migrate to Automatic Package Restore.** For this approach, you would migrate from the MSBuild-integrated package restore to the Automatic Package Restore approach, following the [documented walkthrough](../Consume/Package-Restore/Migrating-to-Automatic-Package-Restore).
 
+#### Common issues with Automatic Package Restore
+
+If you have Nuget 2.7+ installed; it's important to pick one method for managing Automatic Package Restore in Visual Studio.
+
+Two methods are available:
+
+ 1. (Nuget 2.7+): Visual Studio -> Tools -> Package Manager -> Package Manager Settings -> Enable Automatic Package Restore
+ 2. (Nuget 2.6 and below) Right clicking on a solution and clicking "Enable Package Restore for this solution".
+ 
+These are different methods; and have drastically different outcomes for developing with Nuget.
+
+Method #1 causes the following to happen:
+
+ - Packages are automatically downloaded by Visual Studio during build
+ - A `.nuget` folder is added with one file, `nuget.config`; this file *only* contains the `disableSourceControlIntegration` setting
+ - Packages are put into a `packages` folder at the solution level
+ - For Team Foundation Server 2013 and later, packages are automatically restored during build, providing that you're using a Team Build Template for Team Foundation Server 2013 or later. If you're using a previous version of build templates (perhaps because you've upgraded to TFS 2013), you'll have to migrate those build templates to TFS 2013 (essentially recreate the custom parts of the Build Templates using the appropriate template for your Source Control (TFVC or Git)).
+ 
+Method #2 causes the following to happen:
+
+ - Packages are automatically downloaded by Visual Studio and added to source control (if using TFVC)
+ - A `.nuget` folder is added with three files, `Nuget.exe`, `Nuget.targets`, and `nuget.config`.
+ - The `.csproj` or `.vbproj` files are edited to add `<PacakgeRestore>true</PackageRestore>` and references to the `nuget.targets` file and build actions based on `nuget.targets`.
+ - For a custom build `.proj`, a pre build `<Exec>` action to restore nuget packages is required. This is not added automatically.
+ 
+If you mix these two methods; you may encounter problems. If you're using Nuget 2.7+, it's recommended to choose Method #1.
+ 
 ## Further Reading
 
 [Package Restore with Team Build](package-restore/team-build)
