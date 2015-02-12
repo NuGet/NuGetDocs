@@ -24,7 +24,7 @@ Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', and 'Owne
 
 [What's the difference between ID and Title? ID is the name you use in package management console. Title is what is shown at the top of the package page in search results.]
 
-### Examples:
+**Examples**
 
     ID:jQuery
     id:NuGet.Core
