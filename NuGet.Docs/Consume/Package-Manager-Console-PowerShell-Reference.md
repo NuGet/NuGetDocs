@@ -29,7 +29,7 @@ Adds binding redirects to the specified project, MyProjectName.
 ## Get-Package
 Gets the set of packages available from the local repository folder. Use the -ListAvailable flag to list packages available from the online package source.
 
-    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions]
+    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease]
 
 Gets the set of packages available from the package source. Defaults to only showing the list of installed packages. 
 Use the -ListAvailable flag to list packages available from the package source.
@@ -89,7 +89,7 @@ PARAMETERS
     PM> Get-Package
     
     
-Returns the packages installed in the default project.
+Returns the packages installed in the entire solution.
     
     PM> Get-Package -ListAvailable
     
@@ -106,7 +106,7 @@ Returns a list of packages available online using "Ninject" as a search term.
     PS> Get-Package -Updates
     
     
-Returns a list of packages installed in the default project that have updates available in the current package source.
+Returns a list of packages installed in the entire solution that have updates available in the current package source.
     
     PM> Get-Package -Recent
     
@@ -155,7 +155,7 @@ Returns a reference to every project in the solution.
 ## Install-Package
 Installs a package.
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
 
 Installs a package and its dependencies into the project.
 
@@ -176,15 +176,15 @@ PARAMETERS
         
         Required: false
         
+    <strong>-Version</strong> <string>
+		Specifies the version of the package to install. If omitted, defaults to the latest version.
+        
+        Required: false
+                
     <strong>-Source</strong> <string>
         Specifies the URL or directory path for the package source containing the package to install. If omitted, 
         looks in the currently selected package source 
         to find the corresponding package URL.
-        
-        Required: false
-        
-    <strong>-Version</strong> <string>
-        Specifies the version of the package to install. If omitted, defaults to the latest version.
         
         Required: false
 
@@ -270,7 +270,7 @@ PARAMETERS
     <strong>-Id</strong> <string>
         Specifies the Id of the package to search for.
         
-        Required: false
+        Required: true
         
     <strong>-Version</strong>
         Specifies the version of the package to search for. If omitted, defaults to the latest version.
@@ -326,7 +326,7 @@ Assigns the license URL to the variable, $url, without opening the URL in a brow
 ## Uninstall-Package
 Uninstalls a package.
 
-    Uninstall-Package [-Id] <string> [-RemoveDependencies] [-Force] [-Version <string>] [-WhatIf]
+    Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [-Force] [-Version <string>] [-WhatIf]
 
 Uninstalls a package. If other packages depend on this package, the command will fail unless the –Force option is specified.
 <pre>    
