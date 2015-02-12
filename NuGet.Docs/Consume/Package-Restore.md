@@ -111,7 +111,7 @@ Starting with NuGet 2.7, package restore consent is **ON** by default. This mean
 Even though package restore *consent* is on by default, users still need to choose to omit their packages from source control before package restore is engaged. By default, source control systems will include the `packages` folder in your repository, and you need to take action to omit the packages from source control.
 
 ##### Git
-Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder.
+Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder. [Sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
 
 ##### TFS
 Use the `.nuget\NuGet.config` file to disable source control integration, as explained on the [NuGet Config Settings](NuGet-Config-Settings) document under the "Source control integration" section.
