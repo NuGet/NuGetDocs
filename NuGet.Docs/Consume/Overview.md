@@ -1,14 +1,14 @@
 # NuGet Overview
 
-NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to produce and consume packages. The NuGet Gallery ([nuget.org](http://nuget.org)) is the central package repository used by all package authors and consumers.
+NuGet is the package manager for the Microsoft development platform including .NET. The NuGet client tools provide the ability to produce and consume packages. The [NuGet Gallery](http://nuget.org) is the central package repository used by all package authors and consumers.
 
 When you install a package, NuGet copies files to your solution and automatically makes whatever changes are needed, such as adding references and changing your app.config or web.config file. If you decide to remove the library, NuGet removes files and reverses whatever changes it made in your project so that no clutter is left.
 
 ## NuGet Packages
 
-Everything necessary to install a library or tool is bundled into a package (a .nupkg file). A package 
-includes files to copy to your project and a manifest file that describes the contents of the package.
-Packages are bundled into feeds that Visual 
+Everything necessary to install a library or tool is bundled into a package (a `.nupkg` file). A package 
+includes files to copy to your project and a manifest file that describes the contents of the package 
+and what needs to be done to add or remove the library. Packages are bundled into feeds that Visual 
 Studio accesses in order to present lists of available packages. There is an official feed that is the 
 default source for NuGet, and you can contribute to that feed or create your own feeds.
 
