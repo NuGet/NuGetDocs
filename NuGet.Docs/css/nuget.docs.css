@@ -22,7 +22,8 @@ h6, h7, h8, h9 { font-size: 1em; }
     padding-bottom: 8px; 
 }
 
-.content #doc > pre {
+.content #doc > pre,
+.content #doc pre {
     white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
     white-space: -pre-wrap; /* Opera */
     white-space: -o-pre-wrap; /* Opera */
