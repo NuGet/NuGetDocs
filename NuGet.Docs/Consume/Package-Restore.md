@@ -10,7 +10,7 @@ To promote a cleaner developer environment while also reducing repository size, 
 
 ## Package Restore Approaches
 
-NuGet offers two approaches to using package restore. Automatic Package Restore is the NuGet team's recommended approach to Package Restore within Visual Studio, and it was introduced in NuGet 2.7. Command-Line Package Restore is required when building a solution from the command-line; it was introduced in early versions of NuGet, but was improved in NuGet 2.7. The MSBuild-integrated package restore approach is the original Package Restore implementation and though it continues to work in many scenarios, it does not cover the full set of scenarios addressed by the other two approaches.
+NuGet offers three approaches to using package restore. Automatic Package Restore is the NuGet team's recommended approach to Package Restore within Visual Studio, and it was introduced in NuGet 2.7. Command-Line Package Restore is required when building a solution from the command-line; it was introduced in early versions of NuGet, but was improved in NuGet 2.7. The MSBuild-integrated package restore approach is the original Package Restore implementation and though it continues to work in many scenarios, it does not cover the full set of scenarios addressed by the other two approaches.
 
 ### Automatic Package Restore in Visual Studio
 
@@ -91,6 +91,10 @@ To switch from MSBuild-Integrated Package Restore to Automatic Package Restore, 
 
 As mentioned above, Automatic Package Restore in Visual Studio and the MSBuild-Integrated Package Restore both verify that the user has granted consent before packages are downloaded from the user's configured package sources (which likely includes a package source from the public nuget.org gallery). The concept of package restore consent was introduced in NuGet 2.0 (which was included in Visual Studio 2012). Package restore consent was revised with NuGet 2.7 to address feedback received and improve the usability of package restore.
 
+### NuGet 2.7+
+
+Starting with NuGet 2.7, package restore consent is **ON** by default. This means that all users are implicitly opted into restoring missing packages during build. This eliminates hurdles encountered by users when attempting to build projects that use NuGet, especially if the user is unfamiliar with NuGet and the package restore consent concept. When building a solution in Visual Studio, any missing packages will be automatically downloaded during build, and a cancellable progress window will be shown. Additionally, a message will be written to the Output window to indicate that package restore executed.
+
 ### NuGet 2.0-2.6
 
 Starting with NuGet 2.0 and continuing through NuGet 2.6, package restore consent was **OFF** by default. This resulted in users getting build errors in Visual Studio when NuGet packages were missing from their solution. Users had to explicitly opt in to package restore consent before solutions missing packages could be built either from within Visual Studio or from the command-line. This adversely affected many users' workflows and build servers, forcing them to explicitly opt in on all machines where NuGet was used to restore packages.
@@ -101,10 +105,6 @@ There are two ways to opt into package restore consent, as needed by NuGet 2.0-2
 
 1. From Visual Studio's options, select the `Package Manager` node and its "General" settings. Check the box to "Allow NuGet to download missing packages during build" and click OK. *Note that in NuGet 2.7, the phrase "during build" was removed from this setting.* This setting is stored in the user's `%AppData%\NuGet\NuGet.config` file, but it can also be specified in any `NuGet.config` file that applies to the solution being built, as documented on the [NuGet Config File] page.
 1. Specify an environment variable called `EnableNuGetPackageRestore` with a value of `true` before launching Visual Studio or MSBuild. 
-
-### NuGet 2.7+
-
-Starting with NuGet 2.7, package restore consent is **ON** by default. This means that all users are implicitly opted into restoring missing packages during build. This eliminates hurdles encountered by users when attempting to build projects that use NuGet, especially if the user is unfamiliar with NuGet and the package restore consent concept. When building a solution in Visual Studio, any missing packages will be automatically downloaded during build, and a cancellable progress window will be shown. Additionally, a message will be written to the Output window to indicate that package restore executed.
 
 #### Omitting Packages from Source Control
 
