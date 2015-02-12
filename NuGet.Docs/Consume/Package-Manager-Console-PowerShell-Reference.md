@@ -19,7 +19,7 @@ PARAMETERS
         
         Required: true
 </pre>
-### Examples
+**Examples**
     
     PM> Add-BindingRedirect MyProjectName
     
@@ -83,7 +83,7 @@ PARAMETERS
 
         Required: false
 </pre>
-### Examples
+**Examples**
 
     
     PM> Get-Package
@@ -133,7 +133,7 @@ PARAMETERS
         
         Required: false
 </pre>
-### Examples
+**Examples**
 
     
    PM> Get-Project
@@ -234,7 +234,7 @@ PARAMETERS
 
         Required: false
 </pre>
-### Examples
+**Examples**
 
     PM> Install-Package Elmah
     
@@ -302,7 +302,7 @@ PARAMETERS
         
         Required: false
 </pre>
-### Examples
+**Examples**
 
     
     PM> Open-PackagePage Ninject
@@ -362,7 +362,7 @@ PARAMETERS
 
         Required: false
 </pre>
-### Examples
+**Examples**
 
     
     PM> Uninstall-Package Elmah
@@ -445,7 +445,7 @@ PARAMETERS
 
         Required: false
 </pre>
-### Examples
+**Examples**
     
     PM> Update-Package Elmah
     
