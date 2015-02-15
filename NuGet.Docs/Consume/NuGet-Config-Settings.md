@@ -57,7 +57,7 @@ Below is the summary of the NuGet config keys and their usage.
 	   Allows you to specify the list of sources to be used while looking for packages. <br/>
 	   
 	- "PackageSources" section has the list of package sources. <br/> 
-	- "DisabledPackageSources" has the list of sources which are currently disabled currently.  <br/>
+	- "DisabledPackageSources" has the list of sources which are currently disabled.  <br/>
 	- "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would imply that all the current package sources except for the disabled ones are active.<br/></br> </br>
 
 		The values can be added to the config file directly or using the package manager settings UI ( which would in turn update the NuGet.config file) or using the <a href="Command-Line-Reference#Sources-Command">NuGet.exe Sources command.</a>
