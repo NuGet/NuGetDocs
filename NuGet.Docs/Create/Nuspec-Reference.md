@@ -388,7 +388,7 @@ attribute and `target` attribute respectively.
         <td>target</td>
         <td>
             This is a relative path to the directory within the package 
-            where the source files will be placed.
+            where the source files will be placed. The relative path should begin with 'lib', 'content' or 'tools'.
         </td>
     </tr>
     <tr>
