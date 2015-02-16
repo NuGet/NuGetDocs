@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>@Page.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/css/nuget.css?2015-01-27" rel="stylesheet" type="text/css" />
-    <link href="~/css/nuget.docs.css?2015-02-12" rel="stylesheet" type="text/css" />
+    <link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />
+    <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
     <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
     <script src="~/js/nuget.docs.js"></script>
@@ -25,6 +25,10 @@
 <body>
     <div class="header">
         <a href="~/"><img class="logo" src="~/images/logo.png" border="0" /></a>
+        <div class="nav-toggles">
+            <img class="nav-toggle" data-toggle=".search" src="~/images/search-button.png" border="0" />
+            <img class="nav-toggle" data-toggle=".header nav, .subnav" src="~/images/burger-button.png" border="0" />
+        </div>
         <div class="search">
             <form action="~/search" method="get" novalidate="novalidate">
                 <input id="searchbox" type="search" name="q" placeholder="SEARCH DOCS" autocomplete="off" value="@PageData["query"]" />

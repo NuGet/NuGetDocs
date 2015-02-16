@@ -5,7 +5,6 @@ html {
 
 body {
     background-color: #D4D6D7;
-    min-width: 600px;
     margin: 0 auto;
     font-family: 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Sans-Serif';
 }
@@ -97,6 +96,21 @@ a:hover {
         width: 192px;
     }
 }
+
+.nav-toggles {
+    display: none;
+    text-align: right;
+    float: right;
+    right: 15px;
+    width: 100px;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+    .nav-toggles .nav-toggle {
+        margin-right: 0;
+        height: 35px;
+    }
 
 #searchbutton {
     width: 33px;
@@ -192,3 +206,59 @@ footer p {
     margin: 0 auto 5px auto;
     font-size: .7em;
 }        
+
+@media all AND (max-width: 601px) {
+    .header .search {
+        float: none;
+        margin-bottom: 5px;
+        display: none;
+    }
+
+    #searchbox {
+        width: 85%;
+    }
+
+        #searchbox:focus {
+            outline: 0;
+        }
+
+    .twitter {
+        float: left;
+        margin-top: 10px;
+    }
+
+    .nav-toggles {
+        display: block;
+    }
+
+    .subnav {
+        display: none;
+    }
+
+    .header nav {
+        height: auto;
+        display: none;
+    }
+
+        .header nav div {
+            float: left !important;
+        }
+
+        .header nav ul {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 100%;
+            display: block;
+            height: auto;
+            float: none;
+        }
+
+            .header nav ul li {
+                width: 100%;
+                float: left;
+                position: relative;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 5px;
+            }
+}
