@@ -1,10 +1,16 @@
 ﻿# Package Restore with Team Foundation Build
 
+> Applies To:
+>  - Custom MSBuild projects running on any version of TFS
+>  - Team Foundation Server 2012 or earlier
+>  - Custom Team Foundation Build Process Templates migrated to TFS 2013 or later
+>  - Build Process Templates With Nuget Restore functionality removed
+
+> If you're using Visual Studio Online or on-premise Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
+
 This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx) both, for [git](http://en.wikipedia.org/wiki/Git_(software)) as well as [TF Version Control](http://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx).
 
 Although this walkthrough is specific for the scenario of using [Team Foundation Service](http://tfs.visualstudio.com/), the concepts also apply to other version control- and build systems.
-
-<p class="info">For Team Foundation Build 2013 on-premises and Visual Studio Online (formerly Team Foundation Service), the default Build Process Templates already implement the NuGet Package Restore workflow without any special configuration. The following information only applies to Team Foundation Build 2012 and earlier, or to Build Process Templates that have been customized and had the NuGet Restore functionality removed.</p>
 
 ## The General Approach
 
