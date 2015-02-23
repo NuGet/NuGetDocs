@@ -12,20 +12,20 @@ This NuGet 3.0 Beta is available to install in the Visual Studio 2015 CTP 6 Exte
 
 We've been working on some implementation details for NuGet's client/server protocol. The work we've done is to create "API v3" for NuGet, which is designed around high availability for critical scenarios such as package restore and installing packages. The new API is based on REST and Hypermedia and we've selected [JSON-LD](http://json-ld.org) as our resource format.
 
-In the NuGet 3.0 Beta bits, you'll see a new package source called "api.nuget.org" in the package source dropdown.   If you select that package source, we'll use our new API rather to connect to nuget.org. In NuGet 3.0 RC, this new API v3-based package source will replace the v2-based "nuget.org" package source.  We recommend disabling all of the other public package sources and leave only api.nuget.org as only public package repository.  
+In the NuGet 3.0 Beta bits, you'll see a new package source called "api.nuget.org" in the package source dropdown.   If you select that package source, we'll use our new API rather to connect to nuget.org. In NuGet 3.0 RC, this new API v3-based package source will replace the v2-based "nuget.org" package source.  We recommend disabling all of the other public package sources and leave only api.nuget.org as your only public package repository.  
 
 We've put a lot of time into building our v3 API and will continue to maintain the standard v2 API for old clients seeking to access the public repository.
 
 ## Updated UI
 
-We've enhanced the user-interface in this release to include a combobox that will allow you to choose an action to take with the package and transitioned the preview button into a checkbox in the options area of the screen.  The options area is no longer collapsible and no provides a help link describing the options.
+We've enhanced the user-interface in this release to include a combobox that will allow you to choose an action to take with the package and transitioned the preview button into a checkbox in the options area of the screen.  The options area is no longer collapsible and now provides a help link describing the options available.
 
 ![The new NuGet UI](Images/NuGet-3.0-Beta/updated-ui.png)
 
 
 ### Operation Logging
 
-We removed the modal window with logging information that would appear and hide while installing or uninstalling.  This window added no value when you would really want to see the information or be able to copy and paste from it.  Instead, we are now redirecting all of the output logging to the Package Manager pane of the Output window.  We think this is more comfortable and similar to a typical build report that you would want to inspect.
+We removed the modal window with logging information that would quickly appear and hide while installing or uninstalling.  This window added no value when you would really want to see the information or be able to copy and paste from it.  Instead, we are now redirecting all of the output logging to the Package Manager pane of the Output window.  We think this is more comfortable and similar to a typical build report that you would want to inspect.
 
 
 ### Focus on Performance 
@@ -36,7 +36,7 @@ As we proceed through this phase of the development of NuGet 3.0, we will be tun
 
 ## Building NuGet with NuGet
 
-We are now rearchitected our NuGet clients into several components that are themselves being built into NuGet packages. This re-use of our own libraries forces us to build components that are re-usable and that can be packaged properly.  We have been able to eliminate duplicated code and learned how to better configure our development process to support the need to build packages throughout our solutions.  Look for a blog post soon where we will talk about how the code projects are structured and how our build process works. 
+We have now rearchitected our NuGet clients into several components that are themselves being built into NuGet packages. This re-use of our own libraries forces us to build components that are re-usable and that can be packaged properly.  We have been able to eliminate duplicated code and have learned how to better configure our development process to support the need to build packages throughout our solutions.  Look for a blog post soon where we will talk about how the code projects are structured and how our build process works. 
 
 ## Stay Tuned
 
