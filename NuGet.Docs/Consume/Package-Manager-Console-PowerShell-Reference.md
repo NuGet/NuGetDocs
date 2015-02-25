@@ -26,6 +26,7 @@ PARAMETERS
     
 Adds binding redirects to the specified project, MyProjectName.
 
+
 ## Find-Package (for NuGet 3.0 Beta client or higher)
 Gets packages available from the online package source.
 
@@ -83,6 +84,7 @@ Returns jquery package with all versions available from the package source.
     
     
 Returns packages with the keyword EntityFramework and version 6.1.1 from the package source.
+
 
 ## Get-Package
 Gets the set of packages available from the local repository folder. Use the -ListAvailable flag to list packages available from the online package source.
@@ -180,6 +182,7 @@ Returns a list of packages installed in the entire solution that have updates av
     
 Returns a list of recently installed packages.
 
+
 ## Get-Project
 Gets the specified project. If none is specified, returns the default project.
 
@@ -218,6 +221,7 @@ Returns a reference to the specified project, MyProjectName.
     
     
 Returns a reference to every project in the solution.
+
 
 ## Install-Package
 Installs a package.
@@ -271,7 +275,7 @@ PARAMETERS
         
     <strong>-FileConflictAction</strong>
         Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project.             
-        Possible values are Overwrite, Ignore and None.
+        Possible values are Overwrite, Ignore, None and OverwriteAll, IgnoreAll (for NuGet 3.0 Beta client or higher).
         
         Required: false
 		
@@ -340,6 +344,7 @@ With NuGet 3.0 Beta client or higher, Install-Package's Id parameter can now poi
     PM> Install-package https://az320820.vo.msecnd.net/packages/microsoft.aspnet.mvc.5.2.3.nupkg
     PM> Install-package c:\temp\packages\jQuery.1.10.2.nupkg
 
+
 ## Open-PackagePage
 Open the browser pointing to ProjectUrl, LicenseUrl or ReportAbuseUrl of the specified package. Please note that this command will be deprecated after NuGet 3.0 RTM.
 
@@ -405,6 +410,87 @@ Opens a browser to the URL at the current package source used to report abuse fo
     
 Assigns the license URL to the variable, $url, without opening the URL in a browser.
 
+
+## Sync-Package (for NuGet 3.0 Beta client or higher)
+Get the version of installed package from specified/default project and sync the version to the rest of projects in the solution.
+
+    Sync-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string> [-Source] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+
+Get the version of installed package from specified/default project and sync the version to the rest of projects in the solution.
+
+<pre>    
+PARAMETERS
+    <strong>-Id</strong> <string>
+        Specifies the package ID of the package to sync.
+        
+        Required: true
+        
+    <strong>-IgnoreDependencies</strong>
+        Sync the package only and ignore its dependencies.
+        
+        Required: false
+        
+    <strong>-ProjectName</strong> <string>
+        Specifies the project to sync the package from. If omitted, the default project is chosen.
+        
+        Required: false
+        
+    <strong>-Version</strong> <string>
+	Specifies the version of the package to sync. If omitted, defaults to the currently installed version.
+        
+        Required: false
+                
+    <strong>-Source</strong> <string>
+        Specifies the URL or directory path for the package source containing the package to sync. If omitted, 
+        looks in the currently selected package source 
+        to find the corresponding package URL.
+        
+        Required: false
+
+    <strong>-IncludePrerelease</strong>
+        Indicates whether this command will consider prerelease packages. If omitted, only 
+        stable packages are considered.
+
+        Required: false
+        
+    <strong>-FileConflictAction</strong>
+        Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project.             
+        Possible values are Overwrite, Ignore, None and OverwriteAll, IgnoreAll (for NuGet 3.0 Beta client or higher).
+        
+        Required: false
+		
+    <strong>-DependencyVersion</strong>
+		Specifies the version of the dependency package to be selected from the list of valid
+		dependency packages. The defult value is Lowest. 
+		
+        Required: false
+
+    <strong>-WhatIf</strong>
+        Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+        Required: false
+</pre>
+**Examples**
+
+    
+    PM> Sync-Package Ninject
+    
+    
+Gets the version of the Ninject package installed from the default project and syncs to the rest of projects in the solution.
+    
+    
+    PM> Sync-Package Microsoft.Aspnet.Mvc -IgnoreDependencies
+    
+    
+Syncs only the Microsoft.Aspnet.Mvc package to the rest of the projects. Ignore its dependency packages. 
+    
+    
+    PM> Sync-Package jQuery.Validation -DependencyVersion highest
+    
+    
+Syncs the jQuery.Validation package and while syncing, installs highest version of jQuery from package source as dependency.
+
+
 ## Uninstall-Package
 Uninstalls a package.
 
@@ -464,6 +550,7 @@ it is skipped.
     
     
 Uninstalls the Elmah package even if another package depends on it.
+
 
 ## Update-Package
 Updates a package.
