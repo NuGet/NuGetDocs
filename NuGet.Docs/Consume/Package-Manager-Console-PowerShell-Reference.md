@@ -26,10 +26,10 @@ PARAMETERS
     
 Adds binding redirects to the specified project, MyProjectName.
 
-## Get-Package
-Gets the set of packages available from the local repository folder. Use the -ListAvailable flag to list packages available from the online package source.
+## Find-Package
+Gets packages available from the online package source.
 
-    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease]
+    Find-Package [Id] [-Source <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-ExactMatch]
 
 Gets the set of packages available from the package source. Defaults to only showing the list of installed packages. 
 Use the -ListAvailable flag to list packages available from the package source.
@@ -82,6 +82,11 @@ PARAMETERS
         Indicates whether to include prerelease packages in the returned results.
 
         Required: false
+        
+    <strong>-PageSize</strong>
+        Used with -ListAvailable. When specified, paging will be enabled to display the list of packages.
+
+        Required: false
 </pre>
 **Examples**
 
@@ -99,6 +104,105 @@ Returns a list of packages available online in the current package source.
     
     PM> Get-Package -ListAvailable -Filter Ninject
     
+Returns a list of packages available online in the current package source in the page size of 20.
+    
+    
+    PM> Get-Package -ListAvailable -PageSize 20
+    
+Returns a list of packages available online using "Ninject" as a search term.
+    
+    
+    PS> Get-Package -Updates
+    
+    
+Returns a list of packages installed in the entire solution that have updates available in the current package source.
+    
+    PM> Get-Package -Recent
+    
+Returns a list of recently installed packages.
+
+## Get-Package
+Gets the set of packages available from the local repository folder. Use the -ListAvailable flag to list packages available from the online package source.
+
+    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-PageSize]
+
+Gets the set of packages available from the package source. Defaults to only showing the list of installed packages. 
+Use the -ListAvailable flag to list packages available from the package source.
+
+<pre>
+PARAMETERS
+    <strong>-Source</strong> <string>
+        Specifies the URL or directory path for the package source containing the package to install. 
+        If omitted, looks in the currently selected package source to find the corresponding package URL.
+        
+        Required: false
+        
+    <strong>-ListAvailable</strong>
+        Gets packages available from the online package source.
+        
+        Required: false
+        
+    <strong>-Updates</strong>
+        Gets packages that have an update available from the package source.
+        
+        Required: false
+        
+    <strong>-ProjectName</strong>
+        Specifies the project to get installed packages from. If omitted, the command will return installed projects for the entire solution.
+
+        Required: false
+
+    <strong>-Filter</strong>
+        Specifies a filter string used to narrow down the list of packages returned. The filter is searched 
+        for in the package Id, the description and tags.
+        
+        Required: false
+        
+    <strong>-First</strong>
+        Specifies the number of packages to return from the beginning of the list.
+        
+        Required: false
+        
+    <strong>-Skip</strong>
+        Skips (does not return) the specified number of packages, counting from the beginning of the list.
+        
+        Required: false
+        
+    <strong>-AllVersions</strong>
+        Displays all available versions of a package. The latest version of each package is listed by default.
+        
+        Required: false
+
+    <strong>-IncludePrerelease</strong>
+        Indicates whether to include prerelease packages in the returned results.
+
+        Required: false
+        
+    <strong>-PageSize</strong>
+        Used with -ListAvailable. When specified, paging will be enabled to display the list of packages.
+
+        Required: false
+</pre>
+**Examples**
+
+    
+    PM> Get-Package
+    
+    
+Returns the packages installed in the entire solution.
+    
+    PM> Get-Package -ListAvailable
+    
+    
+Returns a list of packages available online in the current package source.
+    
+    
+    PM> Get-Package -ListAvailable -Filter Ninject
+    
+Returns a list of packages available online in the current package source in the page size of 20.
+    
+    
+    PM> Get-Package -ListAvailable -PageSize 20
     
 Returns a list of packages available online using "Ninject" as a search term.
     
