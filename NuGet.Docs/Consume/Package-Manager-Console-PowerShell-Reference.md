@@ -111,7 +111,8 @@ PARAMETERS
         Required: false
         
     <strong>-ProjectName</strong>
-        Specifies the project to get installed packages from. If omitted, the command will return installed projects for the entire solution.
+        Specifies the project to get installed packages from. If omitted, the command will return installed 
+        projects for the entire solution.
 
         Required: false
 
@@ -186,8 +187,8 @@ Gets the specified project. If none is specified, returns the default project.
 
 Returns a reference to the DTE (Development Tools Environment) for the specified project. If none is specified, 
 returns the default project selected in the Package Manager Console.
-<pre>  
 
+<pre>  
 PARAMETERS
     <strong>-Name</strong> <string>
         Specifies the project to return. If omitted, the default project selected in the Package Manager Console is returned.
@@ -228,7 +229,9 @@ Installs a package and its dependencies into the project.
 <pre>
 PARAMETERS
     <strong>-Id</strong> <string>
-        Specifies the package ID of the package to install. Staring NuGet 3.0 Beta client or higher, -Id parameter can point 	to the online or local path to packages.config file or package's nupkg file (examples below).
+        Specifies the package ID of the package to install. Staring NuGet 3.0 Beta client or higher, 
+        -Id parameter can point to the online or local path to packages.config file 
+        or package's nupkg file (examples below).
         
         Required: true
         
@@ -261,7 +264,8 @@ PARAMETERS
         Required: false
         
     <strong>-Force</strong> (for NuGet 3.0 Beta client or higher)
-        Install a package forcely to the project. If the same version is already installed, will uninstall the package first 	and then install.
+        Install a package forcely to the project. If the same version is already installed, 
+        will uninstall the package first and then install.
         
         Required: false
         
@@ -407,8 +411,8 @@ Uninstalls a package.
     Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [-Force] [-Version <string>] [-WhatIf]
 
 Uninstalls a package. If other packages depend on this package, the command will fail unless the –Force option is specified.
-<pre>    
 
+<pre>    
 PARAMETERS
     <strong>-Id</strong> <string>
         Specifies the package ID of the package to uninstall.
@@ -491,13 +495,16 @@ PARAMETERS
        Required: false
         
     <strong>-Source</strong> <string>
-        Specifies the URL or directory path for the package source containing the package to install. If omitted, 
-        looks in the currently selected package source to find the corresponding package URL.
+        Specifies the URL or directory path for the package source containing the package to install.
+        If omitted, looks in the currently selected package source to find the corresponding package URL.
         
         Required: false
         
     <strong>-Version</strong> <string>
-        Specifies the version that the package will be upgraded to. If omitted, defaults to the latest version. Starting 		NuGet 3.0 Beta client or higher, the -Version switch takes in value of "Highest", "HighestMinor", 				"HighestPatch" (equivalent to -Safe) and Lowest to determine the version of the (currrently specified) package 	to be upgraded to.
+        Specifies the version that the package will be upgraded to. If omitted, defaults to 
+        the latest version. Starting NuGet 3.0 Beta client or higher, the -Version switch takes in value
+        of "Highest", "HighestMinor", "HighestPatch" (equivalent to -Safe) and Lowest to determine 
+        the version of the (currrently specified) package to be upgraded to.
         
        Required: false
 
@@ -519,7 +526,9 @@ PARAMETERS
         Required: false
 
     <strong>-DependencyVersion</strong> (NuGet 3.0 Beta client or higher)
-        Specifies which dependency package version to update. If omitted, this defaults to the lowest required version. In 		the case of Update-Package without any parameter, all packages are being updated to the highest version.
+        Specifies which dependency package version to update. If omitted, this defaults to the lowest
+        required version.In the case of Update-Package without any parameter, all packages are being
+        updated to the highest version.
         
         Required: false
         
