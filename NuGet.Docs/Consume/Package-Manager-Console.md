@@ -23,7 +23,7 @@ The two drop-down lists set default values that let you omit parameters from the
 
 When you enter commands, you can override these defaults.
 In the **Package Manager Console** window, enter `Get-Package -ListAvailable` at the prompt to see a list of all packages 
-that are available in the selected package source.
+that are available in the selected package source. Starting NuGet 3.0 Beta or higher, Get-Package also takes a -PageSize switch, which enables paging support for listing available packages from a package source. 
 
 ![Get-Package -ListAvailable command](/images/consume/package-manager-console-get-package-remote.png)
 
@@ -31,11 +31,11 @@ For the default package source, that command is going to list thousands of packa
 a filter.
 
 For example, to find the logging package ELMAH, enter `Get-Package -ListAvailable -Filter elmah` (the name of the package) 
-or `Get-Package -Filter Logging -ListAvailable` (a keyword in the package description).
+or `Get-Package -Filter Logging -ListAvailable` (a keyword in the package description). Starting NuGet client 3.0 Beta or higher, these Get-Package commands can be replaced by `Find-Package elmah` or `Find-Package Logging`.
 
 ![Get-Package command with filter](/images/consume/package-manager-console-Get-Package-with-filter.png)
 
-For more options that you can specify with the `Get-Package` command, enter `Get-Help Get-Package`, or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
+For more options that you can specify with the `Get-Package` and `Find-Package` command, enter `Get-Help Get-Package` and `Get-Help Find-Package`, or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
 
 ## Installing a Package
 
