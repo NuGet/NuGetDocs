@@ -167,7 +167,7 @@ These are different methods; and have drastically different outcomes for develop
 
 Method #1 causes the following to happen:
 
- - Packages are automatically downloaded by Visual Studio during build
+ - Packages are automatically downloaded by Visual Studio before the actual build
  - A `.nuget` folder is added with one file, `nuget.config`; this file *only* contains the `disableSourceControlIntegration` setting
  - Packages are put into a `packages` folder at the solution level
  - For Team Foundation Server 2013 and later, packages are automatically restored during build, providing that you're using a Team Build Template for Team Foundation Server 2013 or later. If you're using a previous version of build templates (perhaps because you've upgraded to TFS 2013), you'll have to migrate those build templates to TFS 2013 (essentially recreate the custom parts of the Build Templates using the appropriate template for your Source Control (TFVC or Git)).
