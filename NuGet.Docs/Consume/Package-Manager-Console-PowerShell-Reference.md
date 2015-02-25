@@ -26,40 +26,18 @@ PARAMETERS
     
 Adds binding redirects to the specified project, MyProjectName.
 
-## Find-Package
+## Find-Package (for NuGet 3.0 Beta client or higher)
 Gets packages available from the online package source.
 
     Find-Package [Id] [-Source <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-ExactMatch]
 
-Gets the set of packages available from the package source. Defaults to only showing the list of installed packages. 
-Use the -ListAvailable flag to list packages available from the package source.
+Gets the set of online packages with specified Id/keyword from the package source. Use the -ExactMatch flag to return packages with the exact packageID.
 
 <pre>
 PARAMETERS
     <strong>-Source</strong> <string>
         Specifies the URL or directory path for the package source containing the package to install. 
         If omitted, looks in the currently selected package source to find the corresponding package URL.
-        
-        Required: false
-        
-    <strong>-ListAvailable</strong>
-        Gets packages available from the online package source.
-        
-        Required: false
-        
-    <strong>-Updates</strong>
-        Gets packages that have an update available from the package source.
-        
-        Required: false
-        
-    <strong>-ProjectName</strong>
-        Specifies the project to get installed packages from. If omitted, the command will return installed projects for the entire solution.
-
-        Required: false
-
-    <strong>-Filter</strong>
-        Specifies a filter string used to narrow down the list of packages returned. The filter is searched 
-        for in the package Id, the description and tags.
         
         Required: false
         
@@ -83,43 +61,28 @@ PARAMETERS
 
         Required: false
         
-    <strong>-PageSize</strong>
-        Used with -ListAvailable. When specified, paging will be enabled to display the list of packages.
+    <strong>-ExactMatch</strong>
+        Indicates whether to return packages with the exact packageID (case-insensitive).
 
         Required: false
 </pre>
 **Examples**
 
     
-    PM> Get-Package
+    PM> Find-Package Elmah
     
     
-Returns the packages installed in the entire solution.
+Returns packages with the keyword Elmah available from the package source.
     
-    PM> Get-Package -ListAvailable
-    
-    
-Returns a list of packages available online in the current package source.
+    PM> Get-Package jquery -AllVersions -ExactMatch
     
     
-    PM> Get-Package -ListAvailable -Filter Ninject
-    
-Returns a list of packages available online in the current package source in the page size of 20.
-    
-    
-    PM> Get-Package -ListAvailable -PageSize 20
-    
-Returns a list of packages available online using "Ninject" as a search term.
+Returns jquery package with all versions available from the package source.
+
+    PM> Find-Package EntityFramework -version 6.1.1
     
     
-    PS> Get-Package -Updates
-    
-    
-Returns a list of packages installed in the entire solution that have updates available in the current package source.
-    
-    PM> Get-Package -Recent
-    
-Returns a list of recently installed packages.
+Returns packages with the keyword EntityFramework and version 6.1.1 from the package source.
 
 ## Get-Package
 Gets the set of packages available from the local repository folder. Use the -ListAvailable flag to list packages available from the online package source.
@@ -178,7 +141,7 @@ PARAMETERS
 
         Required: false
         
-    <strong>-PageSize</strong>
+    <strong>-PageSize</strong> (for NuGet 3.0 Beta client or higher)
         Used with -ListAvailable. When specified, paging will be enabled to display the list of packages.
 
         Required: false
@@ -202,9 +165,9 @@ Returns a list of packages available online in the current package source.
 Returns a list of packages available online in the current package source in the page size of 20.
     
     
-    PM> Get-Package -ListAvailable -PageSize 20
+    PM> Get-Package -ListAvailable -PageSize 20 (for NuGet 3.0 Beta client or higher)
     
-Returns a list of packages available online using "Ninject" as a search term.
+Returns a list of packages available online with page size of 20 packages.
     
     
     PS> Get-Package -Updates
@@ -215,7 +178,6 @@ Returns a list of packages installed in the entire solution that have updates av
     PM> Get-Package -Recent
     
 Returns a list of recently installed packages.
-    
 
 ## Get-Project
 Gets the specified project. If none is specified, returns the default project.
@@ -259,14 +221,14 @@ Returns a reference to every project in the solution.
 ## Install-Package
 Installs a package.
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-Force] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
 
 Installs a package and its dependencies into the project.
 
 <pre>
 PARAMETERS
     <strong>-Id</strong> <string>
-        Specifies the package ID of the package to install.
+        Specifies the package ID of the package to install. Staring NuGet 3.0 Beta client or higher, -Id parameter can point 	to the online or local path to packages.config file or package's nupkg file (examples below).
         
         Required: true
         
@@ -298,8 +260,13 @@ PARAMETERS
 
         Required: false
         
+    <strong>-Force</strong> (for NuGet 3.0 Beta client or higher)
+        Install a package forcely to the project. If the same version is already installed, will uninstall the package first 	and then install.
+        
+        Required: false
+        
     <strong>-FileConflictAction</strong>
-        Specify the action to take, when asked to overwrite or ignore existing files referenced by the project.             
+        Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project.             
         Possible values are Overwrite, Ignore and None.
         
         Required: false
@@ -362,8 +329,15 @@ Let's say you had 5.1.0-rc1 version of Microsoft.AspNet.MVC in your project but 
 
 In NuGet 2.7 or lower clients, if you try to downgrade a package, you would get an error message saying that a newer version is already installed.
 
+With NuGet 3.0 Beta client or higher, Install-Package's Id parameter can now point to an online or local path to packages.config file or package's nupkg file. Examples:
+
+    PM> Install-package https://raw.githubusercontent.com/NuGet/json-ld.net/master/src/JsonLD/packages.config
+    PM> Install-package c:\temp\packages.config
+    PM> Install-package https://az320820.vo.msecnd.net/packages/microsoft.aspnet.mvc.5.2.3.nupkg
+    PM> Install-package c:\temp\packages\jQuery.1.10.2.nupkg
+
 ## Open-PackagePage
-Open the browser pointing to ProjectUrl, LicenseUrl or ReportAbuseUrl of the specified package.
+Open the browser pointing to ProjectUrl, LicenseUrl or ReportAbuseUrl of the specified package. Please note that this command will be deprecated after NuGet 3.0 RTM.
 
     Open-PackagePage -Id <string> [-Version] [-Source] [-License] [-ReportAbuse] [-PassThru]
 
@@ -490,7 +464,7 @@ Uninstalls the Elmah package even if another package depends on it.
 ## Update-Package
 Updates a package.
 
-    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-IncludePrerelease] [-Reinstall] [-FileConflictAction] [-WhatIf]
+    Update-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-Safe] [-IncludePrerelease] [-Reinstall] [-FileConflictAction] [-DependencyVersion] [-WhatIf]
 
 Updates a package and its dependencies to a newer version.
     
@@ -523,7 +497,7 @@ PARAMETERS
         Required: false
         
     <strong>-Version</strong> <string>
-        Specifies the version that the package will be upgraded to. If omitted, defaults to the latest version.
+        Specifies the version that the package will be upgraded to. If omitted, defaults to the latest version. Starting 		NuGet 3.0 Beta client or higher, the -Version switch takes in value of "Highest", "HighestMinor", 				"HighestPatch" (equivalent to -Safe) and Lowest to determine the version of the (currrently specified) package 	to be upgraded to.
         
        Required: false
 
@@ -539,11 +513,16 @@ PARAMETERS
         Required: false
         
     <strong>-FileConflictAction</strong>
-        Specify the action to take, when asked to overwrite or ignore existing files referenced by the project. 
+        Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project. 
         Possible values are Overwrite, Ignore and None.
         
         Required: false
 
+    <strong>-DependencyVersion</strong> (NuGet 3.0 Beta client or higher)
+        Specifies which dependency package version to update. If omitted, this defaults to the lowest required version. In 		the case of Update-Package without any parameter, all packages are being updated to the highest version.
+        
+        Required: false
+        
     <strong>-WhatIf</strong>
         Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
