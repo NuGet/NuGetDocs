@@ -23,6 +23,11 @@ these links to find more information on how to create templates [directly
 using Visual Studio](http://msdn.microsoft.com/en-us/library/s365byhx.aspx)
 or [using the Visual Studio SDK](http://msdn.microsoft.com/en-us/library/ff527340.aspx).
 
+You should author your template such that it does _not_ include the `packages.config`
+file or any references or content that installing the NuGet package(s) would add to
+the project. In the next section, you'll use a custom wizard that will add those
+files and references to the project as part of template expansion.
+
 ## Adding packages to a template
 
 Preinstalled packages work using [template wizards](http://msdn.microsoft.com/en-us/library/ms185301.aspx).
