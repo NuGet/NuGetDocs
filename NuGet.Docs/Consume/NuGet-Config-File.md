@@ -266,8 +266,8 @@ If you want to share the credentials with others then you might want to use the 
 Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new 
 <a href="/Consume/command-line-reference">-Config option</a>, and commit it to your source control.
 
-Nuget.exe Sources Add -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
-Nuget.exe Sources Update -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
+	Nuget.exe Sources Add -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
+	Nuget.exe Sources Update -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
 
 This results in something more readable (or even manually configurable):
 
