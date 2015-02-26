@@ -213,7 +213,7 @@ Allows you to restore missing packages from the NuGet source during build.
 <h3>Package Sources</h3>
 Allows you to specify the list of sources to be used while looking for packages. 
 * "PackageSources" section has the list of package sources 
-* "DisabledPackageSources" has the list of sources which are currently disabled currently 
+* "DisabledPackageSources" has the list of sources which are currently disabled 
 * "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would 
 imply that all the current package sources except for the disabled ones are active
 
