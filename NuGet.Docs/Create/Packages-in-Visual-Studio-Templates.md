@@ -87,7 +87,8 @@ and allows developers to easily discover your templates using the VS Extension
 Manager or the Visual Studio Gallery. On top of that you can easily push updates
 to your users using the [Visual Studio Extension Manager automatic update mechanism](http://msdn.microsoft.com/en-us/library/dd997169.aspx).
 
-1. To specify a VSIX as a package repository you modify the `<package>` element:
+1. To specify a VSIX as a package repository you modify the `<packages>` element
+   in the `.vstemplate` file:
     <pre><code>&lt;packages repository="extension"
               repositoryId="MyTemplateContainerExtensionId"&gt;
     ...
@@ -97,13 +98,18 @@ to your users using the [Visual Studio Extension Manager automatic update mechan
     the [`ID` attribute](http://msdn.microsoft.com/en-us/library/dd393688.aspx) in
     the extension’s vsixmanifest file).
  
-2.  Add your nupkg files as [custom extension content](http://msdn.microsoft.com/en-us/library/dd393737.aspx):
+2.  Add your nupkg files as [custom extension content](http://msdn.microsoft.com/en-us/library/dd393737.aspx)
+    in your `source.extension.vsixmanifest` file.
+    If you're using the 2.0 schema it should look like this:
+    <pre><code>&lt;Asset Type="Moq.4.0.10827.nupkg" d:Source="File" 
+           Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" /&gt;
+    </code></pre>
+    Or if you're using the 1.0 schema it should look like this:
     <pre><code>&lt;CustomExtension Type="Moq.4.0.10827.nupkg"&gt;
               packages/Moq.4.0.10827.nupkg&lt;/CustomExtension&gt;
-    ...
     </code></pre>
-    Ensure that they are located under a folder called `Packages` within the
-    VSIX package. 
+    Ensure that your `nupkg` files are located under a folder called `Packages`
+    within the VSIX package. 
 
 You can place the nupkg files in the same VSIX as your project
 templates or you can have the packages be located in a separate VSIX if that
