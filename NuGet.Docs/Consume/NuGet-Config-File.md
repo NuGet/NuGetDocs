@@ -245,7 +245,7 @@ It can also be set via environment variable "http_proxy". While setting environm
 format 'http://[username]:[password]@proxy.com'. Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. 
 Hence it cannot be added manually by directly updating the config file.
 
-<h3Credentials for package source</h3>
+<h3>Credentials for package source</h3>
 Allows you to set the credentials to access the given package source
 This key has to be set using the <a href="command-line-reference#Sources-Command">NuGet.exe Sources command.</a>
 The default behavior is to store the password encrypted in the config file
