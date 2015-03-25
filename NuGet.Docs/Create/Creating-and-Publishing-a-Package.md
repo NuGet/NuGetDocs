@@ -32,7 +32,7 @@ In the folder where the csproj file is, run:
     nuget spec
 
 This creates a special nuspec file with tokens meant to be replaced at pack time based on the project metadata.
-For example, `$version$` gets replaced by the version specified in the `AssemblyVersionAttribute` applied to 
+For example, `$version$` gets replaced by the version specified in the `AssemblyVersionAttribute` (or `AssemblyInformationalVersionAttribute` if present) applied to 
 your assembly (typically within the `AssemblyInfo.cs` file).
 
 The following is a list of the supported replacement tokens.
@@ -45,7 +45,7 @@ The following is a list of the supported replacement tokens.
     </tr>
     <tr>
         <td>$version$</td>
-        <td>The assembly version as specified in the assembly&#8217;s <code>AssemblyVersionAttribute</code>.</td>
+        <td>The assembly version as specified in the assembly&#8217;s <code>AssemblyVersionAttribute</code> (or <code>AssemblyInformationalVersionAttribute</code> if present).</td>
     </tr>
     <tr>
         <td>$author$</td>

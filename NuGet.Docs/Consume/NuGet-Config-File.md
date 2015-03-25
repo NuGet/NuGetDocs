@@ -213,7 +213,7 @@ Allows you to restore missing packages from the NuGet source during build.
 <h3>Package Sources</h3>
 Allows you to specify the list of sources to be used while looking for packages. 
 * "PackageSources" section has the list of package sources 
-* "DisabledPackageSources" has the list of sources which are currently disabled currently 
+* "DisabledPackageSources" has the list of sources which are currently disabled 
 * "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would 
 imply that all the current package sources except for the disabled ones are active
 
@@ -245,7 +245,7 @@ It can also be set via environment variable "http_proxy". While setting environm
 format 'http://[username]:[password]@proxy.com'. Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. 
 Hence it cannot be added manually by directly updating the config file.
 
-<h3Credentials for package source</h3>
+<h3>Credentials for package source</h3>
 Allows you to set the credentials to access the given package source
 This key has to be set using the <a href="command-line-reference#Sources-Command">NuGet.exe Sources command.</a>
 The default behavior is to store the password encrypted in the config file
@@ -266,8 +266,8 @@ If you want to share the credentials with others then you might want to use the 
 Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new 
 <a href="/Consume/command-line-reference">-Config option</a>, and commit it to your source control.
 
-Nuget.exe Sources Add -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
-Nuget.exe Sources Update -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
+	Nuget.exe Sources Add -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
+	Nuget.exe Sources Update -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
 
 This results in something more readable (or even manually configurable):
 
