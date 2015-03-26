@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-1. [Download NuGet.exe](http://nuget.codeplex.com/releases/view/121838)
+1. [Download NuGet.exe](http://nuget.codeplex.com/releases)
 2. Make sure NuGet.exe is in your path
 
 If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/Create/using-a-gui-to-build-packages).
