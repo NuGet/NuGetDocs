@@ -14,6 +14,9 @@ Whether you are attempting to install, update, or downgrade a package you will h
 There are currently three options available:
 
 1. **Show Preview Window** - if enabled, a modal window will be displayed that details which dependent packages will be loaded with the package you have chosen.
+
+	![Example Preview Dialog](/images/consume/install-preview-dialog.png)
+
 2. **Dependency Behavior** - this allows you to configure how NuGet will decide which versions of dependent packages will be installed.  There are five options:
 
 	a. **Ignore** - This is usually a bad idea, as a package has dictated that it dependends on other packages and will require their contents to operate.  You may choose to skip installing those packages.
