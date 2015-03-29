@@ -121,7 +121,7 @@ Some packages contain more than just assemblies. They may contain
 
 1. Content and source code that should be injected into the target project.
 2. [PowerShell scripts](#powershell) and executables.
-3. [Configuration file and source code transformations](/Create/Creating-Packages-With-Configuration-File-and-Source-Code-Transformations).
+3. [Configuration file and source code transformations](/Create/Configuration-File-and-Source-Code-Transformations).
 
 To create a package in this way, you can layout a directory structure that follows 
 the NuGet conventions.
