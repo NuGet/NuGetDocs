@@ -15,9 +15,6 @@
 *    Visual Studio Professional 
 *    Visual Studio Ultimate
 
-## Other
-*    WebMatrix 3
-
 ## OS
 *    Windows XP
 *    Windows 7

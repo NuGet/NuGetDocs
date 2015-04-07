@@ -4,7 +4,6 @@ NuGet is available for the following clients:
 1. **Visual Studio 2013**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 1. **Visual Studio 2010 and 2012**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
 1.  **Visual Studio 2015 Preview**: [Visual Studio Extension Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d)
-1. **WebMatrix 3**: [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/)
 1. **Command-Line Utility**: [Direct Download](https://nuget.org/nuget.exe)
 
 ## Visual Studio 2010, 2012 and 2013
@@ -16,9 +15,6 @@ To check if your copy of Visual Studio already has the NuGet extension, look for
 
 To download the extension for Visual Studio 2010 and 2012 directly, it can be found on the [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
 and for Visual Studio 2013 directly, it can be found here on the [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca).
-
-## WebMatrix 3
-The NuGet Package Manager feature is integrated into WebMatrix 3 as a preinstalled extension with the id of 'NuGetPackageManager'.  That extension can be found on the [WebMatrix Extension Gallery](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
 
 ## Command-Line Utility
 A command-line NuGet utility is also available.  This utility can be used to create, publish, and download packages.  This utility is also used for NuGet Package Restore which allows packages to be omitted from source control but downloaded as part of your build.

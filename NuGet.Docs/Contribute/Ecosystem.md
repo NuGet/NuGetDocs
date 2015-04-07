@@ -104,9 +104,6 @@ More info:
 * Using the [Manage NuGet Packages Dialog](../Start-Here/managing-nuget-packages-using-the-dialog)
 * Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
-### WebMatrix 3 NuGetPackageManager Extension
-WebMatrix 3 also has a NuGet Package Manager Extension which you can download using the built-in extension manager or directly from the WebMatrix Extensions Gallery at [http://extensions.webmatrix.com/packages/NuGetPackageManager/](http://extensions.webmatrix.com/packages/NuGetPackageManager/).
-
 ## Non-Microsoft Projects
 In addition to Microsoft, many other individuals and companies have made significant contributions to the NuGet ecosystem. Each project listed here may have a different license than the core NuGet components so please confirm that the license terms are acceptable prior to use. 
 
@@ -142,7 +139,7 @@ Provides:
   * strict SemVer validation for packages being pushed
   * upload packages directly in the browser
   * add packages from another feed (upstream package source)
-  * upstream package source presets for nuget.org (including webmatrix and other curated feeds), chocolatey, teamcity, etc
+  * upstream package source presets for nuget.org, chocolatey, teamcity, etc
   * filter upstream package sources
   * mirror upstream package sources
   * package promotion to an upstream package source
