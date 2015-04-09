@@ -58,7 +58,7 @@ The following is a list of the supported replacement tokens.
 </table>
 
 You can then edit this nuspec file if you need to customize it. e.g. if you don't want token replacement
-for some fields, you hard code then in the nuspec instead.
+for some fields, you hard code them in the nuspec instead.
 
 Also, if you want to pull additional files into the package, you can use a <files> node in the nuspec.
 e.g. suppose you want to add all the files from some arbitrary other folder into the package, you'd have:
@@ -225,7 +225,7 @@ Push your package to NuGet Gallery using the command:
 ## Package Conventions
 
 There are two types of conventions that apply when creating packages. 
-The conventions listed in this page are *enforced conventions* which have to follow 
+The conventions listed in this page are *enforced conventions* which you have to follow 
 when building packages. For information about enforced conventions, see the [Enforced Package Conventions] (/Create/Enforced-Package-Conventions) page.
 
 There are also *community* (or *optional*) conventions, which have been formed by 
