@@ -5,10 +5,11 @@ version is Visual Studio 2012.
 
 ## Get and Build the code
 1. **Install Git.** Install [Git for Windows](http://code.google.com/p/msysgit/downloads/list?can=3) and then optionally install [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
-1. **Clone the repository.** From a command prompt, run the following command in a directory where you want the source code to be placed. 
-This will create a folder named "nuget" with the source.
+1. **Clone the repository.** From a command prompt, run the following commands in a directory where you want the source code to be placed. 
+This will create a folder named "NuGet.VisualStudioExtension" with the source and switch to the branch where active development happens.
 
-        git clone https://git01.codeplex.com/nuget
+        git clone -b dev https://github.com/NuGet/NuGet.VisualStudioExtension.git
+
 1. If you are using VS2012 then,
     1. Uninstall the existing NuGet Extension from Visual Studio.
     1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30668">Visual Studio 2012 SDK</a>**
