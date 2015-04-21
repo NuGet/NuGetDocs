@@ -10,19 +10,21 @@ This will create a folder named "NuGet.VisualStudioExtension" with the source an
 
         git clone -b dev https://github.com/NuGet/NuGet.VisualStudioExtension.git
 
-After VS2015 has been installed, 
-    1. Uninstall the existing NuGet Extension from Visual Studio.
-    1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=44932">Visual Studio 2015 SDK</a>**
-    
-To build NuGet.VisualStudioExtension,
-    1. Add the directory of msbuild 14, e.g. C:\Program Files (x86)\MSBuild\14.0\Bin, to PATH
-    1. Download the latest version of nuget.exe <a href="www.nuget.org/nuget.exe">, and add its directory to PATH
-    1. Start powershell. Create a directory, cd into that directory
-    1. Run  git clone https://github.com/NuGet/Home.git 
-    1. Run  Home\clone-repos.ps1 
-    1. Run  Home\build-nuget.ps1 -configuration debug -clean . The generated vsix will be                 NuGet.VisualStudioExtension\src\VsExtension\bin\Debug\NuGet.Tools.vsix.
+After VS2015 has been installed, you would need to:
 
-For more details, please visit the NuGet/Home repository <a herf="https://github.com/NuGet/Home/blob/master/README.md>
+1. Uninstall the existing NuGet Extension from Visual Studio.
+1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=44932">Visual Studio 2015 SDK</a>**
+    
+To build NuGet.VisualStudioExtension, execute the following steps:
+
+1. Add the directory of msbuild 14, e.g. C:\Program Files (x86)\MSBuild\14.0\Bin, to PATH
+1. Download the latest version of [NuGet.exe](www.nuget.org/nuget.exe), and add its directory to PATH
+1. Start powershell. Create a directory, cd into that directory
+1. Run  git clone https://github.com/NuGet/Home.git 
+1. Run  Home\clone-repos.ps1 
+1. Run  Home\build-nuget.ps1 -configuration debug -clean . The generated vsix will be                 NuGet.VisualStudioExtension\src\VsExtension\bin\Debug\NuGet.Tools.vsix.
+
+For more details, please visit the [NuGet/Home repository](https://github.com/NuGet/Home/blob/master/README.md)
 
 
 ## Setup Debugging for VS2015
