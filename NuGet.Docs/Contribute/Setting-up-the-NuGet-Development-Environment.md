@@ -1,7 +1,7 @@
 ﻿# Setting up the NuGet Development Environment
 So you want to hack on NuGet? These notes will help you get your development environment 
 set up correctly so you can work on NuGet using Visual Studio. The lowest supported 
-version is Visual Studio 2012.
+version is Visual Studio 2015.
 
 ## Get and Build the code
 1. **Install Git.** Install [Git for Windows](http://code.google.com/p/msysgit/downloads/list?can=3) and then optionally install [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
@@ -10,24 +10,31 @@ This will create a folder named "NuGet.VisualStudioExtension" with the source an
 
         git clone -b dev https://github.com/NuGet/NuGet.VisualStudioExtension.git
 
-1. If you are using VS2012 then,
-    1. Uninstall the existing NuGet Extension from Visual Studio.
-    1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=30668">Visual Studio 2012 SDK</a>**
-    1. **Run build.cmd** from a Command Prompt
-1. If you are using VS2013 then,
-    1. Uninstall the existing NuGet Extension from Visual Studio.
-    1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=40758">Visual Studio 2013 SDK</a>**
-    1. **Run build.cmd** from a Command Prompt
-1. For more information on using GIT, you may refer to <a href="http://think-like-a-git.net/">http://think-like-a-git.net/</a>
+After VS2015 has been installed, you would need to:
 
-## Setup Debugging for VS2012/VS2013
+1. Uninstall the existing NuGet Extension from Visual Studio.
+1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=44932">Visual Studio 2015 SDK</a>**
+    
+To build NuGet.VisualStudioExtension, execute the following steps:
+
+1. Add the directory of msbuild 14, e.g. C:\Program Files (x86)\MSBuild\14.0\Bin, to PATH
+1. Download the latest version of [NuGet.exe](www.nuget.org/nuget.exe), and add its directory to PATH
+1. Start powershell. Create a directory, cd into that directory
+1. Run  git clone https://github.com/NuGet/Home.git 
+1. Run  Home\clone-repos.ps1 
+1. Run  Home\build-nuget.ps1 -configuration debug -clean . The generated vsix will be                 NuGet.VisualStudioExtension\src\VsExtension\bin\Debug\NuGet.Tools.vsix.
+
+For more details, please visit the [NuGet/Home repository](https://github.com/NuGet/Home/blob/master/README.md)
+
+
+## Setup Debugging for VS2015
 To debug the console and UI during development, following these steps:
 
 1. Launch Visual Studio as Administrator 
 1. Make sure that the NuGet Extension is UNINSTALLED from your primary instance of VS so your newly compiled one can load into the experimental instance.
 1. Set the **VsExtension** project as the startup project 
 1. Ensure that you rebuild the **VsExtension** project. 
-1. Now you can run or debug the **VsExtension** project and this would launch a separate instance of VS2012/VS2013 (called the Experimental instance) 
+1. Now you can run or debug the **VsExtension** project and this would launch a separate instance of VS2015 (called the Experimental instance) 
 with a copy of the NuGet vsix installed. What you do in this instance don't affect the main VS instance. 
 
 ## Developing NuGet on Linux
