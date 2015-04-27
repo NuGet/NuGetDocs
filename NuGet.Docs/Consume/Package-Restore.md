@@ -52,17 +52,20 @@ At the minimum, the `.nuget\NuGet.config` file should contain the following:
 
 Using this approach, rather than cloaking the `packages` folder or otherwise ignoring it, allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
 
-In addition to avoiding the call from NuGet to pend changes in Source Control, you might want to add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file tho **explicitly ignore modifications to the `\packages` folder** on the repository level.
+In addition to avoiding the call from NuGet to pend changes in Source Control, you need to add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file tho **explicitly ignore modifications to the `\packages` folder** on the repository level.
+To create a `.tfignore` file using Windows Explorer, create a new file and give it the name `.tfignore.` (no extension). You might need to disable the "Hide known file extensions" option first.
 
-The `.tfignore` file should have the following entries:
+The `.tfignore` file should have the following entry:
 
 ```
 ## Ignore the NuGet packages folder in the root of the repository
 packages
 
-## Optionally, uncomment the following line to keep track of the repositories.config file (note: not needed for package restore to function properly)
-# !packages\repositories.config
+#include package target files which may be required for msbuild
+!packages/*.targets
 ```
+
+Depending on the location of the .tfignore file relative to the packages folder, you might need to adjust the entry to reflect this (e.g. if you put sources in a `\src` subfolder and have the `.tfignore` file in the repository root, the entry should be `\src\packages`).
 
 ## Package Restore Approaches
 
