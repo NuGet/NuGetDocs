@@ -10,6 +10,60 @@ Many developers like to omit binaries from their source control repository. This
 
 To promote a cleaner developer environment while also reducing repository size, NuGet offers a **Package Restore** feature that will install all referenced packages before a project is built, thereby ensuring that all dependencies are available to a project without requiring them to be stored in source control. NuGet Package Restore is an extremely popular feature of NuGet and therefore it's important to understand how it works.
 
+## Omitting Packages from Source Control
+
+Even though package restore *[consent](#package-restore-consent)* is on by default, users still need to choose to omit their packages from source control before package restore is engaged. By default, source control systems will include the `packages` folder in your repository, and you need to take action to omit the packages from source control.
+
+### Git
+Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder. [Sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
+
+The important parts of the file are the following:
+
+```
+# Ignore NuGet Packages
+*.nupkg
+# Ignore the packages folder
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+```
+
+### TFVC
+
+**Preferably, you do this BEFORE adding your solution to source control to avoid having to delete the packages folder from the source control repository first.**
+
+If you already added your solution to source control, you'll first have to delete the `\packages` folder from the repository, and check-in these pending changes before continuing to modify your already installed packages.
+
+To **disable source control integration**, use the `.nuget\NuGet.config` file, as explained on the [NuGet Config Settings](NuGet-Config-Settings) document under the "Source control integration" section. This `nuget.config` file does not have to be added to your solution file, but it must be put in the `$(SolutionDir)\.nuget` folder to be taken into account as it works at the solution level. Also, you need to add this file to source control.
+Tip: on Windows, you can create the `.nuget` file in Windows Explorer by creating a folder with the name `.nuget.` (note the trailing dot!).
+
+At the minimum, the `.nuget\NuGet.config` file should contain the following:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <solution>
+        <add key="disableSourceControlIntegration" value="true" />
+    </solution>
+</configuration>
+```
+
+Using this approach, rather than cloaking the `packages` folder or otherwise ignoring it, allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
+
+In addition to avoiding the call from NuGet to pend changes in Source Control, you might want to add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file tho **explicitly ignore modifications to the `\packages` folder** on the repository level.
+
+The `.tfignore` file should have the following entries:
+
+```
+## Ignore the NuGet packages folder in the root of the repository
+packages
+
+## Optionally, uncomment the following line to keep track of the repositories.config file (note: not needed for package restore to function properly)
+# !packages\repositories.config
+```
+
 ## Package Restore Approaches
 
 NuGet offers three approaches to using package restore. Automatic Package Restore is the NuGet team's recommended approach to Package Restore within Visual Studio, and it was introduced in NuGet 2.7. Command-Line Package Restore is required when building a solution from the command-line; it was introduced in early versions of NuGet, but was improved in NuGet 2.7. The MSBuild-integrated package restore approach is the original Package Restore implementation and though it continues to work in many scenarios, it does not cover the full set of scenarios addressed by the other two approaches.
@@ -107,18 +161,6 @@ There are two ways to opt into package restore consent, as needed by NuGet 2.0-2
 
 1. From Visual Studio's options, select the `Package Manager` node and its "General" settings. Check the box to "Allow NuGet to download missing packages during build" and click OK. *Note that in NuGet 2.7, the phrase "during build" was removed from this setting.* This setting is stored in the user's `%AppData%\NuGet\NuGet.config` file, but it can also be specified in any `NuGet.config` file that applies to the solution being built, as documented on the [NuGet Config File] page.
 1. Specify an environment variable called `EnableNuGetPackageRestore` with a value of `true` before launching Visual Studio or MSBuild. 
-
-#### Omitting Packages from Source Control
-
-Even though package restore *consent* is on by default, users still need to choose to omit their packages from source control before package restore is engaged. By default, source control systems will include the `packages` folder in your repository, and you need to take action to omit the packages from source control.
-
-##### Git
-Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder. [Sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
-
-##### TFS
-Use the `.nuget\NuGet.config` file to disable source control integration, as explained on the [NuGet Config Settings](NuGet-Config-Settings) document under the "Source control integration" section.
-
-Using this approach, rather than cloaking the `packages` folder or otherwise ignoring it, allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
 
 #### Opting Out
 
