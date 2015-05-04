@@ -10,7 +10,7 @@ The NuGet core team is self-appointed as Benevolent Dictator or project lead. Ho
 
 In many ways, the role of the benevolent dictator is less about dictatorship and more about diplomacy. The key is to ensure that, as the project expands, the right people are given influence over it and the community rallies behind the vision of the project lead. The lead’s job is then to ensure that the committers (see below) make the right decisions on behalf of the project. Generally speaking, as long as the committers are aligned with the project’s strategy, the project lead will allow them to proceed as they desire.
 
-Additionally, Outercurve Foundation staff consider the project lead primary point of contact or first point of contact for the project for purposes of business operations including domain registrations, and technical services (e.g. code-signing).
+Additionally, .NET Foundation staff consider the project lead primary point of contact or first point of contact for the project for purposes of business operations including domain registrations, and technical services (e.g. code-signing).
 
 ### Committers
 
@@ -24,7 +24,7 @@ _How to become one:_ Be appointed by the Benevolent Dictator
 
 Contributors are community members who submit patches to the project. These patches may be a one-time occurrence or occur over time. Expectations are that contributors will submit patches that are small at first and will only grow larger once the contributor, committers, and the project lead has built confidence in the quality of their patches. Contributors are recognized in the associated product release notes document.
 
-NOTE: before a contributor’s first patch is put into the repository they must sign a [Contributor License Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) or an assignment agreement to the Outercurve Foundation. The patch can be submitted and discussed but it can’t actually be committed to the repository without the appropriate paperwork in place. To obtain a contributor license agreement, please send a request in email to [contributions@nuget.org](mailto:contributions@nuget.org).
+NOTE: before a contributor’s first patch is put into the repository they must sign a [Contributor License Agreement](http://en.wikipedia.org/wiki/Contributor_License_Agreement) or an assignment agreement to the .NET Foundation. The patch can be submitted and discussed but it can’t actually be committed to the repository without the appropriate paperwork in place. To obtain a contributor license agreement, please send a request in email to [contributions@nuget.org](mailto:contributions@nuget.org).
 
 _How to become one:_ Submit a pull request to NuGet client ([http://nuget.codeplex.com/](http://nuget.codeplex.com/)), NuGet Gallery ([https://github.com/nuget/nugetgallery](https://github.com/nuget/nugetgallery)), or NuGet Docs ([https://github.com/nuget/nugetdocs](https://github.com/nuget/nugetdocs)). The detailed process for submitting a pull request varies based on the repository to which you are committing. Contribution instructions for NuGet client and gallery are found at [../Contribute/Contributing-to-nuget](../Contribute/Contributing-to-nuget); instructions for NuGet Docs are found at [../Contribute/Contributing-to-NuGet-Documentation](../Contribute/Contributing-to-NuGet-Documentation).
 
