@@ -1,106 +1,73 @@
-﻿# Project Contribution Guidelines
+﻿# How to contribute
 
-## Developer Workflow
+One of the easiest ways to contribute is to participate in discussions and discuss issues. You can also contribute by submitting pull requests with code changes.
 
-Developers should follow the following workflow when working on items.
+## General feedback and questions?
 
-* Bug/work item is assigned to the developer via the *Triage Process* (see the next section) or developer assigns buck to him/herself and marks it as active. 
-* Developer creates a fork for this change (or reuses one of his existing forks) 
-* Developer clones the fork to his or her local machine and makes the changes, committing to their local repository and pushing to the fork on their server as needed. This can continue until all work is finished (The purpose of pushing to the fork is to keep changes on the server). 
-* Developer pulls and rebases (using the <a title="Rebase Extension" href="http://hgtip.com/tips/advanced/2010-02-11-merging-mq-patches-with-rebase/">rebase extension</a>) his or her fork until it&rsquo;s up to date with Main. 
-* Developr runs [functional automated tests](Functional-Testing.md) and fix any failures caused by his/her code changes, as to ensure no regressions have been brought into existing functionalities. 
-* Developer requests a code review 
-* Once code review is finished, developer sends a pull request for Main. 
-* One of the members of the integration team commits the changes to Main. 
-* Once the change is committed, integration team sends the developer an email notifying that the change has been committed to main. 
-Only then should the developer mark the item as *fixed* and assign it to Drew Miller per the triage process. 
-* If you are creating a fork per change (and not reusing the fork), please delete the fork once it's been accepted. Thanks! 
+Please start a discussion on the [Home repo issue tracker](https://github.com/NuGet/Home/issues).
 
-Notes:
+## Bugs and feature requests?
 
-* Only members of the *integration team* may commit to main. Note that for members of the *Developers* group in this 
-CodePlex project this is enforced by the process and trust as CodePlex will allow you to commit to main. We are not going to 
-enforce this through the use of CodePlex groups for the time being. 
-* We'll use rebase instead of merge as a default option of getting in sync with changes in Main. This keeps the history 
-cleaner and simplifies code reviews. Make sure to 
-<a title="Enable the rebase extension" href="http://hgtip.com/tips/advanced/2010-02-11-merging-mq-patches-with-rebase/">enable 
-the rebase extension</a>. 
+Please log a new issue in the appropriate GitHub repo.
 
-## Triage Process
+If you're having trouble with the NuGet.org Website, file a bug on the [NuGet Gallery Issue Tracker](https://github.com/nuget/NuGetGallery/issues).
 
-We'll be using the following process to triage bugs in the issue tracker. This process may change as we refine our development workflow, but let's use this for now.
+If you're having trouble with the NuGet client tools (the Visual Studio extension, NuGet.exe command line tool, etc.), file a bug on [NuGet Home](https://github.com/nuget/home/issues).
 
-1. New bugs are opened with the "Proposed" status. 
-2. During triage, we'll assign triaged bugs to a specific release (Or the hidden *Triage* release if we don't yet have a release in mind). In some cases, we'll also assign a developer. 
-3. When developers pick a bug to work on, they should
-    4. Assign it to themselves if it isn't already assigned to them. 
-    5. Change the status to *Active* when you start working on it. 
-1. When the bug is fixed, send a pull request. 
-2. Once the pull request is accepted, change the status to *Fixed* and assign it to *aldion*. Please associate a changeset for the fix (This feature is not yet available, but will be in the next release).&nbsp; 
-3. Once the bug is verified by someone else (typically the opener of the bug if it's a different person 
-or a member of the QA team or both), only then will it get marked as *Closed*.
+## Other discussions
 
-We will try to run a weekly triage process to manage the extensive list of bugs. 
-However, given the distributed nature of open source development, we'll have to be flexible here. 
-If there's a bug you feel strongly about and want to work on, but it hasn't been triaged yet, 
-just send an email to the rest of the group for an ad-hoc triage.
+Our team members also monitor several other discussion forums:
 
-Ideally, we should only work on issues that have been approved in triage (aka assigned to one of the releases). 
-However, you can always feel free to work on an untriaged issue in a private fork as long as you are ok with the risk 
-that the issue will be rejected when you submit the pull request. Ideally, 
-just send an email to the team to let us know you're working on it.
+* [StackOverflow](http://stackoverflow.com/questions/tagged/nuget) with the `nuget` tag
+* [JabbR chat room](https://jabbr.net/#/rooms/aspnetvnext) for real-time discussions with the community and the people who work on the project
 
-## Source Tree Organization
+## Filing issues
 
-* *LICENSE.txt* file at the root of the project trunk containing the copyright for the collective distribution and complete text for the license terms. 
-* *CREDITS.txt* file wherever the LICENSE.txt file is located. Sample:
+The best way to get your bug fixed is to be as detailed as you can be about the problem. Providing a minimal project with steps to reproduce the problem is ideal. Here are questions you can answer before you file a bug to make sure you're not missing any important information.
 
-        NuGet Project
-        ASP.NET Open Source Gallery at Outercurve Foundation
-        Copyright 2010 Outercurve Foundation
+1. Did you read the [documentation](http://docs.nuget.org)?
+2. Did you include the command you executed in the issue?
+3. What are the EXACT steps to reproduce this problem?
+4. What package versions are you using (you can see these in the `project.json` or `packages.config` file)?
+5. What operating system are you using?
+6. What NuGet version are you using?
+7. What version of Visual Studio are you using?
 
-        This product includes software developed at
-        The Outercurve Foundation (http://www.outercurve.org/).
+GitHub supports markdown, so when filing bugs make sure you check the formatting before clicking submit.
 
-        NuGet includes or is derivative of works distributed under the licenses listed below. 
-        The full text for most of the licenses listed below can be found in the LICENSE.txt file 
-        accompanying each work. The original copyright notices have been preserved within 
-        the respective files and or packages. Please refer to the specific files and/or packages 
-        for more detailed information about the authors, copyright notices, and licenses.
+## Contributing code and content
 
-        ProvideBindingPathAttribute (Visual Studio SDK)
-        ----- 
-        Website:      http://msdn.microsoft.com/en-us/library/bb166441(VS.80).aspx 
-        Copyright:    Copyright (c) 2010 Microsoft
-        License:      Apache 2.0
+You will need to sign a [Contributor License Agreement](https://cla2.dotnetfoundation.org/) before submitting your pull request. To complete the Contributor License Agreement (CLA), you will need to submit a request via the form and then electronically sign the Contributor License Agreement when you receive the email containing the link to the document. This needs to only be done once for any Microsoft Open Technologies OSS project.
 
-* 3rd party library dependencies should be located under a common directory within the project source tree, such as a *lib* folder. 
-* Source file headers are not required and should not be used except in cases where we're incorporating OSS source code from another project. 
+Make sure you can build the code. Familiarize yourself with the project workflow and our coding conventions. If you don't know what a pull request is read this article: https://help.github.com/articles/using-pull-requests.
 
-### 3rd Party Source Code Headers
+Before submitting a feature or substantial code contribution please discuss it with the team and ensure it follows the product roadmap. You might also read these two blogs posts on contributing code: [Open Source Contribution Etiquette](http://tirania.org/blog/archive/2010/Dec-31.html) by Miguel de Icaza and [Don't "Push" Your Pull Requests](http://www.igvita.com/2011/12/19/dont-push-your-pull-requests/) by Ilya Grigorik. Note that all code submissions will be rigorously reviewed and tested by the NuGet team, and only those that meet an extremely high bar for both quality and design/roadmap appropriateness will be merged into the source.
 
-When incorporating source code from a 3rd party, we should make sure to follow the proper steps mentioned above regarding giving proper credit. Each 3rd party source file should have a header that conforms to the license requirements. If the license does not provide a recommendation for the source file (for example, Apache has a recommended format), use the following as a template:
+Here's a few things you should always do when making changes to the code base:
 
-    /*
-    COPYRIGHT YYYY AUTHORNAME
+**Engineering guidelines**
 
-    Licensed to the Outercurve Foundation under one or more contributor license agreements.
+The coding, style, and general engineering guidelines are published on the [Engineering guidelines](/contribute/coding-guidelines) page.
 
-    See the CREDITS.TXT file distributed with this work for additional information regarding copyright ownership. The Outercurve Foundation licenses this file under the LICENSE_NAME License (the "License"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at:
+**Commit/Pull Request Format**
 
-        http://LICENSE_URL
+```
+Summary of the changes (Less than 80 chars)
+ - Detail 1
+ - Detail 2
 
-    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License.
+#bugnumber (in this specific format)
+```
 
-    Source: http://OPTIONAL URL WHERE CODE WAS OBTAINED
-    */
+**Tests**
+
+* Tests need to be provided for every bug/feature that is completed.
+* Tests only need to be present for issues that need to be verified by QA (e.g. not tasks)
+* If there is a scenario that is far too hard to test there does not need to be a test for it.
+  * "Too hard" is determined by the team as a whole.
 
 ## Builds
 
-The NuGet Continuous Integration (CI) server has builds directly from the source tree. 
-This allows you to try out the latest successful unstable builds 
-([NuGet.Tools.vsix](http://ci.nuget.org:8080/guestAuth/repository/download/bt4/.lastSuccessful/VisualStudioAddIn/NuGet.Tools.vsix)
-|
-[NuGet.exe](http://ci.nuget.org:8080/guestAuth/repository/download/bt4/.lastSuccessful/Console/NuGet.exe)).
+The NuGet Continuous Integration (CI) server has builds directly from the source tree. This allows you to try out the latest successful unstable builds.
 
-Our TeamCity build server is at [http://ci.nuget.org:8080/](http://ci.nuget.org:8080/).
+Our TeamCity build server is at [http://build.nuget.org](http://build.nuget.org).
