@@ -1,15 +1,9 @@
-﻿# Setting up the NuGet Development Environment
+# Setting up the NuGet Development Environment
 So you want to hack on NuGet? These notes will help you get your development environment 
 set up correctly so you can work on NuGet using Visual Studio. The lowest supported 
-version is Visual Studio 2015.
+version is Visual Studio 2015. 
 
 ## Get and Build the code
-1. **Install Git.** Install [Git for Windows](http://code.google.com/p/msysgit/downloads/list?can=3) and then optionally install [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
-1. **Clone the repository.** From a command prompt, run the following commands in a directory where you want the source code to be placed. 
-This will create a folder named "NuGet.VisualStudioExtension" with the source and switch to the branch where active development happens.
-
-        git clone -b dev https://github.com/NuGet/NuGet.VisualStudioExtension.git
-
 After VS2015 has been installed, you would need to:
 
 1. Uninstall the existing NuGet Extension from Visual Studio.
