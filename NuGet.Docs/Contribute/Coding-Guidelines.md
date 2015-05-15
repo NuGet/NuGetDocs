@@ -37,7 +37,7 @@ To commit the PR to the repo **do not use the Big Green Button**. Instead, do a 
 
 ## Source code management
 
-:grey_exclamation: The *structure* of the code that we write and the *tools* that we use to write the code.
+The *structure* of the code that we write and the *tools* that we use to write the code.
 
 ### Repos
 
@@ -63,7 +63,7 @@ Solution files generally go in the repo root.
 
 Solution names match repo names (e.g. NuGet.sln in the NuGet repo).
 
-Every project also needs a `project.json` and a matching `.kproj` file. This `project.json` is the source of truth for a project's dependencies and configuration options.
+Every project also needs a `project.json` and a matching `.xproj` file. This `project.json` is the source of truth for a project's dependencies and configuration options.
 
 Solutions need to contain solution folders that match the physical folders (`src`, `test`, etc.).
 
@@ -105,13 +105,19 @@ Almost all development is done for both CoreCLR and Desktop .NET. Some code will
 Desktop:
 
 ```c#
-#ifdef ASPNET50
+#ifdef DNX451
+```
+
+or, depending on exact target:
+
+```c#
+#ifdef NET451
 ```
 
 CoreCLR:
 
 ```c#
-#ifdef ASPNETCORE50
+#ifdef DNXCORE50
 ```
 
 ### Assembly naming pattern
@@ -140,9 +146,7 @@ To have a sample project reference a project in `src` you'll need a `global.json
 
 ## Coding guidelines
 
-:grey_exclamation: The *content* of the code that we write.
-
-TODO R# coding style
+The *content* of the code that we write.
 
 ### Coding style guidelines – general
 
@@ -464,7 +468,7 @@ public EcmaScriptObject SomeObj { get; }
 
 ## Product planning and issue tracking
 
-:grey_exclamation: How we track what work there is to do.
+How we track what work there is to do.
 
 ### Issue tracking
 
@@ -474,7 +478,7 @@ Bugs cannot be moved between repos so make sure you open a bug in the right repo
 
 ## Tips and tricks
 
-:grey_exclamation: The *structure* of the code that we write and the *tools* that we use to write the code.
+The *structure* of the code that we write and the *tools* that we use to write the code.
 
 ### GitHub Flavored Markdown
 
