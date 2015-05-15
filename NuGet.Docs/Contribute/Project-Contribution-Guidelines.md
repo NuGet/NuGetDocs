@@ -19,7 +19,7 @@ If you're having trouble with the NuGet client tools (the Visual Studio extensio
 Our team members also monitor several other discussion forums:
 
 * [StackOverflow](http://stackoverflow.com/questions/tagged/nuget) with the `nuget` tag
-* [JabbR chat room](https://jabbr.net/#/rooms/aspnetvnext) for real-time discussions with the community and the people who work on the project
+* [JabbR chat room](https://jabbr.net/#/rooms/nuget) for real-time discussions with the community and the people who work on the project
 
 ## Filing issues
 
