@@ -119,7 +119,7 @@ One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https:/
 * Silverlight: [http://dotnetjunky.info/slnpe.html](http://dotnetjunky.info/slnpe.html)
 
 ### MyGet (or NuGet-as-a-Service)
-MyGet is a NuGet server that allows you to create and host your own NuGet feeds. It is hosted on Windows Azure and has a freemium offering, meaning you can use it for free (within the constrains of [the free plan](https://www.myget.org/plans)) or subscribe to one of the paying plans if you require more resources or features. More info at [https://www.myget.org](https://www.myget.org).
+MyGet is a NuGet server that allows you to create and host your own NuGet, NPM, Bower and VSIX feeds. It is hosted on Azure and has a freemium offering, meaning you can use it for free (within the constrains of [the free plan](https://www.myget.org/plans)) or subscribe to one of the paying plans if you require more resources or features. More info at [https://www.myget.org](https://www.myget.org).
 
 * Availability and history: [http://status.myget.org](http://status.myget.org).
 * Documentation: [http://docs.myget.org](http://docs.myget.org).
