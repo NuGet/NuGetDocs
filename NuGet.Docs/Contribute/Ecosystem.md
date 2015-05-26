@@ -3,8 +3,8 @@ First introduced in 2010, NuGet has been around for a few years now and many peo
 
 All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - You. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
 
-## Outercurve Foundation Projects
-The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools ([NuGet Command Line](/Consume/Command-Line-Reference) and (NuGet Visual Studio Extension)[http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c?SRC=Home]), as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [Outercurve Foundation](http://www.outercurve.org/) and is a part of the ASP.NET Open Source Gallery.
+## .NET Foundation Projects
+The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools ([NuGet Command Line](/Consume/Command-Line-Reference) and (NuGet Visual Studio Extension)[http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c?SRC=Home]), as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](http://www.dotnetfoundation.org/).
 
 The sources for the NuGet clients can be found on [Codeplex](http://nuget.codeplex.com/), while sources for NuGet Gallery  services are available on [GitHub](https://github.com/NuGet/).
 
@@ -72,15 +72,15 @@ Drawbacks:
 * upgrading to new versions of the gallery requires repeating the fetch/update/build/deploy loop
 
 ### NuGet Concierge
-* License: Apache v2 
-* Sources: https://github.com/NuGet/Concierge 
+* License: Apache v2
+* Sources: https://github.com/NuGet/Concierge
 
 [NuGet Concierge](http://concierge.nuget.org/) is a package recommendation service: upload a packages.config file and NuGet Concierge will recommend you packages you may find useful.
 
 More info: [http://blog.nuget.org/20130816/introducung-nuget-concierge.html](http://blog.nuget.org/20130816/introducung-nuget-concierge.html)
 
 ## Microsoft Projects
-Microsoft has extensively contributed to the development of the NuGet project. All contributions made by Microsoft employees are also open source and are donated (including copyrights) to the Outercurve Foundation.
+Microsoft has extensively contributed to the development of the NuGet project. All contributions made by Microsoft employees are also open source and are donated (including copyrights) to the .NET Foundation.
 
 ### NuGet-based Microsoft Package Manager for Visual Studio 2013
 * License: [Microsoft Software License (custom)](http://visualstudiogallery.msdn.microsoft.com/site/4ec1526c-4a8c-4a84-b702-b21a8f5293ca/eula?licenseType=None)
@@ -119,7 +119,7 @@ One of the developers of the core NuGet team at Microsoft, [Luan Nguyen](https:/
 * Silverlight: [http://dotnetjunky.info/slnpe.html](http://dotnetjunky.info/slnpe.html)
 
 ### MyGet (or NuGet-as-a-Service)
-MyGet is a NuGet server that allows you to create and host your own NuGet feeds. It is hosted on Windows Azure and has a freemium offering, meaning you can use it for free (within the constrains of [the free plan](https://www.myget.org/plans)) or subscribe to one of the paying plans if you require more resources or features. More info at [https://www.myget.org](https://www.myget.org).
+MyGet is a NuGet server that allows you to create and host your own NuGet, NPM, Bower and VSIX feeds. It is hosted on Azure and has a freemium offering, meaning you can use it for free (within the constrains of [the free plan](https://www.myget.org/plans)) or subscribe to one of the paying plans if you require more resources or features. More info at [https://www.myget.org](https://www.myget.org).
 
 * Availability and history: [http://status.myget.org](http://status.myget.org).
 * Documentation: [http://docs.myget.org](http://docs.myget.org).
@@ -152,7 +152,7 @@ Provides:
   * download entire feeds as ZIP archives for backup purposes
   * download packages from the web (without the need for nuget client tools)
   * integration with symbolsource (shared credentials and feed/repository security settings)
-  * multiple endpoints, including the v1-compatible endpoint (e.g. you can use the feed as a custom Orchard Gallery feed)   
+  * multiple endpoints, including the v1-compatible endpoint (e.g. you can use the feed as a custom Orchard Gallery feed)
 * granular security: 
   * API key per user
   * user-roles on feeds (owner, co-owner, contributor, reader)
@@ -165,7 +165,7 @@ Provides:
   * auto-trigger builds for CodePlex, BitBucket or GitHub commits
   * support for many unit testing frameworks
   * support for many SDKs (including windows phone)
-  * build failure notifications through email and downloadable build logs 
+  * build failure notifications through email and downloadable build logs
 * custom logo and domain name
 
 ### Chocolatey
@@ -217,7 +217,7 @@ Provides:
 * Retention policies
 * Automation of common tasks for ASP.NET deployments (IIS configuration) and Windows Services
 
-### RedGate Deployment Manager 
+### RedGate Deployment Manager
 [RedGate's Deployment Manager](http://www.red-gate.com/delivery/deployment-manager/) is a custom fork of the OctopusDeploy project. History separates shortly after v1.0 of OctopusDeploy, as explained in this post: [http://octopusdeploy.com/support/red-gate](http://octopusdeploy.com/support/red-gate)
 
 More info: [http://www.red-gate.com/delivery/deployment-manager/](http://www.red-gate.com/delivery/deployment-manager/)
@@ -277,7 +277,7 @@ Provides:
 * License: Apache v2
 * Sources: [http://boxstarter.codeplex.com/](http://boxstarter.codeplex.com/)
 
-[BoxStarter](http://boxstarter.codeplex.com/) is another cool project leveraging NuGet and Chocolatey to quickly set up development environments. 
+[BoxStarter](http://boxstarter.codeplex.com/) is another cool project leveraging NuGet and Chocolatey to quickly set up development environments.
 
 More info: [http://boxstarter.codeplex.com/documentation](http://boxstarter.codeplex.com/documentation)
 
@@ -343,12 +343,12 @@ More info: [https://github.com/themotleyfool/Klondike](https://github.com/themot
 [scriptcs](http://scriptcs.net/) offers a cross-platform scripting environment for authoring C#. Scripts can be created via a text editor and executed or code can be executed interactively in the scriptcs [REPL] (https://github.com/scriptcs/scriptcs/wiki/REPL). scriptcs allows script authors to install NuGet packages and use them in their scripts. scriptcs also leverages NuGet for extensibility as [script packs] (https://github.com/scriptcs/scriptcs/wiki/Script-Packs) and [modules] (https://github.com/scriptcs/scriptcs/wiki/Modules) are installed as NuGet packages.
 
 ## Other NuGet-based utilities
-There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:  
+There are quite a few other tools and utilities building further on top of NuGet. Here's a list of what I've found interesting:
 
-* [Glimpse Extensions](http://getglimpse.com/Packages) (plug-ins are packages)  
-* [NuGetMustHaves.com](http://nugetmusthaves.com/) 
-* [NuGetFeed](http://nugetfeed.org/) (build a list of favorite packages) 
-* [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)  
+* [Glimpse Extensions](http://getglimpse.com/Packages) (plug-ins are packages)
+* [NuGetMustHaves.com](http://nugetmusthaves.com/)
+* [NuGetFeed](http://nugetfeed.org/) (build a list of favorite packages)
+* [Orchard](http://www.orchardproject.net/) (CMS modules are fetched from a v1 NuGet feed hosted in the Orchard Gallery)
 * [Java implementation of NuGet Server](http://blog.jonnyzzz.name/2012/03/nuget-server-in-pure-java.html)
 * [NuGetLatest](https://twitter.com/NuGetLatest) (Twitter bot tweeting new package publications)
 * [HotNuget](http://hotnuget.com) (Compare package usage)
@@ -368,10 +368,10 @@ The following pointers should help you get the maximum out of NuGet:
   * [Apress Pro NuGet](http://bit.ly/ProNuGet)
   * [NuGet 2 Essentials](http://www.amazon.com/NuGet-2-Essentials-Damir-Arh-ebook/dp/B00GTQD5M4)
 * Xavier Decoster's blog: [http://www.xavierdecoster.com/tagged/NuGet](http://www.xavierdecoster.com/tagged/NuGet)
- 
+
 ## Documentation for Individual Packages
 
-[NuDoq](http://nudoq.org) provides the missing link between straightforward access and updates to NuGet packages, and their corresponding API documentation. 
+[NuDoq](http://nudoq.org) provides the missing link between straightforward access and updates to NuGet packages, and their corresponding API documentation.
 
 NuDoq regularly polls the NuGet.org gallery server for the latest package updates, unpacks and processes the library documentation files, and update the site accordingly.
 
