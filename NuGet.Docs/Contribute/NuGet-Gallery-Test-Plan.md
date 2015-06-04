@@ -78,7 +78,7 @@ Latest and Latest - 1 versions of these browsers are used for NuGet Gallery Test
 *    Repositories requiring authentication
 
 ## Package Download
-*    Using VS, WebMatrix Clients, Browser and NuGet commandline
+*    Using VS, Browser and NuGet commandline
 	*    Official source
 	*    Private hosted galleries
 	*    Source requiring authentication
