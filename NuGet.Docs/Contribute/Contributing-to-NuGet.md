@@ -1,4 +1,4 @@
-﻿<style type="text/css">
+<style type="text/css">
 	#subnav-contribute a { color: black; }
 </style>
 # Contributing to NuGet
@@ -29,9 +29,7 @@ Miguel de Icaza has a good post on [Open Source Contribution Etiquette](http://t
 
 The first order of business is to get yourself familiar with the product (and depending on the type of contribution you wish to make, the code).
 
-
-
-1. Subscribe to the NuGet <a title="NuGet Discussions" href="http://nuget.codeplex.com/discussions">discussion list</a> by making sure you have a CodePlex.com account and turning on notifications for the **Discussions** tab. 
+1. Subscribe to the [NuGet](https://github.com/nuget/home/issues) and [NuGet Gallery Issue Tracker](https://github.com/nuget/NuGetGallery/issues) by making sure you have a GitHub.com account and turning on notifications by clicking the **Watch** button.
 2. Download the latest release and try the product out. 
 3. Read up on the docs at [docs.nuget.org](~/). 
 4. Get your [development environment set up](Setting-up-the-NuGet-Development-Environment)</a>. 

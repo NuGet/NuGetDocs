@@ -182,7 +182,7 @@ It is not possible to squat package names. If you feel that an existing package 
 
 **How do I claim ownership for packages ?**
 
-Check out Managing Package Owners on nuget.org](/Create/Managing-Package-Owners) for details.
+Check out [Managing Package Owners on nuget.org](/Create/Managing-Package-Owners) for details.
 
 
 **Is it recommended to upload my test packages to NuGet.org ?**

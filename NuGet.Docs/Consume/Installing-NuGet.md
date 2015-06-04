@@ -3,7 +3,7 @@ NuGet is available for the following clients:
 
 1. **Visual Studio 2013**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 1. **Visual Studio 2010 and 2012**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
-1.  **Visual Studio 2015 Preview**: [Visual Studio Extension Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d)
+1. **Visual Studio 2015 RC**: [Visual Studio Extension Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d)
 1. **Command-Line Utility**: [Direct Download](https://nuget.org/nuget.exe)
 
 ## Visual Studio 2010, 2012 and 2013

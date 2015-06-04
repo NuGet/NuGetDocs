@@ -109,7 +109,7 @@ To update your NuGet Package Manager extension in WebMatrix 3:
 4. Click to update NuGet Package Manager to 2.5.0
 5. Close and restart WebMatrix 3
 
-This is the NuGet team's first release of the NuGet Package Manager extension for WebMatrix.  The code was recently contributed by Microsoft into the open-source Outercurve NuGet project.  Previously, the NuGet integration was built into WebMatrix, and it could not be updated out of band from WebMatrix.  We now have the capability to further update it alongside the rest of NuGet's client tools.
+This is the NuGet team's first release of the NuGet Package Manager extension for WebMatrix.  The code was recently contributed by Microsoft into the open-source NuGet project. Previously, the NuGet integration was built into WebMatrix, and it could not be updated out of band from WebMatrix.  We now have the capability to further update it alongside the rest of NuGet's client tools.
 
 ### Bug Fixes
 One of the major bug fixes made was performance improvement in the <code>update-package -reinstall</code> command.

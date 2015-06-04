@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -24,7 +26,7 @@ namespace NuGet.Docs
         private const string OutlineLayout = "~/_Layout-Outline.cshtml";
         private static List<string> _virtualPathDependencies = new List<string>
         {
-            "~/_PageStart.cshtml", 
+            "~/_PageStart.cshtml",
             "~/_Layout.cshtml",
             OutlineLayout
         };
@@ -111,14 +113,14 @@ namespace NuGet.Docs
             var allHeadingNodes = allNodes
                 .Where(node =>
                     node.Name.Length == 2
-                    && node.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
+                    && node.Name.StartsWith("h", StringComparison.InvariantCultureIgnoreCase)
                     && Char.IsDigit(node.Name[1]));
 
             var headings = new List<Heading>();
             var containerDictionary = new Dictionary<HtmlNode, IEnumerable<HtmlNode>>();
             foreach (var heading in allHeadingNodes)
             {
-                string id = heading.InnerText.Replace(" ", "-").ToLowerInvariant(); ;
+                string id = heading.InnerText.Replace(" ", "-").ToLowerInvariant();
 
                 // GitHub gives us anchors in the headings, MarkdownSharp doesn't
                 HtmlNode anchor = heading.SelectSingleNode("a");

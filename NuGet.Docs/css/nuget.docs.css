@@ -19,7 +19,7 @@ h6, h7, h8, h9 { font-size: 1em; }
 .content #doc h1:first-child {
     margin: 0;
     padding-top: 20px;
-    padding-bottom: 8px; 
+    padding-bottom: 8px;
 }
 
 .content #doc > pre,
@@ -92,8 +92,7 @@ nav,
 section {
     display: block;
 }
-        
-        
+
 /* Document Structure
 ***************************************************************/
 .article-boxes {
@@ -119,7 +118,7 @@ article.box {
 }
 
     article.box.wide {
-        width: 100%;   
+        width: 100%;
     }
 
 article.box header {
@@ -231,6 +230,12 @@ aside#toc{
         font-size: 12pt;
         color: #B8B8B8;
     }
+
+    aside#toc h5 { padding-left: 52px; }
+    aside#toc h6 { padding-left: 62px; }
+    aside#toc h7 { padding-left: 72px; }
+    aside#toc h8 { padding-left: 82px; }
+    aside#toc h9 { padding-left: 92px; }
 
     aside#toc h3 a {
         color: black;
