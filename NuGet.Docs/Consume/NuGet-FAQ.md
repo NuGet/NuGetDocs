@@ -75,7 +75,6 @@ of NuGet is Visual Studio, but the core NuGet API has no dependencies on Visual 
 There are multiple NuGet clients that work completely outside of Visual Studio:
 
 * [SharpDevelop Alpha](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx). (See a demo of this in [Phil Haack's MvcConf talk](http://bit.ly/fzrJDa).) 
-* ASP.NET Web Pages in WebMatrix. (See a demo of this in [Phil Haack's MvcConf talk](http://bit.ly/fzrJDa).) 
 * [NuGet.exe](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html) 
 * [MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin) and Xamarin Studio add-in
 
