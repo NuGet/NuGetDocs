@@ -172,7 +172,7 @@ There are two ways to opt into package restore consent, as needed by NuGet 2.0-2
 Users uncomfortable automatically downloading missing packages during build have two levels for opting out of this feature, both included in the *Package Manager* General settings in Visual Studio:
 
 1. **Allow NuGet to download missing packages**: Unchecking this will prevent NuGet from downloading packages during build or even checking for missing packages during build. This affects all three approaches for NuGet's package restore feature.
-1. **Automatically check for missing packages during build in Visual Studio**: Unchecking this will disable the Automatic Package Restore feature in Visual Studio, but it will still allow other packge restore approaches to work including the MSBuild-Integrated Package Restore.
+1. **Automatically check for missing packages during build in Visual Studio**: Unchecking this will disable the Automatic Package Restore feature in Visual Studio, but it will still allow other package restore approaches to work including the MSBuild-Integrated Package Restore.
 
 #### Machine-Wide Configuration to Opt Out all Users
 
