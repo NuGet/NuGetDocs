@@ -2,7 +2,9 @@
 
 [NuGet 2.8.5 Release Notes](nuget-2.8.5) | [NuGet 3.0 Preview Release Notes](nuget-3.0-preview)
 
-NuGet 2.8.6 was released July 22, 2015. It is a minor update to our 2.8.5 VSIX with some targeted fixes and improvements to support the Windows 10 UWP development model. 
+NuGet 2.8.6 was released July 20, 2015 as a minor update to our 2.8.5 VSIX with some targeted fixes and improvements to support packages that may be delivered with support for the Windows 10 UWP development model.
+
+This version of the NuGet package manager extension provides support for Visual Studio 2013 only.
 
 In this release, the NuGet Package Manager dialog had support added for:
 
