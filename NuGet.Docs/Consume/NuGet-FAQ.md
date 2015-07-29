@@ -184,6 +184,10 @@ It is not possible to squat package names. If you feel that an existing package 
 
 Check out [Managing Package Owners on nuget.org](/Create/Managing-Package-Owners) for details.
 
+**How do I deal with a package owner who is violating my software license?**
+
+We encourage the NuGet community to work together to resolve any disputes that may arise between package owners and the owners of other software.  We have crafted a [dispute resolution process](/Consume/Dispute-Resolution) that we ask you to follow before NuGet.org administrators intercede.
+
 
 **Is it recommended to upload my test packages to NuGet.org ?**
 
