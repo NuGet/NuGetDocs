@@ -109,7 +109,27 @@ The runtimes folder contains assemblies and native libraries required to run on 
 
 In the following example we will show a package that has a purely managed implementation for several platforms, but will use native helpers on Windows 8 where it can call into Windows 8 specific native APIs.  
 
-└───MyLibrary     ├───lib     │   └───net40     │           MyLibrary.dll     │     └───runtimes         ├───win8-x64         │   ├───lib         │   │   └───net40         │   │           MyLibrary.dll         │   │         │   └───native         │           MyNativeLibrary.dll         │         └───win8-x86             ├───lib             │   └───net40             │           MyLibrary.dll             │             └───native                     MyNativeLibrary.dll 
+	└───MyLibrary
+	     ├───lib
+	     │   └───net40
+	     │           MyLibrary.dll
+	     │
+	     └───runtimes
+	         ├───win8-x64
+	         │   ├───lib
+	         │   │   └───net40
+	         │   │           MyLibrary.dll
+	         │   │
+	         │   └───native
+	         │           MyNativeLibrary.dll
+	         │
+	         └───win8-x86
+	             ├───lib
+	             │   └───net40
+	             │           MyLibrary.dll
+	             │
+	             └───native
+	                     MyNativeLibrary.dll 
 
 Given the above package the following things will happen: 
 
