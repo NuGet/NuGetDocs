@@ -1,6 +1,6 @@
 # NuGet 2.8.6 Release Notes
 
-[NuGet 2.8.5 Release Notes](nuget-2.8.5) | [NuGet 3.0 Preview Release Notes](nuget-3.0-preview)
+[NuGet 2.8.5 Release Notes](nuget-2.8.5) | [NuGet 2.8.7 Release Notes](nuget-2.8.7)
 
 NuGet 2.8.6 was released July 20, 2015 as a minor update to our 2.8.5 VSIX with some targeted fixes and improvements to support packages that may be delivered with support for the Windows 10 UWP development model.
 
