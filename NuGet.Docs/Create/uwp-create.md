@@ -23,7 +23,7 @@ In this case you would add the new dotnet TxM to your package. Unlike other TxMs
 There are two ways to figure out which dependencies to list:
 
 1. Use ILDasm to look at your dll to see what assemblies are actually needed at runtime. Then determine which NuGet package that comes from. This is the hard way.
-2. Use the [NuSpec Dependency Generator](https://github.com/onovotny/ReferenceGenerator) tool created by one of the Windows Platform Developer MVPs. The tool automates the process and updates your .nuspec file with the depependant packages on build. It is available via a NuGet package, [NuSpec.ReferenceGenerator](https://www.nuget.org/packages/NuSpec.ReferenceGenerator/).
+2. Use the [NuSpec Dependency Generator](https://github.com/onovotny/ReferenceGenerator) **3rd party** tool. The tool automates the process and updates your .nuspec file with the depependant packages on build. It is available via a NuGet package, [NuSpec.ReferenceGenerator](https://www.nuget.org/packages/NuSpec.ReferenceGenerator/).
 
 See the project.json document for details on supports and includes features that both help in the creation of a package that support the dotnet TxM. 
 
