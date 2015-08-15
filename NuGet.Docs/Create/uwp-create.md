@@ -18,9 +18,18 @@ In this case you need to add the uap10.0 TxM to your package. Create a new direc
 
 In this case you would add the new dotnet TxM to your package. Unlike other TxMs dotnet doesn’t imply a surface area or platform. It is stating that your package will work on any platform that your dependencies work on. When building a package with the dotnet TxM you are likely to have many more TxM specific dependencies in your NuSpec, as you will need to define the BCL packages you depend on, such System.Text, System.Xml, etc. The locations that those dependencies work on define where your package will work.  
 
+### How do I find out my dependencies?
+
+There are two ways to figure out which dependencies to list:
+
+1. Use `ILDasm` to look at your dll to see what assemblies are actually needed at runtime. Then determine which NuGet package they each come from. This is the hard way.
+2. Use the [NuSpec Dependency Generator](https://github.com/onovotny/ReferenceGenerator) **3rd party** tool. The tool automates the process and updates your .nuspec file with the depependant packages on build. It is available via a NuGet package, [NuSpec.ReferenceGenerator](https://www.nuget.org/packages/NuSpec.ReferenceGenerator/).
+
 See the project.json document for details on supports and includes features that both help in the creation of a package that support the dotnet TxM. 
 
 **If your package is intended to work with the new PCL project, we highly recommend to create a dotnet folder, to avoid warnings and potential compatibility issues.**
+
+
 
 ## Directory Structure  ##
 
