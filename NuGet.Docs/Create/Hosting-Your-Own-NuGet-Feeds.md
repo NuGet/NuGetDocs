@@ -61,7 +61,13 @@ You can also select the new feed in the **Online** tab of the
 
 ## Creating Remote Feeds
 
-You can also host a remote (or internal) feed on a server that runs IIS.
+You can also host a remote (or internal) feed on a server that runs IIS. There are two alternatives from the NuGet team here
+1. NuGet.Server
+2. NuGet Gallery
+
+For relatively small projects with a small set of packages go with NuGet.Server, it is basically a view of a network share or local folder through http, and as such is easy to setup and works quite well when the number of packages is small. _However_ if the package count is high, say in the thousands the server will take a very long time to boot. The alternative is to use the ![NuGet Gallery Project](https://github.com/NuGet/NuGetGallery/wiki/Hosting-the-NuGet-Gallery-Locally-in-IIS) it is more complex to set up and host, but offers a lot more nuget.org like features.
+
+Below are the instruction to host a NuGet.Server, the instructions for NuGet Gallery are in the link above.
 
 <p class="caution">Make sure you're running [NuGet 1.4] (/Release-Notes/NuGet-1.4) or higher!</p>
 
