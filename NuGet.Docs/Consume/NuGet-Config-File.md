@@ -171,7 +171,7 @@ NuGet config files are read in the following order, assuming the solution direct
 
 Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
 
-* c:\a\b\c\.nuget\nuget.config
+* c:\a\b\c\\.nuget\nuget.config
 * c:\a\b\c\nuget.config
 * c:\a\b\nuget.config
 * c:\a\nuget.config
