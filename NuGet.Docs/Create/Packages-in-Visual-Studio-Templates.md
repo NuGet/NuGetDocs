@@ -161,7 +161,7 @@ This approach requires a few moving parts:
 3. Use the repository value of "registry" within the `<packages>` node
     * Specifying your registry key name in the `keyName` attribute.
     * If you have pre-unzipped your packages, use the `isPreunzipped="true"` attribute.
-    * If you want to force a design time build at the end of packages installation, use the `forceDesignTimeBuild="true"` attribute. This attribute is supported on NuGet versions 3.2.0 and above.
+    * If you want to force a design time build at the end of packages installation, use the `forceDesignTimeBuild="true"` attribute. This attribute is supported on NuGet versions 3.2 and above.
 
 Here's an example `<packages>` element using the registry-specified folder repository:
 <pre><code>&lt;packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true"&gt;
