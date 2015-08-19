@@ -6,9 +6,10 @@ using the NuGet client extension for Visual Studio.
 
 ## Limited support for NuGet for other project systems
 
-Visual Studio 2015 is the first version to support 3rd party project systems.
+NuGet v3 is the first version to support 3rd party project types, by supporting
+CPS-based projects. NuGet v3.2 adds support for non-CPS project systems as well.
 
-In Visual Studio 2015 RTM, the NuGet client will only integrate with project
+In NuGet v3.0, the NuGet client will only integrate with project
 systems that support everything a NuGet package might do. Or in other words,
 a project system must advertise support for all the project capabilities
 described below for NuGet functionality to "light up". We look forward to
