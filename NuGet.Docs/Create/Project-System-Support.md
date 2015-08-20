@@ -43,7 +43,7 @@ for you. Learn more about [declaring project capabilities in CPS projects][5].
 
 ### Responding to queries for VSHPROPID_ProjectCapabilitiesChecker
 
-Your project declares this capabilities by supporting the `IVsHierarchy::GetProperty`
+Your project declares these capabilities by supporting the `IVsHierarchy::GetProperty`
 VSHPROPID_ProjectCapabilitiesChecker property. You should return an instance of the
 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, which is
 defined in the `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` assembly.
