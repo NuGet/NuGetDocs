@@ -13,7 +13,7 @@ example:
 - win10
 - win8
 
-**Supported Programming Language** the language specific dlls that should be loaded only when the project language and the dll language match. If no language is specified then dll is assumed to apply to *all* languages that support analyzers.
+**Supported Programming Language** the language specific dlls that should be loaded only when the project language and the dll language match. If no language is specified then dll is assumed to apply to *all* languages that support analyzers.  
 
 valid values:
 
@@ -21,6 +21,7 @@ valid values:
 - vb -> represents Visual Basic
 - fs -> represents F#
 
+If it is ambiguous whether you are referring to a programming language of a framework, it will be assumed that you are referring to a programming language.
 
 **Analyzer** The analyzer or analyzer dependency dll.  If the analyzer requires additional files beyond dlls their inclusion will need to be explained in a targets or properties files.
 
@@ -43,7 +44,7 @@ Because System.Runtime.Analyzers has no platform specific requirements the platf
 At this time there is no host other than Roslyn compiler that can run analyzers.  Therefore, **Framework Name and Version** should always be specified as 'dotnet' until another host is implemented that has runtime restrictions.
 
 ## Analyzer Nuget Format For Packages.config ##
-If you also want to have your analyzer work for projects that use packages.config in addition to project.json you need to add two files: **install.ps1** and **uninstall.ps1**.  
+if the user's project is using package.config, the msbuild script that picks up the analyzer does not come into play, and you will want to add the following scripts under tools: **install.ps1** and **uninstall.ps1**.  
 
 **install.ps1 file contents**
 ```PowerShell
