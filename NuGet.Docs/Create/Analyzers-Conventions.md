@@ -28,7 +28,7 @@ If it is ambiguous whether you are referring to a programming language of a fram
 
 ## Example Project.json Analyzer Packages ##
 
-### System.Runtime.Analyzers ###
+### [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) ###
 Because System.Runtime.Analyzers has no platform specific requirements the platform folder is omitted. Properties files are included to disable legacy FxCop rules in favor of the analyzer implementation. 
 
 - analyzers\dotnet\System.Runtime.Analyzers.dll 
@@ -162,7 +162,7 @@ foreach($analyzersPath in $analyzersPaths)
 ```
 
 ## Example Analyzer Package for Both Project.json and Packages.config##
-### System.Runtime.Analyzers ###
+### [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) ###
 - analyzers\dotnet\System.Runtime.Analyzers.dll 
 - analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll 
 - analyzers\dotnet\vb\System.Runtime.VisualBasic.Analyzers.dll
