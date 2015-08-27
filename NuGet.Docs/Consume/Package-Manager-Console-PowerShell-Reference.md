@@ -580,10 +580,15 @@ PARAMETERS
         The `-Safe` flag constrains upgrades to only versions with the same Major and Minor version component. 
         
        Required: false
+
+    <strong>-ToHighestMinor</strong> <string>
+        The `-ToHighestMinor` flag constrains upgrades to only versions with the same Major version component. 
+        
+       Required: false
         
     <strong>-Source</strong> <string>
         Specifies the URL or directory path for the package source containing the package to install.
-        If omitted, looks in the currently selected package source to find the corresponding package URL.
+        If omitted, looks in ALL the enabled package sources to find the corresponding package URL.
         
         Required: false
         
