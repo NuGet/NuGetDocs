@@ -2,7 +2,7 @@
 
 ## Overview
 
-Many companies are using NuGet internally, but have had a hard time guiding their developers to use internal package sources instead of nuget.org. NuGet 2.7 introduces a Configuration Defaults feature that allows machine-wide defaults to be specified for:
+Many companies are using NuGet internally, but have had a hard time setting up a build server or guiding their developers to use internal package sources instead of nuget.org. In addition to the standard <a href="NuGet-Config-File.md">NuGet Configuration File</a>, NuGet 2.7 introduces a Configuration Defaults feature that allows machine-wide defaults to be specified for:
 
 1. Enabled package sources
 1. Registered, but disabled-by-default package sources
