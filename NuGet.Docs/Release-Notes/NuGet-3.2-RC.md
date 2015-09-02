@@ -7,7 +7,7 @@ NuGet 3.2 release candidate was released September 2, 2015 as a collection of im
 
 ## New Features
 
-* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately. ([1102](https://github.com/NuGet/Home/issues/1102)) 
+* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately. [1102](https://github.com/NuGet/Home/issues/1102) 
 * NuGet.config now supports a globalPackagesFolder as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## Command-line updates
@@ -43,13 +43,13 @@ A complete list of issues addressed in this release can be found in the NuGet Gi
 
 ## Visual Studio extension updates
 
-### New Features
+### New Features in Visual Studio
 
 * A new context menu item was added to the Solution Explorer on the solution node that allows packages to be restored without building the solution ([1274](https://github.com/NuGet/Home/issues/1274)).
 
 ![New 'Restore Packages' Context Menu Item](images/NuGet-3.2/newContextMenu.png)
 
-### Updates and Fixes
+### Updates and Fixes in Visual Studio
 
 The security fixes for authenticated feeds were rolled up and addressed in the extension as well.  The following authentication items were also addressed in the extension:
 
