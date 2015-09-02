@@ -7,7 +7,7 @@ NuGet 3.2 release candidate was released September 2, 2015 as a collection of im
 
 ## New Features
 
-* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately. [1102](https://github.com/NuGet/Home/issues/1102) 
+* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102) 
 * NuGet.config now supports a globalPackagesFolder as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## Command-line updates
@@ -51,7 +51,7 @@ A complete list of issues addressed in this release can be found in the NuGet Gi
 
 ### Updates and Fixes in Visual Studio
 
-The security fixes for authenticated feeds were rolled up and addressed in the extension as well.  The following authentication items were also addressed in the extension:
+The fixes for authenticated feeds were rolled up and addressed in the extension as well.  The following authentication items were also addressed in the extension:
 
 * Now correctly treating NuGet v3 authenticated feeds properly, instead of as v2 authenticated feeds - [1216](https://github.com/NuGet/Home/issues/1216)
 * Corrected request for authentication credentials in projects using project.json and communicating with v2 feeds - [1082](https://github.com/NuGet/Home/issues/1082)
@@ -96,4 +96,8 @@ Finally, we also improved these items:
 * Now properly displaying the installed version of a package in the user interface - [1061](https://github.com/NuGet/Home/issues/1061)
 
   
-A complete list of issues address for the Visual Studio extension can be found in the NuGet GitHub [3.2 milestone](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
+A complete list of issues addressed for the Visual Studio extension can be found in the NuGet GitHub [3.2 milestone](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
+
+## Known Issues
+
+We continue to track issues on our GitHub issues list which can be found at: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
