@@ -20,7 +20,7 @@ There were a number of authenticated feed issues that were addressed in this rel
 
 We made a number of improvements to better handle network failures while attempting to work with a remote NuGet repository:
 
-* Improved error messages when unable to connect to remote feeds - (1238)[https://github.com/NuGet/Home/issues/1238]
+* Improved error messages when unable to connect to remote feeds - [1238](https://github.com/NuGet/Home/issues/1238)
 * Corrected NuGet restore command to properly return a 1 when an error condition occurs - [1186](https://github.com/NuGet/Home/issues/1186)
 * Now retrying network connections every 200ms for a maximum of 5 attempts in the case of HTTP 5xx failures - [1120](https://github.com/NuGet/Home/issues/1120) 
 * Improved handling of server redirect responses during a push command - [1051](https://github.com/NuGet/Home/issues/1051)
