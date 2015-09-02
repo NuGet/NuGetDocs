@@ -67,7 +67,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -75,11 +75,10 @@ Specify the id and optionally the version of the package to install. If a path t
 ### Install Command Examples
 
     nuget install elmah
-    
-    nuget install packages.config
-    
-    nuget install ninject -o c:\foo
 
+    nuget install packages.config
+
+    nuget install ninject -o c:\foo
 
 ##  Update Command
 
@@ -135,8 +134,12 @@ Update packages to latest available versions. This command also updates NuGet.ex
         <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
     </tr>
     <tr>
+        <td>MSBuildVersion</td>
+        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
+    </tr>
+    <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -144,11 +147,13 @@ Update packages to latest available versions. This command also updates NuGet.ex
 ### Update Command Examples
 
     nuget update
-        
+
     nuget update -Safe
-    
+
     nuget update -Self
 
+    # update packages installed in solution.sln, using msbuild version 14.0 to load the solution and its project(s).
+    nuget update solution.sln -MSBuildVersion 14
 
 ## Restore command
 
@@ -189,6 +194,10 @@ Update packages to latest available versions. This command also updates NuGet.ex
         packages for a solution.</td>
     </tr>
     <tr>
+        <td>MSBuildVersion</td>
+        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
+    </tr>
+    <tr>
         <td>DisableParallelProcessing</td>
         <td>Disable parallel nuget package restores.</td>
     </tr>
@@ -225,15 +234,15 @@ The restore command is executed in the following steps:
         * nuget first looks for solution files in the current
         directory. If there is just one solution file, nuget will
         restore packages for that solution. If there are multiple
-        solution files, an error message is displayed and nuget exits. 
+        solution files, an error message is displayed and nuget exits.
         * If there are no solution files, nuget then searches for the
         packages.config file in the current directory. If the file
         exists, nuget will restore packages listed in the
-        packages.config file. 
+        packages.config file.
         * If there are no solution files and no packages.config file in
         the current directory, an error message is displayed and
         nuget exits.
-  
+
   If the operation mode is restoring for a solution, then
   -SolutionDirectory option is not applicable. In this case, nuget
   displays an error message and exits.
@@ -277,13 +286,15 @@ file:
 
     # Restore packages for a solution file
     nuget restore a.sln
-    
+
+    # Restore packages for a solution file, using msbuild version 14.0 to load the solution and its project(s)
+    nuget restore a.sln -MSBuildVersion 14
+
     # Restore packages for a project's packages.config file, with the packages folder at the parent
     nuget restore proj1\packages.config -PackagesDirectory ..\packages
-    
+
     # Restore packages for the solution in the current folder, specifying package sources
     nuget restore -source "https://www.nuget.org/api/v2;https://www.myget.org/F/nuget"
-
 
 ##  Delete Command
 
@@ -321,7 +332,7 @@ Specify the Id and version of the package to delete from the server.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -329,9 +340,8 @@ Specify the Id and version of the package to delete from the server.
 ### Delete Command Examples
 
     nuget delete MyPackage 1.0
-        
-    nuget delete MyPackage 1.0 -NoPrompt
 
+    nuget delete MyPackage 1.0 -NoPrompt
 
 ##  List Command
 
@@ -374,7 +384,7 @@ Specify optional search terms.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -382,9 +392,8 @@ Specify optional search terms.
 ### List Command Examples
 
     nuget list
-    
-    nuget list -verbose -allversions
 
+    nuget list -verbose -allversions
 
 ##  Sources Command
 
@@ -429,15 +438,12 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
 
-
-
 # Package Authoring Commands
-
 
 ##  Spec Command
 
@@ -470,7 +476,7 @@ Generates a nuspec for a new package. If this command is run in the same folder 
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -478,11 +484,10 @@ Generates a nuspec for a new package. If this command is run in the same folder 
 ### Spec Command Examples
 
     nuget spec
-    
-    nuget spec MyPackage
-    
-    nuget spec -a MyAssembly.dll
 
+    nuget spec MyPackage
+
+    nuget spec -a MyAssembly.dll
 
 ##  Pack Command
 
@@ -537,9 +542,9 @@ Specify the location of the nuspec or project file to create a package.
     </tr>
     <tr>
         <td>IncludeReferencedProjects</td>
-        <td>(v<em>2.5</em>) Include referenced projects either as dependencies or as part of the package. If a referenced 
-        project has a corresponding nuspec file that has the same name as the project, then that 
-        referenced project is added as a dependency. Otherwise, the referenced project is added as part 
+        <td>(v<em>2.5</em>) Include referenced projects either as dependencies or as part of the package. If a referenced
+        project has a corresponding nuspec file that has the same name as the project, then that
+        referenced project is added as a dependency. Otherwise, the referenced project is added as part
         of the package.</td>
     </tr>
     <tr>
@@ -566,8 +571,11 @@ Specify the location of the nuspec or project file to create a package.
         <td>MinClientVersion</td>
         <td>(v<em>2.5</em>) Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
     </tr>
+    <tr>
+        <td>MSBuildVersion</td>
+        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
+    </tr>
 </table>
-
 
 ### Excluding development dependencies when creating packages
 
@@ -582,21 +590,22 @@ Some NuGet packages are useful as development dependencies, which help you autho
 
 When running the pack command on this project, the created package will have a dependency on **jQuery** and **microsoft-web-helpers**, but will *not* have dependency on **netfx-Guard**.
 
-
 ### Pack Command Examples
 
     nuget pack
-    
+
     nuget pack foo.nuspec
-    
+
     nuget pack foo.csproj
-    
+
     nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release
-    
+
+    # create a package from project foo.csproj, using msbuild version 12 to build the project
+    nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release -MSBuildVersion 12
+
     nuget pack foo.nuspec -Version 2.1.0
 
     nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
-
 
 ##  Push Command
 
@@ -613,7 +622,7 @@ Specify the path to the package and your API key to push the package to the serv
     <tr>
         <td>Source</td>
         <td>Specifies the server URL. If not specified, nuget.org is used unless DefaultPushSource config value is set in the NuGet config file.
-        <br/>
+        <br />
         Starting with NuGet 2.5, if NuGet.exe identifies a UNC/folder source, it will perform the file copy to the source.
         </td>
     </tr>
@@ -639,7 +648,7 @@ Specify the path to the package and your API key to push the package to the serv
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -647,20 +656,19 @@ Specify the path to the package and your API key to push the package to the serv
 ### Push Command Examples
 
     nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
-    
+
     nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://customsource/
-    
+
     nuget push foo.nupkg
-    
+
     nuget push foo.symbols.nupkg
-    
+
     nuget push foo.nupkg -Timeout 360
-    
+
     nuget push *.nupkg
 
     Starting with NuGet 2.5 you can now push to a UNC/Folder source
-    nuget.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg 
-
+    nuget.exe push -source \\mycompany\repo\ mypackage.1.0.0.nupkg
 
 ##  SetApiKey Command
 
@@ -691,7 +699,7 @@ Specify the API key to save and an optional URL to the server that provided the 
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -699,10 +707,8 @@ Specify the API key to save and an optional URL to the server that provided the 
 ### SetApiKey Command Examples
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
-    
-    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
-    
 
+    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
 
 # Admin/Settings Commands
 
@@ -733,7 +739,7 @@ Gets or sets NuGet config values.
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config 
+        <td>(v<em>2.5</em>) The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -742,7 +748,6 @@ Gets or sets NuGet config values.
 
     nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
     nuget.config HTTP_PROXY
-
 
 ##  Mirror Command
 
@@ -755,15 +760,15 @@ Note: to enable this command, navigate to [https://nuget.codeplex.com/releases](
 
 Specify the id of the package to mirror, the url to query the target repository (list command) and the url to push packages to the target repository.
 If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
-Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be 
+Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be
 [http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
 
 ### Mirror Command Options
 <table>
     <tr>
         <td>Source</td>
-        <td>A list of packages sources to use for the finding packages to mirror. 
-        If no sources are specified, the ones defined in the default NuGet config file are used. 
+        <td>A list of packages sources to use for the finding packages to mirror.
+        If no sources are specified, the ones defined in the default NuGet config file are used.
         If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
     </tr>
     <tr>
@@ -784,8 +789,8 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
     </tr>
     <tr>
         <td>NoCache</td>
-        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
-        If you want to ensure only packages from the specified sources are used, set the NoCache option. 
+        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s).
+        If you want to ensure only packages from the specified sources are used, set the NoCache option.
         If you want instead to maximize chances of finding packages, do not set this option.</td>
     </tr>
     <tr>
@@ -801,11 +806,10 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
 ### Mirror Command Examples
 
     nuget mirror packages.config  http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
-    
+
     nuget mirror Microsoft.AspNet.Mvc http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -version 4.0.20505.0
 
     nuget mirror Microsoft.Net.Http http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -prerelease
-
 
 ##  Help Command
 
@@ -842,14 +846,9 @@ Pass a command name to display help information for that command.
 ### Help Command Examples
 
     nuget help
-    
+
     nuget help push
-    
+
     nuget ?
-    
+
     nuget push -?
-
-
-
-
-
