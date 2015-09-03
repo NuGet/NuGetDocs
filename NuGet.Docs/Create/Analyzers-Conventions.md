@@ -46,6 +46,8 @@ At this time there is no host other than Roslyn compiler that can run analyzers.
 ## Analyzer Nuget Format For Packages.config ##
 if the user's project is using package.config, the msbuild script that picks up the analyzer does not come into play, and you will want to add the following scripts under tools: **install.ps1** and **uninstall.ps1**.  
 
+NOTE:  **install.ps1** and **uninstall.ps1** are only executed for packages.config scenarios.  In the case of Project.json these scripts are never executed.
+
 **install.ps1 file contents**
 ```PowerShell
 
