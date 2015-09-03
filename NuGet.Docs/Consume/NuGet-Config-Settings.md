@@ -25,6 +25,26 @@ Below is the summary of the NuGet config keys and their usage.
    
     </td>
     </tr>
+    <tr>
+    <td> Dependency Version </td>
+    <td>"dependencyVersion" </td>
+    <td>
+       
+Defines what the default DependencyVersion value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your nuget.config file:
+
+	<pre><code>
+    &lt;config&gt;
+     &lt;add key="dependencyVersion" value="Highest" /&gt;
+    &lt;/config&gt;
+	</pre></code>
+	
+	Allowed values for dependencyVersion are: Lowest, HighestPatch, HighestMinor, Highest
+    <p>
+    Information about semantic versioning and what these values apply to can be found in <a href="http://docs.nuget.org/Create/Versioning#really-brief-introduction-to-semver">Versioning</a>.
+    </p>
+
+    </td>
+    </tr>
 	<tr>
 	<td> Package Restore
 	</td>
