@@ -1,6 +1,6 @@
 # NuGet 3.0 Preview Release Notes
 
-[NuGet 2.8.6 Release Notes](nuget-2.8.6) | [NuGet 3.0 Beta Release Notes](nuget-3.0-beta)
+[NuGet 2.8.8-RC Release Notes](nuget-2.8.8-RC) | [NuGet 3.0 Beta Release Notes](nuget-3.0-beta)
 
 NuGet 3.0 Preview was released on November 12, 2014 as part of the Visual Studio 2015 Preview release. We released NuGet 3.0 Preview. This is a big release for us (albeit a preview), and we're excited to start getting feedback on our changes.
 
