@@ -30,7 +30,7 @@ Below is the summary of the NuGet config keys and their usage.
     <td>"dependencyVersion" </td>
     <td>
        
-Defines what the default DependencyVersion value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your nuget.config file:
+Defines what the default DependencyVersion value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations in projects with a packages.config file. To set this value, add the attribute below to your nuget.config file:
 
 	<pre><code>
     &lt;config&gt;
