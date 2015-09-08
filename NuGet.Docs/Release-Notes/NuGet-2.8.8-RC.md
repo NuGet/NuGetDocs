@@ -1,6 +1,6 @@
 # NuGet 2.8.8 Release Notes
 
-[NuGet 2.8.5 Release Notes](nuget-2.8.7) | [NuGet 3.0 Preview Release Notes](nuget-3.0-preview)
+[NuGet 2.8.7 Release Notes](nuget-2.8.7) | [NuGet 3.0 Preview Release Notes](nuget-3.0-preview)
 
 NuGet 2.8.8 was released September 4, 2015 as an update to the 2.8.7 VSIX for Visual Studio 2013.  
 
