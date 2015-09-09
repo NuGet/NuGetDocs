@@ -103,7 +103,9 @@ The structure of the ref folder is the same as lib, for example:
 	     │
 	     └───ref
 	         ├───net40
-	         │       MyImageProcessingLibrary.dll         │         └───portable-net451-win81
+	         │       MyImageProcessingLibrary.dll
+             │
+             └───portable-net451-win81
 	                 MyImageProcessingLibrary.dll 
 
 
