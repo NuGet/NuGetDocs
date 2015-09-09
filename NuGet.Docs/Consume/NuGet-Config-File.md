@@ -15,6 +15,8 @@ The default configuration file can be changed through -ConfigFile option. For ex
 XML is used to store the configuration, and any text editor can be used to author it.
 Note: NuGet will silently ignore the entire configuration file if it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
 
+Note: The keys are case sensitive.
+
 Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page](NuGet-Config-Settings).
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -25,7 +27,7 @@ Below an example of NuGet configuration file that specifies some of the availabl
 		See: NuGet.exe help install
 		See: NuGet.exe help update
 		-->
-        <add key="repositorypath" value="External\Packages" />
+        <add key="repositoryPath" value="External\Packages" />
 		<!-- 
 		Used to specify default source for the push command.
 		See: NuGet.exe help push
@@ -120,7 +122,7 @@ With these four NuGet config files present on the filesystem:
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
 	  <config>
-        <add key="repositorypath" value="F:\tmp" />
+        <add key="repositoryPath" value="F:\tmp" />
       </config>
       <packageRestore>
         <add key="enabled" value="True" />
@@ -132,7 +134,7 @@ With these four NuGet config files present on the filesystem:
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
       <config>
-        <add key="repositorypath" value="External\Packages" />
+        <add key="repositoryPath" value="External\Packages" />
         <add key="DefaultPushSource" value="http://MyPrivateRepo/ES/api/v2/package" />
       </config>
       <packageSources>
@@ -155,7 +157,7 @@ NuGet will load:
 
 * **When invoked from C:\Users**: Only 1. The default repository on NuGet.org is used.
 * **When invoked from F:\ or F:\tmp**: 1 and 2. The default repository on NuGet.org is used, package restore is enabled and packages get expanded in F:\tmp.
-* **When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositorypath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
+* **When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositoryPath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
 * **When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
 
 ## NuGet config extensibility point
@@ -198,7 +200,7 @@ Below is the summary of the NuGet config keys and their usage.
  Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder.
  This key can be added to the NuGet.config file manually or using the [NuGet Config Set] (/Consume/Command-Line-Reference#Config-Command) command. 
  More details [here] (/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
- <add key="repositorypath" value="C:\Temp" />
+ <add key="repositoryPath" value="C:\Temp" />
   
 <h3>Package Restore </h3>
 Allows you to restore missing packages from the NuGet source during build.
