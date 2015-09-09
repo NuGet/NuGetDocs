@@ -21,6 +21,13 @@ Below is the summary of the NuGet config keys and their usage, note the keys are
     &lt;/config&gt;
 	</pre></code>
 	
+OR for relative path (note the forward slashes for relative path)
+
+	<pre><code>
+    &lt;config&gt;
+     &lt;add key="repositoryPath" value="../relativepath" /&gt;
+    &lt;/config&gt;
+	</pre></code>
 
    
     </td>
