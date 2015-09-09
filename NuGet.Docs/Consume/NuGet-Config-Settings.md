@@ -1,6 +1,6 @@
 # NuGet Configuration Settings
 There are a bunch of NuGet configuration values which can be set via the nuget.config file.
-Below is the summary of the NuGet config keys and their usage.
+Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
 
 <table class="reference" border="1">
 <tbody>
@@ -17,7 +17,7 @@ Below is the summary of the NuGet config keys and their usage.
 
 	<pre><code>
     &lt;config&gt;
-     &lt;add key="repositorypath" value="C:\Temp" /&gt;
+     &lt;add key="repositoryPath" value="C:\Temp" /&gt;
     &lt;/config&gt;
 	</pre></code>
 	
