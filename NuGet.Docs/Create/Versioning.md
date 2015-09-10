@@ -93,6 +93,7 @@ Therefore, the following is an example from lowest to highest versions of a pack
 SemVer also introduces the concept of a build number for those creating daily or continuous builds. This is not 
 supported in the public NuGet.org gallery, so while this is allowed:
 * `1.0.1-build23`
+
 including the SemVer-compatible build number with dot notation is not allowed:
 * `1.0.1-build.23`
 
