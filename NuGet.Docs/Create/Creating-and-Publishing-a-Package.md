@@ -67,6 +67,8 @@ e.g. suppose you want to add all the files from some arbitrary other folder into
         <file src="..\..\SomeRoot\**\*.*" target="" /> 
     </files>
 
+Note that pack excludes by default any folder name starting with a . such as .git or .hg.
+
 Once your nuspec is ready, you can run:
 
     nuget pack MyProject.csproj
