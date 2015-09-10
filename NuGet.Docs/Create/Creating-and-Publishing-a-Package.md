@@ -181,7 +181,7 @@ With the working directory in place with content, run the following command:
 
     nuget pack YourPackage.nuspec
 
-To create your package.
+To create your package. __Note__: token replacement is not supported in this scenario.
 
 ### Creating a solution-level package
 
