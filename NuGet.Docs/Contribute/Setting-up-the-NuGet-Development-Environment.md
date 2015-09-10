@@ -49,7 +49,7 @@ Mono's certificate store:
         mozroots --sync --import
 1. **Clone the repository** 
 
-        git clone https://git01.codeplex.com/nuget
+        git clone https://github.com/NuGet/NuGet2.git
 
 1. **Build NuGet**
 Cd to the nuget source code direcotry, run
