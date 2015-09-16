@@ -12,7 +12,7 @@ After VS2015 has been installed, you would need to:
 To build NuGet.VisualStudioExtension, execute the following steps:
 
 1. Add the directory of msbuild 14, e.g. C:\Program Files (x86)\MSBuild\14.0\Bin, to PATH
-1. Download the latest version of [NuGet.exe](www.nuget.org/nuget.exe), and add its directory to PATH
+1. Download the latest version of [NuGet.exe](https://www.nuget.org/nuget.exe), and add its directory to PATH
 1. Start powershell. Create a directory, cd into that directory
 1. Run  git clone https://github.com/NuGet/Home.git 
 1. Run  Home\clone-repos.ps1 
@@ -49,7 +49,7 @@ Mono's certificate store:
         mozroots --sync --import
 1. **Clone the repository** 
 
-        git clone https://git01.codeplex.com/nuget
+        git clone https://github.com/NuGet/NuGet2.git
 
 1. **Build NuGet**
 Cd to the nuget source code direcotry, run

@@ -28,6 +28,8 @@ the known issues, [search for Mono in our issue list](http://nuget.codeplex.com/
 
 Also, [a graphical client is available as an add-in for MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin).
 
+Details of the features that have currently been tested to work with Linux and OS X can be found under [compatibility](/consume/Compatibility)
+
 **Is there a command-line tool for NuGet?**
 
 **Yes there is!** See David Ebbo's Blog post entitled [Installing NuGet Packages directly from the command line](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html).

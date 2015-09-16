@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-1. [Download NuGet.exe](http://nuget.codeplex.com/releases)
+1. [Download NuGet.exe](https://nuget.org/nuget.exe)
 2. Make sure NuGet.exe is in your path
 
 If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/Create/using-a-gui-to-build-packages).
@@ -66,6 +66,8 @@ e.g. suppose you want to add all the files from some arbitrary other folder into
     <files>
         <file src="..\..\SomeRoot\**\*.*" target="" /> 
     </files>
+
+Note that pack excludes by default any folder name starting with a . such as .git or .hg.
 
 Once your nuspec is ready, you can run:
 
@@ -179,7 +181,7 @@ With the working directory in place with content, run the following command:
 
     nuget pack YourPackage.nuspec
 
-To create your package.
+To create your package. __Note__: token replacement is not supported in this scenario.
 
 ### Creating a solution-level package
 

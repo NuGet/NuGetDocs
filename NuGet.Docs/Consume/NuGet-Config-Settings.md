@@ -1,6 +1,6 @@
 # NuGet Configuration Settings
 There are a bunch of NuGet configuration values which can be set via the nuget.config file.
-Below is the summary of the NuGet config keys and their usage.
+Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
 
 <table class="reference" border="1">
 <tbody>
@@ -17,10 +17,17 @@ Below is the summary of the NuGet config keys and their usage.
 
 	<pre><code>
     &lt;config&gt;
-     &lt;add key="repositorypath" value="C:\Temp" /&gt;
+     &lt;add key="repositoryPath" value="C:\Temp" /&gt;
     &lt;/config&gt;
 	</pre></code>
 	
+OR for relative path (note the forward slashes for relative path)
+
+	<pre><code>
+    &lt;config&gt;
+     &lt;add key="repositoryPath" value="../relativepath" /&gt;
+    &lt;/config&gt;
+	</pre></code>
 
    
     </td>
@@ -30,7 +37,7 @@ Below is the summary of the NuGet config keys and their usage.
     <td>"dependencyVersion" </td>
     <td>
        
-Defines what the default DependencyVersion value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations. To set this value, add the attribute below to your nuget.config file:
+Defines what the default DependencyVersion value is, if the -DependencyVersion switch is not specified in an invocation of install-package. This value will also be respected by the NuGet Package Manager Dialog for any install package operations in projects with a packages.config file. To set this value, add the attribute below to your nuget.config file:
 
 	<pre><code>
     &lt;config&gt;
