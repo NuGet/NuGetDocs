@@ -12,6 +12,8 @@ NuGet 3.2 release candidate was released September 2, 2015 as a collection of im
 
 ## Command-line updates
 
+This is the first version of the NuGet.exe client that supports the NuGet v3 servers and restoring packages for projects managed with a project.json file.
+
 There were a number of authenticated feed issues that were addressed in this release to improve interactions with the client.
 
 * Install / restore interactions only submit credentials for the initial request to the authenticated feed - [1300](https://github.com/NuGet/Home/issues/1300), [456](https://github.com/NuGet/Home/issues/456)
@@ -77,6 +79,7 @@ We improved handling of interactions with build operations:
 
 
 Handling updates to configuration files were corrected:
+
 * No longer removing a targets file delivered from a package on subsequent builds of a project.json managed project - [1288](https://github.com/NuGet/Home/issues/1288)
 * No longer modifying nuget.config files during ASP.NET 5 solution build - [1201](https://github.com/NuGet/Home/issues/1201)
 * No longer changing allowed versions constraint during package update - [1130](https://github.com/NuGet/Home/issues/1130)
