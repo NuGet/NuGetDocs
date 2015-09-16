@@ -1,26 +1,26 @@
 
-# NuGet 3.2 RC Release Notes
+# NuGet 3.2 Release Notes
 
-[NuGet 3.1.1 Release Notes](nuget-3.1.1) | [NuGet 3.2 Release Notes](nuget-3.2) 
+[NuGet 3.2 Release Notes](nuget-3.2)
 
-NuGet 3.2 release candidate was released September 2, 2015 as a collection of improvements and fixes for the 3.1.1 release.  Also, these are the first releases that are published first to the new dist.nuget.org repository.
+NuGet 3.2 was released September 16, 2015 as a collection of improvements and fixes for the 3.1.1 release and is available from both [dist.nuget.org](http://dist.nuget.org/index.html) and the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d?SRC=Home). 
 
 ## New Features
 
-* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102) 
-* NuGet.config now supports a globalPackagesFolder as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
+* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will give preference to that configuration for each project appropriately.  This is only supported with Windows 10 Tools v1.1 installed -  [1102](https://github.com/NuGet/Home/issues/1102) 
+* NuGet clients support specifying a global NUGET_PACKAGES environment variable to specify the location of the shared global packages folder used in project.json managed projects with Windows 10 tools v1.1.
 
 ## Command-line updates
 
 This is the first version of the NuGet.exe client that supports the NuGet v3 servers and restoring packages for projects managed with a project.json file.
 
-There were a number of authenticated feed issues that were addressed in this release to improve interactions with the client.
+##### There were a number of authenticated feed issues that were addressed in this release to improve interactions with the client.
 
 * Install / restore interactions only submit credentials for the initial request to the authenticated feed - [1300](https://github.com/NuGet/Home/issues/1300), [456](https://github.com/NuGet/Home/issues/456)
 * Push command does not resolve credentials from configuration - [1248](https://github.com/NuGet/Home/issues/1248)
 * User agent and headers are now submitted to NuGet repositories to help with statistics tracking - [929](https://github.com/NuGet/Home/issues/929)
 
-We made a number of improvements to better handle network failures while attempting to work with a remote NuGet repository:
+##### We made a number of improvements to better handle network failures while attempting to work with a remote NuGet repository:
 
 * Improved error messages when unable to connect to remote feeds - [1238](https://github.com/NuGet/Home/issues/1238)
 * Corrected NuGet restore command to properly return a 1 when an error condition occurs - [1186](https://github.com/NuGet/Home/issues/1186)
@@ -30,7 +30,7 @@ We made a number of improvements to better handle network failures while attempt
 * Missing packages that were not located on a repository during a restore are now reported as errors instead of warnings [1038](https://github.com/NuGet/Home/issues/1038)
 * Corrected multipartwebrequest handling of \r\n for Unix/Linux scenarios - [776](https://github.com/NuGet/Home/issues/776)
 
-There are a number of fixes to issues with various commands:
+##### There are a number of fixes to issues with various commands:
 
 * Push command no longer does a GET before a PUT against a package source - [1237](https://github.com/NuGet/Home/issues/1237)
 * List command no longer repeats version numbers - [1185](https://github.com/NuGet/Home/issues/1185)
@@ -53,18 +53,18 @@ A complete list of issues addressed in this release can be found in the NuGet Gi
 
 ### Updates and Fixes in Visual Studio
 
-The fixes for authenticated feeds were rolled up and addressed in the extension as well.  The following authentication items were also addressed in the extension:
+##### The fixes for authenticated feeds were rolled up and addressed in the extension as well.  The following authentication items were also addressed in the extension:
 
 * Now correctly treating NuGet v3 authenticated feeds properly, instead of as v2 authenticated feeds - [1216](https://github.com/NuGet/Home/issues/1216)
 * Corrected request for authentication credentials in projects using project.json and communicating with v2 feeds - [1082](https://github.com/NuGet/Home/issues/1082)
 
-Network connectivity had affected the user interface in Visual Studio, and we addressed this with the following fixes:
+##### Network connectivity had affected the user interface in Visual Studio, and we addressed this with the following fixes:
 
 * Improved the maintenance of the local cache of package versions - [1096](https://github.com/NuGet/Home/issues/1096)
 * Changed the failure behavior when connecting to a v3 feed to no longer attempt to treat it as a v2 feed - [1253](https://github.com/NuGet/Home/issues/1253)
 * Now preventing install failures when installing a package with multiple package sources - [1183](https://github.com/NuGet/Home/issues/1183)
 
-We improved handling of interactions with build operations:
+##### We improved handling of interactions with build operations:
 
 * Now continuing to build projects if restoring packages for a single project fails - [1169](https://github.com/NuGet/Home/issues/1169)
 * Installing a package into a project that is depended on by another project in the solution forces a solution rebuild - [981](https://github.com/NuGet/Home/issues/981)
@@ -77,8 +77,7 @@ We improved handling of interactions with build operations:
 * UWP projects can now install unlisted packages - [1109](https://github.com/NuGet/Home/issues/1109)
 * Package restore is now allowed while a solution is not in a saved state - [1081](https://github.com/NuGet/Home/issues/1081)
 
-
-Handling updates to configuration files were corrected:
+##### Handling updates to configuration files were corrected:
 
 * No longer removing a targets file delivered from a package on subsequent builds of a project.json managed project - [1288](https://github.com/NuGet/Home/issues/1288)
 * No longer modifying nuget.config files during ASP.NET 5 solution build - [1201](https://github.com/NuGet/Home/issues/1201)
@@ -86,18 +85,17 @@ Handling updates to configuration files were corrected:
 * Lock files now remain locked during build - [1127](https://github.com/NuGet/Home/issues/1127)
 * Now modifying packages.config and not rewriting it during updates - [585](https://github.com/NuGet/Home/issues/585)
 
-
-Interactions with TFS source control are improved:
+##### Interactions with TFS source control are improved:
 
 * No longer failing installs for packages that are bound to TFS - [1164](https://github.com/NuGet/Home/issues/1164), [980](https://github.com/NuGet/Home/issues/980)
 * Corrected NuGet user interface to allow TFS 2013 integration - [1071](https://github.com/NuGet/Home/issues/1071)
 * Corrected references to packages restored to properly come from a packages folder - [1004](https://github.com/NuGet/Home/issues/1004)
 
-Finally, we also improved these items:
+##### Finally, we also improved these items:
 
 * Verbosity of log messages reduced for project.json managed projects - [1163](https://github.com/NuGet/Home/issues/1163)
 * Now properly displaying the installed version of a package in the user interface - [1061](https://github.com/NuGet/Home/issues/1061)
-
+* Packages with dependency ranges specified in their nuspec now have pre-release versions of those dependencies installed for a stable package version - [1304](https://github.com/NuGet/Home/issues/1304)
   
 A complete list of issues addressed for the Visual Studio extension can be found in the NuGet GitHub [3.2 milestone](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
 
