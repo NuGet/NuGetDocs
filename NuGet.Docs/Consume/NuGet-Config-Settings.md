@@ -21,7 +21,7 @@ Below is the summary of the NuGet config keys and their usage, note the keys are
     &lt;/config&gt;
 	</pre></code>
 	
-OR for relative path (note the forward slashes for relative path)
+OR for relative path (note the forward slashes for relative path), note: relative path is only relative to the solution folder.
 
 	<pre><code>
     &lt;config&gt;
@@ -29,6 +29,7 @@ OR for relative path (note the forward slashes for relative path)
     &lt;/config&gt;
 	</pre></code>
 
+note: versions 3.0 - 3.2 has a (bug)[https://github.com/NuGet/Home/issues/755] where the path needs a backward slash 
    
     </td>
     </tr>
