@@ -7,9 +7,8 @@ NuGet 3.2 was released September 16, 2015 as a collection of improvements and fi
 
 ## New Features
 
-* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102) 
-* NuGet.config now supports a globalPackagesFolder as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
-* Packages with dependency ranges specified in their nuspec can now have pre-release versions of those dependencies installed for a stable package version - [1304](https://github.com/NuGet/Home/issues/1304)
+* Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will give preference to that configuration for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102) 
+* NuGet.config now supports a globalPackagesFolder setting as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
 
 ## Command-line updates
 
@@ -95,7 +94,7 @@ Finally, we also improved these items:
 
 * Verbosity of log messages reduced for project.json managed projects - [1163](https://github.com/NuGet/Home/issues/1163)
 * Now properly displaying the installed version of a package in the user interface - [1061](https://github.com/NuGet/Home/issues/1061)
-
+* Packages with dependency ranges specified in their nuspec now have pre-release versions of those dependencies installed for a stable package version - [1304](https://github.com/NuGet/Home/issues/1304)
   
 A complete list of issues addressed for the Visual Studio extension can be found in the NuGet GitHub [3.2 milestone](https://github.com/nuget/home/issues?q=is%3Aissue+is%3Aclosed+-label%3AClosedAs%3ADuplicate+milestone%3A3.2)
 
