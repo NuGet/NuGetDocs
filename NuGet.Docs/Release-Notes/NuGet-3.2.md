@@ -8,7 +8,7 @@ NuGet 3.2 was released September 16, 2015 as a collection of improvements and fi
 ## New Features
 
 * Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will give preference to that configuration for each project appropriately.  This is only supported with Windows 10 Tools v1.1 installed -  [1102](https://github.com/NuGet/Home/issues/1102) 
-* NuGet.config now supports a globalPackagesFolder setting as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
+* NuGet clients support specifying a global NUGET_PACKAGES environment variable to specify the location of the shared global packages folder used in project.json managed projects with Windows 10 tools v1.1.
 
 ## Command-line updates
 
