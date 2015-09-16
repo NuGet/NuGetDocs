@@ -1,14 +1,15 @@
 
-# NuGet 3.2 RC Release Notes
+# NuGet 3.2 Release Notes
 
-[NuGet 3.1.1 Release Notes](nuget-3.1.1) | [NuGet 3.2 Release Notes](nuget-3.2) 
+[NuGet 3.2 Release Notes](nuget-3.2)
 
-NuGet 3.2 release candidate was released September 2, 2015 as a collection of improvements and fixes for the 3.1.1 release.  Also, these are the first releases that are published first to the new dist.nuget.org repository.
+NuGet 3.2 was released September 16, 2015 as a collection of improvements and fixes for the 3.1.1 release and is available from both [dist.nuget.org](http://dist.nuget.org/index.html) and the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d?SRC=Home). 
 
 ## New Features
 
 * Projects that live in the same folder can now have different project.json files in that folder specific to each project.  For each project, name the project.json file {ProjectName}.project.json and NuGet will properly reference and use that content for each project appropriately.  This supports a new feature  [1102](https://github.com/NuGet/Home/issues/1102) 
 * NuGet.config now supports a globalPackagesFolder as a relative path - [1062](https://github.com/NuGet/Home/issues/1062)
+* Packages with dependency ranges specified in their nuspec can now have pre-release versions of those dependencies installed for a stable package version - [1304](https://github.com/NuGet/Home/issues/1304)
 
 ## Command-line updates
 
