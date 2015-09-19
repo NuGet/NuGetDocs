@@ -200,6 +200,7 @@ When a solution-level package is installed, it is tracked in a packages.config
 file in the .nuget directory, rather than in a packages.config file in a
 specific project.
 
+Note: Solution level packages are not supported in NuGet 3.0.0-3.2.0, and you will need to install such packages into a common project
 
 ## Publishing in NuGet Gallery
 ### Create an account at NuGet.org
