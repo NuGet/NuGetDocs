@@ -199,7 +199,7 @@ Below is the summary of the NuGet config keys and their usage.
 <h3> Repository Path </h3>
  Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder.
  This key can be added to the NuGet.config file manually or using the [NuGet Config Set](/Consume/Command-Line-Reference#Config-Command) command. 
- More details [here] (/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
+ More details [here](/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
  <add key="repositoryPath" value="C:\Temp" />
   
 <h3>Package Restore </h3>
