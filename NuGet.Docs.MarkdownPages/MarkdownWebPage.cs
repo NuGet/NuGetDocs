@@ -81,7 +81,9 @@ namespace NuGet.Docs
                 {
                     fileContents = request.Result
                         .Replace("<table>", "<table class=\"reference\">")
-                        .Replace("<p>\n<strong>Note", "<p class=\"info\">\n<strong>Note");
+                        .Replace("<p>\n<strong>Note", "<p class=\"info\">\n<strong>Note")
+                        .Replace("<p>\n<strong>Caution", "<p class=\"caution\">\n<strong>Caution")
+                        .Replace("<div>\n<strong>Caution", "<div class=\"caution\">\n<strong>Caution");
                     Page.Generator = "GitHub";
                 }
             }
