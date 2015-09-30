@@ -67,13 +67,17 @@ e.g. suppose you want to add all the files from some arbitrary other folder into
         <file src="..\..\SomeRoot\**\*.*" target="" /> 
     </files>
 
-Note that pack excludes by default any folder name starting with a . such as .git or .hg.
+<p class="info">
+<strong>Note:</strong><br />The pack command excludes by default any folder name starting with a . such as .git or .hg. 
+</p> 
 
 Once your nuspec is ready, you can run:
 
     nuget pack MyProject.csproj
 
-Note that you need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
+<p class="info">
+<strong>Note:</strong><br />You need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
+</p> 
 
 If the project references other projects, you can add the referenced projects as part of the package, or as dependencies 
 with [-IncludeReferencedProjects option](/Consume/Command-Line-Reference#Pack-Command-Options). 

@@ -5,13 +5,18 @@ dialog box. To use this dialog box, you must have a solution open in Visual Stud
 As an alternative, you can install packages using PowerShell commands. 
 For more information, see [Using the Package Manager Console](Package-Manager-Console).
 
-Note, for managing packages within multiple projects in the solution at the same time, skip to the section 
-on [Managing Packages for the Solution](#managing-packages-for-the-solution).
+<p class="info">
+<strong>Note</strong><br />For managing packages within multiple projects in the solution at the same time, skip to the section 
+on <a href="#managing-packages-for-the-solution">Managing Packages for the Solution</a>.
+</p>
 
 ## Finding a Package
 
 In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
-(Note, in a Website project, right click on the **Bin** node.)
+
+<p class="info">
+<strong>Note</strong><br />In a Website project, right click on the **Bin** node.
+</p>
 
 ![Manage NuGet Packages menu option](/images/consume/manage-nuget-packages-menu-option.png)
 

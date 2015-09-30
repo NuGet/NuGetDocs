@@ -27,7 +27,7 @@ The cure to this problem is making sure that packages are restored as the first 
 When your build process restores packages before building the code, you don't need to check-in **.targets** files 
 
 <p class="info">
-<strong>Note:</strong> Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in <strong>.targets</strong> files so that other developers can simply open the solution without having to restore packages first. 
+<strong>Note</strong><br/>Packages must be authored to allow loading in Visual Studio. Otherwise, you may still want to check in <strong>.targets</strong> files so that other developers can simply open the solution without having to restore packages first. 
 </p> 
 
 The following demo project shows how to set up the build in such a way that the `packages` folders and **.targets** files don't need to be checked-in. Finally, I'll show how you can setup an automated build on the [Team Foundation Service] for this sample project.
@@ -68,7 +68,7 @@ The source code is under the `src` folder. Although our demo only uses a single 
 ### Ignore Files
 
 <p class="info">
-<strong>Note:</strong> There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the <code>packages</code> folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a <code>nuget.config</code> file in the <code>.nuget</code> folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In <code>nuget.config</code>, add the following content:<br>
+<strong>Note</strong><br/>There is currently a <a href="https://nuget.codeplex.com/workitem/4072">known bug in the NuGet Client</a> that causes the client to still add the <code>packages</code> folder to version control. A workaround is to disable the source control integration. In order to do that, you'll need a <code>nuget.config</code> file in the <code>.nuget</code> folder that is parallel to your solution. If this folder doesn't exist yet, you'll need to create it. In <code>nuget.config</code>, add the following content:<br>
 
 <pre><code>&lt;configuration>
     &lt;solution>

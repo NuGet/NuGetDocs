@@ -753,7 +753,9 @@ Gets or sets NuGet config values.
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository.
 
-Note: to enable this command, navigate to [https://nuget.codeplex.com/releases](https://nuget.codeplex.com/releases), select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to NuGet.exe.
+<p class="info">
+<strong>Note</strog><br />To enable this command, navigate to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to NuGet.exe.
+</p>
 
 ### Mirror Command Usage
     nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]

@@ -12,7 +12,9 @@ Each of these can now be configured within a file located at %ProgramData%\NuGet
 
 While not required, we expect many companies to use Group Policy to deploy NuGetDefaults.config files to developers' machines.
 
-*Note that this feature will never cause a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.*
+<p class="info">
+<strong>Note</strong><br />This feature will never cause a package source to be removed from a developer's NuGet configuration. That means if the developer has already used NuGet and therefore has the nuget.org package source registered, it won't be removed after the creation of a NuGetDefaults.config file.
+</p>
 
 ## NuGet Config Defaults File
 
