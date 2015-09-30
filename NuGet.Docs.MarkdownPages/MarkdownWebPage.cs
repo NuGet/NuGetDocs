@@ -79,7 +79,8 @@ namespace NuGet.Docs
 
                 if (request.IsCompleted)
                 {
-                    fileContents = request.Result;
+                    fileContents = request.Result
+                        .Replace("<table>", "<table class=\"reference\">");
                     Page.Generator = "GitHub";
                 }
             }
