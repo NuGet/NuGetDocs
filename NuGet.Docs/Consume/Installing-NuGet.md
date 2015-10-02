@@ -4,7 +4,11 @@ NuGet is available for the following clients:
 1. **Visual Studio 2013**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
 1. **Visual Studio 2010 and 2012**: [Visual Studio Extension Gallery](http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c)
 1. **Visual Studio 2015**: [Visual Studio Extension Gallery](https://visualstudiogallery.msdn.microsoft.com/5d345edc-2e2d-4a9c-b73b-d53956dc458d)
-1. **Command-Line Utility**: [Direct Download](https://nuget.org/nuget.exe)
+1. **Command-Line Utility** Latest 2.X : [Direct Download](https://nuget.org/nuget.exe)
+1. **Command-Line Utility** Latest 3.X : [Direct Download](http://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
+
+A general download page is available [here](https://dist.nuget.org/index.html)
+
 
 ## Visual Studio 2010, 2012 and 2013
 For Visual Studio 2010, NuGet is available through the Visual Studio Extension Manager.  The extension can be installed into the Professional, Premium, and Ultimate editions.  Additionally, the extension can be installed into Visual Web Developer 2010 Express
@@ -19,7 +23,9 @@ and for Visual Studio 2013 directly, it can be found here on the [Visual Studio 
 ## Command-Line Utility
 A command-line NuGet utility is also available.  This utility can be used to create, publish, and download packages.  This utility is also used for NuGet Package Restore which allows packages to be omitted from source control but downloaded as part of your build.
 
-The latest version of the nuget.exe command-line tool is always available from [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe).
+The latest version of the nuget.exe command-line tool is always available from our dist [share](http://dist.nuget.org/win-x86-commandline/latest/nuget.exe). Note that this link might introduce breaking changes as it points to the absolute latest RTM build of NuGet.
+
+Because there are a few breaking changes introduced in NuGet 3.2 [https://nuget.org/nuget.exe](https://nuget.org/nuget.exe)  is pointing to the NuGet 2.X latest release, to prevent CI systems from auto upgrading and potentially breaking.
 
 # Using the Visual Studio Extension Manager
 

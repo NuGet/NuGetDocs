@@ -289,8 +289,9 @@ PARAMETERS
             &lt;/config>
           &lt;/configuration>
 		  
-        Note that for NuGet 2.7.2 or ealier, the default value is HighestPatch, and it cannot be
-		changed.
+        <p class="info">
+<strong>Note</strong><br />For NuGet 2.7.2 or earlier, the default value is HighestPatch, and it cannot be changed.
+		</p>
 		
 		Possible values are:
 		- Lowest: the lowest version;

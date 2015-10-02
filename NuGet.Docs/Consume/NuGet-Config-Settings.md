@@ -2,7 +2,7 @@
 There are a bunch of NuGet configuration values which can be set via the nuget.config file.
 Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
 
-<table class="reference" border="1">
+<table class="reference">
 <tbody>
     <tr>
         <th>Settings  </th> <th>Key Name</th> <th>Description</th>
@@ -23,12 +23,19 @@ Below is the summary of the NuGet config keys and their usage, note the keys are
 	
 OR for relative path (note the forward slashes for relative path)
 
+<p class="info">
+<strong>Note</strong><br/>Relative path is only relative to the solution folder.
+</p>
+
 	<pre><code>
     &lt;config&gt;
      &lt;add key="repositoryPath" value="../relativepath" /&gt;
     &lt;/config&gt;
 	</pre></code>
 
+<p class="info">
+<strong>Note</strong><br />Versions 3.0 - 3.2 has a <a href="https://github.com/NuGet/Home/issues/755">bug</a> where the path needs a backward slash
+</p>
    
     </td>
     </tr>
@@ -133,7 +140,9 @@ Defines what the default DependencyVersion value is, if the -DependencyVersion s
 	<br/>
 
 	This key can be added using <a href="Command-Line-Reference#Config Command">NuGet.exe Config -Set command.</a> <br/><br/>It can also be set via environment variable "http_proxy". While setting env variable, the value should  be specified in the format 'http://[username]:[password]@proxy.com'.
-	Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. Hence it can not be added manually by directly updating the config file.
+	
+	<p class="info">
+<strong>Note</strong><br />The "http_proxy.password" key value is encrypted before storing in the nuget.config file. Hence it can not be added manually by directly updating the config file.</p>
 
 	</td>
 	</tr>

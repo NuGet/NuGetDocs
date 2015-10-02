@@ -6,8 +6,10 @@ package dependencies within a solution.
 Click on the **Tools** -> **Library Package Manager** -> **Package Visualizer** menu option to launch 
 the Package Visualizer.
 
-_**Important Note:** This feature takes advantage of the DGML support in Visual Studio. Creating the visualization is only 
-supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in Visual Studio Premium or Higher._
+<p class="info">
+<strong>Note</strong><br/>This feature takes advantage of the DGML support in Visual Studio. Creating the visualization is only 
+supported in Visual Studio Ultimate. Viewing a DGML diagram is only supported in Visual Studio Premium or Higher.
+</p>
 
 This will bring up a diagram of all of the projects in your solution along with their package dependencies.
 

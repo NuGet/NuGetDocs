@@ -13,9 +13,14 @@ The default configuration file can be changed through -ConfigFile option. For ex
 ## Config file reference
 
 XML is used to store the configuration, and any text editor can be used to author it.
-Note: NuGet will silently ignore the entire configuration file if it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
 
-Note: The keys are case sensitive.
+<p class="info">
+<strong>Note</strong><br />NuGet will silently ignore the entire configuration file if it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
+</p>
+
+<p class="info">
+<strong>Note</strong><br />The keys are case sensitive.
+</p>
 
 Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page](NuGet-Config-Settings).
 
@@ -198,8 +203,8 @@ Below is the summary of the NuGet config keys and their usage.
 
 <h3> Repository Path </h3>
  Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder.
- This key can be added to the NuGet.config file manually or using the [NuGet Config Set] (/Consume/Command-Line-Reference#Config-Command) command. 
- More details [here] (/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
+ This key can be added to the NuGet.config file manually or using the [NuGet Config Set](/Consume/Command-Line-Reference#Config-Command) command. 
+ More details [here](/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
  <add key="repositoryPath" value="C:\Temp" />
   
 <h3>Package Restore </h3>
@@ -214,10 +219,10 @@ Allows you to restore missing packages from the NuGet source during build.
 
 <h3>Package Sources</h3>
 Allows you to specify the list of sources to be used while looking for packages. 
+
 * "PackageSources" section has the list of package sources 
 * "DisabledPackageSources" has the list of sources which are currently disabled 
-* "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would 
-imply that all the current package sources except for the disabled ones are active
+* "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would imply that all the current package sources except for the disabled ones are active
 
 The values can be added to the config file directly or using the package manager settings UI (which would in turn update the NuGet.config file) or 
 using the <a href="/Consume/command-line-reference#Sources-Command">NuGet.exe Sources command.</a>

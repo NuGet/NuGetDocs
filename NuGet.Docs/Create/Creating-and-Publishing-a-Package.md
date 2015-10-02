@@ -67,13 +67,21 @@ e.g. suppose you want to add all the files from some arbitrary other folder into
         <file src="..\..\SomeRoot\**\*.*" target="" /> 
     </files>
 
-Note that pack excludes by default any folder name starting with a . such as .git or .hg.
+<p class="info">
+<strong>Note</strong><br />You need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
+</p> 
+
+<div class="caution">
+<strong>Caution</strong><br />
+<ul>
+<li>The pack command  by default excludes any folder starting with a . such as .git or .hg</li>
+<li>When targeting a .nuspec directly, the pack command will NOT replace any tokens in the nuspec</li>
+</ul>
+</div> 
 
 Once your nuspec is ready, you can run:
 
     nuget pack MyProject.csproj
-
-Note that you need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 
 If the project references other projects, you can add the referenced projects as part of the package, or as dependencies 
 with [-IncludeReferencedProjects option](/Consume/Command-Line-Reference#Pack-Command-Options). 
@@ -200,6 +208,7 @@ When a solution-level package is installed, it is tracked in a packages.config
 file in the .nuget directory, rather than in a packages.config file in a
 specific project.
 
+Note: Solution level packages are not supported in NuGet 3.0.0-3.2.0, and you will need to install such packages into a common project
 
 ## Publishing in NuGet Gallery
 ### Create an account at NuGet.org
