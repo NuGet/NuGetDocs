@@ -32,10 +32,6 @@ OR for relative path (note the forward slashes for relative path)
      &lt;add key="repositoryPath" value="../relativepath" /&gt;
     &lt;/config&gt;
 	</pre></code>
-
-<p class="info">
-<strong>Note</strong><br />Versions 3.0 - 3.2 has a <a href="https://github.com/NuGet/Home/issues/755">bug</a> where the path needs a backward slash
-</p>
    
     </td>
     </tr>
