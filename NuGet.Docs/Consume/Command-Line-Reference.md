@@ -710,6 +710,104 @@ Specify the API key to save and an optional URL to the server that provided the 
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
 
+##  Add Command
+
+Adds the provided package to your feed in the following layout instead of making a simple copy of the nupkg file. For this command, only feeds which are folders or UNC shares are allowed. In order to expand all the files in the package to your feed, use the -Expand switch. The following layout has significant performance benefits, when performing a restore or an update against your feed, compared to a folder of nupkg files.
+
+    \\yourfeed\
+        yourpackage\
+            0.0.1-beta\
+                yourpackage.0.0.1-beta.nupkg
+                yourpackage.nuspec
+                yourpackage.0.0.1-beta.nupkg.sha512
+
+### Add Command Usage
+    nuget add <packagePath> -Source <fileSourceFolder> [options]
+
+Specifies the path to the package and the fileSourceFolder to which the nupkg will be added. http sources are not supported.
+
+### Add Command Options
+<table>
+    <tr>
+        <td>Source</td>
+        <td>Specifies the fileSourceFolder to which the nupkg will be added. http sources are not supported.</td>
+    </tr>
+    <tr>
+        <td>Expand</td>
+        <td>If provided, all the files in the package are added to your feed.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Add Command Examples
+
+    nuget add foo.nupkg  -Source c:\bar\
+
+    nuget add foo.nupkg -Source \\bar\packages\
+
+##  Init Command
+
+Adds all the packages from the provided source feed to the destination feed in the following layout instead of making a simple copy of the nupkg file. For this command, only feeds which are folders or UNC shares are allowed. In order to expand all the files in the package to the destination feed, use the -Expand switch. The following layout has significant performance benefits, when performing a restore or an update against your feed, compared to a folder of nupkg files.
+
+    \\destinationfeed\
+        yourpackage\
+            0.0.1-beta\
+                yourpackage.0.0.1-beta.nupkg
+                yourpackage.nuspec
+                yourpackage.0.0.1-beta.nupkg.sha512
+
+### Init Command Usage
+    nuget init <srcFeedPath> <destFeedPath> [options]
+
+Specify the path to source feed to be copied from and the path to the destination feed to be copied to.
+
+### Init Command Options
+<table>
+    <tr>
+        <td>Expand</td>
+        <td>If provided, all the files in the package(s) are added to destination feed.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Init Command Examples
+
+    nuget init c:\foo c:\bar
+
+    nuget init \\foo\packages \\bar\packages
+
 # Admin/Settings Commands
 
 ##  Config Command
