@@ -10,7 +10,7 @@ files on-demand from Visual Studio. This is a built-in feature of the IDE, that 
 .NET Framework code using [Microsoft Reference Source](http://referencesource.microsoft.com/) servers.
 It is only required to add a new symbol source in the debugger configuration (see [here](http://www.symbolsource.org/Public/Home/VisualStudio) for detailed instructions):
 
-	https://nuget.smbsrc.net/
+	http://srv.symbolsource.org/pdb/Public
 
 ## Creating a Symbol Package
 
@@ -105,7 +105,7 @@ You can push a symbol package separately, which will automatically choose [Symbo
 It is possible to override the symbol repository or to push a symbol package that doesn't follow the naming convention 
 by using the `-Source` option:
 
- 	NuGet Push MyPackage.symbols.nupkg -Source https://nuget.smbsrc.net/
+ 	NuGet Push MyPackage.symbols.nupkg -Source http://nuget.gw.symbolsource.org/Public/NuGet
 
 You can also push both packages to both repositories at the same time:
 
