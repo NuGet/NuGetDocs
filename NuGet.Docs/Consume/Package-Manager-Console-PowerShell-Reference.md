@@ -233,7 +233,7 @@ Installs a package and its dependencies into the project.
 <pre>
 PARAMETERS
     <strong>-Id</strong> <string>
-        Specifies the package ID of the package to install. Staring NuGet 3.0 Beta client or higher, 
+        Specifies the package ID of the package to install. Starting NuGet 3.0 Beta client or higher, 
         -Id parameter can point to the online or local path to packages.config file 
         or package's nupkg file (examples below).
         
