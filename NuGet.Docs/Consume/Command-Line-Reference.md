@@ -772,15 +772,15 @@ Specify the path to source package source to be copied from and the path to the 
                 yourpackage.0.0.1-beta.nupkg.sha512
 
 ### Add Command Usage
-    nuget add <packagePath> -Source <fileSourceFolder> [options]
+    nuget add <packagePath> -Source <folderBasedPackageSource> [options]
 
-Specifies the path to the package and the fileSourceFolder to which the nupkg will be added. http sources are not supported.
+Specifies the path to the package to be added and the package source, which is a folder or UNC share, to which the nupkg will be added. Http sources are not supported.
 
 ### Add Command Options
 <table>
     <tr>
         <td>Source</td>
-        <td>Specifies the fileSourceFolder to which the nupkg will be added. http sources are not supported.</td>
+        <td>Specifies the folderBasedPackageSource to which the nupkg will be added. Http sources are not supported.</td>
     </tr>
     <tr>
         <td>Expand</td>
