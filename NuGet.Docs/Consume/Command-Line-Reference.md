@@ -710,6 +710,107 @@ Specify the API key to save and an optional URL to the server that provided the 
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
 
+# Folder Repository Commands
+
+
+## Init Command
+
+(v<em>3.3 and above</em>) Adds all the packages from a flat folder of nupkgs to the destination package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, both the source package source and the destination package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.  
+
+    \\destinationpackagesource\
+        yourpackage\
+            0.0.1-beta\
+                yourpackage.0.0.1-beta.nupkg
+                yourpackage.nuspec
+                yourpackage.0.0.1-beta.nupkg.sha512
+
+### Init Command Usage
+    nuget init <srcPackageSourcePath> <destPackageSourcePath> [options]
+
+Specify the path to source package source to be copied from and the path to the destination package source to be copied to.
+
+### Init Command Options
+<table>
+    <tr>
+        <td>Expand</td>
+        <td>If provided, all the files in the package(s) are added to destination package source.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Init Command Examples
+
+    nuget init c:\foo c:\bar
+
+    nuget init \\foo\packages \\bar\packages
+
+## Add Command
+
+(v<em>3.3 and above</em>) Adds the provided package to your package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, your package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.
+
+    \\yourpackagesource\
+        yourpackage\
+            0.0.1-beta\
+                yourpackage.0.0.1-beta.nupkg
+                yourpackage.nuspec
+                yourpackage.0.0.1-beta.nupkg.sha512
+
+### Add Command Usage
+    nuget add <packagePath> -Source <folderBasedPackageSource> [options]
+
+Specifies the path to the package to be added and the package source, which is a folder or UNC share, to which the nupkg will be added. Http sources are not supported.
+
+### Add Command Options
+<table>
+    <tr>
+        <td>Source</td>
+        <td>Specifies the folderBasedPackageSource to which the nupkg will be added. Http sources are not supported.</td>
+    </tr>
+    <tr>
+        <td>Expand</td>
+        <td>If provided, all the files in the package are added to your package source.</td>
+    </tr>
+    <tr>
+        <td>Help</td>
+        <td>help</td>
+    </tr>
+    <tr>
+        <td>Verbosity</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
+    </tr>
+    <tr>
+        <td>NonInteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>ConfigFile</td>
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        is used as configuration file.</td>
+    </tr>
+</table>
+
+### Add Command Examples
+
+    nuget add foo.nupkg  -Source c:\bar\
+
+    nuget add foo.nupkg -Source \\bar\packages\
+
 # Admin/Settings Commands
 
 ##  Config Command
