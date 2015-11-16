@@ -715,7 +715,7 @@ Specify the API key to save and an optional URL to the server that provided the 
 
 ## Init Command
 
-(v<em>3.3 or above</em>) Adds all the packages from a flat folder of nupkgs to the destination package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, both the source package source and the destination package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.  
+(v<em>3.3 and above</em>) Adds all the packages from a flat folder of nupkgs to the destination package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, both the source package source and the destination package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.  
 
     \\destinationpackagesource\
         yourpackage\
@@ -762,7 +762,7 @@ Specify the path to source package source to be copied from and the path to the 
 
 ## Add Command
 
-(v<em>3.3 or above</em>) Adds the provided package to your package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, your package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.
+(v<em>3.3 and above</em>) Adds the provided package to your package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, your package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.
 
     \\yourpackagesource\
         yourpackage\
