@@ -715,7 +715,7 @@ Specify the API key to save and an optional URL to the server that provided the 
 
 ## Init Command
 
-(v<em>3.3 or above</em>) Adds all the packages from the provided source package source to the destination package source in the following layout instead of making a simple copy of the nupkg file. For this command, only package sources which are folders or UNC shares are allowed. True for both the source and the destination. In order to expand all the files in the package to the destination package source, use the -Expand switch. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files.
+(v<em>3.3 or above</em>) Adds all the packages from a flat folder of nupkgs to the destination package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, both the source package source and the destination package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.  
 
     \\destinationpackagesource\
         yourpackage\
@@ -741,7 +741,7 @@ Specify the path to source package source to be copied from and the path to the 
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -749,7 +749,7 @@ Specify the path to source package source to be copied from and the path to the 
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
@@ -762,7 +762,7 @@ Specify the path to source package source to be copied from and the path to the 
 
 ## Add Command
 
-(v<em>3.3 or above</em>) Adds the provided package to your package source in the following layout instead of making a simple copy of the nupkg file. For this command, only feeds which are folders or UNC shares are allowed. In order to expand all the files in the package to your package source, use the -Expand switch. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files.
+(v<em>3.3 or above</em>) Adds the provided package to your package source in a hierarchical layout as described below. The following layout has significant performance benefits, when performing a restore or an update against your package source, compared to a folder of nupkg files. For this command, your package source must be a folder or a UNC share. In order to expand all the files in the package to the destination package source, use the -Expand switch.
 
     \\yourpackagesource\
         yourpackage\
@@ -792,7 +792,7 @@ Specifies the path to the package and the fileSourceFolder to which the nupkg wi
     </tr>
     <tr>
         <td>Verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
+        <td>Display this amount of details in the output: normal, quiet, detailed.</td>
     </tr>
     <tr>
         <td>NonInteractive</td>
@@ -800,7 +800,7 @@ Specifies the path to the package and the fileSourceFolder to which the nupkg wi
     </tr>
     <tr>
         <td>ConfigFile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
 </table>
