@@ -18,8 +18,7 @@ multiple files/assemblies, using subfolders can help keep the Providers organize
 
 ## Using a Credential Provider from an Environment Variable
 
-Credential Providers can also be stored anywhere and then made accessible to NuGet.exe via an environment variable. To use a Credential Provider
-this way, set the `%NUGET_CREDENTIALPROVIDERS_PATH%` to the location of your Provider. The variable can be a semicolon-separated list, e.g. 
+Credential Providers can also be stored anywhere and then made accessible to NuGet.exe via an environment variable. To use a Credential Provider this way, set the `%NUGET_CREDENTIALPROVIDERS_PATH%` to the location of your Provider. The variable can be a semicolon-separated list, e.g. 
 `path1;path2`, if you have have multiple Credential Providers in different locations.
 
 ## Using a credential provider alongside NuGet.exe
