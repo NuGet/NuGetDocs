@@ -7,7 +7,7 @@ version is Visual Studio 2015.
 After VS2015 has been installed, you would need to:
 
 1. Uninstall the existing NuGet Extension from Visual Studio.
-1. **Download and install the <a href="http://www.microsoft.com/en-us/download/details.aspx?id=44932">Visual Studio 2015 SDK</a>**
+1. **Download and install the <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs">Visual Studio 2015 SDK</a>**
     
 To build NuGet.VisualStudioExtension, execute the following steps:
 
