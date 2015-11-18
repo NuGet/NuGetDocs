@@ -104,6 +104,18 @@ More info:
 * Using the [Manage NuGet Packages Dialog](../Start-Here/managing-nuget-packages-using-the-dialog)
 * Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
+### Visual Studio Team Services Package Management
+In fall 2015, [Visual Studio Team Services](https://www.visualstudio.com/products/what-is-visual-studio-online-vs) launched a public preview of NuGet package hosting. VSO's solution provides
+* Private package hosting for your team or entire organization,
+* Enterprise-grade security and authentication,
+* Seamless integration with other VSTS components such as Team Build, and
+* Easy integration with third-party dev tools like Jenkins.
+Package management will also be added to the on-premises TFS product in 2016.
+
+More info:
+
+* [Announcing package management support for VSTS](http://blogs.msdn.com/b/visualstudioalm/archive/2015/08/27/announcing-package-management-for-vso-tfs.aspx)
+
 ## Non-Microsoft Projects
 In addition to Microsoft, many other individuals and companies have made significant contributions to the NuGet ecosystem. Each project listed here may have a different license than the core NuGet components so please confirm that the license terms are acceptable prior to use. 
 
