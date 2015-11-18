@@ -105,7 +105,7 @@ More info:
 * Using the [Package Manager Console](../Start-Here/using-the-package-manager-console)
 
 ### Visual Studio Team Services Package Management
-In fall 2015, [Visual Studio Team Services](https://www.visualstudio.com/products/what-is-visual-studio-online-vs) launched a public preview of NuGet package hosting. VSO's solution provides
+In fall 2015, [Visual Studio Team Services](https://www.visualstudio.com/products/what-is-visual-studio-online-vs) launched a public preview of NuGet package hosting. VSTS's solution provides
 * Private package hosting for your team or entire organization,
 * Enterprise-grade security and authentication,
 * Seamless integration with other VSTS components such as Team Build, and

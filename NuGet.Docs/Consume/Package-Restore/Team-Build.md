@@ -6,7 +6,7 @@
 >  - Custom Team Foundation Build Process Templates migrated to TFS 2013 or later
 >  - Build Process Templates With Nuget Restore functionality removed
 
-> If you're using Visual Studio Online or on-premises Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
+> If you're using Visual Studio Team Services or on-premises Team Foundation Server 2013 with its build process templates, Automatic Package Restore happens as part of the build process.
 
 This section will provide a detailed walkthrough on how to restore packages as part of the [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx) both, for [git](http://en.wikipedia.org/wiki/Git_(software)) as well as [TF Version Control](http://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx).
 
