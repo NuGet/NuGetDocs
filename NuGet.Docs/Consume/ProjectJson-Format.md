@@ -118,12 +118,12 @@ The project.lock.json is a file that is generated in the process of restoring th
 * It stores the list of files and relevant content for compilation and runtime so that the build system only has to read a single file instead of many nuspec files.  
 
 
-* **Obsoleted: locked property is no longer supported** When you actually lock the lock file, the package restore process skips the dependency resolution step. It will just download the files listed in the lock file. So when your lock file is locked NuGet will no longer resolve floating dependencies or do any of the other work from the dependency resolution process. 
+* **Obsoleted: locked property is no longer supported** ~~When you actually lock the lock file, the package restore process skips the dependency resolution step. It will just download the files listed in the lock file. So when your lock file is locked NuGet will no longer resolve floating dependencies or do any of the other work from the dependency resolution process.~~ 
 
-## **Obsoleted:** When should I lock the lock file? 
+## **Obsoleted:** ~~When should I lock the lock file?~~ 
 
 **Locking the lock file is no longer supported**
-The canonical example for when you want to lock your lock file is when you have floating dependencies on internal packages that are undergoing churn that breaks your particular branch/project. In this scenario you would lock your lock file on a known-good set of packages until the packages you depend on are stable again. 
+~~The canonical example for when you want to lock your lock file is when you have floating dependencies on internal packages that are undergoing churn that breaks your particular branch/project. In this scenario you would lock your lock file on a known-good set of packages until the packages you depend on are stable again.~~ 
 
 
 ## Should I check in the lock file?  ##
