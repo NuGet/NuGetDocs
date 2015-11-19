@@ -118,23 +118,21 @@ The project.lock.json is a file that is generated in the process of restoring th
 * It stores the list of files and relevant content for compilation and runtime so that the build system only has to read a single file instead of many nuspec files.  
 
 
-* When you actually lock the lock file, the package restore process skips the dependency resolution step. It will just download the files listed in the lock file. So when your lock file is locked NuGet will no longer resolve floating dependencies or do any of the other work from the dependency resolution process. 
+* **Obsoleted: locked property is no longer supported** When you actually lock the lock file, the package restore process skips the dependency resolution step. It will just download the files listed in the lock file. So when your lock file is locked NuGet will no longer resolve floating dependencies or do any of the other work from the dependency resolution process. 
 
-## When should I lock the lock file? 
+## **Obsoleted:** When should I lock the lock file? 
 
+**Locking the lock file is no longer supported**
 The canonical example for when you want to lock your lock file is when you have floating dependencies on internal packages that are undergoing churn that breaks your particular branch/project. In this scenario you would lock your lock file on a known-good set of packages until the packages you depend on are stable again. 
 
 
 ## Should I check in the lock file?  ##
 
 
-In general it is not necessary to check in the lock file unless you have locked it. An unlocked lock file will be auto generated whenever a restore happens, so you can safely leave it out of source control and avoid and accidental merge conflicts. On git source control system and newer versions of TFS a .gitignore/.tfignore can be used to prevent this file from being checked in accidentally. 
+In general it is not necessary to check in the lock file. A lock file will be auto generated whenever a restore happens, so you can safely leave it out of source control and avoid and accidental merge conflicts. On git source control system and newer versions of TFS a .gitignore/.tfignore can be used to prevent this file from being checked in accidentally. 
 
 
-However, if you are locking the lock file then it is likely that you want to check it in so that anyone that clones your repository/branch will get the locked file and the same packages that you are working with. If you are on a feature branch that only you work on then it might not be necessary, however if multiple people are working on your branch then you might want to check it in to make sure everyone has a stable dev experience. 
-
-
-Checking in a non locked lock file is possible, and the diff will show the changes in dependencies resolved overtime. 
+Checking in a lock file is possible, and the diff will show the changes in dependencies resolved overtime. 
 
 
 ## Differences from DNX/ASP.NET 5  ##
