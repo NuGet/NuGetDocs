@@ -97,7 +97,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
     <tr>
         <td>iconUrl</td>
-        <td>A URL for the image to use as the icon for the package in the <strong>Manage NuGet Packages</strong> dialog box. This should be a 32x32-pixel <em>.png</em> file that has a transparent background.</td>
+        <td>A URL for the image to use as the icon for the package in the <strong>Manage NuGet Packages</strong> dialog box. This should be a 64x64-pixel <em>.png</em> file that has a transparent background.</td>
     </tr>
     <tr>
         <td>licenseUrl</td>

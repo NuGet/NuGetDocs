@@ -54,7 +54,7 @@ This configuration setting allows NuGet to completely skip the call into Visual 
 
 If you are on a version of TFS older than TFS 2012, you'll also need to cloak the `packages` folder in your workspace mappings.
 
-If you are on TFS 2012 or newer, or using VSO, you'll need to add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file tho **explicitly ignore modifications to the `\packages` folder** on the repository level.
+If you are on TFS 2012 or newer, or using VSO, you'll need to add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file to **explicitly ignore modifications to the `\packages` folder** on the repository level.
 To create a `.tfignore` file using Windows Explorer, create a new file and give it the name `.tfignore.` (no extension). You might need to disable the "Hide known file extensions" option first.
 
 The `.tfignore` file should have the following entry:
