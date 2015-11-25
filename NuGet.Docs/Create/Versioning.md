@@ -52,10 +52,10 @@ When most people install packages from NuGet, they want the latest “stable” 
 Other developers like to live life on the edge and want to grab the latest prerelease version of a package. 
 
 As of NuGet 1.6, NuGet supports the creation of prerelease packages by specifying a prerelease string in 
-the version number according to the [Semantic Versioning (SemVer) specification](http://semver.org/).
+the version number according to the [Semantic Versioning (SemVer) specification v1.0.0](http://semver.org/spec/v1.0.0.html).
 
 ### Really brief introduction to SemVer
-The [SemVer spec](http://semver.org/) is the best place to get a detailed understanding of SemVer. For 
+The [SemVer spec](http://semver.org/spec/v1.0.0.html) is the best place to get a detailed understanding of SemVer. For 
 those in a hurry, this is a brief rundown of SemVer.
 
 SemVer is a convention for versioning your public APIs in which the version number has meaning attached to it. 
