@@ -7,7 +7,7 @@ NuGet 3.3 was released November 30, 2015 with a significant number of user inter
 
 ## New Features
 
-* Credential Providers have been introduced that allow all NuGet clients to be able to work seamlessly with an authenticated feed.  [Instructions on how to install the Visual Studio Online credential provider ](http://docs.nuget.org/Consume/Credential-Providers) and configure the NuGet clients to use it are available on NuGet Docs.
+* Credential Providers have been introduced that allow NuGet command-line clients to be able to work seamlessly with an authenticated feed.  [Instructions on how to install the Visual Studio Team Services credential provider ](http://docs.nuget.org/Consume/Credential-Providers) and configure the NuGet clients to use it are available on NuGet Docs.  Visual Studio Team Services auth
 
 ## New User Interface Features
 
@@ -38,7 +38,7 @@ The NuGet command-line has been updated to include information about how to mana
 
 **Notable Issues**
 
-* NuGet now supports restoring packages with a solution file on Mono - [1543](https://github.com/NuGet/Home/issues/1543)
+* NuGet command-line restored support for restoring packages with a solution file on Mono - [1543](https://github.com/NuGet/Home/issues/1543)
 
 The complete list of issues that were addressed in the 3.3 release can be found on GitHub under the [3.3 milestone](https://github.com/NuGet/Home/issues?q=is%3Aissue+milestone%3A3.3.0+is%3Aclosed).  
 
