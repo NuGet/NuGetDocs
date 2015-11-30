@@ -1,4 +1,4 @@
-﻿# Nuspec Reference
+# Nuspec Reference
 
 A .nuspec file is a manifest that uses XML to describe a package. The manifest is used to build a package 
 and is also stored in the package after the package is built. For information about how to build a package, 
@@ -131,6 +131,11 @@ package is built (but without the element that lists files if that element was i
         <td>developmentDependency</td>
         <td><a href="/Release-Notes/NuGet-2.8">v2.8</a> A Boolean value that specifies whether the package will be marked as a <a href="../Release-Notes/NuGet-2.7#development-only-dependencies">development-only dependency</a> in the packages.config. This will cause the package to be excluded from the dependency list when the referencing project itself is later packaged.</td>
     </tr>
+	<tr>
+		<td>contentFiles</td>
+		<td><a href="/Release-Notes/NuGet-3.3">v3.3</a>A collection of files that should be copied into the consuming project.  These files can be specified with a set of 
+		attributes that instruct the project system how they should be used in the project.</td>
+	</tr>
 </tbody>
 </table>
 
@@ -468,6 +473,12 @@ Packaged Result:
 Note: The double wildcard implies a recursive search in the source for matching files.
 
 #### Content Files
+
+<div class="caution">
+<strong>Caution:</strong><br/>
+These instructions define a technique used in pre-3.0 versions of NuGet that include files in a package.  Newer project systems will not add or manage these files in your project.  NuGet recommends the newer contentFiles notation, described below.
+</div>
+
 Source Contains: 
 
 * `css\mobile\style1.css`
@@ -559,6 +570,110 @@ Or use a double wildcard to exclude a set of files recursively across directorie
     <files>
         <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
     </files>
+
+### ContentFiles with NuGet 3.3 and later
+
+In order to provide a better experience and clearer definition of what files should be included in a project, the new contentFiles element has been introduced to the nuspec.  These package content files are designed to be immutable, and should not be modified by developers who install the package.  
+
+The contentFiles element contains a collection of files elements that define a mask of files and how those files should be references by a project.
+
+Files elements in the nuspec are applied from top to bottom, with the topmost elements taking precedence over lower elements in the collection.  These elements apply to entries in the contentFiles folder of the package.  Type of content that work very well in this model include:
+
+* Images that are embedded as resources
+* Source files that are compiled
+* PP files that are transformed to match the project they are included in
+* Directories of scripts that need to be copied to the output directory with the same folder structure.
+
+
+Content shall be stored in the package in folders that match this pattern:
+
+	/contentFiles/{codeLanguage}/{TxM}/{any?}
+
+* codeLanguages may be  `cs`, `vb`, `any`
+* TxM is any legal target framework moniker that NuGet supports
+* Any folder structure may be appended to the end of this syntax.
+
+Examples of legal folder locations include:
+
+Language and framework agnostic: `/contentFiles/any/any/config.xml`
+net45 content for all languages: `/contentFiles/any/net45/config.xml`
+CSharp specific content for net45 and up: `/contentFiles/cs/net45/sample.cs`
+
+Empty folders can use `_._` to opt out of providing content for certain combinations of language and TxM:
+
+	/contentFiles/vb/any/code.vb
+	/contentFiles/cs/any/_._
+	
+#### NuSpec contentFiles / files attributes
+
+<table class="reference">
+<tr>
+ <th>Attribute</th><th>Description</th>
+</tr>
+<tr>
+<td>include</td> 	
+<td>[Required attribute] Include provides either a file path or a wild card path. All matching files from the contentFiles folder will have the attributes for that files node applied. Examples: <code>**/*</code>, <code>**/*.cs</code>, <code>any/any/myfile.txt</code>, <code>**/net*/*</code>.</td>
+</tr>
+<tr>
+<td>exclude</td> 	
+<td>Exclude provides either a file path or a wild card path. All matching files will be excluded from the include.</td>
+</tr>
+<tr>
+<td>buildAction</td>
+<td>Build action taken by msbuild for the content items. Examples: <code>None</code>, <code>Compile</code></td>
+</tr>
+<tr>
+<td>copyToOutput</td>
+<td>If True the content items will be copied to the build output folder</td>
+</tr>
+<tr>
+<td>flatten</td>
+<td>If False the content items will be copied to the build output folder using the full folder structure from the nupkg. This path will be relative to the TxM folder. Example: <code>cs/net45/config/data.xml</code> -> <code>config/data.xml</code></td>
+</tr>
+</table>
+
+**Attributes Defaults**
+<table class="reference">
+<tr>
+	<th>Attribute</th>
+	<th>Value</th>
+</tr>
+<tr>
+<td>buildAction</td>
+<td>Compile</td>
+</tr>
+<tr>
+<td>copyToOutput</td>
+<td>False</td>
+</tr>
+<tr>
+<td>flatten</td>
+<td>False</td>
+</tr>
+</table>
+
+**Example contentFiles section**
+
+	<contentFiles>
+	    <!-- Embed image resources -->
+	    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+	    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+	    <!-- Embed all image resources under contentFiles/cs/ using a wild card -->
+	    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+	    <!-- Copy config.xml to the root of the output folder -->
+	    <files include="cs/uap10.0/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+	    <!-- Copy run.cmd to the output folder and keep the directory structure -->
+	    <!-- Include everything in the scripts folder except exe files -->
+	    <files include="cs/uap10.0/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+	    <!-- All other files in shared are compiled and use the default options -->
+	</contentFiles>
+
+The include and exclude properties on contentFiles/files elements support wildcards using the aspnet syntax. https://github.com/aspnet/FileSystem
+
+If multiple entries match the same file all entries will be applied. The top most entry will override the lower entries if there is a conflict for the same attribute.
+
+The contentFiles section is optional, by default all files in the nupkg contentFiles directory will use the default attribute values defined above.
+
 
 ## Examples of .nuspec Files
 

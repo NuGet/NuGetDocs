@@ -160,7 +160,7 @@ Update packages to latest available versions. This command also updates NuGet.ex
 (v<em>2.7 or above</em>) Downloads and unzips (restores) any packages missing from the packages folder.
 
 ### Restore Command Usage
-    nuget restore [<solution>|<packages.config file>] [options]
+    nuget restore [<solution>|<packages.config file>|<project.json file>] [options]
 
 ### Restore Command Options
 <table>
@@ -221,6 +221,7 @@ The restore command is executed in the following steps:
 1. Determine the operation mode of the restore command.
     * If &lt;packages.config file> is specified, nuget restores packages
     listed in the packages.config file.
+	* If &lt;project.json file> is specified, nuget restores packages listed in the project.json file, resolves the dependencies of those packages and installs those dependent packages as well.
     * If &lt;solution> is specified, nuget restores packages for the
     solution's projects. In this case, nuget needs to locate the solution
     file.
@@ -236,9 +237,8 @@ The restore command is executed in the following steps:
         restore packages for that solution. If there are multiple
         solution files, an error message is displayed and nuget exits.
         * If there are no solution files, nuget then searches for the
-        packages.config file in the current directory. If the file
-        exists, nuget will restore packages listed in the
-        packages.config file.
+        packages.config file or project.json file in the current directory. If either file
+        exists, nuget will restore packages listed in that file.
         * If there are no solution files and no packages.config file in
         the current directory, an error message is displayed and
         nuget exits.
@@ -253,6 +253,7 @@ The restore command is executed in the following steps:
   file is used as the starting directory.
 
 1. Calculate the packages directory:
+	* If project.json is specified, %userprofile%\.nuget\packages is used as the packages directory.
     * If -PackagesDirectory &lt;packagesDirectory> is specified,
     &lt;packagesDirectory> is used as the packages directory.
     * If config key repositoryPath exists in nuget configuration, its
@@ -849,6 +850,41 @@ Gets or sets NuGet config values.
 
     nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
     nuget.config HTTP_PROXY
+
+## Locals Command
+
+[v3.3] Clears or lists local NuGet resources such as http request cache, packages cache, or machine-wide global packages folder.
+
+	nuget locals <all | http-cache | packages-cache | global-packages> -clear
+
+Locals Command Options
+
+<table>
+	<tr>
+		<td>Clear</td>
+		<td>Clear the resources in the specified cache location</td>
+	</tr>
+	<tr>
+		<td>List</td>
+		<td>List the selected local resources or cache locations</td> 
+	</tr>
+	<tr>
+		<td>Help</td>
+		<td>help</td>
+	</tr>
+	<tr>
+		<td>Verbosity</td>
+		<td>Display the amount of details in the output: normal, quiet, detailed.</td>
+	</tr>
+	<tr>
+		<td>NonInteractive</td>
+		<td>Do not prompt for user input or confirmations.</td>
+	</tr>
+	<tr>
+		<td>ConfigFile</td>
+		<td>he NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config is used as configuration file.</td>
+	</tr>
+</table>
 
 ##  Mirror Command
 
