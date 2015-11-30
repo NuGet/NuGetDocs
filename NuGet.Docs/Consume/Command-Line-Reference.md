@@ -876,14 +876,6 @@ Locals Command Options
 		<td>Verbosity</td>
 		<td>Display the amount of details in the output: normal, quiet, detailed.</td>
 	</tr>
-	<tr>
-		<td>NonInteractive</td>
-		<td>Do not prompt for user input or confirmations.</td>
-	</tr>
-	<tr>
-		<td>ConfigFile</td>
-		<td>he NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config is used as configuration file.</td>
-	</tr>
 </table>
 
 ##  Mirror Command
