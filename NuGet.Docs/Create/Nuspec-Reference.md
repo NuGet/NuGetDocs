@@ -133,7 +133,7 @@ package is built (but without the element that lists files if that element was i
     </tr>
 	<tr>
 		<td>contentFiles</td>
-		<td><a href="/Release-Notes/NuGet-3.3">v3.3</a>A collection of files that should be copied into the consuming project.  These files can be specified with a set of 
+		<td><a href="/Release-Notes/NuGet-3.3">v3.3</a>A collection of files that should be referenced in the consuming project.  These files can be specified with a set of 
 		attributes that instruct the project system how they should be used in the project.</td>
 	</tr>
 </tbody>
@@ -571,7 +571,7 @@ Or use a double wildcard to exclude a set of files recursively across directorie
         <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
     </files>
 
-### ContentFiles with NuGet 3.3 and later
+### ContentFiles with Visual Studio 2015 Update 1 and later
 
 In order to provide a better experience and clearer definition of what files should be included in a project, the new contentFiles element has been introduced to the nuspec.  These package content files are designed to be immutable, and should not be modified by developers who install the package.  
 
