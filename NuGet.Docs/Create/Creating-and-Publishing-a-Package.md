@@ -69,6 +69,8 @@ e.g. suppose you want to add all the files from some arbitrary other folder into
         <file src="..\..\SomeRoot\**\*.*" target="" /> 
     </files>
 
+If you include an empty <files /> node in the nuspec, all content files will be omitted from the package and only the lib folder will be included.
+
 <p class="info">
 <strong>Note</strong><br />You need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 </p> 
@@ -127,6 +129,34 @@ package allows others to step into your package&#8217;s code in the debugger.
 For a detailed walkthrough showing how to create and publish NuGet packages from a project, 
 see [The easy way to publish NuGet packages with sources](http://blog.davidebbo.com/2011/04/easy-way-to-publish-nuget-packages-with.html) 
 on David Ebbo&#8217;s blog.
+
+### At Build Time
+
+It may be advantageous for you to enhance your project build process to include the ability to generate a NuGet package at the completion of a successful build.  You can augment your build script to include the steps necessary to assembly your package once the compilation has completed by adding an AfterBuild target as follows, assuming that you have the nuget.exe utility available in the path:
+
+	<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+		
+		<Exec Command="nuget pack MyProject.csproj -Prop Configuration=Release"></Exec>
+	
+	</Target>
+ 
+This will package your project with the default information provided in the properties of your project in release mode.  
+
+It may be desired to have a copy of the nuget.exe client downloaded prior to the build process.  This feels like it cold be a bit of a circular reference, as you will want to have nuget.exe available in order to restore packages to your project before compiling.  To get a fresh nuget.exe after the build, we recommend adding the [MSBuildTasks package](https://www.nuget.org/packages/MSBuildTasks/) to your project in order to enable the WebDownload task.  Add the following lines to your project file in order to force your project to use the WebDownload task and package your project:
+
+	<Import Project="$(MSBuildProjectDirectory)\..\.build\MSBuild.Community.Tasks.targets"/>
+	<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+	
+ 		<!-- Only download a new copy of nuget.exe if we don't have a copy available -->
+		<WebDownload Condition="!Exists('nuget.exe')" Filename="nuget.exe" FileUri="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
+	
+		<Exec Command="nuget pack ClassLibrary7.csproj -Prop Configuration=Release"></Exec>
+	
+	</Target>
+
+Calling `pack` against a project file is not as full featured as the options described in the next section, packing with a nuspec document.    
+
+You can also modify the command-line execution to operate in different folders if there are additional files and folders that you want to bundle in your package.  You can add appropriate Copy tasks to this step to place files appropriately that need to be bundled.
 
 ### From a convention based working directory
 Some packages contain more than just assemblies. They may contain 
@@ -264,7 +294,9 @@ NuGet automatically runs scripts based on their file names using the following c
     * The package must have files in the *content* or *lib* folder for *Install.ps1* to run. Just having 
     something in the tools folder will not kick this off.
     * If your package also has an *init.ps1*, *install.ps1* runs **after** *init.ps1*.
+    * [NuGet 3.x] *This script will not be executed in projects managed by project.json*
 * ***Uninstall.ps1*** runs every time a package is uninstalled. 
+	* [NuGet 3.x] *This script will not be executed in projects managed by project.json*
 * These files should be located in the tools directory of your package. 
 * At the top of your file, add this line: **`param($installPath, $toolsPath, $package, $project)`**
     * **`$installPath`** is the path to the folder where the package is installed
