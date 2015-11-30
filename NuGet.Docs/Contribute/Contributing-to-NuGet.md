@@ -36,7 +36,7 @@ The first order of business is to get yourself familiar with the product (and de
 5. If you plan to make large submissions (anything larger than a small bug fix or feature), set up your environment for [code reviews](http://nuget.codeplex.com/documentation?title=Code%20Reviews)</a>. 
 6. Familiarize yourself with the source code. Make sure you can build it. 
 7. Consider answering questions in the discussion list, to build on your understanding of the code. 
-8. Familiarize yourself with the [project guidelines](Project-Guidelines) and our [coding conventions](Coding-Guidelines). Following the coding conventions is very important to us as we're very picky about them out of necessity in order to maintain consistency. We know that sometimes, people will make a small mistake here and there and if it's a really nitpicky thing, we'll accept the pull request anyways and just fix the code ourselves. 
+8. Familiarize yourself with the [project guidelines](Project-Contribution-Guidelines) and our [coding conventions](Coding-Guidelines). Following the coding conventions is very important to us as we're very picky about them out of necessity in order to maintain consistency. We know that sometimes, people will make a small mistake here and there and if it's a really nitpicky thing, we'll accept the pull request anyways and just fix the code ourselves. 
 
 ### Contributing a Bug Fix or Feature
 

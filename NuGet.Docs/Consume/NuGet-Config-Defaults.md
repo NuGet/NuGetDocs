@@ -61,6 +61,7 @@ The NuGet Config Defaults file also allows specification of the Default Push Sou
 		<!-- Default Package Sources that are Disabled by Default -->
 		<!-- They cannot be modified or deleted either but can be enabled/disabled by user -->
 		<!-- The following section is similar to 'disabledPackageSources' section of NuGet.config schema -->
+		<!-- The value part of the entry in 'disabledPackageSources' section has no effect -->
 		<disabledPackageSources>
 			<add key="nuget.org" value="true" />
 		</disabledPackageSources>

@@ -33,7 +33,9 @@ In the folder where the csproj file is, run:
 
 This creates a special nuspec file with tokens meant to be replaced at pack time based on the project metadata.
 For example, `$version$` gets replaced by the version specified in the `AssemblyVersionAttribute` (or `AssemblyInformationalVersionAttribute` if present) applied to 
-your assembly (typically within the `AssemblyInfo.cs` file).
+your assembly (typically within the `AssemblyInfo.cs` file).  
+
+These tokens will only be replaced when you execute the pack command with the project file, and not with the nuspec file.  The contents of the nuspec file will be located and honored, with the appropriate token replacements executed.
 
 The following is a list of the supported replacement tokens.
 

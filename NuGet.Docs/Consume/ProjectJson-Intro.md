@@ -49,7 +49,7 @@ The restore process runs ahead of the build itself, it then writes out a new fil
 
 **Where is this file dropped** – Right next to the project.json 
 
-**Should I check it in** – Typically no, the file is included in the default .gitignore in Visual Studio normally not included in source control either through .gitignore or .tfignore. There are some scenarios where you want to check in a locked lock file to freeze the dependencies. 
+**Should I check it in** – Typically no, the file is included in the default .gitignore in Visual Studio normally not included in source control either through .gitignore or .tfignore.
 
 For a deeper dive on dependency resolution and restore decision making refer to the Dependency Resolution document. 
 
