@@ -12,7 +12,7 @@ The project.json used by NuGet 3 has the following basic shape
       "dependencies": { "PackageId" : "1.0.0" }, 
       "frameworks" : { "TxM" : {} }, 
       "runtimes" : { "RID": {}, "RID": {} }, 
-      "supports" : { "CompatabilityProfile" : {}, "CompatabilityProfile" : {} } 
+      "supports" : { "CompatibilityProfile" : {}, "CompatibilityProfile" : {} } 
     
     }
    
