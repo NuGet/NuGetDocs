@@ -34,7 +34,7 @@ NuGet will perform the following actions:
     NuGet v2.7.2 and earlier - the latest package version will be used
     NuGet v2.8 and greater - the lowest package version will be used
 
-It is recommended to always specificy a version or version range for package dependencies.
+It is recommended to always specify a version or version range for package dependencies.
 
 ## Examples
 The following example specifies a dependency on any version of ExamplePackage that begins with a 1 or a 2. 
