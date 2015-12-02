@@ -24,7 +24,7 @@ how to specify version ranges.
     (1.0,) = 1.0 < x
     (1.0,2.0) = 1.0 < x < 2.0
     [1.0,2.0] = 1.0 ≤ x ≤ 2.0
-    empty = latest version.
+    empty = lowest version.
 
 ## Examples
 The following example specifies a dependency on any version of ExamplePackage that begins with a 1 or a 2. 
