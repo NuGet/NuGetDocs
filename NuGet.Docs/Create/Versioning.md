@@ -24,7 +24,17 @@ how to specify version ranges.
     (1.0,) = 1.0 < x
     (1.0,2.0) = 1.0 < x < 2.0
     [1.0,2.0] = 1.0 ≤ x ≤ 2.0
-    empty = latest version.
+
+When you fail to specify a package version for a dependency as follows:
+
+    <dependency id="ExamplePackage" />
+
+NuGet will perform the following actions:
+
+    NuGet v2.7.2 and earlier - the latest package version will be used
+    NuGet v2.8 and greater - the lowest package version will be used
+
+It is recommended to always specificy a version or version range for package dependencies.
 
 ## Examples
 The following example specifies a dependency on any version of ExamplePackage that begins with a 1 or a 2. 
