@@ -35,7 +35,7 @@ The dependencies section is where the NuGet Package Manager dialog will add pack
 
 The Package id corresponds to the id of the package on nuget.org , the same as the id used in the package manager console: `Install-Package Microsoft.NETCore` 
 
-The version constraint of **"5.0.0"** corresponds to the **>= 5.0.0** constraint. This means that if for some reason 5.0.0 is not available on the server in 5.0.1 is, the restore will pick 5.0.1 and warn you about the upgrade. Otherwise restore will pick the lowest possible version on the server matching the constraint which will be 5.0.0. 
+The version constraint of **"5.0.0"** corresponds to the **>= 5.0.0** constraint. This means that if for some reason 5.0.0 is not available on the server and 5.0.1 is, the restore will pick 5.0.1 and warn you about the upgrade. Otherwise restore will pick the lowest possible version on the server matching the constraint which will be 5.0.0. 
 
 See dependency resolution document for more details on resolution rules. 
 
@@ -129,7 +129,7 @@ The project.lock.json is a file that is generated in the process of restoring th
 ## Should I check in the lock file?  ##
 
 
-In general it is not necessary to check in the lock file. A lock file will be auto generated whenever a restore happens, so you can safely leave it out of source control and avoid and accidental merge conflicts. On git source control system and newer versions of TFS a .gitignore/.tfignore can be used to prevent this file from being checked in accidentally. 
+In general it is not necessary to check in the lock file. A lock file will be auto generated whenever a restore happens, so you can safely leave it out of source control and avoid accidental merge conflicts. On git source control system and newer versions of TFS a .gitignore/.tfignore can be used to prevent this file from being checked in accidentally. 
 
 
 Checking in a lock file is possible, and the diff will show the changes in dependencies resolved overtime. 
