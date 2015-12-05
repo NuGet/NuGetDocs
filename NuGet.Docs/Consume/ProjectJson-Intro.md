@@ -28,14 +28,12 @@ In project using NuGet we are going to have two types of configuration files.
 
 2. Project.json – Added in NuGet 3.0 
 
-Packages.config is the format utilized up until NuGet 3 with any project consuming NuGet packages. It is an XML files with a flat list of packages. When the user installs a 
-
-package into the project the NuGet UI will resolve the dependent packages add them them to the file, and modify the project files. 
+Packages.config is the format utilized up until NuGet 3 with any project consuming NuGet packages. It is an XML file with a flat list of packages. When the user installs a package into the project the NuGet UI will resolve the dependent packages add them them to the file, and modify the project files. 
 
 In a C# project, that will mean changing the .csproj file, and sometimes the app.config/web.config file as well as other files within the project. 
 
 
-In contrast if the project is using project.json file, installing a package simply means adding the package id and version to the project.json file. There is not dependency resolution at this point nor a change to the project file. 
+In contrast if the project is using project.json file, installing a package simply means adding the package id and version to the project.json file. There is no dependency resolution at this point nor a change to the project file. 
 
 When packages are restored (or simply said downloaded) from the NuGet.org server, a restore process kicks in and downloads these packages to the user’s computer. 
 
