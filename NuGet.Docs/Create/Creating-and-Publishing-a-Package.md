@@ -142,7 +142,7 @@ It may be advantageous for you to enhance your project build process to include 
  
 This will package your project with the default information provided in the properties of your project in release mode.  
 
-It may be desired to have a copy of the nuget.exe client downloaded prior to the build process.  This feels like it cold be a bit of a circular reference, as you will want to have nuget.exe available in order to restore packages to your project before compiling.  To get a fresh nuget.exe after the build, we recommend adding the [MSBuildTasks package](https://www.nuget.org/packages/MSBuildTasks/) to your project in order to enable the WebDownload task.  Add the following lines to your project file in order to force your project to use the WebDownload task and package your project:
+It may be desired to have a copy of the nuget.exe client downloaded prior to the build process.  This feels like it could be a bit of a circular reference, as you will want to have nuget.exe available in order to restore packages to your project before compiling.  To get a fresh nuget.exe after the build, we recommend adding the [MSBuildTasks package](https://www.nuget.org/packages/MSBuildTasks/) to your project in order to enable the WebDownload task.  Add the following lines to your project file in order to force your project to use the WebDownload task and package your project:
 
 	<Import Project="$(MSBuildProjectDirectory)\..\.build\MSBuild.Community.Tasks.targets"/>
 	<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
