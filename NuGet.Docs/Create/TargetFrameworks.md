@@ -150,7 +150,9 @@ For a number of these frameworks, they are related to each other.  Not necessari
 
 In an effort to make development of libraries that work across multiple platforms easier, the .NET framework supports [Portable Class library](https://msdn.microsoft.com/en-us/library/gg597391%28v=vs.110%29.aspx) development.  These libraries can be used across binary compatible frameworks, and need to be referenced as such when constructing a NuGet package.
 
-To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword shall be used to prefix the list of frameworks that are referenced.  There are additional frameworks that are defined by third parties that provide compatibility with other environments that are accessible in this manner.  Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`.
+To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword shall be used to prefix the list of frameworks that are referenced.  We recommend that you do not artificially include extra frameworks that are not directly compiled against as this could lead to unintended side-effects in those frameworks.
+
+There are additional frameworks that are defined by third parties that provide compatibility with other environments that are accessible in this manner.  Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readiblity of the folders and nuspec. 
 
 The following table outlines the list of portable framework monikers that are identified by the official NuGet clients.  This table is current for [NuGet v3.3](https://github.com/NuGet/NuGet.Client/commit/3216726e5d47c7b8b2f089f35c242323d26954d4 "GitHub Commit 321672...") (December 2015)
 
