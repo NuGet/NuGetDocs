@@ -2,7 +2,18 @@
 
 As the .NET ecosystem has grown, so too has the list of frameworks and dependencies that NuGet supports.   The frameworks that can be included and referenced by a NuGet package tracks closely with the list of available .NET framework versions and flavors that support all of the devices and systems the .NET framework can be used on.
 
-Target frameworks can be referenced from three places:  nuspec manifest, nupkg folder name, and project.json frameworks node.  A framework is typically referenced by a short name, called a "Target Framework Moniker" or TFM.  With the advent of the new Platform Standard, the concept of 'TFM' has been abstracted to 'TxM' since the Platform Standard references multiple frameworks abstractly. 
+Target frameworks can be referenced from three places:  
+
+* [nuspec manifest](http://docs.nuget.org/Create/NuSpec-Reference)
+   * You can find a target framework referenced in the dependencies on the group elements to indicate which packages should be referenced when the package is installed into different projects.
+
+* [nupkg folder name](http://docs.nuget.org/create/Creating-and-Publishing-a-Package#from-a-convention-based-working-directory)
+   * The folders inside of the base package lib folder are named after the target frameworks that the contents support.  The DLLs and other content that support these framework version should be placed here.
+
+* project.json frameworks node.  
+    *  This node specifies the framework versions that the project should be compiled against for project systems that use project.json (ASP.NET 5 and UWP currently).
+
+A framework is typically referenced by a short name, called a "Target Framework Moniker" or TFM.  With the advent of the new Platform Standard, the concept of 'TFM' has been abstracted to 'TxM' since the Platform Standard references multiple frameworks abstractly. 
 
 The source code from the NuGet clients that is used to calculate these tables can be found at:  
 
@@ -647,3 +658,5 @@ Stephen Cleary has a blog post that demonstrates a tool that will mine the list 
 ### .NET Platform Standard 
 
 To simplify the references between binary-compatible frameworks, the [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md) was introduced.  This allows the definition of a single target framework moniker to reference a combination of binary compatible frameworks.  Various versions of the Platform Standard indicate different combinations of frameworks that are compatible.  More information about these frameworks can be found at the .NET Platform Standard master document. 
+
+The `dotnet` series of monikers should be used in NuGet 3.3 and the `netstandard` moniker syntax should be used in v3.4 and later.
