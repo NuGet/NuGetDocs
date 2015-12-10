@@ -114,7 +114,7 @@ The official NuGet clients support the frameworks listed below, with the equival
 	<tr>
 		<td>DNX Core</td>
 		<td>dnxcore</td>
-		<td>Cross-Platform server-side framework support
+		<td>Core CLR framework support
 			<ul>
 				<li>dnxcore (equivalent to dnxcore50)</li>
 				<li>dnxcore50</li>
