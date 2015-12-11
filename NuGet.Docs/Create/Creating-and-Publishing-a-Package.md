@@ -132,7 +132,7 @@ on David Ebbo&#8217;s blog.
 
 ### At Build Time
 
-It may be advantageous for you to enhance your project build process to include the ability to generate a NuGet package at the completion of a successful build.  You can augment your build script to include the steps necessary to assembly your package once the compilation has completed by adding an AfterBuild target as follows, assuming that you have the nuget.exe utility available in the path:
+It's often a good idea to generate a NuGet package at the end of a successful build.  You can augment your build script to include the steps necessary to assemble your package once compilation is done by adding an AfterBuild target as follows, assuming that you have the nuget.exe utility available in the path:
 
 	<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
 		
