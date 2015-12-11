@@ -19,7 +19,9 @@ to configure and set-up, including [MyGet](http://myget.org),
 [An Overview of the NuGet Ecosystem](/Contribute/Ecosystem) to learn more about these 
 options. 
 
-Otherwise, you can create a local feed on disk or build your own remote feed using NuGet's 
+Local feeds come in two flavors: a folder of nupkg files and a versioned set of hierarchical folders.  Starting with NuGet 3.3, you can create and install packages [much faster](http://blog.nuget.org/20150922/Accelerate-Package-Source.html) with the hierarchical folder structure.
+
+You can create a local feed on disk or build your own remote feed using NuGet's 
 server components by following the instructions below.
 
 
@@ -58,6 +60,20 @@ You can also select the new feed in the **Online** tab of the
 **Manage NuGet Packages** dialog box.
 
 ![Selecting local feed in the Manage NuGet Packages dialog](/images/create/Selecting-local-feed-in-Add-Library-Package-Reference.png)
+
+## Creating Local Feeds v3.3+
+
+Starting with NuGet 3.3, you can create and manage a folder of packages that can be referenced by the NuGet clients in the same way as described in the previous section.  To manage this folder, you will need a copy of the [NuGet command-line tool](http://dist.nuget.org/index.html).
+
+Start by creating an empty folder that will contain the new hierarchical NuGet feed.  Let's refer to that folder as $folder.  If you have an existing folder of packages at $existing that you would like to add to $folder, execute the following command:
+
+`nuget init $existing $folder`
+
+As new and updated packages like **package.nupkg** are created that you would like to add to the folder, execute the following command:
+
+`nuget add package.nupkg -source $folder`
+
+Finally, add a reference to $folder in your NuGet configuration as specified above.
 
 ## Creating Remote Feeds
 
