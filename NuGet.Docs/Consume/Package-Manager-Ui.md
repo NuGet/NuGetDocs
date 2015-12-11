@@ -31,7 +31,7 @@ There are currently three options available:
 
 3. **File Conflict Options** - If the package or any of its dependent packages being installed match a file already on disk, how should NuGet handle it?
 
-    a. **Prompt** - NuGet will if you would like to keep or override the files
+    a. **Prompt** - NuGet will ask if you would like to keep or override the files
     
   	b. **Ignore All** - NuGet will skip writing any files into your project with matching file names
 
