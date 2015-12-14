@@ -112,7 +112,7 @@ Defines what the default DependencyVersion value is, if the -DependencyVersion s
 	<td> "disableSourceControlIntegration" under section "solution"
 	</td>
     <td>
-	Allows you to disable source control integration for the "Packages" folder. This key works at the solution level and hence need to be added to the NuGet.config file present in the "$(SolutionDir)\.nuget directory". Enabling package restore from VS would add the .nuget\nuget.config file automatically. More details <a href="..\Workflows\Using-NuGet-without-committing-packages"> here.</a>
+	Allows you to disable source control integration for the "Packages" folder. This key works at the solution level and hence need to be added to the NuGet.config file present in the "$(SolutionDir)\.nuget directory". Enabling package restore from VS would add the .nuget\nuget.config file automatically. More details <a href="/Consume/Package-Restore"> here.</a>
     <br/>
 
 	The default value for this key is true.
