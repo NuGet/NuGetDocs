@@ -2,10 +2,10 @@
 
 ## Getting Started
 
-1. [Download NuGet.exe](https://nuget.org/nuget.exe)
+1. [Download NuGet.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
 2. Make sure NuGet.exe is in your path
 
-If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/Create/using-a-gui-to-build-packages).
+If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/Create/using-a-gui-to-build-packages). Note: This tool is OSS, not supported by the NuGet team, and is not signed.
 
 ## Creating a Package
 There are a few approaches to creating a package. Most packages are very simple and contain 
