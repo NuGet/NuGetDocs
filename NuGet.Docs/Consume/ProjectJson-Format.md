@@ -98,7 +98,7 @@ Imports are designed to allow packages that use the dotnet TxM to operate with p
 
 	"frameworks": { 
 
-    	"dotnet": { “imports” : “portable-net45+win81” } 
+    	"dotnet": { "imports" : "portable-net45+win81" } 
 
 	} 
 
