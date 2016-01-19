@@ -24,7 +24,7 @@ Please check out the [Known Issues](/Release-Notes/Known-Issues) page.
 
 The command-line application (*nuget.exe*) builds and runs under Mono (version 3.2 or later) and allows you to create packages in Mono.
 This is especially true for Mono on Windows, but there are some known issues for Mono on Linux and OS X.  To review
-the known issues, [search for Mono in our issue list](http://nuget.codeplex.com/workitem/list/basic?field=Votes&direction=Descending&issuesToDisplay=Open&keywords=mono&emailSubscribedItemsOnly=false).
+the known issues, [search for Mono in our issue list](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mono).
 
 Also, [a graphical client is available as an add-in for MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin).
 
@@ -84,7 +84,7 @@ There are multiple NuGet clients that work completely outside of Visual Studio:
 
 **How do I get the latest version of NuGet commandline?**
 
-You can download NuGet.exe from [codeplex](http://nuget.codeplex.com/releases/view/58939) or install the package from [nuget.org](http://www.nuget.org/packages/NuGet.CommandLine).
+You can download NuGet.exe from [our distribution site](https://dist.nuget.org/index.html) or install the package from [nuget.org](http://www.nuget.org/packages/NuGet.CommandLine).
 
 Once you have the command-line, use "NuGet.exe Update" to self update the exe to the latest version.
 
