@@ -91,6 +91,7 @@ Once you have the command-line, use "NuGet.exe Update" to self update the exe to
 **Is it possible to extend NuGet commandline?**
 
 Yes, it is possible to add custom commands to NuGet.exe.
+Check out [this post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx) by Rob Reynolds for a quick walkthrough.
 
 ## NuGet Package Manager Console
 
