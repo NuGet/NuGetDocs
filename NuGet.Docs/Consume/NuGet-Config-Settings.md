@@ -101,15 +101,14 @@ The default value for this key is true.
 ## Proxy settings
 
 **section**: config  
-**keys**: http_proxy, http_proxy.user and http_proxy.password
+**keys**: http_proxy, http_proxy.user, http_proxy.password and no_proxy.
 
 Allows you to set the proxy settings to be used while connecting to your NuGet feed.
 More details [here](http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html).
 
 This key can be added using [NuGet.exe Config -Set command](Command-Line-Reference#config-command).
 
-It can also be set via environment variable `http_proxy`.
-While setting env variable, the value should be specified in the format `http://[username]:[password]@proxy.com`.
+It can also be set via environment variables `http_proxy` and `no_proxy`. `http_proxy` should be specified in the format `http://[username]:[password]@proxy.com` whereas `no_proxy` should be a comma-separated list of domains to bypass the proxy server.
 
 <p class="info">
 <strong>Note</strong><br />The "http_proxy.password" key value is encrypted before storing in the nuget.config file.
