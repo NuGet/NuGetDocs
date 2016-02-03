@@ -573,11 +573,11 @@ Or use a double wildcard to exclude a set of files recursively across directorie
 
 ### ContentFiles with Visual Studio 2015 Update 1 and later
 
-In order to provide a better experience and clearer definition of what files should be included in a project, the new contentFiles element has been introduced to the nuspec.  These package content files are designed to be immutable, and should not be modified by developers who install the package.  
+In order to provide a better experience and clearer definition of what files should be included in a project, the new contentFiles element has been introduced to the nuspec.  These  files are designed to be immutable, and should not be modified by developers who install the package.  
 
-The contentFiles element contains a collection of files elements that define a mask of files and how those files should be references by a project.
+The contentFiles element contains a collection of files elements that define a mask of files and how those files should be references by a project.  The files elements reference a location inside of the NuGet package whose content could be placed there by either packaging the files directly on disk or by using a `<files>` element as demonstrated above.
 
-Files elements in the nuspec are applied from top to bottom, with the topmost elements taking precedence over lower elements in the collection.  These elements apply to entries in the contentFiles folder of the package.  Type of content that work very well in this model include:
+Files child-elements of contentFiles in the nuspec are applied from top to bottom, with the topmost elements taking precedence over lower elements in the collection.  These elements apply to entries in the contentFiles folder of the package.  Type of content that work very well in this model include:
 
 * Images that are embedded as resources
 * Source files that are compiled
