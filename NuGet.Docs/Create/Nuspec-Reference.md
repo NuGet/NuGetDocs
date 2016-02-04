@@ -589,7 +589,7 @@ Content shall be stored in the package in folders that match this pattern:
 
 	/contentFiles/{codeLanguage}/{TxM}/{any?}
 
-* codeLanguages may be  `cs`, `vb`, `any`
+* codeLanguages may be  `cs`, `fs`, `vb`, `any` or the lowercase equivalent of a given **$(ProjectLanguage)**
 * TxM is any legal target framework moniker that NuGet supports
 * Any folder structure may be appended to the end of this syntax.
 
