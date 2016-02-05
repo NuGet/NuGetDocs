@@ -62,13 +62,14 @@ The following is a list of the supported replacement tokens.
 You can then edit this nuspec file if you need to customize it. e.g. if you don't want token replacement
 for some fields, you hard code them in the nuspec instead.
 
-Also, if you want to pull additional files into the package, you can use a <files> node in the nuspec.
+If you want to explicitly define which files are included in the package, you can use a <files> node in the nuspec.
 e.g. suppose you want to add all the files from some arbitrary other folder into the package, you'd have:
 
     <files>
         <file src="..\..\SomeRoot\**\*.*" target="" /> 
     </files>
 
+Note that **only** the files defined inside the node will be included in the package.
 If you include an empty <files /> node in the nuspec, all content files will be omitted from the package and only the lib folder will be included.
 
 <p class="info">
