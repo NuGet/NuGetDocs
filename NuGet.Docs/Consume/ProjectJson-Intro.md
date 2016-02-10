@@ -1,12 +1,12 @@
 # NuGet 3.0, .NET and project.json 
 
-NuGet 3.0 is introducing two new client concepts 
+NuGet 3.0 introduces two new client concepts 
 
 1. Transitive package restore 
 
 2. New package format 
 
-These changes bring in a lot of flexibility, performance enhancements and support for new scenarios, as well as a few breaking changes. 
+These changes bring a lot of flexibility, performance enhancements and support for new scenarios, as well as a few breaking changes. 
 
 These two new concepts enabled .NET to ship in the form of NuGet packages instead of globally installed. 
 
@@ -16,13 +16,13 @@ Starting from Visual Studio 2015, several project types are utilizing this techn
 
 2. Portable class libraries (PCL). 
 
-3. ASP.NET 5 applications. 
+3. ASP.NET Core applications. 
 
 These changes enable .NET to span multiple platforms with a common surface area as well as evolve rapidly and ship updates directly on NuGet.org.  
 
 ## Transitive Package Restore  ##
 
-In project using NuGet we are going to have two types of configuration files. 
+In projects using NuGet we are going to have two types of configuration files. 
 
 1. Packages.config 
 
