@@ -28,9 +28,12 @@ also open the dialog box from a Solution Explorer context menu.
 The PowerShell cmdlets require PowerShell 
 2.0. Therefore, NuGet requires one of the following operating systems:
 
-* Windows 8
+* Windows 10
+* Windows 8 or 8.1
 * Windows 7
 * Windows Vista SP1
+* Windows Server 2012 R2
+* Windows Server 2012
 * Windows Server 2008
 * Windows Server 2008 R2
 * Windows Server 2003 SP2
