@@ -175,6 +175,14 @@ When you select a specific repository under the Online tab, that restricts insta
 The reason for this behavior is that in many cases, users of a local repository don't want to accidentally 
 install a remote package due to corporate polices.
 
+**I have multiple projects in the same folder, how can I use separate packages.config or project.json files for each project?**
+
+In most projects where separate projects live in separate folders, this is not a problem as NuGet will identify the packages.config and project.json files in the same folder as the project file.  As of NuGet 3.3, for multiple projects in the same folder you can insert the name of the project into the packages.config or project.json filename and NuGet will use that file.  The naming convention is as follows:
+
+* `packages.config` shall match the pattern `packages.{project-name}.config`
+* `project.json` shall match the pattern `{project-name}.project.json`
+
+
 ## Managing Packages in NuGet.Org
 
 **Is it possible to reserve names for packages that will be published in future?**
