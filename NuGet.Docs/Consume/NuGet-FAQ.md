@@ -208,7 +208,7 @@ For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or
 
 **Why can't I download / upload packages to NuGet.org?**
 
-When downloading and uploading to NuGet does not work, it's best to [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information such as MTR or a Fiddler trace.
+When downloading and uploading to NuGet does not work, it's best to [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information such as MTR or a Fiddler trace, as well as the operating system you are using, machine configuration (CPU, Network, hard drive), is your machine behind a proxy or firewall, and what version of .NET is installed on the machine. If you are use new cross platform tools (such as .NET CLI, or DNU) please indicate the exact version you are using.
 
 Also please make sure you are using the latest version of NuGet either in visual studio or on the commandline. When you communicate with support, please include the version of your NuGet tools, the package sources you are using, a restore log (with detailed verbosity), and MTR/Fiddler traces if possible.
 '
