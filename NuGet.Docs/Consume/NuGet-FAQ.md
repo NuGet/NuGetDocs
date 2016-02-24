@@ -5,6 +5,8 @@
 
 **What is required to run NuGet?**
 
+In general we recommend picking the latest version of NuGet (not that it requires .NET 4.5), you can find it in [in our download page](http://dist.nuget.org/index.html)
+
 NuGet requires Visual Studio 2010 Pro/Premium/Ultimate (or newer), Visual Web Developer Express 2010, or any Express SKU of Visual Studio 2012 (or newer).
 The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.microsoft.com/kb/968929) be installed. 
 Powershell 2.0 is already installed if you have the following operating systems:
@@ -32,7 +34,7 @@ Details of the features that have currently been tested to work with Linux and O
 
 **Is there a command-line tool for NuGet?**
 
-**Yes there is!** See David Ebbo's Blog post entitled [Installing NuGet Packages directly from the command line](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html).
+**Yes there is!** You can find it [here](http://dist.nuget.org/index.html), also see David Ebbo's Blog post entitled [Installing NuGet Packages directly from the command line](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html).
 
 Keep in mind that the focus of NuGet is to let you modify your projects and add references to Visual Studio projects. 
 The command line tool, NuGet.exe, will download and unpack packages, but it won't automate Visual Studio and 
@@ -55,6 +57,8 @@ Alternatively, you can launch the Package Manager Console and type in `$host` to
 Powershell host including the version.
 
 **What languages are supported by NuGet?**
+
+Generally NuGet is a good tool for .NET languages, it is designed primarily around bringing .NET dlls into your project. Since it also supports msbuild and visual studio automation in some project types it supports other projects and languages types with various degrees of completeness.
 
 The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects. For learning more about support for C++, check out our [blog post](http://blog.nuget.org/20130426/native-support.html) for more details.
 
@@ -197,16 +201,17 @@ Check out [Managing Package Owners on nuget.org](/Create/Managing-Package-Owners
 
 We encourage the NuGet community to work together to resolve any disputes that may arise between package owners and the owners of other software.  We have crafted a [dispute resolution process](/Consume/Dispute-Resolution) that we ask you to follow before NuGet.org administrators intercede.
 
-
 **Is it recommended to upload my test packages to NuGet.org ?**
 
-For test purposes, you can use [staging.nuget.org](http://staging.nuget.org). Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
+For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public nuget servers like https://myget.org (public and private feeds) or [Visual Studio Online](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/) . Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
 
 
 **Why can't I download / upload packages to NuGet.org?**
 
 When downloading and uploading to NuGet does not work, it's best to [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information such as MTR or a Fiddler trace.
 
+Also please make sure you are using the latest version of NuGet either in visual studio or on the commandline. When you communicate with support, please include the version of your NuGet tools, the package sources you are using, a restore log (with detailed verbosity), and MTR/Fiddler traces if possible.
+'
 To capture MTR:
 
 > 1. Download WinMTR from [http://winmtr.net/download/](http://winmtr.net/)
