@@ -28,7 +28,7 @@ In this version we introduced the init and add commands to initialize [folder-ba
 
 ## ContentFiles
 
-Content is now supported in project.json managed projects through the new `contentFiles` folder and nuspec `contentFiles` element notation.  This content can be more directly specified by the package author for interactions with project systems.  More information about how to configure contentFiles in a NuSpec document can be found in the [NuSpec Reference](http://docs.nuget.org/Create/NuSpec-References#contentfiles-with-nuget-3.3-and-later).
+Content is now supported in project.json managed projects through the new `contentFiles` folder and nuspec `contentFiles` element notation.  This content can be more directly specified by the package author for interactions with project systems.  More information about how to configure contentFiles in a NuSpec document can be found in the [NuSpec Reference](http://docs.nuget.org/Create/Nuspec-Reference#contentfiles-with-visual-studio-2015-update-1-and-later).
 
 ## NuGet Locals Cache Management 
 
