@@ -12,17 +12,16 @@ To build NuGet.VisualStudioExtension, execute the following steps:
 1. Add the directory of msbuild 14, e.g. C:\Program Files (x86)\MSBuild\14.0\Bin, to PATH
 1. Download the latest version of [NuGet.exe](https://www.nuget.org/nuget.exe), and add its directory to PATH
 1. Start powershell. Create a directory, cd into that directory
-1. Clone NuGet/Home repository
+1. Clone NuGet/NuGet.Client repository
 
-        git clone https://github.com/NuGet/Home.git
-1. Clone dependencies
+        git clone https://github.com/NuGet/NuGet.Client.git
 
-        Home\clone-repos.ps1
 1. Build NuGet
 
-        Home\build-nuget.ps1 -configuration debug -clean .
+        .\build.ps1 -CleanCache
 
-The generated vsix will be NuGet.VisualStudioExtension\src\VsExtension\bin\Debug\NuGet.Tools.vsix.
+The generated vsix will be in the artifacts folder
+
 For more details, please visit the [NuGet/Home repository](https://github.com/NuGet/Home/blob/master/README.md)
 
 ## Setup Debugging for VS2015
