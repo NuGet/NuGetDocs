@@ -54,4 +54,4 @@ Select NuGet in the list and click **Update**.  When the update is complete, clo
 
 # Installing a CI build
 
-We currently don't provide the latest VSIX CI builds, but are looking into restoring this at some point.
+We currently don't provide the latest VSIX CI builds, but are looking into restoring this at some point. CI builds for the command line tools and packages are available on https://myget.org/gallery/nugetbuild
