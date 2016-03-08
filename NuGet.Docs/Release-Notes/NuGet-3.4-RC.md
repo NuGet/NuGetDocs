@@ -9,6 +9,8 @@ NuGet 3.4-RC was released March 3, 2016 alongside the Visual Studio 2015 Update 
 *  Performance improvements
 *  Minor UI improvements
 
+The following features are available in this RC, with more planned for the 3.4 final release.
+
 ## New Features
 
 * NuGet clients now support gzip content-encoding from repositories
@@ -18,13 +20,12 @@ NuGet 3.4-RC was released March 3, 2016 alongside the Visual Studio 2015 Update 
 
 ## New User Interface Features
 
+* 'All' package sources search has been reintroduced with improved support for slower package repositories
 * Significant performance improvements especially on the Installed, Updates, and Consolidate tabs
 * Installed and Updates tabs are now sorted alphabetically
 * Added a Refresh button that allows a search to be refreshed
-* 'All' package sources search has been reintroduced with improved support for slower package repositories
 
 ## Updates and Improvements
-
 
 * Packages referenced in project.json that have a floating version will not update on every build. Instead, they will update only when forced to restore, clean, rebuild, or modify project.json.
 * NuGet.org repository sources are no longer forced into a project configuration when you use the NuGet configuration UI.
