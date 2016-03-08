@@ -20,7 +20,6 @@ The following features are available in this RC, with more planned for the 3.4 f
 
 ## New User Interface Features
 
-* 'All' package sources search has been reintroduced with improved support for slower package repositories
 * Significant performance improvements especially on the Installed, Updates, and Consolidate tabs
 * Installed and Updates tabs are now sorted alphabetically
 * Added a Refresh button that allows a search to be refreshed
