@@ -86,6 +86,8 @@ Below an example of NuGet configuration file that specifies some of the availabl
 
 ## Chaining multiple configuration files
 
+In general the NuGet.config file closest to the folder nuget.exe runs from wins, the section below walks through the details.
+
 NuGet first loads NuGet.config from the default location, then loads any file named NuGet.config starting from the root of the current drive and ending in the current directory.
 
 Current directory is defined as:
@@ -166,9 +168,9 @@ NuGet will load:
 * **When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
 
 ## NuGet config extensibility point
-NuGet config files are read in the following order, assuming the solution directory is c:\a\b\c:
+NuGet config files are treated in the following priority order (closest to the folder nuget.exe runs from wins), for example assuming the solution directory is c:\a\b\c:
 
-* c:\a\b\c\\.nuget\nuget.config
+* c:\a\b\c\\.nuget\nuget.config - This file is only used for solution level packages, and is not supported in nuget 3.0 - 3.4
 * c:\a\b\c\nuget.config
 * c:\a\b\nuget.config
 * c:\a\nuget.config
@@ -198,8 +200,7 @@ With NuGet 2.6, the machine wide package sources are now shown in Package Manage
 
 
 # NuGet Configuration Settings
-There are a bunch of NuGet configuration values which can be set via the nuget.config file.
-Below is the summary of the NuGet config keys and their usage.
+Below is the summary of the NuGet configuration keys and values that can be set via the nuget.config files.
 
 <h3> Repository Path </h3>
  Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder.
