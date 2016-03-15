@@ -36,6 +36,24 @@ NuGet will perform the following actions:
 
 It is recommended to always specify a version or version range for package dependencies.
 
+## Normalized Version Numbers
+
+<p class="caution">This is a breaking change from NuGet clients prior to 3.4</p>
+
+As part of repository query operations, NuGet clients recognize that there are as many as four numbers in a version that are separated by periods and will normalize those numbers by removing leading zeroes.  Additionally, the clients will omit the fourth part of a version when the value is zero.  This version parsing is executed when installing a package, updating a package, or restoring packages based on version numbers in packages.config or project.json.  However, the NuGet clients will not modify the version value stored in a nuspec and that value will be normalized for the purpose of supporting a uniform query.
+
+NuGet repositories must treat these values in the same way as the NuGet client to prevent package version duplication.  Package 1 v 1.0 should not also host v1.0.0 as a separate and different package.
+
+The following table illustrates how NuGet will normalize these version numbers and the expected response from the NuGet repository:
+
+User input|Id in nuspec|Request|Response|
+----------|------------|-------|--------|
+1.0|1.0.0.0|1.0.0|Value in nuspec|
+1.00|1.0|1.0.0|Value in nuspec|
+1.00.0.1|1.0.0.1|1.0.0.1|Value in nuspec|
+1.0.01.0|1.0.01|1.0.1|Value in nuspec|
+
+
 ## Examples
 The following example specifies a dependency on any version of ExamplePackage that begins with a 1 or a 2. 
 The square bracket indicates that the 1 is included, while the parenthesis indicates that 3 is excluded.
