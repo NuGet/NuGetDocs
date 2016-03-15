@@ -5,7 +5,7 @@
 
 **What is required to run NuGet?**
 
-In general we recommend picking the latest version of NuGet (not that it requires .NET 4.5), you can find it in [in our download page](http://dist.nuget.org/index.html)
+In general we recommend picking the latest version of NuGet (note that it requires .NET 4.5), you can find it in [in our download page](http://dist.nuget.org/index.html)
 
 NuGet requires Visual Studio 2010 Pro/Premium/Ultimate (or newer), Visual Web Developer Express 2010, or any Express SKU of Visual Studio 2012 (or newer).
 The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.microsoft.com/kb/968929) be installed. 
