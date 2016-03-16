@@ -186,6 +186,13 @@ In most projects where separate projects live in separate folders, this is not a
 * `packages.config` shall match the pattern `packages.{project-name}.config`
 * `project.json` shall match the pattern `{project-name}.project.json`
 
+**Help! I don't see nuget.org in my list of repositories, how do I get it back?**
+
+There are two ways to get it back:
+
+* Add `https://api.nuget.org/v3/index.json` to your list of sources
+* Delete your NuGet.config file at `%appdata%\nuget` and the client will recreate it
+
 
 ## Managing Packages in NuGet.Org
 
