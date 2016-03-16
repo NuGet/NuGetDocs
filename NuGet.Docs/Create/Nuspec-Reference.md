@@ -525,6 +525,17 @@ Packaged Result: `Content\images\foo.bar\Neatpick.png`
 
 Note: Because the target "extension" doesn't match the src extension, NuGet treats it as a directory.
 
+#### Content files without extensions
+
+To make sure extensionless files are captured by wildcard match use `**` or `*`
+
+Source Contains: `flags\installed`
+
+    <file src="flags\**" target="flags" />
+
+Packaged Result: `flags\installed`
+
+
 #### Content file with deep path and deep target
 
     <file src="css\cool\style.css" target="Content\css\cool" />
