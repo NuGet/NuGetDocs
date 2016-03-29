@@ -51,7 +51,7 @@ The following features were previously added in the RC and have been updated or 
 * __Issue:__ NuGet v2 protocol redirects are broken.
 Custom NuGet repositories that redirect requests to an alternative host do not honor the redirect request.
 * __Workaround:__  To work around this issue, configure the package repository URI in settings to point to the redirected server location.
-For more information, see [GitHub issue #387](http://github.com/nuget/home/issues/387). 
+For more information, see [GitHub pull request #387](https://github.com/NuGet/NuGet.Client/pull/387). 
  
 
 We continue to track issues on our GitHub issues list which can be found at: [http://github.com/nuget/home/issues](http://github.com/nuget/home/issues)
