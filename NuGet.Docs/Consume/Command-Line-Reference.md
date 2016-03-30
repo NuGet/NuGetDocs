@@ -857,6 +857,10 @@ Gets or sets NuGet config values.
 
 	nuget locals <all | http-cache | packages-cache | global-packages> -clear
 
+[v3.4] Added clearing of the temp folder.
+
+	nuget locals <all | http-cache | packages-cache | global-packages | temp> -clear
+
 Locals Command Options
 
 <table>
