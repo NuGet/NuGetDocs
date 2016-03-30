@@ -299,7 +299,7 @@ file:
 
 ##  Delete Command
 
-Deletes a package from the server.
+Deletes or unlists a package from the server. For NuGet.org, the action is to [unlist the package](../Create/Deleting-Packages).
 
 ### Delete Command Usage
     nuget delete <package Id> <package version> [API Key] [options]
