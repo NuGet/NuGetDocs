@@ -11,7 +11,8 @@ A feed can be local (a folder on the local machine or a network folder), or remo
 (an intranet or internet URL).
 
 There are several third-party NuGet Servers available that make remote private feeds easy
-to configure and set-up, including [MyGet](http://myget.org), 
+to configure and set-up, including [Visual Studio Team Services](https://marketplace.visualstudio.com/items?itemName=ms.feed),
+[MyGet](http://myget.org), 
 [Inedo's ProGet](http://inedo.com/proget), 
 [JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview),
 [NuGet Server](http://nugetserver.net/), and 
