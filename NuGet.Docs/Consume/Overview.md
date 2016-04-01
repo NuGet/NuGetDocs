@@ -14,8 +14,8 @@ default source for NuGet, and you can contribute to that feed or create your own
 
 ## NuGet User Interface in Visual Studio
 
-NuGet runs in all versions and SKUs of Visual Studio 2010, Visual Studio 2012 and Visual Studio 2013. 
-For Visual Studio 2012 and Visual Studio 2013, NuGet is shipped in-the-box. For Visual Studio 2010, NuGet can be downloaded 
+NuGet runs in all versions and SKUs of Visual Studio starting with Visual Studio 2010. 
+For Visual Studio 2012 and later, NuGet is shipped in-the-box. For Visual Studio 2010, NuGet can be downloaded 
 from the [Visual Studio Extension Gallery] (http://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c).
 
 You can find, install, remove, and update packages by using the [**Manage NuGet Packages**] (/Consume/Package-Manager-Dialog) dialog box 
