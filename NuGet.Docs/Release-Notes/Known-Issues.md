@@ -2,6 +2,14 @@
 
 These are the most common known issues with NuGet that are repeatedly reported. If you are having trouble installing NuGet or managing packages, please take a look through these known issues and their resolutions.
 
+## Error installing packages with NuGet 3.4, 3.4.1
+
+** Problem:**
+
+In NuGet 3.4 and 3.4.1, when attempting to install packages and an error message is presented: "NuGet operation failed - NuGet.Config is not valid XML..."
+
+The NuGet.config file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the NuGet.config file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new NuGet.Config file will be generated and you will be able to proceed.
+
 ## Error installing packages with NuGet 2.7
 
 **Problem:**
