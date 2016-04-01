@@ -46,13 +46,24 @@ NuGet repositories must treat these values in the same way as the NuGet client t
 
 The following table illustrates how NuGet will normalize these version numbers and the expected response from the NuGet repository:
 
-User input|Id in nuspec|Request|Response|
-----------|------------|-------|--------|
-1.0|1.0.0.0|1.0.0|Value in nuspec|
-1.00|1.0|1.0.0|Value in nuspec|
-1.00.0.1|1.0.0.1|1.0.0.1|Value in nuspec|
-1.0.01.0|1.0.01|1.0.1|Value in nuspec|
-
+<table>
+<thead>
+<tr>
+<th>User input</th><th>Id in nuspec</th><th>Request</th><th>Response</th>
+</tr>
+<tr>
+<td>1.0</td><td>1.0.0.0</td><td>1.0.0</td><td>Value in nuspec</td>
+</tr>
+<tr>
+<td>1.00</td><td>1.0</td><td>1.0.0</td><td>Value in nuspec</td>
+</tr>
+<tr>
+<td>1.00.0.1</td><td>1.0.0.1</td><td>1.0.0.1</td><td>Value in nuspec</td>
+</tr>
+<tr>
+<td>1.0.01.0</td><td>1.0.01</td><td>1.0.1</td><td>Value in nuspec</td>
+</tr>
+</table>
 
 ## Examples
 The following example specifies a dependency on any version of ExamplePackage that begins with a 1 or a 2. 
