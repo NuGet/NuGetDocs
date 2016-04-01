@@ -46,7 +46,7 @@ NuGet repositories must treat these values in the same way as the NuGet client t
 
 The following table illustrates how NuGet will normalize these version numbers and the expected response from the NuGet repository:
 
-<table width="100%" class="reference">
+<table class="reference">
 <thead>
 <tr>
 <th>User input</th><th>Id in nuspec</th><th>Request</th><th>Response</th>
