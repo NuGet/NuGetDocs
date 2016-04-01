@@ -4,9 +4,11 @@ These are the most common known issues with NuGet that are repeatedly reported. 
 
 ## Error installing packages with NuGet 3.4, 3.4.1
 
-** Problem:**
+**Problem:**
 
-In NuGet 3.4 and 3.4.1, when attempting to install packages and an error message is presented: "NuGet operation failed - NuGet.Config is not valid XML..."
+In NuGet 3.4 and 3.4.1, when using the NuGet add-in, no sources are reported as available and you are unable to add new sources in the configuration window. The result is similar to the image below:
+
+![NuGet config with no sources](../images/knownIssue-34-NoSources.PNG)
 
 The NuGet.config file in your `%AppData%\NuGet\` folder has accidentally been emptied. To fix this: Close Visual Studio 2015, delete the NuGet.config file in the `%AppData%\NuGet\` folder and restart Visual Studio.  A new NuGet.Config file will be generated and you will be able to proceed.
 
