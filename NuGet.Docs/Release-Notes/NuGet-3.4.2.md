@@ -12,11 +12,11 @@ scenario where updates on packages with deep dependency graphs took a really lon
 
 ##Fixes
 
-* Fixed an issue where NuGet.org source was missing in NuGet settings or config after updating to 3.4.1
-* Fixed an issue where a casing change to FindPackagesById in 3.4.1 breaks Artifactory 
-* Corrected an issue with FIPS that caused failures with NuGet restore with nuget.exe
-* Fixed a crash when browsing sources with invalid icon URL
-* Fixed an issue with merging versions when results from a source is delayed
+* Fixed an issue where NuGet.org source was missing in NuGet settings or config after updating to 3.4.1.
+* Fixed an issue where a casing change to FindPackagesById in 3.4.1 breaks Artifactory.
+* Corrected an issue with FIPS that caused failures with NuGet restore with nuget.exe.
+* Fixed a crash when browsing sources with invalid icon URL.
+* Fixed issues with merging versions and entries from 'All Sources'.
 
 
-For the complete list of fixes and improvements in this release, check out the list of issues [here] (https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+)
+For the complete list of fixes and improvements in this release, check out the list of issues [here] (https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).
