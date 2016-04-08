@@ -740,15 +740,6 @@ Specify the path to source package source to be copied from and the path to the 
         <td>Verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, detailed.</td>
     </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
-        is used as configuration file.</td>
-    </tr>
 </table>
 
 ### Init Command Examples
@@ -790,15 +781,6 @@ Specifies the path to the package to be added and the package source, which is a
     <tr>
         <td>Verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, detailed.</td>
-    </tr>
-    <tr>
-        <td>NonInteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-    <tr>
-        <td>ConfigFile</td>
-        <td>The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
-        is used as configuration file.</td>
     </tr>
 </table>
 
