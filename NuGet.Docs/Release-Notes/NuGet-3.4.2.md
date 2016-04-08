@@ -1,8 +1,11 @@
-# NuGet 3.4.1 Release Notes
+# NuGet 3.4.2 Release Notes
 
 [NuGet 3.4 Release Notes](nuget-3.4) 
 
 NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.
+
+## Nuget.exe 3.4.2 RC is now available
+* You can download the release candidate of NuGet.exe 3.4.2 [here]()
 
 ## Updates and Improvements
 
@@ -17,6 +20,13 @@ NuGet 3.4.2 was released on April 8, 2016 to address several issues that were id
 * Corrected an issue with FIPS that caused failures with NuGet restore with nuget.exe.
 * Fixed a crash when browsing sources with invalid icon URL.
 * Fixed issues with merging versions and entries from 'All Sources'.
+
+## Known Issues in 3.4.2 Windows x86 Commandline (RC) 
+
+These issues will be fixed early next week before we hit RTM.
+
+*  Running nuget restore on a solution will fail if the solution file is placed in a lower folder hierarchy than the project files.
+*  nuget delete command on a package using the V2 feed will fail. Use V3 feed instead.
 
 
 For the complete list of fixes and improvements in this release, check out the list of issues [here] (https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).
