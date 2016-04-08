@@ -312,10 +312,6 @@ Specify the Id and version of the package to delete from the server.
         <td>Specifies the server URL.</td>
     </tr>
     <tr>
-        <td>NoPrompt</td>
-        <td>Do not prompt when deleting.</td>
-    </tr>
-    <tr>
         <td>ApiKey</td>
         <td>The API key for the server.</td>
     </tr>
@@ -342,7 +338,7 @@ Specify the Id and version of the package to delete from the server.
 
     nuget delete MyPackage 1.0
 
-    nuget delete MyPackage 1.0 -NoPrompt
+    nuget delete MyPackage 1.0 -NonInteractive
 
 ##  List Command
 
