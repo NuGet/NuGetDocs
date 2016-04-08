@@ -5,12 +5,13 @@
 NuGet 3.4.2 was released on April 8, 2016 to address several issues that were identified in the 3.4 and 3.4.1 release.
 
 ## Nuget.exe 3.4.2 RC is now available
-* You can download the release candidate of NuGet.exe 3.4.2 [here]()
+
+You can download the release candidate of NuGet.exe 3.4.2 [here](https://dist.nuget.org/index.html).
 
 ## Updates and Improvements
 
 * We have significantly improved the performance of updates in a specific scenario, where updates on packages with deep dependency graphs took a really long time and hung Visual Studio.
-* In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI, which was partially responsible for some timeout issues customers where seeing there in 3.4/3.4.1.
+* In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI. This was partially responsible for some timeout issues customers experienced in 3.4/3.4.1.
 * Added support for no_proxy setting
 
 ##Fixes
@@ -29,4 +30,4 @@ These issues will be fixed early next week before we hit RTM.
 *  nuget delete command on a package using the V2 feed will fail. Use V3 feed instead.
 
 
-For the complete list of fixes and improvements in this release, check out the list of issues [here] (https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).
+For the complete list of fixes and improvements in this release, check out the list of issues [here](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).
