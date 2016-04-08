@@ -11,6 +11,7 @@ You can download the release candidate of NuGet.exe 3.4.2 [here](https://dist.nu
 ## Updates and Improvements
 
 * We have significantly improved the performance of updates in a specific scenario, where updates on packages with deep dependency graphs took a really long time and hung Visual Studio.
+* nuget restore without network traffic is 2.5x – 3x faster within Visual Studio.
 * In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI. This was partially responsible for some timeout issues customers experienced in 3.4/3.4.1.
 * Added support for no_proxy setting
 
