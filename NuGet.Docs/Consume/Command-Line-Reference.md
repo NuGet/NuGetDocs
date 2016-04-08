@@ -338,7 +338,7 @@ Specify the Id and version of the package to delete from the server.
 
     nuget delete MyPackage 1.0
 
-    nuget delete MyPackage 1.0 -NoPrompt
+    nuget delete MyPackage 1.0 -NonInteractive
 
 ##  List Command
 
