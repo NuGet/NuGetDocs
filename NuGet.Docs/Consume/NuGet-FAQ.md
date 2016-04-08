@@ -212,6 +212,15 @@ We encourage the NuGet community to work together to resolve any disputes that m
 
 For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public nuget servers like https://myget.org (public and private feeds) or [Visual Studio Online](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/) . Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
 
+**What is the maximum size of packages I can upload to NuGet.org?**
+
+NuGet.org allows uploading packages up to 250MB. As a best practice, we recommend uploading smaller packages that are < 1 MB and using dependencies to link together packages. As a rule of thumb, packages contain only one assembly to avoid collissions.
+
+NuGet's protocol for downloading packages is HTTP. The bigger the package, the higher the chance for failed installs. It is much easier to retry and download small packages than large ones.
+
+It is possible to share dependencies between multiple packages, making the total download size for consumers of your NuGet packages smaller.
+
+Dependencies are mostly static and never change. When fixing a bug in code, the dependencies may not have to be updated. If your dependencies ship in the same package you end up reshipping the large packages every time. By splitting NuGet packages into smaller chunks (dependencies), upgrades are much more fine-grained for the end user of the NuGet package.
 
 **Why can't I download / upload packages to NuGet.org?**
 
