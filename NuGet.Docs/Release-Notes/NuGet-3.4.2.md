@@ -27,7 +27,7 @@ You can download the release candidate of NuGet.exe 3.4.2 [here](https://dist.nu
 These issues will be fixed early next week before we hit RTM.
 
 *  Running nuget restore on a solution will fail if the solution file is placed in a lower folder hierarchy than the project files.
-*  nuget delete command on a package using the V2 feed will fail. Use V3 feed instead.
+*  Running nuget delete command on a package using the V2 feed will fail. Use V3 feed instead.
 
 
 For the complete list of fixes and improvements in this release, check out the list of issues [here](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+milestone%3A3.4.2++is%3Aclosed+).
