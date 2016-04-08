@@ -6,8 +6,8 @@ NuGet 3.4.2 was released on April 8, 2016 to address several issues that were id
 
 ## Updates and Improvements
 
-* While we continue to invest heavily in performance improvements to package update, we have significantly improved the performance of updates in a specific
-scenario where updates on packages with deep dependency graphs took a really long time and hung Visual Studio. 
+* We have significantly improved the performance of updates in a specific scenario, where updates on packages with deep dependency graphs took a really long time and hung Visual Studio.
+* In addition to this change, we have fixed an issue where we were hitting the network twice when fetching the update count in the VS UI, which was partially responsible for some timeout issues customers where seeing there in 3.4/3.4.1.
 * Added support for no_proxy setting
 
 ##Fixes
