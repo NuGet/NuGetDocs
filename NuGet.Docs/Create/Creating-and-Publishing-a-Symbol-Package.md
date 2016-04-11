@@ -97,7 +97,7 @@ To make life easier, first save your API key as usual:
 This will save your API key for both [NuGet.org](http://nuget.org) and [SymbolSource.org](http://symbolsource.org). 
 When you publish to SymbolSource, it contacts the NuGet Gallery to verify that you are an owner of the project.
 
-You can push a symbol package separately, which will automatically choose [SymbolSource.org](http://symbolsource.org) as the target:
+You can push a symbol package separately, which will automatically choose the new SymbolSource.org [service](https://nuget.smbsrc.net/) as the target:
 
  	NuGet Push MyPackage.symbols.nupkg
 
@@ -110,6 +110,6 @@ You can also push both packages to both repositories at the same time:
 
  	NuGet Push MyPackage.nupkg
 
-If the presence of a `.symbols.nupkg` package is detected it will be automatically pushed to [SymbolSource.org](http://symbolsource.org).
+If the presence of a `.symbols.nupkg` package is detected it will be automatically pushed to the new SymbolSource.org service hosted at https://nuget.smbsrc.net/.
 
 
