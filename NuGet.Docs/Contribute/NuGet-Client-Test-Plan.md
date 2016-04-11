@@ -4,6 +4,8 @@
 *    Visual Studio 2010
 *    Visual Studio 2012
 *    Visual Studio 2013
+*    Visual Studio 2015
+*    Visual Studio 15 Preview
 *    In-Development Visual Studio Release
 
 ## Visual Studio SKUs
@@ -11,14 +13,17 @@
 *    Visual Studio Express for Desktop
 *    Visual Studio Express for Phone
 *    Visual Studio Express for Windows 8
+*    Visual Studio Community
 *    Visual Studio Premium
 *    Visual Studio Professional 
 *    Visual Studio Ultimate
+*	 Visual Studio Enterprise
 
 ## OS
 *    Windows XP
 *    Windows 7
-*    Windows 8
+*    Windows 8/8.1
+*    Windows 10
 
 ## Pivots
 *    Functional
