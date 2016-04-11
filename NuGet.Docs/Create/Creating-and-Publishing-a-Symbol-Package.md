@@ -3,12 +3,11 @@
 ## Introduction
 
 Apart from building library/content packages and publishing them to [NuGet.org](http://nuget.org),
-NuGet also supports creating symbol/source packages and publishing them to [SymbolSource.org](http://symbolsource.org).
+NuGet also supports creating symbol/source packages and publishing them to the new [SymbolSource.org](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/)service.
 When a package is published to both repositories, Visual Studio can be configured to automatically download 
 PDB files associated with installed packages and allow the developer to use a debugger to step into source 
 files on-demand from Visual Studio. This is a built-in feature of the IDE, that can also be used to debug 
-.NET Framework code using [Microsoft Reference Source](http://referencesource.microsoft.com/) servers.
-It is only required to add a new symbol source in the debugger configuration (see [here](http://www.symbolsource.org/Public/Home/VisualStudio) for detailed instructions):
+.NET Framework code using [Microsoft Reference Source](http://referencesource.microsoft.com/) servers. It is only required to add a new symbol source (given below) in the debugger [options](https://msdn.microsoft.com/en-us/library/x54fht41(v=vs.90).aspx).
 
 	https://nuget.smbsrc.net/
 
