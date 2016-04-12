@@ -305,6 +305,9 @@ Deletes or unlists a package from the server. For NuGet.org, the action is to [u
     nuget delete <package Id> <package version> [API Key] [options]
 
 Specify the Id and version of the package to delete from the server.
+
+Note: In the -Source paramter, you can choose to either use https://www.nuget.org/ or https://www.nuget.org/api/v3. If you use the https://www.nuget.org/api/v2 endpoint, this command will fail. 
+
 ### Delete Command Options
 <table>
     <tr>
