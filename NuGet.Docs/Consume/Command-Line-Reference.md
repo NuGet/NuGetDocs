@@ -310,11 +310,9 @@ Specify the Id and version of the package to delete from the server.
 <table>
     <tr>
         <td>Source</td>
-        <td>Specifies the server URL. Supported URL's for nuget.org include
-         * http://www.nuget.org 
-         * http://www.nuget.org/api/v3
-         * http://www.nuget.org/api/v2/package
-         For private feeds, substitute the host name (e.g <host>/api/v3) </td>
+        <td>Specifies the server URL. Supported URL's for nuget.org include - http://www.nuget.org,
+        http://www.nuget.org/api/v3,
+        http://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3) </td>
     </tr>
     <tr>
         <td>NoPrompt</td>
