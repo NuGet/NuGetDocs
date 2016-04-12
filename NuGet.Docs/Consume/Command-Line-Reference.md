@@ -305,11 +305,14 @@ Deletes or unlists a package from the server. For NuGet.org, the action is to [u
     nuget delete <package Id> <package version> [API Key] [options]
 
 Specify the Id and version of the package to delete from the server.
+
 ### Delete Command Options
 <table>
     <tr>
         <td>Source</td>
-        <td>Specifies the server URL.</td>
+        <td>Specifies the server URL. Supported URL's for nuget.org include - http://www.nuget.org,
+        http://www.nuget.org/api/v3,
+        http://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3).</td>
     </tr>
     <tr>
         <td>ApiKey</td>
