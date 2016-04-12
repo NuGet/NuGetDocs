@@ -306,13 +306,15 @@ Deletes or unlists a package from the server. For NuGet.org, the action is to [u
 
 Specify the Id and version of the package to delete from the server.
 
-Note: In the -Source paramter, you can choose to either use https://www.nuget.org/ or https://www.nuget.org/api/v3. If you use the https://www.nuget.org/api/v2 endpoint, this command will fail. 
-
 ### Delete Command Options
 <table>
     <tr>
         <td>Source</td>
-        <td>Specifies the server URL.</td>
+        <td>Specifies the server URL. Supported URL's for nuget.org include
+         * http://www.nuget.org 
+         * http://www.nuget.org/api/v3
+         * http://www.nuget.org/api/v2/package
+         For private feeds, substitute the host name (e.g <host>/api/v3) </td>
     </tr>
     <tr>
         <td>NoPrompt</td>
