@@ -16,10 +16,10 @@ More details [here](../Release-Notes/NuGet-2.1#specify-%E2%80%98packages%E2%80%9
       <add key="repositoryPath" value="C:\Temp" />
     </config>
 
-Or for relative path (note the forward slashes for relative path), note: relative path is only relative to the solution folder.
+You can also provide a relative path (note the forward slashes for relative path).
 
 <p class="info">
-<strong>Note</strong><br/>Relative path is only relative to the solution folder.
+<strong>Note</strong><br/>Relative path is only relative to NuGet.config file location.
 </p>
 
     <config>
