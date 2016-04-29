@@ -22,7 +22,7 @@ Most NuGet client tools are based on the cross-platform `NuGet.Core` project. If
 
 This is a command line wrapper around NuGet.Core.
 
-More info: [NuGet Command Line Reference](Command-Line-Reference)
+More info: [NuGet Command Line Reference](/Consume/Command-Line-Reference)
 
 ### NuGet Server project
 * License: Apache v2

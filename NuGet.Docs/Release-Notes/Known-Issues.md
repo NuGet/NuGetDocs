@@ -2,6 +2,20 @@
 
 These are the most common known issues with NuGet that are repeatedly reported. If you are having trouble installing NuGet or managing packages, please take a look through these known issues and their resolutions.
 
+## Authentication issues with NuGet feeds in VSTS with nuget.exe v3.4.3
+
+**Problem:**
+
+When we use the following command to store the credentials, we end up double encrypting the Personal Access Token.
+
+$PAT = "Your personal access token"
+$Feed = "Your url"
+.\nuget.exe sources add -Name Test -Source $Feed -UserName $UserName -Password $PAT
+
+**Workaround:**
+
+Store passwords in clear text using the [-StorePasswordInClearText](https://docs.nuget.org/consume/nuget-config-settings) option.
+
 ## Error installing packages with NuGet 3.4, 3.4.1
 
 **Problem:**
