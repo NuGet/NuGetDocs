@@ -621,7 +621,7 @@ Specify the path to the package and your API key to push the package to the serv
 <table>
     <tr>
         <td>Source</td>
-        <td>Specifies the server URL. If not specified, nuget.org is used unless DefaultPushSource config value is set in the NuGet config file.
+        <td>Specifies the server URL. Starting with NuGet 3.4.2, this is a **mandatory parameter** unless DefaultPushSource config value is set in the NuGet config file.
         <br />
         Starting with NuGet 2.5, if NuGet.exe identifies a UNC/folder source, it will perform the file copy to the source.
         </td>
@@ -654,6 +654,9 @@ Specify the path to the package and your API key to push the package to the serv
 </table>
 
 ### Push Command Examples
+
+    Starting with NuGet 3.4.2, -Source is a mandatory parameter unless DefaultPushSource config value is set in the NuGet config file.
+    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source https://www.nuget.org/api/v2/package
 
     nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
