@@ -868,7 +868,7 @@ Locals Command Options
 
 ##  Mirror Command
 
-Mirrors a package and its dependencies from the specified source repositories to the target repository.
+Mirrors a package and its dependencies from the specified source repositories to the target repository. Currently this command is not supported in nuget.exe 3.2.0 and above.
 
 <p class="info">
 <strong>Note</strog><br />To enable this command, navigate to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to NuGet.exe.
