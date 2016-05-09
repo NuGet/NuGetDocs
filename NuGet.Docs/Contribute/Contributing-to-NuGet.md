@@ -11,8 +11,8 @@ While writing code is certainly glamorous and gets all the attention, it's not t
 In many cases, it's not even the most **valuable** way to contribute. If you would like to contribute to NuGet to help the project along, consider these options (which are valid for any OSS project, not just NuGet):
 
 * Improve our [documentation](Contributing-to-NuGet-Documentation). Documentation often gets little love and attention in an Open Source project, but those who help with documentation receive tremendous love and kudos from the team. 
-* Submit a <a title="NuGet Issues" href="http://nuget.codeplex.com/WorkItem/Create">bug report</a> (for an excellent guide on submitting good bug reports, read <a title="Painless Bug Tracking" href="http://www.joelonsoftware.com/articles/fog0000000029.html">Painless Bug Tracking</a>). 
-* Submit a <a title="NuGet Issues" href="http://nuget.codeplex.com/WorkItem/Create">feature request</a>. 
+* Submit a <a title="NuGet Issues" href="https://github.com/NuGet/Home/issues">bug report</a> (for an excellent guide on submitting good bug reports, read <a title="Painless Bug Tracking" href="http://www.joelonsoftware.com/articles/fog0000000029.html">Painless Bug Tracking</a>). 
+* Submit a <a title="NuGet Issues" href="https://github.com/NuGet/Home/issues">feature request</a>. 
 * Help verify submitted fixes for bugs. 
 * Help answer questions in the discussions list. 
 * Submit a unit test to help provide code coverage. 

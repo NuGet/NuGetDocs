@@ -36,4 +36,4 @@ With the package installed, you are ready to obtain those services from your cod
 `var installedPackages = installerServices.GetInstalledPackages();`
 
 
-So there you have it. If you find yourself needing to do something that the above services do not provide, feel free to open a discussion on the [NuGet discussions board](http://nuget.codeplex.com/discussions/topics/5362/general "NuGet Discussions Board").
+So there you have it. If you find yourself needing to do something that the above services do not provide, feel free to open an issue on the [NuGet Home repo](https://github.com/NuGet/home/issues "NuGet Discussions Board").
