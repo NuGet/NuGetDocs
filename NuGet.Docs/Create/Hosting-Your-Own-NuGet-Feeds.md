@@ -98,7 +98,7 @@ which will bring up the new project dialog. Select **ASP.NET Web Application** a
 
 ![New Project dialog box](/images/create/New-Project-dialog-box.png)
 
-Next, select the **ASP.NET 4.5 - Empty** template and create the project. This results in a very empty project.
+Next, select the **ASP.NET 4.6 - Empty** template (or higher .NET version) and create the project. This results in a very empty project.
 
 ![New project in Solution Explorer](/images/create/New-project-in-Solution-Explorer.png)
 
