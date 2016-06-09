@@ -3,6 +3,8 @@
 NuGet 3.3 now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds. 
 After you install a Credential Provider, NuGet will automatically acquire and refresh credentials for authenticated feeds as necessary.
 
+Note: Credential providers only work in NuGet.exe (not in dotnet restore or visual studio). There is a single credential provider that is built into the Visual Studio NuGet extension to support Visual Studio Team Services.
+
 NuGet Credential Providers can be used in 3 ways:
 
 1. [Globally](#installing-a-credential-provider-globally)
