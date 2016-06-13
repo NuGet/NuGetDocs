@@ -257,14 +257,14 @@ Once you do that, click on "My Account" to see an API Key that was generated for
 
 In a command console, run the command:
 
-    nuget setApiKey Your-API-Key
+    nuget setApiKey Your-API-Key -Source https://www.nuget.org/api/v2/package
 
 This will store your API key so that you never need to do this step again on 
 this machine.
 
 Push your package to NuGet Gallery using the command:
 	
-	nuget push YourPackage.nupkg
+	nuget push YourPackage.nupkg -Source https://www.nuget.org/api/v2/package
 
 ## Package Conventions
 
