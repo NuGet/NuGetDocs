@@ -145,7 +145,6 @@ This will package your project with the default information provided in the prop
 
 It may be desired to have a copy of the nuget.exe client downloaded prior to the build process.  This feels like it could be a bit of a circular reference, as you will want to have nuget.exe available in order to restore packages to your project before compiling.  To get a fresh nuget.exe after the build, we recommend adding the [MSBuildTasks package](https://www.nuget.org/packages/MSBuildTasks/) to your project in order to enable the WebDownload task.  Add the following lines to your project file in order to force your project to use the WebDownload task and package your project:
 
-	<Import Project="$(MSBuildProjectDirectory)\..\.build\MSBuild.Community.Tasks.targets"/>
 	<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
 	
  		<!-- Only download a new copy of nuget.exe if we don't have a copy available -->
