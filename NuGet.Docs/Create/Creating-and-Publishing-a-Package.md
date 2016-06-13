@@ -137,7 +137,7 @@ It's often a good idea to generate a NuGet package at the end of a successful bu
 
 	<Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
 		
-		<Exec Command="nuget pack MyProject.csproj -Prop Configuration=Release"></Exec>
+		<Exec Command="nuget pack $(ProjectFileName) -Prop Configuration=Release"></Exec>
 	
 	</Target>
  
@@ -151,7 +151,7 @@ It may be desired to have a copy of the nuget.exe client downloaded prior to the
  		<!-- Only download a new copy of nuget.exe if we don't have a copy available -->
 		<WebDownload Condition="!Exists('nuget.exe')" Filename="nuget.exe" FileUri="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
 	
-		<Exec Command="nuget pack ClassLibrary7.csproj -Prop Configuration=Release"></Exec>
+		<Exec Command="nuget pack $(ProjectFileName) -Prop Configuration=Release"></Exec>
 	
 	</Target>
 
