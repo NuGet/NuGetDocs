@@ -4,13 +4,12 @@ html {
 }
 
 body {
-    background-color: #D4D6D7;
     margin: 0 auto;
     font-family: 'Segoe UI', 'Trebuchet MS', 'Verdana', 'Helvetica', 'Sans-Serif';
 }
 
 a {
-    color: #0072C6;
+    color: white;
     text-decoration: none;
 }
 
@@ -20,47 +19,53 @@ a:hover {
 
 @media all and (min-width: 1368px) {
     body {
-        padding: 0px 20px;
+        padding: 0px 0px;
     }
 }
 
 .header, .subnav, .content {
-    padding-left: 85px;
-    padding-right: 85px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .subnav {
     height: 24px;
 }
 
+.header {
+    height: 80px;
+}
+
 @media all and (max-width: 1367px) {
     .header, .subnav, .content {
-        padding-left: 65px;
-        padding-right: 65px;
+        padding-left: 0px;
+        padding-right:0px;
     }
 }
 
 @media all and (max-width: 1023px) {
     .header, .subnav, .content {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
 .header {
-    background-color: white;
-    border-bottom: 1px solid #BDBDBD;
-    margin-bottom: 5px;
+    background-color: #095166;
 }
 
 .header .logo {
-    margin: 20px 20px 0 0;
-    width: 120px;
+    font-size: 2em;
+    color: white;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    float:left;
 }
 
 .header .search {
     float: right;
-    margin: 24px 0 0 0;
+    margin: 24px 20px 0 0;
     height: 30px;
     border: 1px solid #0085B2;
     white-space: nowrap;
@@ -174,7 +179,6 @@ nav ul li a:hover {
 
 .content {
     clear: both;
-    background-color: #ECEEEF;
     padding-top: 5px;
     padding-bottom: 100px;
     margin-top: 4px;

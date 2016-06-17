@@ -1,22 +1,40 @@
 ﻿@using NuGet.Docs
 @helper RenderDocumentationIndex()
 {
-    // Normalize the heading levels to start at 3 in the TOC.
-    const int minHeading = 3;
-    // Maximum depth of the index topic-tree
-    const int maxLevels = 3;
+// Normalize the heading levels to start at 3 in the TOC.
+const int minHeading = 3;
+// Maximum depth of the index topic-tree
+const int maxLevels = 3;
 
-    var topics = Topic.GetTopicsWithSubTopics("~/")
-        .Where(t => t.SubTopics.Any()
-            && !String.Equals(t.Title.ToLowerInvariant(), "release notes"))
-        .OrderBy(t => t.Title.ToLowerInvariant() == "consume" ? 1 : t.Title.ToLowerInvariant() == "create" ? 2 : 3);
-    @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
+var topics = Topic.GetTopicsWithSubTopics("~/")
+    .Where(t => t.SubTopics.Any()
+        && !String.Equals(t.Title.ToLowerInvariant(), "release notes"))
+    .OrderBy(t => t.Title.ToLowerInvariant() == "consume" ? 1 : t.Title.ToLowerInvariant() == "create" ? 2 : 3);
+var orderedList = new List<Topic>();
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Creating Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Consuming Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Hosting Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Create"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Consume"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Host"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Contribute"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "References"; }).First());
+    @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
+
 }
 
 @helper RenderIndexTopics(IEnumerable<Topic> topics, int level, int maxDepth)
 {
-    foreach (Topic topic in topics)
-    {
+foreach (Topic topic in topics)
+{
         @Html.Raw("<h" + level + ">");
         <a href="@topic.Url">@topic.Title</a>
         @Html.Raw("</h" + level + ">");
@@ -30,8 +48,8 @@
 
 @helper RenderReleaseNotesIndex()
 {
-    foreach (var subTopic in Topic.GetSubTopics("~/Release-Notes"))
-    {
+foreach (var subTopic in Topic.GetSubTopics("~/Release-Notes"))
+{
         <p><a href="@subTopic.Url">@subTopic.Title</a></p>
-    }
+}
 }
