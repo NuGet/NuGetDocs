@@ -17,12 +17,6 @@ a:hover {
     text-decoration: underline;
 }
 
-@media all and (min-width: 1368px) {
-    body {
-        padding: 0px 0px;
-    }
-}
-
 .header, .subnav, .content {
     padding-left: 0px;
     padding-right: 0px;
@@ -34,20 +28,6 @@ a:hover {
 
 .header {
     height: 80px;
-}
-
-@media all and (max-width: 1367px) {
-    .header, .subnav, .content {
-        padding-left: 0px;
-        padding-right:0px;
-    }
-}
-
-@media all and (max-width: 1023px) {
-    .header, .subnav, .content {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
 }
 
 .header {
@@ -75,30 +55,6 @@ a:hover {
     width: 592px;
     border: 0px;
     height: 30px;
-}
-
-@media all and (max-width: 961px) {
-    #searchbox {
-        width: 492px;
-    }
-}
-
-@media all and (max-width: 861px) {
-    #searchbox {
-        width: 392px;
-    }
-}
-
-@media all and (max-width: 761px) {
-    #searchbox {
-        width: 292px;
-    }
-}
-
-@media all and (max-width: 661px) {
-    #searchbox {
-        width: 192px;
-    }
 }
 
 .nav-toggles {
@@ -210,58 +166,3 @@ footer p {
     font-size: .7em;
 }        
 
-@media all AND (max-width: 601px) {
-    .header .search {
-        float: none;
-        margin-bottom: 5px;
-        display: none;
-    }
-
-    #searchbox {
-        width: 85%;
-    }
-
-        #searchbox:focus {
-            outline: 0;
-        }
-
-    .twitter {
-        float: left;
-        margin-top: 10px;
-    }
-
-    .nav-toggles {
-        display: block;
-    }
-
-    .subnav {
-        display: none;
-    }
-
-    .header nav {
-        height: auto;
-        display: none;
-    }
-
-        .header nav div {
-            float: left !important;
-        }
-
-        .header nav ul {
-            margin-top: 5px;
-            margin-bottom: 5px;
-            width: 100%;
-            display: block;
-            height: auto;
-            float: none;
-        }
-
-            .header nav ul li {
-                width: 100%;
-                float: left;
-                position: relative;
-                margin-top: 0;
-                margin-bottom: 0;
-                padding-top: 5px;
-            }
-}
