@@ -9,16 +9,10 @@
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
     <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
-    @*<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">*@
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
-    <script src="~/js/nuget.docs.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -26,24 +20,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://nuget.org">nuget</a>
+                <a class="navbar-brand" href="~/">nuget</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <ul class="nav navbar-nav">
+                <li><a href="http://nuget.org">NuGet.org</a></li>
+                <li><a href="~/release-notes">Release Notes</a></li>
+            </ul>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="search">
-                    @*<form class="navbar-form navbar-right" role="search" action="~/search" method="get" novalidate="novalidate">
-                            <input id="searchbox" type="search" name="q" placeholder="SEARCH DOCS" autocomplete="off" value="@PageData["query"]" />
-                            <input type="submit" id="searchbutton" value=" " />
-                        </form>*@
                     <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="search docs" autocomplete="off" name="srch-term" id="srch-term" value="@PageData["query"]" action="~/search" method="get" novalidate="novalidate">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default searchButton hidden-xs" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <a href="#menu-toggle" class="btn btn-default toggleTocButton visible-xs" id="menu-toggle">Toggle TOC</a>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
                     </form>
                 </div>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
     </nav>
     <div id="wrapper">
         <div id="sidebar-wrapper" style="background-color:transparent">
@@ -53,30 +50,24 @@
         </div>
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                @*<div class="row">
-                        <div class="col-lg-12">
-                            <h1>Simple Sidebar</h1>
-                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                        </div>
-                    </div>*@
                 <div class="col-xs-10">
-                    <div class="content">
-                        <section>
-                            @RenderBody()
-                        </section>
+                    <div class="col-xs-10">
+                        <div class="content">
+                            <section>
+                                @RenderBody()
+                            </section>
+                        </div>
                     </div>
                 </div>
                 <nav class="col-xs-2 bs-docs-sidebar">
                     <ul id="baseSidebar" class="nav nav-stacked">
                         @*<li>
-                                <a href="#GroupA">Group A</a>
-                                <ul class="nav nav-stacked">
-                                    <li><a href="#GroupASub1">Sub-Group 1</a></li>
-                                    <li><a href="#GroupASub2">Sub-Group 2</a></li>
-                                </ul>
-                            </li>*@
+                    <a href="#GroupA">Group A</a>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#GroupASub1">Sub-Group 1</a></li>
+                        <li><a href="#GroupASub2">Sub-Group 2</a></li>
+                    </ul>
+                </li>*@
 
                         @using NuGet.Docs
                         @{
@@ -138,10 +129,11 @@
         </div>
     </div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+    <script src="~/js/nuget.docs.js"></script>
 
-    <!-- Menu Toggle Script -->
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
@@ -159,6 +151,5 @@
             }
         });
     </script>
-
 </body>
 </html>
