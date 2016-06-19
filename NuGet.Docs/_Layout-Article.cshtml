@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@Page.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    @*<link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />*@
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
     <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -83,8 +82,8 @@
                         @{
 
                             List<Heading> headings = Page.Headings;
-                            bool hasHeadings = headings != null && headings.Count > 0;
-                            if (hasHeadings)
+                            bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
+                            if (hasMoreThanOneHeading)
                             {
 
                                 var minHeading = headings.Min(h => h.Level);
