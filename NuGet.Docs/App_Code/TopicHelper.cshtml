@@ -8,8 +8,7 @@ const int maxLevels = 3;
 
 var topics = Topic.GetTopicsWithSubTopics("~/")
     .Where(t => t.SubTopics.Any()
-        && !String.Equals(t.Title.ToLowerInvariant(), "release notes"))
-    .OrderBy(t => t.Title.ToLowerInvariant() == "consume" ? 1 : t.Title.ToLowerInvariant() == "create" ? 2 : 3);
+        && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Creating Packages"; }).First());
