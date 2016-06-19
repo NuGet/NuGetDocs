@@ -6,6 +6,65 @@
 /*.jumbotron { min-height: 600px; }*/
 
 
+/* Guides */
+a:hover, a:focus {
+    color: #008cba;
+    text-decoration: none !important;
+}
+
+.swimlaneTitle {
+    margin-left: -35px;
+    margin-top: -30px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+}
+
+.swimlane {
+    background-color: transparent !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.swimlaneSubTitle {
+    margin-left: -35px;
+    font-size: medium;
+}
+
+.swimlaneDescription {
+    min-height: 120px;
+    max-height: 120px;
+}
+
+.timeToRead {
+    font-size: smaller;
+    color: gray;
+    vertical-align: bottom;
+}
+
+.cardHeading {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.cardImage {
+    max-width: 60%;
+}
+
+.cardHeadingContainer {
+    text-align: center;
+    text-anchor: middle;
+}
+
+.firstCard {
+    margin-left: -35px;
+    margin-top: 10px;
+}
+
+.card {
+    margin-top: 10px;
+}
+
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -313,13 +372,13 @@ aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc 
 
 
 aside#toc h3 {
-    padding: 20px 30px 5px 30px;
+    padding: 20px 30px 5px 15px;
     font-weight: 500;
     font-size: .95em;
 }
 
 aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
-    padding: 5px 30px 5px 30px;
+    padding: 5px 30px 5px 15px;
     font-size: .9em;
 }
 

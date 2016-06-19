@@ -69,25 +69,69 @@
                             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                         </div>
                     </div>*@
-                <div class="jumbotron container-fluid">
-                    <h3>Overview</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="jumbotron container-fluid swimlane">
+                    <h3 class="swimlaneTitle">Overview</h3>
+                    <h5 class="swimlaneSubTitle">
+                        NuGet is the package manager for the Microsoft development platforms including .NET. Create, share, and reuse thousands of nuget packages. Whether you’re new to the NuGet or a pro NuGet users or author,  these are the docs that you are looking for.
+                        <br />
+                        <br />
+                        Guess what? Our docs are also open source. Need to add or edit a topic? Learn how to <a href="~/Contribute/Project-Contribution-Guidelines.md">contribute</a>.
+                    </h5>
                 </div>
-                <div class="jumbotron container-fluid">
-                    @*<h3>Getting Started with creating packages</h3>*@
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="panel panel-default">
-                            <div style="text-align:center;text-anchor: middle" class="panel-body">
-                                <a href="~/Creating Packages/UWP.md">
-                                    <img alt="UWP" style="max-width: 60%;" src="~/images/GuidesLogos/uwp.png" />
-                                    <p style="margin-top: 10px; margin-bottom: -10px; font-size:medium;">Universal Windows Platform</p>
-                                </a>
+                <div class="jumbotron container-fluid swimlane">
+                    <h3 class="swimlaneTitle">Getting Started with creating packages</h3>
+                    <h5 class="swimlaneSubTitle"> The guides in this section will walk you through detailed scenarios around creating packages for the .NET ecosystem.</h5>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="thumbnail firstCard">
+                                <div style="" class="panel-body cardHeadingContainer">
+                                    <a href="~/Creating Packages/UWP.md">
+                                        <img alt="UWP" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                        <h5 class="cardHeading">Universal Windows Platform</h5>
+                                    </a>
+                                </div>
+                                <div class="caption">
+                                    <h6>Learn how to build packages for the Universal Windows Platform</h6>
+                                    <div class="timeToRead">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                        15 min read
+                                    </div>
+                                </div>
                             </div>
-                            <div class="panel-footer">
-                                <p style="vertical-align: bottom; font-size:small; text-overflow:ellipsis">Learn how to build packages with custom controls. Understand how to build and ship native SDKS that work across langauges</p>
-                                <div style="font-size:smaller">
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    15 min read
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="thumbnail card">
+                                <div style="" class="panel-body cardHeadingContainer">
+                                    <a href="~/Creating Packages/UWP.md">
+                                        <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                        <h5 class="cardHeading">Mobile (PCL)</h5>
+                                    </a>
+                                </div>
+                                <div class="caption">
+                                    <h6>Learn how to build PCL based nuget packages for Xamarin and UWP</h6>
+                                    <div class="timeToRead">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                        15 min read
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <div class="thumbnail card">
+                                <div style="" class="panel-body cardHeadingContainer">
+                                    <a href="~/Creating Packages/UWP.md">
+                                        <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                        <h5 class="cardHeading">Mobile (Native)</h5>
+                                    </a>
+                                </div>
+                                <div class="caption">
+                                    <h6>Learn how to build native nuget packages accessible from PCL for Xamarin and UWP</h6>
+                                    <div class="timeToRead">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                        15 min read
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -95,21 +139,20 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+        <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
 
 </body>
 
