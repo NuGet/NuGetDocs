@@ -23,7 +23,7 @@ namespace NuGet.Docs
     {
         // Set the cache timeout to 1 day (we'll also have cache dependencies)
         private const int CacheTimeout = 24 * 60 * 60;
-        private const string OutlineLayout = "~/_Layout-Outline.cshtml";
+        private const string OutlineLayout = "~/_Layout-Article.cshtml";
         private static List<string> _virtualPathDependencies = new List<string>
         {
             "~/_PageStart.cshtml",

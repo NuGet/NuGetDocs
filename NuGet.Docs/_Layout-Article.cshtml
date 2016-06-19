@@ -66,7 +66,6 @@
                     <div class="content">
                         <section>
                             @RenderBody()
-                            <div style="clear:both;"></div>
                         </section>
                     </div>
                 </div>
@@ -85,36 +84,55 @@
 
                             List<Heading> headings = Page.Headings;
                             bool hasHeadings = headings != null && headings.Count > 0;
-                            string articleId = null;
-
                             if (hasHeadings)
                             {
-                                // If we have headings, then give the article an id for styling to prepare for the TOC
-                                articleId = "doc";
 
-                                // Normalize the heading levels to start at 3 in the TOC.
                                 var minHeading = headings.Min(h => h.Level);
                                 var deltaTo3 = 3 - minHeading;
+                                bool isClosed = true; ;
 
-                                <aside id="toc">
-                                    @for (int i = 0; i < headings.Count; i++)
+                                for (int i = 0; i < headings.Count; i++)
+                                {
+                                    var heading = headings[i];
+                                    if (heading.Level == 1)
                                     {
-                                        var heading = headings[i];
-                                        var hTag = "h" + (heading.Level + deltaTo3).ToString();
-                                        WriteLiteral("<" + hTag + ">");
-                                        <a href="#@heading.ID">@heading.Text</a>
-                                        WriteLiteral("</" + hTag + ">");
+                                        <li>
+                                            <a href="#user-content-@heading.ID">@heading.Text</a>
+                                        </li>
                                     }
-                                </aside>
+                                    else if (heading.Level == 2)
+                                    {
+                                        if (!isClosed)
+                                        {
+                                            WriteLiteral("</li>");
+                                        }
+
+                                        WriteLiteral("<li>");
+                                        <a href="#user-content-@heading.ID">@heading.Text</a>
+                                        if (i + 1 < headings.Count)
+                                        {
+                                            if (headings[i + 1].Level > 2)
+                                            {
+                                                WriteLiteral("<ul class=\"nav nav - stacked\">");
+                                                for (int j = i + 1; j < headings.Count; j++)
+                                                {
+                                                    if (headings[j].Level < 3)
+                                                    {
+                                                        i = j - 1;
+                                                        WriteLiteral("</ul>");
+                                                        break;
+                                                    }
+
+                                                    <li>
+                                                        <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
+                                                    </li>
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
-
-                        <li>
-                            <a href="#Overview">Overview</a>
-                        </li>
-                        <li>
-                            <a href="#Data">Data</a>
-                        </li>
                     </ul>
                 </nav>
             </div>
