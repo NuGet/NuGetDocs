@@ -15,57 +15,70 @@
     margin-bottom: 20px;
 }
 
-/* all links */
-.bs-docs-sidebar .nav>li>a {
-    color: #999;
-    border-left: 2px solid transparent;
-    padding: 4px 20px;
-    font-size: 13px;
-    font-weight: 400;
-}
+    /* all links */
+    .bs-docs-sidebar .nav > li > a {
+        color: #999;
+        border-left: 2px solid transparent;
+        padding: 4px 20px;
+        font-size: 13px;
+        font-weight: 400;
+    }
 
-/* nested links */
-.bs-docs-sidebar .nav .nav>li>a {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 30px;
-    font-size: 12px;
-}
+    /* nested links */
+    .bs-docs-sidebar .nav .nav > li > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 30px;
+        font-size: 12px;
+    }
 
-/* active & hover links */
-.bs-docs-sidebar .nav>.active>a, 
-.bs-docs-sidebar .nav>li>a:hover, 
-.bs-docs-sidebar .nav>li>a:focus {
-    color: #563d7c;                 
-    text-decoration: none;          
-    background-color: transparent;  
-    border-left-color: #563d7c; 
-}
-/* all active links */
-.bs-docs-sidebar .nav>.active>a, 
-.bs-docs-sidebar .nav>.active:hover>a,
-.bs-docs-sidebar .nav>.active:focus>a {
-    font-weight: 700;
-}
-/* nested active links */
-.bs-docs-sidebar .nav .nav>.active>a, 
-.bs-docs-sidebar .nav .nav>.active:hover>a,
-.bs-docs-sidebar .nav .nav>.active:focus>a {
-    font-weight: 500;
-}
+    /* active & hover links */
+    .bs-docs-sidebar .nav > .active > a,
+    .bs-docs-sidebar .nav > li > a:hover,
+    .bs-docs-sidebar .nav > li > a:focus {
+        color: #563d7c;
+        text-decoration: none;
+        background-color: transparent;
+        border-left-color: #563d7c;
+    }
+    /* all active links */
+    .bs-docs-sidebar .nav > .active > a,
+    .bs-docs-sidebar .nav > .active:hover > a,
+    .bs-docs-sidebar .nav > .active:focus > a {
+        font-weight: 700;
+    }
+    /* nested active links */
+    .bs-docs-sidebar .nav .nav > .active > a,
+    .bs-docs-sidebar .nav .nav > .active:hover > a,
+    .bs-docs-sidebar .nav .nav > .active:focus > a {
+        font-weight: 500;
+    }
 
-/* hide inactive nested list */
-.bs-docs-sidebar .nav ul.nav {
-    display: none;           
-}
-/* show active nested list */
-.bs-docs-sidebar .nav>.active>ul.nav {
-    display: block;           
-}
+    /* hide inactive nested list */
+    .bs-docs-sidebar .nav ul.nav {
+        display: none;
+    }
+    /* show active nested list */
+    .bs-docs-sidebar .nav > .active > ul.nav {
+        display: block;
+    }
+
 
 
 
 /* Guides */
+
+.searchButton {
+    padding-bottom: 3px !important;
+    margin-left: 2px !important;
+}
+
+.toggleTocButton {
+    width: 110px;
+    margin-left: 10px !important;
+    padding-bottom: 1px !important;
+}
+
 a:hover, a:focus {
     color: #008cba;
     text-decoration: none !important;

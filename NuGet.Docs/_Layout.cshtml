@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@Page.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    @*<link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />*@
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
     <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -19,7 +18,6 @@
 <body>
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,7 +30,7 @@
 
             <ul class="nav navbar-nav">
                 <li><a href="http://nuget.org">NuGet.org</a></li>
-                <li><a href="http://nuget.org">Release Notes</a></li> 
+                <li><a href="~/release-notes">Release Notes</a></li>
             </ul>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="search">
@@ -41,13 +39,14 @@
                             <input type="submit" id="searchbutton" value=" " />
                         </form>*@
                     <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default searchButton hidden-xs" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <a href="#menu-toggle" class="btn btn-default toggleTocButton visible-xs" id="menu-toggle">Toggle TOC</a>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                        <a style="width:11 fcz0px;margin-top:5px" href="#menu-toggle" class="btn btn-default visible-xs" id="menu-toggle">Toggle TOC</a>
                     </form>
-                    @*<li style="height:20px;margin-left:15px"></li>*@
                 </div>
             </div>
         </div>
@@ -314,6 +313,6 @@
             }
         });
     </script>
-@RenderBody()
+    @RenderBody()
 </body>
 </html>
