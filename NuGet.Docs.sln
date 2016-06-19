@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25414.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Docs.MarkdownPages", "NuGet.Docs.MarkdownPages\NuGet.Docs.MarkdownPages.csproj", "{68B89ADD-A928-4B5C-8173-EC38C282C918}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NuGet.Docs", "http://localhost:50550", "{64E2B1F4-E6B0-4602-8E71-484A259BA84C}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6"
 		ProjectReferences = "{68b89add-a928-4b5c-8173-ec38c282c918}|NuGet.Docs.MarkdownPages.dll;{29cf31a9-6a74-4217-9b51-cc6d636ae71e}|NuGet.Docs.References.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50550"
 		Debug.AspNetCompiler.PhysicalPath = "NuGet.Docs\"
