@@ -12,6 +12,16 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
+.row {
+    margin-left: -50px !important;
+}
+
+.caption{
+    min-height: 100px;
+    max-height: 100px;
+    overflow:hidden;
+}
+
 .swimlaneTitle {
     margin-left: -35px;
     margin-top: -30px;
@@ -47,7 +57,7 @@ a:hover, a:focus {
 }
 
 .cardImage {
-    max-width: 60%;
+    /*max-width: 60%;*/
 }
 
 .cardHeadingContainer {
