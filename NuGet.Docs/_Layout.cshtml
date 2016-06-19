@@ -9,7 +9,11 @@
     @*<link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />*@
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="~/css/bootcards-android.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootcards-desktop.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootcards-ios.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    @*<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">*@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
@@ -49,27 +53,48 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper"style="background-color:transparent">
+        <div id="sidebar-wrapper" style="background-color:transparent">
             <aside id="toc">
                 @TopicHelper.RenderDocumentationIndex()
             </aside>
         </div>
         <!-- /#sidebar-wrapper -->
-        <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                @*<div class="row">
+                        <div class="col-lg-12">
+                            <h1>Simple Sidebar</h1>
+                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        </div>
+                    </div>*@
+                <div class="jumbotron container-fluid">
+                    <h3>Overview</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="jumbotron container-fluid">
+                    @*<h3>Getting Started with creating packages</h3>*@
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+                            <div style="text-align:center;text-anchor: middle" class="panel-body">
+                                <a href="~/Creating Packages/UWP.md">
+                                    <img alt="UWP" style="max-width: 60%;" src="~/images/GuidesLogos/uwp.png" />
+                                    <p style="margin-top: 10px; margin-bottom: -10px; font-size:medium;">Universal Windows Platform</p>
+                                </a>
+                            </div>
+                            <div class="panel-footer">
+                                <p style="vertical-align: bottom; font-size:small; text-overflow:ellipsis">Learn how to build packages with custom controls. Understand how to build and ship native SDKS that work across langauges</p>
+                                <div style="font-size:smaller">
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    15 min read
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->

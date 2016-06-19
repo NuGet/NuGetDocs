@@ -18,6 +18,8 @@ orderedList.Add(topics.Where(
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Hosting Packages"; }).First());
 orderedList.Add(topics.Where(
+(a) => { return a.Title == "References"; }).First());
+orderedList.Add(topics.Where(
 (a) => { return a.Title == "Create"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Consume"; }).First());
@@ -25,8 +27,6 @@ orderedList.Add(topics.Where(
 (a) => { return a.Title == "Host"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Contribute"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "References"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
 
 }
