@@ -6,7 +6,7 @@
 /*.jumbotron { min-height: 600px; }*/
 
 #baseSidebar.affix {
-    top: 20px;
+    top: 70px;
 }
 /* sidebar */
 .bs-docs-sidebar {
@@ -67,6 +67,10 @@
 
 
 /* Guides */
+
+body {
+  padding-top: 70px;
+}
 
 .searchButton {
     padding-bottom: 3px !important;
