@@ -9,10 +9,7 @@
     @*<link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />*@
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
-    <link href="~/css/bootcards-android.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/bootcards-desktop.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/bootcards-ios.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
     @*<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">*@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -50,14 +47,11 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div id="wrapper">
-
-        <!-- Sidebar -->
         <div id="sidebar-wrapper" style="background-color:transparent">
             <aside id="toc">
                 @TopicHelper.RenderDocumentationIndex()
             </aside>
         </div>
-        <!-- /#sidebar-wrapper -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 @*<div class="row">
@@ -68,29 +62,86 @@
                             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                         </div>
                     </div>*@
-                <div class="content">
-                    <section>
-                        @RenderBody()
-                        <div style="clear:both;"></div>
-                    </section>
+                <div class="col-xs-10">
+                    <div class="content">
+                        <section>
+                            @RenderBody()
+                            <div style="clear:both;"></div>
+                        </section>
+                    </div>
                 </div>
+                <nav class="col-xs-2 bs-docs-sidebar">
+                    <ul id="baseSidebar" class="nav nav-stacked">
+                        @*<li>
+                                <a href="#GroupA">Group A</a>
+                                <ul class="nav nav-stacked">
+                                    <li><a href="#GroupASub1">Sub-Group 1</a></li>
+                                    <li><a href="#GroupASub2">Sub-Group 2</a></li>
+                                </ul>
+                            </li>*@
+
+                        @using NuGet.Docs
+                        @{
+
+                            List<Heading> headings = Page.Headings;
+                            bool hasHeadings = headings != null && headings.Count > 0;
+                            string articleId = null;
+
+                            if (hasHeadings)
+                            {
+                                // If we have headings, then give the article an id for styling to prepare for the TOC
+                                articleId = "doc";
+
+                                // Normalize the heading levels to start at 3 in the TOC.
+                                var minHeading = headings.Min(h => h.Level);
+                                var deltaTo3 = 3 - minHeading;
+
+                                <aside id="toc">
+                                    @for (int i = 0; i < headings.Count; i++)
+                                    {
+                                        var heading = headings[i];
+                                        var hTag = "h" + (heading.Level + deltaTo3).ToString();
+                                        WriteLiteral("<" + hTag + ">");
+                                        <a href="#@heading.ID">@heading.Text</a>
+                                        WriteLiteral("</" + hTag + ">");
+                                    }
+                                </aside>
+                            }
+                        }
+
+                        <li>
+                            <a href="#Overview">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#Data">Data</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <!-- /#wrapper -->
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
+    </div>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-        <!-- Menu Toggle Script -->
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        $('body').scrollspy({
+            target: '.bs-docs-sidebar',
+            offset: 40
+        });
+
+        $("#baseSidebar").affix({
+            offset: {
+                top: 60
+            }
+        });
+    </script>
 
 </body>
-
 </html>

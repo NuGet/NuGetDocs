@@ -5,6 +5,65 @@
 /* bootstrap components */
 /*.jumbotron { min-height: 600px; }*/
 
+#baseSidebar.affix {
+    top: 20px;
+}
+/* sidebar */
+.bs-docs-sidebar {
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* all links */
+.bs-docs-sidebar .nav>li>a {
+    color: #999;
+    border-left: 2px solid transparent;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* nested links */
+.bs-docs-sidebar .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+/* active & hover links */
+.bs-docs-sidebar .nav>.active>a, 
+.bs-docs-sidebar .nav>li>a:hover, 
+.bs-docs-sidebar .nav>li>a:focus {
+    color: #563d7c;                 
+    text-decoration: none;          
+    background-color: transparent;  
+    border-left-color: #563d7c; 
+}
+/* all active links */
+.bs-docs-sidebar .nav>.active>a, 
+.bs-docs-sidebar .nav>.active:hover>a,
+.bs-docs-sidebar .nav>.active:focus>a {
+    font-weight: 700;
+}
+/* nested active links */
+.bs-docs-sidebar .nav .nav>.active>a, 
+.bs-docs-sidebar .nav .nav>.active:hover>a,
+.bs-docs-sidebar .nav .nav>.active:focus>a {
+    font-weight: 500;
+}
+
+/* hide inactive nested list */
+.bs-docs-sidebar .nav ul.nav {
+    display: none;           
+}
+/* show active nested list */
+.bs-docs-sidebar .nav>.active>ul.nav {
+    display: block;           
+}
+
+
 
 /* Guides */
 a:hover, a:focus {
@@ -12,11 +71,11 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
-.downloadToolsLinks{
+.downloadToolsLinks {
     padding: 5px;
 }
 
-.downloadToolsLinksToolbar{
+.downloadToolsLinksToolbar {
     margin-left: -40px !important;
 }
 
@@ -24,10 +83,10 @@ a:hover, a:focus {
     margin-left: -50px !important;
 }
 
-.caption{
+.caption {
     min-height: 100px;
     max-height: 100px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .swimlaneTitle {
@@ -35,6 +94,7 @@ a:hover, a:focus {
     margin-top: -30px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
+    left: 10px;
 }
 
 .swimlane {
