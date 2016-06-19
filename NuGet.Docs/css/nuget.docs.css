@@ -12,6 +12,14 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
+.downloadToolsLinks{
+    padding: 5px;
+}
+
+.downloadToolsLinksToolbar{
+    margin-left: -40px !important;
+}
+
 .row {
     margin-left: -50px !important;
 }
@@ -57,7 +65,8 @@ a:hover, a:focus {
 }
 
 .cardImage {
-    /*max-width: 60%;*/
+    /*min-width: 60%;
+    max-width: 60%;*/
 }
 
 .cardHeadingContainer {

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@Page.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @*<link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />*@
+    <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootcards-android.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootcards-desktop.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootcards-ios.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    @*<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">*@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+    <script src="~/js/nuget.docs.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://nuget.org">nuget</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="search">
+                    @*<form class="navbar-form navbar-right" role="search" action="~/search" method="get" novalidate="novalidate">
+                            <input id="searchbox" type="search" name="q" placeholder="SEARCH DOCS" autocomplete="off" value="@PageData["query"]" />
+                            <input type="submit" id="searchbutton" value=" " />
+                        </form>*@
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="background-color:transparent">
+            <aside id="toc">
+                @TopicHelper.RenderDocumentationIndex()
+            </aside>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                @*<div class="row">
+                        <div class="col-lg-12">
+                            <h1>Simple Sidebar</h1>
+                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        </div>
+                    </div>*@
+                <div class="content">
+                    <section>
+                        @RenderBody()
+                        <div style="clear:both;"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+</body>
+
+</html>
