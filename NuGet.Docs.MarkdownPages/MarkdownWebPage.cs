@@ -157,11 +157,11 @@ namespace NuGet.Docs
                     // When encountering a heading element, wrap it in a HTML container and apply a CSS class.
                     if (headingLevel == 1)
                     {
-                        BuildHeadingDiv(heading, containerDictionary, cssClass: "topic");
+                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane");
                     }
                     else if (headingLevel == 2)
                     {
-                        BuildHeadingDiv(heading, containerDictionary, cssClass: "sub-topic");
+                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane");
                     }
 
                     headings.Add(new Heading(id, headingLevel, heading.InnerText));
@@ -169,6 +169,7 @@ namespace NuGet.Docs
             }
 
             PostProcessHeadingContainers(containerDictionary);
+            PostPorcessElements(doc);
 
             Page.Headings = headings;
 
@@ -183,25 +184,45 @@ namespace NuGet.Docs
         /// <param name="heading">The HTML heading node.</param>
         /// <param name="containerDictionary">The dictionary to add the wrapping HTML container and its elements into.</param>
         /// <param name="cssClass">The CSS class to be applied to the wrapping HTML container.</param>
-        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, string cssClass)
+        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, int level , string cssClass)
         {
             var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<div class=\"{0}\"></div>", cssClass));
-
             var elementsToMove = new List<HtmlNode>();
+            if (level == 1)
+            {
+                heading.Attributes.Add("class", "articleTitle");
+            }
+            else
+            {
+                heading.Attributes.Add("class", "articleTopic");
+            }
+
             elementsToMove.Add(heading);
 
             // All elements after the heading element should be wrapped within the same container, until the next heading is encountered (any level).
             var nextElement = heading.NextSibling;
 
-            while (nextElement != null &&
-                   !(nextElement.Name.Length == 2
-                     && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
-                     && Char.IsDigit(nextElement.Name[1])))
+            if(level ==1)
             {
-                elementsToMove.Add(nextElement);
-
-                nextElement = nextElement.NextSibling;
+                while (nextElement != null &&
+                 !(nextElement.Name.Length == 2
+                   && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
+                   && Char.IsDigit(nextElement.Name[1])))
+                {
+                    elementsToMove.Add(nextElement);
+                    nextElement = nextElement.NextSibling;
+                }
             }
+            else
+            {
+                while (nextElement != null && nextElement.Name != "h2")
+                {
+                    elementsToMove.Add(nextElement);
+                    nextElement = nextElement.NextSibling;
+                }
+            }
+
+          
 
             containerDictionary.Add(div, elementsToMove);
         }
@@ -226,6 +247,22 @@ namespace NuGet.Docs
                 }
 
                 parentNode.ReplaceChild(div, heading);
+            }
+        }
+
+        private static void PostPorcessElements(HtmlDocument doc)
+        {
+            foreach(var node in doc.DocumentNode.Descendants())
+            {
+                if(node.Name == "table")
+                {
+                    if (node.Attributes.FirstOrDefault(x => x.Name == "class") != null)
+                    {
+                        node.Attributes.Remove("class");
+                    }
+
+                    node.Attributes.Add("class", "table articleTable");
+                }
             }
         }
 

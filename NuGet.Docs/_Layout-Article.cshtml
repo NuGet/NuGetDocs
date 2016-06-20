@@ -8,6 +8,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
+    <link href="~/css/prism.css" rel="stylesheet" />
     <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -51,23 +52,21 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="col-xs-10">
-                    <div class="col-xs-10">
-                        <div class="content">
-                            <section>
-                                @RenderBody()
-                            </section>
-                        </div>
+                    <div class="content">
+                        <section>
+                            @RenderBody()
+                        </section>
                     </div>
                 </div>
                 <nav class="col-xs-2 bs-docs-sidebar">
                     <ul id="baseSidebar" class="nav nav-stacked">
                         @*<li>
-                    <a href="#GroupA">Group A</a>
-                    <ul class="nav nav-stacked">
-                        <li><a href="#GroupASub1">Sub-Group 1</a></li>
-                        <li><a href="#GroupASub2">Sub-Group 2</a></li>
-                    </ul>
-                </li>*@
+                                <a href="#GroupA">Group A</a>
+                                <ul class="nav nav-stacked">
+                                    <li><a href="#GroupASub1">Sub-Group 1</a></li>
+                                    <li><a href="#GroupASub2">Sub-Group 2</a></li>
+                                </ul>
+                            </li>*@
 
                         @using NuGet.Docs
                         @{
@@ -86,9 +85,9 @@
                                     var heading = headings[i];
                                     if (heading.Level == 1)
                                     {
-                                        <li>
-                                            <a href="#user-content-@heading.ID">@heading.Text</a>
-                                        </li>
+                        <li>
+                            <a href="#user-content-@heading.ID">@heading.Text</a>
+                        </li>
                                     }
                                     else if (heading.Level == 2)
                                     {
@@ -98,7 +97,7 @@
                                         }
 
                                         WriteLiteral("<li>");
-                                        <a href="#user-content-@heading.ID">@heading.Text</a>
+                        <a href="#user-content-@heading.ID">@heading.Text</a>
                                         if (i + 1 < headings.Count)
                                         {
                                             if (headings[i + 1].Level > 2)
@@ -113,9 +112,9 @@
                                                         break;
                                                     }
 
-                                                    <li>
-                                                        <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
-                                                    </li>
+                        <li>
+                            <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
+                        </li>
                                                 }
                                             }
                                         }
@@ -133,7 +132,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
     <script src="~/js/nuget.docs.js"></script>
-
+    <script src="~/Scripts/prism.js"></script>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();

@@ -69,7 +69,7 @@
 /* Guides */
 
 body {
-  padding-top: 70px;
+    padding-top: 70px;
 }
 
 .searchButton {
@@ -117,6 +117,8 @@ a:hover, a:focus {
 .swimlane {
     background-color: transparent !important;
     padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
     margin-bottom: 10px !important;
 }
 
@@ -197,30 +199,52 @@ aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc 
     font-size: .9em;
 }
 
-aside#toc h5 {
-    padding-left: 52px;
-}
-
-aside#toc h6 {
-    padding-left: 62px;
-}
-
-aside#toc h7 {
-    padding-left: 72px;
-}
-
-aside#toc h8 {
-    padding-left: 82px;
-}
-
-aside#toc h9 {
-    padding-left: 92px;
-}
-
 aside#toc h3 a {
     color: black;
 }
 
-aside#toc h4 a, aside#toc h5 a, aside#toc h6 a, aside#toc h7 a, aside#toc h8 a, aside#toc h9 a {
-    /*color: #515151;*/
+/* Article*/
+
+.jumbotron {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.jumbotron p {
+    font-size: 1em !important;
+}
+
+.articleSwimlane {
+    background-color: transparent !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.articleTable{
+    font-size: 1em !important;
+}
+
+.articleTitle {
+    padding-bottom: 15px;
+    font-size: 36px !important;
+    font-weight: 500;
+    left: 10px;
+}
+
+.articleTopic {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    font-size: 32px !important;
+    left: 10px;
+}
+
+.articleSubTopic {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    font-size: 28px !important;
+    left: 10px;
 }
