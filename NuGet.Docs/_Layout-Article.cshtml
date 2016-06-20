@@ -1,147 +1,80 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@Page.Title</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
-    <link href="~/css/prism.css" rel="stylesheet" />
-    <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css">
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+﻿@{
+    Layout = "_Layout.cshtml";
+}
+
+<div id="wrapper">
+    <div id="sidebar-wrapper" style="background-color:transparent">
+        <aside id="toc">
+            @TopicHelper.RenderDocumentationIndex()
+        </aside>
+    </div>
+    <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="~/">nuget</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="http://nuget.org">NuGet.org</a></li>
-                    <li><a href="~/release-notes">Release Notes</a></li>
-                </ul>
-                <div class="search">
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="search docs" autocomplete="off" name="srch-term" id="srch-term" value="@PageData["query"]" action="~/search" method="get" novalidate="novalidate">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default searchButton hidden-xs" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                <a href="#menu-toggle" class="btn btn-default toggleTocButton visible-xs" id="menu-toggle">Toggle TOC</a>
-                            </div>
-                        </div>
-                    </form>
+            <div class="col-xs-10">
+                <div class="content">
+                    <section>
+                        @RenderBody()
+                    </section>
                 </div>
             </div>
-        </div>
-    </nav>
-    <div id="wrapper">
-        <div id="sidebar-wrapper" style="background-color:transparent">
-            <aside id="toc">
-                @TopicHelper.RenderDocumentationIndex()
-            </aside>
-        </div>
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="col-xs-10">
-                    <div class="content">
-                        <section>
-                            @RenderBody()
-                        </section>
-                    </div>
-                </div>
-                <nav class="col-xs-2 bs-docs-sidebar visible-md visible-lg">
-                    <ul id="baseSidebar" class="nav nav-stacked">
-                        @using NuGet.Docs
-                        @{
+            <nav class="col-xs-2 bs-docs-sidebar visible-md visible-lg">
+                <ul id="baseSidebar" class="nav nav-stacked">
+                    @using NuGet.Docs
+                    @{
 
-                            List<Heading> headings = Page.Headings;
-                            bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
-                            if (hasMoreThanOneHeading)
+                        List<Heading> headings = Page.Headings;
+                        bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
+                        if (hasMoreThanOneHeading)
+                        {
+
+                            var minHeading = headings.Min(h => h.Level);
+                            var deltaTo3 = 3 - minHeading;
+                            bool isClosed = true; ;
+
+                            for (int i = 0; i < headings.Count; i++)
                             {
-
-                                var minHeading = headings.Min(h => h.Level);
-                                var deltaTo3 = 3 - minHeading;
-                                bool isClosed = true; ;
-
-                                for (int i = 0; i < headings.Count; i++)
+                                var heading = headings[i];
+                                if (heading.Level == 1)
                                 {
-                                    var heading = headings[i];
-                                    if (heading.Level == 1)
-                                    {
-                                        <li>
-                                            <a href="#user-content-@heading.ID">@heading.Text</a>
-                                        </li>
-                                    }
-                                    else if (heading.Level == 2)
-                                    {
-                                        if (!isClosed)
-                                        {
-                                            WriteLiteral("</li>");
-                                        }
-
-                                        WriteLiteral("<li>");
+                                    <li>
                                         <a href="#user-content-@heading.ID">@heading.Text</a>
-                                        if (i + 1 < headings.Count)
-                                        {
-                                            if (headings[i + 1].Level > 2)
-                                            {
-                                                WriteLiteral("<ul class=\"nav nav - stacked\">");
-                                                for (int j = i + 1; j < headings.Count; j++)
-                                                {
-                                                    if (headings[j].Level < 3)
-                                                    {
-                                                        i = j - 1;
-                                                        WriteLiteral("</ul>");
-                                                        break;
-                                                    }
+                                    </li>
+                                }
+                                else if (heading.Level == 2)
+                                {
+                                    if (!isClosed)
+                                    {
+                                        WriteLiteral("</li>");
+                                    }
 
-                                                    <li>
-                                                        <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
-                                                    </li>
+                                    WriteLiteral("<li>");
+                                    <a href="#user-content-@heading.ID">@heading.Text</a>
+                                    if (i + 1 < headings.Count)
+                                    {
+                                        if (headings[i + 1].Level > 2)
+                                        {
+                                            WriteLiteral("<ul class=\"nav nav - stacked\">");
+                                            for (int j = i + 1; j < headings.Count; j++)
+                                            {
+                                                if (headings[j].Level < 3)
+                                                {
+                                                    i = j - 1;
+                                                    WriteLiteral("</ul>");
+                                                    break;
                                                 }
+
+                                                <li>
+                                                    <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
+                                                </li>
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                    </ul>
-                </nav>
-            </div>
+                    }
+                </ul>
+            </nav>
         </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-    <script src="~/js/nuget.docs.js"></script>
-    <script src="~/Scripts/prism.js"></script>
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-
-        $('body').scrollspy({
-            target: '.bs-docs-sidebar',
-            offset: 40
-        });
-
-        $("#baseSidebar").affix({
-            offset: {
-                top: 60
-            }
-        });
-    </script>
-</body>
-</html>
+</div>

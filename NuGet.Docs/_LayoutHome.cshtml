@@ -1,0 +1,240 @@
+﻿
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<div id="wrapper">
+    <div id="sidebar-wrapper" style="background-color:transparent">
+        <aside id="toc">
+            @TopicHelper.RenderDocumentationIndex()
+            @RenderBody()
+        </aside>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="col-xs-10">
+                <section class="group">
+                    <div id="Overview" class="jumbotron container-fluid swimlane">
+
+                        <h3 class="swimlaneTitle">Overview</h3>
+                        <h5 class="swimlaneSubTitle">
+                            NuGet is the package manager for the Microsoft development platforms including .NET. Create, share, and reuse thousands of nuget packages. Whether you’re new to the NuGet or a pro NuGet users or author,  these are the docs that you are looking for.
+                            <br />
+                            <br />
+                            Guess what? Our docs are also open source. Need to add or edit a topic? Learn how to <a href="~/Contribute/Project-Contribution-Guidelines.md">contribute</a>.
+                            <br />
+                            <br />
+                            Before you start trying some of this out, you need one more of the following products;
+                            <br />
+                        </h5>
+                        <div class="btn-toolbar downloadToolsLinksToolbar" role="toolbar" aria-label="...">
+                            <div class="btn-group btn-info downloadToolsLinks" role="group" aria-label="...">Visual Studio</div>
+                            <div class="btn-group btn-info downloadToolsLinks" role="group" aria-label="...">nuget.exe</div>
+                            <div class="btn-group btn-info downloadToolsLinks" role="group" aria-label="...">.NET CLI</div>
+                        </div>
+                    </div>
+                </section>
+                <section id="GSPackage" class="group">
+                    <div class="jumbotron container-fluid swimlane">
+                        <h3 class="swimlaneTitle">Getting Started with creating packages</h3>
+                        <h5 class="swimlaneSubTitle"> The guides in this section will walk you through detailed scenarios around creating packages for the .NET ecosystem.</h5>
+                        <div class="row">
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="UWP" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">UWP</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build packages for the Universal Windows Platform</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (PCL)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build PCL based nuget packages for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (Native)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build native nuget packages accessible from PCL for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (PCL)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build PCL based nuget packages for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (Native)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build native nuget packages accessible from PCL for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="GSConsume" class="group">
+                    <div class="jumbotron container-fluid swimlane">
+                        <h3 class="swimlaneTitle">Getting Started with creating packages</h3>
+                        <h5 class="swimlaneSubTitle"> The guides in this section will walk you through detailed scenarios around creating packages for the .NET ecosystem.</h5>
+                        <div class="row">
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="UWP" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">UWP</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build packages for the Universal Windows Platform</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (PCL)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build PCL based nuget packages for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (Native)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build native nuget packages accessible from PCL for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (PCL)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build PCL based nuget packages for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-18 col-sm-6 col-md-3">
+                                <div class="thumbnail card">
+                                    <div style="" class="panel-body cardHeadingContainer">
+                                        <a href="~/Creating Packages/UWP.md">
+                                            <img alt="Xamarin" class="cardImage" src="~/images/GuidesLogos/uwp.png" />
+                                            <h5 class="cardHeading">Mobile (Native)</h5>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h6>Learn how to build native nuget packages accessible from PCL for Xamarin and UWP</h6>
+                                        <div class="timeToRead">
+                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                            15 min read
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <nav class="col-xs-2 bs-docs-sidebar visible-md visible-lg">
+                <ul id="baseSidebar" class="nav nav-stacked">
+                    <li>
+                        <a href="#Overview">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#GSPackage">Getting Started with creating packages</a>
+                    </li>
+                    <li>
+                        <a href="#GSConsume">Getting Started with consuming packages</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
