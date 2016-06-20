@@ -222,8 +222,6 @@ namespace NuGet.Docs
                 }
             }
 
-          
-
             containerDictionary.Add(div, elementsToMove);
         }
 
@@ -243,10 +241,16 @@ namespace NuGet.Docs
                 foreach (HtmlNode element in nodes.Value.Skip(1))
                 {
                     div.AppendChild(element);
-                    parentNode.RemoveChild(element);
+                    if (parentNode != null)
+                    {
+                        parentNode.RemoveChild(element);
+                    }
                 }
 
-                parentNode.ReplaceChild(div, heading);
+                if (parentNode != null)
+                {
+                    parentNode.ReplaceChild(div, heading);
+                }
             }
         }
 

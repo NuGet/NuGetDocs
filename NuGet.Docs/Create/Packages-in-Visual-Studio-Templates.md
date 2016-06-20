@@ -46,7 +46,7 @@ To add preinstalled packages to your project/item template you need to:
 
 1. Edit your vstemplate file and add a reference to the NuGet template wizard by
 adding a [`WizardExtension`](http://msdn.microsoft.com/en-us/library/ms171411.aspx) element:
-    <pre><code>&lt;WizardExtension&gt;
+    <pre><code class="html">&lt;WizardExtension&gt;
         &lt;Assembly&gt;NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&lt;/Assembly&gt;
         &lt;FullClassName&gt;NuGet.VisualStudio.TemplateWizard&lt;/FullClassName&gt;
     &lt;/WizardExtension&gt;</code></pre>
@@ -58,7 +58,7 @@ adding a [`WizardExtension`](http://msdn.microsoft.com/en-us/library/ms171411.as
     NuGet.
 
 2. Add the list of packages to install in the project: 
-    <pre><code>&lt;WizardData&gt;
+    <pre><code class="html">&lt;WizardData&gt;
         &lt;packages&gt;
             &lt;package id="jQuery" version="1.6.2" /&gt;
         &lt;/packages&gt;
@@ -94,7 +94,7 @@ to your users using the [Visual Studio Extension Manager automatic update mechan
 
 1. To specify a VSIX as a package repository you modify the `<packages>` element
    in the `.vstemplate` file:
-    <pre><code>&lt;packages repository="extension"
+    <pre><code class="html">&lt;packages repository="extension"
               repositoryId="MyTemplateContainerExtensionId"&gt;
     ...
     &lt;/packages&gt;</code></pre>
@@ -106,11 +106,11 @@ to your users using the [Visual Studio Extension Manager automatic update mechan
 2.  Add your nupkg files as [custom extension content](http://msdn.microsoft.com/en-us/library/dd393737.aspx)
     in your `source.extension.vsixmanifest` file.
     If you're using the 2.0 schema it should look like this:
-    <pre><code>&lt;Asset Type="Moq.4.0.10827.nupkg" d:Source="File" 
+    <pre><code class="html">&lt;Asset Type="Moq.4.0.10827.nupkg" d:Source="File" 
            Path="Packages\Moq.4.0.10827.nupkg" d:VsixSubPath="Packages" /&gt;
     </code></pre>
     Or if you're using the 1.0 schema it should look like this:
-    <pre><code>&lt;CustomExtension Type="Moq.4.0.10827.nupkg"&gt;
+    <pre><code class="html">&lt;CustomExtension Type="Moq.4.0.10827.nupkg"&gt;
               packages/Moq.4.0.10827.nupkg&lt;/CustomExtension&gt;
     </code></pre>
     Ensure that your `nupkg` files are located under a folder called `Packages`
@@ -135,7 +135,7 @@ packages directly to each project/item template zip file. It needlessly increase
 size of the project/item template bundle.
 
 1. To specify the project/item template as a package repository you modify the `<package>` element:
-    <pre><code>&lt;packages repository="template"&gt;
+    <pre><code class="html">&lt;packages repository="template"&gt;
         ...
     &lt;/packages&gt;</code></pre>
     The `repository` attribute now has the value "template" and the `repositoryId`
@@ -164,7 +164,7 @@ This approach requires a few moving parts:
     * If you want to force a design time build at the end of packages installation, use the `forceDesignTimeBuild="true"` attribute. This attribute is supported on NuGet versions 3.2 and above.
 
 Here's an example `<packages>` element using the registry-specified folder repository:
-<pre><code>&lt;packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true"&gt;
+<pre><code class="html">&lt;packages repository="registry" keyName="AspNetMvc4VS11" isPreunzipped="true"&gt;
     &lt;package id="EntityFramework" version="5.0.0" skipAssemblyReferences="true" /&gt;
     ...
 &lt;/packages&gt;</code></pre>
@@ -177,7 +177,7 @@ adding assembly references from the package.
 
 1. Make your VSIX declare a dependency on the NuGet VSIX by adding a reference to 
 it in your VSIX manifest:
-    <pre><code>&lt;Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.7.30402.9028"&gt;
+    <pre><code class="html">&lt;Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.7.30402.9028"&gt;
      &lt;Name&gt;NuGet Package Manager&lt;/Name&gt;
      &lt;MoreInfoUrl&gt;http://docs.nuget.org/&lt;/MoreInfoUrl&gt;
     &lt;/Reference&gt;
