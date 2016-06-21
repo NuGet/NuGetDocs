@@ -138,14 +138,29 @@ a:hover, a:focus {
     vertical-align: bottom;
 }
 
+.thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px;
+}
+
+.thumbnail.right-caption {
+    float: left;
+}
+
+.thumbnail.right-caption > .caption {
+    padding: 4px;
+}
+
 .cardHeading {
     margin-top: 10px;
     margin-bottom: -10px;
+    font-size: 1em !important;
+    display: inline-block;
 }
 
 .cardImage {
-    /*min-width: 60%;
-    max-width: 60%;*/
+    min-width: 10% !important;
+    max-width: 10% !important;
 }
 
 .cardHeadingContainer {
@@ -153,10 +168,6 @@ a:hover, a:focus {
     text-anchor: middle;
 }
 
-.firstCard {
-    margin-left: -35px;
-    margin-top: 10px;
-}
 
 .card {
     margin-top: 10px;
