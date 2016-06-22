@@ -5,10 +5,14 @@
 
 <div id="wrapper">
     <div id="sidebar-wrapper" style="background-color:transparent">
-        <aside id="toc">
-            @TopicHelper.RenderDocumentationIndex()
-            @RenderBody()
-        </aside>
+        <div id="about" class="nano">
+            <div class="nano-content">
+                <aside id="toc">
+                    @TopicHelper.RenderDocumentationIndex()
+                    @RenderBody()
+                </aside>
+            </div>
+        </div>
     </div>
     <div id="page-content-wrapper">
         <div class="container-fluid">
@@ -115,19 +119,6 @@
                     </div>
                 </section>
             </div>
-            @*<nav class="col-xs-2 bs-docs-sidebar visible-md visible-lg">
-                <ul id="baseSidebar" class="nav nav-stacked">
-                    <li>
-                        <a href="#Overview">Overview</a>
-                    </li>
-                    <li>
-                        <a href="#GSPackage">Getting Started with creating packages</a>
-                    </li>
-                    <li>
-                        <a href="#GSConsume">Getting Started with consuming packages</a>
-                    </li>
-                </ul>
-            </nav>*@
         </div>
     </div>
 </div>
