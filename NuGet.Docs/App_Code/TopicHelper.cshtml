@@ -11,13 +11,7 @@ var topics = Topic.GetTopicsWithSubTopics("~/")
         && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Creating Packages"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "Consuming Packages"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "Hosting Packages"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "References"; }).First());
+(a) => { return a.Title == "Get Started"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Create"; }).First());
 orderedList.Add(topics.Where(

@@ -65,11 +65,28 @@
 
 
 
+.nano .nano-content {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.nano .nano-pane {
+    background: #888;
+}
+
+.nano .nano-slider {
+    background: #111;
+}
+
 
 /* Guides */
 
 body {
     padding-top: 70px;
+}
+
+.navmods {
+    margin-left: 5px !important;
 }
 
 .searchButton {
@@ -88,7 +105,7 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
-.downloadToolsLinks {
+a.na .downloadToolsLinks {
     padding: 5px;
 }
 
@@ -100,9 +117,25 @@ a:hover, a:focus {
     margin-left: -50px !important;
 }
 
+.polaroid:hover {
+    margin-top: -10px;
+}
+
+.polaroid {
+    margin-top: 5px;
+    -webkit-transition: margin 0.2s ease-out;
+    -moz-transition: margin 0.2s ease-out;
+    -o-transition: margin 0.2s ease-out;
+    transition: margin 0.2s ease-out;
+}
+
+.layoutRoot{
+    margin-top: 20px;
+}
+
 .caption {
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 130px;
+    max-height: 130px;
     overflow: hidden;
 }
 
@@ -147,9 +180,9 @@ a:hover, a:focus {
     float: left;
 }
 
-.thumbnail.right-caption > .caption {
-    padding: 4px;
-}
+    .thumbnail.right-caption > .caption {
+        padding: 4px;
+    }
 
 .cardHeading {
     margin-top: 10px;
@@ -182,37 +215,43 @@ aside#toc h2 {
     margin: 0;
 }
 
-aside#toc #toc-hide {
-    float: left;
+aside {
+    padding-bottom: 50px;
 }
 
-    aside#toc #toc-hide img {
-        vertical-align: middle;
-        margin-bottom: 12px;
-        margin-right: -24px;
+    aside#toc #toc-hide {
+        float: left;
     }
 
-aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
-    display: block;
-    margin: 0;
-    font-family: 'Segoe UI', 'Trebuchet MS', Arial;
-}
+        aside#toc #toc-hide img {
+            vertical-align: middle;
+            margin-bottom: 12px;
+            margin-right: -24px;
+        }
+
+    aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+        display: block;
+        margin: 0;
+        font-family: 'Segoe UI', 'Trebuchet MS', Arial;
+    }
 
 
-aside#toc h3 {
-    padding: 20px 30px 5px 15px;
-    font-weight: 500;
-    font-size: .95em;
-}
+    aside#toc h3 {
+        margin-top: 10px;
+        padding: 20px 30px 5px 30px;
+        font-weight: 600;
+        font-size: 1em;
+    }
 
-aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
-    padding: 5px 30px 5px 15px;
-    font-size: .9em;
-}
+    aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
+        padding: 4px 30px 4px 30px;
+        font-size: .9em;
+        line-height: 20px;
+    }
 
-aside#toc h3 a {
-    color: black;
-}
+    aside#toc h3 a {
+        color: black;
+    }
 
 /* Article*/
 
@@ -222,9 +261,9 @@ aside#toc h3 a {
 }
 
 
-.jumbotron p {
-    font-size: 1em !important;
-}
+    .jumbotron p {
+        font-size: 1em !important;
+    }
 
 .articleSwimlane {
     background-color: transparent !important;
@@ -235,7 +274,7 @@ aside#toc h3 a {
     margin-bottom: 10px !important;
 }
 
-.articleTable{
+.articleTable {
     font-size: 1em !important;
 }
 
