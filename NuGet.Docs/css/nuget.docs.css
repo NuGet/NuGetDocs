@@ -72,6 +72,10 @@ body {
     padding-top: 70px;
 }
 
+.navmods {
+    margin-left: 5px !important;
+}
+
 .searchButton {
     padding-bottom: 3px !important;
     margin-left: 2px !important;
@@ -88,7 +92,7 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
-.downloadToolsLinks {
+a.na .downloadToolsLinks {
     padding: 5px;
 }
 
@@ -147,9 +151,9 @@ a:hover, a:focus {
     float: left;
 }
 
-.thumbnail.right-caption > .caption {
-    padding: 4px;
-}
+    .thumbnail.right-caption > .caption {
+        padding: 4px;
+    }
 
 .cardHeading {
     margin-top: 10px;
@@ -200,14 +204,16 @@ aside#toc h3, aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc 
 
 
 aside#toc h3 {
-    padding: 20px 30px 5px 15px;
-    font-weight: 500;
-    font-size: .95em;
+    margin-top: 10px;
+    padding: 20px 30px 5px 30px;
+    font-weight: 700;
+    font-size: 1em;
 }
 
 aside#toc h4, aside#toc h5, aside#toc h6, aside#toc h7, aside#toc h8, aside#toc h9 {
-    padding: 5px 30px 5px 15px;
+    padding: 5px 30px 5px 30px;
     font-size: .9em;
+    line-height: 20px
 }
 
 aside#toc h3 a {
@@ -222,9 +228,9 @@ aside#toc h3 a {
 }
 
 
-.jumbotron p {
-    font-size: 1em !important;
-}
+    .jumbotron p {
+        font-size: 1em !important;
+    }
 
 .articleSwimlane {
     background-color: transparent !important;
@@ -235,7 +241,7 @@ aside#toc h3 a {
     margin-bottom: 10px !important;
 }
 
-.articleTable{
+.articleTable {
     font-size: 1em !important;
 }
 
