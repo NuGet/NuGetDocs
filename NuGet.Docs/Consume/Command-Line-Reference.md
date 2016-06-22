@@ -98,6 +98,10 @@ Update packages to latest available versions. This command also updates NuGet.ex
         <td>Package ids to update.</td>
     </tr>
     <tr>
+        <td>Version</td>
+        <td>The version of the package to update. Requires -Id to contain exactly one package id.</td>
+    </tr>
+    <tr>
         <td>RepositoryPath</td>
         <td>Path to the local packages folder (location where packages are installed).</td>
     </tr>
