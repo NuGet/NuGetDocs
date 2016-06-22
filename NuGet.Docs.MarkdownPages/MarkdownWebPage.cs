@@ -71,35 +71,35 @@ namespace NuGet.Docs
             var githubMarkdown = new Octokit.MiscellaneousClient(new Octokit.Connection(new Octokit.ProductHeaderValue("NuGet.Docs")));
             string fileContents = null;
 
-            try
-            {
-                // Try to transform the content using GitHub's API
-                var request = githubMarkdown.RenderRawMarkdown(content);
-                request.Wait();
+            //try
+            //{
+            //    // Try to transform the content using GitHub's API
+            //    var request = githubMarkdown.RenderRawMarkdown(content);
+            //    request.Wait();
 
-                if (request.IsCompleted)
-                {
-                    fileContents = request.Result
-                        .Replace("<table>", "<table class=\"reference\">")
-                        .Replace("<p>\n<strong>Note", "<p class=\"info\">\n<strong>Note")
-                        .Replace("<p>\n<strong>Caution", "<p class=\"caution\">\n<strong>Caution")
-                        .Replace("<div>\n<strong>Caution", "<div class=\"caution\">\n<strong>Caution");
-                    Page.Generator = "GitHub";
-                }
-            }
-            catch
-            {
-                // If the call to GitHub failed, then we'll swallow the exception
-                // and in the finally block, we'll use MarkdownSharp as a fallback.
-            }
-            finally
-            {
+            //    if (request.IsCompleted)
+            //    {
+            //        fileContents = request.Result
+            //            .Replace("<table>", "<table class=\"reference\">")
+            //            .Replace("<p>\n<strong>Note", "<p class=\"info\">\n<strong>Note")
+            //            .Replace("<p>\n<strong>Caution", "<p class=\"caution\">\n<strong>Caution")
+            //            .Replace("<div>\n<strong>Caution", "<div class=\"caution\">\n<strong>Caution");
+            //        Page.Generator = "GitHub";
+            //    }
+            //}
+            //catch
+            //{
+            //    // If the call to GitHub failed, then we'll swallow the exception
+            //    // and in the finally block, we'll use MarkdownSharp as a fallback.
+            //}
+            //finally
+            //{
                 if (fileContents == null)
                 {
                     fileContents = new Markdown().Transform(content);
                     Page.Generator = "MarkdownSharp";
                 }
-            }
+            //}
 
             return ProcessTableOfContents(fileContents);
         }
