@@ -1,7 +1,4 @@
-﻿@-ms-viewport {
-    width: device-width;
-}
-
+﻿
 /* bootstrap components */
 /*.jumbotron { min-height: 600px; }*/
 
@@ -117,17 +114,17 @@ a.na .downloadToolsLinks {
     margin-left: -50px !important;
 }
 
-.polaroid:hover {
+/*.polaroid:hover {
     margin-top: -10px;
 }
 
-.polaroid {
+/*.polaroid {
     margin-top: 5px;
     -webkit-transition: margin 0.2s ease-out;
     -moz-transition: margin 0.2s ease-out;
     -o-transition: margin 0.2s ease-out;
     transition: margin 0.2s ease-out;
-}
+}*/
 
 .layoutRoot{
     margin-top: 20px;
@@ -267,10 +264,7 @@ aside {
 
 .articleSwimlane {
     background-color: transparent !important;
-    padding-bottom: 10px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    padding-top: 10px !important;
+    padding: 10px !important;
     margin-bottom: 10px !important;
 }
 
