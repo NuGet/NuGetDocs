@@ -1,12 +1,32 @@
-﻿<div class="article-boxes">
-    <article class="box wide">
-        <header>
-            <h1>Release Notes</h1>
-        </header>
-        <p>
-            @TopicHelper.RenderReleaseNotesIndex()
-        </p>
-    </article>
+﻿
+@{
+    Layout = "~/_Layout.cshtml";
+}
 
-    <div style="clear:both"></div>
+<div id="wrapper">
+    <div id="sidebar-wrapper" style="background-color:transparent">
+        <div id="about" class="nano">
+            <div class="nano-content">
+                <aside id="toc">
+                    @TopicHelper.RenderDocumentationIndex()
+                </aside>
+            </div>
+        </div>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="col-xs-8">
+                <div class="article-boxes">
+                    <article class="box wide">
+                        <header>
+                            <h1>Release Notes</h1>
+                        </header>
+                        <p>
+                            @TopicHelper.RenderReleaseNotesIndex()
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
