@@ -1,33 +1,66 @@
-# Creating and Publishing a Package
+#Creating a Package
+<p class="text-info"><b>Updated: June 9, 2016 NuGet Version: 3.4.3</b></p><br>
 
-## Getting Started
-
-1. [Download NuGet.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
-2. Make sure NuGet.exe is in your path
-
-If you&#8217;re more __GUI inclined__, use the [Package Explorer GUI to create packages](/Create/using-a-gui-to-build-packages). Note: This tool is OSS, not supported by the NuGet team, and is not signed.
-
-## Creating a Package
 There are a few approaches to creating a package. Most packages are very simple and contain 
 a single assembly. In those cases, there are some very easy ways to create packages. 
 We&#8217;ll cover more interesting cases later.
 
-### From an assembly
-If you have an assembly, you can easily generate a nuspec file from metadata within the assembly 
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">Pre-requisites</h3>
+  </div>
+  <div class="panel-body">
+    <a href="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe">Download NuGet.exe</a> and save to a path of your choice.<br>
+	Add this path to the <a href="https://msdn.microsoft.com/en-us/library/office/ee537574(v=office.14).aspx">PATH Environment Variable</a>.
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">GUI based alternative</h3>
+  </div>
+  <div class="panel-body">
+    If you are <strong>GUI inclined</strong>, use the <a href="/Create/using-a-gui-to-build-packages" class="alert-link">Package Explorer GUI to create packages</a>.<br>
+  <small>Note: This tool is OSS, not supported by the NuGet team, and is not signed.</small>
+  </div>
+</div>
+
+
+##Assembly
+If you have an assembly, you can easily generate a <span class="text-primary">.nuspec</span> file from metadata within the assembly 
 and create a package.
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    A .nuspec file is a manifest that uses XML to describe a package. The manifest is used to build a package and is also stored in the package after the package is built.
+  </div>
+</div>
 
-    nuget spec MyAssembly.dll
 
-This creates a Nuspec file. Edit the NuSpec file as needed and then
+###Create a .nuspec file
+The command <code>nuget spec</code> creates a <span class="text-primary">.nuspec</span> file.
 
+
+	nuget spec MyAssembly.dll
+
+ 
+###Pack
     nuget pack MyAssembly.nuspec
 
-### From a project
+##Next Steps
+Congratulations! You have created your first <span class="text-primary">nupkg</span>. You can move on to the <a href="#">next tutorial</a> where you will publish your nuget package.
+
+##Related Reading
+<a href="#">Build script to assemble your package</a><br>
+<a href="#">Best practices from the community</a><br>
+<a href="#">Adding further functionalities to your package</a>
+
+##Project
 For simple packages, creating a package from a csproj or vbproj file is a convenient way 
 to create packages. For example, other packages that have been installed into your project 
 will be referenced as dependencies when you create a package this way.
 
-In the folder where the csproj file is, run:
+###Create the .nuspec file
+Navigate to the folder containing the csproj file and run:
 
     nuget spec
 
@@ -39,8 +72,11 @@ These tokens will only be replaced when you execute the pack command with the pr
 
 The following is a list of the supported replacement tokens.
 
-<table class="reference">
+<table class="table table-striped table-hover">
+	<thead>
     <tr><th>Token</th><th>Source</th></tr>
+	</thead>
+	<tbody>
     <tr>
         <td>$id$</td>
         <td>The Assembly name</td>
@@ -57,6 +93,7 @@ The following is a list of the supported replacement tokens.
         <td>$description$</td>
         <td>The description as specified in the <code>AssemblyDescriptionAttribute</code>.</td>
     </tr>
+	<tbody>
 </table>
 
 You can then edit this nuspec file if you need to customize it. e.g. if you don't want token replacement
@@ -72,6 +109,7 @@ e.g. suppose you want to add all the files from some arbitrary other folder into
 Note that **only** the files defined inside the node will be included in the package.
 If you include an empty <files /> node in the nuspec, all content files will be omitted from the package and only the lib folder will be included.
 
+###Pack
 <p class="info">
 <strong>Note</strong><br />You need to run 'nuget pack' on the project file, not the nuspec itself. But the nuspec will in fact get picked up.
 </p> 
