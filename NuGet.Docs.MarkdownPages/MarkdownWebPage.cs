@@ -43,7 +43,7 @@ namespace NuGet.Docs
 
             Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
             Page.Source = GetSourcePath();
-            Page.GeneratedDateTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss tt UTC");
+            Page.GeneratedDateTime = DateTime.UtcNow.ToShortDateString();
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
@@ -166,13 +166,16 @@ namespace NuGet.Docs
             if (level == 1)
             {
                 heading.Attributes.Add("class", "articleTitle");
+                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}</span>", "Page generated at " + DateTime.UtcNow.ToShortDateString() + " using " + "Markdownsharp") );
+                gentext.Attributes.Add("class", "generatedText");
+                elementsToMove.Add(heading);
+                elementsToMove.Add(gentext);
             }
             else
             {
-                heading.Attributes.Add("class", "articleTopic");
+                elementsToMove.Add(heading);
             }
 
-            elementsToMove.Add(heading);
 
             // All elements after the heading element should be wrapped within the same container, until the next heading is encountered (any level).
             var nextElement = heading.NextSibling;
@@ -218,7 +221,10 @@ namespace NuGet.Docs
                     div.AppendChild(element);
                     if (parentNode != null)
                     {
-                        parentNode.RemoveChild(element);
+                        if (parentNode.ChildNodes.Contains(element))
+                        {
+                            parentNode.RemoveChild(element);
+                        }
                     }
                 }
 

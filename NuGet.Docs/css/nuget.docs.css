@@ -224,6 +224,13 @@ a.na .downloadToolsLinks {
    font-size: 1.5em;
 }
 
+.generatedText {
+   font-size: .8em;
+   color: lightgray;
+   padding-left: 5px;
+   font-weight: 200;
+}
+
 
 aside#toc h2 {
     font-size: 1em;
@@ -306,9 +313,9 @@ aside {
 }
 
 .articleTitle {
-    padding-bottom: 15px;
     font-size: 36px !important;
     font-weight: 500;
+    margin-bottom: 5px !important;
     left: 10px;
 }
 
