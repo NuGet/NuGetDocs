@@ -17,7 +17,20 @@
             <div class="col-xs-12 col-md-8">
                 <div class="content">
                     <section>
-
+                        @if (Page.Source != null)
+                        {
+                            <p>
+                                View or edit this page's source on GitHub:
+                                <a href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)</a>
+                            </p>
+                        }
+                        else
+                        {
+                            <p>
+                                View or edit this site's source on GitHub:
+                                <a href="https://github.com/NuGet/NuGetDocs" target="edit">https://github.com/NuGet/NuGetDocs</a>
+                            </p>
+                        }
                     </section>
                     <section>
                         @RenderBody()
