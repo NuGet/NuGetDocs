@@ -19,18 +19,18 @@
                     <section>
                         @if (Page.Source != null)
                         {
-                            <p>
-                                View or edit this page's source on GitHub:
-                                <a href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)</a>
-                            </p>
+                            <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
+                                <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                            </a>
                         }
                         else
                         {
-                            <p>
-                                View or edit this site's source on GitHub:
-                                <a href="https://github.com/NuGet/NuGetDocs" target="edit">https://github.com/NuGet/NuGetDocs</a>
-                            </p>
+                            <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
+                                <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                            </a>
                         }
+
+                        <p></p>
                     </section>
                     <section>
                         @RenderBody()
@@ -56,9 +56,9 @@
                                 var heading = headings[i];
                                 if (heading.Level == 1)
                                 {
-                    <li>
-                        <a href="#user-content-@heading.ID">@heading.Text</a>
-                    </li>
+                                    <li>
+                                        <a href="#user-content-@heading.ID">@heading.Text</a>
+                                    </li>
                                 }
                                 else if (heading.Level == 2)
                                 {
@@ -68,7 +68,7 @@
                                     }
 
                                     WriteLiteral("<li>");
-                    <a href="#user-content-@heading.ID">@heading.Text</a>
+                                    <a href="#user-content-@heading.ID">@heading.Text</a>
                                     if (i + 1 < headings.Count)
                                     {
                                         if (headings[i + 1].Level > 2)
@@ -83,9 +83,9 @@
                                                     break;
                                                 }
 
-                    <li>
-                        <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
-                    </li>
+                                                <li>
+                                                    <a href="#user-content-@headings[j].ID">@headings[j].Text</a>
+                                                </li>
                                             }
                                         }
                                     }

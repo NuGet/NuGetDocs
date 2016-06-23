@@ -86,13 +86,12 @@ body {
     margin-left: 5px !important;
 }
 
-.twitter
-{
+.twitter {
     margin: 10px;
     text-align: center;
 }
 
-.search{
+.search {
     margin-left: 5px !important;
 }
 
@@ -136,7 +135,7 @@ a.na .downloadToolsLinks {
     transition: margin 0.2s ease-out;
 }*/
 
-.layoutRoot{
+.layoutRoot {
     margin-top: 20px;
 }
 
@@ -213,6 +212,18 @@ a.na .downloadToolsLinks {
     margin-top: 10px;
 }
 
+.githubtext {
+    padding-left: 5px;
+}
+
+.githubsection{
+    padding-left: 10px;
+}
+
+.githubicon {
+   font-size: 1.5em;
+}
+
 
 aside#toc h2 {
     font-size: 1em;
@@ -262,15 +273,15 @@ aside {
 
 /* Article*/
 
-.result{
+.result {
     margin-top: 20px;
 }
 
-.searchtext{
+.searchtext {
     margin-bottom: 5px !important;
 }
 
-.searchfooter{
+.searchfooter {
     margin-top: 20px;
 }
 
