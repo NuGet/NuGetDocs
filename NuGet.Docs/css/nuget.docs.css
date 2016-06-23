@@ -252,6 +252,18 @@ aside {
 
 /* Article*/
 
+.result{
+    margin-top: 20px;
+}
+
+.searchtext{
+    margin-bottom: 5px !important;
+}
+
+.searchfooter{
+    margin-top: 20px;
+}
+
 .jumbotron {
     padding-left: 30px;
     padding-right: 30px;

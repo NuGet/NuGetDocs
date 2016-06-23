@@ -10,7 +10,6 @@
     <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
     <link href="~/css/nanoscroller.css" rel="stylesheet" type="text/css"/>
-
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -31,9 +30,9 @@
                     <li><a href="~/release-notes">Release Notes</a></li>
                 </ul>
                 <div class="search">
-                    <form class="navbar-form navbar-right" role="search">
+                    <form class="navbar-form navbar-right" role="search" action="~/search">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="search docs" autocomplete="off" name="srch-term" id="srch-term" value="@PageData["query"]" action="~/search" method="get" novalidate="novalidate">
+                            <input type="text" class="form-control" placeholder="search docs" autocomplete="off" name="q" id="srch-term" value="@PageData["query"]" method="get" novalidate="novalidate">
                             <div class="input-group-btn">
                                 <button class="btn btn-default searchButton hidden-xs" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 <a href="#menu-toggle" class="btn btn-default toggleTocButton visible-xs" id="menu-toggle">Toggle TOC</a>
