@@ -1,7 +1,6 @@
 ﻿
 /* bootstrap components */
 /*.jumbotron { min-height: 600px; }*/
-
     .navbar li {
         color: #000;
     }
@@ -280,7 +279,7 @@ aside {
     }
 
     aside#toc h3 a {
-        color: black;
+        color: black !important;
     }
 
 /* Article*/
