@@ -11,22 +11,24 @@
 }
 
 #expList {
-    padding-left: 0px;
+    padding-left: 5px;
 }
 
 
     #expList li {
         line-height: 200%;
-        padding-left: 10px;
+        padding-left: 15px;
         font-size: 14px;
+        background-position: 1px 10px;
+        background-repeat: no-repeat;
     }
 
     #expList .collapsed {
-        background-image: url(../img/collapsed.png);
+        background-image: url(../images/collapsed.png);
     }
 
     #expList .expanded {
-        background-image: url(../img/expanded.png);
+        background-image: url(../images/expanded.png);
     }
 
 #expList {
@@ -34,11 +36,12 @@
 }
 
 .listDataSet {
-    padding-left: 10px;
+    padding-left: 20px;
     font-size: 1em;
 }
 
 .level1container {
     margin-top: 20px;
+    padding-left: 10px;
     color: black;
 }
