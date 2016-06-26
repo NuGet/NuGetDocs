@@ -21,12 +21,10 @@
         font-size: 14px;
     }
 
-    /* Collapsed state for list element */
     #expList .collapsed {
         background-image: url(../img/collapsed.png);
     }
-    /* Expanded state for list element
-/* NOTE: This class must be located UNDER the collapsed one */
+
     #expList .expanded {
         background-image: url(../img/expanded.png);
     }

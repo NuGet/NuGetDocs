@@ -39,7 +39,7 @@ foreach (Topic topic in topics)
     foreach (var subtopic in topic.SubTopics)
     {
             <li class="listItem">
-            <a href="@subtopic.Url">@subtopic.Title</a>
+            <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
             </li>
     }
         @Html.Raw("</ul>");
