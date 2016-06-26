@@ -6,18 +6,22 @@ const int minHeading = 3;
 // Maximum depth of the index topic-tree
 const int maxLevels = 3;
 
-var topics = Topic.GetTopicsWithSubTopics("~/")
-    .Where(t => t.SubTopics.Any()
-        && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
+var topics = Topic.GetTopicsWithSubTopics("~/docs");
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Get Started"; }).First());
+(a) => { return a.Title == "GetStarted"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Create"; }).First());
+(a) => { return a.Title == "Tools"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Consume"; }).First());
+(a) => { return a.Title == "FileReference"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "TargetFrameworks"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "API"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Host"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Topics"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Contribute"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
