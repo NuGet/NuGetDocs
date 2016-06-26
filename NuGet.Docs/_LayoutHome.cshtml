@@ -7,20 +7,18 @@
     <div id="sidebar-wrapper" style="background-color:transparent">
         <div id="about" class="nano">
             <div class="nano-content">
-                <aside id="toc">
-                    <div id="listContainer" class="listDataSet">
-                        <ul id="expList">
-                            @TopicHelper.RenderDocumentationIndex()
-                            @RenderBody()
-                        </ul>
-                    </div>
-                </aside>
+                <div id="listContainer" class="listDataSet">
+                    <ul id="expList">
+                        @TopicHelper.RenderDocumentationIndex()
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    @RenderBody()
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <div class="col-xs-8">
+            <div class="col-xs-12 col-md-8">
                 <section class="group">
                     <div id="Overview" class="jumbotron container-fluid swimlane">
                         <h3 class="swimlaneTitle">Overview</h3>
