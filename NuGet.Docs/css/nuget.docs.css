@@ -2,6 +2,10 @@
 /* bootstrap components */
 /*.jumbotron { min-height: 600px; }*/
 
+    .navbar li {
+        color: #000;
+    }
+
 #baseSidebar.affix {
     top: 70px;
 }
@@ -91,14 +95,14 @@ body {
     text-align: center;
 }
 
-.search {
+/*.search {
     margin-left: 5px !important;
-}
+}*/
 
-.searchButton {
+/*.searchButton {
     padding-bottom: 3px !important;
     margin-left: 2px !important;
-}
+}*/
 
 .toggleTocButton {
     width: 110px;
@@ -216,20 +220,20 @@ a.na .downloadToolsLinks {
     padding-left: 5px;
 }
 
-.githubsection{
+.githubsection {
     padding-left: 10px;
 }
 
 .githubicon {
-   font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .generatedText {
-   font-size: .8em;
-   color: gray;
-   padding-left: 1px;
-   font-weight: 200;
-   margin-bottom: 20px;
+    font-size: .8em;
+    color: gray;
+    padding-left: 1px;
+    font-weight: 200;
+    margin-bottom: 20px;
 }
 
 
@@ -332,4 +336,15 @@ aside {
     padding-bottom: 5px;
     font-size: 28px !important;
     left: 10px;
+}
+
+warningcallout {
+    border-left-color: #ffd433;
+    border-left-width: 4px;
+    border-left-style: solid;
+    background-color: #fffaea;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+    padding-left: 23px;
 }

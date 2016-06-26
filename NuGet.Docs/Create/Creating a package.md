@@ -20,7 +20,9 @@ and create a package.
 
 This creates a Nuspec file. Edit the NuSpec file as needed and then
 
+<warningcallout>
     nuget pack MyAssembly.nuspec
+</warningcallout>
 
 ### From a project
 For simple packages, creating a package from a csproj or vbproj file is a convenient way 
