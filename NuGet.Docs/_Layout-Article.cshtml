@@ -7,7 +7,11 @@
         <div id="about" class="nano">
             <div class="nano-content">
                 <aside id="toc">
-                    @TopicHelper.RenderDocumentationIndex()
+                    <div id="listContainer">
+                        <ul id="expList">
+                            @TopicHelper.RenderDocumentationIndex()
+                        </ul>
+                    </div>
                 </aside>
             </div>
         </div>

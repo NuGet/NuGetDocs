@@ -1,0 +1,46 @@
+﻿
+/********************/
+/* EXPANDABLE LIST  */
+/********************/
+
+#expList ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#expList {
+    padding-left: 0px;
+}
+
+
+    #expList li {
+        line-height: 200%;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+    /* Collapsed state for list element */
+    #expList .collapsed {
+        background-image: url(../img/collapsed.png);
+    }
+    /* Expanded state for list element
+/* NOTE: This class must be located UNDER the collapsed one */
+    #expList .expanded {
+        background-image: url(../img/expanded.png);
+    }
+
+#expList {
+    margin-bottom: 30px;
+}
+
+.listDataSet {
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.level1container {
+    margin-top: 20px;
+    color: black;
+}
