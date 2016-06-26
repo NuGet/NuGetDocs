@@ -1,124 +1,159 @@
-#Branding the NuGet Gallery
-This doc covers the general instructions for re-branding the NuGet Gallery (based on API v2) so that a separate gallery with new branding (and content, style, etc.) can be quickly and easily set up.  Additionally, it will be possible to continue taking pulls from the main git repository as the files will not conflict with the existing gallery.
+# Project.json Usage
 
-##What You Need to Do
+Project.json is the file replacing package.config as the file specifying the packages used by the project. 
 
-At a high level re-branding the gallery is as simple as these three steps.
+This document is provided for a deeper dive into the content and shape of the file, as well as for some advanced features not available directly through the UI. 
 
-1. Clone the gallery
-2. Modify the web.config
-3. Add any new files/content to the Branding folder
 
-###Clone the Gallery
+The project.json used by NuGet 3 has the following basic shape 
 
-Follow the instructions on setting up a local version of the NuGet Gallery [here](https://github.com/NuGet/NuGetGallery/blob/master/README.markdown), with the following changes:
+    { 
+    
+      "dependencies": { "PackageId" : "1.0.0" }, 
+      "frameworks" : { "TxM" : {} }, 
+      "runtimes" : { "RID": {}, "RID": {} }, 
+      "supports" : { "CompatibilityProfile" : {}, "CompatibilityProfile" : {} } 
+    
+    }
+   
+## Dependencies 
 
-1. First fork the gallery from the main fork to your own version.  This can be accomplished be clicking the fork button at the top of the GitHub page for the NuGet Gallery Repository.
-2. When you clone down, you will use the url of your own fork of the gallery, not the main NuGetGallery fork.
-3. After cloning add a reference to the main NuGetGallery repository by typing `git add remote nuget https://gitub.com/NuGet/NuGetGallery.git` in your GitBash/Powershell terminal.
+Lists the nuget package dependencies of your project in the form of: 
 
-###Modify the web.config
+    “PackageId” : “Version Constraint”.  
+    
+For example: 
 
-In addition to any modifications made as part of the process to get your gallery running locally in the instructions above, find the `Gallery.Brand` and the `Gallery.GalleryOwner` references and modify them with the new values for your re-branded Gallery.
+    "dependencies": { 
+    
+       "Microsoft.NETCore": "5.0.0", 
+       "System.Runtime.Serialization.Primitives": "4.0.10" 
+    
+    } 
 
-	<add key="Gallery.Brand" value="Rebranded Gallery" />
-    <add key="Gallery.GalleryOwner" value="Rebranded NuGet Gallery &lt;your_email@youremailhoster.com&gt;" />
+The dependencies section is where the NuGet Package Manager dialog will add package dependencies to your project. 
 
-###New Files and Styles
+The Package id corresponds to the id of the package on nuget.org , the same as the id used in the package manager console: `Install-Package Microsoft.NETCore` 
 
-For adding any new Views to the re-branded Gallery use the following instructions:
+The version constraint of **"5.0.0"** corresponds to the **>= 5.0.0** constraint. This means that if for some reason 5.0.0 is not available on the server and 5.0.1 is, the restore will pick 5.0.1 and warn you about the upgrade. Otherwise restore will pick the lowest possible version on the server matching the constraint which will be 5.0.0. 
 
-1. Copy the directory structure under the `Views` folder of the view you are overwriting exactly under the `Branding` folder.
+See dependency resolution document for more details on resolution rules. 
 
-		/Views/Packages/UploadPackage.cshtml
-		maps to
-		/Branding/Packages/UploadPackage.cshtml
+## Frameworks
 
-2. Create the new Razor file there.
-3. Build and Run the Project.
-4. Navigate to the page you are overwriting and verify that the page has the content from the `Branding` folder.
 
-For adding any new Content files to the re-branded Gallery use the following instructions:
+This lists the frameworks that your project will run on. E.g. net45, dnxcore50, net40. 
 
-1. In the `Branding` folder create a `Content` folder.
-2. Add the Content file of your choice (Styles, Layout, PageStylings)
-3. Note that these files will be appended to the matched Content file, with normal css rules being used (later overwrites of the same rule will win).
-4. This means that it is possible that pulling down the latest gallery version from git can change your styling as more specific rules can be added in the pull request.
 
-Note: there is a current [bug](https://github.com/NuGet/NuGetGallery/issues/1888) related to content re-branding getting served.  Workaround steps are provided there
+     "frameworks": { 
+    
+       "netcore50": {} 
+    
+     } 
 
-##Pulling the Latest NuGet Gallery into the Re-Branded Gallery
 
-The goal of re-branding the gallery in the steps outlined above is that you can continue to pull updated versions of the gallery code without worrying about your views and content being overwritten.  Additionally, you can use the existing git infrastructure of the gallery to do your own source control within your team.  When you are ready to pull the latest changes from the main fork of the gallery just do a `git pull nuget master` and you will get the latest gallery bits.  
+Unlike the project.json used by DNX a project.json that is being used with other project types can only have a single entry in the frameworks section. This is because the build system, MSBuild, only ever builds for a single target in contrast to DNX where the build is run once for each of the targets. 
 
-**Note**: the web.config can cause a merge conflict (if it has been modified in master), and when resolving the merge conflict you should make sure to preserve any updates you have made, while being aware of any new settings added in master.
+## Runtimes 
 
-##Examples of Re-Branding the Gallery
+The Operating System and Architectures that your application will be running on. For example, win7-x64, win8-x64, win8-x86. 
 
-This section has in depth walkthroughs and examples of the different processes involved in re-branding the gallery detailed above.
+If you are a portable class library that can run on any runtime, you don't need to specify a runtime. Of course any dependencies of your package have to run on any runtime as well. 
 
-###Modifying the web.config
 
-Open the web.config file of the NuGetGallery project.  Then search for the Brand and GalleryOwner attributes in the file.
+	"runtimes": { 
 
-![screenshot of the web.config file (with line numbers) with the Brand and GalleryOwner attributes highlighted](/images/contribute/webconfig1.jpg)
+        "win10-arm": { }, 
+	    "win10-arm-aot": { }, 
+	    "win10-x86": { }, 
+	    "win10-x86-aot": { }, 
+	    "win10-x64": { }, 
+	    "win10-x64-aot": { } 
 
-Modify these two attributes to the new values for your re-branded Gallery.
+	} 
 
-![screenshot of the web.config file with the Brand and GalleryOwner modified from above](/images/contribute/webconfig2.jpg)
 
-###Creating/Overriding a New View
+## Supports 
 
-In this example, the Upload Package page will be re-branded to contain unique language for the re-branded site.
+Is for defining a set to checks for the package dependencies. 
 
-First note the folder structure of the original Upload Package page.
+Here you are defining the places you expect the portable library/application to run, it is not restrictive, you may be able to run elsewhere but specifying things here will make NuGet check that all dependencies are able to be satisfied on the listed TxMs. This is similar to PCL profiles, without being restrictive. Examples of the values for this are: net46.app, dnxcore50.app, uwp.10.0.app. 
 
-![picture of the folder structure under views of Packages/uploadPackage](/images/contribute/uploadPackage1.jpg)
 
-Also notice that on F5, if you navigate to `http://nuget.localtest.me/packages/upload` you see the content from the uploadPackage page.
+This section should be populated automatically when you select an entry in the Portable Class Library targets dialog. 
 
-![screenshot of http://nuget.localtest.me/packages/upload] (/images/contribute/uploadPackage2.jpg)
+	supports": { 
 
-Create a matching folder structure (including the Views folder, under branding)
+	    "net46.app": {}, 
+	    "uwp.10.0.app": {} 
 
-![picture showing the new folders (Views and Packages) created under the Branding folder](/images/contribute/uploadPackage3.jpg)
+	} 
 
-Create a new .cshtml file named `uploadPackage.cshtml` under the new `Branding/Views/Packages` Area path.  Then modify the file to the new desired values.
 
-![screenshot showing both the editor and the solution explorer with the new Branding/Views/Packages/uploadPackage.cshtml page](/images/contribute/uploadPackage4.jpg)
+## Imports  ##
 
-When we now refresh the `http://nuget.localtest.me/packages/upload` page in the browser, the new content from the `Branding/Views/Packages/uploadPackage.cshtml` is displayed.
 
-![screenshot of the browser displaying the new http://nuget.localtest.me/packages/upload page, with the re-branding override](/images/contribute/uploadPackage5.jpg)
+Imports are designed to allow packages that use the dotnet TxM to operate with packages that don’t declare a dotnet TxM. If your project is using the dotnet TxM then all the packages you depend on must also have a dotnet TxM, unless you add the following to your project.json in order to allow non dotnet platforms to be compatible with dotnet. If you are using the dotnet TxM then the PCL project system will add the appropriate imports statement based on the supported targets. 
 
-That's all.
 
-###Adding Custom CSS
+	"frameworks": { 
 
-Identify which content file the styling you are overriding comes from (Layout, Site, or PageStylings). Create a new css file with the same name in the `Branding/Content` folder.  In this example some styling from the Layout page is being overridden, so that file is created.
+    	"dotnet": { "imports" : "portable-net45+win81" } 
 
-![Screenshot of a new Layout.css file in the Branding/Content folder](/images/contribute/customcontent1.jpg)
+	} 
 
-Now add your css rule as normal (either for overriding or for creating new styling rules).  In this example, the footer background color is modified from a peaceful teal to a blinding yellow.
 
-![Screenshot of the new rule on the left and the nuget homepage with the new footer styling on the right](/images/contribute/customcontent2.jpg)
+# Project.lock.json  #
 
-##Tips for how to Re-Brand
 
-###Using BrowserLink with WebEssentials to identify the origin file of content to change
+The project.lock.json is a file that is generated in the process of restoring the NuGet packages. It is a snapshot of all the information that is generated as NuGet walks the graph of packages and includes the version, contents, and dependencies of all the packages your application depends on. 
 
-Using BrowserLink (with WebEssentials) it's easy to identify which files you need to override in the Branding folder.
 
-Pre-reqs:
+## Why do I need a lock file?  ##
 
-- Visual Studio 2013 Pro, Premium or Ultimate
-- [WebEssentials](http://visualstudiogallery.msdn.microsoft.com/56633663-6799-41d7-9df7-0f2a504ca361)
 
-Go into Visual Studio, and run the NuGetGallery (F5).  In the browser navigate to the page you want to alter.  In this example we will use the Upload Package page. Notice at the bottom left of the browser window there is a semi-transparent overlay.
+* In NuGet v3 all packages are downloaded only once to a user level packages directory. The project.lock.json provides the package information to the build system to allow it to only pick packages from the global location that are relevant for the project it is building.  
 
-![Screenshot of the browser on the nuget.localtest.me/packages/upload page](/images/contribute/browserlink1.jpg)
 
-Either click the inspect element or use the keyboard shortcut (`Ctrl+Alt+I`).  Make sure that you can see both Visual Studio and the browser.  Now hover over the page to see which file generated which parts of the page.
+* It stores the list of files and relevant content for compilation and runtime so that the build system only has to read a single file instead of many nuspec files.  
 
-![Screenshot of hovering over an element in the browser in inspectmode (1), with the VS also visible and having that element in the IDE highlighted(2)] (/images/contribute/browserlink2.jpg)
 
+* **Obsoleted: locked property is no longer supported** ~~When you actually lock the lock file, the package restore process skips the dependency resolution step. It will just download the files listed in the lock file. So when your lock file is locked NuGet will no longer resolve floating dependencies or do any of the other work from the dependency resolution process.~~ 
+
+## **Obsoleted:** ~~When should I lock the lock file?~~ 
+
+**Locking the lock file is no longer supported**
+~~The canonical example for when you want to lock your lock file is when you have floating dependencies on internal packages that are undergoing churn that breaks your particular branch/project. In this scenario you would lock your lock file on a known-good set of packages until the packages you depend on are stable again.~~ 
+
+
+## Should I check in the lock file?  ##
+
+
+In general it is not necessary to check in the lock file. A lock file will be auto generated whenever a restore happens, so you can safely leave it out of source control and avoid accidental merge conflicts. On git source control system and newer versions of TFS a .gitignore/.tfignore can be used to prevent this file from being checked in accidentally. 
+
+
+Checking in a lock file is possible, and the diff will show the changes in dependencies resolved overtime. 
+
+
+## Differences from DNX/ASP.NET 5  ##
+
+
+The project.json file used by NuGet is a subset of that found in DNX projects. In DNX the project.json file is used for project metadata, compilation information, and dependencies. When used in other project systems those three things are split into separate files so the project.json specifies less information. Notable differences include: 
+
+* There can only be one framework in the frameworks section 
+
+
+* The framework should be empty, as shown above. No dependencies, compilation options, etc that you can see in DNX project.json files. Given that there can only be a single framework it doesn’t make sense to enter framework specific dependencies. 
+
+
+* Compilation is handled by MSBuild so compilation options, preprocessor defines, etc are all part of the MSBuild project file and not your project.json.  
+
+
+
+ 
+
+
+In NuGet 3 unlike in DNX/ASPNET 5 projects (at least for now) the user is not expected to manually edit the file, the UI is responsible for manipulating the content. we're working on unifying the experiences across the project systems for project.json, its not unified yet for this release. 
+
+
+Note that it is possible to edit the file, the user is responsible to build the project to kick off a package restore.  
