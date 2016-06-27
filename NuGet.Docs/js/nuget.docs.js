@@ -44,6 +44,8 @@ function prepareList() {
             $(this).toggleClass('expanded');
             $(this).children('ul').toggle('medium');
         }
+        debugger
+        expandFirstChild();
         return false;
     })
     .addClass('collapsed')
@@ -62,9 +64,15 @@ function prepareList() {
         $('.collapsed').removeClass('expanded');
         $('.collapsed').children().hide('medium');
     })
-    
+
+    function expandFirstChild()
+    {
+        $('#expList:first-child').addClass('expanded');
+        $('#expList:first-child').children().show('medium');
+    }
 };
 
 $(document).ready(function () {
+    debugger
     prepareList()
 });
