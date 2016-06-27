@@ -635,15 +635,15 @@ Specify the path to the package and your API key to push the package to the serv
         <td>The API key for the server.</td>
     </tr>
     <tr>
-        <td>SymbolsSource</td>
-        <td>(v<em>3.5</em>) Specifies the symbols server URL. If not specified, nuget.smbsrc.net is used when pushing to nuget.org.
+        <td>SymbolSource</td>
+        <td>(v<em>3.5</em>) Specifies the symbol server URL. If not specified, nuget.smbsrc.net is used when pushing to nuget.org.
         <br />
-        A symbols package is automatically pushed to the symbols source when a *.symbols.nupkg exists along with the *.nupkg that is being pushed.
+        A symbol package is automatically pushed to the symbol source when a *.symbols.nupkg exists along with the *.nupkg that is being pushed.
         </td>
     </tr>
     <tr>
-        <td>SymbolsApiKey</td>
-        <td>(v<em>3.5</em>) The API key for the symbols server.</td>
+        <td>SymbolApiKey</td>
+        <td>(v<em>3.5</em>) The API key for the symbol server.</td>
     </tr>
     <tr>
         <td>Timeout</td>
