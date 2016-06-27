@@ -1,4 +1,4 @@
-# Package Manager Console Powershell Reference
+ï»¿# Package Manager Console Powershell Reference
 The Package Manager Console is a PowerShell console within Visual Studio used to interact with NuGet and 
 automate Visual Studio. Note that for more detailed help, you can run the <code>Get-Help <em>CommandName</em></code> 
 from within the NuGet Package Manager Console in Visual Studio.
@@ -497,7 +497,7 @@ Uninstalls a package.
 
     Uninstall-Package [-Id] <string> [-RemoveDependencies] [-ProjectName <string>] [-Force] [-Version <string>] [-WhatIf]
 
-Uninstalls a package. If other packages depend on this package, the command will fail unless the –Force option is specified.
+Uninstalls a package. If other packages depend on this package, the command will fail unless the â€“Force option is specified.
 
 <pre>    
 PARAMETERS
@@ -568,7 +568,7 @@ PARAMETERS
         Required: false
         
     <strong>-IgnoreDependencies</strong>
-        Updates none of the package’s dependencies to the latest version. False by default.
+        Updates none of the packageâ€™s dependencies to the latest version. False by default.
         
         Required: false
         
