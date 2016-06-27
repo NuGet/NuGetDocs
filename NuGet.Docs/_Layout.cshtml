@@ -48,7 +48,22 @@
             </div>
         </div>
     </nav>
-    @RenderBody()
+    <div id="wrapper">
+        <div id="sidebar-wrapper" style="background-color:transparent">
+            <div id="about" class="nano">
+                <div class="nano-content">
+                    <div id="listContainer" class="listDataSet">
+                        <ul id="expList">
+                            @TopicHelper.RenderDocumentationIndex()
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            @RenderBody()
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
