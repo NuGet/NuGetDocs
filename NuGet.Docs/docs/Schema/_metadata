@@ -1,4 +1,4 @@
-﻿Package-Manager-Dialog
-Package-Manager-Console
-Package-Restore
-Reinstalling-Packages
+﻿nuspec
+Target Frameworks
+nuget-config
+porject-json

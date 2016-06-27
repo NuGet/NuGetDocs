@@ -9,13 +9,11 @@ const int maxLevels = 3;
 var topics = Topic.GetTopicsWithSubTopics("~/docs");
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "GetStarted"; }).First());
+(a) => { return a.Title == "Get Started"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Tools"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Schema"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "TargetFrameworks"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "API"; }).First());
 orderedList.Add(topics.Where(
@@ -49,22 +47,10 @@ foreach (Topic topic in topics)
 
 @helper RenderReleaseNotesIndex()
 {
-foreach (var subTopic in Topic.GetSubTopics("~/docs/ReleaseNotes"))
+foreach (var subTopic in Topic.GetSubTopics("~/docs/Release-Notes"))
 {
         <p><a href="@subTopic.Url">@subTopic.Title</a></p>
 }
 
-}
-
-@helper RenderReferencesIndex()
-{
-const int minHeading = 3;
-// Maximum depth of the index topic-tree
-const int maxLevels = 3;
-
-var topics = Topic.GetTopicsWithSubTopics("~/references")
-    .Where(t => t.SubTopics.Any()
-        && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
-    @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
 }
 
