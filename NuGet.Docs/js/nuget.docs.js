@@ -45,8 +45,7 @@ function prepareList() {
             $(this).toggleClass('expanded');
             $(this).children('ul').toggle('medium');
         }
-        debugger
-        expandFirstChild();
+
         return false;
     })
     .addClass('collapsed')
@@ -65,15 +64,34 @@ function prepareList() {
         $('.collapsed').removeClass('expanded');
         $('.collapsed').children().hide('medium');
     })
-
-    function expandFirstChild()
-    {
-        $('#expList:first-child').addClass('expanded');
-        $('#expList:first-child').children().show('medium');
-    }
 };
 
 $(document).ready(function () {
     $.fx.off = true;
-    prepareList()
+    prepareList();
+    debugger
+    var url = window.location.href;
+    if (url.indexOf("/get-started") != -1)
+    {
+        $('#a-Get Started').click();
+    }
+    else if (url.indexOf("/tools") != -1)
+    {
+        $('#a-Tools').click();
+    }
+    else if (url.indexOf("/schema") != -1) {
+        $('#a-Schema').click();
+    }
+    else if (url.indexOf("/api") != -1) {
+        $('#a-API').click();
+    }
+    else if (url.indexOf("/topics") != -1) {
+        $('#a-Topics').click();
+    }
+    else if (url.indexOf("/host") != -1) {
+        $('#a-Host').click();
+    }
+    else {
+        $('#expList').find('li:has(ul)').click();
+    }
 });

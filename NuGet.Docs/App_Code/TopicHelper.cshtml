@@ -31,7 +31,7 @@ orderedList.Add(topics.Where(
 foreach (Topic topic in topics)
 {
 
-        <li class="level1container" />
+        <li id="a-@topic.Title" class="level1container" />
         <span>@topic.Title</span>
         @Html.Raw("<ul>");
     foreach (var subtopic in topic.SubTopics)
