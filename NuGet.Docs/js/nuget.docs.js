@@ -71,11 +71,7 @@ $(document).ready(function () {
     prepareList();
     debugger
     var url = window.location.href;
-    if (url.indexOf("/get-started") != -1)
-    {
-        $('#a-Get Started').click();
-    }
-    else if (url.indexOf("/tools") != -1)
+    if (url.indexOf("/tools") != -1)
     {
         $('#a-Tools').click();
     }
@@ -92,6 +88,6 @@ $(document).ready(function () {
         $('#a-Host').click();
     }
     else {
-        $('#expList').find('li:has(ul)').click();
+        $('#expList').children('li').first().click();
     }
 });
