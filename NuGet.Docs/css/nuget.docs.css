@@ -1,9 +1,9 @@
-﻿@-ms-viewport {
-    width: device-width;
-}
-
+﻿
 /* bootstrap components */
 /*.jumbotron { min-height: 600px; }*/
+    .navbar li {
+        color: #000;
+    }
 
 #baseSidebar.affix {
     top: 70px;
@@ -89,10 +89,19 @@ body {
     margin-left: 5px !important;
 }
 
-.searchButton {
+.twitter {
+    margin: 10px;
+    text-align: center;
+}
+
+/*.search {
+    margin-left: 5px !important;
+}*/
+
+/*.searchButton {
     padding-bottom: 3px !important;
     margin-left: 2px !important;
-}
+}*/
 
 .toggleTocButton {
     width: 110px;
@@ -117,19 +126,19 @@ a.na .downloadToolsLinks {
     margin-left: -50px !important;
 }
 
-.polaroid:hover {
+/*.polaroid:hover {
     margin-top: -10px;
 }
 
-.polaroid {
+/*.polaroid {
     margin-top: 5px;
     -webkit-transition: margin 0.2s ease-out;
     -moz-transition: margin 0.2s ease-out;
     -o-transition: margin 0.2s ease-out;
     transition: margin 0.2s ease-out;
-}
+}*/
 
-.layoutRoot{
+.layoutRoot {
     margin-top: 20px;
 }
 
@@ -152,6 +161,7 @@ a.na .downloadToolsLinks {
     padding-bottom: 10px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
+    padding-top: 7px !important;
     margin-bottom: 10px !important;
 }
 
@@ -206,6 +216,26 @@ a.na .downloadToolsLinks {
     margin-top: 10px;
 }
 
+.githubtext {
+    padding-left: 5px;
+}
+
+.githubsection {
+    padding-left: 10px;
+}
+
+.githubicon {
+    font-size: 1.5em;
+}
+
+.generatedText {
+    font-size: .8em;
+    color: gray;
+    padding-left: 1px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
 
 aside#toc h2 {
     font-size: 1em;
@@ -250,10 +280,22 @@ aside {
     }
 
     aside#toc h3 a {
-        color: black;
+        color: black !important;
     }
 
 /* Article*/
+
+.result {
+    margin-top: 20px;
+}
+
+.searchtext {
+    margin-bottom: 5px !important;
+}
+
+.searchfooter {
+    margin-top: 20px;
+}
 
 .jumbotron {
     padding-left: 30px;
@@ -267,10 +309,7 @@ aside {
 
 .articleSwimlane {
     background-color: transparent !important;
-    padding-bottom: 10px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    padding-top: 10px !important;
+    padding: 10px !important;
     margin-bottom: 10px !important;
 }
 
@@ -279,9 +318,9 @@ aside {
 }
 
 .articleTitle {
-    padding-bottom: 15px;
     font-size: 36px !important;
     font-weight: 500;
+    margin-bottom: 7px !important;
     left: 10px;
 }
 
@@ -297,4 +336,15 @@ aside {
     padding-bottom: 5px;
     font-size: 28px !important;
     left: 10px;
+}
+
+warningcallout {
+    border-left-color: #ffd433;
+    border-left-width: 4px;
+    border-left-style: solid;
+    background-color: #fffaea;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+    padding-left: 23px;
 }

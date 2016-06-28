@@ -43,7 +43,7 @@ namespace NuGet.Docs
 
             Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
             Page.Source = GetSourcePath();
-            Page.GeneratedDateTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss tt UTC");
+            Page.GeneratedDateTime = DateTime.UtcNow.ToShortDateString();
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
@@ -70,36 +70,11 @@ namespace NuGet.Docs
         {
             var githubMarkdown = new Octokit.MiscellaneousClient(new Octokit.Connection(new Octokit.ProductHeaderValue("NuGet.Docs")));
             string fileContents = null;
-
-            //try
-            //{
-            //    // Try to transform the content using GitHub's API
-            //    var request = githubMarkdown.RenderRawMarkdown(content);
-            //    request.Wait();
-
-            //    if (request.IsCompleted)
-            //    {
-            //        fileContents = request.Result
-            //            .Replace("<table>", "<table class=\"reference\">")
-            //            .Replace("<p>\n<strong>Note", "<p class=\"info\">\n<strong>Note")
-            //            .Replace("<p>\n<strong>Caution", "<p class=\"caution\">\n<strong>Caution")
-            //            .Replace("<div>\n<strong>Caution", "<div class=\"caution\">\n<strong>Caution");
-            //        Page.Generator = "GitHub";
-            //    }
-            //}
-            //catch
-            //{
-            //    // If the call to GitHub failed, then we'll swallow the exception
-            //    // and in the finally block, we'll use MarkdownSharp as a fallback.
-            //}
-            //finally
-            //{
-                if (fileContents == null)
-                {
-                    fileContents = new Markdown().Transform(content);
-                    Page.Generator = "MarkdownSharp";
-                }
-            //}
+            if (fileContents == null)
+            {
+                fileContents = new Markdown().Transform(content);
+                Page.Generator = "MarkdownSharp";
+            }
 
             return ProcessTableOfContents(fileContents);
         }
@@ -184,25 +159,28 @@ namespace NuGet.Docs
         /// <param name="heading">The HTML heading node.</param>
         /// <param name="containerDictionary">The dictionary to add the wrapping HTML container and its elements into.</param>
         /// <param name="cssClass">The CSS class to be applied to the wrapping HTML container.</param>
-        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, int level , string cssClass)
+        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, int level, string cssClass)
         {
             var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<div class=\"{0}\"></div>", cssClass));
             var elementsToMove = new List<HtmlNode>();
             if (level == 1)
             {
                 heading.Attributes.Add("class", "articleTitle");
+                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}<br/><br/></span>", "Page generated on " + DateTime.UtcNow.ToShortDateString() + " using " + "Markdownsharp") );
+                gentext.Attributes.Add("class", "generatedText");
+                elementsToMove.Add(heading);
+                elementsToMove.Add(gentext);
             }
             else
             {
-                heading.Attributes.Add("class", "articleTopic");
+                elementsToMove.Add(heading);
             }
 
-            elementsToMove.Add(heading);
 
             // All elements after the heading element should be wrapped within the same container, until the next heading is encountered (any level).
             var nextElement = heading.NextSibling;
 
-            if(level ==1)
+            if (level == 1)
             {
                 while (nextElement != null &&
                  !(nextElement.Name.Length == 2
@@ -243,7 +221,10 @@ namespace NuGet.Docs
                     div.AppendChild(element);
                     if (parentNode != null)
                     {
-                        parentNode.RemoveChild(element);
+                        if (parentNode.ChildNodes.Contains(element))
+                        {
+                            parentNode.RemoveChild(element);
+                        }
                     }
                 }
 
@@ -256,9 +237,9 @@ namespace NuGet.Docs
 
         private static void PostPorcessElements(HtmlDocument doc)
         {
-            foreach(var node in doc.DocumentNode.Descendants())
+            foreach (var node in doc.DocumentNode.Descendants())
             {
-                if(node.Name == "table")
+                if (node.Name == "table")
                 {
                     if (node.Attributes.FirstOrDefault(x => x.Name == "class") != null)
                     {

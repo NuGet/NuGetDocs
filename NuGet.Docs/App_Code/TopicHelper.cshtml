@@ -6,18 +6,20 @@ const int minHeading = 3;
 // Maximum depth of the index topic-tree
 const int maxLevels = 3;
 
-var topics = Topic.GetTopicsWithSubTopics("~/")
-    .Where(t => t.SubTopics.Any()
-        && !String.Equals(t.Title.ToLowerInvariant(), "release notes"));
+var topics = Topic.GetTopicsWithSubTopics("~/docs");
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Get Started"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Create"; }).First());
+(a) => { return a.Title == "Tools"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Consume"; }).First());
+(a) => { return a.Title == "Schema"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "API"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Host"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Topics"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Contribute"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
@@ -28,21 +30,27 @@ orderedList.Add(topics.Where(
 {
 foreach (Topic topic in topics)
 {
-        @Html.Raw("<h" + level + ">");
-        <a href="@topic.Url">@topic.Title</a>
-        @Html.Raw("</h" + level + ">");
 
-        if (level < maxDepth)
-        {
-            @RenderIndexTopics(topic.SubTopics, level + 1, maxDepth);
-        }
+        <li class="level1container" />
+        <span>@topic.Title</span>
+        @Html.Raw("<ul>");
+    foreach (var subtopic in topic.SubTopics)
+    {
+            <li class="listItem">
+            <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
+            </li>
+    }
+        @Html.Raw("</ul>");
+        @Html.Raw("</li>");
     }
 }
 
 @helper RenderReleaseNotesIndex()
 {
-foreach (var subTopic in Topic.GetSubTopics("~/Release-Notes"))
+foreach (var subTopic in Topic.GetSubTopics("~/docs/Release-Notes"))
 {
         <p><a href="@subTopic.Url">@subTopic.Title</a></p>
 }
+
 }
+

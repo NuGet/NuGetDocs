@@ -25,3 +25,4 @@ PrecompiledWeb/
 App_Data/
 [Tt]humbs.db
 /packages
+NuGet.Docs/docs/Topics/Creating a package.md
