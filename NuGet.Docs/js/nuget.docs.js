@@ -39,7 +39,8 @@
 
 function prepareList() {
     $('#expList').find('li:has(ul)')
-    .click( function(event) {
+    .click(function (event) {
+
         if (this == event.target) {
             $(this).toggleClass('expanded');
             $(this).children('ul').toggle('medium');
@@ -73,6 +74,6 @@ function prepareList() {
 };
 
 $(document).ready(function () {
-    debugger
+    $.fx.off = true;
     prepareList()
 });
