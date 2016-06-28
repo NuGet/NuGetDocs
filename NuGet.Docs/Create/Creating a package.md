@@ -7,18 +7,18 @@ We&#8217;ll cover more interesting cases later.
 
 <div class="panel panel-warning">
   <div class="panel-heading">
-    <h3 class="panel-title">Pre-requisites</h3>
+
   </div>
   <div class="panel-body">
+	<b>Pre-requisites</b><br>
     <a href="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe">Download NuGet.exe</a> and save to a path of your choice.<br>
 	Add this path to the <a href="https://msdn.microsoft.com/en-us/library/office/ee537574(v=office.14).aspx">PATH Environment Variable</a>.
   </div>
 </div>
 
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">GUI based alternative</h3>
-  </div>
+<div class="panel panel-info">
+  <div class="panel-heading"/>
+
   <div class="panel-body">
     If you are <strong>GUI inclined</strong>, use the <a href="/Create/using-a-gui-to-build-packages" class="alert-link">Package Explorer GUI to create packages</a>.<br>
   <small>Note: This tool is OSS, not supported by the NuGet team, and is not signed.</small>
@@ -29,8 +29,8 @@ We&#8217;ll cover more interesting cases later.
 ##Assembly
 If you have an assembly, you can easily generate a <span class="text-primary">.nuspec</span> file from metadata within the assembly 
 and create a package.
-<div class="panel panel-primary">
-  <div class="panel-heading">
+<div class="panel panel-info">
+  <div class="panel-body">
     A .nuspec file is a manifest that uses XML to describe a package. The manifest is used to build a package and is also stored in the package after the package is built.
   </div>
 </div>
