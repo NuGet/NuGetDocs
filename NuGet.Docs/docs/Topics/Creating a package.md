@@ -16,6 +16,14 @@ We&#8217;ll cover more interesting cases later.
   </div>
 </div>
 
+<magic-block-callout-warning>
+<div>
+	<p><b>Pre-requisites</b><br>
+    <a href="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe">Download NuGet.exe</a> and save to a path of your choice.<br>
+	Add this path to the <a href="https://msdn.microsoft.com/en-us/library/office/ee537574(v=office.14).aspx">PATH Environment Variable</a>.</p>
+	</div>
+</magic-block-callout-warning>
+
 <div class="panel panel-info">
   <div class="panel-heading"/>
 
@@ -24,6 +32,11 @@ We&#8217;ll cover more interesting cases later.
   <small>Note: This tool is OSS, not supported by the NuGet team, and is not signed.</small>
   </div>
 </div>
+
+<magic-block-callout-info>
+<p>If you are <strong>GUI inclined</strong>, use the <a href="/Create/using-a-gui-to-build-packages" class="alert-link">Package Explorer GUI to create packages</a>.<br>
+  <small>Note: This tool is OSS, not supported by the NuGet team, and is not signed.</small></p>
+</magic-block-callout-info>
 
 
 ##Assembly

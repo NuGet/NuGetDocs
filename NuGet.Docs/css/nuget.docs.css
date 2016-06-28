@@ -348,3 +348,32 @@ warningcallout {
     padding-bottom: 13px;
     padding-left: 23px;
 }
+
+magic-block-callout-warning {
+  margin-left: 31px;
+  border-left: 4px solid #f00;
+  padding: 13px 13px 13px 23px;
+  position: relative;
+  margin-bottom: 3em;
+  background-color: #fcf8f2;
+  border-color: #f0ad4e;
+}
+
+magic-block-callout-info {
+  margin-left: 31px;
+  border-left: 4px solid #f00;
+  padding: 13px 13px 13px 23px;
+  position: relative;
+  margin-bottom: 3em;
+  background-color: #e3edf2;
+  border-color: #5bc0de;
+}
+
+.type-warning {
+  background-color: #fcf8f2;
+  border-color: #f0ad4e;
+}
+
+.content-body .magic-block-callout.type-info {
+  background-color: #e3edf2;
+  border-color: #5bc0de;
