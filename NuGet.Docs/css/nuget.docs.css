@@ -349,8 +349,7 @@ warningcallout {
     padding-left: 23px;
 }
 
-magic-block-callout-warning {
-  margin-left: 31px;
+.magic-block-callout-warning {
   border-left: 4px solid #f00;
   padding: 13px 13px 13px 23px;
   position: relative;
@@ -359,8 +358,7 @@ magic-block-callout-warning {
   border-color: #f0ad4e;
 }
 
-magic-block-callout-info {
-  margin-left: 31px;
+.magic-block-callout-info {
   border-left: 4px solid #f00;
   padding: 13px 13px 13px 23px;
   position: relative;
@@ -375,5 +373,6 @@ magic-block-callout-info {
 }
 
 .content-body .magic-block-callout.type-info {
-  background-color: #e3edf2;
-  border-color: #5bc0de;
+    background-color: #e3edf2;
+    border-color: #5bc0de;
+}
