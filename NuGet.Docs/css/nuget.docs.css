@@ -1,9 +1,15 @@
-﻿
-/* bootstrap components */
-/*.jumbotron { min-height: 600px; }*/
-    .navbar li {
-        color: #000;
-    }
+﻿body {
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+}
+
+
+.navbar li {
+    color: #000;
+}
 
 #baseSidebar.affix {
     top: 70px;
@@ -309,6 +315,8 @@ aside {
     font-size: 36px !important;
     font-weight: 500;
     margin-bottom: 7px !important;
+    padding-bottom: 5px !important;
+    border-bottom: 1px solid lightgray;
     left: 10px;
 }
 
@@ -339,19 +347,19 @@ warningcallout {
 
 
 .block-callout-warning {
-  border-left: 4px solid #f00;
-  padding: 13px 13px 13px 23px;
-  position: relative;
-  margin-bottom: 1em;
-  background-color: #FFFAEA;
-  border-color: #FFD433;
+    border-left: 4px solid #f00;
+    padding: 13px 13px 13px 23px;
+    position: relative;
+    margin-bottom: 1em;
+    background-color: #FFFAEA;
+    border-color: #FFD433;
 }
 
 .block-callout-info {
-  border-left: 4px solid #f00;
-  padding: 13px 13px 13px 23px;
-  position: relative;
-  margin-bottom: 1em;
-  background-color: #e3edf2;
-  border-color: #5bc0de;
+    border-left: 4px solid #f00;
+    padding: 13px 13px 13px 23px;
+    position: relative;
+    margin-bottom: 1em;
+    background-color: #e3edf2;
+    border-color: #5bc0de;
 }
