@@ -348,3 +348,22 @@ warningcallout {
     padding-bottom: 13px;
     padding-left: 23px;
 }
+
+
+.block-callout-warning {
+  border-left: 4px solid #f00;
+  padding: 13px 13px 13px 23px;
+  position: relative;
+  margin-bottom: 3em;
+  background-color: #FFFAEA;
+  border-color: #FFD433;
+}
+
+.block-callout-info {
+  border-left: 4px solid #f00;
+  padding: 13px 13px 13px 23px;
+  position: relative;
+  margin-bottom: 3em;
+  background-color: #e3edf2;
+  border-color: #5bc0de;
+}
