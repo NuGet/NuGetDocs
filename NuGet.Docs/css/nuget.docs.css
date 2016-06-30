@@ -11,6 +11,63 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #000;
 }
 
+.navbar-default {
+    background-color: #164f78 !important;
+}
+
+.navbar {
+    font-size: 14px !important;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border: transparent !important;
+}
+
+
+.input-lg {
+    font-size: 14px !important;
+    width: 300px !important;
+}
+
+
+.btn {
+    font-size: 14px !important;
+    height: 30px !important;
+}
+
+.navbar .btn {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+
+.navbar-form {
+    margin-top: 8px !important;
+    margin-bottom: 5px !important;
+
+}
+
+.navbar-form .form-control {
+    height: 30px !important;
+}
+
+
+.btn-default {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: transparent !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-form {
+        margin-right: 26px !important;
+    }
+}
+
 #baseSidebar.affix {
     top: 70px;
 }
@@ -298,7 +355,7 @@ aside {
 
 
     .jumbotron p {
-        font-size: 1em !important;
+        font-size: 16px !important;
     }
 
 .articleSwimlane {
