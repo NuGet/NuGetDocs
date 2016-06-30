@@ -40,8 +40,14 @@
     font-size: 1em;
 }
 
+
 .level1container {
-    margin-top: 10px;
+    margin-top: 20px;
     padding-left: 10px;
     color: black;
+}
+
+
+#expList > li:first-child{
+   margin-top: 0px;
 }
