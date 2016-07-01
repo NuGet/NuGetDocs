@@ -48,7 +48,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .navbar-form {
     margin-top: 8px !important;
     margin-bottom: 5px !important;
+    padding: 0px !important;
 }
+
 
     .navbar-form .form-control {
         height: 30px !important;
@@ -61,13 +63,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .navbar-brand {
     float: left;
-    padding-top: 7px  !important;
+    padding-top: 7px !important;
     line-height: 21px;
     height: 45px;
 }
 
-.brandimage
-{
+.brandimage {
     margin-right: 5px;
     margin-bottom: 8px;
 }
@@ -84,15 +85,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     }
 }
 
-@media screen and (min-width:768px) and (max-width:991px) {
-    body {
-        margin-top:100px;
-    }
-}
-@media screen and (min-width:992px) and (max-width:1199px) {
-    body {
-        margin-top:50px;
-    }
+#page-content-wrapper {
+    padding-top: 0px !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 #baseSidebar.affix {
@@ -230,7 +227,6 @@ a.na .downloadToolsLinks {
 
 .swimlaneTitle {
     margin-left: -35px;
-    margin-top: -30px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
     left: 10px;
