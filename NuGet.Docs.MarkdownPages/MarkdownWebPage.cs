@@ -104,24 +104,9 @@ namespace NuGet.Docs
                 // GitHub gives us anchors in the headings, MarkdownSharp doesn't
                 HtmlNode anchor = heading.SelectSingleNode("a");
 
-                if (anchor != null)
-                {
-                    // Note that the text of the heading is not within the anchor
-                    // Get the name of the anchor as our id (but provide our existing id as the default)
-                    id = anchor.GetAttributeValue("name", id);
-
-                    // GitHub likes to prefix the names with: user-content- but we'll strip that off
-                    if (id.StartsWith("user-content-"))
-                    {
-                        id = id.Substring(13);
-                    }
-                }
-                else
-                {
-                    // Create our anchor
-                    anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
-                    heading.ChildNodes.Insert(0, anchor);
-                }
+                // Create our anchor
+                anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
+                heading.ChildNodes.Insert(0, anchor);
 
                 // Skip the heading if the id ended up empty somehow (like an empty heading)
                 if (id != null)
@@ -166,7 +151,7 @@ namespace NuGet.Docs
             if (level == 1)
             {
                 heading.Attributes.Add("class", "articleTitle");
-                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}<br/><br/></span>", "Page generated on " + DateTime.UtcNow.ToShortDateString() + " using " + "Markdownsharp") );
+                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}<br/><br/></span>", "Page generated on " + DateTime.UtcNow.ToShortDateString() + " using " + "Markdownsharp"));
                 gentext.Attributes.Add("class", "generatedText");
                 elementsToMove.Add(heading);
                 elementsToMove.Add(gentext);
