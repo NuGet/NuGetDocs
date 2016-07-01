@@ -79,11 +79,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border: transparent !important;
 }
 
-    .jumbotron p {
-        margin-bottom: 1em;
-        font-size: 23px;
-        font-weight: 200;
-    }
+.jumbotron p {
+    margin-bottom: 1em;
+    font-size: 23px;
+    font-weight: 200;
+}
+
+pre {
+    padding: 0px !important;
+}
 
 @media (min-width: 768px) {
     .navbar-form {
