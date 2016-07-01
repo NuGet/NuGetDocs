@@ -6,20 +6,18 @@
 <div class="container-fluid">
     <div class="col-xs-12 col-md-8">
         <div class="content">
-            <section>
-                @if (Page.Source != null)
-                {
-                    <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
-                        <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
-                    </a>
-                }
-                else
-                {
-                    <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
-                        <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
-                    </a>
-                }
-            </section>
+            @if (Page.Source != null)
+            {
+                <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
+                    <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                </a>
+            }
+            else
+            {
+                <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
+                    <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                </a>
+            }
             @RenderBody()
         </div>
     </div>
