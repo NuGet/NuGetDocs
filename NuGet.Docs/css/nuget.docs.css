@@ -48,13 +48,29 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .navbar-form {
     margin-top: 8px !important;
     margin-bottom: 5px !important;
-
 }
 
-.navbar-form .form-control {
-    height: 30px !important;
+    .navbar-form .form-control {
+        height: 30px !important;
+    }
+
+.navbar-default .navbar-brand {
+    font-size: 20px !important;
+    font-weight: 400;
 }
 
+.navbar-brand {
+    float: left;
+    padding-top: 7px  !important;
+    line-height: 21px;
+    height: 45px;
+}
+
+.brandimage
+{
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
 
 .btn-default {
     color: white !important;
