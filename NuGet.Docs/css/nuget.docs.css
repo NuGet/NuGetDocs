@@ -79,6 +79,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border: transparent !important;
 }
 
+    .jumbotron p {
+        margin-bottom: 1em;
+        font-size: 23px;
+        font-weight: 200;
+    }
+
 @media (min-width: 768px) {
     .navbar-form {
         margin-right: 26px !important;
@@ -309,7 +315,6 @@ a.na .downloadToolsLinks {
     color: gray;
     padding-left: 1px;
     font-weight: 200;
-    margin-bottom: 20px;
 }
 
 
@@ -397,7 +402,7 @@ aside {
     font-size: 36px !important;
     font-weight: 500;
     margin-bottom: 7px !important;
-    padding-bottom: 5px !important;
+    padding-bottom: 6px !important;
     border-bottom: 1px solid lightgray;
     left: 10px;
 }
@@ -432,7 +437,7 @@ warningcallout {
     border-left: 4px solid #f00;
     padding: 13px 13px 13px 23px;
     position: relative;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     background-color: #FFFAEA;
     border-color: #FFD433;
 }
@@ -441,7 +446,7 @@ warningcallout {
     border-left: 4px solid #f00;
     padding: 13px 13px 13px 23px;
     position: relative;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
