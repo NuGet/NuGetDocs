@@ -110,11 +110,12 @@ pre {
     padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    line-height: 28px;
 }
 
     /* all links */
     .bs-docs-sidebar .nav > li > a {
-        color: #999;
+        color: #777777;
         border-left: 2px solid transparent;
         padding: 4px 20px;
         font-size: 13px;
@@ -133,10 +134,10 @@ pre {
     .bs-docs-sidebar .nav > .active > a,
     .bs-docs-sidebar .nav > li > a:hover,
     .bs-docs-sidebar .nav > li > a:focus {
-        color: #563d7c;
+        color: #164f78;
         text-decoration: none;
         background-color: transparent;
-        border-left-color: #563d7c;
+        border-left-color: #164f78;
     }
     /* all active links */
     .bs-docs-sidebar .nav > .active > a,
