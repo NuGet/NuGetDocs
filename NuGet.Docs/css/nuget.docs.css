@@ -84,6 +84,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     }
 }
 
+@media screen and (min-width:768px) and (max-width:991px) {
+    body {
+        margin-top:100px;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    body {
+        margin-top:50px;
+    }
+}
+
 #baseSidebar.affix {
     top: 70px;
 }
