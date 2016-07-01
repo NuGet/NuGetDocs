@@ -14,7 +14,7 @@
     <link href="~/css/toc.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -23,19 +23,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand navmods" href="http://nuget.org">nuget</a>
+                <a class="navbar-brand navmods" href="http://nuget.org"><span><img class="brandimage" src="~/images/nugetBrand.png" /></span>nuget</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="~/">Docs Home</a></li>
+                    <li><a href="https://www.nuget.org/packages">Packages</a></li>
+                    <li><a href="~/">Documentation</a></li>
+                    <li><a href="https://dist.nuget.org/index.html">Downloads</a></li>
                     <li><a href="~/docs/Release-Notes">Release Notes</a></li>
+                    <li><a href="http://blog.nuget.org/">Blog</a></li>
+                    <li><a href="https://www.nuget.org/policies/contact">Contact Us</a></li>
                 </ul>
-                <div class="search">
+                <div class="search visible-lg">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <form class="navbar-form" role="search" action="~/search">
                                 <div class="input-group">
-                                    <input type="text" class="form-control input-lg" placeholder="search docs" autocomplete="off" name="q" id="srch-term" value="@PageData["query"]" method="get" novalidate="novalidate">
+                                    <input type="text" class="form-control input-lg hidden-xs" placeholder="search docs" autocomplete="off" name="q" id="srch-term" value="@PageData["query"]" method="get" novalidate="novalidate">
                                     <div class="input-group-btn">
                                         <button class="btn btn-default searchButton hidden-xs" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                         <a href="#menu-toggle" class="btn btn-default toggleTocButton visible-xs" id="menu-toggle">Toggle TOC</a>

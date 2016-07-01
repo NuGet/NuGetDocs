@@ -24,11 +24,11 @@
     }
 
     #expList .collapsed {
-        background-image: url(../images/collapsed.png);
+        background-image: url(../images/expandCollapseGlyph.png);
     }
 
     #expList .expanded {
-        background-image: url(../images/expanded.png);
+        background-image: url(../images/expandCollapseGlyphOpen.png);
     }
 
 #expList {
@@ -40,8 +40,14 @@
     font-size: 1em;
 }
 
+
 .level1container {
     margin-top: 20px;
     padding-left: 10px;
     color: black;
+}
+
+
+#expList > li:first-child{
+   margin-top: 0px;
 }

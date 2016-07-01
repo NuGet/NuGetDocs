@@ -69,7 +69,6 @@ function prepareList() {
 $(document).ready(function () {
     $.fx.off = true;
     prepareList();
-    debugger
     var url = window.location.href;
     if (url.indexOf("/tools") != -1)
     {
