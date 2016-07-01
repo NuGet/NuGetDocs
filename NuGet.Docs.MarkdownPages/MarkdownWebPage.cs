@@ -100,12 +100,7 @@ namespace NuGet.Docs
             foreach (var heading in allHeadingNodes)
             {
                 string id = heading.InnerText.Replace(" ", "-").ToLowerInvariant();
-
-                // GitHub gives us anchors in the headings, MarkdownSharp doesn't
-                HtmlNode anchor = heading.SelectSingleNode("a");
-
-                // Create our anchor
-                anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
+                HtmlNode anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
                 heading.ChildNodes.Insert(0, anchor);
 
                 // Skip the heading if the id ended up empty somehow (like an empty heading)
@@ -117,11 +112,11 @@ namespace NuGet.Docs
                     // When encountering a heading element, wrap it in a HTML container and apply a CSS class.
                     if (headingLevel == 1)
                     {
-                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane");
+                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane", elementId: id);
                     }
                     else if (headingLevel == 2)
                     {
-                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane");
+                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane", elementId: id);
                     }
 
                     headings.Add(new Heading(id, headingLevel, heading.InnerText));
@@ -144,9 +139,9 @@ namespace NuGet.Docs
         /// <param name="heading">The HTML heading node.</param>
         /// <param name="containerDictionary">The dictionary to add the wrapping HTML container and its elements into.</param>
         /// <param name="cssClass">The CSS class to be applied to the wrapping HTML container.</param>
-        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, int level, string cssClass)
+        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, int level, string cssClass, string elementId)
         {
-            var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<div class=\"{0}\"></div>", cssClass));
+            var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<section id=\"{0}\"><div class=\"{1}\"></div></section>", elementId, cssClass));
             var elementsToMove = new List<HtmlNode>();
             if (level == 1)
             {
