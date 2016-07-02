@@ -1,14 +1,14 @@
-# NuGet Package Search Syntax
+# Search Syntax
 
 NuGet package search works the same whether you use the NuGet Gallery, or the NuGet Package Manager extension for Visual Studio. In other words: the NuGet Gallery, the NuGet commandline, the Package Manager Console and Dialogs all share the same search formats.
 
-## Search by Keywords
+## Keywords
 
     modern UI javascript
 
 Search will do its best effort to find relevant documents containing all 3 keywords, and return matching documents.
 
-## Search using Phrases and keywords
+## Phrases and keywords
 
     "modern UI" package
 
@@ -16,15 +16,15 @@ Entering a phrase between quotation marks ("") change the search to look for the
 Matching documents should usually contain the exact phrase "modern UI", including variations on capitalization e.g. 
 "Modern ui", and also usually contain the word 'package'.
 
-## Filtering on fields
+## Filtering
 
 You can search for a specific package ID (or 'Id' or 'id'), or certain other fields by prefixing search terms with the field name.
 
-Currently the searchable fields are 'Id', 'Version', 'Tags', 'Author', and 'Owner'.
+    Searchable fields are 'Id', 'Version', 'Tags', 'Author', and 'Owner'.
 
-[What's the difference between ID and Title? ID is the name you use in package management console. Title is what is shown at the top of the package page in search results.]
+What's the difference between ID and Title? ID is the name you use in package management console. Title is what is shown at the top of the package page in search results.
 
-**Examples**
+### Examples
 
     ID:jQuery
     id:NuGet.Core

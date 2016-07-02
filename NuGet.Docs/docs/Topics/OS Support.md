@@ -1,4 +1,4 @@
-# NuGet Compatibility
+# OS Compatibility
 
 NuGet was originally designed to be run on Windows-based operating systems to support .NET development.  With the advancements of .NET applications running on non-Windows operating systems, the demand for NuGet compatibility on those environments has risen.
 
