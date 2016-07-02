@@ -16,55 +16,55 @@ Specify the id and optionally the version of the package to install. If a path t
 
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>A list of packages sources to use for the install.</td>
     </tr>
     <tr>
-        <td>OutputDirectory</td>
+        <td>outputdirectory</td>
         <td>Specifies the directory in which packages will be installed. If none specified, uses the current directory.</td>
     </tr>
     <tr>
-        <td>Version</td>
+        <td>version</td>
         <td>The version of the package to install.</td>
     </tr>
     <tr>
-        <td>ExcludeVersion</td>
+        <td>excludeversion</td>
         <td>If set, the destination directory will contain only the package name, not the version number</td>
     </tr>
     <tr>
-        <td>Prerelease</td>
+        <td>prerelease</td>
         <td>Allows prerelease packages to be installed. This flag is not required when restoring packages by installing from packages.config.</td>
     </tr>
     <tr>
-        <td>NoCache</td>
+        <td>nocache</td>
         <td>Disable looking up packages from local machine cache.</td>
     </tr>
     <tr>
-        <td>RequireConsent</td>
+        <td>requireconsent</td>
         <td>Checks if package restore consent is granted before installing a package.</td>
     </tr>
     <tr>
-        <td>SolutionDirectory</td>
+        <td>solutiondirectory</td>
         <td>Solution root for package restore.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>FileConflictAction</td>
+        <td>fileconflictaction</td>
         <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -88,55 +88,55 @@ Update packages to latest available versions. This command also updates nuget.ex
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>A list of package sources to search for updates.</td>
     </tr>
     <tr>
-        <td>Id</td>
+        <td>id</td>
         <td>Package ids to update.</td>
     </tr>
     <tr>
-        <td>RepositoryPath</td>
+        <td>repositorypath</td>
         <td>Path to the local packages folder (location where packages are installed).</td>
     </tr>
     <tr>
-        <td>Safe</td>
+        <td>safe</td>
         <td>Looks for updates with the highest version available within the same major and minor version as the installed package.</td>
     </tr>
     <tr>
-        <td>Self</td>
+        <td>self</td>
         <td>(v<em>1.4</em>) Update the running nuget.exe to the newest version available from the server.</td>
     </tr>
     <tr>
-        <td>Verbose</td>
+        <td>verbose</td>
         <td>Show verbose output while updating.</td>
     </tr>
     <tr>
-        <td>Prerelease</td>
+        <td>prerelease</td>
         <td>Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>FileConflictAction</td>
+        <td>fileconflictactions</td>
         <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
     </tr>
     <tr>
-        <td>MSBuildVersion</td>
+        <td>msbuildversion</td>
         <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -163,52 +163,52 @@ Update packages to latest available versions. This command also updates nuget.ex
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>A list of packages sources to use for the install.</td>
     </tr>
     <tr>
-        <td>NoCache</td>
+        <td>nocache</td>
         <td>Disable using the machine cache as the first package source.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>Specifies the user specific configuration file. If omitted,
         %appdata%\NuGet\nuget.config is used as the user specific
         configuration file. </td>
     </tr>
     <tr>
-        <td>RequireConsent</td>
+        <td>requireconsent</td>
         <td>Checks if package restore consent is granted before restoring a
         package.</td>
     </tr>
     <tr>
-        <td>PackagesDirectory</td>
+        <td>packagesdirectory</td>
         <td>Specifies the packages directory. -OutputDirectory is an
         alias of this option.</td>
     </tr>
     <tr>
-        <td>SolutionDirectory</td>
+        <td>solutiondirectory</td>
         <td>Specifies the solution directory. Not valid when restoring
         packages for a solution.</td>
     </tr>
     <tr>
-        <td>MSBuildVersion</td>
+        <td>msbuildversion</td>
         <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
     <tr>
-        <td>DisableParallelProcessing</td>
+        <td>disableparallelprocessing</td>
         <td>Disable parallel nuget package restores.</td>
     </tr>
 	    <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
@@ -307,29 +307,29 @@ Specify the Id and version of the package to delete from the server.
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>Specifies the server URL. Supported URL's for nuget.org include - http://www.nuget.org,
         http://www.nuget.org/api/v3,
         http://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3).</td>
     </tr>
     <tr>
-        <td>ApiKey</td>
+        <td>apikey</td>
         <td>The API key for the server.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -353,35 +353,35 @@ Specify optional search terms.
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>A list of packages sources to search.</td>
     </tr>
     <tr>
-        <td>Verbose</td>
+        <td>verbose</td>
         <td>Displays a detailed list of information for each package.</td>
     </tr>
     <tr>
-        <td>AllVersions</td>
+        <td>allversions</td>
         <td>List all versions of a package. By default, only the latest package version is displayed.</td>
     </tr>
     <tr>
-        <td>Prerelease</td>
+        <td>prerelease</td>
         <td>Allow prerelease packages to be shown.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -403,39 +403,39 @@ Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet
 ### Options
 <table>
     <tr>
-        <td>Name</td>
+        <td>name</td>
         <td>Name of the source.</td>
     </tr>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>Path to the package(s) source.</td>
     </tr>
     <tr>
-        <td>UserName</td>
+        <td>username</td>
         <td>UserName to be used when connecting to an authenticated source.</td>
     </tr>
     <tr>
-        <td>Password</td>
+        <td>password</td>
         <td>Password to be used when connecting to an authenticated source.</td>
     </tr>
 	<tr>
-        <td>StorePasswordInClearText</td>
+        <td>storepasswordincleartext</td>
         <td>Do not encrypt the password and store it in clear text. (Default: False)</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -451,27 +451,27 @@ Generates a nuspec for a new package. If this command is run in the same folder 
 ### Options
 <table>
     <tr>
-        <td>AssemblyPath</td>
+        <td>assemblypath</td>
         <td>Assembly to use for metadata.</td>
     </tr>
     <tr>
-        <td>Force</td>
+        <td>force</td>
         <td>Overwrite nuspec file if it exists.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -497,85 +497,92 @@ Specify the location of the nuspec or project file to create a package.
 ### Options
 <table>
     <tr>
-        <td>OutputDirectory</td>
+        <td>outputdirectory</td>
         <td>Specifies the directory for the created NuGet package file. If not specified, uses the current directory.</td>
     </tr>
     <tr>
-        <td>BasePath</td>
+        <td>basepath</td>
         <td>The base path of the files defined in the nuspec file.</td>
     </tr>
     <tr>
-        <td>Verbose</td>
+        <td>verbose</td>
         <td>Shows verbose output for package building.</td>
     </tr>
     <tr>
-        <td>Version</td>
+        <td>version</td>
         <td>Overrides the version number from the nuspec file.</td>
     </tr>
     <tr>
-        <td>Exclude</td>
+        <td>exclude</td>
         <td>(v<em>1.3</em>) Specifies one or more wildcard patterns to exclude when creating a package.</td>
     </tr>
     <tr>
-        <td>Symbols</td>
+        <td>symbols</td>
         <td>(v<em>1.4</em>) Determines if a package containing sources and symbols should be created. When specified with a nuspec, creates a regular NuGet package file and the corresponding symbols package.</td>
     </tr>
     <tr>
-        <td>Tool</td>
+        <td>tool</td>
         <td>Determines if the output files of the project should be in the tool folder. </td>
     </tr>
     <tr>
-        <td>Build</td>
+        <td>build</td>
         <td>Determines if the project should be built before building the package.</td>
     </tr>
     <tr>
-        <td>NoDefaultExcludes</td>
+        <td>nodefaultexcludes</td>
         <td>(v<em>1.3</em>) Prevent default exclusion of NuGet package files and files and folders starting with a dot e.g. .svn.</td>
     </tr>
     <tr>
-        <td>NoPackageAnalysis</td>
+        <td>nopackageanalysis</td>
         <td>Specify if the command should not run package analysis after building the package.</td>
     </tr>
     <tr>
-        <td>IncludeReferencedProjects</td>
+        <td>includereferenceprojects</td>
         <td>(v<em>2.5</em>) Include referenced projects either as dependencies or as part of the package. If a referenced
         project has a corresponding nuspec file that has the same name as the project, then that
         referenced project is added as a dependency. Otherwise, the referenced project is added as part
         of the package.</td>
     </tr>
     <tr>
-        <td>ExcludeEmptyDirectories</td>
+        <td>excludeemptydirectories</td>
         <td>Prevent inclusion of empty directories when building the package.</td>
     </tr>
     <tr>
-        <td>Properties</td>
+        <td>properties</td>
         <td>Provides the ability to specify a semicolon ";" delimited list of properties when creating a package.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>MinClientVersion</td>
+        <td>minclientversion</td>
         <td>(v<em>2.5</em>) Set the <strong>minClientVersion</strong> attribute for the created package. This value will override the value of the existing minClientVersion attribute (if any) in the .nuspec file.</td>
     </tr>
     <tr>
-        <td>MSBuildVersion</td>
+        <td>msbuildversion</td>
         <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
 </table>
 
-### Excluding development dependencies when creating packages
+### Excluding development dependencies
 
-Some NuGet packages are useful as development dependencies, which help you author your own library, but aren't necessarily needed as actual package dependencies. Some examples are code-based packages or tooling packages that don't provide assemblies your package needs to reference at runtime. Starting from version 2.7, the pack command will ignore &lt;package> entries in the packages.config file which have an attribute **developmentDependency** set to **true** and will not include that package as a dependency in the created package. For example, consider the following packages.config file in the source project:
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    Supported in NuGet 2.7+ 
+</div>
+
+Some NuGet packages are useful as development dependencies, which help you author your own library, but aren't necessarily needed as actual package dependencies.
+
+The pack command will ignore `package` entries in the packages.config file which have an attribute **developmentDependency** set to **true** and will not include that package as a dependency in the created package. For example, consider the following packages.config file in the source project:
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<packages>
@@ -594,19 +601,18 @@ When running the pack  on this project, the created package will have a dependen
 
     nuget pack foo.csproj
 
-    nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release
+    nuget pack foo.csproj -Build -symbols -properties Configuration=Release
 
     # create a package from project foo.csproj, using msbuild version 12 to build the project
-    nuget pack foo.csproj -Build -Symbols -Properties Configuration=Release -MSBuildVersion 12
+    nuget pack foo.csproj -Build -symbols -properties Configuration=Release -MSBuildVersion 12
 
-    nuget pack foo.nuspec -Version 2.1.0
+    nuget pack foo.nuspec -version 2.1.0
 
-    nuget pack foo.nuspec -Version 1.0.0 -MinClientVersion 2.5
+    nuget pack foo.nuspec -version 1.0.0 -minclientversion 2.5
 
 ##  push 
 
-Pushes a package to the server and publishes it.
-NuGet's default configuration is obtained by loading %AppData%\NuGet\NuGet.config, then loading any nuget.config or .nuget\nuget.config starting from root of drive and ending in current directory.
+Pushes a package to the server and publishes it. NuGet's default configuration is obtained by loading %AppData%\NuGet\NuGet.config, then loading any nuget.config or .nuget\nuget.config starting from root of drive and ending in current directory.
 
 ### Usage
     nuget push <package path> [API key] [options]
@@ -616,34 +622,34 @@ Specify the path to the package and your API key to push the package to the serv
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>Specifies the server URL. Starting with NuGet 3.4.2, this is a **mandatory parameter** unless DefaultPushSource config value is set in the NuGet config file.
         <br />
         Starting with NuGet 2.5, if nuget.exe identifies a UNC/folder source, it will perform the file copy to the source.
         </td>
     </tr>
     <tr>
-        <td>ApiKey</td>
+        <td>apikey</td>
         <td>The API key for the server.</td>
     </tr>
     <tr>
-        <td>Timeout</td>
+        <td>timeout</td>
         <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -681,23 +687,23 @@ Specify the API key to save and an optional URL to the server that provided the 
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>Server URL where the API key is valid.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -707,8 +713,7 @@ Specify the API key to save and an optional URL to the server that provided the 
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -Source http://example.com/nugetfeed
-
+    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source http://example.com/nugetfeed
 
 ## init 
 
@@ -729,15 +734,15 @@ Specify the path to source package source to be copied from and the path to the 
 ### Options
 <table>
     <tr>
-        <td>Expand</td>
+        <td>expand</td>
         <td>If provided, all the files in the package(s) are added to destination package source.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, detailed.</td>
     </tr>
 </table>
@@ -762,61 +767,66 @@ Specify the path to source package source to be copied from and the path to the 
 ### Usage
     nuget add <packagePath> -Source <folderBasedPackageSource> [options]
 
-Specifies the path to the package to be added and the package source, which is a folder or UNC share, to which the nupkg will be added. Http sources are not supported.
+Specifies the path to the package to be added and the package source, which is a folder or UNC share, to which the nupkg will be added.
+
+<div class="block-callout-info">
+    <strong>Note: </strong><br>
+    Http sources are not supported.
+</div>
 
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>Specifies the folderBasedPackageSource to which the nupkg will be added. Http sources are not supported.</td>
     </tr>
     <tr>
-        <td>Expand</td>
+        <td>expand</td>
         <td>If provided, all the files in the package are added to your package source.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, detailed.</td>
     </tr>
 </table>
 
 ### Examples
 
-    nuget add foo.nupkg  -Source c:\bar\
+    nuget add foo.nupkg  -source c:\bar\
 
-    nuget add foo.nupkg -Source \\bar\packages\
+    nuget add foo.nupkg -source \\bar\packages\
 
 ##  config 
 
 Gets or sets NuGet config values.
 
 ### Usage
-    nuget config -Set name=value
+    nuget config -set name=value
 
 ### Options
 <table>
     <tr>
-        <td>Set</td>
+        <td>set</td>
         <td>One on more key-value pairs to be set in config.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
     <tr>
-        <td>ConfigFile</td>
+        <td>configfile</td>
         <td>(v<em>2.5</em>) The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
@@ -824,8 +834,7 @@ Gets or sets NuGet config values.
 
 ### Examples
 
-    nuget config -Set HTTP_PROXY=http://127.0.0.1 -Set HTTP_PROXY.USER=domain\user
-    nuget.config HTTP_PROXY
+    nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
 
 ## locals 
 
@@ -833,7 +842,7 @@ Gets or sets NuGet config values.
 
 	nuget locals <all | http-cache | packages-cache | global-packages> -clear
 
-[v3.4] Added clearing of the temp folder.
+[v3.4+] Added clearing of the temp folder.
 
 	nuget locals <all | http-cache | packages-cache | global-packages | temp> -clear
 
@@ -841,90 +850,97 @@ Gets or sets NuGet config values.
 
 <table>
 	<tr>
-		<td>Clear</td>
+		<td>clear</td>
 		<td>Clear the resources in the specified cache location</td>
 	</tr>
 	<tr>
-		<td>List</td>
+		<td>list</td>
 		<td>List the selected local resources or cache locations</td> 
 	</tr>
 	<tr>
-		<td>Help</td>
+		<td>help</td>
 		<td>help</td>
 	</tr>
 	<tr>
-		<td>Verbosity</td>
+		<td>verbosity</td>
 		<td>Display the amount of details in the output: normal, quiet, detailed.</td>
 	</tr>
 </table>
 
 ##  mirror 
 
-Mirrors a package and its dependencies from the specified source repositories to the target repository. Currently this command is not supported in nuget.exe 3.2.0 and above.
+Mirrors a package and its dependencies from the specified source repositories to the target repository. 
 
-<p class="info">
-<strong>Note</strog><br />To enable this command, navigate to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe.
-</p>
+<div class="block-callout-warning">
+    <strong>Note: </strong><br>
+    Currently this command is not supported in nuget.exe 3.2.0+.  
+</div>
+
+<div class="block-callout-info">
+    <strong>Note: </strong><br>
+    To enable this command, navigate to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe..  
+</div>
 
 ### Usage
     nuget mirror packageId|pathToPackagesConfig listUrlTarget publishUrlTarget [options]
 
-Specify the id of the package to mirror, the url to query the target repository (list ) and the url to push packages to the target repository.
-If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
-Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be
-[http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
+Specify the id of the package to mirror, the url to query the target repository (list ) and the url to push packages to the target repository. If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
+
+Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be [http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
 
 ### Options
 <table>
     <tr>
-        <td>Source</td>
+        <td>source</td>
         <td>A list of packages sources to use for the finding packages to mirror.
         If no sources are specified, the ones defined in the default NuGet config file are used.
         If the default NuGet config file specifies no sources, uses the default NuGet feed.</td>
     </tr>
     <tr>
-        <td>Version</td>
+        <td>version</td>
         <td>The version of the package to install. If not specified, latest version is mirrored.</td>
     </tr>
     <tr>
-        <td>ApiKey</td>
+        <td>apikey</td>
         <td>The API key for pushing to the target repository. If not specified, the one specified in the default NuGet config file is used.</td>
     </tr>
     <tr>
-        <td>Prerelease</td>
+        <td>prerelease</td>
         <td>When set, "latest" when specifying no version for a package id (as  argument or in packages.config) includes pre-release packages.</td>
     </tr>
     <tr>
-        <td>Timeout</td>
+        <td>timeout</td>
         <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
     </tr>
     <tr>
-        <td>NoCache</td>
-        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s).
+        <td>nocache</td>
+        <td>By default a local cache is used as a fallback when a package or a package dependency is not found in the specified source(s). 
+        
         If you want to ensure only packages from the specified sources are used, set the NoCache option.
+        
         If you want instead to maximize chances of finding packages, do not set this option.</td>
     </tr>
     <tr>
-        <td>NoOp</td>
+        <td>noop</td>
         <td>Log what would be done without actually doing it. Assumes success for push operations.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
 </table>
 
 ### Examples
 
-    nuget mirror packages.config  http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
+    nuget mirror packages.config  http://MyRepo/nuget http://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
 
-    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -version 4.0.20505.0
+    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/nuget http://MyRepo/api/v2/package -version 4.0.20505.0
 
-    nuget mirror Microsoft.Net.Http http://MyRepo/ES/nuget http://MyRepo/ES/api/v2/package -prerelease
+    nuget mirror Microsoft.Net.Http http://MyRepo/nuget http://MyRepo/api/v2/package -prerelease
 
 ##  help 
 
-Displays general help information and help information about other s.
+Displays general help information and help information about other commands.
 
 ### Usage
     nuget help [command]
@@ -933,23 +949,23 @@ Pass a command name to display help information for that command.
 ### Options
 <table>
     <tr>
-        <td>All</td>
+        <td>all</td>
         <td>Print detailed help for all available commands.</td>
     </tr>
     <tr>
-        <td>Markdown</td>
+        <td>markdown</td>
         <td>Print detailed all help in markdown format.</td>
     </tr>
     <tr>
-        <td>Help</td>
+        <td>help</td>
         <td>help</td>
     </tr>
     <tr>
-        <td>Verbosity</td>
+        <td>verbosity</td>
         <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>NonInteractive</td>
+        <td>noninteractive</td>
         <td>Do not prompt for user input or confirmations.</td>
     </tr>
 </table>
