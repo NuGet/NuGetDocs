@@ -19,6 +19,8 @@ orderedList.Add(topics.Where(
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Host"; }).First());
 orderedList.Add(topics.Where(
+(a) => { return a.Title == "Visual Studio Extensibility"; }).First());
+orderedList.Add(topics.Where(
 (a) => { return a.Title == "Topics"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Contribute"; }).First());
@@ -30,8 +32,8 @@ orderedList.Add(topics.Where(
 {
 foreach (Topic topic in topics)
 {
-
-        <li id="a-@topic.Title" class="level1container"/>
+    string title = @topic.Title.Replace(" ", "-");
+        <li id="a-@title" class="level1container"/>
         @topic.Title
         @Html.Raw("<ul>");
     foreach (var subtopic in topic.SubTopics)

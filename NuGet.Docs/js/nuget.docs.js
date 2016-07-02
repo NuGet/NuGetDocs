@@ -86,6 +86,9 @@ $(document).ready(function () {
     else if (url.indexOf("/host") != -1) {
         $('#a-Host').click();
     }
+    else if (url.indexOf("/visual-studio-extensibility") != -1) {
+        $('#a-Visual-Studio-Extensibility').click();
+    }
     else {
         $('#expList').children('li').first().click();
     }
