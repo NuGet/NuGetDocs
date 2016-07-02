@@ -79,11 +79,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border: transparent !important;
 }
 
-    .jumbotron p {
-        margin-bottom: 1em;
-        font-size: 23px;
-        font-weight: 200;
-    }
+.jumbotron p {
+    margin-bottom: 1em;
+    font-size: 23px;
+    font-weight: 200;
+}
+
+pre {
+    padding: 0px !important;
+}
 
 @media (min-width: 768px) {
     .navbar-form {
@@ -106,11 +110,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    line-height: 28px;
 }
 
     /* all links */
     .bs-docs-sidebar .nav > li > a {
-        color: #999;
+        color: #777777;
         border-left: 2px solid transparent;
         padding: 4px 20px;
         font-size: 13px;
@@ -129,10 +134,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     .bs-docs-sidebar .nav > .active > a,
     .bs-docs-sidebar .nav > li > a:hover,
     .bs-docs-sidebar .nav > li > a:focus {
-        color: #563d7c;
+        color: #164f78;
         text-decoration: none;
         background-color: transparent;
-        border-left-color: #563d7c;
+        border-left-color: #164f78;
     }
     /* all active links */
     .bs-docs-sidebar .nav > .active > a,
@@ -452,6 +457,4 @@ warningcallout {
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
-
 refs/remotes/origin/proto
-

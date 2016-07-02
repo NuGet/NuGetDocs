@@ -1,4 +1,4 @@
-## Installing
+#NuGet CLU
 
 The NuGet command line may be installed onto a machine in a few possible ways.
 

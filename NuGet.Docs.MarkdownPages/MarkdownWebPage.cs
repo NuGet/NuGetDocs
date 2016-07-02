@@ -195,10 +195,10 @@ namespace NuGet.Docs
                 var heading = nodes.Value.First();
                 var parentNode = heading.ParentNode;
 
-                div.AppendChild(heading);
+                div.ChildNodes[0].AppendChild(heading);
                 foreach (HtmlNode element in nodes.Value.Skip(1))
                 {
-                    div.AppendChild(element);
+                    div.ChildNodes[0].AppendChild(element);
                     if (parentNode != null)
                     {
                         if (parentNode.ChildNodes.Contains(element))
