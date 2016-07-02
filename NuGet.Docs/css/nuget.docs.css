@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
 }
 
+h2{
+    margin-top: 5px !important;
+}
+
 
 .navbar li {
     color: #000;
@@ -439,7 +443,7 @@ warningcallout {
     border-left: 4px solid #f00;
     padding: 13px 13px 13px 23px;
     position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     background-color: #FFFAEA;
     border-color: #FFD433;
 }
@@ -448,7 +452,7 @@ warningcallout {
     border-left: 4px solid #f00;
     padding: 13px 13px 13px 23px;
     position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
