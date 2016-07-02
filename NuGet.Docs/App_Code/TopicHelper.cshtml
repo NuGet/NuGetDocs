@@ -31,13 +31,13 @@ orderedList.Add(topics.Where(
 foreach (Topic topic in topics)
 {
 
-        <li id="a-@topic.Title" class="level1container" />
-        <span>@topic.Title</span>
+        <li id="a-@topic.Title" class="level1container"/>
+        @topic.Title
         @Html.Raw("<ul>");
     foreach (var subtopic in topic.SubTopics)
     {
             <li class="listItem">
-            <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
+                <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
             </li>
     }
         @Html.Raw("</ul>");
