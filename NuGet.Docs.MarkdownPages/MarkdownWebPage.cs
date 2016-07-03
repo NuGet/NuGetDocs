@@ -228,6 +228,15 @@ namespace NuGet.Docs
 
                     node.Attributes.Add("class", "table articleTable");
                 }
+                if (node.Name == "img")
+                {
+                    if (node.Attributes.FirstOrDefault(x => x.Name == "class") != null)
+                    {
+                        node.Attributes.Remove("class");
+                    }
+
+                    node.Attributes.Add("class", "col-md-4");
+                }
             }
         }
 

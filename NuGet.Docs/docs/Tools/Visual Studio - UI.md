@@ -1,28 +1,31 @@
 ﻿# Managing NuGet Packages Using the Dialog
 
-This topic describes how to find, install, remove, and update NuGet packages using the **Manage NuGet Packages** 
-dialog box. To use this dialog box, you must have a solution open in Visual Studio.
-As an alternative, you can install packages using PowerShell commands. 
-For more information, see [Using the Package Manager Console](Package-Manager-Console).
+This topic describes how to find, install, remove, and update NuGet packages using the **Manage NuGet Packages UI**. To use this UI, you must have a solution open in Visual Studio. As an alternative, you can install packages using PowerShell commands. For more information, see [Using the Package Manager Console](Package-Manager-Console).
 
-<p class="info">
-<strong>Note</strong><br />For managing packages within multiple projects in the solution at the same time, skip to the section 
-on <a href="#managing-packages-for-the-solution">Managing Packages for the Solution</a>.
-</p>
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    This topic has been updated to reflect the latest UI in Visual Studio 2015.
+</div>
+
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    For managing packages within multiple projects in the solution at the same time, skip to the section <a href="#managing-packages-for-the-solution">Managing Packages for the Solution</a>
+</div>
 
 ## Finding a Package
 
 In **Solution Explorer**, right-click the **References** node and click **Manage NuGet Packages...**. 
 
-<p class="info">
-<strong>Note</strong><br />In a Website project, right click on the **Bin** node.
-</p>
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    In a Website project, right click on the **Bin** node
+</div>
 
-![Manage NuGet Packages menu option](/images/consume/manage-nuget-packages-menu-option.png)
+![Manage NuGet Packages menu option](/images/docs/ManagePackagesUICommand.png)
 
 Click the **Online** tab to display the list of available packages.
 
-![Manage NuGet Packages Dialog Online tab](/images/consume/manage-nuget-packages-online-tab.png)
+![Manage NuGet Packages Dialog Online tab](/images/docs/Search.png)
 
 Browse through the list, or search for a package using the search box at the top right of the dialog box. 
 For example, to find the logging package named ELMAH, enter "elmah" or "logging".
