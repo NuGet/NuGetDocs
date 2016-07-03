@@ -1,173 +1,179 @@
-## Target Frameworks
+# Target Frameworks
 
-As the .NET ecosystem has grown, so too has the list of frameworks and dependencies that NuGet supports.   The frameworks that can be included and referenced by a NuGet package tracks closely with the list of available .NET framework versions and flavors that support all of the devices and systems the .NET framework can be used on.
+As the .NET ecosystem has grown, so too has the list of frameworks and dependencies that NuGet supports. The frameworks that can be included and referenced by a NuGet package tracks closely with the list of available .NET 
+framework versions and flavors that support all of the devices and systems the .NET framework can be used on.
 
+## References
 Target frameworks can be referenced from three places:  
 
-* [nuspec manifest](http://docs.nuget.org/Create/NuSpec-Reference)
-   * You can find a target framework referenced in the dependencies on the group elements to indicate which packages should be referenced when the package is installed into different projects.
+[nuspec manifest](http://docs.nuget.org/Create/NuSpec-Reference)
+You can find a target framework referenced in the dependencies on the group elements to indicate which packages should be referenced when the package is installed into different projects.
 
-* [nupkg folder name](http://docs.nuget.org/create/Creating-and-Publishing-a-Package#from-a-convention-based-working-directory)
-   * The folders inside of the base package lib folder are named after the target frameworks that the contents support.  The DLLs and other content that support these framework version should be placed here.
+[nupkg folder name](http://docs.nuget.org/create/Creating-and-Publishing-a-Package#from-a-convention-based-working-directory)
+The folders inside of the base package lib folder are named after the target frameworks that the contents support. The DLLs and other content that support these framework version should be placed here.
 
-* project.json frameworks node.  
-    *  This node specifies the framework versions that the project should be compiled against for project systems that use project.json (ASP.NET 5 and UWP currently).
+[project.json](TBD)  
+This node specifies the framework versions that the project should be compiled against for project systems that use project.json (ASP.NET 5 and UWP currently).
 
 A framework is typically referenced by a short name, called a "Target Framework Moniker" or TFM.  With the advent of the new Platform Standard, the concept of 'TFM' has been abstracted to 'TxM' since the Platform Standard references multiple frameworks abstractly. 
 
+## Source Reference
+
 The source code from the NuGet clients that is used to calculate these tables can be found at:  
 
-*  Supported framework names in [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
-*  Framework Precendence and Mapping in [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
+Supported framework names in [FrameworkConstants.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/FrameworkConstants.cs)
 
-This table is current for [NuGet v3.3](https://github.com/NuGet/NuGet.Client/commit/3216726e5d47c7b8b2f089f35c242323d26954d4 "GitHub Commit 321672...") (December 2015)
+Framework Precendence and Mapping in [DefaultFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultFrameworkMappings.cs)
 
-### Supported Frameworks
+## Supported Frameworks
 
 The official NuGet clients support the frameworks listed below, with the equivalence indicators provided:
 
 <table class="reference">
   <tbody>
-    <tr><th>Name</th><th title="Abbreviation">Abbr</th><th>Description</th>
+    <tr><th>Name</th><th title="Abbreviation">Abbr</th><th>TFMs/TxMs</th>
     <tr>
-		<td>.NET Framework</td>
+		<td>.NET Framework <br/> <br/> Standard .NET BCL on Windows Desktop and Server.</td>
 		<td>net</td>
-		<td>Standard .NET BCL on Windows Desktop and Server. 
-			<ul>
-				<li>net11</li>
-				<li>net20</li>
-				<li>net35</li>
-				<li>net40</li>
-				<li>net403</li>
-				<li>net45</li>
-				<li>net451</li>
-				<li>net452</li>
-				<li>net46</li>
-				<li>net461</li>
-			</ul>
+		<td>
+		net11<br/>
+		net20<br/>
+		net35<br/>
+		net40<br/>
+		net403<br/>
+		net45<br/>
+		net451<br/>
+		net452<br/>
+		net46<br/>
+		net461<br/>
+		net462
 		</td>
 	</tr>
 	<tr>
-		<td>.NET Core</td>
+		<td>.NET Core <br/> <br/> .NET Core Framework used in Windows Store Development</td>
 		<td>netcore</td>
-		<td>.NET Core Framework used in Windows Store Development
-			<ul>
-				<li>netcore (equivalent to netcore45)</li>
-				<li>netcore45 (equivalent to win8)</li>
-				<li>netcore451 (equivalent to win81)</li>
-				<li>netcore50</li>
-			</ul>
+		<td>
+		netcore (equivalent to netcore45)<br/>
+		netcore45 (equivalent to win8)<br/>
+		netcore451 (equivalent to win81)<br/>
+		netcore50
 		</td>
 	</tr>
 	<tr>
-		<td>.NET MicroFramework</td>
+		<td>.NET MicroFramework <br/> <br/>  Support for [.NET MicroFramework](http://netmf.github.io/) projects</td>
 		<td>netmf</td>
-		<td>Support for [.NET MicroFramework](http://netmf.github.io/) projects</td>
+		<td>netmf</td>
 	</tr>
 	<tr>
-		<td>Windows</td>
+		<td>Windows <br/> <br/> Frameworks to support Windows Store Development	</td>
 		<td>win</td>
-		<td>Frameworks to support Windows Store Development
-			<ul>
-				<li>win (equivalent to win8)</li>
-				<li>win8 (equivalent to netcore45)</li>
-				<li>win81 (equivalent to netcore451)</li>
-				<li>win10 -- not supported by Windows 10 Platform</li>
-			</ul>
+		<td>		
+				win (equivalent to win8)<br/> 
+				win8 (equivalent to netcore45)<br/> 
+				win81 (equivalent to netcore451)<br/> 
+				win10 -- not supported by Windows 10 Platform
+			
 		</td>
 	</tr>
 	<tr>
-		<td>Silverlight</td>
+		<td>Silverlight <br/> <br/> Support for the Silverlight frameworks</td>
 		<td>sl</td>
-		<td>Support for the Silverlight frameworks
-			<ul>
-				<li>sl4</li>
-				<li>sl5</li>
-			</ul>
+		<td>
+				sl4 <br/> 
+				sl5 <br/> 
 		</td>
 	</tr>
 	<tr>
-		<td>Windows Phone</td>
+		<td>Windows Phone <br/> <br/> Windows Phone application support</td>
 		<td>wp</td>
-		<td>Windows Phone application support
-			<ul>
-				<li>wp (equivalent to wp7)</li>
-				<li>wp7</li>
-				<li>wp75</li>
-				<li>wp8</li>
-				<li>wp81</li>
-				<li>wpa81</li>
-		</td>
-	</tr>
-	<tr>
-		<td>DNX</td>
-		<td>dnx</td>
-		<td>ASP.NET server-side framework support (Windows only)
-			<ul>
-				<li>dnx (equivalent to dnx45)</li>
-				<li>dnx45</li>
-				<li>dnx451</li>
-				<li>dnx452</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>DNX Core</td>
-		<td>dnxcore</td>
-		<td>Core CLR framework support
-			<ul>
-				<li>dnxcore (equivalent to dnxcore50)</li>
-				<li>dnxcore50</li>
-			</ul>
-		</td
-	</tr>
-	<tr>
-		<td>Universal Windows Platform</td>
-		<td>uap</td>
-		<td>Support for Windows 10 Universal Application Platform
-			<ul>
-				<li>uap (equivalent to uap10)</li>
-				<li>uap10</li>
-			</ul>
-		</td>
-	</tr>
-	<tr>
-		<td>Deprecated Frameworks</td>
 		<td>
-			aspnet50<br/>
-			aspnetcore50<br/>
-			winrt<br/>
-		</td>
-		<td>
+				wp (equivalent to wp7)<br/>
+				wp7<br/>
+				wp75<br/>
+				wp8<br/>
+				wp81<br/>
+				wpa81<br/>
 		</td>
 	</tr>
+	<tr>
+    	<td>Universal Windows Platform Support <br/> <br/> for Windows 10 Universal Application Platform</td>
+    	<td>uap</td>
+    	<td>
+			uap (equivalent to uap10)<br/>
+			uap10<br/>
+    	</td>
+    </tr>
+    <tr>
+    	<td>.NET Standard <br/> <br/> Modern PCL Support/td>
+    	<td>netstandard</td>
+    	<td>                
+			netstandard1.0<br/>
+			netstandard1.1<br/>
+			netstandard1.2<br/>
+			netstandard1.3<br/>
+			netstandard1.4<br/>
+			netstandard1.5<br/>
+			netstandard1.6<br/>
+    	</td>
+    </tr>
+    <tr>
+    	<td>.NET Core App <br/> <br/> .NET Core Websites, Console Applications</td>
+    	<td>netcoreapp</td>
+    	<td>
+    		netcoreapp1.0<br/>	
+		</td>
+    </tr>
   </tbody>
 </table>
 
-### Precedence
+## Deprecated Frameworks
+The following frameworks are deprecated. If you have any packages that target these frameworks, we highly recommend that you move towards their replacements.
+
+<div class="block-callout-warning">
+    <strong>Deprecated Frameworks</strong><br>
+    aspnet50, aspnetcore50, winrt, dotnet50 (equvialent to dotnet), dotnet51, dotnet52, dotnet53, dotnet54, dotnet55, dotnet56, dnx, dnx45, dnx451, dnx452, dnxcore50.
+</div>
+
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+	dotnet is replaced by netstandard <br/>
+	aspnet/dnx is replaced by netcoreapp.
+</div>
+
+## Precedence
 
 For a number of these frameworks, they are related to each other.  Not necessarily equivalent, but there is compatibility that can allow binary content to run on other platforms.  The compatibility matrix that NuGet uses is described below.
 
-* Universal Windows Platform (uap) can use the following content
-	* Win81
-	* WPA81
-	* NetCore50
-* Windows Store (win) can use the following content
-	* winrt
-	* winrt45
+**Universal Windows Platform (uap)** can use the following content
 
+Win81
 
-### Portable Class Libraries
+WPA81
 
-In an effort to make development of libraries that work across multiple platforms easier, the .NET framework supports [Portable Class library](https://msdn.microsoft.com/en-us/library/gg597391%28v=vs.110%29.aspx) development.  These libraries can be used across binary compatible frameworks, and need to be referenced as such when constructing a NuGet package.
+NetCore50
+
+**Windows Store (win)** can use the following content
+
+winrt
+
+winrt45
+
+## NET Platform Standard 
+
+To simplify the references between binary-compatible frameworks, the [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md) was introduced.  This allows the definition of a single target framework moniker to reference a combination of binary compatible frameworks.  Various versions of the Platform Standard indicate different combinations of frameworks that are compatible.  More information about these frameworks can be found at the [here](https://docs.microsoft.com/en-us/dotnet/articles/standard/index). 
+
+The `dotnet` series of monikers should be used in NuGet 3.3 and the `netstandard` moniker syntax should be used in v3.4 and later.
+
+## Portable Class Libraries
+
+<div class="block-callout-warning">
+    <strong>Not Recommended</strong><br>
+    While PCLs are supported, It is our recommendation that package authors move to supporting net standard instead.The .NET Platform Standard version represents binary portability across platforms using a single moniker. They are an evolution of the existing Portable Class Library system. They are "open-ended" in that they aren't tied down to a static list of monikers like portable-a+b+c is.
+</div>
 
 To define a target framework that refers to multiple child-target-frameworks, the `portable` keyword shall be used to prefix the list of frameworks that are referenced.  We recommend that you do not artificially include extra frameworks that are not directly compiled against as this could lead to unintended side-effects in those frameworks.
 
 There are additional frameworks that are defined by third parties that provide compatibility with other environments that are accessible in this manner.  Additionally, there are shorthand profile numbers that are available to reference these combinations of related frameworks as `Profile#`, but this is not a recommended practice to use these numbers as it reduces the readiblity of the folders and nuspec. 
-
-The following table outlines the list of portable framework monikers that are identified by the official NuGet clients.  This table is current for [NuGet v3.3](https://github.com/NuGet/NuGet.Client/commit/3216726e5d47c7b8b2f089f35c242323d26954d4 "GitHub Commit 321672...") (December 2015)
-
-The source code from the NuGet clients that is used to calculate these tables can be found at [on GitHub in DefaultPortableFrameworkMappings.cs](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Frameworks/DefaultPortableFrameworkMappings.cs)
 
 <table class="reference">
   <tr>
@@ -654,9 +660,3 @@ Additionally, there are optional frameworks provided by Xamarin that are support
 
 Stephen Cleary has a blog post that demonstrates a tool that will mine the list of supported portable class libraries on a workstation and report the features of them: [http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html](http://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
 
-
-### .NET Platform Standard 
-
-To simplify the references between binary-compatible frameworks, the [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md) was introduced.  This allows the definition of a single target framework moniker to reference a combination of binary compatible frameworks.  Various versions of the Platform Standard indicate different combinations of frameworks that are compatible.  More information about these frameworks can be found at the .NET Platform Standard master document. 
-
-The `dotnet` series of monikers should be used in NuGet 3.3 and the `netstandard` moniker syntax should be used in v3.4 and later.
