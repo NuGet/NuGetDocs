@@ -180,7 +180,7 @@ There are additional frameworks that are defined by third parties that provide c
 	<th>Profile #</th>
 	<th>Frameworks</th>
 	<th>Full name</th>
-	<th>Platform Standard</th>
+	<th>.NET Standard</th>
   </tr>
 <tr>
 <td>Profile2</td>
@@ -232,7 +232,7 @@ Windows 8.0</td>
 .NETFramework 4.5<br/>
 Windows 8.0</td>
 <td>portable-net45+win8</td>
-<td><i>dotnet5.2</i><br/>netstandard1.1</td>
+<td>netstandard1.1</td>
 </tr>
 <tr>
 <td>Profile14</td>
@@ -280,7 +280,7 @@ Silverlight 5.0</td>
 Windows 8.1<br/>
 WindowsPhone 8.1</td>
 <td>portable-win81+wp81</td>
-<td><i>dotnet5.1</i><br/>netstandard1.0</td>
+<td>netstandard1.0</td>
 </tr>
 <tr>
 <td>Profile32</td>
@@ -288,7 +288,7 @@ WindowsPhone 8.1</td>
 Windows 8.1<br/>
 WindowsPhone 8.1</td>
 <td>portable-win81+wpa81</td>
-<td><i>dotnet5.3</i><br/>netstandard1.2</td>
+<td>netstandard1.2</td>
 </tr>
 <tr>
 <td>Profile36</td>
@@ -333,7 +333,7 @@ Windows 8.0</td>
 .NETFramework 4.5.1<br/>
 Windows 8.1</td>
 <td>portable-net451+win81</td>
-<td><i>dotnet5.3</i><br/>netstandard1.2</td>
+<td>netstandard1.2</td>
 </tr>
 <tr>
 <td>Profile46</td>
@@ -359,7 +359,7 @@ Windows 8.0</td>
 .NETFramework 4.5<br/>
 WindowsPhone 8.0</td>
 <td>portable-net45+wp8</td>
-<td><i>dotnet5.1</i><br/>netstandard1.0</td>
+<td>netstandard1.0</td>
 </tr>
 <tr>
 <td>Profile78</td>
@@ -368,7 +368,7 @@ WindowsPhone 8.0</td>
 Windows 8.0<br/>
 WindowsPhone 8.0</td>
 <td>portable-net45+win8+wp8</td>
-<td><i>dotnet5.1</i><br/>netstandard1.0</td>
+<td>netstandard1.0</td>
 </tr>
 <tr>
 <td>Profile84</td>
@@ -376,7 +376,7 @@ WindowsPhone 8.0</td>
 WindowsPhone 8.1<br/>
 WindowsPhone 8.1</td>
 <td>portable-wp81+wpa81</td>
-<td><i>dotnet5.1</i><br/>netstandard1.0</td>
+<td>netstandard1.0</td>
 </tr>
 <tr>
 <td>Profile88</td>
@@ -443,7 +443,7 @@ WindowsPhone 7.5</td>
 Windows 8.0<br/>
 WindowsPhone 8.1</td>
 <td>portable-net45+win8+wpa81</td>
-<td><i>dotnet5.2</i><br/>netstandard1.1</td>
+<td>netstandard1.1</td>
 </tr>
 <tr>
 <td>Profile136</td>
@@ -482,7 +482,7 @@ WindowsPhone 8.0</td>
 Windows 8.1<br/>
 WindowsPhone 8.1</td>
 <td>portable-net451+win81+wpa81</td>
-<td><i>dotnet5.3</i>netstandard1.2</td>
+<td>netstandard1.2</td>
 </tr>
 <tr>
 <td>Profile154</td>
@@ -501,7 +501,7 @@ Windows 8.1<br/>
 WindowsPhone 8.1<br/>
 WindowsPhone 8.1</td>
 <td>portable-win81+wp81+wpa81</td>
-<td><i>dotnet5.1</i><br/>netstandard1.0</td>
+<td>netstandard1.0</td>
 </tr>
 <tr>
 <td>Profile158</td>
@@ -551,7 +551,7 @@ Windows 8.0<br/>
 WindowsPhone 8.1<br/>
 WindowsPhone 8.0</td>
 <td>portable-net45+win8+wpa81+wp8</td>
-<td><i>dotnet5.1</i><br/>netstandard1.0</td>
+<td>netstandard1.0</td>
 </tr>
 <tr>
 <td>Profile328</td>
@@ -594,67 +594,67 @@ Additionally, there are optional frameworks provided by Xamarin that are support
   <tr>
     <th>Name</th>
     <th>Description</th>
-    <th>.NET Platform Standard</th>
+    <th>.NET Standard</th>
   </tr>
   <tr>
     <td>monoandroid</td>
     <td>Mono Support for Android OS</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>monotouch</td>
     <td>Mono Support for iOS</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>monomac</td>
     <td>Mono Support for OSX</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinios</td>
     <td>Support for Xamarin for iOS</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinmac</td>
     <td>Supports for Xamarin for Mac</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinpsthree</td>
     <td>Support for Xamarin on Playstation 3</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinpsfour</td>
     <td>Support for Xamarin on Playstation 4</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinpsvita</td>
     <td>Support for Xamarin on PS Vita</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinwatchos</td>
     <td>Xamarin for Watch OS</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarintvos</td>
     <td>Xamarin for TV OS</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinxboxthreesixty</td>
     <td>Xamarin for XBox 360</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
   <tr>
     <td>xamarinxboxone</td>
     <td>Xamarin for XBox One</td>
-    <td><i>dotnet5.5</i><br/>netstandard1.4</td>
+    <td>netstandard1.4</td>
   </tr>
 </table>
 
