@@ -235,7 +235,7 @@ namespace NuGet.Docs
                         node.Attributes.Remove("class");
                     }
 
-                    node.Attributes.Add("class", "col-md-4");
+                    node.Attributes.Add("class", "articleImage");
                 }
             }
         }

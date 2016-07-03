@@ -22,8 +22,6 @@ orderedList.Add(topics.Where(
 (a) => { return a.Title == "Visual Studio Extensibility"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Topics"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "Contribute"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
 
 }
