@@ -100,6 +100,7 @@ namespace NuGet.Docs
             foreach (var heading in allHeadingNodes)
             {
                 string id = heading.InnerText.Replace(" ", "-").ToLowerInvariant();
+                id = id.Replace(".", "-").ToLowerInvariant();
                 HtmlNode anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
                 heading.ChildNodes.Insert(0, anchor);
 
