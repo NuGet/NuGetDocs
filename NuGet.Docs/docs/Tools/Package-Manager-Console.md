@@ -1,16 +1,12 @@
 ﻿# Managing Packages Using the Package Manager Console
 
-This topic describes how to find, install, remove, and update NuGet packages using PowerShell commands. 
-You can also work with packages using the **Manage NuGet Packages** dialog box. 
-For more information, see [Manage NuGet Packages Using the Package Manager dialog](Package-Manager-Dialog).
+This topic describes how to find, install, remove, and update NuGet packages using PowerShell commands. Using PowerShell commands is required if you want to install a package without having a solution open. It's also required in some cases for packages that create commands that you can access only by using PowerShell.
 
-Using PowerShell commands is required if you want to install a package without having a solution open. It's also required in some cases for packages that create commands that you can access only by using PowerShell.
+For the complete reference to NuGet powershell commands, check out the [PowerShell Reference]().
 
 ## Finding a Package
 
-From the **Tools** menu, select **Library Package Manager** and then click **Package Manager Console**.
-
-![Package Manager Console in menu](/images/consume/package-manager-console-in-menu.png)
+You can either use the Quick Launch (type "package manager") or use the View menu to find the package manager console and open it.
 
 The **Package Manager Console** window is displayed.
 
@@ -137,5 +133,17 @@ For more options that you can use with the `Update-Package` command, enter `get-
 
 Refer [here] (Package-Manager-Console-PowerShell-Reference#Update-Package) for a complete list of PowerShell Reference on Update
 
-# Setting up a NuGet Powershell Profile
-For customizing your PowerShell console, click [here] (Setting-up-NuGet-PowerShell-Profile.md)
+## Setting up a NuGet Powershell Profile
+Powershell supports the concept of profiles which allow you to have commonly used PS commands available to you wherever you use PowerShell.
+
+NuGet supports a NuGet specific profile typically located at:
+
+    %UserProfile%\Documents\WindowsPowerShell\NuGet_profile.ps1
+
+The easiest way to find the profile file is to type `$profile` within the NuGet Package Manager Console. 
+For example, this is what I see on my machine.
+
+    PM> $profile
+    C:\Users\philha\Documents\WindowsPowerShell\NuGet_profile.ps1
+
+This article gives a more in-depth overview of how to [create profiles and commands within it](https://technet.microsoft.com/en-us/magazine/2008.10.windowspowershell.aspx).

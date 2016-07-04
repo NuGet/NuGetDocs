@@ -89,6 +89,9 @@ $(document).ready(function () {
     else if (url.indexOf("/visual-studio-extensibility") != -1) {
         $('#a-Visual-Studio-Extensibility').click();
     }
+    else if (url.indexOf("/faq-and-policy-documents") != -1) {
+        $('#a-FAQ-and-Policy-Documents').click();
+    }
     else {
         $('#expList').children('li').first().click();
     }

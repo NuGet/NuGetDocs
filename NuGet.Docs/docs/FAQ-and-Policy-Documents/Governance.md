@@ -4,7 +4,7 @@ This project is led by a benevolent dictator and managed by the community. That 
 
 ## Roles And Responsibilities
 
-### Benevolent dictator (project lead)
+### Benevolent dictator
 
 The NuGet core team is self-appointed as Benevolent Dictator or project lead. However, because the community always has the ability to fork, the team is fully answerable to the community. The project lead is expected to understand the community as a whole and strive to satisfy as many conflicting needs as possible, while ensuring that the project survives in the long term.
 
@@ -33,13 +33,19 @@ Users are community members who have a need for the project. They are the most i
 
 Users should be encouraged to participate in the life of the project and the community as much as possible. User contributions enable the project team to ensure that they are satisfying the needs of those users. Common user activities include (but are not limited to):
 
-* advocating for use of the project
-* informing developers of project strengths and weaknesses from a new user’s perspective
-* providing moral support (a ‘thank you’ goes a long way)
-* writing documentation and tutorials
-* filing bug reports and feature requests
-* participating in community events, such as bug bashes
-* participating on the discussion board(s) or forum(s)
+• Advocating for use of the project
+
+• Informing developers of project strengths and weaknesses from a new user’s perspective
+
+• Providing moral support (a ‘thank you’ goes a long way)
+
+• Writing documentation and tutorials
+
+• Filing bug reports and feature requests
+
+• Participating in community events, such as bug bashes
+
+• Participating on the discussion board(s) or forum(s)
 
 Users who continue to engage with the project and its community will often find themselves becoming more and more involved. Such users may then go on to become contributors, as described above.
 

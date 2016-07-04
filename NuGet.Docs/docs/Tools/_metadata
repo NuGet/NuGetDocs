@@ -1,4 +1,5 @@
-﻿Command-line Tools
-NuGet in .NET CLI
-Visual Studio - PowerShell
-Visual Studio - UI
+﻿NuGet-CLI-Reference
+PowerShell-Reference
+Package-Manager-UI
+Package-Manager-Console
+Package-Explorer
