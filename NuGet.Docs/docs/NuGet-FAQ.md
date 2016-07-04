@@ -2,56 +2,24 @@
 
 ## Getting started
 
-
 **What is required to run NuGet?**
 
-In general we recommend picking the latest version of NuGet (note that it requires .NET 4.5), you can find it in [in our download page](http://dist.nuget.org/index.html)
-
-NuGet requires Visual Studio 2010 Pro/Premium/Ultimate (or newer), Visual Web Developer Express 2010, or any Express SKU of Visual Studio 2012 (or newer).
-The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.microsoft.com/kb/968929) be installed. 
-Powershell 2.0 is already installed if you have the following operating systems:
-
-* Windows 7 (or newer)
-* Windows Server 2008 R2 (or newer)
-
-If you have the following operating systems, you must [manually install Powershell 2.0](http://support.microsoft.com/kb/968929/en-us).
-
-* Windows XP SP3 /Windows Vista SP1
-* Windows Server 2003 SP2/ Windows Server 2008
-
-**Are there any known issues with NuGet?
-Please check out the [Known Issues](/Release-Notes/Known-Issues) page. 
+All the info around tools including CLI tools, what you need to install and run NuGet is available [here]();
 
 **Does NuGet support Mono?**
 
 The command-line application (*nuget.exe*) builds and runs under Mono (version 3.2 or later) and allows you to create packages in Mono.
+
 This is especially true for Mono on Windows, but there are some known issues for Mono on Linux and OS X.  To review
 the known issues, [search for Mono in our issue list](https://github.com/NuGet/Home/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mono).
 
 Also, [a graphical client is available as an add-in for MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin).
 
-Details of the features that have currently been tested to work with Linux and OS X can be found under [compatibility](/consume/Compatibility)
-
-**Is there a command-line tool for NuGet?**
-
-**Yes there is!** You can find it [here](http://dist.nuget.org/index.html), also see David Ebbo's Blog post entitled [Installing NuGet Packages directly from the command line](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html).
-
-Keep in mind that the focus of NuGet is to let you modify your projects and add references to Visual Studio projects. 
-The command line tool, NuGet.exe, will download and unpack packages, but it won't automate Visual Studio and 
-modify your project files.
-Within Visual Studio, there are two clients for NuGet: 
-the PowerShell-based **Package Manager Console** and the **Manage NuGet Packages** dialog box. 
-Both are wrappers around the NuGet API, which is written in managed code.
-NuGet.exe is also used to create and publish packages.
-
-## NuGet With Visual Studio
+## NuGet in Visual Studio
 
 **How do I check the exact version of NuGet installed?**
 
-In Visual Studio go to the _Help_ > _About Microsoft Visual Studio_ menu and look for NuGet Package Manager. The version is 
-displayed next to that entry.
-
-![NuGet Version in the Visual Studio Extension Manager](/images/consume/nuget-version.png)
+In Visual Studio go to the _Help_ > _About Microsoft Visual Studio_ menu and look for NuGet Package Manager. The version is displayed next to that entry.
 
 Alternatively, you can launch the Package Manager Console and type in `$host` to output information about NuGet 
 Powershell host including the version.
@@ -60,37 +28,32 @@ Powershell host including the version.
 
 Generally NuGet is a good tool for .NET languages, it is designed primarily around bringing .NET dlls into your project. Since it also supports msbuild and visual studio automation in some project types it supports other projects and languages types with various degrees of completeness.
 
-The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects. For learning more about support for C++, check out our [blog post](http://blog.nuget.org/20130426/native-support.html) for more details.
+The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects.
 
 **What project templates are supported by NuGet?**
 
-NuGet has full support for a variety of project templates like Windows, Web, Silverlight, SharePoint, Wix and so on.  The support for LightSwitch and Cloud templates is minimal at this point of time.
+NuGet has full support for a variety of project templates like Windows, Web, Cloud, SharePoint, Wix and so on.
 
 **How do I update packages that are part of visual studio templates ?**
 
-You can do an "Update All" from the "Manage NuGet Packages" dialog. More details [here](../Release-Notes/NuGet-2.5) or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
+You can do an "Update All" from the "Manage NuGet Packages" UI or use the "Update-Package" command from NuGet Package Manager Console. This will get the latest version of all the packages that are part of the template.
 
 However, if you want to update the template in one go, instead of doing it for every project, you will have to manually update the template repository. Check out [Xavier Decoster's blog on the same.](http://www.xavierdecoster.com/update-project-template-to-latest-nuget-packages)
 
-Please be noted that manually updating the template repository should be done at your own risk. It might corrupt the template files or the latest version of the packages may not be compatible with each other.
+<div class="block-callout-warning">
+    <strong>Note:</strong><br>
+    Please be noted that manually updating the template repository should be done at your own risk. It might corrupt the template files or the latest version of the packages may not be compatible with each other
+</div>
 
-## Can I use NuGet outside of Visual Studio?
+**Can I use NuGet outside of Visual Studio?**
 
-**You sure can!** As discussed in the question on command line tools for NuGet, the primary focus 
-of NuGet is Visual Studio, but the core NuGet API has no dependencies on Visual Studio. 
-There are multiple NuGet clients that work completely outside of Visual Studio:
-
-* [SharpDevelop Alpha](http://community.sharpdevelop.net/blogs/mattward/archive/2011/01/23/NuGetSupportInSharpDevelop.aspx). (See a demo of this in [Phil Haack's MvcConf talk](http://bit.ly/fzrJDa).) 
-* [NuGet.exe](http://blog.davidebbo.com/2011/01/installing-nuget-packages-directly-from.html) 
-* [MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin) and Xamarin Studio add-in
+**You sure can!**, check out our [Install Guide]().
 
 ## NuGet CommandLine
 
 **How do I get the latest version of NuGet commandline?**
 
-You can download NuGet.exe from [our distribution site](https://dist.nuget.org/index.html) or install the package from [nuget.org](http://www.nuget.org/packages/NuGet.CommandLine).
-
-Once you have the command-line, use "NuGet.exe Update" to self update the exe to the latest version.
+Check out our [Install Guide]().
 
 **Is it possible to extend NuGet commandline?**
 
@@ -102,18 +65,13 @@ Check out [this post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-n
 **How do I get access to the DTE object in the Package Manager console?**
 
 The console provides a variable named `$DTE` that returns the `DTE` object. See the `Get-Project` command in 
-[Package Manager Console Powershell Reference](/Consume/Package-Manager-Console-PowerShell-Reference).
-
-**Why does the Package Manager Console or the Manage NuGet Packages dialog box crash or show an exception?**
-
-Check the [Known Issues](/Release-Notes/Known-Issues) page. Typically, the issue is due to having an older version of the Reflector add-in installed or not having PowerShell 2.0 installed (as in the case of Windows XP).
+[Package Manager Console Powershell Reference]().
 
 **I try to cast the $DTE variable to the type DTE2, but I get an error: Cannot convert the "EnvDTE.DTEClass" value of type "EnvDTE.DTEClass" to type "EnvDTE80.DTE2". What's wrong?**
 
 This is a known issue with how PowerShell interacts with a COM object. Try the following:
 `$dte2 = Get-Interface $dte ([EnvDTE80.DTE2])`
 `Get-Interface` is a helper function added by the NuGet PowerShell host.
-
 
 ## Creating and Publishing packages
 

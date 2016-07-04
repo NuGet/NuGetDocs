@@ -1,4 +1,4 @@
-﻿# Managing NuGet Packages Using the Dialog
+﻿# Managing NuGet Packages Using the UI
 
 This topic describes how to find, install, remove, and update NuGet packages using the **Manage NuGet Packages UI**. To use this UI, you must have a solution open in Visual Studio. As an alternative, you can install packages using PowerShell commands. For more information, see [Using the Package Manager Console](Package-Manager-Console).
 

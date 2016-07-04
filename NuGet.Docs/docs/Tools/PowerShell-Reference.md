@@ -1,4 +1,4 @@
-﻿# Package Manager Console Reference
+﻿# PowerShell Reference
 
 The Package Manager Console is a PowerShell console within Visual Studio used to interact with NuGet and 
 automate Visual Studio. The [Install Guide]() gives you an overview of the various ways to acquire the NuGet Extension in Visual Studio that has support for the Package Manager Console if its not already available in the version you are using.

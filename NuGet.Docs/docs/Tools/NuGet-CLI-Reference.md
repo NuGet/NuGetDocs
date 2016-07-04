@@ -1,4 +1,4 @@
-# NuGet CLI
+# NuGet CLI Reference
 
 The [Install Guide]() gives you an overview of the various ways to install NuGet CLI on your box. NuGet CLI is used to create, publish, manage and download your packages.
 
