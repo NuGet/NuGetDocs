@@ -8,21 +8,24 @@ The default location for NuGet's configuration file is `%APPDATA%\NuGet\NuGet.Co
 
 For example: `D:\Users\username\AppData\Roaming\NuGet\NuGet.config`.
 
-The default configuration file can be changed through -ConfigFile option when using NuGet CLI. For example, "-ConfigFile c:\my.config" means using file c:\my.config instead of %APPDATA%\NuGet\NuGet.Config as the default configuraion file.
+The default configuration file can be changed through `-ConfigFile` option when using NuGet CLI. For example, "-ConfigFile c:\my.config" means using file c:\my.config instead of %APPDATA%\NuGet\NuGet.Config as the default configuraion file.
 
-## Config file reference
+## Reference
 
 XML is used to store the configuration, and any text editor can be used to author it.
 
-<p class="info">
-<strong>Note</strong><br />NuGet will silently ignore the entire configuration file if it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
-</p>
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    NuGet will silently ignore the entire configuration file if it encounters any XML parsing issues (such as mismatched begin/end nodes, invalid quotation, etc.); therefore an editor that reports parsing issues is recommended.
+</div>
 
-<p class="info">
-<strong>Note</strong><br />The keys are case sensitive.
-</p>
 
-Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page](NuGet-Config-Settings).
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+	The keys are case sensitive.
+</div>
+
+Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page]().
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -90,17 +93,20 @@ In general the NuGet.config file closest to the folder nuget.exe runs from wins,
 
 NuGet first loads NuGet.config from the default location, then loads any file named NuGet.config starting from the root of the current drive and ending in the current directory.
 
-Current directory is defined as:
+**Current directory is defined as:**
 
-* Directory from which NuGet.exe is invoked (command line scenario).
-* Directory in which the current solution was loaded from (Visual Studio scenario).
+a) Directory from which NuGet.exe is invoked (CLI scenario).
+
+b) Directory in which the current solution was loaded from (Visual Studio scenario).
 
 
-The following rules are used to determine the actual configuration values:
+**The following rules are used to determine the actual configuration values:**
 
-* When `<clear />` is present for a given node, previously defined configuration items for this node are ignored.
-* For nodes used as collections (for example `<packageSources>`), new elements are added to the collection.
-* For elements used as single items (for example elements under `<config>` or `<packageRestore>`), new elements replace previous elements with the same key.
+a) When `<clear />` is present for a given node, previously defined configuration items for this node are ignored.
+
+b) For nodes used as collections (for example `<packageSources>`), new elements are added to the collection.
+
+c) For elements used as single items (for example elements under `<config>` or `<packageRestore>`), new elements replace previous elements with the same key.
 
 For example, assuming this directory structure:
 
@@ -115,7 +121,7 @@ For example, assuming this directory structure:
        
 With these four NuGet config files present on the filesystem: 
 
-1) %APPDATA%\NuGet\Nuget.config with content:
+a) %APPDATA%\NuGet\Nuget.config with content:
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -124,7 +130,7 @@ With these four NuGet config files present on the filesystem:
       </activePackageSource>
     </configuration>
 
-2) F:\NuGet.config with content:
+b) F:\NuGet.config with content:
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -136,7 +142,7 @@ With these four NuGet config files present on the filesystem:
       </packageRestore>
     </configuration>
 
-3) F:\Project1\NuGet.config with content:
+c) F:\Project1\NuGet.config with content:
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -150,7 +156,7 @@ With these four NuGet config files present on the filesystem:
       </packageSources>
     </configuration>
 
-4) F:\Project2\NuGet.config with content:
+d) F:\Project2\NuGet.config with content:
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -160,44 +166,53 @@ With these four NuGet config files present on the filesystem:
       </packageSources>
     </configuration>
 
-NuGet will load:
 
-* **When invoked from C:\Users**: Only 1. The default repository on NuGet.org is used.
-* **When invoked from F:\ or F:\tmp**: 1 and 2. The default repository on NuGet.org is used, package restore is enabled and packages get expanded in F:\tmp.
-* **When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositoryPath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
-* **When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
+<em>NuGet will load:</em>
+
+**When invoked from C:\Users**: Only 1. The default repository on NuGet.org is used.
+
+**When invoked from F:\ or F:\tmp**: 1 and 2. The default repository on NuGet.org is used, package restore is enabled and packages get expanded in F:\tmp.
+
+**When invoked from F:\Project1 or F:\Project1\Source**: 1, 2 and 3. The last config file that gets loaded overrides `repositoryPath` therefore packages get expanded in F:\Project1\External\Packages instead of F:\tmp. It also clears `<packageSources>` therefore nuget.org is no longer available as a source; instead only http://MyPrivateRepo/ES/nuget is available.
+
+**When invoked from F:\Project2 or F:\Project2\Source**: 1, 2 and 4. This time `packageSources` is not cleared, therefore both nuget.org and http://MyPrivateRepo/DQ/nuget are available as source repositories. Packages get expanded in F:\tmp
 
 ## NuGet config extensibility point
-NuGet config files are treated in the following priority order (closest to the folder nuget.exe runs from wins), for example assuming the solution directory is c:\a\b\c:
 
-* c:\a\b\c\\.nuget\nuget.config - This file is only used for solution level packages, and is not supported in nuget 3.0 - 3.4
-* c:\a\b\c\nuget.config
-* c:\a\b\nuget.config
-* c:\a\nuget.config
-* c:\nuget.config
-* User specific config file, %AppData%\NuGet\nuget.config. 
-* Or the user specified file thru option -ConfigFile.
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+	Closest to the folder nuget.exe runs from wins.
+</div>
+
+NuGet config files are treated in the following priority order, for example assuming the solution directory is c:\a\b\c:
+
+	c:\a\b\c\.nuget\nuget.config - Onlyfor solution level packages, and not supported in nuget 3.0+
+	c:\a\b\c\nuget.config
+	c:\a\b\nuget.config
+	c:\a\nuget.config
+	c:\nuget.config
+	User specific config file, %AppData%\NuGet\nuget.config. 
+	Or the user specified file thru option -ConfigFile.
 
 Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
 
-* c:\a\b\c\\.nuget\nuget.config
-* c:\a\b\c\nuget.config
-* c:\a\b\nuget.config
-* c:\a\nuget.config
-* c:\nuget.config
-* User specific config file, %AppData%\NuGet\nuget.config
-* Or the user specified file thru option -ConfigFile
-* %ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config, e.g. %ProgramData%\NuGet\Config\VisualStudio\{VSVersion}\Pro\a.config
-* %ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
-* %ProgramData%\NuGet\Config\{IDE}\*.config
-* %ProgramData%\NuGet\Config\*.config
+	c:\a\b\c\\.nuget\nuget.config
+		-c:\a\b\c\nuget.config
+			-c:\a\b\nuget.config
+				-c:\a\nuget.config
+					-c:\nuget.config
+						-User specific config file, %AppData%\NuGet\nuget.config
+						-Or the user specified file thru option -ConfigFile
+							-%ProgramData%\NuGet\Config\{IDE}\{Version}\{SKU}\*.config
+								-%ProgramData%\NuGet\Config\{IDE}\{Version}\*.config
+									-%ProgramData%\NuGet\Config\{IDE}\*.config
+										-%ProgramData%\NuGet\Config\*.config
 
-In the above path locations {IDE} can be VisualStudio and if you want to specify config for a particular SKU of Visual Studio {SKU} can be Pro, VWDExpress, VPDExpress, VSWinExpress or VSWinDesktopExpress.
+In the above path locations `{IDE}` can be VisualStudio and if you want to specify config for a particular SKU of Visual Studio `{SKU}` can be Pro, Enterprise, VWDExpress, VPDExpress, VSWinExpress or VSWinDesktopExpress.
 
 With NuGet 2.6, the machine wide package sources are now shown in Package Manage Settings dialog. Machine wide package sources are readonly and you can enable or disable them using this dialog.
 
-![NuGet Config File machine wide settings](/images/consume/NuGet-Config-File-Machine-Wide.png)
-
+![NuGet Config File machine wide settings](/images/docs/OptionsMachineWide.png)
 
 # NuGet Configuration Settings
 Below is the summary of the NuGet configuration keys and values that can be set via the nuget.config files.
