@@ -11,19 +11,21 @@ var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Get Started"; }).First());
 orderedList.Add(topics.Where(
+(a) => { return a.Title == "Create Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Consume Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Host Packages"; }).First());
+orderedList.Add(topics.Where(
 (a) => { return a.Title == "Tools"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Schema"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "API"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Host"; }).First());
-orderedList.Add(topics.Where(
 (a) => { return a.Title == "Visual Studio Extensibility"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Topics"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "FAQ and Policy Documents"; }).First());
+(a) => { return a.Title == "FAQ Ecosystem and Policies"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
 
 }

@@ -57,8 +57,7 @@ Check out our [Install Guide]().
 
 **Is it possible to extend NuGet commandline?**
 
-Yes, it is possible to add custom commands to NuGet.exe.
-Check out [this post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx) by Rob Reynolds for a quick walkthrough.
+Yes, it is possible to add custom commands to NuGet.exe. Check out [this post](http://geekswithblogs.net/robz/archive/2011/07/15/extend-nuget-command-line.aspx) by Rob Reynolds for a quick walkthrough.
 
 ## NuGet Package Manager Console
 
@@ -77,37 +76,30 @@ This is a known issue with how PowerShell interacts with a COM object. Try the f
 
 **How do I get my package in the feed?**
 
-See the [Creating and publishing a package](/Create/creating-and-publishing-a-package) page.
+See the [Creating and publishing a package]() page.
 
 **I have multiple versions of my library that target different versions of the .NET Framework. How do I build a single package that supports this?**
 
-See the section titled "Supporting Multiple .NET Framework Versions and Profiles" in [Creating a Package](/Create/Enforced-Package-Conventions#supporting-multiple-.net-framework-versions-and-profiles).
+See the [Supporting Multiple .NET Framework Versions and Profiles]()
 
 **How do I set up a local repository or feed?**
 
-See [Hosting Your Own NuGet Feeds](/Create/Hosting-Your-Own-NuGet-Feeds).
+See [Hosting Your Own NuGet Feeds]().
 
 **How can I bulk upload packages to my NuGet feed ?**
 
-See [Bulk Publishing NuGet Packages](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx).
+See [Bulk Publishing NuGet Packages](http://jeffhandley.com/archive/2012/12/13/Bulk-Publishing-NuGet-Packages.aspx
 	
 **How can I create package out of a project or solution ?**
 
-You can use Nuget.exe [Pack command](/consume/command-line-reference#pack-command-examples) to create a NuGet package out a project.
-
-This command will take care adding all the NuGet packages installed in the project as package dependencies and referenced projects as "Reference" assemblies in the package.
-You can invoke this command in post build event to automate the build process.
+You can use Nuget.exe [Pack command](/consume/command-line-reference#pack-command-examples) to create a NuGet package out a project. For more information, see [Creating package] topic.
 
 
 ## Working with Packages
 
-
 **What is the difference between a project-level package and a solution-level package?**
 
-A solution-level package has to be installed only once in a solution to be available for all projects in the solution. 
-A project-level package must be installed separately in each project where you want to use it.
-For solution-level packages, NuGet doesn't change anything in a project, whereas in a project-level package it does. 
-Typically, a solution-level package installs new commands that can be called from within the **Package Manager Console** window.
+A solution-level package has to be installed only once in a solution to be available for all projects in the solution. A project-level package must be installed separately in each project where you want to use it. Typically, a solution-level package installs new commands that can be called from within the **Package Manager Console** window.
 
 **Is it possible to install NuGet package without internet ?**
 
@@ -116,19 +108,15 @@ Typically, a solution-level package installs new commands that can be called fro
 **How to install packages in a different location from the default "Packages" folder?**
 
 This can be done by setting the "repositoryPath" settings in nuget.config.
-More details [here.](/release-notes/nuget-2.1)
+More details [here.]()
 
 **How do I avoid checking in packages folder to source control?**
 
-You can turn off source control integration for the Packages folder by setting the "disableSourceControlIntegration" propety in the nuget.config to "true".
-
-This key works at the solution level and hence need to be added to the NuGet.config file present in the "$(SolutionDir)\.nuget directory". Enabling package restore from VS would add the .nuget\nuget.config file automatically.
-
+You can turn off source control integration for the Packages folder by setting the "disableSourceControlIntegration" propety in the nuget.config to "true". This key works at the solution level and hence need to be added to the NuGet.config file present in the "$(SolutionDir)\.nuget directory". Enabling package restore from VS would add the .nuget\nuget.config file automatically.
 
 **How do I turn off package restore?**
 
-You can disable package restore at the machine wide using the package manager settings or by setting an environment variable "EnableNugetPackageRestore" to "false". 
-However, to disable just at sln level, you would have to manually delete the .nuget folder from the Solution and the file system and revert the changes in the csproj file related to package restore.
+You can disable package restore at the machine wide using the package manager settings or by setting an environment variable "EnableNugetPackageRestore" to "false". However, to disable just at sln level, you would have to manually delete the .nuget folder from the Solution and the file system and revert the changes in the csproj file related to package restore.
 
 **Why do I get an "Unable to resolve dependency error" when installing a local package with remote dependencies?**
 
@@ -141,16 +129,17 @@ install a remote package due to corporate polices.
 
 In most projects where separate projects live in separate folders, this is not a problem as NuGet will identify the packages.config and project.json files in the same folder as the project file.  As of NuGet 3.3, for multiple projects in the same folder you can insert the name of the project into the packages.config or project.json filename and NuGet will use that file.  The naming convention is as follows:
 
-* `packages.config` shall match the pattern `packages.{project-name}.config`
-* `project.json` shall match the pattern `{project-name}.project.json`
+`packages.config` shall match the pattern `packages.{project-name}.config`
+
+`project.json` shall match the pattern `{project-name}.project.json`
 
 **Help! I don't see nuget.org in my list of repositories, how do I get it back?**
 
 There are two ways to get it back:
 
-* Add `https://api.nuget.org/v3/index.json` to your list of sources
-* Delete your NuGet.config file at `%appdata%\nuget` and the client will recreate it
+Add `https://api.nuget.org/v3/index.json` to your list of sources
 
+Delete your NuGet.config file at `%appdata%\nuget` and the client will recreate it
 
 ## Managing Packages in NuGet.Org
 
@@ -160,7 +149,7 @@ It is not possible to squat package names. If you feel that an existing package 
 
 **How do I claim ownership for packages ?**
 
-Check out [Managing Package Owners on nuget.org](/Create/Managing-Package-Owners) for details.
+Check out [Managing Package Owners on nuget.org]() for details.
 
 **How do I deal with a package owner who is violating my software license?**
 
@@ -168,7 +157,7 @@ We encourage the NuGet community to work together to resolve any disputes that m
 
 **Is it recommended to upload my test packages to NuGet.org ?**
 
-For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public nuget servers like https://myget.org (public and private feeds) or [Visual Studio Online](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/) . Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
+For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public nuget servers like https://myget.org (public and private feeds) or [Visual Studio Online](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/). Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
 
 **What is the maximum size of packages I can upload to NuGet.org?**
 
@@ -185,26 +174,37 @@ Dependencies are mostly static and never change. When fixing a bug in code, the 
 When downloading and uploading to NuGet does not work, it's best to [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information such as MTR or a Fiddler trace, as well as the operating system you are using, machine configuration (CPU, Network, hard drive), is your machine behind a proxy or firewall, and what version of .NET is installed on the machine. If you are use new cross platform tools (such as .NET CLI, or DNU) please indicate the exact version you are using.
 
 Also please make sure you are using the latest version of NuGet either in visual studio or on the commandline. When you communicate with support, please include the version of your NuGet tools, the package sources you are using, a restore log (with detailed verbosity), and MTR/Fiddler traces if possible.
-'
-To capture MTR:
 
-> 1. Download WinMTR from [http://winmtr.net/download/](http://winmtr.net/)
-> 2. Enter `api.nuget.org` as the hostname and click *Start*.
-> 3. Wait until the *Sent* column is >= 100.
-> 
->    ![MTR](/images/consume/mtr.png)
-> 
-> 4. Copy text to clipboard and include the copied details in your support request. Also let us know your geographical area.
+**To capture MTR:**
 
-To capture Fiddler:
+•   Download WinMTR from [http://winmtr.net/download/](http://winmtr.net/)
 
-> 1. Install the latest version of [Fiddler](http://www.telerik.com/download/fiddler). 
-> 2. Start Fiddler and disable capturing traffic using the *File | Capture Traffic* menu.
-> 3. Remove all sessions (select all items in the list, press the *Delete* key)
-> 4. Configure Fiddler to capture HTTPS traffic by checking  *Decrypt HTTPS traffic* in the *HTTPS* tab of the *Tools | Fiddler Options...* menu.
-> 5. Close Visual Studio.
-> 6. Enable the *File | Capture Traffic* menu.
-> 7. Start Visual Studio or NuGet.exe and perform the actions that are not working. The traffic generated by these actions should show up in Fiddler.
-> 8. Once the actions have run, use the *File | Save | All Sessions* menu and store the captured sessions. Include the file in your support request.
+•   Enter `api.nuget.org` as the hostname and click *Start*.
 
-Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler. If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
+•   Wait until the *Sent* column is >= 100.
+
+![MTR](/images/consume/mtr.png)
+ 
+•   Copy text to clipboard and include the copied details in your support request. Also let us know your geographical area.
+
+**To capture Fiddler:**
+
+•   Install the latest version of [Fiddler](http://www.telerik.com/download/fiddler). 
+
+•   Start Fiddler and disable capturing traffic using the *File | Capture Traffic* menu.
+
+•   Remove all sessions (select all items in the list, press the *Delete* key)
+
+•   Configure Fiddler to capture HTTPS traffic by checking  *Decrypt HTTPS traffic* in the *HTTPS* tab of the * Tools | Fiddler Options...* menu.
+
+•   Close Visual Studio.
+
+•   Enable the *File | Capture Traffic* menu.
+
+•   Start Visual Studio or NuGet.exe and perform the actions that are not working. The traffic generated by these      actions should show up in Fiddler.
+
+•   Once the actions have run, use the *File | Save | All Sessions* menu and store the captured sessions. Include      the file in your support request.
+
+Note: it may be required to set the `HTTP_PROXY` environment variable to `http://127.0.0.1:8888` for routing NuGet traffic through Fiddler. 
+
+If that fails, try the [tips mentioned in this StackOverflow post](http://stackoverflow.com/questions/21049908/using-fiddler-to-sniff-visual-studio-2013-requests-proxy-firewall).
