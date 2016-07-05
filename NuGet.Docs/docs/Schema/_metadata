@@ -2,6 +2,4 @@
 project.json
 project.lock.json
 Target-Frameworks
-nuget-config-File-Overview
 nuget-config-Reference
-nuget-config-File-Defaults
