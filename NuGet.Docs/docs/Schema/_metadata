@@ -1,4 +1,5 @@
 ﻿nuspec
-Target Frameworks
-nuget-config
-porject-json
+project.json
+project.lock.json
+Target-Frameworks
+nuget-config-Reference

@@ -11,17 +11,21 @@ var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Get Started"; }).First());
 orderedList.Add(topics.Where(
+(a) => { return a.Title == "Create Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Consume Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Host Packages"; }).First());
+orderedList.Add(topics.Where(
 (a) => { return a.Title == "Tools"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Schema"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "API"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Host"; }).First());
+(a) => { return a.Title == "Visual Studio Extensibility"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Topics"; }).First());
-orderedList.Add(topics.Where(
-(a) => { return a.Title == "Contribute"; }).First());
+(a) => { return a.Title == "FAQ Ecosystem and Policies"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
 
 }
@@ -30,14 +34,14 @@ orderedList.Add(topics.Where(
 {
 foreach (Topic topic in topics)
 {
-
-        <li id="a-@topic.Title" class="level1container" />
-        <span>@topic.Title</span>
+    string title = @topic.Title.Replace(" ", "-");
+        <li id="a-@title" class="level1container"/>
+        @topic.Title
         @Html.Raw("<ul>");
     foreach (var subtopic in topic.SubTopics)
     {
             <li class="listItem">
-            <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
+                <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
             </li>
     }
         @Html.Raw("</ul>");

@@ -83,8 +83,20 @@ $(document).ready(function () {
     else if (url.indexOf("/topics") != -1) {
         $('#a-Topics').click();
     }
-    else if (url.indexOf("/host") != -1) {
-        $('#a-Host').click();
+    else if (url.indexOf("/host-packages") != -1) {
+        $('#a-Host-Packages').click();
+    }
+    else if (url.indexOf("/visual-studio-extensibility") != -1) {
+        $('#a-Visual-Studio-Extensibility').click();
+    }
+    else if (url.indexOf("/faq-and-policy-documents") != -1) {
+        $('#a-FAQ-and-Policy-Documents').click();
+    }
+    else if (url.indexOf("/create-packages") != -1) {
+        $('#a-Create-Packages').click();
+    }
+    else if (url.indexOf("/consume-packages") != -1) {
+        $('#a-Consume-Packages').click();
     }
     else {
         $('#expList').children('li').first().click();
