@@ -1,15 +1,23 @@
-#NuGet Tools
+#The NuGet Install Guide
 
 The following tools will help you build, publish and consume nuget packages.
-
-##NuGet.exe Command-line Tool
-This utility can be used to create, publish, and download packages.<br>
-<a href="#nuget-compatibility">NuGet Compatibility</a>
-
-###How do I get NuGet.exe?
 <ol>
-<li>1. Download the latest version from <a href="https://nuget.org/downloads">https://nuget.org/downloads</a> and save the file to a path of your choice.</li>
-<li>2. Add this path to the PATH Environment Variable.</li>
+<li><a href="#nuget-exe-cli">NuGet.exe CLI</a></li>
+<li><a href="#nuget-package-manager-extension-in-visual-studio">NuGet Package Manager extension in Visual Studio</a></li>
+</ol>
+
+
+
+
+##NuGet.exe CLI
+This utility can be used to create, publish, and download packages.<br>
+nuget.exe works on macOS and linux on top of mono. An overview of nuget compatibility on mono is available <a href="#nuget-compatibility">here</a>.
+
+The NuGet CLI can be installed in a few possible ways.
+<ol>
+<li>Option 1. Download the latest version from <a href="https://nuget.org/downloads">https://nuget.org/downloads</a> and save the file to a path of your choice. Add this path to the PATH Environment Variable. And you are done!</li>
+<li>Option 2. Install the <a href="http://www.nuget.org/packages/NuGet.CommandLine/">NuGet.CommandLine</a> package from the NuGet Visual Studio client and either move nuget.exe to a common location or execute it in the context of your project.</li>
+<li>Option 3. Install the <a href="http://chocolatey.org/packages/NuGet.CommandLine">NuGet.CommandLine</a> Chocolatey package using the Chocolatey client. More information on Chocolatey can be found at <a href="http://chocolatey.org">http://chocolatey.org</a>.</li>
 </ol>
 
 <div class="block-callout-warning">
@@ -17,18 +25,14 @@ This utility can be used to create, publish, and download packages.<br>
     Because there are a few breaking changes introduced in NuGet 3.2 <a href="https://nuget.org/nuget.exe">https://nuget.org/nuget.exe</a> points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
 </div>
 
-Other options:
 
-* Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the NuGet Visual Studio client and either move nuget.exe to a common location or execute it in the context of your project.
-* Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the Chocolatey client. More information on Chocolatey can be found at [http://chocolatey.org].
-
+####References
+* [NuGet CLI commands](https://docs.nuget.org/consume/command-line-reference)
 
 ####Try out some scenarios
 *  [Creating a package](https://docs.nuget.org/Create/Creating-and-Publishing-a-Package#creating-a-package)
 *  [Publishing a Package](https://docs.nuget.org/Create/Creating-and-Publishing-a-Package#publishing-using-nuget-command-line)
 
-####References
-* [NuGet CLI commands](https://docs.nuget.org/consume/command-line-reference)
 
 ##NuGet Package Manager extension in Visual Studio
 Starting with Visual Studio 2012, NuGet is included in every edition (except Team Foundation Server).. This extension includes the package manager UI and the package manager console.
@@ -42,7 +46,7 @@ If your copy of Visual Studio does not already have the NuGet Package Manager ex
 </ol>
 
 
-###Package Manager UI
+###Package Manager UI (PM UI)
 The package manager UI allows you to find, install, remove, and update NuGet packages.
 
 ####Try out some scenarios
@@ -51,7 +55,7 @@ The package manager UI allows you to find, install, remove, and update NuGet pac
 * [Updating a Package](http://docs.nuget.org/Consume/Package-Manager-Dialog#updating-a-package)</li>
 
 
-###Package Manager Console
+###Package Manager Console (PM CLI)
 The package manager console allows you to find, install, remove, and update NuGet packages using PowerShell commands. Some packages sets up tools during install which can be accessed through the package manager console.
 
 <div class="block-callout-warning">
@@ -70,16 +74,15 @@ If you have the following operating systems, you must [manually install Powershe
 * Windows XP SP3 /Windows Vista SP1
 * Windows Server 2003 SP2/ Windows Server 2008
 
-
+####References
+* [Package Manager Console Powershell Commands](https://docs.nuget.org/consume/package-manager-console-powershell-reference)
+* [Setting up a NuGet Powershell Profile](https://docs.nuget.org/Consume/Setting-up-NuGet-PowerShell-Profile.md)</li>
 
 ####Try out some scenarios
 * [Removing a package](https://docs.nuget.org/Consume/Package-Manager-Console#removing-a-package)</li>
 * [Updating a Package](https://docs.nuget.org/Consume/Package-Manager-Console#updating-a-package)</li>
 
 
-####References
-* [Package Manager Console Powershell Commands](https://docs.nuget.org/consume/package-manager-console-powershell-reference)
-* [Setting up a NuGet Powershell Profile](https://docs.nuget.org/Consume/Setting-up-NuGet-PowerShell-Profile.md)</li>
 
 ###Updating the NuGet extension in Visual Studio
 You can update NuGet using the Visual Studio Extension Manager. Navigate to the Extension Manager and click on the Updates tab to check for updates. If there is a new version of NuGet you will see it in the list of available updates. From VS 2015 Update 2, NuGet extension is auto updated by default in Visual Studio.
@@ -144,7 +147,97 @@ check for updates and allow you to keep the application up to date.
 
 ##How do I choose my tools?
 Here is a quick reference to understand your options if you want to consume, create or publish NuGet packages:
-
+<table class="reference">
+    <tr>
+		<th></th>
+		<th></th>
+		<th colspan="2" >nuget extension</th>
+		<th></th>
+    <tr>
+	<tr>
+		<th>Scenario</th>
+		<th>nuget CLI</th>
+		<th>PM UI (VS)</th>
+		<th>PM CLI (VS)</th>
+		<th>.NET CLI</th>
+    <tr>
+        <td>Search/Download/Install package</td>
+        <td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+	<tr>
+        <td>Update package</td>
+        <td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+	<tr>
+        <td>Uninstall package</td>
+        <td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+		<td>&#10004;</td>
+    </tr>
+	<tr>
+        <td>Restore package</td>
+        <td>&#10004;</td>
+		<td>&#10004;</td>
+		<td></td>
+		<td>&#10004;</td>
+    </tr>
+	<tr>
+        <td>Package Authoring</td>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td>&#10004;</td>
+    </tr>
+	<tr>
+        <td>Manage packages in your feed or nuget.org</td>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr>
+        <td>Manage nuget sources</td>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr>
+        <td>Publish package</td>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr>
+        <td>Manage nuget config</td>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr>
+        <td>Manage nuget cache</td>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+	<tr>
+        <td>Replicate nuget packagetd>
+        <td>&#10004;</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+</table>
 
 
 ##NuGet Compatibility
