@@ -20,7 +20,12 @@ Adds binding redirects to the config file.Examines all assemblies within the out
 
 ### Usage
 
-    Add-BindingRedirect [-ProjectName] <string>
+<pre>
+    <code class="powershell">
+        Add-BindingRedirect [-ProjectName] <string>
+    </code>
+</pre>
+
 
 Specify ProjectName to install, or the default in the console window will be selected [//TODO: Check this]
 
