@@ -455,7 +455,11 @@ warningcallout {
 }
 
 
+
 .block-callout-warning {
+    background-image: url(../images/Iconwarning.png);
+    background-position: 4px 16px;
+    background-repeat: no-repeat;
     border-left: 4px solid #f00;
     padding: 13px 13px 13px 23px;
     position: relative;
@@ -463,6 +467,7 @@ warningcallout {
     background-color: #FFFAEA;
     border-color: #FFD433;
 }
+
 
 .block-callout-info {
     border-left: 4px solid #f00;
@@ -472,3 +477,4 @@ warningcallout {
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
+refs/remotes/origin/proto
