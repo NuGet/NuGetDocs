@@ -1,4 +1,5 @@
-## Analyzer Nuget Format For Project.json ##
+# Analyzer Nuget Format For Project.json
+
 The proposed format should be identical to the format described [here](https://docs.nuget.org/Create/Enforced-Package-Conventions), except the specifiers in the path describe development host dependencies instead of build-time.
 
 $/analyzers/{**Framework Name**}{**Version**}/{**Supported Architecture**}/**{Supported Programming Language**}/{**Analyzer**}.dll
@@ -25,11 +26,8 @@ If it is ambiguous whether you are referring to a programming language of a fram
 
 **Analyzer** The analyzer or analyzer dependency dll.  If the analyzer requires additional files beyond dlls their inclusion will need to be explained in a targets or properties files.
 
-
-## Example Project.json Analyzer Packages ##
-
-### [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) ###
-Because System.Runtime.Analyzers has no platform specific requirements the platform folder is omitted. Properties files are included to disable legacy FxCop rules in favor of the analyzer implementation. 
+## Example Project.json Analyzer Packages
+Because [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) has no platform specific requirements the platform folder is omitted. Properties files are included to disable legacy FxCop rules in favor of the analyzer implementation. 
 
 - analyzers\dotnet\System.Runtime.Analyzers.dll 
 - analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll 
@@ -39,11 +37,11 @@ Because System.Runtime.Analyzers has no platform specific requirements the platf
 - build\System.Runtime.CSharp.Analyzers.props
 - build\System.Runtime.VisualBasic.Analyzers.props
 
-## Notes on Using Target Framework Other Than 'dotnet' ##
+## Notes on Using Target Framework Other Than dotnet
 
 At this time there is no host other than Roslyn compiler that can run analyzers.  Therefore, **Framework Name and Version** should always be specified as 'dotnet' until another host is implemented that has runtime restrictions.
 
-## Analyzer Nuget Format For Packages.config ##
+## Analyzer Nuget Format For Packages.config
 if the user's project is using package.config, the msbuild script that picks up the analyzer does not come into play, and you will want to add the following scripts under tools: **install.ps1** and **uninstall.ps1**.  
 
 NOTE:  **install.ps1** and **uninstall.ps1** are only executed for packages.config scenarios.  In the case of Project.json these scripts are never executed.
@@ -70,7 +68,7 @@ foreach($analyzersPath in $analyzersPaths)
     }
 }
 
-# $project.Type gives the language name like (C# or VB.NET)
+$project.Type gives the language name like (C# or VB.NET)
 $languageFolder = ""
 if($project.Type -eq "C#")
 {
@@ -100,77 +98,79 @@ foreach($analyzersPath in $analyzersPaths)
         }
     }
 }
-```
+
 
 **uninstall.ps1 file contents**
 ```PowerShell
 
-param($installPath, $toolsPath, $package, $project)
+    param($installPath, $toolsPath, $package, $project)
 
-$analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
+    $analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
 
-foreach($analyzersPath in $analyzersPaths)
-{
-    # Uninstall the language agnostic analyzers.
-    if (Test-Path $analyzersPath)
+    foreach($analyzersPath in $analyzersPaths)
     {
-        foreach ($analyzerFilePath in Get-ChildItem $analyzersPath -Filter *.dll)
+        # Uninstall the language agnostic analyzers.
+        if (Test-Path $analyzersPath)
         {
-            if($project.Object.AnalyzerReferences)
+            foreach ($analyzerFilePath in Get-ChildItem $analyzersPath -Filter *.dll)
             {
-                $project.Object.AnalyzerReferences.Remove($analyzerFilePath.FullName)
-            }
-        }
-    }
-}
-
-# $project.Type gives the language name like (C# or VB.NET)
-$languageFolder = ""
-if($project.Type -eq "C#")
-{
-    $languageFolder = "cs"
-}
-if($project.Type -eq "VB.NET")
-{
-    $languageFolder = "vb"
-}
-if($languageFolder -eq "")
-{
-    return
-}
-
-foreach($analyzersPath in $analyzersPaths)
-{
-    # Uninstall language specific analyzers.
-    $languageAnalyzersPath = join-path $analyzersPath $languageFolder
-    if (Test-Path $languageAnalyzersPath)
-    {
-        foreach ($analyzerFilePath in Get-ChildItem $languageAnalyzersPath -Filter *.dll)
-        {
-            if($project.Object.AnalyzerReferences)
-            {
-                try
+                if($project.Object.AnalyzerReferences)
                 {
                     $project.Object.AnalyzerReferences.Remove($analyzerFilePath.FullName)
                 }
-                catch
-                {
+            }
+        }
+    }
 
+    $project.Type gives the language name like (C# or VB.NET)
+    $languageFolder = ""
+    if($project.Type -eq "C#")
+    {
+        $languageFolder = "cs"
+    }
+    if($project.Type -eq "VB.NET")
+    {
+        $languageFolder = "vb"
+    }
+    if($languageFolder -eq "")
+    {
+        return
+    }
+
+    foreach($analyzersPath in $analyzersPaths)
+    {
+        # Uninstall language specific analyzers.
+        $languageAnalyzersPath = join-path $analyzersPath $languageFolder
+        if (Test-Path $languageAnalyzersPath)
+        {
+            foreach ($analyzerFilePath in Get-ChildItem $languageAnalyzersPath -Filter *.dll)
+            {
+                if($project.Object.AnalyzerReferences)
+                {
+                    try
+                    {
+                        $project.Object.AnalyzerReferences.Remove($analyzerFilePath.FullName)
+                    }
+                    catch
+                    {
+
+                    }
                 }
             }
         }
     }
-}
 ```
 
 ## Example Analyzer Package for Both Project.json and Packages.config##
-### [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) ###
-- analyzers\dotnet\System.Runtime.Analyzers.dll 
-- analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll 
-- analyzers\dotnet\vb\System.Runtime.VisualBasic.Analyzers.dll
-- build\System.Runtime.Analyzers.Common.props
-- build\System.Runtime.Analyzers.props
-- build\System.Runtime.CSharp.Analyzers.props
-- build\System.Runtime.VisualBasic.Analyzers.props
-- tools\install.ps1
-- tools\uninstall.ps1
+
+
+    [System.Runtime.Analyzers](https://www.nuget.org/packages/System.Runtime.Analyzers) ###
+    - analyzers\dotnet\System.Runtime.Analyzers.dll 
+    - analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll 
+    - analyzers\dotnet\vb\System.Runtime.VisualBasic.Analyzers.dll
+    - build\System.Runtime.Analyzers.Common.props
+    - build\System.Runtime.Analyzers.props
+    - build\System.Runtime.CSharp.Analyzers.props
+    - build\System.Runtime.VisualBasic.Analyzers.props
+    - tools\install.ps1
+    - tools\uninstall.ps1
