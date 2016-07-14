@@ -1,4 +1,4 @@
-#Quickstart - Consume a NuGet package
+#Quickstart - Consume
 
 Installing a NuGet package is fairly straightforward. This tutorial walks you through installing a popular Json framework ([Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)) for a Universal Windows Platform (UWP) project. 
 
@@ -102,4 +102,4 @@ That's it!
 You can repeat these steps to install any NuGet package for any project type.
 
 
-
+##Related Reading
