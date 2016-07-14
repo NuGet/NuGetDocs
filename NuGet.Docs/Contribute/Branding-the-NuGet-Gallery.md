@@ -73,11 +73,11 @@ In this example, the Upload Package page will be re-branded to contain unique la
 
 First note the folder structure of the original Upload Package page.
 
-![picture of the folder structure under views of Packages/uploadPackage](/images/contribute/uploadPackage1.jpg)
+![picture of the folder structure under views of Packages/manage/uploadPackage](/images/contribute/uploadPackage1.jpg)
 
-Also notice that on F5, if you navigate to `http://nuget.localtest.me/packages/upload` you see the content from the uploadPackage page.
+Also notice that on F5, if you navigate to `http://nuget.localtest.me/packages/manage/upload` you see the content from the uploadPackage page.
 
-![screenshot of http://nuget.localtest.me/packages/upload] (/images/contribute/uploadPackage2.jpg)
+![screenshot of http://nuget.localtest.me/packages/manage/upload] (/images/contribute/uploadPackage2.jpg)
 
 Create a matching folder structure (including the Views folder, under branding)
 
@@ -87,9 +87,9 @@ Create a new .cshtml file named `uploadPackage.cshtml` under the new `Branding/V
 
 ![screenshot showing both the editor and the solution explorer with the new Branding/Views/Packages/uploadPackage.cshtml page](/images/contribute/uploadPackage4.jpg)
 
-When we now refresh the `http://nuget.localtest.me/packages/upload` page in the browser, the new content from the `Branding/Views/Packages/uploadPackage.cshtml` is displayed.
+When we now refresh the `http://nuget.localtest.me/packages/manage/upload` page in the browser, the new content from the `Branding/Views/Packages/uploadPackage.cshtml` is displayed.
 
-![screenshot of the browser displaying the new http://nuget.localtest.me/packages/upload page, with the re-branding override](/images/contribute/uploadPackage5.jpg)
+![screenshot of the browser displaying the new http://nuget.localtest.me/packages/manage/upload page, with the re-branding override](/images/contribute/uploadPackage5.jpg)
 
 That's all.
 
@@ -116,7 +116,7 @@ Pre-reqs:
 
 Go into Visual Studio, and run the NuGetGallery (F5).  In the browser navigate to the page you want to alter.  In this example we will use the Upload Package page. Notice at the bottom left of the browser window there is a semi-transparent overlay.
 
-![Screenshot of the browser on the nuget.localtest.me/packages/upload page](/images/contribute/browserlink1.jpg)
+![Screenshot of the browser on the nuget.localtest.me/packages/manage/upload page](/images/contribute/browserlink1.jpg)
 
 Either click the inspect element or use the keyboard shortcut (`Ctrl+Alt+I`).  Make sure that you can see both Visual Studio and the browser.  Now hover over the page to see which file generated which parts of the page.
 
