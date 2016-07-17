@@ -4,27 +4,28 @@
 }
 
 <div class="container-fluid">
-    <div class="col-xs-12 col-md-8">
-        <div class="content">
-            @if (Page.Source != null)
+    <div>
+        <div class="col-xs-12 col-md-8">
+            <div class="content">
+                @if (Page.Source != null)
             {
-                <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
-                    <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
-                </a>
+                    <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
+                        <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                    </a>
             }
             else
             {
-                <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
-                    <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
-                </a>
+                    <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
+                        <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                    </a>
             }
-            @RenderBody()
+                @RenderBody()
+            </div>
         </div>
-    </div>
-    <nav class="col-xs-4 bs-docs-sidebar visible-md visible-lg">
-        <ul id="baseSidebar" class="nav nav-stacked">
-            @using NuGet.Docs
-            @{
+        <nav class="col-md-4 bs-docs-sidebar visible-md visible-lg">
+            <ul id="baseSidebar" class="nav nav-stacked">
+                @using NuGet.Docs
+                @{
 
                 List<Heading> headings = Page.Headings;
                 bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
@@ -40,9 +41,9 @@
                         var heading = headings[i];
                         if (heading.Level == 1)
                         {
-                            <li>
-                                <a href="#@heading.ID">@heading.Text</a>
-                            </li>
+                                <li>
+                                    <a href="#@heading.ID">@heading.Text</a>
+                                </li>
                         }
                         else if (heading.Level == 2)
                         {
@@ -52,7 +53,7 @@
                             }
 
                             WriteLiteral("<li>");
-                            <a href="#@heading.ID">@heading.Text</a>
+                                <a href="#@heading.ID">@heading.Text</a>
                             if (i + 1 < headings.Count)
                             {
                                 if (headings[i + 1].Level > 2)
@@ -76,8 +77,9 @@
                         }
                     }
                 }
-            }
-        </ul>
-    </nav>
+                }
+            </ul>
+        </nav>
+    </div>
 </div>
 

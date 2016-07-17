@@ -1,6 +1,21 @@
 ﻿body {
-    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    color: #333 !important;
 }
+
+ol {
+    list-style-position: outside;
+    padding-left: 10px;
+}
+
+li{
+    display: list-item;
+}
+
+.list-group-item {
+    display: list-item !important;
+}
+
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ffffff !important;
@@ -19,7 +34,11 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+}
+
+li{
+
 }
 
 h2 {
@@ -413,6 +432,8 @@ aside {
 
     .jumbotron p {
         font-size: 16px !important;
+        color: #333;
+        font-weight: normal;
     }
 
 .articleSwimlane {
@@ -420,6 +441,11 @@ aside {
     padding: 10px !important;
     margin-bottom: 0px !important;
 }
+
+.articleSwimlane ol {
+    padding-left: 30px;
+}
+
 
 .articleTable {
     font-size: 1em !important;
@@ -462,11 +488,10 @@ warningcallout {
 
 
 .block-callout-warning {
-    background-image: url(../images/Iconwarning.png);
     background-position: 4px 16px;
     background-repeat: no-repeat;
     border-left: 4px solid #f00;
-    padding: 13px 13px 13px 23px;
+    padding: 13px 13px 13px 10px;
     position: relative;
     margin-bottom: 1em;
     background-color: #FFFAEA;
@@ -476,10 +501,9 @@ warningcallout {
 
 .block-callout-info {
     border-left: 4px solid #f00;
-    padding: 13px 13px 13px 23px;
+    padding: 13px 13px 13px 10px;
     position: relative;
     margin-bottom: 1em;
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
-refs/remotes/origin/proto
