@@ -6,7 +6,7 @@ const int minHeading = 3;
 // Maximum depth of the index topic-tree
 const int maxLevels = 3;
 
-var topics = Topic.GetTopicsWithSubTopics("~/docs");
+var topics = Topic.GetTopicsWithSubTopics("~/ndocs");
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Quickstart"; }).First());
