@@ -24,6 +24,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 h2 {
     margin-top: 5px !important;
+    border-bottom: solid 1px lightgrey;
+    padding-bottom: 10px;
 }
 
 
@@ -427,8 +429,8 @@ aside {
     font-size: 36px !important;
     font-weight: 500;
     margin-bottom: 7px !important;
-    padding-bottom: 6px !important;
-    border-bottom: 1px solid lightgray;
+    /*padding-bottom: 6px !important;
+    border-bottom: 1px solid lightgray;*/
     left: 10px;
 }
 

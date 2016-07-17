@@ -9,7 +9,9 @@ const int maxLevels = 3;
 var topics = Topic.GetTopicsWithSubTopics("~/docs");
 var orderedList = new List<Topic>();
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "Get Started"; }).First());
+(a) => { return a.Title == "Quickstart"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Guides"; }).First());
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Create Packages"; }).First());
 orderedList.Add(topics.Where(
@@ -25,7 +27,7 @@ orderedList.Add(topics.Where(
 orderedList.Add(topics.Where(
 (a) => { return a.Title == "Visual Studio Extensibility"; }).First());
 orderedList.Add(topics.Where(
-(a) => { return a.Title == "FAQ Ecosystem and Policies"; }).First());
+(a) => { return a.Title == "Policies"; }).First());
     @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
 
 }
