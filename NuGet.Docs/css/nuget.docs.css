@@ -1,6 +1,21 @@
 ﻿body {
-    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    color: #333 !important;
 }
+
+ol {
+    list-style-position: outside;
+    padding-left: 10px;
+}
+
+li {
+    display: list-item;
+}
+
+.list-group-item {
+    display: list-item !important;
+}
+
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ffffff !important;
@@ -19,11 +34,16 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+    font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
+}
+
+li {
 }
 
 h2 {
     margin-top: 5px !important;
+    border-bottom: solid 1px lightgrey;
+    padding-bottom: 10px;
 }
 
 
@@ -109,7 +129,7 @@ h2 {
 pre {
     padding: 0px !important;
     background-color: transparent !important;
-    border: 0px !important
+    border: 0px !important;
 }
 
 @media (min-width: 768px) {
@@ -242,10 +262,6 @@ a.na .downloadToolsLinks {
     margin-left: -40px !important;
 }
 
-.row {
-    margin-left: -50px !important;
-}
-
 .layoutRoot {
     margin-top: 20px;
 }
@@ -257,7 +273,6 @@ a.na .downloadToolsLinks {
 }
 
 .swimlaneTitle {
-    margin-left: -35px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
     left: 10px;
@@ -269,11 +284,9 @@ a.na .downloadToolsLinks {
     padding-left: 10px !important;
     padding-right: 10px !important;
     padding-top: 7px !important;
-    margin-bottom: 10px !important;
 }
 
 .swimlaneSubTitle {
-    margin-left: -35px;
     font-size: medium;
 }
 
@@ -298,15 +311,28 @@ a.na .downloadToolsLinks {
 }
 
     .thumbnail.right-caption > .caption {
-        padding: 4px;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 20px;
+        padding-top: 20px;
     }
 
 .cardHeading {
-    margin-top: 10px;
-    margin-bottom: -10px;
-    font-size: 1em !important;
-    display: inline-block;
+    font-size: 18px !important;
+    font-weight: normal !important;
+    color: #22a7f0 !important;
+    line-height: 1em !important;
+    margin-bottom: 5px !important;
 }
+
+.cardsubtitle {
+    margin-top: 5px;
+    font-size: 14px !important;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+}
+
 
 .cardImage {
     min-width: 10% !important;
@@ -411,6 +437,8 @@ aside {
 
     .jumbotron p {
         font-size: 16px !important;
+        color: #333;
+        font-weight: normal;
     }
 
 .articleSwimlane {
@@ -418,6 +446,11 @@ aside {
     padding: 10px !important;
     margin-bottom: 0px !important;
 }
+
+    .articleSwimlane ol {
+        padding-left: 30px;
+    }
+
 
 .articleTable {
     font-size: 1em !important;
@@ -427,8 +460,8 @@ aside {
     font-size: 36px !important;
     font-weight: 500;
     margin-bottom: 7px !important;
-    padding-bottom: 6px !important;
-    border-bottom: 1px solid lightgray;
+    /*padding-bottom: 6px !important;
+    border-bottom: 1px solid lightgray;*/
     left: 10px;
 }
 
@@ -460,11 +493,10 @@ warningcallout {
 
 
 .block-callout-warning {
-    background-image: url(../images/Iconwarning.png);
     background-position: 4px 16px;
     background-repeat: no-repeat;
     border-left: 4px solid #f00;
-    padding: 13px 13px 13px 23px;
+    padding: 13px 13px 13px 10px;
     position: relative;
     margin-bottom: 1em;
     background-color: #FFFAEA;
@@ -474,10 +506,9 @@ warningcallout {
 
 .block-callout-info {
     border-left: 4px solid #f00;
-    padding: 13px 13px 13px 23px;
+    padding: 13px 13px 13px 10px;
     position: relative;
     margin-bottom: 1em;
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
-refs/remotes/origin/proto
