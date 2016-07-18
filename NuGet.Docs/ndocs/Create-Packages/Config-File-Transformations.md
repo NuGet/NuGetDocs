@@ -1,4 +1,4 @@
-## Transform Web.Config Using .transform Files
+# Transform Web.Config Using .transform Files
 
 In NuGet's traditional way of configuration-file transformation, you add a file to your package's content and give it 
 the same name as the file you want to transform, followed by a .transform extension. For example, 
@@ -50,7 +50,7 @@ installation is ELMAH (Error Logging Modules and Handlers for ASP.NET). ELMAH re
 HTTP modules and HTTP handlers be registered in the web.config file. The ELMAH package includes a 
 file named web.config.transform that specifies how to register them.
 
-![](../images/Create/web.config.transform.png)
+![](/images/Create/web.config.transform.png)
 
 Suppose the XML in the web.config.transform file looks like the following example:
 
