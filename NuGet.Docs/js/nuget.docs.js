@@ -80,8 +80,8 @@ $(document).ready(function () {
     else if (url.indexOf("/api") != -1) {
         $('#a-API').click();
     }
-    else if (url.indexOf("/topics") != -1) {
-        $('#a-Topics').click();
+    else if (url.indexOf("/guides") != -1) {
+        $('#a-Guides').click();
     }
     else if (url.indexOf("/host-packages") != -1) {
         $('#a-Host-Packages').click();
@@ -89,8 +89,8 @@ $(document).ready(function () {
     else if (url.indexOf("/visual-studio-extensibility") != -1) {
         $('#a-Visual-Studio-Extensibility').click();
     }
-    else if (url.indexOf("/faq-and-policy-documents") != -1) {
-        $('#a-FAQ-and-Policy-Documents').click();
+    else if (url.indexOf("/policies") != -1) {
+        $('#a-Policies').click();
     }
     else if (url.indexOf("/create-packages") != -1) {
         $('#a-Create-Packages').click();
