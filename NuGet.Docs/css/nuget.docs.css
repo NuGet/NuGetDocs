@@ -8,7 +8,7 @@ ol {
     padding-left: 10px;
 }
 
-li{
+li {
     display: list-item;
 }
 
@@ -37,8 +37,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
 }
 
-li{
-
+li {
 }
 
 h2 {
@@ -130,7 +129,7 @@ h2 {
 pre {
     padding: 0px !important;
     background-color: transparent !important;
-    border: 0px !important
+    border: 0px !important;
 }
 
 @media (min-width: 768px) {
@@ -263,10 +262,6 @@ a.na .downloadToolsLinks {
     margin-left: -40px !important;
 }
 
-.row {
-    margin-left: -50px !important;
-}
-
 .layoutRoot {
     margin-top: 20px;
 }
@@ -278,7 +273,6 @@ a.na .downloadToolsLinks {
 }
 
 .swimlaneTitle {
-    margin-left: -35px;
     border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
     left: 10px;
@@ -290,11 +284,9 @@ a.na .downloadToolsLinks {
     padding-left: 10px !important;
     padding-right: 10px !important;
     padding-top: 7px !important;
-    margin-bottom: 10px !important;
 }
 
 .swimlaneSubTitle {
-    margin-left: -35px;
     font-size: medium;
 }
 
@@ -319,15 +311,28 @@ a.na .downloadToolsLinks {
 }
 
     .thumbnail.right-caption > .caption {
-        padding: 4px;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 20px;
+        padding-top: 20px;
     }
 
 .cardHeading {
-    margin-top: 10px;
-    margin-bottom: -10px;
-    font-size: 1em !important;
-    display: inline-block;
+    font-size: 18px !important;
+    font-weight: normal !important;
+    color: #22a7f0 !important;
+    line-height: 1em !important;
+    margin-bottom: 5px !important;
 }
+
+.cardsubtitle {
+    margin-top: 5px;
+    font-size: 14px !important;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+}
+
 
 .cardImage {
     min-width: 10% !important;
@@ -442,9 +447,9 @@ aside {
     margin-bottom: 0px !important;
 }
 
-.articleSwimlane ol {
-    padding-left: 30px;
-}
+    .articleSwimlane ol {
+        padding-left: 30px;
+    }
 
 
 .articleTable {
