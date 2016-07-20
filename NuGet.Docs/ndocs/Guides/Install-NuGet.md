@@ -2,22 +2,19 @@
 
 The following tools will help you build, publish and consume nuget packages.
 
-<ol>
-<li><a href="#nuget-exe-cli">NuGet.exe CLI</a></li>
-<li><a href="#nuget-package-manager-extension-in-visual-studio">NuGet Package Manager extension in Visual Studio</a></li>
-<li><a href="#nuget-in--net-cli">NuGet in .NET CLI</a></li>
-<li><a href="#package-explorer">Package Explorer</a></li>
-</ol>
+1. [NuGet CLI](#nuget-cli)
+2. [NuGet Package Manager extension in Visual Studio](#nuget-package-manager-extension-in-visual-studio)
+3. [NuGet in .NET CLI](#nuget-in--net-cli)
+4. [Package Explorer](#package-explorer)
 
 
+##NuGet CLI
+This utility can be used to create, publish, and download packages. It also works on macOS and linux on top of mono. [Get an overview of nuget compatibility on mono](#os-compatibility).
 
+The NuGet CLI can be installed in a few possible ways.
 
-##NuGet.exe CLI
-This utility can be used to create, publish, and download packages. It also works on macOS and linux on top of mono. An overview of nuget compatibility on mono is available <a href="#os-compatibility">here</a>. The NuGet CLI can be installed in a few possible ways.
-<ol>
-<li>Download the latest version of nuget.exe from <a href="https://nuget.org/downloads">https://nuget.org/downloads</a> OR Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the NuGet Visual Studio client</li>
-<li>Move the nuget.exe to a common location and add this path to the PATH Environment Variable OR execute it in the context of your project.</li>
-</ol>
+1. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads) OR Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the NuGet Visual Studio client.
+2. Move the nuget.exe to a common location and add this path to the PATH Environment Variable OR execute it in the context of your project.
 
 <div class="block-callout-info">
 	<strong>NuGet 2.x users</strong><br>
@@ -34,12 +31,10 @@ Alternatively, Install the [NuGet.CommandLine](http://chocolatey.org/packages/Nu
 ## NuGet Package Manager extension in Visual Studio
 Starting with Visual Studio 2012, NuGet is included in every edition (except Team Foundation Server). This extension includes the package manager UI and the package manager console. If your copy of Visual Studio does not already have the NuGet Package Manager extension, you can install it using the Extension Manager.<br>
 
-<ol>
-<li>In Visual Studio, click Tools and then Extension and Updates.</li>
-<li>Navigate to Online, search for "NuGet Package Manager for Visual Studio" and click Download.</li>
-<li>In the Installer dialog box, click Install.</li>
-<li>When installation is complete, close and re-open Visual Studio.</li>
-</ol>
+1. In Visual Studio, click Tools and then Extension and Updates.
+2. Navigate to Online, search for "NuGet Package Manager for Visual Studio" and click Download.
+3. In the Installer dialog box, click Install.
+4. When installation is complete, close and re-open Visual Studio.
 
 
 ### Package Manager UI
@@ -71,19 +66,16 @@ NuGet Beta Channel for the Visual Studio 2015 NuGet Package Manager gives you ac
 </div>
 
 The beta channel is recommended for the following users:
-<ol>
-<li>You like to stay on the latest and greatest.</li>
-<li>You want to try out new features.</li>
-<li>You are experiencing a blocking issue and want to get access to the build with the fix before it hits RTM.</li>
-</ol>
+
+1. You like to stay on the latest and greatest.
+2. You want to try out new features.
+3. You are experiencing a blocking issue and want to get access to the build with the fix before it hits RTM.
 
 ### Getting Access
 You can get access to the Beta builds by the following the steps outlined below.
 
-<ol>
-<li>Add the Beta Feed: <code>https://dotnet.myget.org/F/nuget-beta/vsix/</code> to the Additional Extension Galleries list in<br> <code>Tools->Options->Environment->Extensions and Updates</code>.<br></li>
-<li>Navigate to <code>Tools->Extensions and Updates</code> and select <code>Online</code>. You should now be able to see the NuGet-Beta Feed there. Install the NuGet Package Manager Extension.<br></li>
-</ol>
+1. Add the Beta Feed: `https://dotnet.myget.org/F/nuget-beta/vsix/` to the Additional Extension Galleries list in Tools->Options->Environment->Extensions and Updates.
+2. Navigate to Tools->Extensions and Updates< and select Online. You should now be able to see the NuGet-Beta Feed there. Install the NuGet Package Manager Extension.
 
 ##NuGet in .NET CLI
 
@@ -93,7 +85,7 @@ The [.NET Core CLI](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/
 ##Package Explorer
 <div class="block-callout-info">
 	<strong>Note</strong><br>
-	<p>This tool is OSS, not supported by the NuGet team</p>
+	This tool is OSS, not supported by the NuGet team.
 </div>
 
 Package Explorer is a community driven tool which lets you visually explore and create nuget packages. Installing Package Explorer is easy, [click here](https://npe.codeplex.com/releases/view/624769).
