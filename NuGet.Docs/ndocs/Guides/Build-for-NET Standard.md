@@ -1,11 +1,11 @@
 #Build for NET Standard
 
 ##What is .NET Standard
-The .NET Standard Library is a formal specification of .NET APIs that are intended to be available on all .NET runtimes. The motivation behind the Standard Library is establishing greater uniformity in the .NET ecosystem. [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) continues to establish uniformity for .NET runtime behavior, but there is no similar spec for the .NET Base Class Libraries (BCL) for .NET library implementations.
+The .NET Standard Library is a formal specification of .NET APIs that are intended to be available on all .NET runtimes. The motivation behind the Standard Library is establishing greater uniformity in the .NET ecosystem. 
 [Read more about the .NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 
 
-##Why should we use it
+##Why should you use it
 The .NET Standard Library enables the following key scenarios:
 
 * Defines uniform set of BCL APIs for all .NET platforms to implement, independent of workload.
@@ -16,6 +16,9 @@ The .NET Standard Library enables the following key scenarios:
 1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free. 
 2. [.NET Core Tooling Preview 2 for Visual Studio 2015](https://go.microsoft.com/fwlink/?LinkId=817245). This installs templates and other tools for Visual Studio 2015, as well as .NET Core 1.0 itself.
 3. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
+
+##What are we building?
+In this example, we are going to try building a nuget package that works across net core, net fw 4.6.1, mono/xamarin and UWP. Referenceing the table, we will select net standard 1.4
 
 ##Create new Project
 In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C# node and choose the .NET Core node, and then choose Class Library (.NET Core). Change the name to AppLogger. 
