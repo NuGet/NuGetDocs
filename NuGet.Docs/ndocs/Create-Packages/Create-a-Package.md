@@ -10,7 +10,7 @@ Then there are the complex packages, which might require a little more work.
 
 <div class="block-callout-info">
 	If you are <strong>GUI inclined</strong>, use the <a href="/Create/using-a-gui-to-build-packages" class="alert-link">Package Explorer GUI to create packages</a>.<br>
-	<small>Note: This tool is OSS, not supported by the NuGet team, and is not signed.</small></p>
+	<small>Note: This tool is OSS, which means that it is not supported by the NuGet team and it is not signed.</small></p>
 </div>
 
 ##Assembly
@@ -60,9 +60,12 @@ Creating a package from a .csproj file or a .vbproj file is convenient because o
 ###Create a .nuspec file
     nuget spec
 This creates a .nuspec file that includes tokens meant to be replaced at pack time, based on the project metadata.
-NuGet will replace the tokens only when you execute the pack command with the project file, and not with the .nuspec file. 
+
+NuGet will replace the tokens only when you execute the `pack` command with the project file, and not with the .nuspec file. 
+
 You can then edit this .nuspec file if you want to customize it. For example, if you don't want a token replacement for some fields, you can hard-code them in the .nuspec instead.
 The following is a list of the supported replacement tokens.
+
 <table class="reference">
     <tr><th>Token</th><th>Source</th></tr>
     <tr>
@@ -86,9 +89,11 @@ The following is a list of the supported replacement tokens.
 ###Pack
     nuget pack MyProject.csproj
 <div class="block-callout-warning">
-	You must run nuget pack on the project file, not the .nuspec file itself. But the .nuspec file will in fact get picked up.<br>
-	By default, the nuget pack command excludes any folder that starts with a "x", such as .git or .hg.<br>
-	When you directly target a .nuspec file, the pack command will NOT replace any tokens in the .nuspec file.<br>
+	<ul>
+		<li>You must run nuget pack on the project file, not the .nuspec file itself. But the .nuspec file will in fact get picked up.</li>
+		<li>By default, the nuget pack command excludes any folder that starts with a "x", such as .git or .hg.</li>
+		<li>When you directly target a .nuspec file, the pack command will NOT replace any tokens in the .nuspec file.</li>
+	<ul>
 </div>
 
 ###Files
@@ -125,24 +130,24 @@ You can also use the -Symbols flag to include a symbols package as well. A symbo
 	
 
 ##Convention-based working directory
-Some packages contain more than just assemblies. They may contain the following:<br>
-Content and source code that should be injected into the target project.<br>
-<a href"https://docs.nuget.org/Create/Configuration-File-and-Source-Code-Transformations">Configuration file and source code transformations.</a>
+Some packages contain more than just assemblies. They may contain the following:<
+* Content and source code that should be injected into the target project.<br>
+* [Configuration file and source code transformations](https://docs.nuget.org/Create/Configuration-File-and-Source-Code-Transformations)
 
 
 Some packages might have scripts, like init.ps, for example. Legacy packages that are installed in the packages.config world might use install.ps1 scripts to setup the project. 
 <div class="block-callout-warning">
 	Important: This is no longer supported in project.json.
 </div>
-To create a convention-based package, you can lay out a directory structure that uses the following NuGet conventions:<br>
-__tools__ - The tools folder of a package is for PowerShell scripts and programs accessible from the Package Manager Console. After the folder is copied to the target project, it is added to the `$env:Path (PATH) environment variable. <br>
-__lib__ - Assemblies (.dll files) in the lib folder are added as assembly references when the package is installed.<br>
-__content__ - Files in the content folder are copied to the root of your application when the package is installed. <br>
-__build__ - The build folder of a package is for MSBuild targets files that are automatically inserted into the .csproj file of the application.<br>
+To create a convention-based package, you can lay out a directory structure that uses the following NuGet conventions:
+
+* __tools__ - The tools folder of a package is for PowerShell scripts and programs accessible from the Package Manager Console. After the folder is copied to the target project, it is added to the `$env:Path (PATH) environment variable.
+* __lib__ - Assemblies (.dll files) in the lib folder are added as assembly references when the package is installed.
+* __content__ - Files in the content folder are copied to the root of your application when the package is installed.
+* __build__ - The build folder of a package is for MSBuild targets files that are automatically inserted into the .csproj file of the application.
 
 
-__Think of the Content folder as the root of your target application.__ 
-For example, if you want a package to add an image in the /images directory of the target application, make sure to place the image in the Content/images folder of the package.
+__Think of the Content folder as the root of your target application.__ For example, if you want a package to add an image in the */images* directory of the target application, make sure to place the image in the Content*/images* folder of the package.
 
 ###Create the .nuspec file
 To create a spec file from scratch, run the following command:
@@ -179,9 +184,10 @@ Navigate to the root of the directory, and run the following command:
 
 
 ##Next Steps
-Congratulations! You have created your first <span class="text-primary">nupkg</span>. You can move on to the <a href="#">next topic</a> where you will learn more about publishing your nuget package.
+Congratulations! You have created your first <span class="text-primary">nupkg</span>. Read about how to [Publish a Nuget Package](/ndocs/create-packages/publish-a-package).
 
 ##Related Reading
-<a href="#">Build script to assemble your package</a><br>
-<a href="#">Best practices from the community</a><br>
-<a href="#">Adding further functionalities to your package</a>
+
+* [Build script to assemble your package]()
+* [Best practices from the community](/ndocs/create-packages/package-conventions)
+* [Adding further functionalities to your package]()

@@ -25,7 +25,7 @@ The NuGet CLI can be installed in a few possible ways.
 Alternatively, Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 
 
-**Recommended Reading:**  [NuGet CLI commands](https://docs.nuget.org/consume/command-line-reference), [Creating a package](https://docs.nuget.org/Create/Creating-and-Publishing-a-Package#creating-a-package), [Publishing a Package](https://docs.nuget.org/Create/Creating-and-Publishing-a-Package#publishing-using-nuget-command-line)
+**Recommended Reading:**  [NuGet CLI commands](/ndocs/tools/nuget-cli-reference), [Creating a package](/ndocs/create-packages/create-a-package), [Publishing a Package](/ndocs/create-packages/publish-a-package)
 
 
 ## NuGet Package Manager extension in Visual Studio
@@ -40,7 +40,7 @@ Starting with Visual Studio 2012, NuGet is included in every edition (except Tea
 ### Package Manager UI
 The package manager UI allows you to find, install, remove, and update NuGet packages.
 
-**Recommended Reading**: [Finding and installing a package](http://docs.nuget.org/Consume/Package-Manager-Dialog#managing-nuget-packages-using-the-dialog),, [Removing a package](http://docs.nuget.org/Consume/Package-Manager-Dialog#removing-a-package), [Updating a Package](http://docs.nuget.org/Consume/Package-Manager-Dialog#updating-a-package)
+**Recommended Reading**: [Managing NuGet Packages Using the UI](/ndocs/tools/package-manager-ui)
 
 
 ###Package Manager Console
@@ -53,7 +53,7 @@ The package manager console allows you to find, install, remove, and update NuGe
 
 The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.microsoft.com/kb/968929) be installed. Powershell 2.0 is already installed if you have Windows 7 (or newer) or Windows Server 2008 R2 (or newer).
 
-**Recommended Reading**: [Package Manager Console Powershell Commands](https://docs.nuget.org/consume/package-manager-console-powershell-reference), [Setting up a NuGet Powershell Profile](https://docs.nuget.org/Consume/Setting-up-NuGet-PowerShell-Profile.md), [Removing a package](https://docs.nuget.org/Consume/Package-Manager-Console#removing-a-package), [Updating a Package](https://docs.nuget.org/Consume/Package-Manager-Console#updating-a-package)
+**Recommended Reading**: [Managing Packages Using the Package Manager Console](/ndocs/tools/package-manager-console), [Package Manager Console Powershell Commands](/ndocs/tools/powershell-reference)
 
 ### Updating the NuGet extension in Visual Studio
 You can update NuGet using the Visual Studio Extension Manager. Navigate to the Extension Manager and click on the Updates tab to check for updates. If there is a new version of NuGet you will see it in the list of available updates. From VS 2015 Update 2, NuGet extension is auto updated by default in Visual Studio.
