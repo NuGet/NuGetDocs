@@ -1,10 +1,10 @@
-#Quickstart - Create and Publish
+#Create and Publish a Package
 
 There are a few ways to create a NuGet package. This tutorial walks you through creating a NuGet package from a project using the nuget CLI and publishing it to nuget.org.
 
 ##Pre-requisites
-NuGet CLI. If you don't have it already, take a look at <a href="/docs/get-started/install-nuget#nuget-exe-cli">The NuGet Install guide</a>.<br>
-Visual Studio. If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
+1. Visual Studio. If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
+2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##Create a new Class library project
 
@@ -57,7 +57,7 @@ Open this file. It will look something like this
 	</package>
 
 This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer.)
-To know more about how tokens are handled, read [Creating a nuspec file](/docs/create-packages/creating%20a%20package#user-content-create-a--nuspec-file)
+To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/creating%20a%20package#user-content-create-a--nuspec-file)
 
 
 <div class="block-callout-warning">
@@ -131,6 +131,12 @@ That's it! You have just created and published your first NuGet package.
 
 
 ##Related Reading
+* [Create a Package](/ndocs/create-packages/create-a-package)
+* [Publish a Package](/ndocs/create-packages/publish-a-package)
+* [Support multiple target frameworks](/ndocs/create-packages/supporting-mulitple-target-frameworks)
+* [Dependency versions](/ndocs/create-packages/dependency-versions)
+* [Creating localized packages](/ndocs/create-packages/creating-localized-packages)
+
 
 
 

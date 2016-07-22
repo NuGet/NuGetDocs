@@ -19,16 +19,16 @@ Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitig
 
 The important parts of the file are the following:
 
-```
-# Ignore NuGet Packages
-*.nupkg
-# Ignore the packages folder
-**/packages/*
-# except build/, which is used as an MSBuild target.
-!**/packages/build/
-# Uncomment if necessary however generally it will be regenerated when needed
-#!**/packages/repositories.config
-```
+
+	# Ignore NuGet Packages
+	*.nupkg
+	# Ignore the packages folder
+	**/packages/*
+	# except build/, which is used as an MSBuild target.
+	!**/packages/build/
+	# Uncomment if necessary however generally it will be regenerated when needed
+	#!**/packages/repositories.config
+
 
 ### TFVC
 
@@ -41,14 +41,14 @@ Tip: on Windows, you can create the `.nuget` file in Windows Explorer by creatin
 
 At the minimum, the `.nuget\NuGet.config` file should contain the following:
 
-```
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-    <solution>
-        <add key="disableSourceControlIntegration" value="true" />
-    </solution>
-</configuration>
-```
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<configuration>
+		<solution>
+			<add key="disableSourceControlIntegration" value="true" />
+		</solution>
+	</configuration>
+
 
 This configuration setting allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
 
@@ -59,13 +59,13 @@ To create a `.tfignore` file using Windows Explorer, create a new file and give 
 
 The `.tfignore` file should have the following entry:
 
-```
-## Ignore the NuGet packages folder in the root of the repository
-packages
 
-#include package target files which may be required for msbuild
-!packages/*.targets
-```
+	## Ignore the NuGet packages folder in the root of the repository
+	packages
+
+	#include package target files which may be required for msbuild
+	!packages/*.targets
+
 
 Depending on the location of the .tfignore file relative to the packages folder, you might need to adjust the entry to reflect this (e.g. if you put sources in a `\src` subfolder and have the `.tfignore` file in the repository root, the entry should be `\src\packages`).
 
