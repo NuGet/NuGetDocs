@@ -22,19 +22,19 @@ There are four main rules that the dependency resolver applies: lowest applicabl
 
 NuGet restores the lowest possible version of a package as defined by its dependencies. This rule also applied to dependencies on the application or the class library unless declared as floating (see floating dependencies section for more details).  
 
-![Figure 1](../images/consume/projectJson-dependency-1.png)
+![Figure 1](/images/consume/projectJson-dependency-1.png)
 
 *Figure 1*
 
 In Figure 1, 1.0-Beta is considered lower than 1.0, hence a minimal version of 1.0 is chosen.
 
-![Figure 2](../images/consume/projectJson-dependency-2.png)
+![Figure 2](/images/consume/projectJson-dependency-2.png)
 
 *Figure 2*
 
 In Figure 2, the package version 2.1 is not available on the feed. But since the version constraint is >= 2.1 NuGet will pick the next lowest version it can find. In this case that is 2.2.
 
-![Figure 3](../images/consume/projectJson-dependency-3.png)
+![Figure 3](/images/consume/projectJson-dependency-3.png)
 
 *Figure 3*
 
@@ -44,7 +44,7 @@ In Figure 3 version 1.2 of Package A does not exist on the feed, but since the v
 
 When a floating version constraint is specified then NuGet will resolve the **highest** version of a package that matches the version pattern, for example 6.0.* will get the highest version of a package that starts with 6.0, see Figure 4 
 
-![Figure 4](../images/consume/projectJson-dependency-4.png)
+![Figure 4](/images/consume/projectJson-dependency-4.png)
 
 *Figure 4 - Floating Dependency*
 
@@ -55,7 +55,7 @@ You can put a floating dependency in your project.json, but not in your NuSpec. 
 ## Nearest Wins
 The dependency resolver prefers versions that are "closer" to the application, if they are declared on an ancestor of the dependency version constraint being ignored
 
-![Figure 5](../images/consume/projectJson-dependency-5.png)
+![Figure 5](/images/consume/projectJson-dependency-5.png)
 
 *Figure 5 - APPLICATION USING NEAREST WINS (Green is the picked version)*
 
@@ -65,7 +65,7 @@ In Figure 2, the green packages (A >= 1.0 and B >= 2.0) would be selected, while
 
 The other benefit is that it is a pruning mechanism for large dependency trees with many repeated nodes as we don't follow those repeated nodes. This makes a significant performance improvement with the size of graphs introduced by the BCL packages.
 
-![Figure 6](../images/consume/projectJson-dependency-6.png)
+![Figure 6](/images/consume/projectJson-dependency-6.png)
 
 *Figure 6 - APPLICATION USING NEAREST WINS (Green is the picked version)*
 
@@ -73,7 +73,7 @@ In Figure 2 package A is stating that it depends on Package C 2.0 even though B 
 
 ## Cousin Dependencies ##
 
-![Figure 7](../images/consume/projectJson-dependency-7.png)
+![Figure 7](/images/consume/projectJson-dependency-7.png)
 
 *Figure 7 - Cousin Dependencies)*
 
@@ -81,7 +81,7 @@ In Figure 7 both Package A and C depend on Package B. But C is not an ancestor o
 
 **When deciding between multiple cousin dependencies, the resolver use the lowest version that satisfies all version requirements.  See lowest application version and floating dependency rules.**
 
-![Figure 8](../images/consume/projectJson-dependency-8.png)
+![Figure 8](/images/consume/projectJson-dependency-8.png)
 
 *Figure 8 - Irreconcilable cousin dependencies)*
 

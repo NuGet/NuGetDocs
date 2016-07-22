@@ -9,7 +9,7 @@ The following tools will help you build, publish and consume nuget packages.
 
 
 ##NuGet CLI
-This utility can be used to create, publish, and download packages. It also works on macOS and linux on top of mono. [Get an overview of nuget compatibility on mono](#os-compatibility).
+This utility can be used to create, publish, and download packages. It also works on macOS and linux on top of mono. [Get an overview of nuget compatibility on mono](#nuget-cli-os-compatibility).
 
 The NuGet CLI can be installed in a few possible ways.
 

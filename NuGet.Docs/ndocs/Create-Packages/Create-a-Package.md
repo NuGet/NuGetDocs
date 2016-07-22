@@ -4,16 +4,15 @@ There are a few approaches to creating a package. Most packages are very simple 
 a single assembly. In those cases, there are some very easy ways to create packages. 
 Then there are the complex packages, which might require a little more work. 
 
-<div class="block-callout-warning">
-	<strong>Pre-requisites</strong><br>
-    <a href="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe">Download NuGet.exe</a> and save it to a path of your choice.<br>
-	Add this path to the <a href="https://msdn.microsoft.com/en-us/library/office/ee537574(v=office.14).aspx">PATH Environment Variable</a>.
-</div>
+##Pre-requisites
+1. [Download NuGet.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) and save it to a path of your choice.
+2. Place the executable anywhere you want; however, for best results, we suggest that you place it in a directory that is listed in the PATH environment variable.
 
 <div class="block-callout-info">
 	If you are <strong>GUI inclined</strong>, use the <a href="/Create/using-a-gui-to-build-packages" class="alert-link">Package Explorer GUI to create packages</a>.<br>
 	<small>Note: This tool is OSS, not supported by the NuGet team, and is not signed.</small></p>
 </div>
+
 ##Assembly
 If you have an assembly, you can easily generate a <span class="text-primary">.nuspec</span> file from metadata within the assembly 
 and create a package.
