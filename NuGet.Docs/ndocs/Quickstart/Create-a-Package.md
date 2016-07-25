@@ -31,7 +31,9 @@ Bring up the console and navigate to the folder containing the `.csproj` file fo
 
 Then run the <code>spec</code> command
 
+<code class="bash hljs">
 	nuget spec
+</code>
 
 This will generate a new file `AppLogger.nuspec`
 
@@ -112,7 +114,9 @@ Click on <b>My Account</b> to see the API Key that was generated for you.
 
 Open your console and run the following command. Replace the key below with the key that was generated for you.
 
+<code class="bash hljs">
 	nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
+</code>
 
 You should see something like this when the command has successfully executed.
 
