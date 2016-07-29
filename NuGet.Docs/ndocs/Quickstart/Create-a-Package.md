@@ -133,7 +133,6 @@ It might take a while for your package to be indexed and appear in search result
 
 That's it! You have just created and published your first NuGet package.
 
-
 ##Related Reading
 * [Create a Package](/ndocs/create-packages/create-a-package)
 * [Publish a Package](/ndocs/create-packages/publish-a-package)

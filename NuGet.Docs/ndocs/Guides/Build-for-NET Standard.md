@@ -4,7 +4,8 @@ This guide will walk you through creating a nuget package that takes advantage o
 ##What is .NET Standard
 The .NET Standard Library is a formal specification of .NET APIs that are intended to be available on all .NET runtimes. The motivation behind the Standard Library is establishing greater uniformity in the .NET ecosystem. 
 
-[Read more about the .NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
+* [Read more about the .NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
+* [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
 
 ##Why should you use it
 The .NET Standard Library enables the following key scenarios:
@@ -132,7 +133,7 @@ In Visual Studio, choose File, New, Project. In the New Project dialog, expand t
 ![Create new Project](/images/BuildForNetStandard/01.PNG)
 
 ##Modify project.json
-From the solution explorer, open project.json. It will look something like this
+From the solution explorer, open project.json. It will look like:
 
 	{
 	  "supports": {
@@ -159,12 +160,24 @@ Based on the table, we have determined that we will target .NET Standard 1.4. Se
 ![Create new Project](/images/BuildForNetStandard/05.PNG)
 
 
-The project.json should now look something like this:
+The project.json should now look like:
 
 	{
 	  "supports": {},
 	  "dependencies": {
 		"Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+		"NETStandard.Library": "1.6.0"
+	  },
+	  "frameworks": {
+		"netstandard1.4": {}
+	  }
+	}
+
+"Microsoft.NETCore.Portable.Compatibility"	enables compatiblity with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight. Since we are not targetting those releases, we can safely remove that dependency. The final project.json will look like:
+
+	{
+	  "supports": {},
+	  "dependencies": {
 		"NETStandard.Library": "1.6.0"
 	  },
 	  "frameworks": {
@@ -291,7 +304,7 @@ Let's say your library has a dependency on another nuget package, say Newtonsoft
 Specifying a dependency this way implies your library requires Newtonsoft.Json at a minimum version 8.0.3. This is the recommended way of specifying dependencies i.e. to only specify a lower bound, and leave the upper bound open. NuGet also supports using interval notation for specifying version ranges. Take a look at the [Dependency Versions](/ndocs/create-packages/dependency-versions) doc for more details.
 
 ##Multiple Target Frameworks
-Let's say you would also like to target .NET Framework 4.6.2 which is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects.
+Let's say you would also like to target .NET Framework 4.6.2 because you would like to take advantage of a new API that is not supported by the .NET Framework 4.6.1 API surface. But, .NET Framework 4.6.2 is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects.
 
 1. In the root directory of the project (folder containing the `.nuspec` file), create a new folder - `lib`
 2. Inside `lib`, create two new folders - one for each platform that we want to support.
@@ -367,7 +380,7 @@ In some cases you might want to add custom [build targets or properties](add lin
 		nuget pack AppLogger.nuspec
 	</code>
 
-**Recommended Reading:** [Import MSBuild targets and props files into project](https://docs.nuget.org/create/creating-and-publishing-a-package#import-msbuild-targets-and-props-files-into-project)
+**Recommended Reading:** [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
 
 ##Creating localized packages
 There are two options for providing a localized experience for your library package:

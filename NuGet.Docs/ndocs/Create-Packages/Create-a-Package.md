@@ -186,6 +186,36 @@ Navigate to the root of the directory, and run the following command:
 ##Next Steps
 Congratulations! You have created your first <span class="text-primary">nupkg</span>. Read about how to [Publish a Nuget Package](/ndocs/create-packages/publish-a-package).
 
+## Import MSBuild targets and props files into project 
+
+Requires [NuGet 2.5] (/Release-Notes/NuGet-2.5) or above
+
+A new convention has been added to the structure of NuGet packages. As a peer to \lib, \content, and \tools, you can now 
+include a '\build' folder in your package. Under this folder, you can place two files with fixed names, **{packageid}.targets** or **{packageid}.props**. 
+These two files can be either directly under \build or under framework-specific folders just like the other folders. The rule for picking the 
+best-matched framework folder is exactly the same as in those.
+
+When NuGet installs a package with \build files, it will add an MSBuild <Import> element in the project file pointing to the .targets and .props files. 
+The .props file is added at the *top*, whereas the .targets file is added to the *bottom*.
+
+    \build
+        \Net40
+            \MyPackage.props
+            \MyPackage.targets
+        \Silverlight40
+            \MyPackage.props
+
+If this package is installed into a .NET 4.0 project, for example, both the .props and .targets files are imported into the target project.
+
+    <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		
+		<Import Project="..\packages\MyPackage.1.0.0\build\net40\MyPackage.props" Condition="Exists('..\packages\MyPackage.1.0.0\build\net40\MyPackage.props')" />
+      ...
+      ...
+		<Import Project="..\packages\MyPackage.1.0.0\build\net40\MyPackage.targets" Condition="Exists('..\packages\MyPackage.1.0.0\build\net40\MyPackage.targets')" />
+
+    </Project>
+
 ##Related Reading
 
 * [Build script to assemble your package]()
