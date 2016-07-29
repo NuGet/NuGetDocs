@@ -124,9 +124,7 @@ The table below maps .NET Standard versions to various implementations:
 	
 </table>
 
-Referenceing this table and based on our requirements we will target .NET Standard 1.4
-
-If you're not quite familiar with the .NET Standard, refer to the [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to learn more.
+Referenceing this table and based on our requirements we will target .NET Standard 1.4. For more information on the .NET Standard, refer to the [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to learn more.
 
 ##Create new Project
 In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C# node and choose the Windows node, and then choose Class Library (Portable for iOS, Android and Windows). Change the name to AppLogger. 
@@ -175,6 +173,7 @@ The project.json should now look something like this:
 	}
 
 ##Add your code
+We are leaving the code of the library as an exercise for the reader of the guide.
 
 	namespace AppLogger
 	{
@@ -190,13 +189,12 @@ Bring up the console and navigate to the folder containing the `.csproj` file fo
 	`C:\Users\username\Documents\Visual Studio 2015\Projects\AppLogger\AppLogger`
 
 Then run the `spec` command
+
 <code class="bash hljs">
 	nuget spec
 </code>
 
-This will generate a new file `AppLogger.nuspec`
-
-Open this file. It will look something like this
+This will generate a new file `AppLogger.nuspec`. Open this file. It will look something like
 
 	<?xml version="1.0"?>
 	<package >
@@ -219,7 +217,6 @@ Open this file. It will look something like this
 
 This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer.)
 To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/creating%20a%20package#user-content-create-a--nuspec-file)
-
 
 <div class="block-callout-warning">
 	You must update the author and description or you will get an error in the next step.
@@ -244,31 +241,26 @@ Here is how the updated nuspec file looks like.
 	</package>
 
 
-It is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
+It is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
 
-Having finalized the nuspec file, we are now ready to create the nuget package.
+**Recommended Reading:** [nuspec reference]()
 
 ##Pack
 On the **Build** menu, choose **Build Solution**.
 
 Now run the `pack` command
+
 <code class="bash hljs">
 	nuget pack AppLogger.csproj
 </code>
 	
 
-You will get warnings if you haven't updated the release notes and tags from the default value.
-
-When the command has run successfully, it will generate a new file `AppLogger.1.0.0.0.nupkg`. This is your nuget package.
+You will get warnings if you haven't updated the release notes and tags from the default value. When the command has run successfully, it will generate a new file `AppLogger.1.0.0.0.nupkg`. This is your nuget package.
 
 The following sections will go into more advanced scenarios around NuGet package creation.
 
-
-
-##Using dependencies
-Let's say your library has a dependency on another nuget package, say Newtonsoft.Json.
-
-Here's how you would change the nuspec file to add a dependency on Newtonsoft.Json 8.0.3
+##Adding Dependencies
+Let's say your library has a dependency on another nuget package, say Newtonsoft.Json. Here's how you would change the nuspec file to add a dependency on Newtonsoft.Json 8.0.3
 
 	<?xml version="1.0"?>
 	<package >
@@ -294,15 +286,10 @@ Here's how you would change the nuspec file to add a dependency on Newtonsoft.Js
 	  </metadata>
 	</package>
 
-Specifying a dependency this way implies your library requires Newtonsoft.Json at a minimum version 8.0.3. This is the recommended way of specifying dependencies i.e. to only specify a lower bound, and leave the upper bound open.
-
-NuGet also supports using interval notation for specifying version ranges. Take a look at the [Dependency Versions](/ndocs/create-packages/dependency-versions) doc for more details.
-
+Specifying a dependency this way implies your library requires Newtonsoft.Json at a minimum version 8.0.3. This is the recommended way of specifying dependencies i.e. to only specify a lower bound, and leave the upper bound open. NuGet also supports using interval notation for specifying version ranges. Take a look at the [Dependency Versions](/ndocs/create-packages/dependency-versions) doc for more details.
 
 ##Multiple Target Framewroks
-Let's say you would also like to target .NET Framework 4.6.2
-
-To do this, we will use the approach of creating a nupkg from a convention based working directory.
+Let's say you would also like to target .NET Framework 4.6.2 which is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects.
 
 1. In the root directory of the project (folder containing the `.nuspec` file), create a new folder - `lib`
 2. Inside `lib`, create two new folders - one for each platform that we want to support.
@@ -339,16 +326,15 @@ To do this, we will use the approach of creating a nupkg from a convention based
 		</package>
 
 4. Now run the `pack` command
+
 	<code class="bash hljs">
 		nuget pack AppLogger.nuspec
 	</code>
 		
-
 **Recommended Reading:** [Specifying Files to Include in the Package](/ndocs/schema/nuspec#specifying-files-to-include-in-the-package)
 
-
 ##Targets and Props for MSBuild
-When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
+In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custome tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
 
 1. In the root directory of project (folder containing the `.nuspec` file), create a new folder - `build`
 2. Inside `build`, create two new folders - one for each platform that we want to support. This is where you would place `.targets` and `.props` files
@@ -374,23 +360,20 @@ When NuGet installs a package with \build files, it will add an MSBuild element 
 		</package>
 
 4. Now run the `pack` command
+
 	<code class="bash hljs">
 		nuget pack AppLogger.nuspec
 	</code>
 
 **Recommended Reading:** [Import MSBuild targets and props files into project](https://docs.nuget.org/create/creating-and-publishing-a-package#import-msbuild-targets-and-props-files-into-project)
 
-
 ##Creating localized packages
-
 There are two options for providing a localized experience for your library package:
 
 1. Include your localized satellite assemblies in the same NuGet package as your runtime assemblies.
 2. Create separate localized satellite packages.
 
-We are going to take the first approach.
-
-Let's say, you would like to support German and Italian.
+We are going to take the first approach. Let's say, you would like to support German and Italian.
 
 1. Create new folder for the languages (other than english) that we are trying to support under the `lib` folder.
 
@@ -444,8 +427,7 @@ Let's say, you would like to support German and Italian.
 A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.
 
 To do this create a text file and edit its content to whatever you would like to be dispalyed once the package is installed.
-Rename it to readme.txt.
-Edit the nuspec file - add a child node `files` to the `package` node like below
+Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the `package` node like below
 
 	<?xml version="1.0"?>
 	<package >
@@ -458,6 +440,7 @@ Edit the nuspec file - add a child node `files` to the `package` node like below
 
 If the package is installed because it is a dependency of another package, the *readme.txt* file will not be opened. Only the *readme.txt* file of the package that the user is explicitly installing will be shown.
 
+**Recommended Reading:** [Adding files to nuget packages](add link here)
 
 ##Publish
 Go to [nuget.org](https://www.nuget.org/) and register for an account or login if you already have one.
@@ -471,18 +454,20 @@ Click on <b>My Account</b> to see the API Key that was generated for you.
 </div>
 
 Open your console and run the following command. Replace the key below with the key that was generated for you.
+
 <code class="bash hljs">
 	nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
 </code>
 	
-
 You should see something like this when the command has successfully executed.
+
 <code class="bash hljs">
 	Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...<br>
 	PUT https://www.nuget.org/api/v2/package/ <br>
 	Created https://www.nuget.org/api/v2/package/ 6829ms <br>
 	Your package was pushed.
 </code>
+
 You can go to your account on nuget.org and <b>Manage my packages</b> to see the package that you just published. You should also receive an email notifying you that the package was just published.
 
 It might take a while for your package to be indexed and appear in search results. While that happens, you will see the following message on your package page.
