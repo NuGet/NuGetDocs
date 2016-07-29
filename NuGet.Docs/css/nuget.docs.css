@@ -275,6 +275,7 @@ a.na .downloadToolsLinks {
 .swimlaneTitle {
     border-bottom: 1px solid lightgray;
     padding-bottom: 15px;
+    margin-top: 10px !important;
     left: 10px;
 }
 
@@ -284,7 +285,7 @@ a.na .downloadToolsLinks {
     padding-left: 10px !important;
     padding-right: 10px !important;
     padding-top: 7px !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 0px !important;
 }
 
 .swimlaneSubTitle {
