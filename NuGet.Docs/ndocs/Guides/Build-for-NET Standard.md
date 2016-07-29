@@ -1,15 +1,15 @@
 ﻿#Build for .NET Standard
+This guide will walk you through creating a nuget package that takes advantage of the .NET Standard.
 
 ##What is .NET Standard
 The .NET Standard Library is a formal specification of .NET APIs that are intended to be available on all .NET runtimes. The motivation behind the Standard Library is establishing greater uniformity in the .NET ecosystem. 
+
 [Read more about the .NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
-
-
 
 ##Why should you use it
 The .NET Standard Library enables the following key scenarios:
 
-* Defines uniform set of BCL APIs for all .NET platforms to implement, independent of workload.
+* Defines uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload.
 * Enables developers to produce portable libraries that are usable across .NET runtimes, using this same set of APIs.
 * Reduces and hopefully eliminates conditional compilation of shared source due to .NET APIs, only for OS APIs.
 
@@ -172,6 +172,8 @@ The project.json should now look something like this:
 	  }
 	}
 
+**Recommended Reading:** [Introduction to project.json](/ndocs/consume-packages/projectjson-intro)
+
 ##Add your code
 We are leaving the code of the library as an exercise for the reader of the guide.
 
@@ -222,7 +224,7 @@ To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/
 	You must update the author and description or you will get an error in the next step.
 </div>
 
-Here is how the updated nuspec file looks like.
+Here is how the updated nuspec file looks.
 
 	<?xml version="1.0"?>
 	<package >
@@ -243,7 +245,7 @@ Here is how the updated nuspec file looks like.
 
 It is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
 
-**Recommended Reading:** [nuspec reference]()
+**Recommended Reading:** [nuspec reference](/ndocs/schema/nuspec)
 
 ##Pack
 On the **Build** menu, choose **Build Solution**.
@@ -255,7 +257,7 @@ Now run the `pack` command
 </code>
 	
 
-You will get warnings if you haven't updated the release notes and tags from the default value. When the command has run successfully, it will generate a new file `AppLogger.1.0.0.0.nupkg`. This is your nuget package.
+You will get warnings if you haven't updated the release notes and tags from the default value. When the command has run successfully, it will generate a new file `AppLogger.1.0.0.nupkg`. This is your nuget package.
 
 The following sections will go into more advanced scenarios around NuGet package creation.
 
@@ -288,7 +290,7 @@ Let's say your library has a dependency on another nuget package, say Newtonsoft
 
 Specifying a dependency this way implies your library requires Newtonsoft.Json at a minimum version 8.0.3. This is the recommended way of specifying dependencies i.e. to only specify a lower bound, and leave the upper bound open. NuGet also supports using interval notation for specifying version ranges. Take a look at the [Dependency Versions](/ndocs/create-packages/dependency-versions) doc for more details.
 
-##Multiple Target Framewroks
+##Multiple Target Frameworks
 Let's say you would also like to target .NET Framework 4.6.2 which is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects.
 
 1. In the root directory of the project (folder containing the `.nuspec` file), create a new folder - `lib`
@@ -375,7 +377,7 @@ There are two options for providing a localized experience for your library pack
 
 We are going to take the first approach. Let's say, you would like to support German and Italian.
 
-1. Create new folder for the languages (other than english) that we are trying to support under the `lib` folder.
+1. Create a new folder for the languages (other than english) that we are trying to support under the `lib` folder.
 
 	<pre>
     lib

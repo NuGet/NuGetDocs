@@ -1,21 +1,23 @@
 #Build for UWP
 
-Windows 10 introduces the Universal Windows Platform (UWP), which further evolves the Windows Runtime model and brings it into the Windows 10 unified core. As part of the core, the UWP now provides a common app platform available on every device that runs Windows 10. With this evolution, apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the device family the app is running on. The UWP provides a guaranteed core API layer across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Windows Store provides a unified distribution channel to reach all the device types your app can run on.
-
-![One Windows Platform](https://i-msdn.sec.s-msft.com/en-us/windows/uwp/get-started/images/universalapps-overview.png)
+Windows 10 introduces the Universal Windows Platform (UWP), which further evolves the Windows Runtime model and brings it into the Windows 10 unified core. As part of the core, the UWP now provides a common app platform available on every device that runs Windows 10. With this evolution, apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the device family the app is running on.
 
 [Learn more about the Universal Windows Platform](https://developer.microsoft.com/en-us/windows)
+
+##Pre-requisites
+1. Visual Studio 2015 Update 3 with Windows developer tools. If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/downloads/vs-thankyou) for free. 
+2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##What are we building
 The scenario we are trying to address here is how to build, package and distribute a native UWP component that can be used in Managed and Native projects. In addition, we will also show you how to author and package XAML controls in NuGet packages.
 
-##Create Project in Visual Studio
+##Create new Project
 
-1. In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C++ node, expand the Windows node, and then choose Windows Runtime Component (Universal Windows). Change the name to ImageEnhancer. 
+1. In Visual Studio, choose File, New, Project. In the New Project dialog, from Visual C++ -> Windows, choose Windows Runtime Component (Universal Windows). Change the name to ImageEnhancer and click ok.
 
 	![Create new Project](/images/BuildForUWP/01.PNG)
 
-2. Choose the target and minimum platform versions that your Universal Windows application will support. You may accept the default values and click ok.
+2. Choose the target and minimum platform versions that your Universal Windows application will support. You may accept the default values for now and click ok.
 
 3. From the context menu of the project, select Add->New Item. In the Add New Item dialog, select XAML under the Visual C++ node and then select Templated Control. Change the name to AwesomeImageControl.cpp and click Add.
 	
@@ -25,7 +27,7 @@ The scenario we are trying to address here is how to build, package and distribu
 
 	![Generate XML Documentation Files](/images/BuildForUWP/03.PNG)
 
-5. From the context menu of the solution, select Batch Build. In the Batch Build dialog, click on Select All, then click Build.
+5. From the context menu of the solution, select Batch Build. In the Batch Build dialog, check the three debug boxes, then click Build.
 
 	![Batch Build](/images/BuildForUWP/04.PNG)
 
@@ -40,7 +42,114 @@ Then run the `spec` command
 	nuget spec
 </code>
 
-This will generate a new file `ImageEnhancer.nuspec`. Open this file. Update the contents to look something like
+This will generate a new file `ImageEnhancer.nuspec`. Open this file. Here is how the nuspec files looks.
+
+	<?xml version="1.0"?>
+	<package >
+	  <metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+		<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<tags>Tag1 Tag2</tags>
+	  </metadata>
+	</package>
+
+###Adding nuspec metadata
+Update the metadata for the package. The updated nuspec should look like below.
+
+	<?xml version="1.0"?>
+	<package >
+	  <metadata>
+		<id>ImageEnhancer</id>
+		<version>1.0.0</version>
+		<title>ImageEnhancer</title>
+		<authors>karann</authors>
+		<owners>karann</owners>
+		<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+		<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Awesome Image Enhancer</description>
+		<releaseNotes>First Release</releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<tags>image enhancer</tags>
+	  </metadata>
+	</package>
+
+**Recommended Reading:** [Nuspec Reference](/ndocs/schema/nuspec)
+
+###Adding a winmd to the package.
+[WinMd]() is a metadata file that describes the shape of all publicly available types. This is required in order to consume these types in other UWP libs or apps. In addition you can also add xml files to enable IntelliSense.
+
+	<?xml version="1.0"?>
+	<package >
+		<metadata>...
+		</metadata>
+		<files>
+
+		<!--Adding the WinMd and XML -->
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+
+		</files>
+	</package>
+
+
+###Adding XAML content
+In order for the consuming project to use XAML controls in this library, you need to add the XAML file that has the deafult template for the control and the xbf.
+
+	<?xml version="1.0"?>
+	<package >
+		<metadata>...
+		</metadata>
+		<files>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+
+		<!--Adding the XAML and xbf-->
+		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
+		<file src="..\Release\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
+
+		</files>
+	</package>
+
+###Adding the native implementation libraries
+The core logic of the type is in native code and this is contatined in the implementation (ImageEnhancer.dll) assembly. Since implementation assembly is per target Runtime, we have to make sure package implementation assemblies for all available runtimes.
+
+In addition, pri files are the generated artifacts that contain the resources in your project. It is very important that you add these to the package as well.
+
+	<?xml version="1.0"?>
+	<package >
+		<metadata>...
+		</metadata>
+		<files>
+		<file src="..\Release\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
+		<file src="..\Release\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
+
+		<!--Adding the dll and pri-->
+		<file src="..\ARM\Release\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
+		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
+		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+
+		</files>
+	</package>
+
+###Final nuspec
+The final nuspec looks something like below with the WinMd, XAML controls and the native implementation libraries. You can now pack it.
 
 	<?xml version="1.0"?>
 	<package >
@@ -60,26 +169,30 @@ This will generate a new file `ImageEnhancer.nuspec`. Open this file. Update the
 		<tags>image enhancer</tags>
 	  </metadata>
 	  <files>
-		<file src="..\Release\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
 		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
-		<file src="..\Release\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
-		<file src="..\ARM\Release\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
-		<file src="..\ARM\Release\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
-		<file src="..\x64\Release\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
-		<file src="..\x64\Release\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
-		<file src="..\Release\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
-		<file src="..\Release\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
+		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
+		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
 	  </files>
 	</package>
+
 
 ##Pack
 Now run the `pack` command
 
 <code class="bash hljs">
-	nuget pack
+	nuget pack ImageEnhancer.nuspec
 </code>
 
-This will generate a new file `ImageEnhancer.nupkg`. Open this file. The contents should look something like
+This will generate a new file `ImageEnhancer.1.0.0.nupkg`. Open this file. The contents should look something like
 
 ![nupkg](/images/BuildForUWP/05.PNG)
+
+##Advanced scenarios
+* [MSBuild targets and props](https://docs.nuget.org/create/creating-and-publishing-a-package#import-msbuild-targets-and-props-files-into-project) - update the link
+* [Symbol packages](/ndocs/create-packages/symbol-packages)
