@@ -117,7 +117,7 @@ In order for the consuming project to use XAML controls in this library, you nee
 
 		<!--Adding the XAML and xbf-->
 		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
-		<file src="..\Release\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
+		<file src="..\Debug\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
 
 		</files>
 	</package>
@@ -132,13 +132,13 @@ In addition, pri files are the generated artifacts that contain the resources in
 		<metadata>...
 		</metadata>
 		<files>
-		<file src="..\Release\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
 		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
-		<file src="..\Release\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
+		<file src="..\Debug\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
 
 		<!--Adding the dll and pri-->
-		<file src="..\ARM\Release\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
+		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
 		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
 		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
 		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
@@ -194,5 +194,6 @@ This will generate a new file `ImageEnhancer.1.0.0.nupkg`. Open this file. The c
 ![nupkg](/images/BuildForUWP/05.PNG)
 
 ##Advanced scenarios
-* [MSBuild targets and props](https://docs.nuget.org/create/creating-and-publishing-a-package#import-msbuild-targets-and-props-files-into-project) - update the link
+* [MSBuild targets and props](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
 * [Symbol packages](/ndocs/create-packages/symbol-packages)
+* [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
