@@ -1,4 +1,4 @@
-#Quickstart - Use a Package
+#Use a Package
 
 Installing a NuGet package is fairly straightforward. This tutorial walks you through installing a popular Json framework ([Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)) for a Universal Windows Platform (UWP) project. 
 
@@ -103,3 +103,7 @@ You can repeat these steps to install any NuGet package for any project type.
 
 
 ##Related Reading
+* [NuGet 3.0, .NET and project.json](/ndocs/consume-packages/projectjson-intro)
+* [Dependency Resolution in NuGet v3 / project.json](/ndocs/consume-packages/projectjson-dependency)
+* [NuGet Configuration File](/ndocs/consume-packages/nuget-config-file-overview)
+* [NuGet Config File Defaults](/ndocs/consume-packages/nuget-config-file-defaults)
