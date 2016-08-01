@@ -194,7 +194,7 @@ Then run the `spec` command
 	nuget spec
 </code>
 
-This will generate a new file `AppLogger.nuspec`
+This shall generate a new file `AppLogger.nuspec`
 
 Open this file. It will look something like this
 
