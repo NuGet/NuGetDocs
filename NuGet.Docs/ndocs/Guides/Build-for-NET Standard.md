@@ -173,17 +173,7 @@ The project.json should now look like:
 	  }
 	}
 
-"Microsoft.NETCore.Portable.Compatibility"	enables compatiblity with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight. Since we are not targetting those releases, we can safely remove that dependency. The final project.json will look like:
-
-	{
-	  "supports": {},
-	  "dependencies": {
-		"NETStandard.Library": "1.6.0"
-	  },
-	  "frameworks": {
-		"netstandard1.4": {}
-	  }
-	}
+"Microsoft.NETCore.Portable.Compatibility"	enables compatiblity with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight.
 
 **Recommended Reading:** [Introduction to project.json](/ndocs/consume-packages/projectjson-intro)
 
