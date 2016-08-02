@@ -87,7 +87,8 @@ This will allow your packages to conditionally insert, remove, or modify element
 PowerShell install.ps1 and uninstall.ps1 support though, package uninstallation should make a best effort to
 return the web.config file to its previous state in all scenarios.
 
-In addition to XDT transformation, NuGet also supports the traditional way of transforming web.config files. For more information, please refer to this doc of [Transform Web.Config using .transform Files](Transforming-Configuration-Files-Using-dotTransform-Files.md).
+In addition to XDT transformation, NuGet also supports the traditional way of transforming web.config files. 
+For more information, please refer to this doc of [Transform Web.Config using .transform Files](Config-File-Transformations.md).
 
 ## Specifying Source Code Transformations
 
@@ -114,7 +115,7 @@ in the project might look like the following example (the rootnamespace project 
 In order to enable the transformation process for a source-code file, you append the .pp file extension 
 to the name of the file, as shown in the following example
 
-![](../images/Create/pp.files.png)
+![](/images/Create/pp.files.png)
 
 When the source-code files illustrated in the figure are installed, NuGet transforms the files, removes 
 the .pp extension, and adds them to the target project’s ~/Models directory.
