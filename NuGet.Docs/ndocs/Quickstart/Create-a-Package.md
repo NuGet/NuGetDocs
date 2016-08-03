@@ -3,7 +3,7 @@
 There are a few ways to create a NuGet package. This tutorial walks you through creating a NuGet package from a project using the nuget CLI and publishing it to nuget.org.
 
 ##Pre-requisites
-1. Visual Studio - If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
+1. Visual Studio - If you don't have Visual Studio installed, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
 2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##Create a new Class library project
