@@ -1,4 +1,4 @@
-﻿# NuGet Configuration Settings
+﻿# nuget.config
 
 There are a bunch of NuGet configuration values which can be set via the nuget.config file. Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
 
@@ -9,6 +9,11 @@ There are a bunch of NuGet configuration values which can be set via the nuget.c
 **key**: globalPackagesFolder
 
 Allows  you to change the location of the default global packages folder instead of `Users\{username}\.nuget\packages`
+
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    This is only applicable for projects that you use project.json to manage its dependencies.
+</div>
 
 This key can be added to the NuGet.config file manually or using the [NuGet.exe Config -Set command]().
 
@@ -23,6 +28,7 @@ You can also provide a relative path (note the forward slashes for relative path
     Relative path is only relative to NuGet.config file location.
 </div>
 
+
 <config>
       <add key="globalPackagesFolder" value="../relativepath" />
 </config>
@@ -34,6 +40,12 @@ You can also provide a relative path (note the forward slashes for relative path
 **key**: repositoryPath
 
 Allows  you to install the NuGet packages in the specified folder, instead of the default `"$(Solutiondir)\Packages"` folder.
+
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+     This is only applicable for projects that you use packages.config to manage its dependencies.
+</div>
+
 
 This key can be added to the NuGet.config file manually or using the [NuGet.exe Config -Set command]().
 
@@ -60,7 +72,7 @@ You can also provide a relative path (note the forward slashes for relative path
 
 
 <div class="block-callout-info">
-    <strong>Suppor</strong><br>
+    <strong>Support</strong><br>
     This property only applies to packages.config projects at this time.
 </div>
 
@@ -117,6 +129,11 @@ The values can be added to the config file directly or using the package manager
     <activePackageSource>
       <add key="All" value="(Aggregate source)" />
     </activePackageSource>
+
+<div class="block-callout-warning">
+    <strong>Note:</strong><br>
+    activePackageSource is not supported in NuGet 3.*+ versions and is deprecated.
+</div>
 
 ## disableSourceControlIntegration
 
@@ -191,6 +208,18 @@ It can also be set via environment variables `http_proxy` and `no_proxy`. `http_
 
 ## API Key to access package source
 
-Allows you to set the API Key corresponding to a specific package source.
+Allows you to set the API Key corresponding to a specific package source. This key has to be set via [NuGet -SetApiKey]().
 
-This key has to be set via [NuGet -SetApiKey]().
+
+## bindingRedirects
+
+**section**: bindingRedirects  
+**keys**: skip
+
+Allows you to configure addition of binding redirects as part of package install.
+
+More details [here](Package-Restore).
+
+    <bindingRedirects>
+        <add key="skip" value="True" />
+    </bindingRedirects>
