@@ -14,24 +14,20 @@ the correct subfolder within the `lib` folder.
 To enable NuGet to do this, you use the following naming convention to indicate which assemblies go 
 with which framework versions:
 
-<code class="bash hljs">
-lib\{framework name}{version}
-</code>
+    lib\{framework name}{version}
+
 
 The following example shows a folder structure that supports four versions of a library:
-<code class="bash hljs">
-<pre>
-    \lib
+
+	\lib<br>
 	    \net46
 	        \MyAssembly.dll
-	    \net461
+	    \net461<br>
 	        \MyAssembly.dll
-	    \uap
+	    \uap<br>
 	        \MyAssembly.dll
-	    \netcore
-	        \MyAssembly.dll
-</pre>
-</code>
+	    \netcore<br>
+	        MyAssembly.dll
 
 ### Content Files and PowerShell Scripts
 
@@ -42,16 +38,14 @@ The following example shows a folder structure that supports four versions of a 
 
 In NuGet 2.x, in addition to assembly references, content files as well as PowerShell scripts can be grouped by target frameworks too. The framework folder structure inside `lib` folder described above  applies exactly the same to `content` and `tools` folders.
 
-<code class="bash hljs">
-<pre>
-	\content
+    \content
 	    \net46
 	        \MyContent.txt
 	    \net461
 	        \MyContent461.txt
 	    \uap
 	        \MyUWPContent.html
-	    \netcore <br>
+	    \netcore
 	\tools
 	    init.ps1
 	    \net46
@@ -60,9 +54,7 @@ In NuGet 2.x, in addition to assembly references, content files as well as Power
 	    \uap
 	        install.ps1
 	        uninstall.ps1
-</pre>
-</code>
-
+            
 A framework folder can be *empty*, in which case, NuGet will not add assembly references or content files or run the PowerShell scripts for the particular framework version.
 
 <div class="block-callout-info">
@@ -77,15 +69,11 @@ object. Names are case insensitive, and you can use abbreviations for both frame
  
 If you omit the framework name, the .NET Framework is assumed. For example, the following folder structure is equivalent to the previous one:
 
-<code class="bash hljs">
-<pre>
-	\lib
+	\lib<br>
 	    \net46
 	        \MyAssembly.dll
 	    \uap
 	        \MyAssembly.dll
-</pre>
-</code>
 
 **Recommended Reading**: [List of Target Frameworks](/ndocs/schema/Target-Frameworks.md)
 
@@ -103,29 +91,25 @@ equal to the project's target framework.
 
 For example, given the follow folder structure: 
 
-<code class="bash hljs">
-<pre>
 	\lib
 	    \net45
 	        \MyAssembly.dll
-        \net461
-            \MyAssembly.dll
-</pre>
-</code>
+	    \net461
+	        \MyAssembly.dll
 
-if you install a package that has the `lib` folder structure shown in the previous example 
+If you install a package that has the `lib` folder structure shown in the previous example 
 in a project that targets the .NET Framework 4.6, the assembly in the `net461` folder (for .NET Framework 4.6.1) is selected.
 
 ## Grouping Assemblies by Framework Version
 
 NuGet copies assemblies from only a single library folder. For example, suppose a package has the following folder structure:
 
-    \lib
-        \Net40
-            \MyAssembly.dll (v1.0)
-            \MyAssembly.Core.dll (v1.0)
-        \Net45
-            \MyAssembly.dll (v2.0)
+	\lib
+	    \Net40
+	        \MyAssembly.dll (v1.0)
+	        \MyAssembly.Core.dll (v1.0)
+	    \Net45
+	        \MyAssembly.dll (v2.0)
 
 When the package is installed in a project that targets the .NET Framework 4, *MyAssembly.dll (v1.0)* is the only assembly installed. *MyAssembly.Core.dll (v1.0)* is not installed. (One reason why NuGet behaves this way is that *MyAssembly.Core* might have been merged 
 into version 4.0 of *MyAssembly*.) 
@@ -135,11 +119,11 @@ you must include it in the `Net45` folder as well as in the `Net20` folder.
 
 The rule about copying assemblies from only one folder also applies to the root `lib` folder. Suppose a package has the following folder structure:
 
-    \lib
-        \MyAssembly.dll (v1.0)
-        \MyAssembly.Core.dll (v1.0)
-        \Net40
-            \MyAssembly.dll (v2.0)
+	\lib
+	    \MyAssembly.dll (v1.0)
+	        \MyAssembly.Core.dll (v1.0)
+	    \Net40
+	        \MyAssembly.dll (v2.0)
 
 In projects that target the .NET Framework 4.0 and the .NET Framework 4.5, NuGet copies both *MyAssembly.dll* and *MyAssembly.Core.dll*. But as was true of the previous example, 
 in projects that target the .NET Framework 4.5, only *MyAssembly.dll* from the `Net45` folder will be copied. 
@@ -150,11 +134,7 @@ As in the previous example, if you want *MyAssembly.Core.dll* to be installed in
 
 NuGet also supports targeting a specific framework profile by appending a dash and the profile name to the end of the folder.
 
-<code class="bash hljs">
-<pre>
 	lib\{framework name}-{profile}
-</pre>
-</code>
 
 For example, to target the Windows Phone profile, place your assembly in a folder named `sl3-wp`.
 
