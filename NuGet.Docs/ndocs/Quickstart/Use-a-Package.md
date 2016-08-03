@@ -1,10 +1,10 @@
 #Use a Package
 
-Installing a NuGet package is fairly straightforward. This tutorial walks you through installing a popular Json framework ([Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)) for a Universal Windows Platform (UWP) project. 
+This tutorial walks you through installing a popular nuget package ([Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)) for a Universal Windows Platform (UWP) project. 
 
 <div class="block-callout-info">
 	<strong>Note:</strong><br>
-	You need Visual Studio 2015 Update 3 with Windows developer tools installed to follow this tutoial. If you don't have Visual Studio already, you can download <a href="https://developer.microsoft.com/en-us/windows/downloads">Visual Studio Community 2015</a> for free. 
+	You will need Visual Studio 2015 Update 3 with Tools for Universal Windows apps installed to follow this tutorial. If you don't have Visual Studio already, you can download <a href="https://developer.microsoft.com/en-us/windows/downloads">Visual Studio Community 2015</a> for free. 
 </div>
 
 ##Create a new UWP project
