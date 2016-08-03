@@ -3,7 +3,7 @@
 When most people install packages from NuGet, they want the latest “stable” release of that package. 
 Other developers like to live life on the edge and want to grab the latest prerelease version of a package. 
 
-NuGet supports the creation of prerelease packages by specifying a prerelease string in the version number according to the [Semantic Versioning (SemVer) specification v1.0.0](http://semver.org/spec/v1.0.0.html). For more information on our SemVer Support, refer to the topic [here]()
+NuGet supports the creation of prerelease packages by specifying a prerelease string in the version number according to the [Semantic Versioning (SemVer) specification v1.0.0](http://semver.org/spec/v1.0.0.html). For more information on our SemVer Support, refer to the topic [here](/ndocs/create-packages/semver-support).
 
 <div class="block-callout-info">
     <strong>Support:</strong><br>
@@ -12,7 +12,7 @@ NuGet supports the creation of prerelease packages by specifying a prerelease st
 
 ## Create
 
-To create a prerelease package, simply give it a version that has a prerelease string. For more information around how to create packages, refer to the [Create a Package](../Create/Creating-a-Package) topic. 
+To create a prerelease package, simply give it a version that has a prerelease string. For more information around how to create packages, refer to the [Create a Package](/ndocs/create-packages/create-a-package) topic. 
 
 There are two ways this can be accomplished.
 
@@ -32,7 +32,7 @@ NuGet will pick up this value instead of the one specified in the `AssemblyVersi
 
 ## Install
 
-By default, NuGet does not display prerelease packages in the dialog or in the console. Enabling the "Include Prelease" option supports the display and installation of prerelease versions via _Manage NuGet Packages_ UI.
+By default, NuGet does not display prerelease packages in the dialog or in the console. Enabling the "Include Prelease" option supports the display and installation of prerelease packages via _Manage NuGet Packages_ UI.
 
 You can also use the _Package Manager Console_ and specify the `-IncludePrerelease` flag as follows.
 
