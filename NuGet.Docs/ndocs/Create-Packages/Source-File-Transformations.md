@@ -1,5 +1,7 @@
 # Configuration File and Source Code Transformations
 
+NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. 
+
 ## Overview
 In general, when you create a package, the files that you include in the package are not 
 modified in any way and are simply copied to the appropriate location in the target solution. 
