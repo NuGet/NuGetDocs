@@ -341,6 +341,10 @@ Let's say you would also like to target .NET Framework 4.6.2 because you would l
 ##Targets and Props for MSBuild
 In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custome tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
 
+<div class="block-callout-info">
+	In the project.json world, targets are not added to the project but are made available through the project.lock.json.
+</div>
+
 1. In the root directory of project (folder containing the `.nuspec` file), create a new folder - `build`
 2. Inside `build`, create two new folders - one for each platform that we want to support. This is where you would place `.targets` and `.props` files
 	<pre>
@@ -430,6 +434,10 @@ We are going to take the first approach. Let's say, you would like to support Ge
 
 ##Adding a readme
 A package can include a *readme.txt* file in the root of the package. This file will be displayed in Visual Studio immediately after the package is installed.
+
+<div class="block-callout-info">
+	<strong>Note:</strong> When your package is being consumed by a .NET Core project, it does not display the readme.txt.
+</div>
 
 To do this create a text file and edit its content to whatever you would like to be dispalyed once the package is installed.
 Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the `package` node like below
