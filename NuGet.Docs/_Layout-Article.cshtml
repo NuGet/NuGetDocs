@@ -12,12 +12,18 @@
                     <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
                         <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
                     </a>
-            }
-            else
-            {
-                    <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
-                        <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+
+                    <span class="pull-left githubtext">or</span>
+
+                    <a class="pull-left githubsection2 visible-md visible-lg" target="_blank" href="https://github.com/Nuget/nugetdocs/issues">
+                       Give Feedback
                     </a>
+                }
+                else
+                {
+                <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
+                    <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                </a>
             }
                 @RenderBody()
             </div>
@@ -27,8 +33,8 @@
                 @using NuGet.Docs
                 @{
 
-                List<Heading> headings = Page.Headings;
-                bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
+                    List<Heading> headings = Page.Headings;
+                    bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
                 if (hasMoreThanOneHeading)
                 {
 
@@ -36,14 +42,14 @@
                     var deltaTo3 = 3 - minHeading;
                     bool isClosed = true; ;
 
-                    for (int i = 0; i < headings.Count; i++)
+                    for (int i = 0; i<headings.Count; i++)
                     {
                         var heading = headings[i];
                         if (heading.Level == 1)
                         {
-                                <li>
-                                    <a href="#@heading.ID">@heading.Text</a>
-                                </li>
+                        <li>
+                            <a href="#@heading.ID">@heading.Text</a>
+                        </li>
                         }
                         else if (heading.Level == 2)
                         {
@@ -53,24 +59,24 @@
                             }
 
                             WriteLiteral("<li>");
-                                <a href="#@heading.ID">@heading.Text</a>
+                            <a href="#@heading.ID">@heading.Text</a>
                             if (i + 1 < headings.Count)
                             {
                                 if (headings[i + 1].Level > 2)
                                 {
                                     WriteLiteral("<ul class=\"nav nav - stacked\">");
-                                    for (int j = i + 1; j < headings.Count; j++)
+                                    for (int j = i + 1; j<headings.Count; j++)
                                     {
-                                        if (headings[j].Level < 3)
+                                        if (headings[j].Level< 3)
                                         {
                                             i = j - 1;
                                             WriteLiteral("</ul>");
                                             break;
                                         }
 
-                                        <li>
-                                            <a href="#@headings[j].ID">@headings[j].Text</a>
-                                        </li>
+                            <li>
+                                <a href="#@headings[j].ID">@headings[j].Text</a>
+                            </li>
                                     }
                                 }
                             }
@@ -82,4 +88,3 @@
         </nav>
     </div>
 </div>
-
