@@ -1,4 +1,4 @@
-#Supporting Multiple .NET Framework Versions and Profiles
+#Supporting Multiple .NET Framework Versions
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's 
 specific to Silverlight, and another version of the same library that takes advantage of .NET Framework 4 features. 

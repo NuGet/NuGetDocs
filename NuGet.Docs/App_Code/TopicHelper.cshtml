@@ -53,7 +53,7 @@ foreach (Topic topic in topics)
 
 @helper RenderReleaseNotesIndex()
 {
-foreach (var subTopic in Topic.GetSubTopics("~/docs/Release-Notes"))
+foreach (var subTopic in Topic.GetSubTopics("~/ndocs/Release-Notes"))
 {
         <p><a href="@subTopic.Url">@subTopic.Title</a></p>
 }

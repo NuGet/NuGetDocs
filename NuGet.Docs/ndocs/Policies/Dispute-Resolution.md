@@ -22,7 +22,7 @@ The following things are not allowed on the public NuGet gallery and will be imm
 
 •	Illegal content;
 
-•	“Squatting” on package names that you plan to use but are not actually using. This also includes publishing         packages that have zero productive content. Either publish code and get going or concede the name to someone       who actually has a product to ship; and
+•	“Squatting” on package names that you plan to use but are not actually using. This also includes publishing packages that have zero productive content. Either publish code and get going or concede the name to someone who actually has a product to ship; and
 
 •	Attempting to make the gallery do something that it is not explicitly designed to do.
 

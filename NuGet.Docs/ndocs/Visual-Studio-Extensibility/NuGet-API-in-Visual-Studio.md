@@ -18,7 +18,7 @@ As of NuGet 2.0, NuGet exports six interfaces/services via MEF, all of which res
 
 **IVsTemplateWizard**: This interface is designed for project/item templates to include pre-installed packages, and is *not* meant to be invoked from code.
 
-Detailed API references is available [here](Extensibility-APIs "Extensibility API references").
+Detailed API references is available below.
 
 ## Using NuGet Services
 
