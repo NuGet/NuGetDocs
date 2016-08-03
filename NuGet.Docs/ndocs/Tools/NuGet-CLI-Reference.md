@@ -1,23 +1,25 @@
 # NuGet CLI Reference
 
-NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide]() gives an overview of the various ways to install NuGetCLI on your box. 
+NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide]() gives an overview of the various ways to install nuget.exe on your box. 
 
 ## install
 
-Installs a package using the specified sources. If no sources are specified, all sources defined in `%AppData%\NuGet\NuGet.config` are used. If nuget.config specifies no sources, the default NuGet feed is used instead.
+Downloads and extracts a package using the specified sources. If no sources are specified sources from NuGet.Config will be used.
+
+This command does **not** modify the project file, it behaves similar to restore in that it only adds packages to disk. Projects using packages.config may only install new packages using Visual Studio.
 
 ### Usage
 
     nuget install <packageId|pathToPackagesConfig> [options]
 
-Specify the id and optionally the version of the package to install. If a path to a packages.config file is used instead of an id, all the packages it contains are installed.
+Specify the id and optionally the version of the package to install. If a path to a packages.config file is used instead of an id, all the packages it contains will be restored.
 
 ### Options
 
 <table>
     <tr>
         <td>configfile</td>
-        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        <td>(v<em>2.5</em>) Specifies the NuGet configuration file. If not specified NuGet.Config
         is used.</td>
     </tr>
     <tr>
@@ -50,7 +52,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>requireconsent</td>
-        <td>Checks if package restore consent is granted before installing a package.</td>
+        <td>Checks if package restore consent is granted before downloading a package.</td>
     </tr>
     <tr>
         <td>solutiondirectory</td>
@@ -80,7 +82,11 @@ Specify the id and optionally the version of the package to install. If a path t
 
 ##  update 
 
-Updates packages to the latest available versions. This command also updates nuget.exe itself. The update command requires a Packages folder. It is recommended to run 'nuget.exe Restore' before running the Update command.
+Updates packages to the latest available versions. The update command requires a Packages folder. It is recommended to run 'nuget.exe Restore' before running the Update command.
+
+The update command will download and extract all new packages to the packages folders. Assembly references will be updated in the project file, however this is limited to only existing references. If a new package has an added assembly it will **not** be added as part of the update command. New package dependencies will also not have their assembly references added. To perform a complete update use Visual Studio.
+
+This command can also be used to update nuget.exe itself using the *-self* flag.
 
 ### Usage
     nuget update [packages.config|solution] [options]
@@ -89,7 +95,7 @@ Updates packages to the latest available versions. This command also updates nug
 <table>
     <tr>
         <td>configfile</td>
-        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified, %AppData%\NuGet\NuGet.config
+        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified NuGet.config
         is used.</td>
     </tr>
     <tr>
@@ -106,7 +112,7 @@ Updates packages to the latest available versions. This command also updates nug
     </tr>
     <tr>
         <td>msbuildversion</td>
-        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
+        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
     <tr>
         <td>noninteractive</td>
@@ -130,7 +136,7 @@ Updates packages to the latest available versions. This command also updates nug
     </tr>
     <tr>
         <td>source</td>
-        <td>A list of package sources to update.</td>
+        <td>A list of package sources to update from.</td>
     </tr>
     <tr>
         <td>verbose</td>
@@ -157,6 +163,8 @@ Updates packages to the latest available versions. This command also updates nug
 
 (v<em>2.7</em>) Downloads and unzips (restores) any packages missing from the packages folder.
 
+(v<em>3.3.0</em>) Generates a project.lock.json file for projects using project.json.
+
 ### Usage
     nuget restore [solution|packages.config|project.json] [options]
 
@@ -164,12 +172,11 @@ Updates packages to the latest available versions. This command also updates nug
 <table>
     <tr>
         <td>configfile</td>
-        <td>Specifies the user specific configuration file. If omitted,
-        %appdata%\NuGet\nuget.config is used instead. </td>
+        <td>Specifies the user specific configuration file. If omitted, nuget.config is used instead.</td>
     </tr>
     <tr>
         <td>disableparallelprocessing</td>
-        <td>Disable parallel nuget package restores.</td>
+        <td>Disable parallel nuget project restores and package downloads.</td>
     </tr>
     <tr>
         <td>help</td>
@@ -177,7 +184,7 @@ Updates packages to the latest available versions. This command also updates nug
     </tr>
     <tr>
         <td>msbuildversion</td>
-        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
+        <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14, 15. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
     <tr>
         <td>nocache</td>
@@ -293,7 +300,9 @@ Deletes or unlists a package from the server. For NuGet.org, the action is to [u
 ### Usage
     nuget delete <package Id> <package version> [API Key] [options]
 
-Specify the Id and version of the package to delete from the server.
+Specify the Id and version of the package to delete or unlist a package from the server. 
+
+This behavior varies depending on the source, nuget.org for example does not allow deletes and will unlist the package instead. For local folders the package will be deleted.
 
 ### Options
 <table>
@@ -304,7 +313,7 @@ Specify the Id and version of the package to delete from the server.
     <tr>
         <td>configfile</td>
         <td>(v<em>2.5</em>) Specifies the user specific configuration file. 
-        If omitted, %appdata%\NuGet\nuget.config is used instead.</td>
+        If omitted, nuget.config is used instead.</td>
     </tr>
     <tr>
         <td>help</td>
@@ -351,7 +360,7 @@ Specify optional search terms.
     <tr>
         <td>configfile</td>
         <td>(v<em>2.5</em>) Specifies the user specific configuration 
-        file. If omitted, %appdata%\NuGet\nuget.config is used instead.</td>
+        file. If omitted, nuget.config is used instead.</td>
     </tr>
     <tr>
         <td>help</td>
@@ -387,7 +396,7 @@ Specify optional search terms.
 
 ##  sources 
 
-Provides the ability to manage list of sources located in  %AppData%\NuGet\NuGet.config
+Provides the ability to manage list of sources located in %AppData%\NuGet\NuGet.config or the specified config file.
 
 ### Usage
     nuget sources <List|Add|Remove|Enable|Disable|Update> -Name <name> -Source <source>
@@ -624,7 +633,7 @@ Specify the path to the package and your API key to push the package to the serv
     <tr>
         <td>configfile</td>
         <td>(v<em>2.5</em>) Specifies the user specific configuration 
-        file. If omitted, %appdata%\NuGet\nuget.config is used 
+        file. If omitted, nuget.config is used 
         instead. </td>
     </tr>
     <tr>
