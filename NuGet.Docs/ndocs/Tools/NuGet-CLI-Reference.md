@@ -1,14 +1,14 @@
 # NuGet CLI Reference
 
-The [Install Guide]() gives you an overview of the various ways to install NuGet CLI on your box. NuGet CLI is used to create, publish, manage and download your packages.
+NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide]() gives an overview of the various ways to install NuGetCLI on your box. 
 
 ## install
 
-Installs a package using the specified sources. If no sources are specified, all sources defined in `%AppData%\NuGet\NuGet.config` are used.  If nuget.config specifies no sources, uses the default NuGet feed.
+Installs a package using the specified sources. If no sources are specified, all sources defined in `%AppData%\NuGet\NuGet.config` are used. If nuget.config specifies no sources, the default NuGet feed is used instead.
 
 ### Usage
 
-    nuget install packageId|pathToPackagesConfig [options]
+    nuget install [packageId|pathToPackagesConfig] [options]
 
 Specify the id and optionally the version of the package to install. If a path to a packages.config file is used instead of an id, all the packages it contains are installed.
 
@@ -16,28 +16,37 @@ Specify the id and optionally the version of the package to install. If a path t
 
 <table>
     <tr>
-        <td>source</td>
-        <td>A list of packages sources to use for the install.</td>
-    </tr>
-    <tr>
-        <td>outputdirectory</td>
-        <td>Specifies the directory in which packages will be installed. If none specified, uses the current directory.</td>
-    </tr>
-    <tr>
-        <td>version</td>
-        <td>The version of the package to install.</td>
+        <td>configfile</td>
+        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        is used.</td>
     </tr>
     <tr>
         <td>excludeversion</td>
-        <td>If set, the destination directory will contain only the package name, not the version number</td>
+        <td>If set, the destination directory will contain only the package name, not the version number.</td>
     </tr>
     <tr>
-        <td>prerelease</td>
-        <td>Allows prerelease packages to be installed. This flag is not required when restoring packages by installing from packages.config.</td>
+        <td>fileconflictaction</td>
+        <td>(v<em>2.5</em>) Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project: overwrite, ignore, none.</td>
+    </tr>
+    <tr>
+        <td>help</td>
+        <td>Displays help information for the install command.</td>
     </tr>
     <tr>
         <td>nocache</td>
-        <td>Disable looking up packages from local machine cache.</td>
+        <td>Disables looking up packages from local machine cache.</td>
+    </tr>
+    <tr>
+        <td>noninteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>outputdirectory</td>
+        <td>Specifies the directory in which packages will be installed. If none are specified, the current directory is used.</td>
+    </tr>
+    <tr>
+        <td>prerelease</td>
+        <td>Allows prerelease packages to be installed. This flag is not required when restoring packages with packages.config.</td>
     </tr>
     <tr>
         <td>requireconsent</td>
@@ -45,28 +54,19 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>solutiondirectory</td>
-        <td>Solution root for package restore.</td>
+        <td>Specifies the solution root for package restore.</td>
     </tr>
     <tr>
-        <td>help</td>
-        <td>help</td>
+        <td>source</td>
+        <td>A list of package sources to use for the installation.</td>
     </tr>
     <tr>
         <td>verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
+        <td>Specifies the amount of details displayed in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
     <tr>
-        <td>noninteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
-    </tr>
-    <tr>
-        <td>fileconflictaction</td>
-        <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.</td>
-    </tr>
-    <tr>
-        <td>configfile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
-        is used as configuration file.</td>
+        <td>version</td>
+        <td>The version of the package to install.</td>
     </tr>
 </table>
 
@@ -80,65 +80,65 @@ Specify the id and optionally the version of the package to install. If a path t
 
 ##  update 
 
-Update packages to latest available versions. This command also updates nuget.exe itself. Please note that the presence of Packages folder is required to run the Update command. A recommended way is to run nuget.exe Restore command first before running the Update command.
+Updates packages to the latest available versions. This command also updates nuget.exe itself. The update command requires a Packages folder. It is recommended to run 'nuget.exe Restore' before running the Update command.
 
 ### Usage
-    nuget update <packages.config|solution>
+    nuget update [packages.config|solution]
 
 ### Options
 <table>
     <tr>
-        <td>source</td>
-        <td>A list of package sources to search for updates.</td>
-    </tr>
-    <tr>
-        <td>id</td>
-        <td>Package ids to update.</td>
-    </tr>
-    <tr>
-        <td>repositorypath</td>
-        <td>Path to the local packages folder (location where packages are installed).</td>
-    </tr>
-    <tr>
-        <td>safe</td>
-        <td>Looks for updates with the highest version available within the same major and minor version as the installed package.</td>
-    </tr>
-    <tr>
-        <td>self</td>
-        <td>(v<em>1.4</em>) Update the running nuget.exe to the newest version available from the server.</td>
-    </tr>
-    <tr>
-        <td>verbose</td>
-        <td>Show verbose output while updating.</td>
-    </tr>
-    <tr>
-        <td>prerelease</td>
-        <td>Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.</td>
-    </tr>
-    <tr>
-        <td>help</td>
-        <td>help</td>
-    </tr>
-    <tr>
-        <td>verbosity</td>
-        <td>Display this amount of details in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
-    </tr>
-    <tr>
-        <td>noninteractive</td>
-        <td>Do not prompt for user input or confirmations.</td>
+        <td>configfile</td>
+        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        is used.</td>
     </tr>
     <tr>
         <td>fileconflictactions</td>
-        <td>(v<em>2.5</em>) The action to take, when asked to overwrite or ignore existing files referenced by the project: Overwrite, Ignore, None.
+        <td>(v<em>2.5</em>) (v<em>2.5</em>) Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project: overwrite, ignore, none.</td>
+    </tr>
+    <tr>
+        <td>help</td>
+        <td>Displays help information for the update command.</td>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>A list of package ids to update.</td>
     </tr>
     <tr>
         <td>msbuildversion</td>
         <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
     <tr>
-        <td>configfile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
-        is used as configuration file.</td>
+        <td>noninteractive</td>
+        <td>Do not prompt for user input or confirmations.</td>
+    </tr>
+    <tr>
+        <td>prerelease</td>
+        <td>Allows updating to prerelease versions. This flag is not required when updating prerelease packages that are already installed.</td>
+    </tr>
+    <tr>
+        <td>repositorypath</td>
+        <td>Path to the local folder where packages are installed.</td>
+    </tr>
+    <tr>
+        <td>safe</td>
+        <td>Specifies that only updates with the highest version available within the same major and minor version as the installed package will be installed.</td>
+    </tr>
+    <tr>
+        <td>self</td>
+        <td>(v<em>1.4</em>) Updates nuget.exe to the newest version available from the server.</td>
+    </tr>
+    <tr>
+        <td>source</td>
+        <td>A list of package sources to update.</td>
+    </tr>
+    <tr>
+        <td>verbose</td>
+        <td>Shows verbose output while updating.</td>
+    </tr>
+    <tr>
+        <td>verbosity</td>
+        <td>Specifies the amount of details displayed in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
 </table>
 
@@ -146,9 +146,9 @@ Update packages to latest available versions. This command also updates nuget.ex
 
     nuget update
 
-    nuget update -Safe
+    nuget update -safe
 
-    nuget update -Self
+    nuget update -self
 
     # update packages installed in solution.sln, using msbuild version 14.0 to load the solution and its project(s).
     nuget update solution.sln -MSBuildVersion 14
