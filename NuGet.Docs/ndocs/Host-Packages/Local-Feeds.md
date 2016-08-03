@@ -11,7 +11,7 @@ Begin by creating or getting the packages you want to include in the custom feed
 
 ![LocalNuGetFeed-folder.png](/images/create/LocalNuGetFeed-folder.png)
 
-Now that you have the folder setup, it is super easy to add this as a package source in Visual Studio. Take a look at this [topic]() to understand how to add a new package source in Visual Studio.
+Now that you have the folder setup, it is super easy to add this as a package source in Visual Studio. Take a look at this [topic](../tools/package-manager-ui#package-sources) to understand how to add a new package source in Visual Studio.
 
 ## Creating Local Feeds v3.3+
 

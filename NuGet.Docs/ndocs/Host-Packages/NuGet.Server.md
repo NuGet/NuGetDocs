@@ -20,7 +20,7 @@ Next, select the **ASP.NET 4.6 - Empty** template (or higher .NET version) and c
 
 ## Install the NuGet.Server Package
 
-Now open the [Manage NuGet packages]() dialog and search for and install the NuGet.Server package. Alternatively,you can use the Package Manager Console instead and type `Install-Package NuGet.Server`.
+Now open the [Manage NuGet packages](../tools/package-manager-ui) dialog and search for and install the NuGet.Server package. Alternatively,you can use the Package Manager Console instead and type `Install-Package NuGet.Server`.
 
 ![NuGet.Server package](/images/create/NuGet.Server-package.png)
 
