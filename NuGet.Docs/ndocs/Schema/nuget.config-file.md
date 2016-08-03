@@ -72,8 +72,6 @@ To set this value, add the attribute below to your nuget.config file:
       <add key="dependencyVersion" value="Highest" />
     </config>
 
-For more information, see the topic [here]();
-
 ## packageRestore
 
 **section**: packageRestore  
