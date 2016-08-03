@@ -107,17 +107,15 @@ above.
 Now if you restore packages:
 <code class="bash hljs">
 PM> Enable-PackageRestore
-Attempting to resolve dependency 'NuGet.CommandLine (≥ 1.4)'.
-Successfully installed 'NuGet.CommandLine 1.4.20615.182'.
-Successfully installed 'NuGet.Build 0.16'.
-
-Copying nuget.exe and msbuild scripts to D:\Code\StarterApps\Mvc3Application\.nuget
-Successfully uninstalled 'NuGet.Build 0.16'.
-Successfully uninstalled 'NuGet.CommandLine 1.4.20615.182'.
-
-Don't forget to commit the .nuget folder
-Updated 'Mvc3Application' to use 'NuGet.targets'
-Enabled package restore for Mvc3Application
+Attempting to resolve dependency 'NuGet.CommandLine (≥ 1.4)'.<br>
+Successfully installed 'NuGet.CommandLine 1.4.20615.182'.<br>
+Successfully installed 'NuGet.Build 0.16'.<br><br>
+Copying nuget.exe and msbuild scripts to D:\Code\StarterApps\Mvc3Application\.nuget<br>
+Successfully uninstalled 'NuGet.Build 0.16'.<br>
+Successfully uninstalled 'NuGet.CommandLine 1.4.20615.182'.<br><br>
+Don't forget to commit the .nuget folder<br>
+Updated 'Mvc3Application' to use 'NuGet.targets'<br>
+Enabled package restore for Mvc3Application<br>
 </code>
 
 And you’re done! So basically, the first command installs a NuGet package which brings in some helpful commands, and the second one runs one of those commands.
