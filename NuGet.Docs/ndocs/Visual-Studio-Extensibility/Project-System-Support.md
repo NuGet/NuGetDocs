@@ -1,4 +1,4 @@
-﻿# Adding NuGet support to your Visual Studio project system
+﻿# NuGet support for Visual Studio project system
 
 This document outlines the steps you should take in your own project system in Visual Studio so that NuGet packages can be installed in your projects using the NuGet client extension for Visual Studio.
 
@@ -15,7 +15,7 @@ described below for NuGet functionality to "light up".
 </div>
 
 
-## Advertise appropriate project capabilities
+## Advertise project capabilities
 
 Your project system must advertise support for some key capabilities it has so that the NuGet client can determine which packages are compatible with your projects. Below is a table of the project capabilities the NuGet client
 may look for when testing for compatibility.
@@ -41,12 +41,12 @@ may look for when testing for compatibility.
 
 Note that for [CPS-based project systems][4], the implementation details for project capabilities described in the rest of this section have been done for you. Learn more about [declaring project capabilities in CPS projects][5].
 
-## Responding to queries for VSHPROPID_ProjectCapabilitiesChecker
+## Responding to queries
 
 Your project declares these capabilities by supporting the `IVsHierarchy::GetProperty` VSHPROPID_ProjectCapabilitiesChecker property. You should return an instance of the
 `Microsoft.VisualStudio.Shell.Interop.IVsBooleanSymbolPresenceChecker`, which is defined in the `Microsoft.VisualStudio.Shell.Interop.14.0.DesignTime.dll` assembly. You can reference this assembly by installing the [NuGet package][2] for it.
 
-## Example
+### Example
 
 You might add the following `case` statement to your `IVsHierarchy::GetProperty` method's `switch` statement:
 

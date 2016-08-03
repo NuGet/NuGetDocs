@@ -1,4 +1,4 @@
-﻿# Packages-in-Visual-Studio-Templates
+﻿# Packages in Visual Studio Templates
 
 NuGet supports adding NuGet packages to Visual Studio project templates and item templates. When Visual Studio creates a project using a template that contains these NuGet packages, the resulting project will have these packages installed.
 
