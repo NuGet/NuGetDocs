@@ -3,6 +3,31 @@
 There are a bunch of NuGet configuration values which can be set via the nuget.config file. Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
 
 
+# globalPackagesFolder
+
+**section**: config  
+**key**: globalPackagesFolder
+
+Allows  you to change the location of the default global packages folder instead of `Users\{username}\.nuget\packages`
+
+This key can be added to the NuGet.config file manually or using the [NuGet.exe Config -Set command]().
+
+    <config>
+      <add key="globalPackagesFolder" value="C:\Temp" />
+    </config>
+
+You can also provide a relative path (note the forward slashes for relative path).
+
+<div class="block-callout-warning">
+    <strong>Note:</strong><br>
+    Relative path is only relative to NuGet.config file location.
+</div>
+
+<config>
+      <add key="globalPackagesFolder" value="../relativepath" />
+</config>
+
+
 ## repositoryPath
 
 **section**: config  
@@ -32,6 +57,12 @@ You can also provide a relative path (note the forward slashes for relative path
 **section**: config  
 **key**: dependencyVersion
 **Allowed**: values: Lowest, HighestPatch, HighestMinor, Highest
+
+
+<div class="block-callout-info">
+    <strong>Suppor</strong><br>
+    This property only applies to packages.config projects at this time.
+</div>
 
 Defines what the default DependencyVersion value is, if the `-DependencyVersion` switch is not specified in an invocation of `install-package`. This value will also be respected by the NuGet Package Manager Dialog for any install package operations in projects with a packages.config file.
 
