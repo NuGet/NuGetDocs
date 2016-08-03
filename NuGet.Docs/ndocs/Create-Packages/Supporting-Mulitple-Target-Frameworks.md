@@ -14,13 +14,11 @@ the correct subfolder within the `lib` folder.
 To enable NuGet to do this, you use the following naming convention to indicate which assemblies go 
 with which framework versions:
 
-<code class="bash hljs">
-lib\{framework name}{version}
-</code>
+    lib\{framework name}{version}
+
 
 The following example shows a folder structure that supports four versions of a library:
-<code class="bash hljs">
-<pre>
+<code class="bash hljs"><pre>
     \lib
 	    \net46
 	        \MyAssembly.dll
@@ -29,10 +27,7 @@ The following example shows a folder structure that supports four versions of a 
 	    \uap
 	        \MyAssembly.dll
 	    \netcore
-	        \MyAssembly.dll
-</pre>
-</code>
-
+	        \MyAssembly.dll</pre></code>
 ### Content Files and PowerShell Scripts
 
 <div class="block-callout-warning">
@@ -42,8 +37,7 @@ The following example shows a folder structure that supports four versions of a 
 
 In NuGet 2.x, in addition to assembly references, content files as well as PowerShell scripts can be grouped by target frameworks too. The framework folder structure inside `lib` folder described above  applies exactly the same to `content` and `tools` folders.
 
-<code class="bash hljs">
-<pre>
+<code class="bash hljs"><pre>
 	\content
 	    \net46
 	        \MyContent.txt
@@ -59,10 +53,7 @@ In NuGet 2.x, in addition to assembly references, content files as well as Power
 	        uninstall.ps1
 	    \uap
 	        install.ps1
-	        uninstall.ps1
-</pre>
-</code>
-
+	        uninstall.ps1</pre></code>
 A framework folder can be *empty*, in which case, NuGet will not add assembly references or content files or run the PowerShell scripts for the particular framework version.
 
 <div class="block-callout-info">
@@ -77,16 +68,12 @@ object. Names are case insensitive, and you can use abbreviations for both frame
  
 If you omit the framework name, the .NET Framework is assumed. For example, the following folder structure is equivalent to the previous one:
 
-<code class="bash hljs">
-<pre>
+<code class="bash hljs"><pre>
 	\lib
 	    \net46
 	        \MyAssembly.dll
 	    \uap
-	        \MyAssembly.dll
-</pre>
-</code>
-
+	        \MyAssembly.dll</pre></code>
 **Recommended Reading**: [List of Target Frameworks](/ndocs/schema/Target-Frameworks.md)
 
 ## Assemblies that are not Specific to a Framework Version
@@ -103,16 +90,12 @@ equal to the project's target framework.
 
 For example, given the follow folder structure: 
 
-<code class="bash hljs">
-<pre>
+<code class="bash hljs"><pre>
 	\lib
 	    \net45
 	        \MyAssembly.dll
         \net461
-            \MyAssembly.dll
-</pre>
-</code>
-
+            \MyAssembly.dll</pre></code>
 if you install a package that has the `lib` folder structure shown in the previous example 
 in a project that targets the .NET Framework 4.6, the assembly in the `net461` folder (for .NET Framework 4.6.1) is selected.
 
@@ -150,11 +133,7 @@ As in the previous example, if you want *MyAssembly.Core.dll* to be installed in
 
 NuGet also supports targeting a specific framework profile by appending a dash and the profile name to the end of the folder.
 
-<code class="bash hljs">
-<pre>
 	lib\{framework name}-{profile}
-</pre>
-</code>
 
 For example, to target the Windows Phone profile, place your assembly in a folder named `sl3-wp`.
 
