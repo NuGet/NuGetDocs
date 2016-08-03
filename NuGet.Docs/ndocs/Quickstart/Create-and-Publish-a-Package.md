@@ -53,7 +53,7 @@ To read more about tokens, [go here](/ndocs/create-packages/create-a-package#pro
 
 
 <div class="block-callout-warning">
-	You must select a package ID that is unique across Nuget.org. We recommend following a naming convention like CompanyName.ProductName.PackageName. You must also update the author and description tags or you will get an error in the next step.
+	You must select a package ID that is unique across Nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
 </div>
 
 Here is how the updated nuspec file looks:
