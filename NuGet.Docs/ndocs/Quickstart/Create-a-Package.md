@@ -53,7 +53,7 @@ To read more about tokens, [go here](/ndocs/create-packages/create-a-package#pro
 
 
 <div class="block-callout-warning">
-	You must update the author and description tags or you will get an error in the next step.
+	You must select a package ID that is unique across Nuget.org. We recommend following a naming convention like CompanyName.ProductName.PackageName. You must also update the author and description tags or you will get an error in the next step.
 </div>
 
 Here is how the updated nuspec file looks:
@@ -61,7 +61,7 @@ Here is how the updated nuspec file looks:
 	<?xml version="1.0"?>
 	<package >
 	  <metadata>
-		<id>$id$</id>
+		<id>MyCompanyName.MyProductName.MyPackageName</id>
 		<version>$version$</version>
 		<title>$title$</title>
 		<authors>karann</authors>
@@ -91,15 +91,15 @@ When the command has completed successfully, it will generate a new file `AppLog
 
 
 ##Publish
-There are two ways you can publish packages: using the [Nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [Nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
+There are two ways you can publish packages: using the [Nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [Nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/). 
 
 <div class="block-callout-warning">
 	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be available for the rest of the world to consume. Other options for hosting packages can be found <a href="/ndocs/host-packages/hosting-packages-overview">here</a>.
 </div>
 
-Go to [nuget.org](https://www.nuget.org/) to register for an account, or login if you already have one.
+Go to [nuget.org](https://www.nuget.org/) to register for an account, or login if you already have one. Creating an account is easy and free.
 
-Click on <b>My Account</b> to see the API Key that was generated for you.
+Click on your user name to navigate to your account settings. You can see the API Key that was generated for you in the Credentials section.
 
 ![api key](/images/CreatePublishNugetSample/03.PNG)
 

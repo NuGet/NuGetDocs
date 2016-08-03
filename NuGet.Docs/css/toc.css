@@ -16,8 +16,9 @@
 
 
     #expList li {
-        line-height: 200%;
+        line-height: 130%;
         padding-left: 15px;
+        padding-top: 10px;
         font-size: 14px;
         background-position: 1px 10px;
         background-repeat: no-repeat;
@@ -26,7 +27,7 @@
 
     #expList .collapsed {
         background-image: url(../images/expandCollapseGlyph.png);
-        background-position: 1px 9px;
+        background-position: 1px 12px;
     }
 
     #expList .expanded {

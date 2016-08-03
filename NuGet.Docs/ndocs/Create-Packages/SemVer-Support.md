@@ -18,9 +18,11 @@ Each part corresponds to:
 Additionally, pre-release versions of your API can be denoted by appending an arbitrary string to the 
 _Patch_ number separated by a dash. For example:
 
-    1.0.1-alpha
-    1.0.1-beta
-    1.0.1-rc
+<code class="bash hljs">
+1.0.1-alpha <br>
+1.0.1-beta <br>
+1.0.1-rc <br>
+</code>
 
 <div class="block-callout-info">
     <strong>Note:</strong><br>
@@ -34,21 +36,26 @@ than all the pre-release versions. For example, the stable version `1.0.1` is la
 The pre-release versions are given precedence in alphabetical order (well technically lexicographic 
 ASCII sort order).Therefore, the following is an example from lowest to highest versions of a package.
 
-    1.0.1-alpha
-    1.0.1-alpha2
-    1.0.1-beta
-    1.0.1-rc
-    1.0.1-zzz
-    1.0.1
+<code class="bash hljs">
+1.0.1-alpha <br>
+1.0.1-alpha2 <br>
+1.0.1-beta <br>
+1.0.1-rc <br>
+1.0.1-zzz <br>
+1.0.1 <br>
+</code>
+
 
 ## CI Builds
 SemVer also introduces the concept of a build number for those creating daily or continuous builds. **This is not 
 supported** in the public NuGet.org gallery.
 
 While this is allowed:
-
-    1.0.1-build23
+<code class="bash hljs">
+1.0.1-build23
+</code>
 
 Including the SemVer-compatible build number with dot notation is not allowed:
-    
-    1.0.1-build.23
+<code class="bash hljs">
+1.0.1-build.23
+</code>
