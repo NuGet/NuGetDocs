@@ -4,15 +4,16 @@ NuGet's configuration file allows for persisting configuration settings and chan
 
 ## Default Location
 
-The default location for NuGet's configuration file is `%APPDATA%\NuGet\NuGet.Config` (DOS) or `$ENV:APPDATA\NuGet\NuGet.Config` (PowerShell). APPDATA's value is OS, system drive, and current user dependent. 
+The default location for NuGet's configuration file is `%APPDATA%\NuGet\NuGet.Config`. APPDATA's value is OS, system drive, and current user dependent. For example: `c:\Users\username\AppData\Roaming\NuGet\NuGet.config`.
 
-For example: `D:\Users\username\AppData\Roaming\NuGet\NuGet.config`.
+The default configuration file can be specified through the `-configfile` option for most of the commands when using NuGet CLI. For example, `nuget restore -configfile c:\my.config` means using file `c:\my.config` instead of `%APPDATA%\NuGet\NuGet.Config` as the default configuration file for doing the restore.
 
-The default configuration file can be changed through `-ConfigFile` option when using NuGet CLI. For example, "-ConfigFile c:\my.config" means using file c:\my.config instead of %APPDATA%\NuGet\NuGet.Config as the default configuraion file.
+## Content
 
-## Reference
+The configuration is stored in an XML file that can be changed with any text editor. The NuGet CLI 
 
-XML is used to store the configuration, and any text editor can be used to author it.
+For the full list of configuration settings, see the [NuGet Configuration Settings](../schema/nuget.config-file.md).
+
 
 <div class="block-callout-info">
     <strong>Note:</strong><br>
@@ -25,7 +26,7 @@ XML is used to store the configuration, and any text editor can be used to autho
 	The keys are case sensitive.
 </div>
 
-Below an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  For the full list of configuration settings, see the [NuGet Configuration Settings page]().
+Below is an example of NuGet configuration file that specifies some of the available settings and is annotated with comments.  
 
     <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -86,6 +87,16 @@ Below an example of NuGet configuration file that specifies some of the availabl
         <add key="http://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
       </apikeys>
     </configuration>
+
+## Change the configuration from the CLI
+
+NuGet CLI allows you to change the configuration values using the [config command](../tools/nuget-cli-reference#config). For example, to change the value of the repository path you can use:
+
+    nuget config -set repositorypath=MyNewPath
+
+You can also use the `-configfile` parameter to specify the file to update:
+
+    nuget config -set repositorypath=MyNewPath -configfile MyNugetConfig.file
 
 ## Chaining multiple configuration files
 
@@ -192,9 +203,12 @@ NuGet config files are treated in the following priority order, for example assu
 	c:\a\nuget.config
 	c:\nuget.config
 	User specific config file, %AppData%\NuGet\nuget.config. 
-	Or the user specified file thru option -ConfigFile.
 
-Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
+	Or the user specified file thru option `-configfile`.
+
+### Machine Wide Config File
+
+Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory `%ProgramData%\NuGet\Config` are read after the user specific config file. So, the above list now becomes:
 
 	c:\a\b\c\\.nuget\nuget.config
 		-c:\a\b\c\nuget.config
@@ -208,120 +222,4 @@ Starting with NuGet 2.6, with the new config extensibility point, a new location
 									-%ProgramData%\NuGet\Config\{IDE}\*.config
 										-%ProgramData%\NuGet\Config\*.config
 
-In the above path locations `{IDE}` can be VisualStudio and if you want to specify config for a particular SKU of Visual Studio `{SKU}` can be Pro, Enterprise, VWDExpress, VPDExpress, VSWinExpress or VSWinDesktopExpress.
-
-With NuGet 2.6, the machine wide package sources are now shown in Package Manage Settings dialog. Machine wide package sources are readonly and you can enable or disable them using this dialog.
-
-![NuGet Config File machine wide settings](/images/docs/OptionsMachineWide.png)
-
-# NuGet Configuration Settings
-Below is the summary of the NuGet configuration keys and values that can be set via the nuget.config files.
-
-<h3> Repository Path </h3>
- Allows  you to install the NuGet packages in the specified folder, instead of the default "$(Solutiondir)\Packages" folder.
- This key can be added to the NuGet.config file manually or using the [NuGet Config Set](/Consume/Command-Line-Reference#Config-Command) command. 
- More details [here](/Release-Notes/NuGet-2.1#Specify-packages-Folder-Location)
- <add key="repositoryPath" value="C:\Temp" />
-  
-<h3>Package Restore </h3>
-Allows you to restore missing packages from the NuGet source during build.
-
-	<packageRestore>
-		<!--Allow NuGet to download missing packages -->
-		<add key="enabled" value="True" />
-		<!-- Automatically check for missing packages during build in Visual Studio -->
-		<add key="automatic" value="True" />
-	</packageRestore>
-
-<h3>Package Sources</h3>
-Allows you to specify the list of sources to be used while looking for packages. 
-
-* "PackageSources" section has the list of package sources 
-* "DisabledPackageSources" has the list of sources which are currently disabled 
-* "ActivePackageSource" points to the currently active source. Speciying "(Aggregate source)" as the source value would imply that all the current package sources except for the disabled ones are active
-
-The values can be added to the config file directly or using the package manager settings UI (which would in turn update the NuGet.config file) or 
-using the <a href="/Consume/command-line-reference#Sources-Command">NuGet.exe Sources command.</a>
-
-	<packageSources>
-		<add key="NuGet official package source" value="https://nuget.org/api/v2/" />
-		<add key="TestSource" value="C:\Temp" />
-	</packageSources>
-	<disabledPackageSources />
-	<activePackageSource>
-		<add key="All" value="(Aggregate source)"  />
-	</activePackageSource>
-
-<h3>Source Control Integration </h3>
-"disableSourceControlIntegration" under section "solution" allows you to disable source control integration for the "Packages" folder. 
-This key works at the solution level and hence need to be added in a NuGet.config file in the "$(SolutionDir)\.nuget directory". 
-The default value for this key is true.
-
-	<solution>
-		<add key="disableSourceControlIntegration" value="true" />
-	</solution>
-
-<h3>Proxy Settings</h3>
-Allows you to set the proxy settings to be used while connecting to your NuGet feed.
-This key can be added using <a href="command-line-reference#Set-Command">Nuget.exe Config -Set command</a>. 
-It can also be set via environment variable "http_proxy". While setting environment variable, the value should be specified in the 
-format 'http://[username]:[password]@proxy.com'. Note, the "http_proxy.password" key value is encrypted before storing in the nuget.config file. 
-Hence it cannot be added manually by directly updating the config file.
-
-<h3>Credentials for package source</h3>
-Allows you to set the credentials to access the given package source
-This key has to be set using the <a href="command-line-reference#Sources-Command">NuGet.exe Sources command.</a>
-The default behavior is to store the password encrypted in the config file
-
-	Nuget.exe Sources Add -Name feedName -UserName user -Password secret  
-	Nuget.exe Sources Update -Name feedName -UserName user -Password secret 
-
-This results in something similar to this:
-
-	<packageSourceCredentials>
-		<feedName>
-			<add key="Username" value="user" />
-			<add key="Password" value="...encrypted..." />
-		</feedName>
-	</packageSourceCredentials>
-
-If you want to share the credentials with others then you might want to use the -StorePasswordInClearText option to disable password encryption. 
-Using this option allows you to store the password in clear text, for instance in your solution-local nuget.config using the new 
-<a href="/Consume/command-line-reference">-Config option</a>, and commit it to your source control.
-
-	Nuget.exe Sources Add -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
-	Nuget.exe Sources Update -Name feedName -UserName user -Password secret -StorePasswordInClearText -Config <path to nuget.config>
-
-This results in something more readable (or even manually configurable):
-
-	<packageSourceCredentials>
-		<feedName>
-			<add key="Username" value="user" />
-			<add key="ClearTextPassword" value="secret" />
-		</feedName>
-	</packageSourceCredentials>
-
-<h3>API Key to access package source</h3>
-Allows you to set the API Key corresponding to a specific package source.
-This key  has to be set via <a href="/Consume/command-line-reference#Setapikey-Command">NuGet -SetApiKey</a>
-
-### Environment variables in configuration
-
-Starting with NuGet 3.4, NuGet evaluates environment variables in NuGet.config values.
-NuGet does not evaluate environment variables in other locations.
-This enables you to include NuGet.config in your source repository but still have environment specific configuration exposed. 
-
-Consider an example NuGet.config file:
-
-    <configuration>
-        <config>
-            <add key="repositoryPath" value="%HOME%\NuGetRepository" />
-        </config>
-    </configuration>
-
-NuGet evaluates `%HOME%` when it attempts to access the `repositoryPath` key. 
-
-    > nuget config repositoryPath
-    C:\users\username\NuGetRepository
-
-If your NuGet.config references an environment variable that is not set, it will left as is in the configuration value. 
+In the above path locations `{IDE}` can be VisualStudio and if you want to specify config for a particular SKU of Visual Studio `{SKU}` can be Pro, Enterprise or Community.
