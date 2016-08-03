@@ -201,7 +201,7 @@ Then run the `spec` command (ensure you've added nuget.exe to the PATH as discus
 	nuget spec
 </code>
 
-This will generate a new file `AppLogger.nuspec`. Open this file. It will look something like
+This will generate a new file `AppLogger.nuspec`. Open this file. It will look something like:
 
 	<?xml version="1.0"?>
 	<package >
@@ -229,7 +229,7 @@ To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/
 	You must update the author and description or you will get an error in the next step.
 </div>
 
-Here is how the updated nuspec file looks.
+Here is how the updated nuspec file looks:
 
 	<?xml version="1.0"?>
 	<package >
@@ -341,7 +341,7 @@ Let's say you would also like to target .NET Framework 4.6.2 because you would l
 **Recommended Reading:** [Specifying Files to Include in the Package](/ndocs/schema/nuspec#specifying-files-to-include-in-the-package)
 
 ##Targets and Props for MSBuild
-In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custome tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
+In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custom tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
 
 <div class="block-callout-info">
 	In the project.json world, targets are not added to the project but are made available through the project.lock.json.
@@ -402,7 +402,7 @@ We are going to take the first approach. Let's say, you would like to support Ge
     │           AppLogger.resources.dll
     │           AppLogger.xml
     └───net462
-	    │   AppLogger.dll
+        │   AppLogger.dll
         │   AppLogger.xml
         │
         ├───de
@@ -419,11 +419,11 @@ We are going to take the first approach. Let's say, you would like to support Ge
 2. Edit the nuspec file - add a child node `files` to the `package` node
 
 		<?xml version="1.0"?>
-		<package >
+		<package>
 		  <metadata>...
 		  </metadata>
 		  <files>
-			  <file src="lib\**" target="lib" />
+		    <file src="lib\**" target="lib" />
 		  </files>
 		</package>
 
@@ -441,7 +441,7 @@ A package can include a *readme.txt* file in the root of the package. This file 
 	<strong>Note:</strong> When your package is being consumed by a .NET Core project, it does not display the readme.txt.
 </div>
 
-To do this create a text file and edit its content to whatever you would like to be dispalyed once the package is installed.
+To do this create a text file and edit its content to whatever you would like to be displayed once the package is installed.
 Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the `package` node like below
 
 	<?xml version="1.0"?>
@@ -449,7 +449,7 @@ Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the 
 	  <metadata>...
 	  </metadata>
 	  <files>
-		  <file src="readme.txt" target="" />
+	    <file src="readme.txt" target="" />
 	  </files>
 	</package>
 
