@@ -223,7 +223,7 @@ This will generate a new file `AppLogger.nuspec`. Open this file. It will look s
 	</package>
 
 This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer.)
-To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/creating%20a%20package#user-content-create-a--nuspec-file)
+To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file)
 
 <div class="block-callout-warning">
 	You must update the author and description or you will get an error in the next step.

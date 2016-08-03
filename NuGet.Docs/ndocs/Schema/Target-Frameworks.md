@@ -6,13 +6,13 @@ framework versions and flavors that support all of the devices and systems the .
 ## References
 Target frameworks can be referenced from three places:  
 
-[nuspec manifest](http://docs.nuget.org/Create/NuSpec-Reference)
+[nuspec manifest](/ndocs/schema/nuspec)
 You can find a target framework referenced in the dependencies on the group elements to indicate which packages should be referenced when the package is installed into different projects.
 
-[nupkg folder name](http://docs.nuget.org/create/Creating-and-Publishing-a-Package#from-a-convention-based-working-directory)
+[nupkg folder name](/ndocs/create-packages/create-a-package#convention-based-working-directory)
 The folders inside of the base package lib folder are named after the target frameworks that the contents support. The DLLs and other content that support these framework version should be placed here.
 
-[project.json](TBD)  
+[project.json](/ndocs/schema/project.json)  
 This node specifies the framework versions that the project should be compiled against for project systems that use project.json (ASP.NET 5 and UWP currently).
 
 A framework is typically referenced by a short name, called a "Target Framework Moniker" or TFM.  With the advent of the new Platform Standard, the concept of 'TFM' has been abstracted to 'TxM' since the Platform Standard references multiple frameworks abstractly. 
@@ -104,7 +104,7 @@ The official NuGet clients support the frameworks listed below, with the equival
     	</td>
     </tr>
     <tr>
-    	<td>.NET Standard <br/> <br/> Modern PCL Support/td>
+    	<td>.NET Standard <br/> <br/> Modern PCL Support</td>
     	<td>netstandard</td>
     	<td>                
 			netstandard1.0<br/>
@@ -163,6 +163,8 @@ winrt45
 To simplify the references between binary-compatible frameworks, the [.NET Platform Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md) was introduced.  This allows the definition of a single target framework moniker to reference a combination of binary compatible frameworks.  Various versions of the Platform Standard indicate different combinations of frameworks that are compatible.  More information about these frameworks can be found at the [here](https://docs.microsoft.com/en-us/dotnet/articles/standard/index). 
 
 The `dotnet` series of monikers should be used in NuGet 3.3 and the `netstandard` moniker syntax should be used in v3.4 and later.
+
+Take a look at [NuGet Tools - Get Nearest Framework](https://aka.ms/s2m3th) to simulate what NuGet uses to select one framework from many available framework assets in a package based on the project's framework.
 
 ## Portable Class Libraries
 
