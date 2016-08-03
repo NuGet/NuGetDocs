@@ -4,7 +4,7 @@
 
 **What is required to run NuGet?**
 
-All the info around tools including CLI tools, what you need to install and run NuGet is available [here]();
+All the info around tools including CLI tools, what you need to install and run NuGet is available [here](/ndocs/guides/install-nuget).
 
 **Does NuGet support Mono?**
 
@@ -26,7 +26,7 @@ Powershell host including the version.
 
 **What languages are supported by NuGet?**
 
-Generally NuGet is a good tool for .NET languages, it is designed primarily around bringing .NET dlls into your project. Since it also supports msbuild and visual studio automation in some project types it supports other projects and languages types with various degrees of completeness.
+Generally NuGet is a good tool for .NET languages; it is designed primarily around bringing .NET dlls into your project. Since it also supports msbuild and visual studio automation in some project types it supports other projects and languages types with various degrees of completeness.
 
 The most recent version of NuGet supports C#, Visual Basic, F#, [WiX](http://wix.sourceforge.net/), and C++ Projects.
 
