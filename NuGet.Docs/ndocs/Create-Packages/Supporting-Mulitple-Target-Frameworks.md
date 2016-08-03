@@ -78,7 +78,7 @@ If you omit the framework name, the .NET Framework is assumed. For example, the 
             \MyAssembly.dll
 
 
-**Recommended Reading**: [List of Target Frameworks](~/ndocs/schema/Target-Frameworks.md)
+**Recommended Reading**: [List of Target Frameworks](/ndocs/schema/Target-Frameworks.md)
 
 ## Assemblies that are not Specific to a Framework Version
 

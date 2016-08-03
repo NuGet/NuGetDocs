@@ -3,30 +3,23 @@
 There are a few ways to create a NuGet package. This tutorial walks you through creating a NuGet package from a project using the nuget CLI and publishing it to nuget.org.
 
 ##Pre-requisites
-1. Visual Studio. If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
+1. Visual Studio - If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
 2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##Create a new Class library project
 
-In Visual Studio, choose **File**, **New**, **Project**. In the **New Project** dialog, expand the **Visual C#** node and choose the **Windows** node, and then choose **Class Library**. Change the name to AppLogger. You can create any project that builds to a DLL.
+In Visual Studio, choose **File**, **New**, **Project**. In the **New Project** dialog, expand the **Visual C#** node and choose the **Windows** node, and then choose **Class Library**. Change the name to AppLogger. 
 
 ![Create new Project](/images/CreatePublishNugetSample/01.PNG)
 
-Our sample DLL just has one public method that creates a log entry. Copy the following lines of code to the class doc.
+Feel free to add your code to this library to perform the operations that you desire.  
 
-	namespace AppLogger
-	{
-		public class Class1
-		{
-		}
-	}
-
-On the **Build** menu, choose **Build Solution**. The solution should build successfully.
+On the **Build** menu, choose **Build Solution**. Make sure the solution builds successfully.
 
 
 ##Create the .nuspec file
 
-Bring up the console and navigate to the folder containing the `.csproj` file for the project that you just created. This path will look something like this
+Bring up the command prompt and navigate to the folder containing the `.csproj` file for the project that you just created. This path will look something like this
 	`C:\Users\username\Documents\Visual Studio 2015\Projects\AppLogger\AppLogger`
 
 Then run the <code>spec</code> command
@@ -35,9 +28,9 @@ Then run the <code>spec</code> command
 	nuget spec
 </code>
 
-This will generate a new file `AppLogger.nuspec`
+This will generate a new file `AppLogger.nuspec` in the same directory as the `.csproj` file for the project.
 
-Open this file. It will look something like this
+Open this file with notepad or your favorite text editor. It will look something like this
 
 	<?xml version="1.0"?>
 	<package >
@@ -58,15 +51,15 @@ Open this file. It will look something like this
 	  </metadata>
 	</package>
 
-This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer.)
-To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/creating%20a%20package#user-content-create-a--nuspec-file)
+This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer).
+To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/create%20a%20package#user-content-create-a--nuspec-file)
 
 
 <div class="block-callout-warning">
 	You must update the author and description or you will get an error in the next step.
 </div>
 
-Here is how the updated nuspec file looks like.
+Here is how the updated nuspec file looks:
 
 	<?xml version="1.0"?>
 	<package >
@@ -85,14 +78,14 @@ Here is how the updated nuspec file looks like.
 	</package>
 
 
-It is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
+It is a good practice to update the metadata tags to make it easier for others to find the package and understand what it does, and how to use it.
 
 Having finalized the nuspec file, we are now ready to create the nuget package.
 
 ##Pack
 On the **Build** menu, choose **Build Solution**.
 
-Now run the <code>pack</code> command
+Now run the <code>pack</code> command on the project
 
 	nuget pack AppLogger.csproj
 
@@ -112,7 +105,7 @@ Click on <b>My Account</b> to see the API Key that was generated for you.
 	Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if necessary. 
 </div>
 
-Open your console and run the following command. Replace the key below with the key that was generated for you.
+Open your command prompt and run the following command. Replace the key below with the key that was generated for you.
 
 <code class="bash hljs">
 	nuget push AppLogger.1.0.0.0.nupkg 47be3377-c434-4c29-8576-af7f6993a54b -Source https://www.nuget.org/api/v2/package
