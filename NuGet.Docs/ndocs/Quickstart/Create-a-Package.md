@@ -1,20 +1,20 @@
 #Create and Publish a Package
 
-There are a few ways to create a NuGet package. This tutorial walks you through creating a NuGet package from a project using the nuget CLI and publishing it to nuget.org.
+There are a few ways to create a NuGet package. This tutorial walks you through creating a NuGet package from a project using the nuget CLI and [Visual Studio 2015](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) and publishing it to nuget.org.
 
 ##Pre-requisites
-1. Visual Studio - If you don't have Visual Studio installed, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
+1. Visual Studio 2015 - If you don't have Visual Studio installed, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
 2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a location of your choice, and add the path to Nuget.exe to the PATH Environment Variable. For more details, take a look at [The NuGet Install Guide](/ndocs/guides/install-nuget#nuget-cli).
 
-##Create a new Class Library project
+##Create a New Class Library Project
 
-In Visual Studio, choose **File**, **New**, **Project**. In the **New Project** dialog, expand the **Visual C#** node and choose the **Windows** node, and then choose **Class Library**. Change the name to AppLogger. 
+In Visual Studio, choose **File**, **New**, **Project**. In the **New Project** dialog, expand the **Visual C#** node and choose the **Windows** node, and then choose **Class Library**. Change the name to AppLogger.
 
 ![Create new Project](/images/CreatePublishNugetSample/01.PNG)
 
 After you are done making change to the code in this project, in the **Build** menu, choose **Build Solution**. Make sure the solution builds successfully.
 
-##Create the .nuspec file
+##Create the .nuspec File
 
 Bring up the command prompt and navigate to the folder containing the `.csproj` file for the project you just created. This path will look something like this:
 	`C:\Users\username\Documents\Visual Studio 2015\Projects\AppLogger\AppLogger`
@@ -91,7 +91,7 @@ When the command has completed successfully, it will generate a new file `AppLog
 
 
 ##Publish
-There are two ways you can publish packages: using the [Nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [Nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/). 
+There are two ways you can publish packages: using the [Nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [Nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
 
 <div class="block-callout-warning">
 	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be available for the rest of the world to consume. Other options for hosting packages can be found <a href="/ndocs/host-packages/hosting-packages-overview">here</a>.
@@ -104,7 +104,7 @@ Click on your user name to navigate to your account settings. You can see the AP
 ![api key](/images/CreatePublishNugetSample/03.PNG)
 
 <div class="block-callout-warning">
-	Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the command prompt. 
+	Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the command prompt.
 </div>
 
 Open your command prompt and run the following command. Replace the key below with the key that was generated for you.
