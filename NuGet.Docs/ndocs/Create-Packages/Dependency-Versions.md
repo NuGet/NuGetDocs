@@ -1,9 +1,9 @@
 ﻿# Dependency Versions
-When you create a NuGet package, you can specify dependencies for the package in the `.nuspec` file and the versions of the dependency packages required. For information about creating NuGet packages and the .nuspec file format, see [Creating a Package](../Create/Creating-a-Package) and [.nuspec file schema Specification](Nuspec-Reference). Dependency versions are specified in the version attribute of the dependency element.
-
-## Version ranges in .nuspec files
+When you create a NuGet package, you can specify dependencies for your package in the `.nuspec` file, as well as the versions required for the dependency packages. For information about creating NuGet packages and the .nuspec file format, see [Creating a Package](create-a-package) and [.nuspec file schema Specification](/ndocs/schema/nuspec). Dependency versions are specified in the version attribute of the dependency element.
 
     <dependency id="ExamplePackage" version="1.3.2" />
+
+## Version ranges in .nuspec files
 
 NuGet supports using interval notation for specifying version ranges. The NuGet specification was 
 inspired by the Maven Version Range Specification but is not identical to it. The following summarizes 
@@ -29,13 +29,13 @@ NuGet will perform the following actions:
 
 It is recommended to always specify a version or version range for package dependencies.
 
-## Examples of Versioning
+## Versioning Examples
 The following example specifies a dependency on any version of ExamplePackage that begins with a 1 or a 2. 
 The square bracket indicates that the 1 is included, while the parenthesis indicates that 3 is excluded.
 
     <dependency id="ExamplePackage" version="[1,3)" />
 
-In the example, version 1 and version 2.9 would be acceptable, but not 0.9 or 3.0.
+In the example above, version 1 and version 2.9 would be acceptable, but not 0.9 or 3.0.
 
 The following example specifies a dependency on ExamplePackage 1.3.2 through any version number that 
 begins with 1.4. The square bracket indicates that the 1.3.2 is included, while the parenthesis 
@@ -43,10 +43,10 @@ indicates that 1.5 is excluded.
 
     <dependency id="ExamplePackage" version="[1.3.2,1.5)" />
 
-In the example, version 1.3.2.1 and version 1.4.999 would be acceptable, but not version 1.5.
+In the example above, version 1.3.2.1 and version 1.4.999 would be acceptable, but not version 1.5.
 
 ## Guidance
-Generally, the guidance in most cases is to only specify a lower bound, and leave the upper bound open. e.g.
+Generally, the guidance is to only specify a lower bound, and leave the upper bound open, such as the following example:
 
     <dependency id="ExamplePackage" version="1.3.2" />
 ## Normalized Version Numbers
@@ -61,10 +61,10 @@ This version parsing is executed when installing a package, updating a package, 
 
 <div class="block-callout-info">
     <strong>Note:</strong><br>
-     NuGet repositories must treat these values in the same way as the NuGet client to prevent package version duplication-
+     NuGet repositories must treat these values in the same way as the NuGet client to prevent package version duplication.
      <br/>
      <br/>
-     Repository A that contains v1.0 of a package should not also host v1.0.0 as a separate and different package.
+     For example, repository A that contains v1.0 of a package should not also host v1.0.0 as a separate and different package.
 </div>
 
 The following table illustrates how NuGet will normalize these version numbers and the expected response from the NuGet repository:
@@ -97,7 +97,7 @@ For example, you may know in advance that your application will only work with v
 
 For example, the following example shows how to lock the version range to 2.0 - 3.0 
 (exclusive). The `allowedVersions` attribute accepts values using the version range format described 
-earlier.
+above.
 
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
@@ -105,7 +105,7 @@ earlier.
     </packages>
 
 Now if you restore packages:
-
+<code class="bash hljs">
     PM> Enable-PackageRestore
     Attempting to resolve dependency 'NuGet.CommandLine (≥ 1.4)'.
     Successfully installed 'NuGet.CommandLine 1.4.20615.182'.
@@ -118,6 +118,7 @@ Now if you restore packages:
     Don't forget to commit the .nuget folder
     Updated 'Mvc3Application' to use 'NuGet.targets'
     Enabled package restore for Mvc3Application
+</code>
 
 And you’re done! So basically, the first command installs a NuGet package which brings in some helpful commands, and the second one runs one of those commands.
 
