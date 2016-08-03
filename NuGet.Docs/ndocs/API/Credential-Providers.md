@@ -1,4 +1,4 @@
-# Using Credential Providers to Access Authenticated Feeds
+# Credential Providers and NuGet
 
 NuGet 3.3+ now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds. 
 After you install a Credential Provider, NuGet will automatically acquire and refresh credentials for authenticated feeds as necessary.
