@@ -3,7 +3,7 @@
 The following tools will help you build, publish and consume nuget packages.
 
 1. [NuGet CLI](#nuget-cli)
-2. [NuGet Package Manager extension in Visual Studio](#nuget-package-manager-extension-in-visual-studio)
+2. [NuGet Package Manager Extension in Visual Studio](#nuget-package-manager-extension-in-visual-studio)
 3. [NuGet in .NET CLI](#nuget-in--net-cli)
 4. [Package Explorer](#package-explorer)
 
@@ -13,6 +13,7 @@ This utility can be used to create, publish, and download packages. It also work
 
 The NuGet CLI can be installed in a few possible ways.
 
+###Download from nuget.org
 1. Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads) OR Install the [NuGet.CommandLine](http://www.nuget.org/packages/NuGet.CommandLine/) package from the NuGet Visual Studio client.
 2. Move the nuget.exe to a common location and add this path to the PATH Environment Variable OR execute it in the context of your project.
 
@@ -21,14 +22,16 @@ The NuGet CLI can be installed in a few possible ways.
     Because there are a few breaking changes introduced in NuGet 3.2 <a href="https://nuget.org/nuget.exe">https://nuget.org/nuget.exe</a> points to the latest stable NuGet 2.x release to prevent CI systems from potentially breaking at this time.
 </div>
 
+###Install from Chocolatey
+Alternatively, Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client.
 
-Alternatively, Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
+	choco install nuget.commandline
 
 
 **Recommended Reading:**  [NuGet CLI commands](/ndocs/tools/nuget-cli-reference), [Creating a package](/ndocs/create-packages/create-a-package), [Publishing a Package](/ndocs/create-packages/publish-a-package)
 
 
-## NuGet Package Manager extension in Visual Studio
+## NuGet Package Manager Extension in Visual Studio
 Starting with Visual Studio 2012, NuGet is included in every edition (except Team Foundation Server). This extension includes the package manager UI and the package manager console. If your copy of Visual Studio does not already have the NuGet Package Manager extension, you can install it using the Extension Manager.<br>
 
 1. In Visual Studio, click Tools and then Extension and Updates.
@@ -55,7 +58,7 @@ The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.
 
 **Recommended Reading**: [Managing Packages Using the Package Manager Console](/ndocs/tools/package-manager-console), [Package Manager Console Powershell Commands](/ndocs/tools/powershell-reference)
 
-### Updating the NuGet extension in Visual Studio
+### Updating the NuGet Extension in Visual Studio
 You can update NuGet using the Visual Studio Extension Manager. Navigate to the Extension Manager and click on the Updates tab to check for updates. If there is a new version of NuGet you will see it in the list of available updates. From VS 2015 Update 2, NuGet extension is auto updated by default in Visual Studio.
 
 ## NuGet Beta Channel
@@ -92,7 +95,7 @@ Package Explorer is a community driven tool which lets you visually explore and 
 
 **Recommended Reading**: [Package Explorer GUI to create packages](/docs/tools/package-explorer)
 
-##Choosing the right NuGet tool
+##Choosing the Right NuGet Tool
 Here is a quick reference to understand your options based on your scenario:
 <table class="reference">
 	<tr>
@@ -102,25 +105,32 @@ Here is a quick reference to understand your options based on your scenario:
 		<th align="center">Package Manager Console</th>
 		<th align="center">.NET CLI</th>
     <tr>
-        <td>Search/Download/Install package</td>
+        <td>Search package</td>
         <td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
+		<td align="center"></td>
+    </tr>
+    <tr>
+        <td>Install package</td>
+        <td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
+		<td align="center">&#10004;</td>
+		<td align="center"></td>
     </tr>
 	<tr>
         <td>Update package</td>
         <td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
-		<td align="center">&#10004;</td>
+		<td align="center"></td>
     </tr>
 	<tr>
         <td>Uninstall package</td>
         <td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
 		<td align="center">&#10004;</td>
-		<td align="center">&#10004;</td>
+		<td align="center"></td>
     </tr>
 	<tr>
         <td>Restore package</td>
@@ -134,7 +144,7 @@ Here is a quick reference to understand your options based on your scenario:
         <td align="center">&#10004;</td>
 		<td align="center"></td>
 		<td align="center"></td>
-		<td align="center">&#10004;</td>
+		<td align="center"></td>
     </tr>
 	<tr>
         <td>Manage packages in your feed or nuget.org</td>
@@ -146,8 +156,8 @@ Here is a quick reference to understand your options based on your scenario:
 	<tr>
         <td>Manage nuget sources</td>
         <td align="center">&#10004;</td>
-		<td></td>
-		<td></td>
+		<td align="center">&#10004;</td>
+		<td align="center">&#10004;</td>
 		<td></td>
     </tr>
 	<tr>
