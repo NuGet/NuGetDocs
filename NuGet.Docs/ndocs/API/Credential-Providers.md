@@ -7,11 +7,11 @@ Note: Credential providers only work in NuGet.exe (not in dotnet restore or visu
 
 NuGet Credential Providers can be used in 3 ways:
 
-[Globally](#installing-a-credential-provider-globally)
+* [Globally](#installing-a-credential-provider-globally)
 
-[Environment Variable](#using-a-credential-provider-from-an-environment-variable)
+* [Environment Variable](#using-a-credential-provider-from-an-environment-variable)
 
-[Alongside NuGet.exe](#using-a-credential-provider-alongside-nugetexe)
+* [Alongside NuGet.exe](#using-a-credential-provider-alongside-nugetexe)
 
 ## Installing a Credential Provider Globally
 
