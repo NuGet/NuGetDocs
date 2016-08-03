@@ -49,7 +49,7 @@ Open this file with notepad or your favorite text editor. It will look something
 	</package>
 
 This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (this file can be found by expanding the properties node in Visual Studio's Solution Explorer).
-To read more about tokens, [go here](/ndocs/create-packages/create-a-package#project).
+To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file)
 
 
 <div class="block-callout-warning">
