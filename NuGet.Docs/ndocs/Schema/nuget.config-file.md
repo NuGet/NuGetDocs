@@ -3,7 +3,7 @@
 There are a bunch of NuGet configuration values which can be set via the nuget.config file. Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
 
 
-# globalPackagesFolder
+## globalPackagesFolder
 
 **section**: config  
 **key**: globalPackagesFolder
