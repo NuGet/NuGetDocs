@@ -53,6 +53,7 @@ To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/
 
 
 <div class="block-callout-warning">
+	<strong>Note</strong><br>
 	You must select a package ID that is unique across Nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
 </div>
 
@@ -94,6 +95,7 @@ When the command has completed successfully, it will generate a new file `AppLog
 There are two ways you can publish packages: using the [Nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [Nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
 
 <div class="block-callout-warning">
+	<strong>Note</strong><br>
 	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be available for the rest of the world to consume. Other options for hosting packages can be found <a href="/ndocs/host-packages/hosting-packages-overview">here</a>.
 </div>
 
@@ -104,6 +106,7 @@ Click on your user name to navigate to your account settings. You can see the AP
 ![api key](/images/CreatePublishNugetSample/03.PNG)
 
 <div class="block-callout-warning">
+	<strong>Note</strong><br>
 	Always keep your API key a secret! If your key is accidentally revealed, you can always regenerate it at any time. You can also remove the API key if you no longer want to push packages via the command prompt.
 </div>
 
