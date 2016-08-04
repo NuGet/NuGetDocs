@@ -5,11 +5,11 @@ Windows 10 introduces the Universal Windows Platform (UWP), which further evolve
 [Learn more about the Universal Windows Platform](https://developer.microsoft.com/en-us/windows)
 
 ##Pre-requisites
-1. Visual Studio 2015 Update 3 with Windows developer tools. If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/downloads/vs-thankyou) for free. 
+1. Visual Studio 2015 Update 3 with Windows developer tools. If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free. 
 2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##What are we building
-The scenario we are trying to address here is how to build, package and distribute a native UWP component that can be used in Managed and Native projects. In addition, we will also show you how to author and package XAML controls in NuGet packages.
+We will create a native UWP component that can be used in Managed and Native projects. In addition, we will also show you how to author and package XAML controls in NuGet packages.
 
 ##Create new Project
 
@@ -17,7 +17,7 @@ The scenario we are trying to address here is how to build, package and distribu
 
 	![Create new Project](/images/BuildForUWP/01.PNG)
 
-2. Choose the target and minimum platform versions that your Universal Windows application will support. You may accept the default values for now and click ok.
+2. You may accept the default values for and click ok.
 
 3. From the context menu of the project, select Add->New Item. In the Add New Item dialog, select XAML under the Visual C++ node and then select Templated Control. Change the name to AwesomeImageControl.cpp and click Add.
 	
@@ -88,7 +88,7 @@ Update the metadata for the package. The updated nuspec should look like below.
 **Recommended Reading:** [Nuspec Reference](/ndocs/schema/nuspec)
 
 ###Adding a winmd to the package.
-[WinMd]() is a metadata file that describes the shape of all publicly available types. This is required in order to consume these types in other UWP libs or apps. In addition you can also add xml files to enable IntelliSense.
+[WinMd]() is a metadata file that describes the shape of all publicly available types. This is required in order to consume these types in other UWP libs or apps. In addition, you can also add xml files to enable IntelliSense.
 
 	<?xml version="1.0"?>
 	<package >
@@ -105,7 +105,7 @@ Update the metadata for the package. The updated nuspec should look like below.
 
 
 ###Adding XAML content
-In order for the consuming project to use XAML controls in this library, you need to add the XAML file that has the deafult template for the control and the xbf.
+For the consuming project to use XAML controls in this library, you need to add the XAML file that has the deafult template for the control and the xbf.
 
 	<?xml version="1.0"?>
 	<package >
@@ -123,9 +123,9 @@ In order for the consuming project to use XAML controls in this library, you nee
 	</package>
 
 ###Adding the native implementation libraries
-The core logic of the type is in native code and this is contatined in the implementation (ImageEnhancer.dll) assembly. Since implementation assembly is per target Runtime, we have to make sure package implementation assemblies for all available runtimes.
+The core logic of the type is in native code and this is contained in the implementation (ImageEnhancer.dll) assembly. Since implementation assembly is per target Runtime, we have to make sure the package includes implementation assemblies for all available runtimes.
 
-In addition, pri files are the generated artifacts that contain the resources in your project. It is very important that you add these to the package as well.
+In addition, pri files are the generated artifacts that contain the resources in your project. You need to add these to the package as well.
 
 	<?xml version="1.0"?>
 	<package >
