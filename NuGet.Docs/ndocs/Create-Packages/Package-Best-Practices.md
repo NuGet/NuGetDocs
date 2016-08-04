@@ -20,7 +20,7 @@ put all the application startup code in a root **App\_Start** folder within the 
 See [this blog post](http://blog.davidebbo.com/2011/02/appstart-folder-convention-for-nuget.html) for additional information.
 
 **Assemblies**: In general, it makes sense to have one nuget package per assembly. If your package 
-caontains assemblies that don’t make sense in any other context except within your package, then it’s fine to 
+contains assemblies that don’t make sense in any other context except within your package, then it’s fine to 
 package multiple assemblies within your package. For example, if you have a library Foo.dll that depends on Bar.dll and you think other assemblies may depend on Bar.dll, then make two packages (one for each assembly). But if you have Foo.dll and Foo.resources.dll, then there’s no point in making two packages. Just put both in a single package.
 
 ## Package Versioning Conventions

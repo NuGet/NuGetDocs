@@ -125,7 +125,7 @@ The table below maps .NET Standard versions to various implementations:
 	
 </table>
 
-Referencing this table and based on our requirements we will target .NET Standard 1.4. For more information on the .NET Standard, refer to the [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to learn more.
+Referenceing this table and based on our requirements, we will target .NET Standard 1.4. For more information on .NET Standard, read the [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library).
 
 ##Create new Project
 In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C# node and choose the Windows node, and then choose Class Library (Portable). Change the name to AppLogger.

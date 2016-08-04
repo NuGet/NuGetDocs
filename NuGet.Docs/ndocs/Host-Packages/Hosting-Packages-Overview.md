@@ -2,15 +2,15 @@
 
 Some companies restrict which third-party libraries their developers may use. Therefore, they might not want developers to have access to everything in the official NuGet feed, or they might have a set of proprietary libraries they want to make available in addition to the official feed.
 
-In these scenarios, you can set up a custom NuGet feed, and you can configure Visual Studio to offer that feed instead of or in addition to the official feed. A feed can be local (a folder on the local machine or a network folder), or remote(an intranet or internet URL).
+In these scenarios, you can set up a custom NuGet feed, and you can configure Visual Studio to offer that feed instead of or in addition to the official feed. A feed can be local (a folder on the local machine or a network folder), or remote (an intranet or internet URL).
 
 There are are 3 main solutions from the NuGet team to store and retrieve NuGet packages
 
-1) Local Feeds
+- Local Feeds
 
-2) NuGet.Server
+- NuGet.Server
 
-3) NuGet Gallery
+- NuGet Gallery
 
 ## Package Hosting Solutions from Microsoft
 

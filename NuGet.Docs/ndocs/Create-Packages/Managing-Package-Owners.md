@@ -14,7 +14,7 @@ It's common for a package to have multiple developers; each developer can be lis
 Once a package has been published to nuget.org, it's easy to invite additional users to become owners of the package.
 
 1. [Log on](https://nuget.org/users/account/LogOn) to nuget.org with the account that is the current owner of the package
-2. Navigate to the package page using the 'Packages' tab, searching, or clicking your username to and then '[Manage My Packages](https://nuget.org/account/Packages)'
+2. Navigate to the package page using the 'Packages' tab, searching, or clicking your username and then '[Manage My Packages](https://nuget.org/account/Packages)'
 3. When logged on as the package's owner, there is a 'Manage Owners' link on the left side
 4. Enter the nuget username of the person to add as an owner and click 'Add'
 5. An email is then sent to the new co-owner as an invitation to become an owner of the package
@@ -29,8 +29,8 @@ All package owners are peers.  This means any package owner can publish a new ve
 
 When a package has multiple owners and one needs to be removed the process is simple:
 
-1. [Log on](https://nuget.org/users/account/LogOn) to nuget.org with the account that is the current owner of the package;\
-2. Navigate to the package page using the Packages tab, searching, or clicking your username to and then '[Manage My Packages](https://nuget.org/account/Packages)'
+1. [Log on](https://nuget.org/users/account/LogOn) to nuget.org with the account that is the current owner of the package
+2. Navigate to the package page using the Packages tab, searching, or clicking your username and then '[Manage My Packages](https://nuget.org/account/Packages)'
 3. When logged on as the package's owner, there is a 'Manage Owners' link on the left side to click
 4. Click the 'remove' link next to the owner to be removed
 
@@ -45,8 +45,8 @@ This request has come in under a couple forms but the process works the same.
 * The package ownership is changing from one developer to another
 * The package was accidentally published using the wrong account
 
-## Orphaned Packages ##
-One last scenario has occurred, but not many times.  Packages have become orphans and the only package owner account cannot be used to add new owners.  Here are some examples of this scenario:
+## Packages Without Active Ownership ##
+In some cases, packages may not have an active owner and the only package owner account(s) cannot be used to add additional owners.  Here are some examples of this scenario:
 
 * The owner's account is associated with an email address that no longer exists and the user has forgotten their password
 * The registered owner has left the company that produces the package and cannot be reached to update the package ownership
