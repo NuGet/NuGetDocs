@@ -4,7 +4,7 @@ This tutorial walks you through installing a popular Json framework ([Newtonsoft
 
 <div class="block-callout-info">
 	<strong>Note:</strong><br>
-	You need to have Visual Studio 2015 Update 3 with Windows developer tools installed to follow this tutoial. If you don't have Visual Studio already, you can download <a href="https://developer.microsoft.com/en-us/windows/downloads">Visual Studio Community 2015</a> for free. 
+	You need to have Visual Studio 2015 Update 3 with Tools for Universal Windows Apps installed to follow this tutorial. If you don't have Visual Studio already, you can download <a href="https://developer.microsoft.com/en-us/windows/downloads">Visual Studio Community 2015</a> for free. 
 </div>
 
 ##Create a new UWP project
@@ -24,7 +24,7 @@ In the Solution Explorer, right click on **References** and in the context menu,
 ![References context](/images/ConsumeNugetSample/03.PNG)
 
 
-Choose "nuget.org" as the **Package source**, and select the **Browse** tab. Select **Newtonsoft.Json** and click **Install**. 
+Choose "nuget.org" as the **Package source**, and select the **Browse** tab. Search for **Newtonsoft.Json** and click **Install**. 
 
 ![Browse nuget packages](/images/ConsumeNugetSample/04.PNG)
 
@@ -33,7 +33,9 @@ Review changes and click ok.
 
 ![Browse nuget packages](/images/ConsumeNugetSample/05.PNG)
 
-
+<div class="block-callout-warning">
+	<a href="http://nuget.org">nuget.org</a> likely already has a package that could make application development easy for you. Be sure to search for packages inside Visual Studio or on <a href="http://nuget.org">nuget.org</a> for existing packages. 
+</div>
 
 ##Build the solution
 In the **Build** menu, choose **Build Solution**. Building the solution also restores NuGet packages.
@@ -44,7 +46,7 @@ In the **Build** menu, choose **Build Solution**. Building the solution also res
 Now that we have added the Newtonsoft.json nuget Package, we will use JsonConvert.SerializeObject, a method from **Newtonsoft.Json**, to convert an object to a JSON string and display it.
 
 
-From the Solution Explorer, open MainPage.xaml and copy the following lines of code, replacing the existing `Grid`:
+From the Solution Explorer, open MainPage.xaml and copy the following lines of code, replacing the existing `Grid` element:
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		<StackPanel VerticalAlignment="Center">

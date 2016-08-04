@@ -223,3 +223,24 @@ More details [here](Package-Restore).
     <bindingRedirects>
         <add key="skip" value="True" />
     </bindingRedirects>
+
+## Environment variables in configuration
+
+Starting with NuGet 3.4, NuGet evaluates environment variables in NuGet.config values.
+NuGet does not evaluate environment variables in other locations.
+This enables you to include NuGet.config in your source repository but still have environment specific configuration exposed. 
+
+Consider an example NuGet.config file:
+
+    <configuration>
+        <config>
+            <add key="repositoryPath" value="%HOME%\NuGetRepository" />
+        </config>
+    </configuration>
+
+NuGet evaluates `%HOME%` when it attempts to access the `repositoryPath` key. 
+
+    > nuget config repositoryPath
+    C:\users\username\NuGetRepository
+
+If your NuGet.config references an environment variable that is not set, it will left as is in the configuration value. 

@@ -15,12 +15,12 @@ The .NET Standard Library enables the following key scenarios:
 * Reduces and hopefully eliminates conditional compilation of shared source due to .NET APIs, only for OS APIs.
 
 ##Pre-requisites
-1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free. 
+1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free.
 2. [.NET Core Tooling Preview 2 for Visual Studio 2015](https://go.microsoft.com/fwlink/?LinkId=817245). This installs templates and other tools for Visual Studio 2015, as well as .NET Core 1.0 itself.
 3. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##What are we building
-We are going to create a nuget package that works across .NET framework 4.6.1, Universal Windows Platform 10, .NET Core and Mono/Xamarin. 
+We are going to create a NuGet package that works across .NET framework 4.6.1, Universal Windows Platform 10, .NET Core and Mono/Xamarin. 
 The table below maps .NET Standard versions to various implementations:
 
 <table class="reference">
@@ -125,12 +125,14 @@ The table below maps .NET Standard versions to various implementations:
 	
 </table>
 
-Referenceing this table and based on our requirements we will target .NET Standard 1.4. For more information on the .NET Standard, refer to the [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to learn more.
+Referencing this table and based on our requirements we will target .NET Standard 1.4. For more information on the .NET Standard, refer to the [.NET Standard Library](https://docs.microsoft.com/en-us/dotnet/articles/standard/library) to learn more.
 
 ##Create new Project
-In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C# node and choose the Windows node, and then choose Class Library (Portable for iOS, Android and Windows). Change the name to AppLogger. 
+In Visual Studio, choose File, New, Project. In the New Project dialog, expand the Visual C# node and choose the Windows node, and then choose Class Library (Portable). Change the name to AppLogger.
 
 ![Create new Project](/images/BuildForNetStandard/01.PNG)
+
+In the Add Portable Class Library dialog, select the .NET Framework 4.6 and ASP.NET Core 1.0 options.
 
 ##Modify project.json
 From the solution explorer, open project.json. It will look like:
@@ -190,16 +192,16 @@ We are leaving the code of the library as an exercise for the reader of the guid
 
 ##Create the .nuspec file
 
-Bring up the console and navigate to the folder containing the `.csproj` file for the project that you just created. This path will look something like this
+Bring up a Windows command prompt (e.g. by using Windows + X and choosing Command Prompt) and navigate to the folder containing the `.csproj` file for the project that you just created. This path will look something like this
 	`C:\Users\username\Documents\Visual Studio 2015\Projects\AppLogger\AppLogger`
 
-Then run the `spec` command
+Then run the `spec` command (ensure you've added nuget.exe to the PATH as discussed in Prerequisites above)
 
 <code class="bash hljs">
 	nuget spec
 </code>
 
-This will generate a new file `AppLogger.nuspec`. Open this file. It will look something like
+This will generate a new file `AppLogger.nuspec`. Open this file. It will look something like:
 
 	<?xml version="1.0"?>
 	<package >
@@ -227,7 +229,7 @@ To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/
 	You must update the author and description or you will get an error in the next step.
 </div>
 
-Here is how the updated nuspec file looks.
+Here is how the updated nuspec file looks:
 
 	<?xml version="1.0"?>
 	<package >
@@ -339,7 +341,7 @@ Let's say you would also like to target .NET Framework 4.6.2 because you would l
 **Recommended Reading:** [Specifying Files to Include in the Package](/ndocs/schema/nuspec#specifying-files-to-include-in-the-package)
 
 ##Targets and Props for MSBuild
-In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custome tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
+In some cases you might want to add custom [build targets or properties](add link here) to the consumers of your package, for example if you need a custom tool or process to run during build. When NuGet installs a package with \build files, it will add an MSBuild element in the project file pointing to the .targets and .props files. The .props file is added at the top, whereas the .targets file is added to the bottom.
 
 <div class="block-callout-info">
 	In the project.json world, targets are not added to the project but are made available through the project.lock.json.
@@ -400,7 +402,7 @@ We are going to take the first approach. Let's say, you would like to support Ge
     │           AppLogger.resources.dll
     │           AppLogger.xml
     └───net462
-	    │   AppLogger.dll
+        │   AppLogger.dll
         │   AppLogger.xml
         │
         ├───de
@@ -417,11 +419,11 @@ We are going to take the first approach. Let's say, you would like to support Ge
 2. Edit the nuspec file - add a child node `files` to the `package` node
 
 		<?xml version="1.0"?>
-		<package >
+		<package>
 		  <metadata>...
 		  </metadata>
 		  <files>
-			  <file src="lib\**" target="lib" />
+		    <file src="lib\**" target="lib" />
 		  </files>
 		</package>
 
@@ -439,7 +441,7 @@ A package can include a *readme.txt* file in the root of the package. This file 
 	<strong>Note:</strong> When your package is being consumed by a .NET Core project, it does not display the readme.txt.
 </div>
 
-To do this create a text file and edit its content to whatever you would like to be dispalyed once the package is installed.
+To do this create a text file and edit its content to whatever you would like to be displayed once the package is installed.
 Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the `package` node like below
 
 	<?xml version="1.0"?>
@@ -447,7 +449,7 @@ Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the 
 	  <metadata>...
 	  </metadata>
 	  <files>
-		  <file src="readme.txt" target="" />
+	    <file src="readme.txt" target="" />
 	  </files>
 	</package>
 
