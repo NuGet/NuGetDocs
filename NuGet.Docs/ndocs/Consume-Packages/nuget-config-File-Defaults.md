@@ -1,6 +1,6 @@
 ﻿# NuGet Config File Defaults
 
-Many companies are using NuGet internally, but have had a hard time setting up a build server or guiding their developers to use internal package sources instead of nuget.org. In addition to the standard [NuGet Configuration File](), NuGet 2.7 introduces a Configuration Defaults feature that allows machine-wide defaults to be specified for:
+Many companies are using NuGet internally, but have had a hard time setting up a build server or guiding their developers to use internal package sources instead of nuget.org. In addition to the standard [NuGet Configuration File](nuget-config-file-overview.md), NuGet 2.7 introduces a Configuration Defaults feature that allows machine-wide defaults to be specified for:
 
 a) Enabled package sources
 
@@ -8,7 +8,7 @@ b) Registered, but disabled-by-default package sources
 
 c) The default nuget.exe push source
 
-Each of these can now be configured within a file located at %ProgramData%\NuGet\NuGetDefaults.config. If this config file specifies package sources, then the default nuget.org package source will not be registered automatically, and the ones in NuGetDefaults.config will be registered instead.
+Each of these can now be configured within a file located at `%ProgramData%\NuGet\NuGetDefaults.config`. If this config file specifies package sources, then the default nuget.org package source will not be registered automatically, and the ones in NuGetDefaults.config will be registered instead.
 
 While not required, we expect many companies to use Group Policy to deploy NuGetDefaults.config files to developers' machines.
 
@@ -19,7 +19,7 @@ While not required, we expect many companies to use Group Policy to deploy NuGet
 
 ## Location
 
- NuGetDefaults.config, is located under %ProgramData%\NuGet folder, which is machine-wide and typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on this file based on the user and/or machine information.
+NuGetDefaults.config, is located under `%ProgramData%\NuGet` folder, which is machine-wide and typically requires Administrator permissions to modify. Administrators are expected to set the correct permissions on this file based on the user and/or machine information.
 
 ## Default Package Sources
 

@@ -8,11 +8,12 @@ to examine packages and learn how packages are structured.
     This is an open source community project. While we love it, it is not officially supported by the NuGet Team.
 </div>
 
-If you are integrating building packages into a build system, then [using NuGet.exe to create and publish packages]() is a better choice.
+If you are integrating building packages into a build system, then [using NuGet.exe to create and publish packages](../create-packages/create-a-package) is a better choice.
 
 ## Installation
 
-Check out our [install guide]() to install the NuGet Package Explorer.
+This is a open source project hosted in [npe.codeplex.com](https://npe.codeplex.com) where you can find a    
+[ClickOnce installer](https://npe.codeplex.com/releases/view/624769)
 
 ## Creating a Package
 
