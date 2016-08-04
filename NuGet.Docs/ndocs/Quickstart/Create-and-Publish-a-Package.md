@@ -4,7 +4,7 @@ There are a few ways to create a NuGet package. This tutorial walks you through 
 
 ##Pre-requisites
 1. Visual Studio 2015 - If you don't have Visual Studio installed, you can download [Visual Studio Community 2015](https://developer.microsoft.com/en-us/windows/downloads) for free.
-2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a location of your choice, and add the path to Nuget.exe to the PATH Environment Variable. For more details, take a look at [The NuGet Install Guide](/ndocs/guides/install-nuget#nuget-cli).
+2. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a location of your choice, and add the path to nuget.exe to the PATH Environment Variable. For more details, take a look at [The NuGet Install Guide](/ndocs/guides/install-nuget#nuget-cli).
 
 ##Create a New Class Library Project
 
@@ -12,7 +12,7 @@ In Visual Studio, choose **File**, **New**, **Project**. In the **New Project** 
 
 ![Create new Project](/images/CreatePublishNugetSample/01.PNG)
 
-After you are done making change to the code in this project, in the **Build** menu, choose **Build Solution**. Make sure the solution builds successfully.
+After you are done making changes to the code in this project, in the **Build** menu, choose **Build Solution**. Make sure the solution builds successfully.
 
 ##Create the .nuspec File
 
@@ -49,12 +49,12 @@ Open this file with notepad or your favorite text editor. It will look something
 	</package>
 
 This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (this file can be found by expanding the properties node in Visual Studio's Solution Explorer).
-To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file)
+To know more about how tokens are handled, read [Creating a nuspec file.](/ndocs/create-packages/create-a-package#create-a--nuspec-file)
 
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
-	You must select a package ID that is unique across Nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
+	You must select a package ID that is unique across nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
 </div>
 
 Here is how the updated nuspec file looks:
@@ -92,7 +92,7 @@ When the command has completed successfully, it will generate a new file `AppLog
 
 
 ##Publish
-There are two ways you can publish packages: using the [Nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [Nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
+There are two ways you can publish packages: using the [nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
@@ -134,7 +134,7 @@ That's it! You have just created and published your first NuGet package to [nuge
 ##Related Reading
 * [Create a Package](/ndocs/create-packages/create-a-package)
 * [Publish a Package](/ndocs/create-packages/publish-a-package)
-* [Support multiple target frameworks](/ndocs/create-packages/supporting-mulitple-target-frameworks)
+* [Support multiple target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks)
 * [Dependency versions](/ndocs/create-packages/dependency-versions)
 * [Creating localized packages](/ndocs/create-packages/creating-localized-packages)
 
