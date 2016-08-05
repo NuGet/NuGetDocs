@@ -105,7 +105,7 @@ Update the metadata for the package. The updated nuspec should look like below.
 
 
 ###Adding XAML content
-For the consuming project to use XAML controls in this library, you need to add the XAML file that has the deafult template for the control and the xbf.
+For the consuming project to use XAML controls in this library, you need to add the XAML file that has the deafult template for the control.
 
 	<?xml version="1.0"?>
 	<package >
@@ -115,9 +115,8 @@ For the consuming project to use XAML controls in this library, you need to add 
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
 
-		<!--Adding the XAML and xbf-->
+		<!--Adding the XAML-->
 		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
-		<file src="..\Debug\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
 
 		</files>
 	</package>
@@ -135,7 +134,6 @@ In addition, pri files are the generated artifacts that contain the resources in
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
 		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
-		<file src="..\Debug\ImageEnhancer\Themes\Generic.xbf" target="lib\uap10.0\Themes"/>
 
 		<!--Adding the dll and pri-->
 		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
@@ -144,6 +142,47 @@ In addition, pri files are the generated artifacts that contain the resources in
 		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+
+		</files>
+	</package>
+
+###Adding .targets
+For C++ projects, we need to provide information about the reference and implementation assemblies. This information goes in the .targets file that we will create and pack with the nupkg.
+Here is the .targets file that you need to use with this sample. Copy the following into a text file and rename it to ImageEnhancer.targets. Note that you must change the extension of the file from .txt to .targets. Place this file in the same folder as the nuspec.
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ImageEnhancer-Platform Condition="'$(Platform)' == 'Win32'">x86</ImageEnhancer-Platform>
+			<ImageEnhancer-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</ImageEnhancer-Platform>
+		</PropertyGroup>
+		<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+			<Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\ImageEnhancer.winmd">
+				<Implementation>ImageEnhancer.dll</Implementation>
+			</Reference>
+		<ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(ImageEnhancer-Platform)\native\ImageEnhancer.dll" />
+		</ItemGroup>
+	</Project>
+
+Modify the nuspec file
+
+	<?xml version="1.0"?>
+	<package >
+		<metadata>...
+		</metadata>
+		<files>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
+		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
+		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
+		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
+		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+
+		<!--Adding .targets-->
+		<file src="ImageEnhancer.targets" target="build\native"/>
 
 		</files>
 	</package>
@@ -178,6 +217,7 @@ The final nuspec looks something like below with the WinMd, XAML controls and th
 		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
 		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+		<file src="ImageEnhancer.targets" target="build\native"/>
 	  </files>
 	</package>
 
