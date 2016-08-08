@@ -147,7 +147,7 @@ namespace NuGet.Docs
             if (level == 1)
             {
                 heading.Attributes.Add("class", "articleTitle");
-                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}<br/><br/></span>", "Page generated on " + DateTime.UtcNow.ToShortDateString() + " using " + "Markdownsharp"));
+                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}<br/><br/></span>", "Page generated on "));
                 gentext.Attributes.Add("class", "generatedText");
                 elementsToMove.Add(heading);
                 elementsToMove.Add(gentext);
