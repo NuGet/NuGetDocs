@@ -4,7 +4,7 @@ Before you publish your package, you must decide whether you want your package t
 
 * If it's for public consumption, use [NuGet.org](https://www.nuget.org/packages/upload).
 * If it's within an organization or a team, use one of the following methods:
-    * NuGet.Server or file shares (for more information, see [Hosting Packages Overview](/ndocs/host-packages/hosting-packages-overview)
+    * NuGet.Server or file shares (for more information, see [Hosting Packages Overview](/ndocs/host-packages/hosting-packages-overview))
 	* Visual Studio Team Services Package Management
 	* Other third-party package repository managers, such as myget, ProGet, Nexus Repository, Artifactory, etc.
 
@@ -24,7 +24,7 @@ Use the Upload Package UI to upload your package to the NuGet Gallery
 
 ###Get your API Key
 
-Go [nuget.org](http://nuget.org/) and register for an account. Then, click "My Account" to see an API Key that was generated for you.
+Go [nuget.org](http://nuget.org/) and register for an account. Then, click on your username to see an API Key that was generated for you.
 
 ![Get your API Key](/images/Create/publish_NuGet-API-Key.PNG)
 
