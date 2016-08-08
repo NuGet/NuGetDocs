@@ -76,7 +76,7 @@ Here is how the updated nuspec file looks:
 	</package>
 
 
-You should consider updating the metadata tags to make it easier for others to find the package, understand what it does, and how to use it.
+Especially for packages that are build for public consumtion, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
 
 Having finalized the nuspec file, we are now ready to create the nuget package.
 
