@@ -1,4 +1,4 @@
-#Build for UWP
+#Create UWP Packages
 
 Windows 10 introduces the Universal Windows Platform (UWP), which further evolves the Windows Runtime model and brings it into the Windows 10 unified core. As part of the core, the UWP now provides a common app platform available on every device that runs Windows 10. With this evolution, apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the device family the app is running on.
 
@@ -80,10 +80,17 @@ Update the metadata for the package. The updated nuspec should look like below.
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Awesome Image Enhancer</description>
 		<releaseNotes>First Release</releaseNotes>
-		<copyright>Copyright 2016</copyright>
-		<tags>image enhancer</tags>
+		<copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</copyright>
+		<tags>image enhancer imageenhancer</tags>
 	  </metadata>
 	</package>
+
+Especially for packages that are build for public consumtion, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
+
+<div class="block-callout-warning">
+	<strong>Note</strong><br>
+	You must select a package ID that is unique across nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
+</div>
 
 **Recommended Reading:** [Nuspec Reference](/ndocs/schema/nuspec)
 
@@ -96,9 +103,9 @@ Update the metadata for the package. The updated nuspec should look like below.
 		</metadata>
 		<files>
 
-		<!--Adding the WinMd and XML -->
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+			<!--Adding the WinMd and XML -->
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
 
 		</files>
 	</package>
@@ -112,11 +119,11 @@ For the consuming project to use XAML controls in this library, you need to add 
 		<metadata>...
 		</metadata>
 		<files>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
 
-		<!--Adding the XAML-->
-		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
+			<!--Adding the XAML-->
+			<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
 
 		</files>
 	</package>
@@ -131,24 +138,23 @@ In addition, pri files are the generated artifacts that contain the resources in
 		<metadata>...
 		</metadata>
 		<files>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
-		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+			<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
 
-		<!--Adding the dll and pri-->
-		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
-		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
-		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
-		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+			<!--Adding the dll and pri-->
+			<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
+			<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+			<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
+			<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
 
 		</files>
 	</package>
 
 ###Adding .targets
-For C++ projects, we need to provide information about the reference and implementation assemblies. This information goes in the .targets file that we will create and pack with the nupkg.
-Here is the .targets file that you need to use with this sample. Copy the following into a text file and rename it to ImageEnhancer.targets. Note that you must change the extension of the file from .txt to .targets. Place this file in the same folder as the nuspec.
+For C# and VB projects, the project system is able to correctly identify and package the implementation assembly and reference winmd. In C++ and JS projects, we need to provide information about the reference and implementation assemblies. This information goes in the .targets file that we will be created and packed in the nupkg. Here is the .targets file that you need to use with this sample. Copy the following into a text file and save as  ImageEnhancer.targets. Place this file in the same folder as the nuspec.
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -171,21 +177,23 @@ Modify the nuspec file
 		<metadata>...
 		</metadata>
 		<files>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
-		<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
-		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
-		<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
-		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
-		<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
-		<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.winmd" target="lib\uap10.0"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.xml" target="lib\uap10.0"/>
+			<file src="Themes\Generic.xaml" target="lib\uap10.0\Themes"/>
+			<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-arm\native"/>
+			<file src="..\ARM\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-arm\native"/>
+			<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x64\native"/>
+			<file src="..\x64\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x64\native"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.dll" target="runtimes\win10-x86\native"/>
+			<file src="..\Debug\ImageEnhancer\ImageEnhancer.pri" target="runtimes\win10-x86\native"/>
 
-		<!--Adding .targets-->
-		<file src="ImageEnhancer.targets" target="build\native"/>
+			<!--Adding .targets-->
+			<file src="ImageEnhancer.targets" target="build\native"/>
 
 		</files>
 	</package>
+
+**Recommended Reading:** [MSBuild targets and props](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
 
 ###Final nuspec
 The final nuspec looks something like below with the WinMd, XAML controls and the native implementation libraries. You can now pack it.
@@ -234,6 +242,5 @@ This will generate a new file `ImageEnhancer.1.0.0.nupkg`. Open this file. The c
 ![nupkg](/images/BuildForUWP/05.PNG)
 
 ##Advanced scenarios
-* [MSBuild targets and props](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
 * [Symbol packages](/ndocs/create-packages/symbol-packages)
 * [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)

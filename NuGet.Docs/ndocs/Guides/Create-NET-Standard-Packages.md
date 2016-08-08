@@ -1,4 +1,4 @@
-﻿#Build for .NET Standard
+﻿#Create .NET Standard Packages
 This guide will walk you through creating a nuget package that takes advantage of the .NET Standard.
 
 ##What is .NET Standard
@@ -225,10 +225,6 @@ This will generate a new file `AppLogger.nuspec`. Open this file. It will look s
 This file includes tokens that are meant to be replaced at pack time, based on the project metadata stored in AssemblyInfo.cs (This can be found by expanding the properties node in the solution explorer.)
 To know more about how tokens are handled, read [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file)
 
-<div class="block-callout-warning">
-	You must update the author and description or you will get an error in the next step.
-</div>
-
 Here is how the updated nuspec file looks:
 
 	<?xml version="1.0"?>
@@ -242,13 +238,18 @@ Here is how the updated nuspec file looks:
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Awesome application logging utility</description>
 		<releaseNotes>First release</releaseNotes>
-		<copyright>Copyright 2016</copyright>
+		<copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</copyright>
 		<tags>application app logger logging logs</tags>
 	  </metadata>
 	</package>
 
 
-It is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
+Especially for packages that are build for public consumtion, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
+
+<div class="block-callout-warning">
+	<strong>Note</strong><br>
+	You must select a package ID that is unique across nuget.org. We recommend using the naming conventions described <a href="/ndocs/create-packages/package-best-practices">here</a>. You must also update the author and description tags or you will get an error in the next step.
+</div>
 
 **Recommended Reading:** [nuspec reference](/ndocs/schema/nuspec)
 
@@ -414,7 +415,7 @@ We are going to take the first approach. Let's say, you would like to support Ge
                 AppLogger.xml
     </pre>
 
-	This package contains a single class library (AppLogger.dll) that contains the English strings as part of the runtime assembly. The package also contains localized satellite assemblies and XML IntelliSense files for German and Italian.
+	This package contains a single class library (`AppLogger.dll`) that contains the English strings as part of the runtime assembly. The package also contains localized satellite assemblies and XML IntelliSense files for German and Italian.
 
 2. Edit the nuspec file - add a child node `files` to the `package` node
 
