@@ -524,3 +524,30 @@ warningcallout {
     background-color: #e3edf2;
     border-color: #5bc0de;
 }
+
+/* Code snippet */
+.snippet {
+    position: relative;
+    overflow: visible;
+}
+
+@media screen and (max-width: 768px) {
+    .snippet .btn {
+        display: none;
+    }
+}
+
+.snippet .btn {
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+
+.snippet:hover .btn {
+    opacity: 1;
+}
