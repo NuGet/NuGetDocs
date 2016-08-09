@@ -27,7 +27,7 @@
 
     #expList .collapsed {
         background-image: url(../images/expandCollapseGlyph.png);
-        background-position: 1px 12px;
+        background-position: 1px 13px;
     }
 
     #expList .expanded {
