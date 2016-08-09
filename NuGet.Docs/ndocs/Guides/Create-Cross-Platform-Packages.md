@@ -4,7 +4,7 @@ This guide will walk you through creating a cross platoform library that targets
 
 ##Pre-requisites
 1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free.
-2. UWP and [Xamarin](https://msdn.microsoft.com/en-us/library/mt613162.aspx?f=255&MSPPError=-2147217396#windows) tools need to be installed when you install VS 2015.
+2. UWP and Xamarin tools need to be installed when you install Visual Studio.
 3. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##Creating the right project structure
