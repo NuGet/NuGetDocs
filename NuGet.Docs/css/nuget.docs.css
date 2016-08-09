@@ -16,6 +16,10 @@ li {
     display: list-item !important;
 }
 
+h2 {
+    font-weight: 400;
+}
+
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #ffffff !important;
@@ -27,7 +31,6 @@ li {
     display: block;
     margin: auto;
     max-width: 100% !important;
-
 }
 
 table {
@@ -278,6 +281,7 @@ a.na .downloadToolsLinks {
     padding-bottom: 15px;
     margin-top: 10px !important;
     left: 10px;
+    font-weight: 400;
 }
 
 .swimlane {

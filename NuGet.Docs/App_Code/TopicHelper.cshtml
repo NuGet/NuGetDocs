@@ -37,18 +37,18 @@ orderedList.Add(topics.Where(
 foreach (Topic topic in topics)
 {
     string title = @topic.Title.Replace(" ", "-");
-        <li id="a-@title" class="level1container"/>
-        @topic.Title
-        @Html.Raw("<ul>");
-    foreach (var subtopic in topic.SubTopics)
-    {
-            <li class="listItem">
-                <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
-            </li>
-    }
-        @Html.Raw("</ul>");
-        @Html.Raw("</li>");
-    }
+        <li id="a-@title" class="level1container">
+            <text>@topic.Title</text>
+            <ul>
+                @foreach (var subtopic in topic.SubTopics)
+                {
+                    <li class="listItem">
+                        <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
+                    </li>
+                }
+            </ul>
+        </li>
+}
 }
 
 @helper RenderReleaseNotesIndex()

@@ -12,7 +12,7 @@
     <link href="~/css/nanoscroller.css" rel="stylesheet" type="text/css" />
     <link href="~/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/css/toc.css" rel="stylesheet">
-    <link href="~/css/highlight/atelier-savanna-dark.css"  rel="stylesheet">
+    <link href="~/css/highlight/solarized-dark.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -85,27 +85,6 @@
 
         ga('create', 'UA-30016961-3', 'nuget.org');
         ga('send', 'pageview');
-    </script>
-    <script>
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-
-        $('body').scrollspy({
-            target: '.bs-docs-sidebar',
-            offset: 40
-        });
-
-        $("#baseSidebar").affix({
-            offset: {
-                top: 60
-            }
-        });
-
-        $(".nano").nanoScroller();
-
-        hljs.initHighlightingOnLoad();
     </script>
 </body>
 </html>

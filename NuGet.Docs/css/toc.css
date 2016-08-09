@@ -27,11 +27,12 @@
 
     #expList .collapsed {
         background-image: url(../images/expandCollapseGlyph.png);
-        background-position: 1px 12px;
+        background-position: 1px 13px;
     }
 
     #expList .expanded {
         background-image: url(../images/expandCollapseGlyphOpen.png);
+        background-position: 1px 14px;
     }
 
 #expList {
