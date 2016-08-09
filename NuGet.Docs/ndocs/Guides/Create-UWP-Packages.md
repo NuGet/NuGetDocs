@@ -11,6 +11,11 @@ Windows 10 introduces the Universal Windows Platform (UWP), which further evolve
 ##What are we building
 We will create a native UWP component that can be used in Managed and Native projects. In addition, we will also show you how to author and package XAML controls in NuGet packages.
 
+1. Create a UWP Windows Runtime Component
+2. Add a XAML control to the library
+3. Create and update the nuspec
+4. Package the library into a nupkg
+
 ##Create new Project
 
 1. In Visual Studio, choose File, New, Project. In the New Project dialog, from Visual C++ -> Windows, choose Windows Runtime Component (Universal Windows). Change the name to ImageEnhancer and click ok.
@@ -85,7 +90,7 @@ Update the metadata for the package. The updated nuspec should look like below.
 	  </metadata>
 	</package>
 
-Especially for packages that are build for public consumtion, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
+Especially for packages that are build for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
