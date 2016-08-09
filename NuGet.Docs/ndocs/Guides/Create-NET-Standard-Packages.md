@@ -195,7 +195,7 @@ We are leaving the code of the library as an exercise for the reader of the guid
 Bring up a Windows command prompt (e.g. by using Windows + X and choosing Command Prompt) and navigate to the folder containing the `.csproj` file for the project that you just created. This path will look something like this
 	`C:\Users\username\Documents\Visual Studio 2015\Projects\AppLogger\AppLogger`
 
-Then run the `spec` command (ensure you've added nuget.exe to the PATH as discussed in Prerequisites above)
+Then run the `spec` command (ensure you've added nuget.exe to the PATH as discussed in Prerequisites above).
 
 <code class="bash hljs">
 	nuget spec
@@ -244,7 +244,7 @@ Here is how the updated nuspec file looks:
 	</package>
 
 
-Especially for packages that are build for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
+Especially for packages that are built for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it. Having finalized the nuspec file, we are now ready to create the nuget package.
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
@@ -297,7 +297,7 @@ Let's say your library has a dependency on another nuget package, say Newtonsoft
 Specifying a dependency this way implies your library requires Newtonsoft.Json at a minimum version 8.0.3. This is the recommended way of specifying dependencies i.e. to only specify a lower bound, and leave the upper bound open. NuGet also supports using interval notation for specifying version ranges. Take a look at the [Dependency Versions](/ndocs/create-packages/dependency-versions) doc for more details.
 
 ##Multiple Target Frameworks
-Let's say you would also like to target .NET Framework 4.6.2 because you would like to take advantage of a new API that is not supported by the .NET Framework 4.6.1 API surface. But, .NET Framework 4.6.2 is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects.
+Let's say you would also like to target .NET Framework 4.6.2 because you would like to take advantage of a new API that is not supported by the .NET Framework 4.6.1 API surface. But, .NET Framework 4.6.2 is not available in .NET Standard 1.4. To do this, we will use the approach of creating a nupkg from a convention based working directory. The package author will have to do the necessary steps to make sure that their library compiles for .NET 4.6.2 by using techniques like conditional compilation and/or using shared projects. If you would like to use Visual Studio, the easiest way to do this would be to create a netcore project, add the framework of choice to the mutliple framework section and then build.
 
 1. In the root directory of the project (folder containing the `.nuspec` file), create a new folder - `lib`
 2. Inside `lib`, create two new folders - one for each platform that we want to support.
@@ -456,7 +456,7 @@ Rename it to readme.txt. Edit the nuspec file - add a child node `files` to the 
 
 If the package is installed because it is a dependency of another package, the *readme.txt* file will not be opened. Only the *readme.txt* file of the package that the user is explicitly installing will be shown.
 
-**Recommended Reading:** [Adding files to nuget packages](add link here)
+**Recommended Reading:** [Adding files to nuget packages](/ndocs/schema/nuspec#specifying-files-to-include-in-the-package)
 
 ##Publish
 Go to [nuget.org](https://www.nuget.org/) and register for an account or login if you already have one.
