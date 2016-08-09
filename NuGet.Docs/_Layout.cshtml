@@ -87,6 +87,10 @@
         ga('send', 'pageview');
     </script>
     <script>
+        $(".nano").nanoScroller();
+
+        hljs.initHighlightingOnLoad();
+
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
@@ -103,9 +107,6 @@
             }
         });
 
-        $(".nano").nanoScroller();
-
-        hljs.initHighlightingOnLoad();
     </script>
 </body>
 </html>

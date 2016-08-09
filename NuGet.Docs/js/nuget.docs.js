@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿
+$(function () {
     $("#toc-hide").click(function (e) {
         e.preventDefault();
         $("#toc").hide();
@@ -102,3 +103,4 @@ $(document).ready(function () {
         $('#expList').children('li').first().click();
     }
 });
+
