@@ -125,7 +125,7 @@ namespace NuGet.Docs
             }
 
             PostProcessHeadingContainers(containerDictionary);
-            PostPorcessElements(doc);
+            PostProcessElements(doc);
 
             Page.Headings = headings;
 
@@ -216,7 +216,7 @@ namespace NuGet.Docs
             }
         }
 
-        private static void PostPorcessElements(HtmlDocument doc)
+        private static void PostProcessElements(HtmlDocument doc)
         {
             foreach (var node in doc.DocumentNode.Descendants())
             {
