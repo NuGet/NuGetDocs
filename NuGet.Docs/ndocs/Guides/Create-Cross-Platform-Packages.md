@@ -4,11 +4,12 @@ This guide will walk you through creating a cross platoform library that targets
 
 ##Pre-requisites
 1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free.
-2. UWP and Xamarin tools need to be installed when you install VS 2015.
+2. UWP and [Xamarin](https://msdn.microsoft.com/en-us/library/mt613162.aspx?f=255&MSPPError=-2147217396#windows) tools need to be installed when you install VS 2015.
 3. NuGet CLI - Download the latest version of nuget.exe from [nuget.org/downloads](https://nuget.org/downloads), move it to a common location and add this path to the PATH Environment Variable. For more details, take a look at [The NuGet Install guide](/ndocs/guides/install-nuget#nuget-cli)
 
 ##Creating the right project structure
 First, you need to create the following projects in your solution:
+
 1. LoggingLibrary: this project should be created using the class library template for iOS, Android and UWP in Visual Studio new project dialog
 2. LoggingLibrary.Android: created using Xamarin Android Library project
 3. LoggingLibrary.iOS: created using Xamarin iOS Library project
@@ -17,10 +18,31 @@ First, you need to create the following projects in your solution:
 This should look something like this:
 ![Project Explorer](/images/BuildForXplat/01.PNG)
 
-You can use the [Xamarin plugin extension by James Montemagno](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e). This will create the necessary project template structure and the nuspec template for you.
+###Update Project Properties
+Repeat these steps for each of the four projects.
+
+1. From the context menu, click on properties.
+2. Update the assembly name and Default namespace:
+	
+	a. For portable and UWP project, click on the Library tab on the left. In the right pane, update the Assembly name and Default namespace to LoggingLibrary
+	
+	![assembly name and Default namespace uwp](/images/BuildForXplat/02.PNG)
+
+	b. For Android and iOS project, click on the Application tab on the left. In the right pane, update the Assembly name and Default namespace to LoggingLibrary
+
+	![assembly name and Default namespace ios](/images/BuildForXplat/02_1.PNG)
+
+3. Click on Build tab on the left. In the right pane, change the Configuration to Release and check the box for XML documentation file
+	
+	![XML documentation file](/images/BuildForXplat/03.PNG)
+
+4. Save (ctrl + s)
+
+
+Alternately, you can use the [Xamarin plugin extension by James Montemagno](https://visualstudiogallery.msdn.microsoft.com/afead421-3fbf-489a-a4e8-4a244ecdbb1e). This will create the necessary project template structure and the nuspec template for you.
 
 ##Creating the stubbed out PCL
-As we want to reference this library in a PCL or NET Standard project, we have to make sure that we provide a stubbed out reference assembly for compilation. The platform specific version is actually loaded and executed at runtime.
+Since we want to reference this library in a PCL or NET Standard project, we have to make sure that we provide a stubbed out reference assembly for compilation. At runtime, the platform specific version is loaded and executed.
 
 ###Example
 This is how your stubbed out PCL surface area should look like
@@ -42,7 +64,7 @@ This is how your stubbed out PCL surface area should look like
     }
 
 ##Writing platform specific code
-Writing the platform specific implementation of the `LoggingLibrary` class and its methods is left as an exercise for the reader. The native implementations should have the same signatures as the stubbed out PCL. Once you have written all the code, build the entire solution.
+Writing the platform specific implementation of the `LoggingLibrary` class and its methods is left as an exercise for the reader. The native implementations should have the same signatures as the stubbed out PCL. Once you have written all the code, build the entire solution in for the release configuration.
 
 ##Create the .nuspec file
 Bring up a Windows command prompt (e.g. by using Windows + X and choosing Command Prompt). Then run the `spec` command (ensure you've added nuget.exe to the PATH as discussed in Prerequisites above)
@@ -74,14 +96,14 @@ This will generate a new file `Package.nuspec`.  Rename it to `LoggingLibrary.nu
 		</metadata>
 	</package>
 
-Update the nuspec to have all the relevant metadata. For more detals read the [nuspec reference]()
+Update the nuspec to have all the relevant metadata. For more detals read the [nuspec reference](/ndocs/schema/nuspec)
 
 Here is how the updated nuspec file looks:
 
 	<?xml version="1.0"?>
 	<package >
 		<metadata>
-			<id>App Logger</id>
+			<id>LoggingLibrary</id>
 			<version>1.0.0</version>
 			<authors>karann</authors>
 			<owners>karann</owners>
@@ -93,13 +115,10 @@ Here is how the updated nuspec file looks:
 			<releaseNotes>First release</releaseNotes>
 			<copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</copyright>
 			<tags>application app logger logging logs</tags>
-			<dependencies>
-				<dependency id="SampleDependency" version="1.0" />
-			</dependencies>
 		</metadata>
 	</package>
 
-Especially for packages that are build for public consumtion, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
+Especially for packages that are build for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
@@ -109,32 +128,32 @@ Especially for packages that are build for public consumtion, it is a good pract
 ##Adding reference assemblies
 In order to pack reference assemblies, you need add the following to the files element in your nuspec.
 
-		<!--Core-->
-		<file src="LoggingLibrary\Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.LoggingLibrary.dll" />
-		<file src="LoggingLibrary\Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.LoggingLibrary.xml" />
+	<!--Core-->
+	<file src="LoggingLibrary\bin\Release\LoggingLibrary.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.dll" />
+	<file src="LoggingLibrary\bin\Release\LoggingLibrary.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.xml" />
 			
 ##Adding assemblies for iOS
 To pack iOS assemblies, you need add the following to the files element in your nuspec.
 
-		<!--Xamarin.iOS-->
-		<file src="LoggingLibrary\Plugin.LoggingLibrary.iOS\bin\iPhone\Release\Plugin.LoggingLibrary.dll" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.dll" />
-		<file src="LoggingLibrary\Plugin.LoggingLibrary.iOS\bin\iPhone\Release\Plugin.LoggingLibrary.xml" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.xml" />
+	<!--Xamarin.iOS-->
+	<file src="LoggingLibrary.iOS\bin\Release\LoggingLibrary.dll" target="lib\Xamarin.iOS10\LoggingLibrary.dll" />
+	<file src="LoggingLibrary.iOS\bin\Release\LoggingLibrary.xml" target="lib\Xamarin.iOS10\LoggingLibrary.xml" />
 			
 
 ##Adding assemblies for Android
 To pack Android assemblies, you need add the following to the files element in your nuspec.
 
-		<!--Xamarin.Android-->
-		<file src="LoggingLibrary\Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.dll" target="lib\MonoAndroid10\Plugin.LoggingLibrary.dll" />
-		<file src="LoggingLibrary\Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.xml" target="lib\MonoAndroid10\Plugin.LoggingLibrary.xml" />
+	<!--Xamarin.Android-->
+	<file src="LoggingLibrary.Android\bin\Release\LoggingLibrary.dll" target="lib\MonoAndroid10\LoggingLibrary.dll" />
+	<file src="LoggingLibrary.Android\bin\Release\LoggingLibrary.xml" target="lib\MonoAndroid10\LoggingLibrary.xml" />
 				
 
 ##Adding assemblies for UWP
 To pack UWP assemblies, you need add the following to the files element in your nuspec.
 
-		<!--uap-->
-		<file src="LoggingLibrary\Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.dll" target="lib\UAP10\Plugin.LoggingLibrary.dll" />
-		<file src="LoggingLibrary\Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
+	<!--uap-->
+	<file src="LoggingLibrary.UWP\bin\Release\LoggingLibrary.dll" target="lib\UAP10\LoggingLibrary.dll" />
+	<file src="LoggingLibrary.UWP\bin\Release\LoggingLibrary.xml" target="lib\UAP10\LoggingLibrary.xml" />
 				
 
 ##Adding dependencies
@@ -192,17 +211,17 @@ The final nuspec will look something like:
 		</metadata>
 		<files>
 			<!--Core-->
-			<file src="LoggingLibrary\Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.LoggingLibrary.dll" />
-			<file src="LoggingLibrary\Plugin.LoggingLibrary\bin\Release\Plugin.LoggingLibrary.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.LoggingLibrary.xml" />
+			<file src="LoggingLibrary\bin\Release\LoggingLibrary.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.dll" />
+			<file src="LoggingLibrary\bin\Release\LoggingLibrary.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.xml" />
 			<!--Xamarin.iOS-->
-			<file src="LoggingLibrary\Plugin.LoggingLibrary.iOS\bin\iPhone\Release\Plugin.LoggingLibrary.dll" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.dll" />
-			<file src="LoggingLibrary\Plugin.LoggingLibrary.iOS\bin\iPhone\Release\Plugin.LoggingLibrary.xml" target="lib\Xamarin.iOS10\Plugin.LoggingLibrary.xml" />
+			<file src="LoggingLibrary.iOS\bin\Release\LoggingLibrary.dll" target="lib\Xamarin.iOS10\LoggingLibrary.dll" />
+			<file src="LoggingLibrary.iOS\bin\Release\LoggingLibrary.xml" target="lib\Xamarin.iOS10\LoggingLibrary.xml" />
 			<!--Xamarin.Android-->
-			<file src="LoggingLibrary\Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.dll" target="lib\MonoAndroid10\Plugin.LoggingLibrary.dll" />
-			<file src="LoggingLibrary\Plugin.LoggingLibrary.Android\bin\Release\Plugin.LoggingLibrary.xml" target="lib\MonoAndroid10\Plugin.LoggingLibrary.xml" />
+			<file src="LoggingLibrary.Android\bin\Release\LoggingLibrary.dll" target="lib\MonoAndroid10\LoggingLibrary.dll" />
+			<file src="LoggingLibrary.Android\bin\Release\LoggingLibrary.xml" target="lib\MonoAndroid10\LoggingLibrary.xml" />
 			<!--uap-->
-			<file src="LoggingLibrary\Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.dll" target="lib\UAP10\Plugin.LoggingLibrary.dll" />
-			<file src="LoggingLibrary\Plugin.LoggingLibrary.UWP\bin\Release\Plugin.LoggingLibrary.xml" target="lib\UAP10\Plugin.LoggingLibrary.xml" />
+			<file src="LoggingLibrary.UWP\bin\Release\LoggingLibrary.dll" target="lib\UAP10\LoggingLibrary.dll" />
+			<file src="LoggingLibrary.UWP\bin\Release\LoggingLibrary.xml" target="lib\UAP10\LoggingLibrary.xml" />
 		</files>
 	</package>
 
@@ -217,4 +236,4 @@ Now run the `pack` command
 
 This will generate a new file `LoggingLibrary.1.0.0.nupkg`. Open this file. The contents should look something like
 
-![nupkg](/images/BuildForXplat/??.PNG)
+![nupkg](/images/BuildForXplat/04.PNG)
