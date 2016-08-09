@@ -90,7 +90,7 @@ Update the metadata for the package. The updated nuspec should look like below.
 	  </metadata>
 	</package>
 
-Especially for packages that are build for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
+Especially for packages that are built for public consumption, it is a good practice to update the metadata tags making it easier for others to find the package and understand what it does and how to use it.
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
