@@ -18,7 +18,7 @@ In this case you need to add the uap10.0 TxM to your package. Create a new direc
 
 In this case you would add the new dotnet TxM to your package. Unlike other TxMs dotnet doesn’t imply a surface area or platform. It is stating that your package will work on any platform that your dependencies work on. When building a package with the dotnet TxM you are likely to have many more TxM specific dependencies in your NuSpec, as you will need to define the BCL packages you depend on, such System.Text, System.Xml, etc. The locations that those dependencies work on define where your package will work.  
 
-### How do I find out my dependencies?
+### How do I find out my dependencies
 
 There are two ways to figure out which dependencies to list:
 
