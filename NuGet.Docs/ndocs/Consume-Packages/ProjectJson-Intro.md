@@ -77,7 +77,7 @@ project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs,
 
 Traditional NuGet packages support a set of features that are not carried over to the transitive world. 
 
-### Install/Uninstall scripts 
+### Install and Uninstall scripts 
 
 These scripts are not supported and will be ignored. In case they exist in the package a project using transitive restore. 
 

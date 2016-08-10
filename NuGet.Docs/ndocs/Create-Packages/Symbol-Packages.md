@@ -1,7 +1,5 @@
 ﻿# Creating and Publishing a Symbol Package
 
-## Introduction
-
 Apart from building library/content packages and publishing them to [NuGet.org](http://nuget.org),
 NuGet also supports creating symbol/source packages and publishing them to the new [SymbolSource.org service](https://tripleemcoder.com/2015/10/04/moving-to-the-new-symbolsource-engine/).
 When a package is published to both repositories, Visual Studio can be configured to automatically download 
