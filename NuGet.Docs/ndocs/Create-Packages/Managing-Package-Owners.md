@@ -2,7 +2,7 @@
 
 While each NuGet package's [nuspec metadata](/ndocs/schema/nuspec) defines the package's owner(s), the NuGet gallery at nuget.org ignores that piece of nuspec metadata.  Instead, ownership of a package is defined by who publishes the package to the gallery.  Sometimes this metadata needs to be managed beyond the initial package publishing which means the owner metadata needs to be mutable while the package itself is not.
 
-## Setting a Package's Initial Owner ##
+## Setting Initial Owner ##
 When a brand new package is published to nuget.org, its initial owner is defined by the user that published the package.
 
 1. If the [nuget.org](https://www.nuget.org)'s 'Upload Package' page was used to publish the package, then the logged-on user when the package is uploaded is the package's owner.

@@ -1,6 +1,9 @@
 # NuGet Package Restore
 
-> **Important**: Nuget Automatic Package Restore has changed in Nuget 2.7+. Do not mix 'old' and new methods for automatic package restoration. For more information, see Common Issues with Automatic Package Restore, below.
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Nuget Automatic Package Restore has changed in Nuget 2.7+. Do not mix 'old' and new methods for automatic package restoration. For more information, see <a href="#common-issues-with-automatic-package-restore">Common Issues with Automatic Package Restore</a>.
+</div>
 
 Many developers like to omit binaries from their source control repository. This can be beneficial in multiple ways:
 
