@@ -492,7 +492,11 @@ Generates a nuspec for a new package. If this command is run in the same folder 
 
     nuget spec -a MyAssembly.dll
 
-##  pack (v<em>2.7</em>+)
+##  pack
+
+<div class="block-callout-info">
+	<strong>Note:</strong> Applies to v<em>2.7</em>+
+</div>
 
 Creates a NuGet package based on the specified nuspec or project file.
 
@@ -772,7 +776,11 @@ destination package source, use the `-expand` switch.
 
     nuget init \\foo\packages \\bar\packages
 
-## add (v<em>3.3</em>+)
+## add
+
+<div class="block-callout-info">
+	<strong>Note:</strong> Applies to v<em>3.3</em>+
+</div>
 
 Adds a specified package to your package source
 in a hierarchical layout as described below. When restoring or updating against your package source, 
@@ -859,7 +867,11 @@ Gets or sets NuGet config values.
 
     nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
 
-## locals (v<em>3.3</em>+)
+## locals
+
+<div class="block-callout-info">
+	<strong>Note:</strong> Applies to v<em>3.3</em>+
+</div>
 
 Clears or lists local NuGet resources such as http request cache, packages cache, or machine-wide global packages folder.
 
@@ -889,12 +901,12 @@ packages-cache, global-pacakges, (v<em>3.4</em>) temp.
 	</tr>
 </table>
 
-##  mirror [Deprecated from v3.2+]
+##  mirror
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository. 
 
 <div class="block-callout-info">
-    <strong>Note: </strong><br>
+    <strong>Note: Deprecated from v3.2+</strong><br>
     To enable this command for versions of NuGet before v<em>3.2</em>, navigate to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe..  
 </div>
 
