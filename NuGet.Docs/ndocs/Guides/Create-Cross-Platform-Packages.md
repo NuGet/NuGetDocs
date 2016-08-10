@@ -128,9 +128,9 @@ Especially for packages that are built for public consumption, it is a good prac
 ##Adding reference assemblies
 In order to pack reference assemblies, you need add the following to the files element in your nuspec.
 
-	<!--Core-->
-	<file src="LoggingLibrary\bin\Release\LoggingLibrary.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.dll" />
-	<file src="LoggingLibrary\bin\Release\LoggingLibrary.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.xml" />
+	<!--Reference Assemblies-->
+	<file src="LoggingLibrary\bin\Release\LoggingLibrary.dll" target="lib\netstandard1.4\LoggingLibrary.dll" />
+	<file src="LoggingLibrary\bin\Release\LoggingLibrary.xml" target="lib\netstandard1.4\LoggingLibrary.xml" />
 			
 ##Adding assemblies for iOS
 To pack iOS assemblies, you need add the following to the files element in your nuspec.
@@ -159,27 +159,26 @@ To pack UWP assemblies, you need add the following to the files element in your 
 ##Adding dependencies
 If you want to have specific dependencies for native implementations, you can use the following dependencies element with group elements to specificy these dependencies.
 
-		<dependencies>
-			<group targetFramework="MonoAndroid">
-			</group>
-			<group targetFramework="Xamarin.iOS10">
-			</group>
-			<group targetFramework="uap">
-			</group>
-		</dependencies>
+	<dependencies>
+		<group targetFramework="MonoAndroid">
+		<!--MonoAndroid dependencies go here-->
+		</group>
+		<group targetFramework="Xamarin.iOS10">
+		<!--Xamarin.iOS10 dependencies go here-->
+		</group>
+		<group targetFramework="uap">
+		<!--uap dependencies go here-->
+		</group>
+	</dependencies>
 
 ###Example
-In the following example we have added NewtonSoft to UAP
+In the following example we have added iTextSharp to UAP
 
-		<dependencies>
-			<group targetFramework="MonoAndroid">
-			</group>
-			<group targetFramework="Xamarin.iOS10">
-			</group>
-			<group targetFramework="uap">
-				<dependency id="Newtonsoft.Json" version="8.0.3" />
-			</group>
-		</dependencies>
+	<dependencies>
+		<group targetFramework="uap">
+			<dependency id="iTextSharp" version="5.5.9" />
+		</group>
+	</dependencies>
 
 ##Final nuspec
 The final nuspec will look something like:
@@ -205,14 +204,14 @@ The final nuspec will look something like:
 				<group targetFramework="Xamarin.iOS10">
 				</group>
 				<group targetFramework="uap">
-					<dependency id="Newtonsoft.Json" version="8.0.3" />
+					<dependency id="iTextSharp" version="5.5.9" />
 				</group>
 			</dependencies>
 		</metadata>
 		<files>
-			<!--Core-->
-			<file src="LoggingLibrary\bin\Release\LoggingLibrary.dll" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.dll" />
-			<file src="LoggingLibrary\bin\Release\LoggingLibrary.xml" target="lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\LoggingLibrary.xml" />
+			<!--Reference Assemblies-->
+			<file src="LoggingLibrary\bin\Release\LoggingLibrary.dll" target="lib\netstandard1.4\LoggingLibrary.dll" />
+			<file src="LoggingLibrary\bin\Release\LoggingLibrary.xml" target="lib\netstandard1.4\LoggingLibrary.xml" />
 			<!--Xamarin.iOS-->
 			<file src="LoggingLibrary.iOS\bin\Release\LoggingLibrary.dll" target="lib\Xamarin.iOS10\LoggingLibrary.dll" />
 			<file src="LoggingLibrary.iOS\bin\Release\LoggingLibrary.xml" target="lib\Xamarin.iOS10\LoggingLibrary.xml" />
