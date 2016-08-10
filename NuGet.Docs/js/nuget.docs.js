@@ -170,7 +170,7 @@ $(document).ready(function () {
         $('#a-Guides').click();
     }
     else if (url.indexOf("/host-packages") != -1) {
-        $('#a-Host-Packages').click();
+        $('#a-Hosting-Packages').click();
     }
     else if (url.indexOf("/visual-studio-extensibility") != -1) {
         $('#a-Visual-Studio-Extensibility').click();
