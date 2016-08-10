@@ -146,6 +146,10 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
         <td>verbosity</td>
         <td>Specifies the amount of details displayed in the output: normal, quiet, (v<em>2.5</em>) detailed.</td>
     </tr>
+    <tr>
+        <td>Version</td>
+        <td>The version of the package to update. Requires -Id to contain exactly one package id.</td>
+    </tr>
 </table>
 
 ### Examples
