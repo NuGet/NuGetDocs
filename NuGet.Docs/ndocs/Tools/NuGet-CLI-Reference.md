@@ -329,9 +329,9 @@ This behavior varies depending on the source, nuget.org for example does not all
     </tr>
     <tr>
         <td>source</td>
-        <td>Specifies the server URL. Supported URL's for nuget.org include - http://www.nuget.org,
-        http://www.nuget.org/api/v3,
-        http://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3).</td>
+        <td>Specifies the server URL. Supported URL's for nuget.org include - https://www.nuget.org,
+        https://www.nuget.org/api/v3,
+        https://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3).</td>
     </tr>
     <tr>
         <td>verbosity</td>
@@ -681,7 +681,7 @@ Specify the path to the package and your API key to push the package to the serv
 
     nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://customsource/
+    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
 
     nuget push foo.nupkg
 
@@ -732,7 +732,7 @@ is saved for the NuGet gallery.
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source http://example.com/nugetfeed
+    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com/nugetfeed
 
 ## init 
 
@@ -915,7 +915,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
 Specify the id of the package to mirror, the url to query the target repository (list ) and the url to push packages to the target repository. If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
 
-Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be [http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
+Assuming you're targeting a private repository under [https://machine/repo](https://machine/repo) installed using NuGet.Server, the list and push urls will be [https://machine/repo/nuget](https://machine/repo/nuget) and [https://machine/repo/api/v2/package](https://machine/repo/api/v2/package) respectively.
 
 ### Options
 <table>
@@ -963,11 +963,11 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
 
 ### Examples
 
-    nuget mirror packages.config  http://MyRepo/nuget http://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
+    nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
 
-    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/nuget http://MyRepo/api/v2/package -version 4.0.20505.0
+    nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0
 
-    nuget mirror Microsoft.Net.Http http://MyRepo/nuget http://MyRepo/api/v2/package -prerelease
+    nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/package -prerelease
 
 ##  help 
 
