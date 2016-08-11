@@ -84,8 +84,10 @@ Having finalized the nuspec file, we are now ready to create the nuget package.
 
 Now run the <code>pack</code> command on the project:
 
+<code class="bash hljs">
 	nuget pack AppLogger.csproj
-
+</code>
+	
 You will get warnings if you haven't updated the release notes and tags from their default values.
 
 When the command has completed successfully, it will generate a new file `AppLogger.1.0.0.0.nupkg`. This is your nuget package.
@@ -118,10 +120,13 @@ Open your command prompt and run the following command. Replace the key below wi
 
 You should see something like this when the command has successfully executed.
 
+<code class="bash hljs">
 	Pushing AppLogger.1.0.0.0.nupkg to 'https://www.nuget.org/api/v2/package'...
 	  PUT https://www.nuget.org/api/v2/package/
 	  Created https://www.nuget.org/api/v2/package/ 6829ms
 	Your package was pushed.
+</code>
+	
 
 You can now go to your account on nuget.org and under <b>Manage my packages</b>, you should be able to see the package that you just published. You should also receive an email notifying you that the package was published.
 
