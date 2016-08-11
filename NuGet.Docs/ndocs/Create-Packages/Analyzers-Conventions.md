@@ -47,61 +47,59 @@ if the user's project is using package.config, the msbuild script that picks up 
 NOTE:  **install.ps1** and **uninstall.ps1** are only executed for packages.config scenarios.  In the case of Project.json these scripts are never executed.
 
 **install.ps1 file contents**
-```PowerShell
 
-param($installPath, $toolsPath, $package, $project)
+	param($installPath, $toolsPath, $package, $project)
 
-$analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
+	$analyzersPaths = Join-Path (Join-Path (Split-Path -Path $toolsPath -Parent) "analyzers" ) * -Resolve
 
-foreach($analyzersPath in $analyzersPaths)
-{
-    # Install the language agnostic analyzers.
-    if (Test-Path $analyzersPath)
-    {
-        foreach ($analyzerFilePath in Get-ChildItem $analyzersPath -Filter *.dll)
-        {
-            if($project.Object.AnalyzerReferences)
-            {
-                $project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
-            }
-        }
-    }
-}
+	foreach($analyzersPath in $analyzersPaths)
+	{
+		# Install the language agnostic analyzers.
+		if (Test-Path $analyzersPath)
+		{
+			foreach ($analyzerFilePath in Get-ChildItem $analyzersPath -Filter *.dll)
+			{
+				if($project.Object.AnalyzerReferences)
+				{
+					$project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
+				}
+			}
+		}
+	}
 
-$project.Type gives the language name like (C# or VB.NET)
-$languageFolder = ""
-if($project.Type -eq "C#")
-{
-    $languageFolder = "cs"
-}
-if($project.Type -eq "VB.NET")
-{
-    $languageFolder = "vb"
-}
-if($languageFolder -eq "")
-{
-    return
-}
+	$project.Type gives the language name like (C# or VB.NET)
+	$languageFolder = ""
+	if($project.Type -eq "C#")
+	{
+		$languageFolder = "cs"
+	}
+	if($project.Type -eq "VB.NET")
+	{
+		$languageFolder = "vb"
+	}
+	if($languageFolder -eq "")
+	{
+		return
+	}
 
-foreach($analyzersPath in $analyzersPaths)
-{
-    # Install language specific analyzers.
-    $languageAnalyzersPath = join-path $analyzersPath $languageFolder
-    if (Test-Path $languageAnalyzersPath)
-    {
-        foreach ($analyzerFilePath in Get-ChildItem $languageAnalyzersPath -Filter *.dll)
-        {
-            if($project.Object.AnalyzerReferences)
-            {
-                $project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
-            }
-        }
-    }
-}
+	foreach($analyzersPath in $analyzersPaths)
+	{
+		# Install language specific analyzers.
+		$languageAnalyzersPath = join-path $analyzersPath $languageFolder
+		if (Test-Path $languageAnalyzersPath)
+		{
+			foreach ($analyzerFilePath in Get-ChildItem $languageAnalyzersPath -Filter *.dll)
+			{
+				if($project.Object.AnalyzerReferences)
+				{
+					$project.Object.AnalyzerReferences.Add($analyzerFilePath.FullName)
+				}
+			}
+		}
+	}
 
 
 **uninstall.ps1 file contents**
-```PowerShell
 
     param($installPath, $toolsPath, $package, $project)
 
@@ -159,7 +157,7 @@ foreach($analyzersPath in $analyzersPaths)
             }
         }
     }
-```
+
 
 ## Example Analyzer Package for Both Project.json and Packages.config##
 
