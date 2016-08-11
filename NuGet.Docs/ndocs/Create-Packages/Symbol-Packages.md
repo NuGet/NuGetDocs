@@ -42,7 +42,7 @@ plus it should contain PDB files alongside DLLs. An example symbol package that 
 
 Source files are placed in a separate special folder - `src`. This folder needs to follow the relative structure 
 of your source repository, because PDBs contain absolute paths to source files used to compile a matching DLL, and 
-they need to be found during publishing on [SymbolSource.org](http://symbolsource.org). A base path (common path 
+they need to be found during publishing on [SymbolSource.org](http://www.symbolsource.org/Public). A base path (common path 
 prefix) can be stripped out. Consider an example library built from these files:
 
 	C:\Projects
