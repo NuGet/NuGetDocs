@@ -1,6 +1,6 @@
 #Create Cross Platform Packages
 
-This guide will walk you through creating a cross platoform library that targets iOS, Android and Windows. The scenario we are trying to complete here is to build a logging library that uses native APIs on each platform. This is pretty easy to do but in order to share more code, it is pertinent that we enable users to consume this API surface from PCL or NET Standard libraries. To do this, we will exercise a technique which is popularly known as bait and switch. A primer for bait and switch is available [here](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/) 
+This guide will walk you through creating a cross platform library that targets iOS, Android and Windows. The scenario we are trying to complete here is to build a logging library that uses native APIs on each platform. This is pretty easy to do but in order to share more code, it is pertinent that we enable users to consume this API surface from PCL or NET Standard libraries. To do this, we will exercise a technique which is popularly known as bait and switch. A primer for bait and switch is available [here](http://log.paulbetts.org/the-bait-and-switch-pcl-trick/) 
 
 ##Pre-requisites
 1. [Visual Studio 2015 Update 3](https://www.visualstudio.com/news/releasenotes/vs2015-update3-vs). If you don't have Visual Studio already, you can download [Visual Studio Community 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs) for free.
@@ -96,7 +96,7 @@ This will generate a new file `Package.nuspec`.  Rename it to `LoggingLibrary.nu
 		</metadata>
 	</package>
 
-Update the nuspec to have all the relevant metadata. For more detals read the [nuspec reference](/ndocs/schema/nuspec)
+Update the nuspec to have all the relevant metadata. For more details read the [nuspec reference](/ndocs/schema/nuspec)
 
 Here is how the updated nuspec file looks:
 
@@ -157,7 +157,7 @@ To pack UWP assemblies, you need add the following to the files element in your 
 				
 
 ##Adding dependencies
-If you want to have specific dependencies for native implementations, you can use the following dependencies element with group elements to specificy these dependencies.
+If you want to have specific dependencies for native implementations, you can use the following dependencies element with group elements to specify these dependencies.
 
 	<dependencies>
 		<group targetFramework="MonoAndroid">

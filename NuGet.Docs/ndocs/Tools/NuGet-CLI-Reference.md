@@ -95,7 +95,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
 <table>
     <tr>
         <td>configfile</td>
-        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified NuGet.config
+        <td>(v<em>2.5</em>) Specifies the NuGet configuration file. If not specified NuGet.config
         is used.</td>
     </tr>
     <tr>
@@ -706,7 +706,7 @@ is saved for the NuGet gallery.
 <table>
     <tr>
         <td>configfile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        <td>(v<em>2.5</em>) The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
     <tr>
@@ -841,7 +841,7 @@ Gets or sets NuGet config values.
 <table>
     <tr>
         <td>configfile</td>
-        <td>The NuGet configuation file. If not specified, file
+        <td>The NuGet configuration file. If not specified, file
         %AppData%\NuGet\NuGet.config is used as configuration file.</td>
     </tr>
     <tr>
@@ -878,7 +878,7 @@ Clears or lists local NuGet resources such as http request cache, packages cache
 	nuget locals <target> -clear
 
 Where &lt;target> is one of the following options: all, http-cache, 
-packages-cache, global-pacakges, (v<em>3.4</em>) temp.
+packages-cache, global-packages, (v<em>3.4</em>) temp.
 ### Options
 
 <table>

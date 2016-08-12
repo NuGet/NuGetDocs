@@ -34,8 +34,8 @@ When a package has multiple owners and one needs to be removed the process is si
 3. When logged on as the package's owner, there is a 'Manage Owners' link on the left side to click
 4. Click the 'remove' link next to the owner to be removed
 
-## Transfering Package Ownership ##
-We sometimes get support requests to transfer package ownership from one user to another, but you can almost always accomplish this yourself.  Transfering ownership from one user to another is simply a combination of the two features above.
+## Transferring Package Ownership ##
+We sometimes get support requests to transfer package ownership from one user to another, but you can almost always accomplish this yourself.  Transferring ownership from one user to another is simply a combination of the two features above.
 
 1. The current owner invites the new user to become a co-owner and the new user accepts the invite
 2. The new user removes the old user from the list of owners

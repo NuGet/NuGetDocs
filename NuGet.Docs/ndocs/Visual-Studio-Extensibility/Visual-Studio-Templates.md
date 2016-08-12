@@ -57,7 +57,7 @@ is available in the online package feed.
 The reason for this behavior is that a future version of a package might introduce a change that is not compatible with the project/item template. The choice to upgrade the package to the latest version using NuGet is left to the developer who is in the best position to assume the risks of upgrading the package to the latest version.
 
 <div class="block-callout-info">
-    <strong>Support of mulitple packages elements:</strong><br>
+    <strong>Support of multiple packages elements:</strong><br>
     Starting with NuGet 2.2.1, the wizard also supports multiple `<packages>` elements. This enables scenarios where some packages are installed from one repository, but other packages are installed from a different repository.
 </div>
 
@@ -102,7 +102,7 @@ You can place the nupkg files in the same VSIX as your project templates or you 
 
 ### Template package repository
 
-If packaging multiple projects is not important to you (e.g. you are only distributing a single project/item template), a simpler but also more limited approach is to include the nupgk files in the project/item template zip file itself.
+If packaging multiple projects is not important to you (e.g. you are only distributing a single project/item template), a simpler but also more limited approach is to include the nupkg files in the project/item template zip file itself.
 
 However, if you are bundling a set of project/item templates that relate to each other and share NuGet packages (e.g. you are shipping a custom MVC project template with versions for Razor, Web Forms, C#, and VB.NET), we do not recommend adding the NuGet packages directly to each project/item template zip file. It needlessly increases the size of the project/item template bundle.
 

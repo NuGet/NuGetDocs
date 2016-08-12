@@ -64,7 +64,7 @@ The NuGet Package Manager Console requires that [PowerShell 2.0](http://support.
 You can update NuGet using the Visual Studio Extension Manager. Navigate to the Extension Manager and click on the Updates tab to check for updates. If there is a new version of NuGet you will see it in the list of available updates. If you are using Visual Studio 2015 Update 2 or higher, the NuGet extension is auto updated every time a new stable release is made available.
 
 ## NuGet Beta Channel
-NuGet Beta Channel for the Visual Studio 2015 NuGet Package Manager gives you access to Beta releases. Though called a Beta release, we will only make available high quality builds that are close to being complete on this channel. We want to use this feedback mechanism to make sure that our near-final builds do not introduce any indvertent issues.
+NuGet Beta Channel for the Visual Studio 2015 NuGet Package Manager gives you access to Beta releases. Though called a Beta release, we will only make available high quality builds that are close to being complete on this channel. We want to use this feedback mechanism to make sure that our near-final builds do not introduce any inadvertent issues.
 
 <div class="block-callout-info">
 	If you run into any issues while dogfooding the Beta build or have an idea you would like to share with us, <a href="https://github.com/Nuget/Home">open an issue on GitHub</a>.
