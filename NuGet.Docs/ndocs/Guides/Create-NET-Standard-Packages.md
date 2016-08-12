@@ -175,7 +175,7 @@ The project.json should now look like:
 	  }
 	}
 
-"Microsoft.NETCore.Portable.Compatibility"	enables compatiblity with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight.
+"Microsoft.NETCore.Portable.Compatibility"	enables compatibility with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight.
 
 **Recommended Reading:** [Introduction to project.json](/ndocs/consume-packages/projectjson-intro)
 

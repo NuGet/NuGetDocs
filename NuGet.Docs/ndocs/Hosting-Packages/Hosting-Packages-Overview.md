@@ -24,7 +24,7 @@ There are several third-party NuGet Servers available that make remote private f
 
 [Inedo's ProGet](http://inedo.com/proget)
 
-[JFrog's Artifactory](http://www.jfrog.com/home/v_artifactorypro_overview)
+[JFrog's Artifactory](https://www.jfrog.com/artifactory/)
 
 [NuGet Server](http://nugetserver.net/)
 

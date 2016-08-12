@@ -85,4 +85,4 @@ In Figure 7 both Package A and C depend on Package B. But C is not an ancestor o
 
 *Figure 8 - Irreconcilable cousin dependencies*
 
-In Figure 8 both package A and package C depend on B, just as in Figure 7, but this time package A has an exact version constraint on version 1.0 whilst package C has a greater than 2.0 constraint. This is an error condition for the resolver as it cannot satisfy all of the version constraints. In order to fix it, the consumer needs to specify Package B's version as a top level dependency of MyApp, which will lead to a nearset win rule being applied.
+In Figure 8 both package A and package C depend on B, just as in Figure 7, but this time package A has an exact version constraint on version 1.0 whilst package C has a greater than 2.0 constraint. This is an error condition for the resolver as it cannot satisfy all of the version constraints. In order to fix it, the consumer needs to specify Package B's version as a top level dependency of MyApp, which will lead to a nearest win rule being applied.
