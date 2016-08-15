@@ -111,22 +111,20 @@ NuGet copies assemblies from only a single library folder. For example, suppose 
 	    \Net45
 	        \MyAssembly.dll (v2.0)
 
-When the package is installed in a project that targets the .NET Framework 4, *MyAssembly.dll (v1.0)* is the only assembly installed. *MyAssembly.Core.dll (v1.0)* is not installed. (One reason why NuGet behaves this way is that *MyAssembly.Core* might have been merged 
-into version 4.0 of *MyAssembly*.) 
+When the package is installed in a project that targets the .NET Framework 4.5, *MyAssembly.dll (v2.0)* is the only assembly installed. *MyAssembly.Core.dll (v1.0)* is not installed. (One reason why NuGet behaves this way is that *MyAssembly.Core* might have been merged into version 2.0 of *MyAssembly*.) 
 
 In this example, if you want *MyAssembly.Core.dll* to be installed in a project that targets the .NET Framework 4.5, 
-you must include it in the `Net45` folder as well as in the `Net20` folder.
+you must include it in the `Net45` folder as well as in the `Net40` folder.
 
 The rule about copying assemblies from only one folder also applies to the root `lib` folder. Suppose a package has the following folder structure:
 
 	\lib
 	    \MyAssembly.dll (v1.0)
-	        \MyAssembly.Core.dll (v1.0)
-	    \Net40
+	    \MyAssembly.Core.dll (v1.0)
+	    \Net45
 	        \MyAssembly.dll (v2.0)
 
-In projects that target the .NET Framework 4.0 and the .NET Framework 4.5, NuGet copies both *MyAssembly.dll* and *MyAssembly.Core.dll*. But as was true of the previous example, 
-in projects that target the .NET Framework 4.5, only *MyAssembly.dll* from the `Net45` folder will be copied. 
+In projects that target the .NET Framework 4.0 and the .NET Framework 3.5, NuGet copies both *MyAssembly.dll* and *MyAssembly.Core.dll*. But as was true of the previous example, in projects that target the .NET Framework 4.5, only *MyAssembly.dll* from the `Net45` folder will be copied. 
 
 As in the previous example, if you want *MyAssembly.Core.dll* to be installed in a project that targets the .NET Framework 4.5, you must include it in the *Net45* folder.
 
