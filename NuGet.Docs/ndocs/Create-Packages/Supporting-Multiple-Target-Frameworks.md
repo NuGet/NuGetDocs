@@ -19,14 +19,14 @@ with which framework versions:
 
 The following example shows a folder structure that supports four versions of a library:
 
-	\lib<br>
+	\lib
 	    \net46
 	        \MyAssembly.dll
-	    \net461<br>
+	    \net461
 	        \MyAssembly.dll
-	    \uap<br>
+	    \uap
 	        \MyAssembly.dll
-	    \netcore<br>
+	    \netcore
 	        MyAssembly.dll
 
 ### Content Files and PowerShell Scripts
@@ -69,7 +69,7 @@ object. Names are case insensitive, and you can use abbreviations for both frame
  
 If you omit the framework name, the .NET Framework is assumed. For example, the following folder structure is equivalent to the previous one:
 
-	\lib<br>
+	\lib
 	    \net46
 	        \MyAssembly.dll
 	    \uap
