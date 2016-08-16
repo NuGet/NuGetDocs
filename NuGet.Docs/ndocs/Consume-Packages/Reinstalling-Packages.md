@@ -41,7 +41,7 @@ The cases above are covered in detail below:
 
 ## Background and Reference
 
-1.	[Package can support multiple .NET Framework Versions and Profiles](../create-packages/supporting-multiple-target-frameworks)
+1.	[Package can support multiple .NET Framework Versions and Profiles](https://docs.nuget.org/Create/Enforced-Package-Conventions)
 2.	[Original Codeplex discussion on –reinstall switch](https://nuget.codeplex.com/discussions/256212)
 3.	[Codeplex Issue with info on various cases involved with -reinstall switch](http://nuget.codeplex.com/workitem/1779)
 4.	[Blog Post: A quick tutorial on the Update-Package command](http://blog.nuget.org/20121231/a-quick-tutorial-on-update-package-command.html)
