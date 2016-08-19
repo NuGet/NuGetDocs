@@ -1,20 +1,17 @@
 ﻿// Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NuGet.Docs")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany(".NET Foundation")]
 [assembly: AssemblyProduct("NuGet.Docs")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyTitle("NuGet.Docs.MarkdownPages")]
+[assembly: AssemblyCopyright("\x00a9 .NET Foundation. All rights reserved.")]
+[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

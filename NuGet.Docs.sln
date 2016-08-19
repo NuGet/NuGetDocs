@@ -1,33 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25414.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Docs.MarkdownPages", "NuGet.Docs.MarkdownPages\NuGet.Docs.MarkdownPages.csproj", "{68B89ADD-A928-4B5C-8173-EC38C282C918}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "NuGet.Docs", "http://localhost:50550", "{64E2B1F4-E6B0-4602-8E71-484A259BA84C}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6"
-		ProjectReferences = "{68b89add-a928-4b5c-8173-ec38c282c918}|NuGet.Docs.MarkdownPages.dll;{29cf31a9-6a74-4217-9b51-cc6d636ae71e}|NuGet.Docs.References.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50550"
-		Debug.AspNetCompiler.PhysicalPath = "NuGet.Docs\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50550\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50550"
-		Release.AspNetCompiler.PhysicalPath = "NuGet.Docs\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50550\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "NuGet.Docs\"
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Docs.References", "NuGet.Docs.References\NuGet.Docs.References.csproj", "{29CF31A9-6A74-4217-9B51-CC6D636AE71E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGet.Docs", "NuGet.Docs\NuGet.Docs.csproj", "{C6BF801D-1C21-45A3-AB37-551A8CEEE6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +17,10 @@ Global
 		{68B89ADD-A928-4B5C-8173-EC38C282C918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68B89ADD-A928-4B5C-8173-EC38C282C918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68B89ADD-A928-4B5C-8173-EC38C282C918}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64E2B1F4-E6B0-4602-8E71-484A259BA84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64E2B1F4-E6B0-4602-8E71-484A259BA84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64E2B1F4-E6B0-4602-8E71-484A259BA84C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{64E2B1F4-E6B0-4602-8E71-484A259BA84C}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{29CF31A9-6A74-4217-9B51-CC6D636AE71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29CF31A9-6A74-4217-9B51-CC6D636AE71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29CF31A9-6A74-4217-9B51-CC6D636AE71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29CF31A9-6A74-4217-9B51-CC6D636AE71E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BF801D-1C21-45A3-AB37-551A8CEEE6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BF801D-1C21-45A3-AB37-551A8CEEE6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BF801D-1C21-45A3-AB37-551A8CEEE6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BF801D-1C21-45A3-AB37-551A8CEEE6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
