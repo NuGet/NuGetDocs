@@ -358,6 +358,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="consume\Locals-Help.cshtml" />
+    <Content Include="ndocs\Guides\Locals-Command-Help.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
