@@ -195,20 +195,18 @@ d) F:\Project2\NuGet.config with content:
 	Closest to the folder nuget.exe runs from wins.
 </div>
 
-NuGet config files are treated in the following priority order, for example assuming the solution directory is c:\a\b\c:
+Starting with NuGet 3.4, config files are treated in the following priority order, for example assuming the solution directory is c:\a\b\c:
 
-	c:\a\b\c\.nuget\nuget.config - Onlyfor solution level packages, and not supported in nuget 3.0+
+	c:\a\b\c\.nuget\nuget.config - Only for solution level packages, and not supported in nuget 3.0+
 	c:\a\b\c\nuget.config
 	c:\a\b\nuget.config
 	c:\a\nuget.config
 	c:\nuget.config
-	User specific config file, %AppData%\NuGet\nuget.config. 
+	User specific config file, %AppData%\NuGet\nuget.config.
 
 	Or the user specified file thru option `-configfile`.
 
-### Machine Wide Config File
-
-Starting with NuGet 2.6, with the new config extensibility point, a new location for machine wide config files located under directory `%ProgramData%\NuGet\Config` are read after the user specific config file. So, the above list now becomes:
+Starting with NuGet 2.6 upto 3.3, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
 
 	c:\a\b\c\\.nuget\nuget.config
 		-c:\a\b\c\nuget.config
