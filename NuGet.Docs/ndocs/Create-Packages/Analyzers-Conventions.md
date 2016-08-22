@@ -1,6 +1,6 @@
 # Analyzer Nuget Format For Project.json
 
-The proposed format should be identical to the format described [here](https://docs.nuget.org/Create/Enforced-Package-Conventions), except the specifiers in the path describe development host dependencies instead of build-time.
+The proposed format should be identical to the format described [here](/ndocs/create-packages/supporting-multiple-target-frameworks), except the specifiers in the path describe development host dependencies instead of build-time.
 
 $/analyzers/{**Framework Name**}{**Version**}/{**Supported Architecture**}/**{Supported Programming Language**}/{**Analyzer**}.dll
 
