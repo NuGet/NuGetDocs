@@ -6,7 +6,7 @@ While each NuGet package's [nuspec metadata](/ndocs/schema/nuspec) defines the p
 When a brand new package is published to nuget.org, its initial owner is defined by the user that published the package.
 
 1. If the [nuget.org](https://www.nuget.org)'s 'Upload Package' page was used to publish the package, then the logged-on user when the package is uploaded is the package's owner.
-2. If `nuget.exe push` was used to publish the package from the command-line, then the API key specified to nuget.exe will define the package's owner.  This can be done by either including the API key in the [Push command](/ndocs/tools/nuget-cli-reference#push), or by using the [SetApiKey command](/ndocs/tools/nuget-cli-reference#setapikey).
+2. If `nuget.exe push` was used to publish the package from the command-line, then the API key specified to nuget.exe will define the package's owner.  This can be done by either including the API key in the [Push command](/ndocs/tools/nuget.exe-cli-reference#push), or by using the [SetApiKey command](/ndocs/tools/nuget.exe-cli-reference#setapikey).
 
 ## Specifying Additional Package Owners ##
 It's common for a package to have multiple developers; each developer can be listed as a co-owner of the package.  Packages can also utilize a convention for "organizations" to indicate company/group ownership of a package.  For example, the Microsoft ASP.NET packages are co-owned by [microsoft](http://nuget.org/profiles/microsoft), [aspnet](http://nuget.org/profiles/aspnet), and sometimes individuals on the feature team.  The 'microsoft' and 'aspnet' accounts are simply set up with a mailing list email address that can be used to reach the teams that manage those accounts.

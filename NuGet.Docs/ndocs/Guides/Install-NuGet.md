@@ -30,7 +30,7 @@ Alternatively, Install the [NuGet.CommandLine](http://chocolatey.org/packages/Nu
 </code>
 	
 
-**Recommended Reading:**  [NuGet CLI commands](/ndocs/tools/nuget-cli-reference), [Creating a package](/ndocs/create-packages/create-a-package), [Publishing a Package](/ndocs/create-packages/publish-a-package)
+**Recommended Reading:**  [NuGet CLI commands](/ndocs/tools/nuget.exe-cli-reference), [Creating a package](/ndocs/create-packages/create-a-package), [Publishing a Package](/ndocs/create-packages/publish-a-package)
 
 
 ## NuGet Package Manager Extension in Visual Studio
