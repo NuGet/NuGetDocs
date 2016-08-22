@@ -5,7 +5,7 @@ First introduced in 2010, NuGet has been around for a few years now and many peo
 All of these projects are able to innovate for the same reason that has allowed NuGet to innovate - You. As such, please contribute to these projects just as you contribute to NuGet by reporting defects and new feature ideas, providing feedback, writing documentation, and contributing code where possible. 
 
 ## .NET Foundation Projects
-The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client toolsas well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](http://www.dotnetfoundation.org/).
+The NuGet project provides a free, open source package management system for the Microsoft development platform and consists out of a few client tools as well as the set of services that comprise the [official NuGet Gallery](http://www.nuget.org). Combined, these form the NuGet project which is governed by the [.NET Foundation](http://www.dotnetfoundation.org/).
 
 The NuGet project has migrated from codeplex into our new home in GitHub. The NuGet Organization contains various repositories and the [Home Repo](https://github.com/Nuget/Home) gives an overview to repos and where the various components of the NuGet platform are developed.
 
