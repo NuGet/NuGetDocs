@@ -1,6 +1,6 @@
-# NuGet CLI Reference
+# NuGet.exe CLI Reference
 
-NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide]() gives an overview of the various ways to install nuget.exe on your box. 
+NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide](/ndocs/guides/install-nuget) gives an overview of the various ways to install nuget.exe on your box. 
 
 ## install
 

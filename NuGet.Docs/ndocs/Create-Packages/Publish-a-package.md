@@ -40,4 +40,4 @@ Push your package to NuGet Gallery using the command:
 
 	nuget push YourPackage.nupkg
 
-**Recommended Reading:** [NuGet CLI reference](/ndocs/tools/nuget-cli-reference), [setApiKey](/ndocs/tools/nuget-cli-reference#setapikey), [Push](/ndocs/tools/nuget-cli-reference#push)
+**Recommended Reading:** [NuGet CLI reference](/ndocs/tools/nuget.exe-cli-reference), [setApiKey](/ndocs/tools/nuget.exe-cli-reference#setapikey), [Push](/ndocs/tools/nuget.exe-cli-reference#push)

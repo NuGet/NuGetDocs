@@ -94,7 +94,7 @@ When the command has completed successfully, it will generate a new file `AppLog
 
 
 ##Publish
-There are two ways you can publish packages: using the [nuget CLI](/ndocs/tools/nuget-cli-reference) (which is what we will be doing here), or using the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
+There are two ways you can publish packages: using the [nuget CLI](/ndocs/tools/nuget.exe-cli-reference) (which is what we will be doing here), or using the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org). No matter which approach you use, you will need to have an account with [nuget.org](https://www.nuget.org/).
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
