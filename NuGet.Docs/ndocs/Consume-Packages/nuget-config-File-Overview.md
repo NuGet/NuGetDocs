@@ -202,7 +202,8 @@ Starting with NuGet 3.4, config files are treated in the following priority orde
 	c:\a\b\nuget.config
 	c:\a\nuget.config
 	c:\nuget.config
-	User specific config file, %AppData%\NuGet\nuget.config. 
+	User specific config file, %AppData%\NuGet\nuget.config.
+
 	Or the user specified file thru option `-configfile`.
 
 Starting with NuGet 2.6 upto 3.3, with the new config extensibility point, a new location for machine wide config files located under directory %ProgramData%\NuGet\Config are read after the user specific config file. So, the above list now becomes:
