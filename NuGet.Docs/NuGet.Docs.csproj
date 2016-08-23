@@ -366,7 +366,6 @@
     <Content Include="ndocs\Schema\project.lock.json.md" />
     <Content Include="ndocs\Schema\Target-Frameworks.md" />
     <Content Include="ndocs\Schema\_metadata" />
-    <Content Include="ndocs\Tools\NuGet-CLI-Reference.md" />
     <Content Include="ndocs\Tools\Package-Explorer.md" />
     <Content Include="ndocs\Tools\Package-Manager-Console.md" />
     <Content Include="ndocs\Tools\Package-Manager-UI.md" />
@@ -424,6 +423,7 @@
     <Content Include="release-notes\NuGet-3.5-Beta.cshtml" />
     <Content Include="release-notes\NuGet-3.5-Beta2.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="ndocs\Tools\NuGet.exe-CLI-Reference.md" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
