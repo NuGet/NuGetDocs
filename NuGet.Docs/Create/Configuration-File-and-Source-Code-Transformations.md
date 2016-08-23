@@ -28,7 +28,7 @@ extension.
 Starting with NuGet 2.6, XDT is supported to transform XML files inside a project. The
 [XDT syntax](http://msdn.microsoft.com/en-us/library/dd465326.aspx) can be utilized in the *.install.xdt* and
 *.uninstall.xdt* file(s) under the package's Content folder, which will be applied during package installation
-and uninstallation time, respectively.
+and uninstallation time, respectively (will not transform *.config files referenced as a link in Visual Studio). 
 
 For example, suppose the starting project A contains the following web.config file:
 
