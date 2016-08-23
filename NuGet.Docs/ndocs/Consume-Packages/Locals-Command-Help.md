@@ -32,5 +32,4 @@ NuGet locals Command is used to clear local NuGet cache(s). This document contai
 	Possible Reason(s):
 	
 	* The argument provided is not recognized as one of the known cache locations. Please check the argument provided.
-	* Starting from 3.6.x, NuGet no longer uses package-cache and thus it is not supported by the locals command. Please do not provide package-cache as an argument.
-
+	* Since NuGet no longer uses package-cache, starting from 3.6.x it is not supported by the locals command. Please do not provide package-cache as an argument.
