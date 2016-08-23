@@ -1,10 +1,10 @@
-﻿#Locals Command Error Help
+﻿#Troubleshooting NuGet cache issues
 
 ## NuGet Locals Command
 
 NuGet locals Command is used to clear local NuGet cache(s). This document contains the most common errors messages encountered while running nuget locals command either from nuget.exe, dotnet cli or Visual Studio Package Manager settings.
 
-## Errors
+## Frequenty encountered errors in NuGet locals
 
 1. **Error**: Clearing local resources failed: Unable to delete one or more files
 
