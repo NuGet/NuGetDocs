@@ -358,6 +358,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="consume\Troubleshooting-NuGet-Cache-Issues.cshtml" />
+    <Content Include="ndocs\Consume-Packages\Troubleshooting-NuGet-Cache-Issues.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
