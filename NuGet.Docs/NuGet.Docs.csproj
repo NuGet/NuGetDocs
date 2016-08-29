@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6BF801D-1C21-45A3-AB37-551A8CEEE6D9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NuGet.Docs</RootNamespace>
+    <AssemblyName>NuGet.Docs</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\PaginationHelper.cshtml" />
+    <Content Include="App_Code\TopicHelper.cshtml" />
+    <Content Include="consume\Command-Line-Reference.cshtml" />
+    <Content Include="consume\Compatibility.cshtml" />
+    <Content Include="consume\Credential-Providers.cshtml" />
+    <Content Include="consume\Dispute-Resolution.cshtml" />
+    <Content Include="consume\Installing-NuGet.cshtml" />
+    <Content Include="consume\NuGet-Config-Defaults.cshtml" />
+    <Content Include="consume\NuGet-Config-File.cshtml" />
+    <Content Include="consume\NuGet-Config-Settings.cshtml" />
+    <Content Include="consume\NuGet-FAQ.cshtml" />
+    <Content Include="consume\Overview.cshtml" />
+    <Content Include="consume\Package-Manager-Console-PowerShell-Reference.cshtml" />
+    <Content Include="consume\Package-Manager-Console.cshtml" />
+    <Content Include="consume\Package-Manager-Dialog.cshtml" />
+    <Content Include="consume\Package-Manager-Ui.cshtml" />
+    <Content Include="consume\Package-Restore.cshtml" />
+    <Content Include="consume\Package-Restore\Migrating-to-Automatic-Package-Restore.cshtml" />
+    <Content Include="consume\Package-Restore\MSBuild-Integrated.cshtml" />
+    <Content Include="consume\Package-Restore\Team-Build.cshtml" />
+    <Content Include="consume\Package-Visualizer.cshtml" />
+    <Content Include="consume\ProjectJson-Dependency.cshtml" />
+    <Content Include="consume\ProjectJson-Format.cshtml" />
+    <Content Include="consume\ProjectJson-Intro.cshtml" />
+    <Content Include="consume\Reinstalling-Packages.cshtml" />
+    <Content Include="consume\Search-Syntax.cshtml" />
+    <Content Include="consume\Setting-up-NuGet-PowerShell-Profile.cshtml" />
+    <Content Include="consume\Support-for-Native-Projects.cshtml" />
+    <Content Include="consume\Videos.cshtml" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="contribute\Branding-the-NuGet-Gallery.cshtml" />
+    <Content Include="contribute\Build-And-Run-NuGet-Gallery.cshtml" />
+    <Content Include="contribute\Coding-Guidelines.cshtml" />
+    <Content Include="contribute\Contributing-to-NuGet-Documentation.cshtml" />
+    <Content Include="contribute\Contributing-to-NuGet.cshtml" />
+    <Content Include="contribute\Ecosystem.cshtml" />
+    <Content Include="contribute\Functional-Testing.cshtml" />
+    <Content Include="contribute\Governance.cshtml" />
+    <Content Include="contribute\NuGet-Client-Test-Plan.cshtml" />
+    <Content Include="contribute\NuGet-Gallery-Test-Plan.cshtml" />
+    <Content Include="contribute\Project-Contribution-Guidelines.cshtml" />
+    <Content Include="contribute\Release-Branches.cshtml" />
+    <Content Include="contribute\Setting-up-the-NuGet-Development-Environment.cshtml" />
+    <Content Include="create\Analyzers-Conventions.cshtml" />
+    <Content Include="create\Configuration-File-and-Source-Code-Transformations.cshtml" />
+    <Content Include="create\Creating-and-Publishing-a-Package.cshtml" />
+    <Content Include="create\Creating-and-Publishing-a-Symbol-Package.cshtml" />
+    <Content Include="create\Creating-Localized-Packages.cshtml" />
+    <Content Include="create\Deleting-Packages.cshtml" />
+    <Content Include="create\Enforced-Package-Conventions.cshtml" />
+    <Content Include="create\Extensibility-APIs.cshtml" />
+    <Content Include="create\Hosting-Your-Own-NuGet-Feeds.cshtml" />
+    <Content Include="create\Invoking-NuGet-Services-from-inside-Visual-Studio.cshtml" />
+    <Content Include="create\Managing-Package-Owners.cshtml" />
+    <Content Include="create\Nuspec-Reference.cshtml" />
+    <Content Include="create\Package-Conventions.cshtml" />
+    <Content Include="create\Package-Types.cshtml" />
+    <Content Include="create\Packages-in-Visual-Studio-Templates.cshtml" />
+    <Content Include="create\Project-System-Support.cshtml" />
+    <Content Include="create\Setting-Up-Local-Gallery.cshtml" />
+    <Content Include="create\TargetFrameworks.cshtml" />
+    <Content Include="create\Transforming-Configuration-Files-Using-dotTransform-Files.cshtml" />
+    <Content Include="create\Using-a-GUI-to-build-packages.cshtml" />
+    <Content Include="create\uwp-create.cshtml" />
+    <Content Include="create\Versioning.cshtml" />
+    <Content Include="Default.cshtml" />
+    <Content Include="docs\Contribute\Branding-the-NuGet-Gallery.cshtml" />
+    <Content Include="docs\Contribute\coding-guidelines.cshtml" />
+    <Content Include="docs\Contribute\Contributing-to-NuGet-Documentation.cshtml" />
+    <Content Include="docs\Contribute\Contributing-to-NuGet.cshtml" />
+    <Content Include="docs\Contribute\Functional-testing.cshtml" />
+    <Content Include="docs\Contribute\NuGet-Client-Test-Plan.cshtml" />
+    <Content Include="docs\Contribute\Project-Guidelines.cshtml" />
+    <Content Include="docs\Contribute\Release-Branches.cshtml" />
+    <Content Include="docs\Contribute\Setting-up-the-NuGet-Development-Environment.cshtml" />
+    <Content Include="docs\Creating-Packages\Command-Line-Reference.cshtml" />
+    <Content Include="docs\Creating-Packages\Configuration-File-and-Source-Code-Transformations.cshtml" />
+    <Content Include="docs\Creating-Packages\Creating-and-Publishing-a-Package.cshtml" />
+    <Content Include="docs\Creating-Packages\Creating-and-Publishing-a-Symbol-Package.cshtml" />
+    <Content Include="docs\Creating-Packages\Creating-Localized-Packages.cshtml" />
+    <Content Include="docs\Creating-Packages\Hosting-Your-Own-NuGet-Feeds.cshtml" />
+    <Content Include="docs\Creating-Packages\Package-Conventions.cshtml" />
+    <Content Include="docs\Creating-Packages\Using-a-GUI-to-build-packages.cshtml" />
+    <Content Include="docs\Reference\Command-Line-Reference.cshtml" />
+    <Content Include="docs\Reference\Ecosystem.cshtml" />
+    <Content Include="docs\Reference\Extensibility-APIs.cshtml" />
+    <Content Include="docs\Reference\Governance.cshtml" />
+    <Content Include="docs\Reference\Invoking-NuGet-Services-from-inside-Visual-Studio.cshtml" />
+    <Content Include="docs\Reference\Known-Issues.cshtml" />
+    <Content Include="docs\Reference\NuGet-Config-Defaults.cshtml" />
+    <Content Include="docs\Reference\NuGet-Config-File.cshtml" />
+    <Content Include="docs\Reference\NuGet-Config-Settings.cshtml" />
+    <Content Include="docs\Reference\NuGet-Release-Notes.cshtml" />
+    <Content Include="docs\Reference\Nuspec-Reference.cshtml" />
+    <Content Include="docs\Reference\Package-Manager-Console-Powershell-Reference.cshtml" />
+    <Content Include="docs\Reference\Package-Restore-with-Team-Build.cshtml" />
+    <Content Include="docs\Reference\Package-Restore.cshtml" />
+    <Content Include="docs\Reference\Packages-in-visual-studio-templates.cshtml" />
+    <Content Include="docs\Reference\References.cshtml" />
+    <Content Include="docs\Reference\Search-Syntax.cshtml" />
+    <Content Include="docs\Reference\Setting-Up-Local-Gallery.cshtml" />
+    <Content Include="docs\Reference\Support-for-native-projects.cshtml" />
+    <Content Include="docs\Reference\Version-Range-Specification.cshtml" />
+    <Content Include="docs\Reference\Versioning.cshtml" />
+    <Content Include="docs\Release-Notes\Known-Issues.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.1.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.2.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.3.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.4.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.5.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.6.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.7.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-1.8.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.0.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.1.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.2.1.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.2.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.5.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.6.1-for-WebMatrix.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.6.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.7.1.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.7.2.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.7.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.8.1.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.8.2.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.8.3.cshtml" />
+    <Content Include="docs\Release-Notes\NuGet-2.8.cshtml" />
+    <Content Include="docs\Start-Here\Installing-NuGet.cshtml" />
+    <Content Include="docs\Start-Here\Managing-NuGet-Packages-Using-The-Dialog.cshtml" />
+    <Content Include="docs\Start-Here\NuGet-FAQ.cshtml" />
+    <Content Include="docs\Start-Here\Overview.cshtml" />
+    <Content Include="docs\Start-Here\Using-the-Add-Library-Package-Reference-Dialog-Box.cshtml" />
+    <Content Include="docs\Start-Here\Using-the-Package-Manager-Console.cshtml" />
+    <Content Include="docs\Start-Here\Videos.cshtml" />
+    <Content Include="docs\Workflows\Managing-Package-Owners.cshtml" />
+    <Content Include="docs\Workflows\Migrating-to-Automatic-Package-Restore.cshtml" />
+    <Content Include="docs\Workflows\Package-Visualizer.cshtml" />
+    <Content Include="docs\Workflows\Reinstalling-Packages.cshtml" />
+    <Content Include="docs\Workflows\Using-NuGet-without-committing-packages.cshtml" />
+    <Content Include="docs\Working-Specs\Editing-Package-Descriptions.cshtml" />
+    <Content Include="docs\Working-Specs\Showing-Package-Dependents.cshtml" />
+    <Content Include="docs\Working-Specs\Static-Analysis-In-Gallery.cshtml" />
+    <Content Include="docs\Working-Specs\Support-Multiple-Projects-In-One-Directory.cshtml" />
+    <Content Include="Errors\404.cshtml" />
+    <Content Include="Errors\Default.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ndocs\add-redirect.md" />
+    <Content Include="ndocs\API\Credential-Providers.md" />
+    <Content Include="ndocs\API\NuGet-API-V3.md" />
+    <Content Include="ndocs\API\_metadata" />
+    <Content Include="ndocs\Consume-Packages\nuget-config-File-Defaults.md" />
+    <Content Include="ndocs\Consume-Packages\nuget-config-File-Overview.md" />
+    <Content Include="ndocs\Consume-Packages\Package-Restore.md" />
+    <Content Include="ndocs\Consume-Packages\Package-Restore\Migrating-to-Automatic-Package-Restore.md" />
+    <Content Include="ndocs\Consume-Packages\Package-Restore\MSBuild-Integrated.md" />
+    <Content Include="ndocs\Consume-Packages\Package-Restore\Team-Build.md" />
+    <Content Include="ndocs\Consume-Packages\ProjectJson-Dependency.md" />
+    <Content Include="ndocs\Consume-Packages\ProjectJson-Intro.md" />
+    <Content Include="ndocs\Consume-Packages\Reinstalling-Packages.md" />
+    <Content Include="ndocs\Consume-Packages\Search-Syntax.md" />
+    <Content Include="ndocs\Consume-Packages\Support-for-Native-Projects.md" />
+    <Content Include="ndocs\Consume-Packages\_metadata" />
+    <Content Include="ndocs\Create-Packages\Analyzers-Conventions.md" />
+    <Content Include="ndocs\Create-Packages\Config-File-Transformations.md" />
+    <Content Include="ndocs\Create-Packages\Create-a-Package.md" />
+    <Content Include="ndocs\Create-Packages\Creating-Localized-Packages.md" />
+    <Content Include="ndocs\Create-Packages\Dependency-Versions.md" />
+    <Content Include="ndocs\Create-Packages\Managing-Package-Owners.md" />
+    <Content Include="ndocs\Create-Packages\Package-Best-Practices.md" />
+    <Content Include="ndocs\Create-Packages\Package-Types.md" />
+    <Content Include="ndocs\Create-Packages\Prerelease-Packages.md" />
+    <Content Include="ndocs\Create-Packages\Project.json and UWP.md" />
+    <Content Include="ndocs\Create-Packages\Publish-a-package.md" />
+    <Content Include="ndocs\Create-Packages\SemVer-Support.md" />
+    <Content Include="ndocs\Create-Packages\Source-File-Transformations.md" />
+    <Content Include="ndocs\Create-Packages\Supporting-Multiple-Target-Frameworks.md" />
+    <Content Include="ndocs\Create-Packages\Symbol-Packages.md" />
+    <Content Include="ndocs\Create-Packages\_metadata" />
+    <Content Include="ndocs\Guides\Create-Cross-Platform-Packages.md" />
+    <Content Include="ndocs\Guides\Create-NET-Standard-Packages.md" />
+    <Content Include="ndocs\Guides\Create-UWP-Packages.md" />
+    <Content Include="ndocs\Guides\Install-NuGet.md" />
+    <Content Include="ndocs\Guides\_metadata" />
+    <Content Include="ndocs\Hosting-Packages\Hosting-Packages-Overview.md" />
+    <Content Include="ndocs\Hosting-Packages\Local-Feeds.md" />
+    <Content Include="ndocs\Hosting-Packages\NuGet.Server.md" />
+    <Content Include="ndocs\Hosting-Packages\_metadata" />
+    <Content Include="ndocs\Policies\Deleting-Packages.md" />
+    <Content Include="ndocs\Policies\Dispute-Resolution.md" />
+    <Content Include="ndocs\Policies\Ecosystem.md" />
+    <Content Include="ndocs\Policies\Governance.md" />
+    <Content Include="ndocs\Policies\NuGet-FAQ.md" />
+    <Content Include="ndocs\Policies\_metadata" />
+    <Content Include="ndocs\Quickstart\Create-and-Publish-a-Package.md" />
+    <Content Include="ndocs\Quickstart\Use-a-Package.md" />
+    <Content Include="ndocs\Release-Notes\Default.cshtml" />
+    <Content Include="ndocs\Release-Notes\Known-Issues.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.3.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.4.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.5.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.6.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.7.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-1.8.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.0.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.12-RC.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.12.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.2.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.5.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.6.1-for-WebMatrix.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.6.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.7.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.7.2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.7.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.3.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.5.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.6.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.7.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.8.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-2.9-RC.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.0-Beta.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.0-Preview.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.0-RC.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.0-RC2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.0.0.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.1.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.2-RC.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.2.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.3.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.4-RC.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.4.1.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.4.2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.4.3.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.4.4.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.4.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.5-Beta.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.5-Beta2.md" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="consume\Troubleshooting-NuGet-Cache-Issues.cshtml" />
+    <Content Include="ndocs\Consume-Packages\Troubleshooting-NuGet-Cache-Issues.md" />
+    <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
+    <Content Include="ndocs\Release-Notes\_metadata" />
+    <Content Include="ndocs\Schema\nuget.config-file.md" />
+    <Content Include="ndocs\Schema\nuspec.md" />
+    <Content Include="ndocs\Schema\project.json.md" />
+    <Content Include="ndocs\Schema\project.lock.json.md" />
+    <Content Include="ndocs\Schema\Target-Frameworks.md" />
+    <Content Include="ndocs\Schema\_metadata" />
+    <Content Include="ndocs\Tools\Package-Explorer.md" />
+    <Content Include="ndocs\Tools\Package-Manager-Console.md" />
+    <Content Include="ndocs\Tools\Package-Manager-UI.md" />
+    <Content Include="ndocs\Tools\PowerShell-Reference.md" />
+    <Content Include="ndocs\Tools\_metadata" />
+    <Content Include="ndocs\Visual-Studio-Extensibility\NuGet-API-in-Visual-Studio.md" />
+    <Content Include="ndocs\Visual-Studio-Extensibility\Project-System-Support.md" />
+    <Content Include="ndocs\Visual-Studio-Extensibility\Visual-Studio-Templates.md" />
+    <Content Include="release-notes\Known-Issues.cshtml" />
+    <Content Include="release-notes\NuGet-1.1.cshtml" />
+    <Content Include="release-notes\NuGet-1.2.cshtml" />
+    <Content Include="release-notes\NuGet-1.3.cshtml" />
+    <Content Include="release-notes\NuGet-1.4.cshtml" />
+    <Content Include="release-notes\NuGet-1.5.cshtml" />
+    <Content Include="release-notes\NuGet-1.6.cshtml" />
+    <Content Include="release-notes\NuGet-1.7.cshtml" />
+    <Content Include="release-notes\NuGet-1.8.cshtml" />
+    <Content Include="release-notes\NuGet-2.0.cshtml" />
+    <Content Include="release-notes\NuGet-2.1.cshtml" />
+    <Content Include="release-notes\NuGet-2.12-RC.cshtml" />
+    <Content Include="release-notes\NuGet-2.12.cshtml" />
+    <Content Include="release-notes\NuGet-2.2.1.cshtml" />
+    <Content Include="release-notes\NuGet-2.2.cshtml" />
+    <Content Include="release-notes\NuGet-2.5.cshtml" />
+    <Content Include="release-notes\NuGet-2.6.1-for-WebMatrix.cshtml" />
+    <Content Include="release-notes\NuGet-2.6.cshtml" />
+    <Content Include="release-notes\NuGet-2.7.1.cshtml" />
+    <Content Include="release-notes\NuGet-2.7.2.cshtml" />
+    <Content Include="release-notes\NuGet-2.7.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.1.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.2.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.3.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.5.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.6.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.7.cshtml" />
+    <Content Include="release-notes\NuGet-2.8.cshtml" />
+    <Content Include="release-notes\NuGet-2.9-RC.cshtml" />
+    <Content Include="release-notes\NuGet-3.0-Beta.cshtml" />
+    <Content Include="release-notes\NuGet-3.0-Preview.cshtml" />
+    <Content Include="release-notes\NuGet-3.0-RC.cshtml" />
+    <Content Include="release-notes\NuGet-3.0-RC2.cshtml" />
+    <Content Include="release-notes\NuGet-3.0.0.cshtml" />
+    <Content Include="release-notes\NuGet-3.1.1.cshtml" />
+    <Content Include="release-notes\NuGet-3.1.cshtml" />
+    <Content Include="release-notes\NuGet-3.2-RC.cshtml" />
+    <Content Include="release-notes\NuGet-3.2.1.cshtml" />
+    <Content Include="release-notes\NuGet-3.2.cshtml" />
+    <Content Include="release-notes\NuGet-3.3.cshtml" />
+    <Content Include="release-notes\NuGet-3.4-RC.cshtml" />
+    <Content Include="release-notes\NuGet-3.4.1.cshtml" />
+    <Content Include="release-notes\NuGet-3.4.2.cshtml" />
+    <Content Include="release-notes\NuGet-3.4.3.cshtml" />
+    <Content Include="release-notes\NuGet-3.4.4.cshtml" />
+    <Content Include="release-notes\NuGet-3.4.cshtml" />
+    <Content Include="release-notes\NuGet-3.5-Beta.cshtml" />
+    <Content Include="release-notes\NuGet-3.5-Beta2.cshtml" />
+    <Content Include="packages.config" />
+    <Content Include="ndocs\Tools\NuGet.exe-CLI-Reference.md" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Search.cshtml" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="_Layout-Article.cshtml" />
+    <Content Include="_Layout.cshtml" />
+    <Content Include="_LayoutHome.cshtml" />
+    <Content Include="_PageStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrapOriginal.css" />
+    <Content Include="Content\nanoscroller.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\highlight\agate.css" />
+    <Content Include="css\highlight\androidstudio.css" />
+    <Content Include="css\highlight\arduino-light.css" />
+    <Content Include="css\highlight\arta.css" />
+    <Content Include="css\highlight\ascetic.css" />
+    <Content Include="css\highlight\atelier-cave-dark.css" />
+    <Content Include="css\highlight\atelier-cave-light.css" />
+    <Content Include="css\highlight\atelier-dune-dark.css" />
+    <Content Include="css\highlight\atelier-dune-light.css" />
+    <Content Include="css\highlight\atelier-estuary-dark.css" />
+    <Content Include="css\highlight\atelier-estuary-light.css" />
+    <Content Include="css\highlight\atelier-forest-dark.css" />
+    <Content Include="css\highlight\atelier-forest-light.css" />
+    <Content Include="css\highlight\atelier-heath-dark.css" />
+    <Content Include="css\highlight\atelier-heath-light.css" />
+    <Content Include="css\highlight\atelier-lakeside-dark.css" />
+    <Content Include="css\highlight\atelier-lakeside-light.css" />
+    <Content Include="css\highlight\atelier-plateau-dark.css" />
+    <Content Include="css\highlight\atelier-plateau-light.css" />
+    <Content Include="css\highlight\atelier-savanna-dark.css" />
+    <Content Include="css\highlight\atelier-savanna-light.css" />
+    <Content Include="css\highlight\atelier-seaside-dark.css" />
+    <Content Include="css\highlight\atelier-seaside-light.css" />
+    <Content Include="css\highlight\atelier-sulphurpool-dark.css" />
+    <Content Include="css\highlight\atelier-sulphurpool-light.css" />
+    <Content Include="css\highlight\brown-paper.css" />
+    <Content Include="css\highlight\brown-papersq.png" />
+    <Content Include="css\highlight\codepen-embed.css" />
+    <Content Include="css\highlight\color-brewer.css" />
+    <Content Include="css\highlight\dark.css" />
+    <Content Include="css\highlight\darkula.css" />
+    <Content Include="css\highlight\default.css" />
+    <Content Include="css\highlight\docco.css" />
+    <Content Include="css\highlight\dracula.css" />
+    <Content Include="css\highlight\far.css" />
+    <Content Include="css\highlight\foundation.css" />
+    <Content Include="css\highlight\github-gist.css" />
+    <Content Include="css\highlight\github.css" />
+    <Content Include="css\highlight\googlecode.css" />
+    <Content Include="css\highlight\grayscale.css" />
+    <Content Include="css\highlight\gruvbox-dark.css" />
+    <Content Include="css\highlight\gruvbox-light.css" />
+    <Content Include="css\highlight\hopscotch.css" />
+    <Content Include="css\highlight\hybrid.css" />
+    <Content Include="css\highlight\idea.css" />
+    <Content Include="css\highlight\ir-black.css" />
+    <Content Include="css\highlight\kimbie.dark.css" />
+    <Content Include="css\highlight\kimbie.light.css" />
+    <Content Include="css\highlight\magula.css" />
+    <Content Include="css\highlight\mono-blue.css" />
+    <Content Include="css\highlight\monokai-sublime.css" />
+    <Content Include="css\highlight\monokai.css" />
+    <Content Include="css\highlight\obsidian.css" />
+    <Content Include="css\highlight\ocean.css" />
+    <Content Include="css\highlight\paraiso-dark.css" />
+    <Content Include="css\highlight\paraiso-light.css" />
+    <Content Include="css\highlight\pojoaque.css" />
+    <Content Include="css\highlight\pojoaque.jpg" />
+    <Content Include="css\highlight\purebasic.css" />
+    <Content Include="css\highlight\qtcreator_dark.css" />
+    <Content Include="css\highlight\qtcreator_light.css" />
+    <Content Include="css\highlight\railscasts.css" />
+    <Content Include="css\highlight\rainbow.css" />
+    <Content Include="css\highlight\school-book.css" />
+    <Content Include="css\highlight\school-book.png" />
+    <Content Include="css\highlight\solarized-dark.css" />
+    <Content Include="css\highlight\solarized-light.css" />
+    <Content Include="css\highlight\sunburst.css" />
+    <Content Include="css\highlight\tomorrow-night-blue.css" />
+    <Content Include="css\highlight\tomorrow-night-bright.css" />
+    <Content Include="css\highlight\tomorrow-night-eighties.css" />
+    <Content Include="css\highlight\tomorrow-night.css" />
+    <Content Include="css\highlight\tomorrow.css" />
+    <Content Include="css\highlight\vs.css" />
+    <Content Include="css\highlight\xcode.css" />
+    <Content Include="css\highlight\xt256.css" />
+    <Content Include="css\highlight\zenburn.css" />
+    <Content Include="css\nanoscroller.css" />
+    <Content Include="css\nuget.docs.css" />
+    <Content Include="css\simple-sidebar.css" />
+    <Content Include="css\toc.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="images\BetaChannel\01_ToolsSettings.png" />
+    <Content Include="images\BetaChannel\02_ExtensionUpdate.png" />
+    <Content Include="images\BuildForNetStandard\01.PNG" />
+    <Content Include="images\BuildForNetStandard\02.PNG" />
+    <Content Include="images\BuildForNetStandard\05.PNG" />
+    <Content Include="images\BuildForUWP\01.PNG" />
+    <Content Include="images\BuildForUWP\02.PNG" />
+    <Content Include="images\BuildForUWP\03.PNG" />
+    <Content Include="images\BuildForUWP\04.PNG" />
+    <Content Include="images\BuildForUWP\05.PNG" />
+    <Content Include="images\BuildForXplat\01.PNG" />
+    <Content Include="images\BuildForXplat\02.PNG" />
+    <Content Include="images\BuildForXplat\02_1.PNG" />
+    <Content Include="images\BuildForXplat\03.PNG" />
+    <Content Include="images\BuildForXplat\04.PNG" />
+    <Content Include="images\burger-button.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\collapsed.png" />
+    <Content Include="images\ConsumeNugetSample\01.PNG" />
+    <Content Include="images\ConsumeNugetSample\02.PNG" />
+    <Content Include="images\ConsumeNugetSample\03.PNG" />
+    <Content Include="images\ConsumeNugetSample\04.PNG" />
+    <Content Include="images\ConsumeNugetSample\05.PNG" />
+    <Content Include="images\ConsumeNugetSample\06.PNG" />
+    <Content Include="images\ConsumeNugetSample\07.PNG" />
+    <Content Include="images\ConsumeNugetSample\08.PNG" />
+    <Content Include="images\ConsumeNugetSample\09.PNG" />
+    <Content Include="images\Consume\allow-package-restore-configuration.png" />
+    <Content Include="images\Consume\elmah-errorr-log-page.png" />
+    <Content Include="images\Consume\elmah-folder-in-packages-folder.png" />
+    <Content Include="images\Consume\elmah-installed.png" />
+    <Content Include="images\Consume\elmah-intellisense.png" />
+    <Content Include="images\Consume\elmah-reference-in-solution-explorer.png" />
+    <Content Include="images\Consume\elmah-web.config-changes.png" />
+    <Content Include="images\Consume\enable-package-restore.png" />
+    <Content Include="images\Consume\extension-manager-with-nuget.png" />
+    <Content Include="images\Consume\install-preview-dialog.png" />
+    <Content Include="images\Consume\installation-options.png" />
+    <Content Include="images\Consume\License-acceptance.png" />
+    <Content Include="images\Consume\Manage-NuGet-Packages-Dialog-new.png" />
+    <Content Include="images\Consume\Manage-NuGet-Packages-Dialog.png" />
+    <Content Include="images\Consume\manage-nuget-packages-install-project-selection.png" />
+    <Content Include="images\Consume\manage-nuget-packages-installed.png" />
+    <Content Include="images\Consume\manage-nuget-packages-menu-option.png" />
+    <Content Include="images\Consume\manage-nuget-packages-online-tab.png" />
+    <Content Include="images\Consume\manage-nuget-packages-project-selection.png" />
+    <Content Include="images\Consume\manage-nuget-packages-release-notes.png" />
+    <Content Include="images\Consume\manage-nuget-packages-showing-updates.png" />
+    <Content Include="images\Consume\manage-nuget-packages-solution-dialog.png" />
+    <Content Include="images\Consume\manage-nuget-packages-solution-menu.png" />
+    <Content Include="images\Consume\manage-nuget-packages-update-project-selection.png" />
+    <Content Include="images\Consume\manage-nuget-packagse-with-custom-source.png" />
+    <Content Include="images\Consume\mtr.png" />
+    <Content Include="images\Consume\NuGet-Config-File-Machine-Wide.png" />
+    <Content Include="images\Consume\nuget-version.png" />
+    <Content Include="images\Consume\package-console-new.png" />
+    <Content Include="images\Consume\package-console.png" />
+    <Content Include="images\Consume\package-manager-console-empty-window.png" />
+    <Content Include="images\Consume\package-manager-console-get-package-listing-installed-packages.png" />
+    <Content Include="images\Consume\package-manager-console-get-package-remote.png" />
+    <Content Include="images\Consume\package-manager-console-get-package-showing-updates.png" />
+    <Content Include="images\Consume\package-manager-console-get-package-updates.png" />
+    <Content Include="images\Consume\package-manager-console-get-package-with-filter.png" />
+    <Content Include="images\Consume\package-manager-console-in-menu.png" />
+    <Content Include="images\Consume\package-manager-console-install-mvcscaffold.png" />
+    <Content Include="images\Consume\package-manager-console-install-package.png" />
+    <Content Include="images\Consume\package-manager-console-license-acceptance.png" />
+    <Content Include="images\Consume\package-manager-console-uninstall-package.png" />
+    <Content Include="images\Consume\package-manager-console-update-package.png" />
+    <Content Include="images\Consume\package-restore-solution.png" />
+    <Content Include="images\Consume\package-source-with-disabled-source.png" />
+    <Content Include="images\Consume\package-sources-with-custom-source.png" />
+    <Content Include="images\Consume\package-sources.png" />
+    <Content Include="images\Consume\package-visualizer-cluster.png" />
+    <Content Include="images\Consume\package-visualizer-matrix.png" />
+    <Content Include="images\Consume\package-visualizer-toolbar.png" />
+    <Content Include="images\Consume\package-visualizer.png" />
+    <Content Include="images\Consume\PackageRestoreTeamBuildGit.png" />
+    <Content Include="images\Consume\PackageRestoreTeamBuildTFVC.png" />
+    <Content Include="images\Consume\packages-folder.png" />
+    <Content Include="images\Consume\projectJson-dependency-1.png" />
+    <Content Include="images\Consume\projectJson-dependency-2.png" />
+    <Content Include="images\Consume\projectJson-dependency-3.png" />
+    <Content Include="images\Consume\projectJson-dependency-4.png" />
+    <Content Include="images\Consume\projectJson-dependency-5.png" />
+    <Content Include="images\Consume\projectJson-dependency-6.png" />
+    <Content Include="images\Consume\projectJson-dependency-7.png" />
+    <Content Include="images\Consume\projectJson-dependency-8.png" />
+    <Content Include="images\Consume\remove-dependent-packages.png" />
+    <Content Include="images\Consume\RunAsRestricted.png" />
+    <Content Include="images\Consume\uninstall-options.png" />
+    <Content Include="images\Consume\Visual-Studio-Extension-Installer-Complete.png" />
+    <Content Include="images\Consume\Visual-Studio-Extension-Installer.png" />
+    <Content Include="images\Consume\Visual-Studio-Extension-update-check.png" />
+    <Content Include="images\Consume\Visual-Studio-Gallery-Download.png" />
+    <Content Include="images\contribute-nuget.png" />
+    <Content Include="images\Contribute\1.0-update-to-1.0-branch.jpg" />
+    <Content Include="images\Contribute\branch-selection-drop-down.jpg" />
+    <Content Include="images\Contribute\browserlink1.jpg" />
+    <Content Include="images\Contribute\browserlink2.jpg" />
+    <Content Include="images\Contribute\customcontent1.jpg" />
+    <Content Include="images\Contribute\customcontent2.jpg" />
+    <Content Include="images\Contribute\default-and-1.0-diverge.jpg" />
+    <Content Include="images\Contribute\further-bug-fixes-on-1.0-branch.jpg" />
+    <Content Include="images\Contribute\merge-with-1.0-branch.jpg" />
+    <Content Include="images\Contribute\uploadpackage1.JPG" />
+    <Content Include="images\Contribute\uploadpackage2.JPG" />
+    <Content Include="images\Contribute\uploadpackage3.JPG" />
+    <Content Include="images\Contribute\uploadpackage4.JPG" />
+    <Content Include="images\Contribute\uploadpackage5.JPG" />
+    <Content Include="images\Contribute\webconfig1.JPG" />
+    <Content Include="images\Contribute\webconfig2.JPG" />
+    <Content Include="images\CreatePublishNugetSample\01.PNG" />
+    <Content Include="images\CreatePublishNugetSample\02.PNG" />
+    <Content Include="images\CreatePublishNugetSample\03.PNG" />
+    <Content Include="images\CreatePublishNugetSample\04.PNG" />
+    <Content Include="images\Create\Adding-new-feed-to-package-sources.png" />
+    <Content Include="images\Create\Adding-packages-to-the-packages-folder-expanded.png" />
+    <Content Include="images\Create\Adding-packages-to-the-packages-folder.png" />
+    <Content Include="images\Create\Available-Package-Sources-with-new-feed.png" />
+    <Content Include="images\Create\Available-Package-Sources-without-new-feed.png" />
+    <Content Include="images\Create\Editing-unloaded-project-file.png" />
+    <Content Include="images\Create\embedinteroptypes.png" />
+    <Content Include="images\Create\LocalNuGetFeed-folder.png" />
+    <Content Include="images\Create\New-Project-dialog-box.png" />
+    <Content Include="images\Create\New-project-in-Solution-Explorer.png" />
+    <Content Include="images\Create\NuGet.Server-package.png" />
+    <Content Include="images\Create\OData-over-ATOM-package-feed.png" />
+    <Content Include="images\Create\Options-dialog-box.png" />
+    <Content Include="images\Create\package-explorer-content-inference.png" />
+    <Content Include="images\Create\package-explorer-content.png" />
+    <Content Include="images\Create\package-explorer-file-new.png" />
+    <Content Include="images\Create\package-explorer-lib-folder.png" />
+    <Content Include="images\Create\package-explorer-metadata.png" />
+    <Content Include="images\Create\package-explorer-publish.png" />
+    <Content Include="images\Create\package-explorer-update-available.png" />
+    <Content Include="images\Create\Package-feed-home-page.png" />
+    <Content Include="images\Create\Package-Manager-Settings-in-menu.png" />
+    <Content Include="images\Create\package-sources-with-custom-feed.png" />
+    <Content Include="images\Create\package-sources-with-custom-source.png" />
+    <Content Include="images\Create\package-sources.png" />
+    <Content Include="images\Create\pp.files.png" />
+    <Content Include="images\Create\publish_NuGet-API-Key.PNG" />
+    <Content Include="images\Create\publish_NuGetSignIn.PNG" />
+    <Content Include="images\Create\publish_UploadYourPackage.PNG" />
+    <Content Include="images\Create\Selecting-local-feed-in-Add-Library-Package-Reference.png" />
+    <Content Include="images\Create\Selecting-local-feed-in-Package-Manager-Console.png" />
+    <Content Include="images\Create\Unloading-project.png" />
+    <Content Include="images\Create\web.config.transform.png" />
+    <Content Include="images\dnf.png" />
+    <Content Include="images\docs\License.png" />
+    <Content Include="images\docs\ManagePackagesSolutionUICommand.png" />
+    <Content Include="images\docs\ManagePackagesUICommand.png" />
+    <Content Include="images\docs\Options.png" />
+    <Content Include="images\docs\PackageExplorerAddFiles.png" />
+    <Content Include="images\docs\PackageExplorerEditMetadata.png" />
+    <Content Include="images\docs\PackageExplorerFileAdded.png" />
+    <Content Include="images\docs\PackageExplorerPublish.png" />
+    <Content Include="images\docs\PackageExplorerStart.png" />
+    <Content Include="images\docs\References.png" />
+    <Content Include="images\docs\Search.png" />
+    <Content Include="images\docs\SolutionPackagesUI.png" />
+    <Content Include="images\expandCollapseGlyph.png" />
+    <Content Include="images\expandCollapseGlyphOpen.png" />
+    <Content Include="images\expanded.png" />
+    <Content Include="images\GuidesLogos\uwp.png" />
+    <Content Include="images\Iconwarning.png" />
+    <Content Include="images\knownIssue-34-NoSources.PNG" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\most-installed.png" />
+    <Content Include="images\nugetBrand.png" />
+    <Content Include="images\nugetLockup.png" />
+    <Content Include="images\outercurve.png" />
+    <Content Include="images\pageNavigation.png" />
+    <Content Include="images\pageNavigationActive.png" />
+    <Content Include="images\quick-links.png" />
+    <Content Include="images\search-button.png" />
+    <Content Include="images\upload.png" />
+    <Content Include="images\What-is-nuget.png" />
+    <Content Include="js\nuget.docs.js" />
+    <Content Include="ndocs\Release-Notes\Images\dlg-w-loc-packs.png" />
+    <Content Include="ndocs\Release-Notes\Images\fldr-copied-loc.png" />
+    <Content Include="ndocs\Release-Notes\Images\fldr-loc-packs.png" />
+    <Content Include="ndocs\Release-Notes\Images\framework-profile-support.png" />
+    <Content Include="ndocs\Release-Notes\Images\manage-nuget-packages-update-notification.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.5\overwrite-file.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.5\update-all.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.5\verbosity.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.7\package-manager-settings.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.8\dependencyversion.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.8\multiple-packageconfigs.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.8\webmatrix-overwrite-file.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.8\webmatrix-schema-version.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-2.8\webmatrix-update-all.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Beta\updated-ui.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\consolidate.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\dependency-behavior.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\file-conflict-action.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\infinite-scrolling.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\new-ui.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\preview.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\uninstall-package.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\update-package.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.0-Preview\version-selection.png" />
+    <Content Include="ndocs\Release-Notes\Images\NuGet-3.2\newContextMenu.png" />
+    <Content Include="ndocs\Release-Notes\Images\nuget-Options.png" />
+    <Content Include="ndocs\Release-Notes\Images\nuget-settings.png" />
+    <Content Include="ndocs\Release-Notes\Images\packagerestore-console.PNG" />
+    <Content Include="ndocs\Release-Notes\Images\packagerestore-dialog.PNG" />
+    <Content Include="ndocs\Release-Notes\Images\pkg-mgr-search-from-quick-launch.png" />
+    <Content Include="ndocs\Release-Notes\Images\pr-consent-configdlg.png" />
+    <Content Include="ndocs\Release-Notes\Images\prerelease-dropdown.PNG" />
+    <Content Include="ndocs\Release-Notes\Images\quick-launch.png" />
+    <Content Include="ndocs\Release-Notes\Images\releasenotes-21-cfg-hierarchy.png" />
+    <Content Include="ndocs\Release-Notes\Images\releasenotes-21-edit-pkg-source.png" />
+    <Content Include="ndocs\Release-Notes\Images\releasenotes-21-plib-layout.png" />
+    <Content Include="ndocs\Release-Notes\Images\releasenotes-21-plib.png" />
+    <Content Include="ndocs\Release-Notes\Images\releasenotes-21-vsdlg-search.png" />
+    <Content Include="Scripts\clipboard.js" />
+    <Content Include="Scripts\clipboard.min.js" />
+    <Content Include="Scripts\highlight.pack.js" />
+    <Content Include="Scripts\jquery.nanoscroller.js" />
+    <Content Include="Scripts\jquery.nanoscroller.min.js" />
+    <Content Include="Scripts\nanoscoller.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NuGet.Docs.MarkdownPages\NuGet.Docs.MarkdownPages.csproj">
+      <Project>{68B89ADD-A928-4B5C-8173-EC38C282C918}</Project>
+      <Name>NuGet.Docs.MarkdownPages</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8551</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8551/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

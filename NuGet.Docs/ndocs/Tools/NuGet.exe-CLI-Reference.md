@@ -1,6 +1,6 @@
-# NuGet CLI Reference
+# NuGet.exe CLI Reference
 
-NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide]() gives an overview of the various ways to install nuget.exe on your box. 
+NuGet Command Line Interface (CLI) is used to create, publish, manage and download your packages from the command line instead of from Visual Studio. The [Install Guide](/ndocs/guides/install-nuget) gives an overview of the various ways to install nuget.exe on your box. 
 
 ## install
 
@@ -95,7 +95,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
 <table>
     <tr>
         <td>configfile</td>
-        <td>(v<em>2.5</em>) Specifies the NuGet configuation file. If not specified NuGet.config
+        <td>(v<em>2.5</em>) Specifies the NuGet configuration file. If not specified NuGet.config
         is used.</td>
     </tr>
     <tr>
@@ -329,9 +329,9 @@ This behavior varies depending on the source, nuget.org for example does not all
     </tr>
     <tr>
         <td>source</td>
-        <td>Specifies the server URL. Supported URL's for nuget.org include - http://www.nuget.org,
-        http://www.nuget.org/api/v3,
-        http://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3).</td>
+        <td>Specifies the server URL. Supported URL's for nuget.org include - https://www.nuget.org,
+        https://www.nuget.org/api/v3,
+        https://www.nuget.org/api/v2/package. For private feeds, substitute the host name (e.g %hostname%/api/v3).</td>
     </tr>
     <tr>
         <td>verbosity</td>
@@ -492,7 +492,11 @@ Generates a nuspec for a new package. If this command is run in the same folder 
 
     nuget spec -a MyAssembly.dll
 
-##  pack (v<em>2.7</em>+)
+##  pack
+
+<div class="block-callout-info">
+	<strong>Note:</strong> Applies to v<em>2.7</em>+
+</div>
 
 Creates a NuGet package based on the specified nuspec or project file.
 
@@ -677,7 +681,7 @@ Specify the path to the package and your API key to push the package to the serv
 
     nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://customsource/
+    nuget push foo.nupkg 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
 
     nuget push foo.nupkg
 
@@ -702,7 +706,7 @@ is saved for the NuGet gallery.
 <table>
     <tr>
         <td>configfile</td>
-        <td>(v<em>2.5</em>) The NuGet configuation file. If not specified, file %AppData%\NuGet\NuGet.config
+        <td>(v<em>2.5</em>) The NuGet configuration file. If not specified, file %AppData%\NuGet\NuGet.config
         is used as configuration file.</td>
     </tr>
     <tr>
@@ -728,7 +732,7 @@ is saved for the NuGet gallery.
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
-    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source http://example.com/nugetfeed
+    nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com/nugetfeed
 
 ## init 
 
@@ -772,7 +776,11 @@ destination package source, use the `-expand` switch.
 
     nuget init \\foo\packages \\bar\packages
 
-## add (v<em>3.3</em>+)
+## add
+
+<div class="block-callout-info">
+	<strong>Note:</strong> Applies to v<em>3.3</em>+
+</div>
 
 Adds a specified package to your package source
 in a hierarchical layout as described below. When restoring or updating against your package source, 
@@ -833,7 +841,7 @@ Gets or sets NuGet config values.
 <table>
     <tr>
         <td>configfile</td>
-        <td>The NuGet configuation file. If not specified, file
+        <td>The NuGet configuration file. If not specified, file
         %AppData%\NuGet\NuGet.config is used as configuration file.</td>
     </tr>
     <tr>
@@ -859,14 +867,18 @@ Gets or sets NuGet config values.
 
     nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
 
-## locals (v<em>3.3</em>+)
+## locals
+
+<div class="block-callout-info">
+	<strong>Note:</strong> Applies to v<em>3.3</em>+
+</div>
 
 Clears or lists local NuGet resources such as http request cache, packages cache, or machine-wide global packages folder.
 
 	nuget locals <target> -clear
 
 Where &lt;target> is one of the following options: all, http-cache, 
-packages-cache, global-pacakges, (v<em>3.4</em>) temp.
+packages-cache, global-packages, (v<em>3.4</em>) temp.
 ### Options
 
 <table>
@@ -889,12 +901,12 @@ packages-cache, global-pacakges, (v<em>3.4</em>) temp.
 	</tr>
 </table>
 
-##  mirror [Deprecated from v3.2+]
+##  mirror
 
 Mirrors a package and its dependencies from the specified source repositories to the target repository. 
 
 <div class="block-callout-info">
-    <strong>Note: </strong><br>
+    <strong>Note: Deprecated from v3.2+</strong><br>
     To enable this command for versions of NuGet before v<em>3.2</em>, navigate to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe..  
 </div>
 
@@ -903,7 +915,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
 Specify the id of the package to mirror, the url to query the target repository (list ) and the url to push packages to the target repository. If a path to a packages.config file is used instead of a package id, all the packages it contains are mirrored to the given version (if specified) or latest otherwise.
 
-Assuming you're targeting a private repository under [http://machine/repo](http://machine/repo) installed using NuGet.Server, the list and push urls will be [http://machine/repo/nuget](http://machine/repo/nuget) and [http://machine/repo/api/v2/package](http://machine/repo/api/v2/package) respectively.
+Assuming you're targeting a private repository under [https://machine/repo](https://machine/repo) installed using NuGet.Server, the list and push urls will be [https://machine/repo/nuget](https://machine/repo/nuget) and [https://machine/repo/api/v2/package](https://machine/repo/api/v2/package) respectively.
 
 ### Options
 <table>
@@ -951,11 +963,11 @@ Assuming you're targeting a private repository under [http://machine/repo](http:
 
 ### Examples
 
-    nuget mirror packages.config  http://MyRepo/nuget http://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
+    nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -NoCache
 
-    nuget mirror Microsoft.AspNet.Mvc http://MyRepo/nuget http://MyRepo/api/v2/package -version 4.0.20505.0
+    nuget mirror Microsoft.AspNet.Mvc https://MyRepo/nuget https://MyRepo/api/v2/package -version 4.0.20505.0
 
-    nuget mirror Microsoft.Net.Http http://MyRepo/nuget http://MyRepo/api/v2/package -prerelease
+    nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/package -prerelease
 
 ##  help 
 

@@ -169,8 +169,8 @@ $(document).ready(function () {
     else if (url.indexOf("/guides") != -1) {
         $('#a-Guides').click();
     }
-    else if (url.indexOf("/host-packages") != -1) {
-        $('#a-Host-Packages').click();
+    else if (url.indexOf("/hosting-packages") != -1) {
+        $('#a-Hosting-Packages').click();
     }
     else if (url.indexOf("/visual-studio-extensibility") != -1) {
         $('#a-Visual-Studio-Extensibility').click();

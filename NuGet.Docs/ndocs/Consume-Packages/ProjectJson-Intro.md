@@ -64,7 +64,7 @@ project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs,
 
 4. Project files are not modified, avoiding merge conflicts and file churn on commits. 
 
-5. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and retargeting problems. 
+5. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and re-targeting problems. 
 
 6. Enabling the project system to evolve without being dependent on NuGet features. 
 
@@ -77,7 +77,7 @@ project.json is mandatory for UWP apps and ASP.NET 5 apps, is optional for PCLs,
 
 Traditional NuGet packages support a set of features that are not carried over to the transitive world. 
 
-### Install/Uninstall scripts 
+### Install and Uninstall scripts 
 
 These scripts are not supported and will be ignored. In case they exist in the package a project using transitive restore. 
 

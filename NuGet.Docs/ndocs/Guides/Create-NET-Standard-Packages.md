@@ -175,7 +175,7 @@ The project.json should now look like:
 	  }
 	}
 
-"Microsoft.NETCore.Portable.Compatibility"	enables compatiblity with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight.
+"Microsoft.NETCore.Portable.Compatibility"	enables compatibility with portable libraries targeting previous .NET releases like .NET Framework 4.0 and Silverlight.
 
 **Recommended Reading:** [Introduction to project.json](/ndocs/consume-packages/projectjson-intro)
 
@@ -301,13 +301,12 @@ Let's say you would also like to target .NET Framework 4.6.2 because you would l
 
 1. In the root directory of the project (folder containing the `.nuspec` file), create a new folder - `lib`
 2. Inside `lib`, create two new folders - one for each platform that we want to support.
-		<pre>
-		\lib
-			\netstandard1.4
-				\AppLogger.dll
-			\net462
-				\AppLogger.dll
-		</pre>
+		
+	\lib
+		\netstandard1.4
+			\AppLogger.dll
+		\net462
+			\AppLogger.dll
 
 3. Edit the nuspec file - add a child node `files` to the `package` node. <b>Note:</b> Token replacements are not supported when using the convention based working directory approach. So you should replace these tokens with hardcoded values.
 
