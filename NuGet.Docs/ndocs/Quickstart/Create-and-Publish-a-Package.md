@@ -34,50 +34,52 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 1. Open a command prompt and navigate to the folder containing the AppLogger project file (.csproj).
 2. Run the NuGet CLI <code>spec</code> command to generate `AppLogg.nuspec`:
 
-<code class="bash hljs">
-	nuget spec
-</code>
+	<code class="bash hljs">
+		nuget spec
+	</code>
 
 3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a nuspec file.](/ndocs/create-packages/create-a-package#create-a--nuspec-file).   
 
-	<?xml version="1.0"?>
-	<package>
-	  <metadata>
-		<id>$id$</id>
-		<version>$version$</version>
-		<title>$title$</title>
-		<authors>$author$</authors>
-		<owners>$author$</owners>
-		<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-		<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>$description$</description>
-		<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-		<copyright>Copyright 2016</copyright>
-		<tags>Tag1 Tag2</tags>
-	  </metadata>
-	</package>
-
+	<code class="xml">
+		<?xml version="1.0"?>
+		<package>
+		  <metadata>
+			<id>$id$</id>
+			<version>$version$</version>
+			<title>$title$</title>
+			<authors>$author$</authors>
+			<owners>$author$</owners>
+			<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+			<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+			<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+			<requireLicenseAcceptance>false</requireLicenseAcceptance>
+			<description>$description$</description>
+			<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+			<copyright>Copyright 2016</copyright>
+			<tags>Tag1 Tag2</tags>
+		  </metadata>
+		</package>
+	</code>
 
 4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Package best practices](/ndocs/create-packages/package-best-practices). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
-
-	<?xml version="1.0"?>
-	<package>
-	  <metadata>
-		<id>MyCompanyName.MyProductName.MyPackageName</id>
-		<version>$version$</version>
-		<title>$title$</title>
-		<authors>kraigb</authors>
-		<owners>kraigb</owners>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Awesome application logging utility</description>
-		<releaseNotes>First release</releaseNotes>
-		<copyright>Copyright 2016</copyright>
-		<tags>application app logger logging logs</tags>
-	  </metadata>
-	</package>
-
+5. 
+	<code class="xml">
+		<?xml version="1.0"?>
+		<package>
+		  <metadata>
+			<id>MyCompanyName.MyProductName.MyPackageName</id>
+			<version>$version$</version>
+			<title>$title$</title>
+			<authors>kraigb</authors>
+			<owners>kraigb</owners>
+			<requireLicenseAcceptance>false</requireLicenseAcceptance>
+			<description>Awesome application logging utility</description>
+			<releaseNotes>First release</releaseNotes>
+			<copyright>Copyright 2016</copyright>
+			<tags>application app logger logging logs</tags>
+		  </metadata>
+		</package>
+	</code>
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
@@ -100,7 +102,7 @@ Note that you'll get warnings if you haven't updated various fields in the .nusp
 
 ##Publish the package
 
-You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org.)
+You're now ready to publish the package to nuget.org using the NuGet CLI. (Alternately, you can use the [nuget.org publishing workflow](/ndocs/create-packages/publish-a-package#publish-through-nuget-org).
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
