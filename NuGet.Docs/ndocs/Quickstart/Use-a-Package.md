@@ -47,52 +47,54 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 1. Open MainPage.xaml and replace the existing `Grid` element with the following:
 
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-	    <StackPanel VerticalAlignment="Center">
-	        <Button Click="Button_Click" Content="Click Me" Margin="10"/>
-	        <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
-	    </StackPanel>
-	</Grid>
-
+	<code class="xml">
+		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		    <StackPanel VerticalAlignment="Center">
+		        <Button Click="Button_Click" Content="Click Me" Margin="10"/>
+		        <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
+		    </StackPanel>
+		</Grid>
+	</code>
 
 2. Expand MainPage.xaml, open MainPage.xaml.cs, and insert the following code inside the `MainPage` class, after the constructor:
 
-    public class Account
-    {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime DOB { get; set; }
-    }
+	<code class="cs">
+	    public class Account
+	    {
+	        public string Name { get; set; }
+	        public string Email { get; set; }
+	        public DateTime DOB { get; set; }
+	    }
+	
+	    private void Button_Click(object sender, RoutedEventArgs e)
+	    {
+	        Account account = new Account
+	        {
+	            Name = "John Doe",
+	            Email = "john@microsoft.com",
+	            DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
+	        };
+	        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+	        TextBlock.Text = json;
+	    }
+	</code>
 
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
-        Account account = new Account
-        {
-            Name = "John Doe",
-            Email = "john@microsoft.com",
-            DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
-        };
-        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
-        TextBlock.Text = json;
-    }
+3. Even though you added the Newtonsoft.Json package to the project, you'll still see a red squiggle under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes**:
+
+    ![Lightbulb with show potential fixes command](/images/ConsumeNugetSample/QS_Use-04-ShowPotentialFixes.png)
 
 
-3. Even though you added the Newtonsoft.Json package to the project, you'll still see a red squiggle under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes***:
+4. Click on **Show potential fixes** and select the first suggested fix, `using Newtonsoft.Json;`. This adds the necessary line to the top of the file.
 
-    ![Lightbulb fix](/images/ConsumeNugetSample/QS_Use-04-ShowPotentialFixes.png)
-
-
-4. Click on **Show potential fixes** and select the first suggested fix, **using Newtonsoft.Json;**. This adds the necessary line to the top of the file.
-
-	![Lightbulb fix](/images/ConsumeNugetSample/QS_Use-05-AddUsing.png)
+	![Lightbulb giving option to add a using statement](/images/ConsumeNugetSample/QS_Use-05-AddUsing.png)
 
 5. Build and run the app by pressing F5 or selecting **Debug > Start Debugging**:
 
-	![Output](/images/ConsumeNugetSample/QS_Use-06-AppStart.png)
+	![Initial output of the app](/images/ConsumeNugetSample/QS_Use-06-AppStart.png)
 
 6. Click on the button to see the contents of the TextBlock replaced with some JSON text:
 
-	![Output](/images/ConsumeNugetSample/QS_Use-07-AppEnd.png)
+	![Output of the app after clicking the button](/images/ConsumeNugetSample/QS_Use-07-AppEnd.png)
 
 
 
