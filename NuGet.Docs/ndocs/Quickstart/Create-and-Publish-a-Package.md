@@ -2,11 +2,11 @@
 
 It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org. The following steps walk you through the process using the NuGet command-line interface (CLI) and Visual Studio:
 
-- Install prerequisites
-- Create a class library project
-- Create the .nuspec (package manifest) file
-- Create the package
-- Publish the package
+- [Install pre-requisites](#install-pre-requisites)
+- [Create a class library project](#create-a-class-library-project)
+- [Create the .nuspec package manifest file](#create-the--nuspec-package-manifest-file)
+- [Create the package](#create-the-package)
+- [Publish the package](#publish-the-package)
 
 ##Install pre-requisites
 1. Visual Studio 2015. Install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/); you can use the Professional and Enterprise editions as well, of course.
@@ -27,7 +27,7 @@ Right click on the resulting project file and select **Build** to make sure the 
 
 Within a real NuGet package, of course, you'll implement many useful features upon which others can build applications. For this walkthrough, however, you won't add any additional code because a class library from the template is sufficient to create a package. 
 
-##Create the package manifest - .nuspec file
+##Create the .nuspec package manifest file
 
 Every NuGet package needs a manifest–a .nuspec file–to describe its contents and its dependencies. The NuGet CLI will create this file for you, which you then customize.
 
