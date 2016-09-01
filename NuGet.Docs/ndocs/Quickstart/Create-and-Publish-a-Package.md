@@ -4,7 +4,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a class library project](#create-a-class-library-project)
-- [Create the .nuspec (package manifest) file](#create-the--nuspec-package-manifest-file)
+- [Create the .nuspec package manifest file](#create-the--nuspec-package-manifest-file)
 - [Create the package](#create-the-package)
 - [Publish the package](#publish-the-package)
 
@@ -27,7 +27,7 @@ Right click on the resulting project file and select **Build** to make sure the 
 
 Within a real NuGet package, of course, you'll implement many useful features upon which others can build applications. For this walkthrough, however, you won't add any additional code because a class library from the template is sufficient to create a package. 
 
-##Create the .nuspec (package manifest) file
+##Create the .nuspec package manifest file
 
 Every NuGet package needs a manifest–a .nuspec file–to describe its contents and its dependencies. The NuGet CLI will create this file for you, which you then customize.
 
