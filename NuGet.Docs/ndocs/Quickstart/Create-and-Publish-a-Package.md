@@ -27,7 +27,7 @@ Right click on the resulting project file and select **Build** to make sure the 
 
 Within a real NuGet package, of course, you'll implement many useful features upon which others can build applications. For this walkthrough, however, you won't add any additional code because a class library from the template is sufficient to create a package. 
 
-##Create the .nuspec (package manifest) file
+##Create the package manifest - .nuspec file
 
 Every NuGet package needs a manifest–a .nuspec file–to describe its contents and its dependencies. The NuGet CLI will create this file for you, which you then customize.
 
@@ -109,7 +109,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 2. Once logged in, click your user name (on the upper right) to navigate to your account settings.
 3. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:   
 
-	![Copying the API key to the clipboard](/images/CreatePublishNugetSample/Create_02-APIKey.PNG)
+	![Copying the API key to the clipboard](/images/CreatePublishNugetSample/QS_Create-02-APIKey.png)
 	
 	<div class="block-callout-warning">
 		<strong>Note</strong><br>
