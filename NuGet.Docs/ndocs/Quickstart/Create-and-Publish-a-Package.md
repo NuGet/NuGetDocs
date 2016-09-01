@@ -109,7 +109,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 2. Once logged in, click your user name (on the upper right) to navigate to your account settings.
 3. Under **API Key**, click **copy to clipboard** to retrieve the access key you'll need in the CLI:   
 
-	![Copying the API key to the clipboard](/images/CreatePublishNugetSample/Create_02-APIKey.PNG)
+	![Copying the API key to the clipboard](/images/CreatePublishNugetSample/QS_Create-02-APIKey.png)
 	
 	<div class="block-callout-warning">
 		<strong>Note</strong><br>

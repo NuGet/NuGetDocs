@@ -252,6 +252,15 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-01-NewProject.png" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-02-ManageNuGetPackages.png" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-03-NewtonsoftJson.png" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-04-ShowPotentialFixes.png" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-05-AddUsing.png" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-06-AppStart.png" />
+    <Content Include="images\ConsumeNugetSample\QS_Use-07-AppEnd.png" />
+    <Content Include="images\CreatePublishNugetSample\QS_Create-01-NewProject.png" />
+    <Content Include="images\CreatePublishNugetSample\QS_Create-02-APIKey.png" />
     <Content Include="ndocs\add-redirect.md" />
     <Content Include="ndocs\API\Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
