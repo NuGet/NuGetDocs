@@ -49,18 +49,18 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 1. Open MainPage.xaml and replace the existing `Grid` element with the following:
 
-	<pre><code class="xml">
-		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		    <StackPanel VerticalAlignment="Center">
-		        <Button Click="Button_Click" Content="Click Me" Margin="10"/>
-		        <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
-		    </StackPanel>
-		</Grid>
-	</code></pre>
+<code class="xml">
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	    <StackPanel VerticalAlignment="Center">
+	        <Button Click="Button_Click" Content="Click Me" Margin="10"/>
+	        <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
+	    </StackPanel>
+	</Grid>
+</code>
 
 2. Expand MainPage.xaml, open MainPage.xaml.cs, and insert the following code inside the `MainPage` class, after the constructor:
 
-	<pre><code class="cs">
+<code class="cs">
 	    public class Account
 	    {
 	        public string Name { get; set; }
@@ -79,7 +79,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 	        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
 	        TextBlock.Text = json;
 	    }
-	</code></pre>
+</code>
 
 3. Even though you added the Newtonsoft.Json package to the project, you'll still see a red squiggle under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes**:
 
