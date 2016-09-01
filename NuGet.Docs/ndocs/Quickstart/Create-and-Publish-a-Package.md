@@ -39,8 +39,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 	</code>
 
 3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file).   
-	
-		<code class="xml">		
+			
 		<?xml version="1.0"?>
 		<package>
 		  <metadata>
@@ -58,12 +57,10 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 			<copyright>Copyright 2016</copyright>
 			<tags>Tag1 Tag2</tags>
 		  </metadata>
-		</package>
-		</code>
+		</package>	
 
 4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Package best practices](/ndocs/create-packages/package-best-practices). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
- 
-		<code class="xml">
+ 		
 		<?xml version="1.0"?>
 		<package>
 		  <metadata>
@@ -79,7 +76,6 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 			<tags>application app logger logging logs</tags>
 		  </metadata>
 		</package>
-		</code>
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
