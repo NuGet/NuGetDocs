@@ -16,7 +16,9 @@ You'll use a similar same workflow for virtually every NuGet package you use in 
 
 
 ##Install pre-requisites
-1. Visual Studio 2015 Update 3 with Tools for Universal Windows Apps. You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. The UWP tools option can be selected through the Custom install option during setup, checking the box under **Windows and Web Development > Universal Windows App Development Tools**. If you already have Visual Studio installed, you can run the installer again and click **Modify** to add the UWP tools.
+This tutorial requires Visual Studio 2015 Update 3 with Tools for Universal Windows Apps. 
+
+You can install the Community edition for free from [visualstudio.com](https://www.visualstudio.com/) or use the Professional or Enterprise editions. The UWP tools option can be selected through the Custom install option during setup, checking the box under **Windows and Web Development > Universal Windows App Development Tools**. If you already have Visual Studio installed, you can run the installer again and click **Modify** to add the UWP tools.
 
 
 ##Create a new UWP project
@@ -47,18 +49,18 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 1. Open MainPage.xaml and replace the existing `Grid` element with the following:
 
-	<code class="xml">
+	<pre><code class="xml">
 		<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 		    <StackPanel VerticalAlignment="Center">
 		        <Button Click="Button_Click" Content="Click Me" Margin="10"/>
 		        <TextBlock Name="TextBlock" Text="TextBlock" Margin="10"/>
 		    </StackPanel>
 		</Grid>
-	</code>
+	</code></pre>
 
 2. Expand MainPage.xaml, open MainPage.xaml.cs, and insert the following code inside the `MainPage` class, after the constructor:
 
-	<code class="cs">
+	<pre><code class="cs">
 	    public class Account
 	    {
 	        public string Name { get; set; }
@@ -77,7 +79,7 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 	        string json = JsonConvert.SerializeObject(account, Formatting.Indented);
 	        TextBlock.Text = json;
 	    }
-	</code>
+	</code></pre>
 
 3. Even though you added the Newtonsoft.Json package to the project, you'll still see a red squiggle under `JsonConvert` because you need a `using` statement. Hover over the underlined `JsonConvert` and you'll see the Lightbulb and the option to **Show potential fixes**:
 
