@@ -4,7 +4,7 @@ It's a simple process to create a NuGet package from a .NET Class Library and pu
 
 - [Install pre-requisites](#install-pre-requisites)
 - [Create a class library project](#create-a-class-library-project)
-- [Create the .nuspec package manifest file](#create-the-nuspec-package-manifest-file)
+- [Create the .nuspec package manifest file](#create-the--nuspec-package-manifest-file)
 - [Create the package](#create-the-package)
 - [Publish the package](#publish-the-package)
 
