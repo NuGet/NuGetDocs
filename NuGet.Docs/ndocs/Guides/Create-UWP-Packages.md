@@ -8,7 +8,7 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 2. [Create a UWP Windows Runtime Component](#create-a-uwp-windows-runtime-component)
 3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
 4. [Package the component](#package-the-component)
-
+5. [Related topics](#related-topics)
 
 ##Pre-requisites
 
@@ -22,7 +22,7 @@ In this walkthrough you'll create a NuGet package with a native UWP component (i
 
 ##Create a UWP Windows Runtime Component
 
-1. In Visual Studio, choose **File > New > Project**, expand the **Visual C++ > Windows > Universal** node, select the **Windows Runtime Component (Universal Windows)** template, change the name ImageEnhancer, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
+1. In Visual Studio, choose **File > New > Project**, expand the **Visual C++ > Windows > Universal** node, select the **Windows Runtime Component (Universal Windows)** template, change the name to ImageEnhancer, and click OK. Accept the default values for Target Version and Minimum Version when prompted.
 
 	![Creating a new UWP Windows Runtime Component project](/images/BuildForUWP/01.PNG)
 
@@ -221,7 +221,7 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 
 ##Package the component
 
-With the completed .nuspec referencing all the files we need to include in the package, you're ready to run the `pack` command:
+With the completed .nuspec referencing all the files you need to include in the package, you're ready to run the `pack` command:
 
 <code class="bash hljs">
 	nuget pack ImageEnhancer.nuspec
@@ -229,17 +229,21 @@ With the completed .nuspec referencing all the files we need to include in the p
 
 This will generate `ImageEnhancer_YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
 
-![nupkg](/images/BuildForUWP/05.PNG)
+![NuGet Package Explorer showing the ImageEnhancer package](/images/BuildForUWP/05.PNG)
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
 	A .nupkg file is just a ZIP file with a different extension. You can also examine package contents, then, by change .nupkg to .zip, but remember to restore the extension before uploading a package to nuget.org. 
 </div>
 
+To make your package available to other developers,  follow the instructions on [Publish a package](/ndocs/create-packages/publish-a-package).
 
 
 ##Related topics
  
 * [Nuspec Reference](/ndocs/schema/nuspec)
 * [Symbol packages](/ndocs/create-packages/symbol-packages)
+* [Dependency Versions](/ndocs/create-packages/dependency-versions)
+* [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
+* [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
 * [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
