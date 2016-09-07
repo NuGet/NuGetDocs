@@ -546,13 +546,16 @@
     <Content Include="images\BetaChannel\02_ExtensionUpdate.png" />
     <Content Include="images\BuildForNetStandard\01.PNG" />
     <Content Include="images\BuildForNetStandard\02.PNG" />
+    <Content Include="images\BuildForNetStandard\02-ChangeTarget.png" />
+    <Content Include="images\BuildForNetStandard\03-PackageExplorer.png" />
     <Content Include="images\BuildForNetStandard\05.PNG" />
     <Content Include="images\BuildForUWP\01.PNG" />
     <Content Include="images\BuildForUWP\02.PNG" />
     <Content Include="images\BuildForUWP\03.PNG" />
     <Content Include="images\BuildForUWP\04.PNG" />
     <Content Include="images\BuildForUWP\05.PNG" />
-    <Content Include="images\BuildForXplat\01.PNG" />
+    <Content Include="images\BuildForXplat\01.PNG" /> *
+    <Content Include="images\BuildForXplat\01-NewProject.png" />
     <Content Include="images\BuildForXplat\02.PNG" />
     <Content Include="images\BuildForXplat\02_1.PNG" />
     <Content Include="images\BuildForXplat\03.PNG" />
