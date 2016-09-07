@@ -2,15 +2,15 @@
 
 This tutorial walks you through installing and using the popular [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) package in a Universal Windows Platform (UWP) project:
 
-- Install pre-requisites
-- Create a new UWP project
-- Add the Newtonsoft.Json NuGet package
-- Use the Newtonsoft.Json API in the app
+- [Install pre-requisites](#install-pre-requisites)
+- [Create a new UWP project](#create-a-new-uwp-project)
+- [Add the Newtonsoft.Json NuGet package](#add-the-newtonsoft-json-nuget-package)
+- [Use the Newtonsoft.Json API in the app](#use-the-newtonsoft-json-api-in-the-app)
 
 You'll use a similar same workflow for virtually every NuGet package you use in a project.
 
-<div class="block-callout-warning">
-    <strong>Start with nuget.org</strong>	
+<div class="block-callout-info">
+    <strong>Start with nuget.org</strong><br>
     Installing packages from <a href="http://nuget.org">nuget.org</a> is a very common workflow that .NET developers use to find components they can reuse in their own applications. You can always search nuget.org directly or find and install packages within Visual Studio as we'll do here.
 </div>
 
