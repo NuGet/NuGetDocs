@@ -25,7 +25,7 @@ The following capabilities are supported only in the NuGet CLI:
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
-	You might also be interested in the **NuGet Package Explorer**, an open-source, stand-alone tool to visually explore and create NuGet packages. See the [Package Explorer](/ndocs/tools/package-explorer) topic for details.<br><br>
+	You might also be interested in the <b>NuGet Package Explorer</b>, an open-source, stand-alone tool to visually explore and create NuGet packages. See the <a href="/ndocs/tools/package-explorer">Package Explorer</a> topic for details.<br><br>
 	Also, the cross-platform <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/index#installation">.NET Core CLI</a> toolchain for developing .NET Core applications also supports a <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore">dotnet restore</a> command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
 </div>
 
@@ -107,11 +107,11 @@ Accessing the beta channel is simple:
 
 1. In Visual Studio, navigate to **Tools > Options > Environment > Extensions and Updates**, then add the feed `https://dotnet.myget.org/F/nuget-beta/vsix/` to the **Additional Extension Galleries** list:
 
-	![Adding the NuGet beta channel feed to Visual Studio](/images/BetaChannel/01-ToolsSettings.png)
+	![Adding the NuGet beta channel feed to Visual Studio](/images/BetaChannel/01_ToolsSettings.png)
 
 2. Navigate to **Tools > Extensions and Updates** and select **Online**, which should show the NuGet-Beta Feed from which you can install a beta NuGet Package Manager:
 
-	![Checking NuGet beta channel updates](/images/BetaChannel/02-ExtensionUpdate.png)
+	![Checking NuGet beta channel updates](/images/BetaChannel/02_ExtensionUpdate.png)
 
 To report problems with the Beta builds or to share ideas, open an issue on the [NuGet GitHub repository](https://github.com/Nuget/Home).
 
