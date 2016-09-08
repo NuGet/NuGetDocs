@@ -1,8 +1,10 @@
-﻿Package-Restore
+﻿Overview-and-Workflow
+Finding-and-Choosing-Packages
+Support-for-Native-Projects 
 Reinstalling-Packages
-ProjectJson-Intro
-ProjectJson-Dependency
+Package-Restore
+Troubleshooting-NuGet-Cache-Issues
 nuget-config-File-Overview
 nuget-config-File-Defaults
-Support-for-Native-Projects
-Search-Syntax
+ProjectJson-Intro
+ProjectJson-Dependency
