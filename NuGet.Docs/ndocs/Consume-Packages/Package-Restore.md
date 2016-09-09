@@ -5,78 +5,15 @@
 	Nuget Automatic Package Restore has changed in Nuget 2.7+. Do not mix 'old' and new methods for automatic package restoration. For more information, see <a href="#common-issues-with-automatic-package-restore">Common Issues with Automatic Package Restore</a>.
 </div>
 
-Many developers like to omit binaries from their source control repository. This can be beneficial in multiple ways:
-
-1. Distributed version control systems (DVCS) include every version of every file within the repository, and binary files that are updated frequently can lead to significant repository bloat and more time required to clone the repository.
-1. With the packages included in the repository, team members may add references directly to package contents on disk rather than referencing packages through NuGet.
-1. It becomes harder to "clean" your solution of any unused package folders, as you need to ensure you don't delete any package folders still in use.
-
 To promote a cleaner developer environment while also reducing repository size, NuGet offers a **Package Restore** feature that will install all referenced packages before a project is built, thereby ensuring that all dependencies are available to a project without requiring them to be stored in source control. NuGet Package Restore is an extremely popular feature of NuGet and therefore it's important to understand how it works.
 
-## Omitting Packages from Source Control
+NuGet offers three approaches to using package restore:
 
-Even though package restore *[consent](#package-restore-consent)* is on by default, users still need to choose to omit their packages from source control before package restore is engaged. By default, source control systems will include the `packages` folder in your repository, and you need to take action to omit the packages from source control.
+* **Automatic Package Restore**, available with NuGet 2.7 and later, is the recommended approach within Visual Studio.
+* **Command-Line Package Restore** is required when building a solution from the command-line.
+* **MSBuild-integrated package restore** is the restore implementation. Although it continues to work in many scenarios, it does not cover the full set of scenarios addressed by the other two approaches.
 
-### Git
-Use the [.gitignore file](https://www.kernel.org/pub/software/scm/git/docs/gitignore.html) to ignore the `packages` folder. [Sample `.gitignore` for Visual Studio projects](https://github.com/github/gitignore/blob/master/VisualStudio.gitignore).
-
-The important parts of the file are the following:
-
-
-	# Ignore NuGet Packages
-	*.nupkg
-	# Ignore the packages folder
-	**/packages/*
-	# except build/, which is used as an MSBuild target.
-	!**/packages/build/
-	# Uncomment if necessary however generally it will be regenerated when needed
-	#!**/packages/repositories.config
-
-
-### TFVC
-
-**Preferably, you do this BEFORE adding your solution to source control to avoid having to delete the packages folder from the source control repository first.**
-
-If you already added your solution to source control, you'll first have to delete the `\packages` folder from the repository, and check-in these pending changes before continuing to modify your already installed packages.
-
-To **disable source control integration**, use the `.nuget\NuGet.config` file, as explained on the [NuGet Config Settings](NuGet-Config-Settings) document under the "Source control integration" section. This `nuget.config` file does not have to be added to your solution file, but it must be put in the `$(SolutionDir)\.nuget` folder to be taken into account as it works at the solution level. Also, you need to add this file to source control.
-Tip: on Windows, you can create the `.nuget` file in Windows Explorer by creating a folder with the name `.nuget.` (note the trailing dot!).
-
-At the minimum, the `.nuget\NuGet.config` file should contain the following:
-
-
-	<?xml version="1.0" encoding="utf-8"?>
-	<configuration>
-		<solution>
-			<add key="disableSourceControlIntegration" value="true" />
-		</solution>
-	</configuration>
-
-
-This configuration setting allows NuGet to completely skip the call into Visual Studio to pend changes to the `packages` folder.
-
-If you are on a version of TFS older than TFS 2012, you'll also need to cloak the `packages` folder in your workspace mappings.
-
-If you are on TFS 2012 or newer, or using VSO, you'll need to add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file to **explicitly ignore modifications to the `\packages` folder** on the repository level.
-To create a `.tfignore` file using Windows Explorer, create a new file and give it the name `.tfignore.` (no extension). You might need to disable the "Hide known file extensions" option first.
-
-The `.tfignore` file should have the following entry:
-
-
-	## Ignore the NuGet packages folder in the root of the repository
-	packages
-
-	#include package target files which may be required for msbuild
-	!packages/*.targets
-
-
-Depending on the location of the .tfignore file relative to the packages folder, you might need to adjust the entry to reflect this (e.g. if you put sources in a `\src` subfolder and have the `.tfignore` file in the repository root, the entry should be `\src\packages`).
-
-## Package Restore Approaches
-
-NuGet offers three approaches to using package restore. Automatic Package Restore is the NuGet team's recommended approach to Package Restore within Visual Studio, and it was introduced in NuGet 2.7. Command-Line Package Restore is required when building a solution from the command-line; it was introduced in early versions of NuGet, but was improved in NuGet 2.7. The MSBuild-integrated package restore approach is the original Package Restore implementation and though it continues to work in many scenarios, it does not cover the full set of scenarios addressed by the other two approaches.
-
-### Automatic Package Restore in Visual Studio
+## Automatic Package Restore in Visual Studio
 
 Beginning with NuGet 2.7, the NuGet Visual Studio extension integrates into Visual Studio's build events and restores missing packages when a build begins. This feature is enabled by default, but developers can [opt out](#opting-out) if desired.
 
@@ -104,7 +41,7 @@ This approach to package restore offers several advantages:
 1. Packages are restored before MSBuild is invoked by Visual Studio. This allows packages that extend MSBuild though targets/props file imports to be restored before MSBuild starts, ensuring a successful build.
 1. Compatibility with ASP.NET Web Site projects created in Visual Studio.
 
-### Command-Line Package Restore
+## Command-Line Package Restore
 
 As a complement to Automatic Package Restore, NuGet offers a simple command-line approach to restoring packages before invoking MSBuild, ensuring that all referenced NuGet packages are available before the build starts. NuGet 2.7 introduced a new [Restore Command](Command-Line-Reference#Restore-command) that provides a single command that restores all packages for an entire solution. Prior to NuGet 2.7, the [Install Command](Command-Line-Reference#Install-command) was used to restore packages, but only for a single `packages.config` file.
 
@@ -116,7 +53,7 @@ Usage of `NuGet.exe`'s [Restore Command](Command-Line-Reference#Restore-command)
 
 These three use cases are the most common, but other scenarios do exist. For more information on the Restore and Install commands, see the [Command-Line Reference](Command-Line-Reference).
 
-### Command-Line Package Restore wrapped in MSBuild
+## Command-Line Package Restore wrapped in MSBuild
 
 In order to use the command line based approach with existing build servers, such as [Team Foundation Build](http://msdn.microsoft.com/en-us/library/ms181710(v=VS.90).aspx), it's often desirable to wrap the command line in a regular MSBuild project as this has the following advantages:
 
@@ -128,7 +65,7 @@ This approach differs from the MSBuild-Integrated Package Restore as this doesn'
 
 You can find a more detailed walkthrough on the [Package Restore with Team Foundation Build](package-restore/team-build).
 
-### MSBuild-Integrated Package Restore
+## MSBuild-Integrated Package Restore
 
 Prior to NuGet 2.7, an MSBuild-Integrated Package Restore approach was used and promoted. While this approach is still available, the NuGet team suggests using the Automatic Package Restore and Command-Line Package Restore instead.
 

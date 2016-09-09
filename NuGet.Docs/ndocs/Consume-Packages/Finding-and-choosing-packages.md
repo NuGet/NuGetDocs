@@ -22,6 +22,16 @@ You can also search using the package ID, if you know it. See [Search Syntax](#s
 
 At this time, search results are sorted only by relevance, so you generally want to look through at least the first few pages of results for packages that suit your needs, or refine your search terms to be more specific.
 
+
+### Native C++ packages
+
+As of [version 2.5](../Release-Notes/NuGet-2.5), NuGet supports native C++ packages can that can be used in C++ projects in Visual Studio. This enables the **Manage NuGet Packages** context-menu command for projects, introduces a `native` target framework, and provides MSBuild integration.
+
+To find native packages on [nuget.org](https://www.nuget.org/packages), search using `tag:native`. Such packages typically provide `.targets` and `.props` files, which NuGet imports automatically when the package is added to a project. 
+
+For information on creating native packages, see [Native packages](/ndocs/create-packages/native-packages).
+
+
 ## Evaluating packages
 
 The best way to evaluate the usefulness of a package is, of course, to download it and try it out. After all, every highly popular package got started with only a few developers using it, and you might be one of the early adopters!
