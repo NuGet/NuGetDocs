@@ -259,6 +259,13 @@
     <Content Include="images\ConsumeNugetSample\QS_Use-05-AddUsing.png" />
     <Content Include="images\ConsumeNugetSample\QS_Use-06-AppStart.png" />
     <Content Include="images\ConsumeNugetSample\QS_Use-07-AppEnd.png" />
+    <Content Include="images\Consume\Finding-01-Popularity.png" />
+    <Content Include="images\Consume\Finding-02-SearchResults.png" />
+    <Content Include="images\Consume\Finding-03-Downloads.png" />
+    <Content Include="images\Consume\Finding-04-VersionHistory.png" />
+    <Content Include="images\Consume\Finding-05-OperationChart.png" />
+    <Content Include="images\Consume\Overview-01-GeneralFlow.png" />
+    <Content Include="images\Consume\Overview-02-RestoreFlow.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-01-NewProject.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-02-APIKey.png" />
     <Content Include="ndocs\add-redirect.md" />
@@ -369,6 +376,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="consume\Troubleshooting-NuGet-Cache-Issues.cshtml" />
     <Content Include="ndocs\Consume-Packages\Troubleshooting-NuGet-Cache-Issues.md" />
+    <Content Include="ndocs\Consume-Packages\Overview-and-Workflow.md" />
+    <Content Include="ndocs\Consume-Packages\Finding-and-Choosing-Packages.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
@@ -581,11 +590,6 @@
     <Content Include="images\Consume\elmah-web.config-changes.png" />
     <Content Include="images\Consume\enable-package-restore.png" />
     <Content Include="images\Consume\extension-manager-with-nuget.png" />
-    <Content Include="\images\Consume\Finding-01-Popularity.png" />
-    <Content Include="\images\Consume\Finding-02-SearchResults.png" />
-    <Content Include="\images\Consume\Finding-03-Downloads.png" />
-    <Content Include="\images\Consume\Finding-04-VersionHistory.png" />
-    <Content Include="\images\Consume\Finding-05-OperationChart.png" />
     <Content Include="images\Consume\install-preview-dialog.png" />
     <Content Include="images\Consume\installation-options.png" />
     <Content Include="images\Consume\License-acceptance.png" />
@@ -605,8 +609,6 @@
     <Content Include="images\Consume\mtr.png" />
     <Content Include="images\Consume\NuGet-Config-File-Machine-Wide.png" />
     <Content Include="images\Consume\nuget-version.png" />
-    <Content Include="\images\Consume\Overview-01-GeneralFlow.png" />
-    <Content Include="\images\Consume\Overview-02-RestoreFlow.png" />
     <Content Include="images\Consume\package-console-new.png" />
     <Content Include="images\Consume\package-console.png" />
     <Content Include="images\Consume\package-manager-console-empty-window.png" />
