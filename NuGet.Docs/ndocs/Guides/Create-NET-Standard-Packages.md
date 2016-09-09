@@ -265,7 +265,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 
 
 <a name="table></a>
-##.NET Standard mapping table
+## .NET Standard mapping table
 
 <table class="reference">
 	<tr>
