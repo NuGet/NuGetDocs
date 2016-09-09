@@ -11,11 +11,11 @@ On this page:
 
 When you visit nuget.org or open the Package Manager UI in Visual Studio, you'll see a list of packages sorted by total downloads. This immediately shows you the most widely-used packages across the millions of .NET projects. There's a good chance, then, that at least some of the packages listed on the first few pages will be useful in your projects.
 
-![Default view of nuget.org/packages showing the most popular packages](/images/Consume/Finding-01-Popularity) 
+![Default view of nuget.org/packages showing the most popular packages](/images/Consume/Finding-01-Popularity.png) 
 
 For specific needs, searching by tags (within Visual Studio's Package Manager or on a portal like nuget.org) is the most common means of discovering a suitable package. For example, searching on "json" will list all NuGet packages that are tagged with that keyword and thus have some relationship to the JSON data format. 
 
-![Search results for 'json' on nuget.org](/images/Consume/Finding-02-SearchResults) 
+![Search results for 'json' on nuget.org](/images/Consume/Finding-02-SearchResults.png) 
 
 You can also search using the package ID, if you know it. See [Search Syntax](#search-syntax) below.
 
@@ -32,7 +32,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 
 - *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time. 
 
-	![Version history on a package's listing page](/images/Consume/Finding-04-VersionHistory.png)
+	![Version history on a package's listing page](/images/Consume/Finding-05-OperationChart.png)
 
 - *Recent installs*: on the package page, click **Package Statistics** on the left side. This will show you the package installs for the last six weeks. A package with more current use is obviously a better choice than one without.
 - *Restore vs. new install*: on the same package statistics page, uncheck the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
