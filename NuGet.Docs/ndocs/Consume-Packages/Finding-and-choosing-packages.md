@@ -33,7 +33,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 
 - *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time. 
 
-	![Version history on a package's listing page](/images/Consume/Finding-04-VersionHistory.png)
+	![Version history on a package's listing page](/images/Consume/Finding-05-OperationChart.png)
 
 - *Recent installs*: on the package page, click **Package Statistics** on the left side. This will show you the package installs for the last six weeks. A package with more current use is obviously a better choice than one without.
 - *Restore vs. new install*: on the same package statistics page, uncheck the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
