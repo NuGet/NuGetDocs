@@ -22,7 +22,8 @@ NuGet Config Defaults file, NuGetDefaults.config, is located under %ProgramData%
 
 ### Default Package Sources
 
-NuGet has always had the notion of a default package source that the user could not delete--it has always been the nuget.org package source. Without any default package sources specified in the NuGet Config Defaults file, NuGet will continue to use nuget.org as the default package source. However, if the NuGet Config Defaults file specifies default package sources, those defaults will be used in place of nuget.org, and those package sources will be added to the users' settings when they use NuGet.
+Starting with version 3.4, nuget no longer includes a hardcoded default source. When nuget.exe is run for the first time, the NuGet.config file is generated and nuget.org is added as the default package source in the config file. In the absence of the NuGet.config file, the default package source is undefined.
+Without any default package sources specified in the NuGet Config Defaults file, NuGet will continue to use the default package source specified in the NuGet.config file (the default package source is nuget.org unless explicitly modified). However, if the NuGet Config Defaults file specifies default package sources, those defaults will be used in place of the one specified in the NuGet.config file, and those package sources will be added to the users' settings when they use NuGet.
 
 This feature essentially allows administrators to replace the default nuget.org package source with their own package source(s).
 
