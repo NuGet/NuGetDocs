@@ -41,6 +41,7 @@
   -webkit-border-radius : 5px;
   border-radius         : 5px;
 }
+
 .nano > .nano-pane > .nano-slider {
   background: #444;
   background: rgba(0,0,0,.5);
@@ -53,4 +54,8 @@
 .nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
   visibility : visible\9; /* Target only IE7 and IE8 with this hack */
   opacity    : 0.99;
+}
+
+.nano:hover{
+    border-right: none;
 }
