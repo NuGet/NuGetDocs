@@ -266,6 +266,8 @@
     <Content Include="images\Consume\Finding-05-OperationChart.png" />
     <Content Include="images\Consume\Overview-01-GeneralFlow.png" />
     <Content Include="images\Consume\Overview-02-RestoreFlow.png" />
+    <Content Include="images\Consume\Restore-01-AutoRestoreOptions.png" />
+    <Content Include="images\Consume\Restore-02-VSTSBuild.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-01-NewProject.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-02-APIKey.png" />
     <Content Include="ndocs\add-redirect.md" />
@@ -275,9 +277,6 @@
     <Content Include="ndocs\Consume-Packages\nuget-config-File-Defaults.md" />
     <Content Include="ndocs\Consume-Packages\nuget-config-File-Overview.md" />
     <Content Include="ndocs\Consume-Packages\Package-Restore.md" />
-    <Content Include="ndocs\Consume-Packages\Package-Restore\Migrating-to-Automatic-Package-Restore.md" />
-    <Content Include="ndocs\Consume-Packages\Package-Restore\MSBuild-Integrated.md" />
-    <Content Include="ndocs\Consume-Packages\Package-Restore\Team-Build.md" />
     <Content Include="ndocs\Consume-Packages\ProjectJson-Dependency.md" />
     <Content Include="ndocs\Consume-Packages\ProjectJson-Intro.md" />
     <Content Include="ndocs\Consume-Packages\Reinstalling-Packages.md" />
@@ -373,8 +372,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="consume\Troubleshooting-NuGet-Cache-Issues.cshtml" />
-    <Content Include="ndocs\Consume-Packages\Troubleshooting-NuGet-Cache-Issues.md" />
-    <Content Include="ndocs\Consume-Packages\Overview-and-Workflow.md" />
+    <Content Include="ndocs\Consume-Packages\Troubleshooting-NuGet-Cache-Issues.md" />    
     <Content Include="ndocs\Consume-Packages\Overview-and-Workflow.md" />
     <Content Include="ndocs\Consume-Packages\Finding-and-Choosing-Packages.md" />
     <Content Include="ndocs\Create-Packages\Native-Packages.md" />

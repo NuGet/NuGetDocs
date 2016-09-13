@@ -1,9 +1,9 @@
 Overview-and-Workflow
-Finding-and-choosing-packages
+Finding-and-Choosing-Packages
 Reinstalling-Packages
 Packages-and-Source-Control
 Package-Restore
-Troubleshooting-NuGet-Cache-Issues
+Managing-the-NuGet-Cache
 nuget-config-File-Overview
 nuget-config-File-Defaults
 ProjectJson-Intro

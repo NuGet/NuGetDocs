@@ -82,7 +82,7 @@ The NuGet Package Manager is included in every edition of Visual Studio 2012 and
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
-	The console requires [PowerShell 2.0](http://support.microsoft.com/kb/968929), which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.<br><br>
+	The console requires <a href="http://support.microsoft.com/kb/968929">PowerShell 2.0</a>, which will already be installed on Windows 7 or higher and Windows Server 2008 R2 or higher.<br><br>
     Package Manager Console commands also work only within  Visual Studio. Use the NuGet CLI outside of that envronment.
 </div>
 
