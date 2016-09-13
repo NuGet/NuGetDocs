@@ -59,6 +59,22 @@ h2 {
     background-color: #164f78 !important;
 }
 
+input::-webkit-input-placeholder {
+    color: white !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: white !important;  
+}
+
 .navbar {
     font-size: 14px !important;
 }
@@ -274,6 +290,10 @@ a.na .downloadToolsLinks {
     min-height: 130px;
     max-height: 130px;
     overflow: hidden;
+}
+
+.caption:hover {
+    background-color: aliceblue;
 }
 
 .swimlaneTitle {
@@ -551,3 +571,4 @@ warningcallout {
 .snippet:hover .btn {
     opacity: 1;
 }
+

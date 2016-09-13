@@ -18,6 +18,7 @@
     #expList li {
         line-height: 130%;
         padding-left: 15px;
+        padding-right: 2px;
         padding-top: 10px;
         font-size: 14px;
         background-position: 1px 10px;
