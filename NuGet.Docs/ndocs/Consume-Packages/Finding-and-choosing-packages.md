@@ -3,6 +3,7 @@
 When starting any .NET project, or whenever you identify a functional need for your app or service, you can save yourself lots of time and trouble by using existing NuGet packages that fulfill that need. These packages can come from the public collection on [nuget.org](http://www.nuget.org/packages/), or a private source that's provided by your organization or another third party.
 
 On this page:
+
 - [Finding packages](#finding-packages)
 - [Evaluating packages](#evaluating-packages)
 - [Search syntax](#search-syntax)
@@ -21,6 +22,16 @@ You can also search using the package ID, if you know it. See [Search Syntax](#s
 
 At this time, search results are sorted only by relevance, so you generally want to look through at least the first few pages of results for packages that suit your needs, or refine your search terms to be more specific.
 
+
+### Native C++ packages
+
+As of [version 2.5](../Release-Notes/NuGet-2.5), NuGet supports native C++ packages can that can be used in C++ projects in Visual Studio. This enables the **Manage NuGet Packages** context-menu command for projects, introduces a `native` target framework, and provides MSBuild integration.
+
+To find native packages on [nuget.org](https://www.nuget.org/packages), search using `tag:native`. Such packages typically provide `.targets` and `.props` files, which NuGet imports automatically when the package is added to a project. 
+
+For information on creating native packages, see [Native packages](/ndocs/create-packages/native-packages).
+
+
 ## Evaluating packages
 
 The best way to evaluate the usefulness of a package is, of course, to download it and try it out. After all, every highly popular package got started with only a few developers using it, and you might be one of the early adopters!
@@ -32,12 +43,12 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 
 - *Version history*: on the package page, look at the date of the most recent update, and scroll down to see the version history. A well-maintained package will have recent updates, and will have a rich version history. Neglected packages will have few updates and often haven't been updated in some time. 
 
-	![Version history on a package's listing page](/images/Consume/Finding-05-OperationChart.png)
+	![Version history on a package's listing page](/images/Consume/Finding-04-VersionHistory.png)
 
 - *Recent installs*: on the package page, click **Package Statistics** on the left side. This will show you the package installs for the last six weeks. A package with more current use is obviously a better choice than one without.
 - *Restore vs. new install*: on the same package statistics page, uncheck the **Version** checkbox and check **Operation** to see a chart of package restores vs. new installs (below).
  
-	![Chart of operations for a NuGet package on nuget.org package statistics](/images/Consume/Finding-03-OperationChart.png)
+	![Chart of operations for a NuGet package on nuget.org package statistics](/images/Consume/Finding-05-OperationChart.png)
 
 - *Dependency installs*: the same **Operation** chart above has an "Install-Dependency" bar that indicates how many other NuGet packages have taken a dependency on this one. This is an even stronger indication that other developers find the package reliable.
 -  *Support*: on the package page, click **Project Site** if available to see what support opions are available. A project with a dedicated site is generally better supported.
