@@ -58,7 +58,7 @@ h2 {
 .navbar-default {
     background-color: #164f78 !important;
 }
-
+/*karann - changing placeholder color to white to improve contrast*/
 input::-webkit-input-placeholder {
     color: white !important;
 }

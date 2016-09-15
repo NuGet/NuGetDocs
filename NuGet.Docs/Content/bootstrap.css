@@ -382,6 +382,11 @@ th {
     content: "\e003";
 }
 
+/*karann - adding hover color for the search button*/
+.glyphicon-search:hover{
+    color:#164F78;
+}
+
 .glyphicon-heart:before {
     content: "\e005";
 }
