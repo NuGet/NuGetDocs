@@ -9,7 +9,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 3. [Create and update the .nuspec file](#create-and-update-the--nuspec-file)
 4. [Package the component](#package-the-component)
 5. [Additional options](#additional-options)
-5. [.NET Standard mapping table](#table)
+5. [.NET Standard mapping table](#-net-standard-mapping-table)
 6. [Related topics](#related-topics)
 
 
@@ -264,7 +264,6 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 	</package>
 
 
-<a name="table></a>
 ## .NET Standard mapping table
 
 <table class="reference">
@@ -365,8 +364,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 		<td></td>
 		<td></td>
 		<td></td>
-    <tr>
-	
+    <tr>	
 </table>
 
 

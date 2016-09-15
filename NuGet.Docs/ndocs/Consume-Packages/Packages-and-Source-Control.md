@@ -26,7 +26,7 @@ The important parts of the `.gitignore` file are:
 	#!**/packages/repositories.config
 
 
-## Omitting packages with Team Foundation Version Control (TFVC)
+## Omitting packages with Team Foundation Version Control
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>

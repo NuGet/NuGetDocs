@@ -274,8 +274,8 @@
     <Content Include="ndocs\API\Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
     <Content Include="ndocs\API\_metadata" />
-    <Content Include="ndocs\Consume-Packages\nuget-config-File-Defaults.md" />
-    <Content Include="ndocs\Consume-Packages\nuget-config-File-Overview.md" />
+    <Content Include="ndocs\Consume-Packages\NuGet-Config-Defaults-File.md" />
+    <Content Include="ndocs\Consume-Packages\NuGet-Config-File-Overview.md" />
     <Content Include="ndocs\Consume-Packages\Package-Restore.md" />
     <Content Include="ndocs\Consume-Packages\ProjectJson-Dependency.md" />
     <Content Include="ndocs\Consume-Packages\ProjectJson-Intro.md" />
@@ -372,10 +372,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="consume\Troubleshooting-NuGet-Cache-Issues.cshtml" />
-    <Content Include="ndocs\Consume-Packages\Troubleshooting-NuGet-Cache-Issues.md" />    
     <Content Include="ndocs\Consume-Packages\Overview-and-Workflow.md" />
     <Content Include="ndocs\Consume-Packages\Finding-and-Choosing-Packages.md" />
     <Content Include="ndocs\Create-Packages\Native-Packages.md" />
+    <Content Include="ndocs\Consume-Packages\Managing the NuGet Cache.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />

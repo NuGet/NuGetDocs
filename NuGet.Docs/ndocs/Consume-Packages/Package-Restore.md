@@ -42,7 +42,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
-	The <em>packageRestore/enabled</em> setting can be overridden globally by creating setting an environment variable called <strong>EnableNuGetPackageRestore</strong> with a value of TRUE or FALSE before launching Visual Studio or starting a build.
+	The <em>packageRestore/enabled</em> setting can be overridden globally by setting an environment variable called <strong>EnableNuGetPackageRestore</strong> with a value of TRUE or FALSE before launching Visual Studio or starting a build.
 </div>
  
 
@@ -189,6 +189,8 @@ With TFS 2013 and later, packages are automatically restored by default during b
 If you're using a previous version of build templates (such as in a project that's been migrated from earlier versions of TFS), you'll need to also migrate those build templates to TFS 2013. This essentially means recreating the custom parts of the Build Templates using the appropriate template for your source control (TFVC or Git).
 
 For earlier version of TFS, you can simply include a build step to invoke [command-line restore](#command--line-restore) as described earlier.
+
+For more details see then [Walkthrough of Package Restore with Team Foundation Build](package-restore/team-build).
 
 
 ### Command-line restore wrapped in MSBuild

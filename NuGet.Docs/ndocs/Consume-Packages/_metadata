@@ -4,7 +4,7 @@ Reinstalling-Packages
 Packages-and-Source-Control
 Package-Restore
 Managing-the-NuGet-Cache
-nuget-config-File-Overview
-nuget-config-File-Defaults
+NuGet-Config-File-Overview
+NuGet-Config-Defaults-File
 ProjectJson-Intro
 ProjectJson-Dependency
