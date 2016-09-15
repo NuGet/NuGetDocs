@@ -1,8 +1,8 @@
-﻿# NuGet Config File Defaults
+# NuGet Config File Defaults
 
 Many companies are using NuGet internally, but have had a hard time setting up a build server or guiding their developers to use internal package sources instead of nuget.org. In addition to the standard [NuGet Configuration File](nuget-config-file-overview.md), NuGet 2.7 introduces a Configuration Defaults feature that allows machine-wide defaults to be specified for:
 
-a) Enabled package sources
+a) Enabled package sources (NuGet 3.4.x and earlier only)
 
 b) Registered, but disabled-by-default package sources
 
@@ -26,6 +26,11 @@ NuGetDefaults.config, is located under `%ProgramData%\NuGet` folder, which is ma
 NuGet has always had the notion of a default package source that the user could not delete. It has always been the nuget.org package source. Without any default package sources specified in the NuGet Config Defaults file, NuGet will continue to use nuget.org as the default package source. However, if the NuGet Config Defaults file specifies default package sources, those defaults will be used in place of nuget.org, and those package sources will be added to the users' settings when they use NuGet.
 
 This feature essentially allows administrators to replace the default nuget.org package source with their own package source(s).
+
+<div class="block-callout-warning">
+    <strong>Note:</strong><br>
+    Package sources in NugetDefaults.config are no longer supported in NuGet 3.5.0 and higher.
+</div>
 
 ## Enabled Package Sources
 

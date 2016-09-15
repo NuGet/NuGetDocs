@@ -26,9 +26,12 @@ The important parts of the `.gitignore` file are:
 	#!**/packages/repositories.config
 
 
-## Omitting packages with Team Foundation Version Control (TFVC)
+## Omitting packages with Team Foundation Version Control
 
-**Note**: it's best to follow these instructions *before* adding your project to source control. Otherwise, manually delete the `packages` folder from your repository and check in that change before continuing.
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Follow these instructions if possible <em>before</em> adding your project to source control. Otherwise, manually delete the `packages` folder from your repository and check in that change before continuing.
+</div>
 
 To disable source control integration with TFVC for selected files:
 
