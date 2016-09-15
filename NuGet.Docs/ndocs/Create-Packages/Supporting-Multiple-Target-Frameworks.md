@@ -98,7 +98,7 @@ For example, given the follow folder structure:
 	        \MyAssembly.dll
 
 If you install a package that has the `lib` folder structure shown in the previous example 
-in a project that targets the .NET Framework 4.6, the assembly in the `net461` folder (for .NET Framework 4.6.1) is selected.
+in a project that targets the .NET Framework 4.6, the assembly in the `net45` folder (for .NET Framework 4.5) is selected.
 
 ## Grouping Assemblies by Framework Version
 
