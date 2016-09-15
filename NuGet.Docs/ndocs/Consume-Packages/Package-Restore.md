@@ -65,7 +65,7 @@ In some cases, a developer or company might want to enable or disable package re
 
 ## Command-line restore
 
-For NuGet 2.6 and earlier, you use the [Install](/ndocs/tools/nuget.exe-cli-reference#install) and point to the `packages.config` file that lists all the dependencies.
+For NuGet 2.6 and earlier, you use the [Install](/ndocs/tools/nuget.exe-cli-reference#install) command and point to the `packages.config` file that lists all the dependencies.
 
 For NuGet 2.7 and above, use the [Restore](/ndocs/tools/nuget.exe-cli-reference#restore) command to restore all packages in a solution. For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
