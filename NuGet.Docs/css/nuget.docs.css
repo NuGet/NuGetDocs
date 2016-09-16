@@ -58,21 +58,21 @@ h2 {
 .navbar-default {
     background-color: #164f78 !important;
 }
-
+/*karann - changing placeholder color to white to improve contrast*/
 input::-webkit-input-placeholder {
-    color: white !important;
+    color: #07395D !important;
 }
 
 input:-moz-placeholder { /* Firefox 18- */
-color: white !important;  
+color: #07395D !important;  
 }
  
 input::-moz-placeholder {  /* Firefox 19+ */
-color: white !important;  
+color: #07395D !important;  
 }
  
 input:-ms-input-placeholder {  
-color: white !important;  
+color: #07395D !important;  
 }
 
 .navbar {
@@ -80,7 +80,7 @@ color: white !important;
 }
 
 .form-control {
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(134, 162, 182, 1) !important; /*rgba(255, 255, 255, 0.2) !important*/
     color: white !important;
     border: transparent !important;
 }
@@ -136,7 +136,7 @@ color: white !important;
 
 .btn-default {
     color: white !important;
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(134, 162, 182, 1) !important; /*rgba(255, 255, 255, 0.2) !important*/;
     border: transparent !important;
 }
 

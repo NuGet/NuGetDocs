@@ -382,6 +382,11 @@ th {
     content: "\e003";
 }
 
+/*karann - adding hover color for the search button*/
+.glyphicon-search:hover{
+    color:#07395D;
+}
+
 .glyphicon-heart:before {
     content: "\e005";
 }
@@ -1420,7 +1425,8 @@ input,
 button,
 select,
 textarea {
-    font-family: inherit;
+    font-family: 'Segoe UI';/*karann - changing font and weight as per red lines*/
+    font-weight:400;
     font-size: inherit;
     line-height: inherit;
 }
