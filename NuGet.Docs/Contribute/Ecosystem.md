@@ -284,11 +284,11 @@ Provides:
 
 ## BoxStarter
 * License: Apache v2
-* Sources: [http://boxstarter.codeplex.com/](http://boxstarter.codeplex.com/)
+* Sources: [https://github.com/mwrock/boxstarter](https://github.com/mwrock/boxstarter)
 
-[BoxStarter](http://boxstarter.codeplex.com/) is another cool project leveraging NuGet and Chocolatey to quickly set up development environments.
+[BoxStarter](http://boxstarter.org/) is another cool project leveraging NuGet and Chocolatey to quickly set up development environments.
 
-More info: [http://boxstarter.codeplex.com/documentation](http://boxstarter.codeplex.com/documentation)
+More info: [http://boxstarter.org/WhyBoxstarter](http://boxstarter.org/WhyBoxstarter)
 
 ### SharpDevelop
 SharpDevelop was amongst the first IDEs other than Visual Studio to support NuGet.
