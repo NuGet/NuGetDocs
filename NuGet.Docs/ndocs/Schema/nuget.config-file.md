@@ -1,7 +1,16 @@
-﻿# nuget.config
+# NuGet.Config Reference
 
-There are a bunch of NuGet configuration values which can be set via the nuget.config file. Below is the summary of the NuGet config keys and their usage, note the keys are case sensitive.
+NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](ndocs/consume-packages/configuring-nuget-behavior). The individual settings are described in the sections below.
 
+<div class="block-callout-info">
+    <strong>Note</strong>
+	All key names are case-sensitive.
+</div>
+
+<div class="block-callout-info">
+    <strong>Environment variables in configuration</strong><br>
+	NuGet 3.4 and later allows use of environment variables in <em>NuGet.Config</em> values, allowing you to store config files in a source repository an apply machine-specific values at run time. For example, if a value contains <em>%HOME%\NuGetRepository</em> and the HOME environment variable is set to <em>c:\users\username</em>, then NuGet will use the value <em>c:\users\username\NuGetRepository</em>. If an environment variable is not found, NuGet will leave the value unmodified.
+</div>
 
 ## globalPackagesFolder
 
@@ -107,6 +116,39 @@ More details [here](Package-Restore).
       <add key="automatic" value="True" />
     </packageRestore>
 
+
+## disableSourceControlIntegration
+
+**section**: solution  
+**key**: disableSourceControlIntegration
+
+Allows you to disable source control integration for the "Packages" folder.
+
+This key works at the solution level and hence need to be added to the NuGet.config file present in the `$(SolutionDir)\.nuget` directory.
+
+Enabling package restore from VS would add the `.nuget\nuget.config` file automatically.
+
+The default value for this key is true.
+
+    <solution>
+      <add key="disableSourceControlIntegration" value="true" />
+    </solution>
+
+
+## bindingRedirects
+
+**section**: bindingRedirects  
+**keys**: skip
+
+Allows you to configure addition of binding redirects as part of package install.
+
+More details [here](Package-Restore).
+
+    <bindingRedirects>
+        <add key="skip" value="True" />
+    </bindingRedirects>
+
+
 ## packageSources
 
 **sections**: packageSources, disabledPackageSources and activePackageSource  
@@ -134,23 +176,6 @@ The values can be added to the config file directly or using the package manager
     <strong>Note:</strong><br>
     activePackageSource is not supported in NuGet 3.*+ versions and is deprecated.
 </div>
-
-## disableSourceControlIntegration
-
-**section**: solution  
-**key**: disableSourceControlIntegration
-
-Allows you to disable source control integration for the "Packages" folder.
-
-This key works at the solution level and hence need to be added to the NuGet.config file present in the `$(SolutionDir)\.nuget` directory.
-
-Enabling package restore from VS would add the `.nuget\nuget.config` file automatically.
-
-The default value for this key is true.
-
-    <solution>
-      <add key="disableSourceControlIntegration" value="true" />
-    </solution>
 
 ## packageSourceCredentials
 
@@ -211,36 +236,68 @@ It can also be set via environment variables `http_proxy` and `no_proxy`. `http_
 Allows you to set the API Key corresponding to a specific package source. This key has to be set via [NuGet -SetApiKey]().
 
 
-## bindingRedirects
+## Example config file
 
-**section**: bindingRedirects  
-**keys**: skip
+Below is an example `NuGet.Config` file that illustrates a number of settings:  
 
-Allows you to configure addition of binding redirects as part of package install.
-
-More details [here](Package-Restore).
-
-    <bindingRedirects>
-        <add key="skip" value="True" />
-    </bindingRedirects>
-
-## Environment variables in configuration
-
-Starting with NuGet 3.4, NuGet evaluates environment variables in NuGet.config values.
-NuGet does not evaluate environment variables in other locations.
-This enables you to include NuGet.config in your source repository but still have environment specific configuration exposed. 
-
-Consider an example NuGet.config file:
-
+    <?xml version="1.0" encoding="utf-8"?>
     <configuration>
-        <config>
-            <add key="repositoryPath" value="%HOME%\NuGetRepository" />
-        </config>
+      <config>
+	    <!-- 
+		Used to specify the default location to expand packages.
+		See: NuGet.exe help install
+		See: NuGet.exe help update
+		-->
+        <add key="repositoryPath" value="External\Packages" />
+		<!-- 
+		Used to specify default source for the push command.
+		See: NuGet.exe help push
+		-->
+        <add key="DefaultPushSource" value="https://MyRepo/ES/api/v2/package" />
+		<!-- 
+		Proxy settings
+		-->
+		<add key="http_proxy" value="host" />
+		<add key="http_proxy.user" value="username" />
+		<add key="http_proxy.password" value="encrypted_password" />
+      </config>
+	  <packageRestore>
+        <!-- Allow NuGet to download missing packages -->
+        <add key="enabled" value="True" />
+
+        <!-- Automatically check for missing packages during build in Visual Studio -->
+        <add key="automatic" value="True" />
+      </packageRestore>
+	  <!--
+	  Used to specify the default Sources for list, install and update.
+	  See: NuGet.exe help list
+	  See: NuGet.exe help install
+	  See: NuGet.exe help update
+	  -->
+      <packageSources>
+        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+        <add key="MyRepo - ES" value="https://MyRepo/ES/nuget" />
+      </packageSources>
+	  <!-- used to store credentials -->
+	  <packageSourceCredentials />
+	  <!-- Used to specify which one of the sources are active -->
+      <activePackageSource>
+	    <!-- this tells only one given source is active -->
+        <add key="NuGet official package source" value="https://nuget.org/api/v2/" />
+		<!-- this tells that all of them are active -->
+		<add key="All" value="(Aggregate source)" />
+      </activePackageSource>
+	  <!-- Used to disable package sources  -->
+      <disabledPackageSources />
+	  <!-- 
+	  Used to specify default API key associated with sources. 
+	  See: NuGet.exe help setApiKey
+	  See: NuGet.exe help push
+	  See: NuGet.exe help mirror
+	  -->
+      <apikeys>
+        <add key="https://MyRepo/ES/api/v2/package" value="encrypted_api_key" />
+      </apikeys>
     </configuration>
+ 
 
-NuGet evaluates `%HOME%` when it attempts to access the `repositoryPath` key. 
-
-    > nuget config repositoryPath
-    C:\users\username\NuGetRepository
-
-If your NuGet.config references an environment variable that is not set, it will left as is in the configuration value. 

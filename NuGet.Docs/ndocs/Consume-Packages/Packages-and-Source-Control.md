@@ -48,7 +48,7 @@ To disable source control integration with TFVC for selected files:
 		</configuration>
  
 4. If you are using TFS 2010 or earlier, cloak the `packages` folder in your workspace mappings.
-5. On TFS 2012 or later, or with Visual Studio Team Services, add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file with the contnet below to explicitly ignore modifications to the `\packages` folder on the repository level. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):
+5. On TFS 2012 or later, or with Visual Studio Team Services, add a [`.tfignore`](https://msdn.microsoft.com/en-us/library/ms245454.aspx#tfignore) file with the content below to explicitly ignore modifications to the `\packages` folder on the repository level. (You can create the file in Windows Explorer using the name a `.tfignore.` with the trailing dot, but you might need to disable the "Hide known file extensions" option first.):
  
 		# Ignore the NuGet packages folder in the root of the repository.
         # If needed, prefix 'packages' with additional folder names if it's 
