@@ -375,6 +375,7 @@
     <Content Include="ndocs\Create-Packages\Native-Packages.md" />
     <Content Include="ndocs\Consume-Packages\Managing-the-NuGet-Cache.md" />
     <Content Include="ndocs\Create-Packages\project.json-Impact.md" />
+    <Content Include="ndocs\Consume-Packages\Packages-and-Source-Control.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
