@@ -4,8 +4,8 @@ NuGet's `NuGet.Config` files (in XML) store configuration settings and allow for
 
 In this topic:
 
-* [File locations and uses](#config-file-location-and-uses)
-* [Changing settings](#changing-configuration-settings)
+* [File locations and uses](#config-file-locations-and-uses)
+* [Changing settings](#changing-config-settings)
 * [How settings are applied](#how-settings-are-applied)
 * [NuGet defaults file](#nuget-defaults-file)
  
