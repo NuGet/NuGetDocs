@@ -52,7 +52,7 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 
 ##Create and update the .nuspec file
 
-1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the .sln file is), and run the NuGet `spec` command to create the initial `Package.nuspec` file:
+1. Open a command prompt, navigate to the folder containing `AppLogg.csproj` folder (one level below where the .sln file is), and run the NuGet `spec` command to create the initial `AppLogger.nuspec` file:
 
 	<code class="bash hljs">
 		nuget spec
