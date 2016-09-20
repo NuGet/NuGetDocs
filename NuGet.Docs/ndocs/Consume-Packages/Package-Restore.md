@@ -60,14 +60,14 @@ For reference, see the [NuGet config file overview](/ndocs/consume-packages/nuge
 
 MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore-in-visual-studio).
 
-In some cases, a developer or company might want to enable or disable package restore on a machine by default for all users. This can be done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [NuGet Config Extensibility Point](/ndocs/consume-packages/nuget-config-file-overview#nuget-config-extensibility-point) for exact details on how NuGet prioritizes multiple config files.
+In some cases, a developer or company might want to enable or disable package restore on a machine by default for all users. This can be done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
 
 
 ## Command-line restore
 
 For NuGet 2.6 and earlier, you use the [Install](/ndocs/tools/nuget.exe-cli-reference#install) command and point to the `packages.config` file that lists all the dependencies.
 
-For NuGet 2.7 and above, use the [Restore](/ndocs/tools/nuget.exe-cli-reference#restore) command to restore all packages in a solution. For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
+For NuGet 2.7 and above, use the [Restore](/ndocs/tools/nuget.exe-cli-reference#restore) command to restore all packages in a solution (using either `packages.config` for NuGet 2.x or `project.json` for NuGet 3.x). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
 	c:\proj\app\> nuget restore
 	c:\proj\app\> nuget.exe restore app.sln
@@ -83,10 +83,10 @@ When enabled, automatic restore works as follows:
 
 1. A `.nuget` folder is created in the solution containing a `nuget.config` file that contains only a single setting for `disableSourceControlIntegration` (as described in [Packages and source control](/ndocs/consume-packages/packages-and-source-control) for Team Foundation Version Control).
 2. When a build begins, Visual Studio instructs NuGet to restore packages. 
-3. NuGet recursively looks for all `packages.config` files in the solution.
-4. For each listed package, NuGet checks if it exists in the solution's `packages` folder.
-5. If the package is not found, NuGet attempts to download and package from the enabled package sources as listed in **Tools > Options > [NuGet] Package Manager > Package Sources**, in the order that the sources appear.
-6. If the download is successful, NuGet installs the package into the `packages` folder; otherwise NuGet fails and the build fails.
+3. NuGet recursively looks for all `packages.config` files in the solution (NuGet 2.x), or looks for `project.json` (NuGet 3.x).
+4. For each packages listed in the configuration files, NuGet checks if it exists in the solution's `packages` folder.
+5. If the package is not found, NuGet attempts to retrieve the package from its cache first (see [Managing the NuGet cache](/ndocs/consume-packages/managing-the-nuget-cache). If the package is not in the cache, NuGet downloads the package from the enabled sources as listed in **Tools > Options > [NuGet] Package Manager > Package Sources**, in the order that the sources appear.
+6. If the download is successful, NuGet caches it, and then installs the package into the `packages` folder; otherwise NuGet fails and the build fails.
 
 During this process, developers see a progress dialog with the option to cancel package restore.
 
