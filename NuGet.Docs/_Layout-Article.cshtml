@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div>
+        <div class="col-xs-12 col-md-8">
+            <div class="content">
+                @if (Page.Source != null)
+            {
+                    <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs/tree/proto/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)">
+                        <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                    </a>
+
+                    <span class="pull-left githubtext visible-md visible-lg">or</span>
+
+                    <a class="pull-left githubsection2 visible-md visible-lg" target="_blank" href="https://github.com/Nuget/Home/issues">
+                       Give Feedback
+                    </a>
+                }
+                else
+                {
+                <a class="pull-left githubsection visible-md visible-lg" target="_blank" href="https://github.com/NuGet/NuGetDocs">
+                    <i class="fa fa-github fa-1g githubicon" aria-hidden="true"></i><span class="githubtext">Edit in GitHub</span>
+                </a>
+            }
+                @RenderBody()
+            </div>
+        </div>
+        <nav class="col-md-4 bs-docs-sidebar visible-md visible-lg">
+            <ul id="baseSidebar" class="nav nav-stacked">
+                @using NuGet.Docs
+                @{
+
+                    List<Heading> headings = Page.Headings;
+                    bool hasMoreThanOneHeading = headings != null && headings.Count > 1;
+                if (hasMoreThanOneHeading)
+                {
+
+                    var minHeading = headings.Min(h => h.Level);
+                    var deltaTo3 = 3 - minHeading;
+                    bool isClosed = true; ;
+
+                    for (int i = 0; i<headings.Count; i++)
+                    {
+                        var heading = headings[i];
+                        if (heading.Level == 1)
+                        {
+                        <li>
+                            <a href="#@heading.ID">@heading.Text</a>
+                        </li>
+                        }
+                        else if (heading.Level == 2)
+                        {
+                            if (!isClosed)
+                            {
+                                WriteLiteral("</li>");
+                            }
+
+                            WriteLiteral("<li>");
+                            <a href="#@heading.ID">@heading.Text</a>
+                            if (i + 1 < headings.Count)
+                            {
+                                if (headings[i + 1].Level > 2)
+                                {
+                                    WriteLiteral("<ul class=\"nav nav - stacked\">");
+                                    for (int j = i + 1; j<headings.Count; j++)
+                                    {
+                                        if (headings[j].Level< 3)
+                                        {
+                                            i = j - 1;
+                                            WriteLiteral("</ul>");
+                                            break;
+                                        }
+
+                            <li>
+                                <a href="#@headings[j].ID">@headings[j].Text</a>
+                            </li>
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

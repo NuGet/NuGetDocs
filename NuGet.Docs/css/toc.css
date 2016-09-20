@@ -1,0 +1,58 @@
+﻿
+/********************/
+/* EXPANDABLE LIST  */
+/********************/
+
+#expList ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+#expList {
+    padding-left: 5px;
+    list-style: none;
+    cursor: pointer;
+}
+
+
+    #expList li {
+        line-height: 130%;
+        padding-left: 15px;
+        padding-right: 2px;
+        padding-top: 10px;
+        font-size: 14px;
+        background-position: 1px 10px;
+        background-repeat: no-repeat;
+        list-style: none;
+    }
+
+    #expList .collapsed {
+        background-image: url(../images/expandCollapseGlyph.png);
+        background-position: 1px 13px;
+    }
+
+    #expList .expanded {
+        background-image: url(../images/expandCollapseGlyphOpen.png);
+        background-position: 1px 14px;
+    }
+
+#expList {
+    margin-bottom: 30px;
+}
+
+.listDataSet {
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+
+.level1container {
+    margin-top: 20px;
+    padding-left: 10px;
+    color: black;
+}
+
+
+#expList > li:first-child {
+    margin-top: 0px;
+}

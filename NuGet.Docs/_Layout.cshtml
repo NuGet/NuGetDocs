@@ -1,105 +1,89 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@Page.Title</title>
+    <link href="~/content/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/css/nuget.css?2015-02-16" rel="stylesheet" type="text/css" />
+    <link href="~/css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link href="~/css/nuget.docs.css?2015-02-16" rel="stylesheet" type="text/css" />
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
-    <script src="~/js/nuget.docs.js"></script>
-    @RenderSection("head", required: false)
-
-@{
-    string subnav = Request.Path.ToLowerInvariant().TrimStart('/').Replace("/","-");
-
-    if (!String.IsNullOrEmpty(subnav))
-    {
-        <style type="text/css">
-            #subnav-@subnav a { color: black; }
-        </style>
-    }
-}
+    <link href="~/css/nanoscroller.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/toc.css" rel="stylesheet">
+    <link href="~/css/highlight/solarized-dark.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <a href="~/"><img class="logo" src="~/images/logo.png" border="0" /></a>
-        <div class="nav-toggles">
-            <img class="nav-toggle" data-toggle=".search" src="~/images/search-button.png" border="0" />
-            <img class="nav-toggle" data-toggle=".header nav, .subnav" src="~/images/burger-button.png" border="0" />
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navmods" href="http://nuget.org"><span><img class="brandimage" src="~/images/nugetBrand.png" /></span>nuget</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://www.nuget.org/packages">Packages</a></li>
+                    <li><a href="~/">Documentation</a></li>
+                    <li class="visible-lg visible-xs"><a href="https://dist.nuget.org/index.html">Downloads</a></li>
+                    <li class="visible-lg visible-xs"><a href="~/ndocs/Release-Notes">Release Notes</a></li>
+                    <li class="visible-lg visible-xs"><a href="http://blog.nuget.org/">Blog</a></li>
+                    <li class="visible-lg visible-xs"><a href="https://www.nuget.org/policies/contact">Contact Us</a></li>
+                </ul>
+                <div class="search">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form" role="search" action="~/search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-lg hidden-xs" placeholder="search docs" autocomplete="off" name="q" id="srch-term" value="@PageData["query"]" method="get" novalidate="novalidate">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default searchButton hidden-xs" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                        <a href="#menu-toggle" class="btn btn-default toggleTocButton visible-xs" id="menu-toggle">Toggle TOC</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="search">
-            <form action="~/search" method="get" novalidate="novalidate">
-                <input id="searchbox" type="search" name="q" placeholder="SEARCH DOCS" autocomplete="off" value="@PageData["query"]" />
-                <input type="submit" id="searchbutton" value=" " />
-            </form>
+    </nav>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" style="background-color:transparent">
+            <div id="about" class="nano">
+                <div class="nano-content">
+                    <div id="listContainer" class="listDataSet">
+                        <ul id="expList">
+                            @TopicHelper.RenderDocumentationIndex()
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="//www.nuget.org">Home</a></li>
-                <li><a href="//www.nuget.org/packages">Packages</a></li>
-                <li class="current"><a href="~/">Documentation</a></li>
-                <li><a href="https://docspreview.nuget.org/">New Docs Experience</a></li>
-                <li><a href="https://www.nuget.org/downloads">Downloads</a></li>
-                <li><a href="http://blog.nuget.org">Blog</a></li>
-                <li><a href="//www.nuget.org/policies/contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div style="clear:both"></div>
-    </div>
-    <div class="subnav">
-        <nav class="sub">
-            <ul>
-                <li id="subnav-consume"><a href="~/consume">Consume</a></li>
-                <li id="subnav-create"><a href="~/create">Create</a></li>
-                <li id="subnav-contribute"><a href="~/contribute">Contribute</a></li>
-                <li id="subnav-releaseNotes"><a href="~/release-notes">Release Notes</a></li>
-            </ul>
-        </nav>
-        <div class="twitter">
-            <a href="https://twitter.com/nuget" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @@nuget</a>
-            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-        </div>
-        <div style="clear:both"></div>
-    </div>
-    <div class="content">
-        <section>
+        <div id="page-content-wrapper">
             @RenderBody()
-            <div style="clear:both;"></div>
-        </section>
+        </div>
     </div>
-    <footer class="page">
-        <p>
-            <a href="http://www.dotnetfoundation.org"><img src="~/images/dnf.png" alt=".NET Foundation" style="border-width:0" /></a>
-        </p>
-        <p>
-            &copy; 2011-@DateTime.UtcNow.Year .NET Foundation - <a href="//www.nuget.org/policies/terms">Terms of Use</a> - <a href="//www.nuget.org/policies/privacy">Privacy Policy</a> - <a href="http://status.nuget.org">Service status</a>
-        </p>
-        @if (Page.Source != null)
-        {
-            <p>
-                View or edit this page's source on GitHub:
-                <a href="https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)" target="edit">https://github.com/NuGet/NuGetDocs/tree/master/NuGet.Docs/@HttpUtility.UrlPathEncode(Page.Source)</a>
-            </p>
-        }
-        else
-        {
-            <p>
-                View or edit this site's source on GitHub:
-                <a href="https://github.com/NuGet/NuGetDocs" target="edit">https://github.com/NuGet/NuGetDocs</a>
-            </p>
-        }
-        @RenderSection("footer", required: false)
-    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+    <script src="~/js/nuget.docs.js"></script>
+    <script src="~/Scripts/nanoscoller.min.js"></script>
+    <script src="~/scripts/highlight.pack.js"></script>
+    <script src="~/Scripts/clipboard.min.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-30016961-3', 'nuget.org');
-      ga('send', 'pageview');
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-30016961-4', 'auto');
+          ga('send', 'pageview');
     </script>
 </body>
 </html>

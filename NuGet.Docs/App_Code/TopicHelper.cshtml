@@ -1,37 +1,62 @@
 ﻿@using NuGet.Docs
 @helper RenderDocumentationIndex()
 {
-    // Normalize the heading levels to start at 3 in the TOC.
-    const int minHeading = 3;
-    // Maximum depth of the index topic-tree
-    const int maxLevels = 3;
+// Normalize the heading levels to start at 3 in the TOC.
+const int minHeading = 3;
+// Maximum depth of the index topic-tree
+const int maxLevels = 3;
 
-    var topics = Topic.GetTopicsWithSubTopics("~/")
-        .Where(t => t.SubTopics.Any()
-            && !String.Equals(t.Title.ToLowerInvariant(), "release notes"))
-        .OrderBy(t => t.Title.ToLowerInvariant() == "consume" ? 1 : t.Title.ToLowerInvariant() == "create" ? 2 : 3);
-    @RenderIndexTopics(topics, minHeading, minHeading + maxLevels);
+var topics = Topic.GetTopicsWithSubTopics("~/ndocs");
+var orderedList = new List<Topic>();
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Quickstart"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Guides"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Create Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Consume Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Hosting Packages"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Tools"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Schema"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "API"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Visual Studio Extensibility"; }).First());
+orderedList.Add(topics.Where(
+(a) => { return a.Title == "Policies"; }).First());
+    @RenderIndexTopics(orderedList, minHeading, minHeading + maxLevels);
+
 }
 
 @helper RenderIndexTopics(IEnumerable<Topic> topics, int level, int maxDepth)
 {
-    foreach (Topic topic in topics)
-    {
-        @Html.Raw("<h" + level + ">");
-        <a href="@topic.Url">@topic.Title</a>
-        @Html.Raw("</h" + level + ">");
-
-        if (level < maxDepth)
-        {
-            @RenderIndexTopics(topic.SubTopics, level + 1, maxDepth);
-        }
-    }
+foreach (Topic topic in topics)
+{
+    string title = @topic.Title.Replace(" ", "-");
+        <li id="a-@title" class="level1container">
+            <text>@topic.Title</text>
+            <ul>
+                @foreach (var subtopic in topic.SubTopics)
+                {
+                    <li class="listItem">
+                        <a href="@subtopic.Url" onclick="location.href='@subtopic.Url'">@subtopic.Title</a>
+                    </li>
+                }
+            </ul>
+        </li>
+}
 }
 
 @helper RenderReleaseNotesIndex()
 {
-    foreach (var subTopic in Topic.GetSubTopics("~/Release-Notes"))
-    {
+foreach (var subTopic in Topic.GetSubTopics("~/ndocs/Release-Notes"))
+{
         <p><a href="@subTopic.Url">@subTopic.Title</a></p>
-    }
 }
+
+}
+

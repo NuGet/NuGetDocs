@@ -23,7 +23,7 @@ namespace NuGet.Docs
     {
         // Set the cache timeout to 1 day (we'll also have cache dependencies)
         private const int CacheTimeout = 24 * 60 * 60;
-        private const string OutlineLayout = "~/_Layout-Outline.cshtml";
+        private const string OutlineLayout = "~/_Layout-Article.cshtml";
         private static List<string> _virtualPathDependencies = new List<string>
         {
             "~/_PageStart.cshtml",
@@ -43,7 +43,7 @@ namespace NuGet.Docs
 
             Page.Title = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Path.GetFileNameWithoutExtension(VirtualPath).Replace('-', ' ')).Replace("Nuget", "NuGet");
             Page.Source = GetSourcePath();
-            Page.GeneratedDateTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss tt UTC");
+            Page.GeneratedDateTime = DateTime.UtcNow.ToShortDateString();
 
             // Get the page content
             string markdownContent = GetMarkdownContent();
@@ -70,35 +70,10 @@ namespace NuGet.Docs
         {
             var githubMarkdown = new Octokit.MiscellaneousClient(new Octokit.Connection(new Octokit.ProductHeaderValue("NuGet.Docs")));
             string fileContents = null;
-
-            try
+            if (fileContents == null)
             {
-                // Try to transform the content using GitHub's API
-                var request = githubMarkdown.RenderRawMarkdown(content);
-                request.Wait();
-
-                if (request.IsCompleted)
-                {
-                    fileContents = request.Result
-                        .Replace("<table>", "<table class=\"reference\">")
-                        .Replace("<p>\n<strong>Note", "<p class=\"info\">\n<strong>Note")
-                        .Replace("<p>\n<strong>Caution", "<p class=\"caution\">\n<strong>Caution")
-                        .Replace("<div>\n<strong>Caution", "<div class=\"caution\">\n<strong>Caution");
-                    Page.Generator = "GitHub";
-                }
-            }
-            catch
-            {
-                // If the call to GitHub failed, then we'll swallow the exception
-                // and in the finally block, we'll use MarkdownSharp as a fallback.
-            }
-            finally
-            {
-                if (fileContents == null)
-                {
-                    fileContents = new Markdown().Transform(content);
-                    Page.Generator = "MarkdownSharp";
-                }
+                fileContents = new Markdown().Transform(content);
+                Page.Generator = "MarkdownSharp";
             }
 
             return ProcessTableOfContents(fileContents);
@@ -125,28 +100,9 @@ namespace NuGet.Docs
             foreach (var heading in allHeadingNodes)
             {
                 string id = heading.InnerText.Replace(" ", "-").ToLowerInvariant();
-
-                // GitHub gives us anchors in the headings, MarkdownSharp doesn't
-                HtmlNode anchor = heading.SelectSingleNode("a");
-
-                if (anchor != null)
-                {
-                    // Note that the text of the heading is not within the anchor
-                    // Get the name of the anchor as our id (but provide our existing id as the default)
-                    id = anchor.GetAttributeValue("name", id);
-
-                    // GitHub likes to prefix the names with: user-content- but we'll strip that off
-                    if (id.StartsWith("user-content-"))
-                    {
-                        id = id.Substring(13);
-                    }
-                }
-                else
-                {
-                    // Create our anchor
-                    anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
-                    heading.ChildNodes.Insert(0, anchor);
-                }
+                id = id.Replace(".", "-").ToLowerInvariant();
+                HtmlNode anchor = HtmlAgilityPack.HtmlNode.CreateNode("<a></a>");
+                heading.ChildNodes.Insert(0, anchor);
 
                 // Skip the heading if the id ended up empty somehow (like an empty heading)
                 if (id != null)
@@ -157,11 +113,11 @@ namespace NuGet.Docs
                     // When encountering a heading element, wrap it in a HTML container and apply a CSS class.
                     if (headingLevel == 1)
                     {
-                        BuildHeadingDiv(heading, containerDictionary, cssClass: "topic");
+                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane", elementId: id);
                     }
                     else if (headingLevel == 2)
                     {
-                        BuildHeadingDiv(heading, containerDictionary, cssClass: "sub-topic");
+                        BuildHeadingDiv(heading, containerDictionary, headingLevel, cssClass: "jumbotron container-fluid articleSwimlane", elementId: id);
                     }
 
                     headings.Add(new Heading(id, headingLevel, heading.InnerText));
@@ -169,6 +125,7 @@ namespace NuGet.Docs
             }
 
             PostProcessHeadingContainers(containerDictionary);
+            PostProcessElements(doc);
 
             Page.Headings = headings;
 
@@ -183,24 +140,45 @@ namespace NuGet.Docs
         /// <param name="heading">The HTML heading node.</param>
         /// <param name="containerDictionary">The dictionary to add the wrapping HTML container and its elements into.</param>
         /// <param name="cssClass">The CSS class to be applied to the wrapping HTML container.</param>
-        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, string cssClass)
+        private static void BuildHeadingDiv(HtmlNode heading, Dictionary<HtmlNode, IEnumerable<HtmlNode>> containerDictionary, int level, string cssClass, string elementId)
         {
-            var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<div class=\"{0}\"></div>", cssClass));
-
+            var div = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<section id=\"{0}\"><div class=\"{1}\"></div></section>", elementId, cssClass));
             var elementsToMove = new List<HtmlNode>();
-            elementsToMove.Add(heading);
+            if (level == 1)
+            {
+                heading.Attributes.Add("class", "articleTitle");
+                var gentext = HtmlAgilityPack.HtmlNode.CreateNode(string.Format("<span>{0}<br/><br/></span>", "Page generated on "+ DateTime.Now.ToShortDateString()));
+                gentext.Attributes.Add("class", "generatedText");
+                elementsToMove.Add(heading);
+                elementsToMove.Add(gentext);
+            }
+            else
+            {
+                elementsToMove.Add(heading);
+            }
+
 
             // All elements after the heading element should be wrapped within the same container, until the next heading is encountered (any level).
             var nextElement = heading.NextSibling;
 
-            while (nextElement != null &&
-                   !(nextElement.Name.Length == 2
-                     && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
-                     && Char.IsDigit(nextElement.Name[1])))
+            if (level == 1)
             {
-                elementsToMove.Add(nextElement);
-
-                nextElement = nextElement.NextSibling;
+                while (nextElement != null &&
+                 !(nextElement.Name.Length == 2
+                   && nextElement.Name.StartsWith("h", System.StringComparison.InvariantCultureIgnoreCase)
+                   && Char.IsDigit(nextElement.Name[1])))
+                {
+                    elementsToMove.Add(nextElement);
+                    nextElement = nextElement.NextSibling;
+                }
+            }
+            else
+            {
+                while (nextElement != null && nextElement.Name != "h2")
+                {
+                    elementsToMove.Add(nextElement);
+                    nextElement = nextElement.NextSibling;
+                }
             }
 
             containerDictionary.Add(div, elementsToMove);
@@ -218,14 +196,48 @@ namespace NuGet.Docs
                 var heading = nodes.Value.First();
                 var parentNode = heading.ParentNode;
 
-                div.AppendChild(heading);
+                div.ChildNodes[0].AppendChild(heading);
                 foreach (HtmlNode element in nodes.Value.Skip(1))
                 {
-                    div.AppendChild(element);
-                    parentNode.RemoveChild(element);
+                    div.ChildNodes[0].AppendChild(element);
+                    if (parentNode != null)
+                    {
+                        if (parentNode.ChildNodes.Contains(element))
+                        {
+                            parentNode.RemoveChild(element);
+                        }
+                    }
                 }
 
-                parentNode.ReplaceChild(div, heading);
+                if (parentNode != null)
+                {
+                    parentNode.ReplaceChild(div, heading);
+                }
+            }
+        }
+
+        private static void PostProcessElements(HtmlDocument doc)
+        {
+            foreach (var node in doc.DocumentNode.Descendants())
+            {
+                if (node.Name == "table")
+                {
+                    if (node.Attributes.FirstOrDefault(x => x.Name == "class") != null)
+                    {
+                        node.Attributes.Remove("class");
+                    }
+
+                    node.Attributes.Add("class", "table articleTable");
+                }
+                if (node.Name == "img")
+                {
+                    if (node.Attributes.FirstOrDefault(x => x.Name == "class") != null)
+                    {
+                        node.Attributes.Remove("class");
+                    }
+
+                    node.Attributes.Add("class", "articleImage");
+                }
             }
         }
 
