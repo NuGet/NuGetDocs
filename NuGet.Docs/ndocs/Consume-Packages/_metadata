@@ -1,10 +1,10 @@
 Overview-and-Workflow
-Finding-and-choosing-packages
+Finding-and-Choosing-Packages
 Reinstalling-Packages
 Packages-and-Source-Control
 Package-Restore
-Troubleshooting-NuGet-Cache-Issues
-nuget-config-File-Overview
-nuget-config-File-Defaults
+Managing-the-NuGet-Cache
+NuGet-Config-File-Overview
+NuGet-Config-Defaults-File
 ProjectJson-Intro
 ProjectJson-Dependency
