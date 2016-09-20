@@ -274,11 +274,9 @@
     <Content Include="ndocs\API\Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
     <Content Include="ndocs\API\_metadata" />
-    <Content Include="ndocs\Consume-Packages\NuGet-Config-Defaults-File.md" />
-    <Content Include="ndocs\Consume-Packages\NuGet-Config-File-Overview.md" />
+    <Content Include="ndocs\Consume-Packages\Configuring-NuGet-Behavior.md" />
     <Content Include="ndocs\Consume-Packages\Package-Restore.md" />
-    <Content Include="ndocs\Consume-Packages\ProjectJson-Dependency.md" />
-    <Content Include="ndocs\Consume-Packages\ProjectJson-Intro.md" />
+    <Content Include="ndocs\Consume-Packages\Dependency-Resolution.md" />
     <Content Include="ndocs\Consume-Packages\Reinstalling-Packages.md" />
     <Content Include="ndocs\Consume-Packages\_metadata" />
     <Content Include="ndocs\Create-Packages\Analyzers-Conventions.md" />
@@ -290,7 +288,7 @@
     <Content Include="ndocs\Create-Packages\Package-Best-Practices.md" />
     <Content Include="ndocs\Create-Packages\Package-Types.md" />
     <Content Include="ndocs\Create-Packages\Prerelease-Packages.md" />
-    <Content Include="ndocs\Create-Packages\Project.json and UWP.md" />
+    <Content Include="ndocs\Create-Packages\project.json-and-UWP.md" />
     <Content Include="ndocs\Create-Packages\Publish-a-package.md" />
     <Content Include="ndocs\Create-Packages\SemVer-Support.md" />
     <Content Include="ndocs\Create-Packages\Source-File-Transformations.md" />
@@ -375,7 +373,8 @@
     <Content Include="ndocs\Consume-Packages\Overview-and-Workflow.md" />
     <Content Include="ndocs\Consume-Packages\Finding-and-Choosing-Packages.md" />
     <Content Include="ndocs\Create-Packages\Native-Packages.md" />
-    <Content Include="ndocs\Consume-Packages\Managing the NuGet Cache.md" />
+    <Content Include="ndocs\Consume-Packages\Managing-the-NuGet-Cache.md" />
+    <Content Include="ndocs\Create-Packages\project.json-Impact.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />

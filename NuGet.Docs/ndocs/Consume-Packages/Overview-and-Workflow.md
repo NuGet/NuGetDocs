@@ -6,20 +6,19 @@ Between nuget.org and private package galleries that your organization might est
 
 For details, see [Finding and Choosing Packages](/ndocs/consume-packages/finding-and-choosing-packages) and the [Use a Package quickstart](/ndocs/quickstart/use-a-package).
 
-<div class="block-callout-info">
-	<strong>Note</strong><br>
-	NuGet maintains a local package cache from which it installs requested packages if they're available. If you encounter errors related to the cache, see <a href="/ndocs/consume-packages/troubleshooting-nuget-cache-issues">Troubleshooting NuGet Cache Issues</a>.
-</div>
+NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` (NuGet 2.x) or `project.json` (NuGet 3.x) in your project root. You can look in the appropriate file at any time to see the full list of  dependencies for your project. 
+
+When installing packages, NuGet typically checks if the package is already available from its cache. You can manually clear this cache from the command line, as described on [Managing the NuGet cache](/ndocs/consume-packages/managing-the-nuget-cache).
 
 When adding project code to a source repository, you typically don't include NuGet packages. Those who later clone the repository, which includes build agents on systems like Visual Studio Team Services, must restore the necessary packages prior to running a build:
 
 ![Flow of restoring NuGet packages by cloning a repository and using either a restore command](/images/Consume/Overview-02-RestoreFlow.png)
 
-For additional details, see [Package Restore](/ndocs/consume-packages/package-restore).
+[Package Restore](/ndocs/consume-packages/package-restore) uses the information in `packages.config` or `project.json` to reinstall all dependencies. Note that there are differences in the process between NuGet 2.x and 3.x, which are described in [Dependency Resolution](/ndocs/consume-packages/dependency-resolution). 
 
-Occasionally it's necessary to reinstall packages that are already included in a project. This is easy to do using the `reinstall` command via the NuGet command line or the NuGet Package Manager Console. For details, see [Reinstalling Packages](/ndocs/consume-packages/reinstalling-packages).
+Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `reinstall` command via the NuGet command line or the NuGet Package Manager Console. For details, see [Reinstalling Packages](/ndocs/consume-packages/reinstalling-packages).
 
-Finally, what drives NuGet for a particular project is either the `packages.config` file or a `project.json` file (NuGet 3.0 and later). If you want to change the configuration manually, you can edit these files directly as described in the [NuGet config file overview](/ndocs/consume-packages/nuget-config-file-overview) and  [project.json overview](/ndocs/consume-packages/projectjson-intro).
-
-Enjoy improving your coding productivity with NuGet packages!
+Finally, NuGet's behavior is driven by `nuget.config` configuration files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). 
+ 
+Enjoy your productive coding with NuGet packages!
   
