@@ -635,6 +635,17 @@ Specify the path to the package and your API key to push the package to the serv
         <td>The API key for the server.</td>
     </tr>
     <tr>
+        <td>SymbolSource</td>
+        <td>(v<em>3.5</em>) Specifies the symbol server URL. If not specified, nuget.smbsrc.net is used when pushing to nuget.org.
+        <br />
+        A symbol package is automatically pushed to the symbol source when a *.symbols.nupkg exists along with the *.nupkg that is being pushed.
+        </td>
+    </tr>
+    <tr>
+        <td>SymbolApiKey</td>
+        <td>(v<em>3.5</em>) The API key for the symbol server.</td>
+    </tr>
+    <tr>
         <td>Timeout</td>
         <td>Specifies the timeout for pushing to a server in seconds. Defaults to 300 seconds (5 minutes).</td>
     </tr>
