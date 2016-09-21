@@ -27,7 +27,7 @@ project.json `"tools"` node, instead of the `"dependencies"` node.
 
 ## Setting a package type
 
-Package types are specified when [creating a package](create-a-package). If no package type
+Package types are specified when [creating a package](creating-a-package). If no package type
 is set, the produced .nupkg is marked with no package type.
 
 It is possible but cautioned to explicitly specify the `Dependency` package type as older clients do not recognize

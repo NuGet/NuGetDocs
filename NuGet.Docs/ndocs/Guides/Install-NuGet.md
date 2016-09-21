@@ -72,7 +72,7 @@ Though not fully-supported as yet, the NuGet command-line executable (version 3.
 
 ###Related topics
 - [NuGet CLI reference ](/ndocs/tools/nuget.exe-cli-reference)
-- [Creating a package](/ndocs/create-packages/create-a-package)
+- [Creating a package](/ndocs/create-packages/creating-a-package)
 - [Publishing a Package](/ndocs/create-packages/publish-a-package)
 
 

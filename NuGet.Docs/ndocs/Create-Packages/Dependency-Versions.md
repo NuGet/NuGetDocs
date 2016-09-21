@@ -1,5 +1,5 @@
 ﻿# Dependency Versions
-When you create a NuGet package, you can specify dependencies for your package in the `.nuspec` file, as well as the versions required for the dependency packages. For information about creating NuGet packages and the .nuspec file format, see [Creating a Package](create-a-package) and [.nuspec file schema Specification](/ndocs/schema/nuspec). Dependency versions are specified in the version attribute of the dependency element.
+When you create a NuGet package, you can specify dependencies for your package in the `.nuspec` file, as well as the versions required for the dependency packages. For information about creating NuGet packages and the .nuspec file format, see [Creating a Package](creating-a-package) and [.nuspec file schema Specification](/ndocs/schema/nuspec). Dependency versions are specified in the version attribute of the dependency element.
 
     <dependency id="ExamplePackage" version="1.3.2" />
 

@@ -56,12 +56,12 @@ To create the initial .nuspec file, do the three steps below. The sections that 
 		nuget spec
 	</code>
 
-3. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Package best practices](/ndocs/create-packages/package-best-practices)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+3. Open `ImageEnhancer.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
 	
 		<?xml version="1.0"?>
 		<package >
 		  <metadata>
-			<id>ImageEnhancer_YOUR_NAME</id>
+			<id>ImageEnhancer.YOUR_NAME</id>
 			<version>1.0.0</version>
 			<title>ImageEnhancer</title>
 			<authors>YOUR_NAME</authors>
@@ -185,7 +185,7 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 	<?xml version="1.0"?>
 	<package >
 	  <metadata>
-		<id>ImageEnhancer_YOUR_NAME</id>
+		<id>ImageEnhancer.YOUR_NAME</id>
 		<version>1.0.0</version>
 		<title>ImageEnhancer</title>
 		<authors>YOUR_NAME</authors>
@@ -227,7 +227,7 @@ With the completed .nuspec referencing all the files you need to include in the 
 	nuget pack ImageEnhancer.nuspec
 </code>
 
-This will generate `ImageEnhancer_YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
+This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the ImageEnhancer package](/images/BuildForUWP/05.PNG)
 
@@ -245,5 +245,5 @@ To make your package available to other developers,  follow the instructions on 
 * [Symbol packages](/ndocs/create-packages/symbol-packages)
 * [Dependency Versions](/ndocs/create-packages/dependency-versions)
 * [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
+* [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
 * [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)

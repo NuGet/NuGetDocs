@@ -38,7 +38,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		nuget spec
 	</code>
 
-3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a nuspec file](/ndocs/create-packages/create-a-package#create-a--nuspec-file).   
+3. Open the file in your favorite text editor. It will look something like the code below, where tokens in the form *$&lt;token&gt;$* will be replaced during the packaging process with values from the project's Properties/AssemblyInfo.cs file. For more details on tokens, see [Creating a .nuspec file](/ndocs/create-packages/creating-a-package#creating-the--nuspec-file).
 			
 		<?xml version="1.0"?>
 		<package>
@@ -59,7 +59,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		  </metadata>
 		</package>	
 
-4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Package best practices](/ndocs/create-packages/package-best-practices). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
+4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
  		
 		<?xml version="1.0"?>
 		<package>
@@ -131,15 +131,20 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 		Your package was pushed.
 	</code>
 	
-6. In your account on nuget.org, click **Manage my packages** to see the one that you just published. You'll also receive an email notifying you that the package was published. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page: 
+6. In your account on nuget.org, click **Manage my packages** to see the one that you just published; you'll also receive a confirmation email. Note that it might take a while for your package to be indexed and appear in search results where others can find it, during which time you'll see the following message on your package page: 
 
 	![This package has not been indexed yet. It will appear in search results and will be available for install/restore after indexing is complete.](/images/CreatePublishNugetSample/04.PNG)
 
 
+<div class="block-callout-info">
+	<strong>Virus Scanning</strong><br>
+	Before being made publisc, all packages uploaded to nuget.org are scanned for viruses using an internal Microsoft tool and rejected if any viruses are found.
+</div> 
+
 And that's it! You've just created and published your first NuGet package to [nuget.org](https://www.nuget.org/), that other developers can use in their own projects.
 
 ##Related topics
-* [Create a Package](/ndocs/create-packages/create-a-package)
+* [Create a Package](/ndocs/create-packages/creating-a-package)
 * [Publish a Package](/ndocs/create-packages/publish-a-package)
 * [Support multiple target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks)
 * [Dependency versions](/ndocs/create-packages/dependency-versions)

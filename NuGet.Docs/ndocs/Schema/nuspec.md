@@ -1,6 +1,6 @@
 # Nuspec Reference
 
-A .nuspec file is a manifest that uses XML to describe a package. NuGet uses the manifest to build a package and then stores it in the package after the package is built. For information about how to build a package, see the [Creating a Package](/ndocs/create-packages/create-a-package) page.
+A .nuspec file is a manifest that uses XML to describe a package. NuGet uses the manifest to build a package and then stores it in the package after the package is built. For information about how to build a package, see the [Creating a Package](/ndocs/create-packages/creating-a-package) page.
 
 At the minimum, you need the following elements in in the metadata of your .nuspec file.
 

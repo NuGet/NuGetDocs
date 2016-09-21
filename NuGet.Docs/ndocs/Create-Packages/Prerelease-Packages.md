@@ -12,7 +12,7 @@ NuGet supports the creation of prerelease packages by specifying a prerelease st
 
 ## Create
 
-To create a prerelease package, simply give it a version that has a prerelease string. For more information around how to create packages, refer to the [Create a Package](/ndocs/create-packages/create-a-package) topic. 
+To create a prerelease package, simply give it a version that has a prerelease string. For more information around how to create packages, refer to the [Creating a Package](/ndocs/create-packages/creating-a-package) topic. 
 
 There are two ways this can be accomplished.
 
