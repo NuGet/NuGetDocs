@@ -6,7 +6,7 @@ Those immediate dependencies might then also have dependencies on their own, whi
 
 When multiple packages have the same dependency, then the same package ID can appear in the graph multiple times, potentially with different version constraints. However, only one version of a given package can be used in a project, so NuGet must choose which version will be used. 
  
-The exact process differs between NuGet 2.(using `packages.config`) and NuGet 3.x (using `project.json`) as described in the sections below.
+The exact process differs between NuGet 2.x (using `packages.config`) and NuGet 3.x (using `project.json`) as described in the sections below.
 
 
 ## Dependency Resolution in NuGet 2.x
@@ -23,7 +23,7 @@ This and other challenges is why dependency resolution was overhauled in NuGet 3
  
 ## Dependency Resolution in NuGet 3.x 
 
-As dependencies are installed into a project, NuGet 3.x adds them to a flat package graph in `project.json` in which conflicts are resolved ahead of time. This is refereed to as *transitive restore*. Reinstalling or restoring packages is then simply a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. 
+As dependencies are installed into a project, NuGet 3.x adds them to a flat package graph in `project.json` in which conflicts are resolved ahead of time. This is referred to as *transitive restore*. Reinstalling or restoring packages is then simply a process of downloading the packages listed in the graph, resulting in faster and more predictable builds. 
 
 
 <div class="block-callout-info">
@@ -34,7 +34,7 @@ As dependencies are installed into a project, NuGet 3.x adds them to a flat pack
 
 ### Advantages of transitive restore
 
-1. Developers explicitly declare which package versions they depends on, without worrying about their down-level dependencies. 
+1. Developers explicitly declare which package versions they depend on, without worrying about their down-level dependencies. 
 2. Project files are not modified, avoiding merge conflicts and file churn on commits. This also allows the project system to evolve independent of NuGet. 
 3. Developers can easily change dependency versions without worrying about side effects on the rest of the project.  
 4. Hint paths are not being burned into the project files, fixing the ability to move projects around on disk, and re-targeting problems. 
@@ -87,10 +87,10 @@ In the example below, the application depends directly on Package B with a versi
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
-	Applying the Nearest Wins rule can downgrading the package version, thus potentially breaking other dependencies in the graphy. This currently produces an error, although we are considering making it a warning instead. See <a href="https://github.com/NuGet/Home/issues/897">issue #897 on GitHub</a>.
+	Applying the Nearest Wins rule can downgrading the package version, thus potentially breaking other dependencies in the graph. This currently produces an error, although we are considering making it a warning instead. See <a href="https://github.com/NuGet/Home/issues/897">issue #897 on GitHub</a>.
 </div>
 
-This rule also results in greater efficiency with large dependency graphy (such as those with the BCL packages) because by once a given dependency is ignored, NuGet also ignores all remaining dependencies on that brach of the graph. In the diagram below, for example, because Package C 2.0 will be used, NuGet can ignore any branches in the graph that refer to an older version of Package C: 
+This rule also results in greater efficiency with large dependency graph (such as those with the BCL packages) because by once a given dependency is ignored, NuGet also ignores all remaining dependencies on that branch of the graph. In the diagram below, for example, because Package C 2.0 will be used, NuGet can ignore any branches in the graph that refer to an older version of Package C: 
 
 ![When NuGet ignores a package in the graph, it ignores that entire branch](/images/consume/projectJson-dependency-6.png)
 
@@ -100,7 +100,7 @@ When different package versions are referred to at the same distance in the grap
 
 ![Resolving cousin dependencies using the lower version that satisfies all constraints](/images/consume/projectJson-dependency-7.png)
 
-In some cases it is not possible to meet all version requirements. As shown below, if Package A required exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.  
+In some cases, it is not possible to meet all version requirements. As shown below, if Package A required exactly Package B *1.0* and Package C requires Package B *>=2.0*, then NuGet cannot resolve the dependencies and will give an error.  
 
 ![Unresolvable dependencies due to an exact version requirement](/images/consume/projectJson-dependency-8.png)
 
