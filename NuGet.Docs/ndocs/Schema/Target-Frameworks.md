@@ -9,7 +9,7 @@ Target frameworks can be referenced from three places:
 [nuspec manifest](/ndocs/schema/nuspec)
 You can find a target framework referenced in the dependencies on the group elements to indicate which packages should be referenced when the package is installed into different projects.
 
-[nupkg folder name](/ndocs/create-packages/create-a-package#convention-based-working-directory)
+[nupkg folder name](/ndocs/create-packages/creating-a-package#from-a-convention-based-working-directory)
 The folders inside of the base package lib folder are named after the target frameworks that the contents support. The DLLs and other content that support these framework version should be placed here.
 
 [project.json](/ndocs/schema/project.json)  

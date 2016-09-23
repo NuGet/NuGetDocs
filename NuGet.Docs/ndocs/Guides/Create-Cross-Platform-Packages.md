@@ -95,12 +95,12 @@ To implement a platform-specific implementation of the `ILoggingLibrary` interfa
 	</code>
 
 2. Rename this file to `LoggingLibrary.nuspec` and open it in an editor.
-3. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Package best practices](/ndocs/create-packages/package-best-practices)). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
+3. Update the file to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number))). Also note that you must also update the author and description tags or you'll get an error during the packing step. 
 	
 		<?xml version="1.0"?>
 		<package >
 		  <metadata>
-			<id>LoggingLibrary_YOUR_NAME</id>
+			<id>LoggingLibrary.YOUR_NAME</id>
 			<version>1.0.0</version>
 			<title>LoggingLibrary</title>
 			<authors>YOUR_NAME</authors>
@@ -173,7 +173,7 @@ Your final .nuspec file should now look like the following, where again YOUR_NAM
 	<?xml version="1.0"?>
 	<package >
 		<metadata>
-		<id>LoggingLibrary_YOUR_NAME</id>
+		<id>LoggingLibrary.YOUR_NAME</id>
 		<version>1.0.0</version>
 		<title>LoggingLibrary</title>
 		<authors>YOUR_NAME</authors>
@@ -223,7 +223,7 @@ With the completed .nuspec referencing all the files you need to include in the 
 	nuget pack LoggingLibrary.nuspec
 </code>
 
-This will generate `LoggingLibrary_YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
+This will generate `LoggingLibrary.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the LoggingLibrary package](/images/BuildForXplat/04.PNG)
 
@@ -240,5 +240,5 @@ To make your package available to other developers,  follow the instructions on 
 * [Symbol packages](/ndocs/create-packages/symbol-packages)
 * [Dependency Versions](/ndocs/create-packages/dependency-versions)
 * [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
+* [Including MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
 * [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)

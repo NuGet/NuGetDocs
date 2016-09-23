@@ -270,6 +270,7 @@
     <Content Include="images\Consume\Restore-02-VSTSBuild.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-01-NewProject.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-02-APIKey.png" />
+    <Content Include="images\Create\Create_01-ShowReadme.png" />
     <Content Include="ndocs\add-redirect.md" />
     <Content Include="ndocs\API\Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
@@ -281,11 +282,10 @@
     <Content Include="ndocs\Consume-Packages\_metadata" />
     <Content Include="ndocs\Create-Packages\Analyzers-Conventions.md" />
     <Content Include="ndocs\Create-Packages\Config-File-Transformations.md" />
-    <Content Include="ndocs\Create-Packages\Create-a-Package.md" />
+    <Content Include="ndocs\Create-Packages\Creating-a-Package.md" />
     <Content Include="ndocs\Create-Packages\Creating-Localized-Packages.md" />
     <Content Include="ndocs\Create-Packages\Dependency-Versions.md" />
     <Content Include="ndocs\Create-Packages\Managing-Package-Owners.md" />
-    <Content Include="ndocs\Create-Packages\Package-Best-Practices.md" />
     <Content Include="ndocs\Create-Packages\Package-Types.md" />
     <Content Include="ndocs\Create-Packages\Prerelease-Packages.md" />
     <Content Include="ndocs\Create-Packages\project.json-and-UWP.md" />
@@ -376,6 +376,8 @@
     <Content Include="ndocs\Consume-Packages\Managing-the-NuGet-Cache.md" />
     <Content Include="ndocs\Create-Packages\project.json-Impact.md" />
     <Content Include="ndocs\Consume-Packages\Packages-and-Source-Control.md" />
+    <Content Include="ndocs\Create-Packages\Create-a-package.cshtml" />
+    <Content Include="ndocs\Create-Packages\Package-Best-Practices.cshtml" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />

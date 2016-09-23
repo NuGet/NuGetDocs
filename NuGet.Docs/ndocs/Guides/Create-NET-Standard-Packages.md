@@ -58,12 +58,12 @@ This guide will walk you through creating a nuget package targeting .NET Standar
 		nuget spec
 	</code>
 
-2. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Package best practices](/ndocs/create-packages/package-best-practices)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
+2. Open `AppLogger.nuspec` in an editor and update it to match the following, replacing YOUR_NAME with an appropriate value. The &lt;id&gt; value, specifically, must be unique across nuget.org (see the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number)). Also note that you must also update the author and description tags or you'll get an error during the packing step.
 
 	<?xml version="1.0"?>
 	<package >
 	  <metadata>
-		<id>AppLogger_YOUR_NAME</id>
+		<id>AppLogger.YOUR_NAME</id>
 		<version>1.0.0</version>
 		<title>AppLogger</title>
 		<authors>YOUR_NAME</authors>
@@ -94,7 +94,7 @@ With the completed .nuspec referencing all the files you need to include in the 
 	nuget pack AppLogger.nuspec
 </code>
 
-This will generate `AppLogger_YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
+This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the AppLogger package](/images/BuildForNetStandard/03-PackageExplorer.PNG)
 
@@ -145,7 +145,7 @@ Suppose you'd like to take advantage of an API in .NET Framework 4.6.2 that is n
 		<?xml version="1.0"?>
 		<package >
 		  <metadata>
-			<id>AppLogger_YOUR_NAME</id>
+			<id>AppLogger.YOUR_NAME</id>
 			<version>1.0.0.0</version>
 			<title>AppLogger</title>
 			<authors>YOUR_NAME</authors>
@@ -198,7 +198,7 @@ In some cases you might want to add custom build targets or properties in projec
 
 4. Create the package again using `nuget pack AppLogger.nuspec`.
 
-For additional details, refer to [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project).
+For additional details, refer to [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package).
 
 
 ###Creating localized packages
@@ -374,7 +374,7 @@ To do this, create your `readme.txt` file, place it in the project root folder, 
 * [Symbol packages](/ndocs/create-packages/symbol-packages)
 * [Dependency Versions](/ndocs/create-packages/dependency-versions)
 * [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Import MSBuild targets and props files into project](/ndocs/create-packages/create-a-package#import-msbuild-targets-and-props-files-into-project)
+* [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
 * [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
 * [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 * [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)
