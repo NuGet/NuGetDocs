@@ -268,9 +268,12 @@
     <Content Include="images\Consume\Overview-02-RestoreFlow.png" />
     <Content Include="images\Consume\Restore-01-AutoRestoreOptions.png" />
     <Content Include="images\Consume\Restore-02-VSTSBuild.png" />
+    <Content Include="images\Consume\Symbols_01-AddingSource.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-01-NewProject.png" />
     <Content Include="images\CreatePublishNugetSample\QS_Create-02-APIKey.png" />
     <Content Include="images\Create\Create_01-ShowReadme.png" />
+    <Content Include="images\Create\Prerelease_01-LatestStable.png" />
+    <Content Include="images\Create\Prerelease_02-CheckPrerelease.png" />
     <Content Include="ndocs\add-redirect.md" />
     <Content Include="ndocs\API\Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
@@ -278,10 +281,9 @@
     <Content Include="ndocs\Consume-Packages\Configuring-NuGet-Behavior.md" />
     <Content Include="ndocs\Consume-Packages\Package-Restore.md" />
     <Content Include="ndocs\Consume-Packages\Dependency-Resolution.md" />
-    <Content Include="ndocs\Consume-Packages\Reinstalling-Packages.md" />
+    <Content Include="ndocs\Consume-Packages\Reinstalling-and-Updating-Packages.md" />
     <Content Include="ndocs\Consume-Packages\_metadata" />
     <Content Include="ndocs\Create-Packages\Analyzers-Conventions.md" />
-    <Content Include="ndocs\Create-Packages\Config-File-Transformations.md" />
     <Content Include="ndocs\Create-Packages\Creating-a-Package.md" />
     <Content Include="ndocs\Create-Packages\Creating-Localized-Packages.md" />
     <Content Include="ndocs\Create-Packages\Dependency-Versions.md" />
@@ -290,8 +292,7 @@
     <Content Include="ndocs\Create-Packages\Prerelease-Packages.md" />
     <Content Include="ndocs\Create-Packages\project.json-and-UWP.md" />
     <Content Include="ndocs\Create-Packages\Publish-a-package.md" />
-    <Content Include="ndocs\Create-Packages\SemVer-Support.md" />
-    <Content Include="ndocs\Create-Packages\Source-File-Transformations.md" />
+    <Content Include="ndocs\Create-Packages\Source-and-Config-File-Transformations.md" />
     <Content Include="ndocs\Create-Packages\Supporting-Multiple-Target-Frameworks.md" />
     <Content Include="ndocs\Create-Packages\Symbol-Packages.md" />
     <Content Include="ndocs\Create-Packages\_metadata" />
@@ -378,6 +379,10 @@
     <Content Include="ndocs\Consume-Packages\Packages-and-Source-Control.md" />
     <Content Include="ndocs\Create-Packages\Create-a-package.cshtml" />
     <Content Include="ndocs\Create-Packages\Package-Best-Practices.cshtml" />
+    <Content Include="ndocs\Consume-Packages\Reinstalling-Packages.cshtml" />
+    <Content Include="ndocs\Create-Packages\Config-File-Transformations.cshtml" />
+    <Content Include="ndocs\Create-Packages\Source-File-Transformations.cshtml" />
+    <Content Include="ndocs\Create-Packages\SemVer-Support.cshtml" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />

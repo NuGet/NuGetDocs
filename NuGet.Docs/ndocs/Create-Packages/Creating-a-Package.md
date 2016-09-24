@@ -358,7 +358,7 @@ You might also want to extend the capabilities of your package or otherwise supp
 
 - [Handling dependencies](/ndocs/create-packages/dependency-versions)
 - [Supporting multiple target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks)
-- Transformations of [source](/ndocs/create-packages/source-file-transformations) and [configuration](/ndocs/create-packages/config-file-transformations) files
+- [Transformations of source and configuration files](/ndocs/create-packages/source-and-config-file-transformations)
 - [Localization](/ndocs/create-packages/creating-localized-packages)
 - [Package Versioning](/ndocs/create-packages/prerelease-packages)
 

@@ -582,7 +582,7 @@ Updates a package and its dependencies to a newer version.
     </tr>
     <tr>
         <td>Reinstall</td>
-        <td><a href="/Consume/Reinstalling-Packages">Reinstall packages with the existing versions</a>.</td>
+        <td><a href="/Consume/Reinstalling-and-Updating-Packages">Reinstall packages with the existing versions</a>.</td>
         <td>Required = false</td>
     </tr>
     <tr>

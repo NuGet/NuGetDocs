@@ -1,11 +1,9 @@
 ﻿Creating-a-Package
 Dependency-Versions
 Supporting-Multiple-Target-Frameworks
-Config-File-Transformations
-Source-File-Transformations
+Source-and-Config-File-Transformations
 Creating-Localized-Packages
 Prerelease-Packages
-SemVer-Support
 Native-Packages
 Symbol-Packages
 Package-Types

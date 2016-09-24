@@ -5,6 +5,7 @@ To promote a cleaner development environment and to reduce repository size, NuGe
 In this topic:
 
 * [Enabling and disabling package restore](#enabling-and-disabling-package-restore)
+* [Constraining package versions with restore](#constraining-package-versions-with-restore)
 * [Command-line restore](#command-line-restore), for all versions of NuGet
 * [Automatic restore in Visual Studio](#automatic-restore-in-visual-studio), for NuGet 2.7 and later. 
 * [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore-in-visual-studio), for NuGet 2.6 and earlier.
@@ -62,12 +63,26 @@ MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by ri
 
 In some cases, a developer or company might want to enable or disable package restore on a machine by default for all users. This can be done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
 
+## Constraining package versions with restore
+
+When NuGet restores packages through any method, it will honor any constraints specified in either `packages.config` or `project.json`:
+
+- `packages.config`: Specify a version range in the `allowedVersion` property of the dependency. See [Reinstalling and Updating Packages](/ndocs/consume-packages/reinstalling-and-updating-packages#constraining-upgrade-versions). For example:
+
+		<package id="Newtonsoft.json" version="6.0.4" allowedVersions="[6,7)" />
+ 
+- `project.json`: Specify a version range directly with the dependency's version number. For example:
+
+		"newtonsoft.json": "[6, 7)"
+
+In both cases, use the notation described in [Dependency versions](/ndocs/create-packages/dependency-versions).
+
 
 ## Command-line restore
 
 For NuGet 2.6 and earlier, you use the [Install](/ndocs/tools/nuget.exe-cli-reference#install) command and point to the `packages.config` file that lists all the dependencies.
 
-For NuGet 2.7 and above, use the [Restore](/ndocs/tools/nuget.exe-cli-reference#restore) command to restore all packages in a solution (using either `packages.config` for NuGet 2.x or `project.json` for NuGet 3.x). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
+For NuGet 2.7 and above, use the [Restore](/ndocs/tools/nuget.exe-cli-reference#restore) command to restore all packages in a solution (using either `packages.config` in NuGet 2.x and later or `project.json` in NuGet 3.x and later). For a given project folder such as `c:\proj\app`, the common variations below each restore the packages:
 
 	c:\proj\app\> nuget restore
 	c:\proj\app\> nuget.exe restore app.sln
