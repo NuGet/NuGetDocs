@@ -100,10 +100,8 @@ To correct these errors, do one of the following:
 1. [Migrate the project to automatic restore](#migrating-to-automatic-restore).
 2. Update `nuget.exe` in the `.nuget` folder** as follows
 
-		<code class="bash">
-			cd .nuget
-			nuget update -self   
-		</code>
+		cd .nuget
+		nuget update -self   
 
 3. Reset consent in your `%AppData%\NuGet\NuGet.config` file by going to **Tools > Options > NuGet Package Manager > General** in Visual Studio, uncheck and re-check both **Package Restore** options, and click OK. This re-saves `NuGet.config` with the proper consent settings for NuGet 2.6 and earlier.
 
