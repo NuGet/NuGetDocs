@@ -63,7 +63,7 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
-	Every package that is uploaded to nuget.org is scanned for viruses using an internal Microsoft tool. In addition, we frequently scan all listed packaged for viruses.
+	Every package that is uploaded to nuget.org is scanned for viruses using an internal Microsoft tool. In addition, we frequently scan all listed packages.
 </div>
 
 
