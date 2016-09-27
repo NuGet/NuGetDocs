@@ -230,7 +230,7 @@ The following table lists attributes of the dependency element.
     </tr>
     <tr>
         <td><code>version</code></td>
-        <td>The range of versions acceptable as a dependency. Typically this is just a version number which represents a minimum version. However a more explicit <a href="versioning#Specifying-Version-Ranges-in-.nuspec-Files">version range syntax</a> is supported.</td>
+        <td>The range of versions acceptable as a dependency. Typically this is just a version number which represents a minimum version. However a more explicit <a href="dependency-versions#version-ranges-in--nuspec-files">version range syntax</a> is supported.</td>
     </tr>
 </table>
 
