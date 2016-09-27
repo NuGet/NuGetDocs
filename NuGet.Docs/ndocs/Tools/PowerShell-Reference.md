@@ -99,7 +99,7 @@ Gets the set of online packages with specified Id/keyword from the package sourc
     PM> Find-Package Elmah
     Returns packages with the keyword Elmah available from the package source.
     
-    PM> Get-Package jquery -AllVersions -ExactMatch
+    PM> Find-Package jquery -AllVersions -ExactMatch
     Returns jquery package with all versions available from the package source.
 
     PM> Find-Package EntityFramework -version 6.1.1
