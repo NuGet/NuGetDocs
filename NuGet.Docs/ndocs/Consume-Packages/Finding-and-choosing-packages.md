@@ -36,7 +36,7 @@ For information on creating native packages, see [Native packages](/ndocs/create
 
 The best way to evaluate the usefulness of a package is, of course, to download it and try it out. After all, every highly popular package got started with only a few developers using it, and you might be one of the early adopters!
 
-At the same time, using a NuGet package means taking a dependency on it, so you'll want to make sure it's robust and reliable. Because installing an directly testing a package is very time-consuming, you can also learn a lot about a package's quality by using the information on a package's listing page: 
+At the same time, using a NuGet package means taking a dependency on it, so you'll want to make sure it's robust and reliable. Because installing and directly testing a package is very time-consuming, you can also learn a lot about a package's quality by using the information on a package's listing page: 
 
 - *Downloads statistics*: a the package page you'll see total downloads, downloads of the most recent version, and average downloads per day. Larger numbers obviously indicates that many other developers have taken a dependency on the package, which means that it has proven itself.
 	![Download statistics on a package's listing page](/images/Consume/Finding-03-Downloads.png)
@@ -59,6 +59,11 @@ At the same time, using a NuGet package means taking a dependency on it, so you'
 <div class="block-callout-info">
 	<strong>Note</strong><br>
 	Always be mindful of a package's licence terms, which you can see by clicking <strong>License</strong> on a package's listing page on nuget.org.
+</div>
+
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Every package that is uploaded to nuget.org is scanned for viruses using an internal Microsoft tool. In addition, we frequently scan all listed packaged for viruses.
 </div>
 
 
