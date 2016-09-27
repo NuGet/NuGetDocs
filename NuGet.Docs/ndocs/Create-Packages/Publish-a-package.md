@@ -42,7 +42,7 @@ Push your package to NuGet Gallery using the command:
 
 <div class="block-callout-info">
 	<strong>Virus Scanning</strong><br>
-	Before being made publisc, all packages uploaded to nuget.org are scanned for viruses using an internal Microsoft tool and rejected if any viruses are found.
+	Before being made public, all packages uploaded to nuget.org are scanned for viruses using an internal Microsoft tool and rejected if any viruses are found.
 </div>
 
 **Recommended Reading:** [NuGet CLI reference](/ndocs/tools/nuget.exe-cli-reference), [setApiKey](/ndocs/tools/nuget.exe-cli-reference#setapikey), [Push](/ndocs/tools/nuget.exe-cli-reference#push)
