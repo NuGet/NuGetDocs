@@ -241,7 +241,7 @@ Installs a package.
 
 ### Usage
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-Force] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
 
 Installs a package and its dependencies into the project.
 
@@ -278,12 +278,6 @@ Installs a package and its dependencies into the project.
         <tr>
         <td>IncludePrerelease</td>
         <td>Indicates whether to include prerelease packages.</td>
-        <td>Required = false</td>
-    </tr>
-    <tr>
-        <td>Force</td>
-        <td>Install a package forcibly to the project. If the same version is already installed, 
-        will uninstall the package first and then install.</td>
         <td>Required = false</td>
     </tr>
     <tr>
