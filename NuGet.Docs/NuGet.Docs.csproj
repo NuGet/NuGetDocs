@@ -290,7 +290,7 @@
     <Content Include="images\Hosting\Hosting_03-NuGet.Server-Package-Folder.png" />
     <Content Include="images\Hosting\Hosting_04-NuGet.Server-FeedHomePage.png" />
     <Content Include="ndocs\add-redirect.md" />
-    <Content Include="ndocs\API\Credential-Providers.md" />
+    <Content Include="ndocs\API\NuGet.exe-Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
     <Content Include="ndocs\API\_metadata" />
     <Content Include="ndocs\Consume-Packages\Configuring-NuGet-Behavior.md" />
@@ -409,6 +409,7 @@
     <Content Include="ndocs\Guides\Create-NET-Standard-Packages.cshtml" />
     <Content Include="ndocs\Consume-Packages\Restore-Team-Build\Team-Build.md" />
     <Content Include="ndocs\Consume-Packages\Package-References-in-Project-Files.md" />
+    <Content Include="ndocs\API\NuGet-Credential-Providers-for-Visual-Studio.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
