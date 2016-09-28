@@ -36,7 +36,9 @@ b) If the provider does handle requests for the targeted URI, but cannot supply 
 
 ### NuGet Credential Provider for Visual Studio Input Parameters
 
-A custom NuGet Credential Provider for Visual Studio must implement the `IVsCredentialProvider.GetCredentialsAsync` method accepting the following input parameters:
+A custom NuGet Credential Provider for Visual Studio must implement the `IVsCredentialProvider` interface available in the [NuGet.VisualStudio package](https://www.nuget.org/packages/NuGet.VisualStudio/).
+
+This interface defines a single `GetCredentialsAsync` method accepting the following input parameters:
 
 <table>
 <th>Input parameter</th>
