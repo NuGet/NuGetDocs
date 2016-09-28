@@ -4,7 +4,7 @@ Before you publish your package, you must decide whether you want your package t
 
 * If it's for public consumption, use [NuGet.org](https://www.nuget.org/packages/manage/upload).
 * If it's within an organization or a team, use one of the following methods:
-    * NuGet.Server or file shares (for more information, see [Hosting Packages Overview](/ndocs/host-packages/hosting-packages-overview))
+    * NuGet.Server or file shares (for more information, see [Hosting Packages Overview](/ndocs/hosting-packages/hosting-packages-overview))
 	* Visual Studio Team Services Package Management
 	* Other third-party package repository managers, such as myget, ProGet, Nexus Repository, Artifactory, etc.
 
