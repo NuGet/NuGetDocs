@@ -2,7 +2,7 @@
 
 This topic describes how to find, install, remove, and update NuGet packages using PowerShell commands. Using PowerShell commands is required if you want to install a package without having a solution open. It's also required in some cases for packages that create commands that you can access only by using PowerShell.
 
-For the complete reference to NuGet powershell commands, check out the [PowerShell Reference]().
+For the complete reference to NuGet powershell commands, check out the [PowerShell Reference](/ndocs/tools/powershell-reference).
 
 ## Finding a Package
 
@@ -14,7 +14,7 @@ The **Package Manager Console** window is displayed.
 
 The two drop-down lists set default values that let you omit parameters from the commands you enter in the window:
 
-* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](../Create/Hosting-Your-Own-NuGet-Feeds).
+* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](ndocs/hosting-packages/hosting-packages-overview).
 * In the **Default project** list, select the default project that you want your commands to work with. (The default value will be the first project in the solution, not necessarily the one you have selected in **Solution Explorer** when you open the window.)
 
 When you enter commands, you can override these defaults.
@@ -31,7 +31,7 @@ or `Get-Package -Filter Logging -ListAvailable` (a keyword in the package descri
 
 ![Get-Package command with filter](/images/consume/package-manager-console-Get-Package-with-filter.png)
 
-For more options that you can specify with the `Get-Package` and `Find-Package` command, enter `Get-Help Get-Package` and `Get-Help Find-Package`, or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
+For more options that you can specify with the `Get-Package` and `Find-Package` command, enter `Get-Help Get-Package` and `Get-Help Find-Package`, or see [Package Manager Console PowerShell Reference](/ndocs/tools/powershell-reference).
 
 ## Installing a Package
 
@@ -40,7 +40,7 @@ For example, enter the command `Install-Package elmah` as shown in the following
 
 ![Install-Package command](/images/consume/package-manager-console-install-package.png)
 
-Refer [here] (Package-Manager-Console-PowerShell-Reference#Install-Package) for a complete list of PowerShell Reference on Install
+Refer [here] (/ndocs/tools/powershell-reference#install-package) for a complete PowerShell reference on Install-Package.
 
 NuGet retrieves the package from the specified package source and installs it in the project 
 that is selected in the **Default project** drop-down list 
@@ -107,7 +107,7 @@ For example, use the `Uninstall-Package elmah` command as shown in the following
 
 ![uninstall package command](/images/consume/package-manager-console-uninstall-package.png)
 
-For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console Powershell Reference](Package-Manager-Console-PowerShell-Reference).
+For more options that you can specify with the `uninstall-package` command, enter `get-help uninstall-package` or see [Package Manager Console PowerShell Reference](/ndocs/tools/powershell-reference#uninstall-package).
 
 The following package elements are removed:
 
@@ -117,7 +117,7 @@ The following package elements are removed:
 
 If other packages were installed because they were dependencies of the package that you removed, and if no other packages remain that are dependent on the dependency packages, the dependency packages are also removed.
 
-Refer [here] (Package-Manager-Console-PowerShell-Reference#Uninstall-Package) for a complete list of PowerShell Reference on Uninstall
+Refer [here] (/ndocs/tools/powershell-reference#uninstall-package) for a complete PowerShell reference on Uninstall-Package.
 
 ## Updating a Package 
 
@@ -127,14 +127,14 @@ To check if there are newer versions available for any installed packages, enter
 ![Get-Package command](/images/consume/package-manager-console-get-package-showing-updates.png)
 
 To update a package, enter `Update-Package` with the package ID. For example, enter the command `Update-Package jQuery`.
-For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see [here](Package-Manager-Console-PowerShell-Reference#update-package).
+For more options that you can use with the `Update-Package` command, enter `get-help Update-Package` or see [here](/ndocs/tools/powershell-reference#update-package).
 
 ![update-package command](/images/consume/package-manager-console-update-package.png)
 
-Refer [here] (Package-Manager-Console-PowerShell-Reference#Update-Package) for a complete list of PowerShell Reference on Update
+Refer [here] (/ndocs/tools/powershell-reference#update-package) for a complete PowerShell reference on Update-Package.
 
-## Setting up a NuGet Powershell Profile
-Powershell supports the concept of profiles which allow you to have commonly used PS commands available to you wherever you use PowerShell.
+## Setting up a NuGet PowerShell Profile
+PowerShell supports the concept of profiles which allow you to have commonly used PS commands available to you wherever you use PowerShell.
 
 NuGet supports a NuGet specific profile typically located at:
 
