@@ -4,7 +4,10 @@ A native package contains native C++ code instead of managed code, allowing it t
 
 To be consumable in a C++ project, a package must target the `native` framework. At present there are not any version numbers associated with this framework as NuGet treats all C++ projects the same.
 
-Be sure to include `native` in your &lt;tags&gt; section of your .nuspec to help other developers find your package by searching on that tag.
+<div class="block-callout-info">
+	<strong>Note</strong><br>
+	Be sure to include <em>native</em> in the &lt;tags&gt; section of your .nuspec to help other developers find your package by searching on that tag.
+</div>
 
 Native NuGet packages targeting `native` then provide files in `\build`, `\content`, and `\tools` folders; `\lib` is not used in this case (NuGet cannot directly add references to a C++ project). A package may also include targets and props files in `\build` that NuGet will automatically import into projects that consume the package. Those files must be named the same as the package ID with the `.targets` and/or `.props` extensions. For example, the [cpprestsdk](https://nuget.org/packages/cpprestsdk/) package includes a `cpprestsdk.targets` file in its `\build` folder.
 
@@ -19,6 +22,6 @@ The CoApp project has also created [convenient C++ tools](http://coapp.org/pages
 
 Refer to these resources for more details:
 
-- [Tutorials](http://coapp.org/pages/tutorials.html)
-- [Reference documentation](http://coapp.org/pages/reference.html)
-- [Demo video](https://www.youtube.com/watch?v=l4MAkR13JPA) 
+- [Tutorials](http://coapp.org/pages/tutorials.html) (coapp.org)
+- [Reference documentation](http://coapp.org/pages/reference.html) (coapp.org)
+- [Demo video](https://www.youtube.com/watch?v=l4MAkR13JPA) (YouTube)
