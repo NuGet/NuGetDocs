@@ -383,6 +383,7 @@
     <Content Include="ndocs\Create-Packages\Config-File-Transformations.cshtml" />
     <Content Include="ndocs\Create-Packages\Source-File-Transformations.cshtml" />
     <Content Include="ndocs\Create-Packages\SemVer-Support.cshtml" />
+    <Content Include="ndocs\Consume-Packages\Support-for-Native-Projects.cshtml" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
