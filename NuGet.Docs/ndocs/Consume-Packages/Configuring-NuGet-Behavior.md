@@ -1,4 +1,4 @@
-# Configuring NuGetBehavior
+# Configuring NuGet Behavior
 
 NuGet's `NuGet.Config` files (in XML) store configuration settings and allow for changing default configuration values. NuGet uses several global configuration files and any number of configuration files within and near to a project to determine its exact behavior. In addition, in NuGet 2.7 and later you can use the `NuGetDefaults.config` file to also specifically control package sources. 
 
@@ -17,7 +17,7 @@ The behavior of every NuGet command, whether issued from the command line, the P
 - A solution-specific `NuGet.Config` file located within a `.nuget` folder in the solution. Settings in this file apply only to solution-wide packages and is supported only in NuGet 3.3 and earlier. It is ignored for NuGet 3.4 and later.   
 - The global config file located in `%APPDATA%\NuGet\NuGet.Config`, which is always used unless you specify a different config file using the `-configFile` switch on any NuGet command. For example, `nuget restore -configfile c:\my.config` will use settings from `c:\my.config` for the command and ignores any settings in the global config file.
 - Additional machine-wide config files (NuGet 2.6 and later) located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}\]]]NuGet.Config`, where `{IDE}` can be `VisualStudio`, `{Version}` can be the Visual Studio version such as `14.0`, and `{SKU}` is either `Community`, `Pro`, or `Enterprise`. These variants allow you to create configurations that are specific to different versions and editions of Visual Studio if needs be.
-- (NuGet 2.7 and later) The "defaults" file located at `%PROGRAMDATA%\NuGet\NuGetDefaults.config`, which is described later under [NuGet fefaults file](#nuget-defaults-file) as a way to specifically enable and disable package sources. No other settings are supported in this file.
+- (NuGet 2.7 and later) The "defaults" file located at `%PROGRAMDATA%\NuGet\NuGetDefaults.config`, which is described later under [NuGet defaults file](#nuget-defaults-file) as a way to specifically enable and disable package sources. No other settings are supported in this file.
 
 
 <div class="block-callout-info">

@@ -98,7 +98,10 @@ You can use Nuget.exe [Pack command](/consume/command-line-reference#pack-comman
 ## Working with Packages
 
 **What is the difference between a project-level package and a solution-level package?**
-
+<div class="block-callout-info">
+	<strong>Note:</strong><br>
+	Solution level packages are not supported starting NuGet 3.x
+</div>
 A solution-level package has to be installed only once in a solution to be available for all projects in the solution. A project-level package must be installed separately in each project where you want to use it. Typically, a solution-level package installs new commands that can be called from within the **Package Manager Console** window.
 
 **Is it possible to install NuGet package without internet ?**
