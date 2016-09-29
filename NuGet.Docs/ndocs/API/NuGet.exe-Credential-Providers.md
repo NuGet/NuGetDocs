@@ -1,9 +1,13 @@
 # NuGet.exe Credential Providers
 
-NuGet.exe 3.3+ now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds. 
+NuGet.exe 3.3+ now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds.
 After you install a NuGet.exe Credential Provider, NuGet.exe will automatically acquire and refresh credentials for authenticated feeds as necessary.
 
-Note: NuGet.exe Credential providers only work in NuGet.exe (not in dotnet restore or Visual Studio). To learn more about NuGet Credential Providers for Visual Studio, check out [this page](Visual-Studio-Credential-Providers.md).
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    NuGet.exe Credential providers only work in NuGet.exe (not in dotnet restore or Visual Studio).
+    To learn more about NuGet Credential Providers for Visual Studio, check out <a href="NuGet-Credential-Providers-for-Visual-Studio" alt="Learn more about NuGet Credential Providers for Visual Studio">this page</a>.
+</div>
 
 NuGet.exe Credential Providers can be used in 3 ways:
 
@@ -15,7 +19,7 @@ NuGet.exe Credential Providers can be used in 3 ways:
 
 ## Installing a NuGet.exe Credential Provider Globally
 
-To make a Credential Provider available to all instances of NuGet.exe run under the current user's profile, 
+To make a Credential Provider available to all instances of NuGet.exe run under the current user's profile,
 add it to `%LocalAppData%\NuGet\CredentialProviders`
 
 You may need to create the `CredentialProviders` folder.
@@ -43,15 +47,15 @@ Some of the available NuGet.exe Credential Providers are: [Visual Studio Team Se
 The NuGet.exe 3.3 client implements an internal CredentialService that is used to acquire credentials. The CredentialService has a list of built-in and plug-in NuGet.exe Credential Providers. Each provider is tried sequentially until credentials are acquired.
 
 Built-in providers, such as the existing providers to fetch credentials from nuget.config and to
-prompt the user on the command line, execute in-process. 
+prompt the user on the command line, execute in-process.
 
 During credential acquisition, the credential service will try plug-in credential providers in the following order, stopping as soon as credentials are acquired:
 
-a) Credentials will be fetched from NuGet configuration files.
+1. Credentials will be fetched from NuGet configuration files.
 
-b) All 3rd party credential providers will be tried in the order of discovery outlined above.
+2. All 3rd party credential providers will be tried in the order of discovery outlined above.
 
-c) The user will be prompted for credentials on the command line.
+3. The user will be prompted for credentials on the command line.
 
 To create a NuGet.exe Credential Provider, create a command-line executable that takes the inputs specified below, acquires credentials as appropriate, then returns the appropriate exit status code and standard output.
 
@@ -59,20 +63,20 @@ To create a NuGet.exe Credential Provider, create a command-line executable that
 
 NuGet.exe Credential Providers must follow the naming convention `CredentialProvider*.exe`., and each Credential Provider must:
 
-a) Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If the plugin cannot supply credentials for the targeted source, then it should return
+1. Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If the plugin cannot supply credentials for the targeted source, then it should return
    status code 1 and supply no credentials.
 
-b) Not modify nuget.config (i.e. by setting credentials there).
+2. Not modify nuget.config (i.e. by setting credentials there).
 
-c) Handle HTTP Proxy configuration on their own. The CredentialService will not pass HTTP Proxy configuration information to the plugin.
+3. Handle HTTP Proxy configuration on their own. The CredentialService will not pass HTTP Proxy configuration information to the plugin.
 
-d) Encode stdout responses using UTF-8 encoding.
+4. Encode stdout responses using UTF-8 encoding.
 
 ### NuGet.exe Credential Provider Input Parameters
 
 <table>
-<th>Input parameter</th>
-<th>Description</th>
+    <th>Input parameter</th>
+    <th>Description</th>
     <tr>
         <td>Uri{value}</td>
         <td>The package source Uri for which credentials will be filled.</td>
@@ -90,9 +94,9 @@ d) Encode stdout responses using UTF-8 encoding.
 ### NuGet.exe Credential Provider Exit Status Codes
 
 <table>
-<th>Exit code</th>
-<th>Result</th>
-<th>Description</th>
+    <th>Exit code</th>
+    <th>Result</th>
+    <th>Description</th>
     <tr>
         <td>0</td>
         <td>Success</td>
@@ -113,11 +117,12 @@ d) Encode stdout responses using UTF-8 encoding.
 ### NuGet.exe Credential Provider Standard Output
 
 <table>
-<th>Property</th>
-<th>Notes</th>
+    <th>Property</th>
+    <th>Notes</th>
     <tr>
         <td>Username</td>
-        <td>Username for authenticated requests.
+        <td>
+            Username for authenticated requests.
         </td>
     </tr>
     <tr>

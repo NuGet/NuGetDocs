@@ -1,11 +1,21 @@
 ﻿# NuGet Credential Providers for Visual Studio
 
-The NuGet Visual Studio Extension 3.6+ now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds.
+The NuGet Visual Studio Extension 3.6+ now supports Credential Providers, which enable NuGet to work with authenticated feeds.
 After you install a NuGet Credential Provider for Visual Studio, the NuGet Visual Studio extension will automatically acquire and refresh credentials for authenticated feeds as necessary.
 
-Note: NuGet Credential Providers for Visual Studio only work in Visual Studio (not in dotnet restore or nuget.exe). To learn more about NuGet.exe Credential Providers, check out [this page](NuGet.exe-Credential-Providers.md).
+<div class="block-callout-info">
+    <strong>Note:</strong><br>
+    NuGet Credential Providers for Visual Studio only work in Visual Studio (not in dotnet restore or nuget.exe).
+    To learn more about NuGet.exe Credential Providers, check out <a href="NuGet.exe-Credential-Providers" alt="Learn more about NuGet.exe Credential Providers">this page</a>.
+</div>
 
-NuGet Credential Providers for Visual Studio must be installed as a regular Visual Studio extension.
+## Sample
+
+A sample implementation can be found in [our GitHub Samples](https://github.com/NuGet/Samples) repository.
+
+## Supported versions of Visual Studio
+
+NuGet Credential Providers for Visual Studio must be installed as a regular Visual Studio extension and will require Visual Studio 2017 RC or above.
 
 ## Available NuGet Credential Providers for Visual Studio
 
@@ -19,20 +29,32 @@ The NuGet Visual Studio Extension 3.6+ implements an internal CredentialService 
 
 During credential acquisition, the credential service will try credential providers in the following order, stopping as soon as credentials are acquired:
 
-a) Credentials will be fetched from NuGet configuration files (using the built-in `SettingsCredentialProvider`).
-b) If the package source is on Visual Studio Team Services, the `VisualStudioAccountProvider` will be used.
-c) All 3rd party plug-in credential providers will be tried in the order of discovery outlined above.
-d) If no credentials have been acquired yet, the user will be prompted for credentials using a standard basic authentication dialog.
+1. Credentials will be fetched from NuGet configuration files (using the built-in `SettingsCredentialProvider`).
+2. If the package source is on Visual Studio Team Services, the `VisualStudioAccountProvider` will be used.
+3. All other plug-in credential providers will be tried in the order of discovery outlined above.
+4. If no credentials have been acquired yet, the user will be prompted for credentials using a standard basic authentication dialog.
 
 To create a NuGet Credential Provider for Visual Studio, create a Visual Studio Extension that exposes a public MEF Export implementing the `IVsCredentialProvider` type, and adheres to the principles outlined below.
+
+    public interface IVsCredentialProvider
+    {
+        Task<ICredentials>
+        Uri uri,
+        IWebProxy proxy,
+        bool isProxyRequest,
+        bool isRetry,
+        bool nonInteractive,
+        CancellationToken cancellationToken);
+    }
+
 A sample implementation can be found in [our GitHub Samples](https://github.com/NuGet/Samples) repository.
 
 ### NuGet Credential Provider for Visual Studio Basics
 
 Each NuGet Credential Provider for Visual Studio must:
 
-a) Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If the provider cannot supply credentials for the targeted source, then it should return `null`.
-b) If the provider does handle requests for the targeted URI, but cannot supply credentials, an exception should be thrown.
+1. Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If the provider cannot supply credentials for the targeted source, then it should return `null`.
+2. If the provider does handle requests for the targeted URI, but cannot supply credentials, an exception should be thrown.
 
 ### NuGet Credential Provider for Visual Studio Input Parameters
 
@@ -41,8 +63,8 @@ A custom NuGet Credential Provider for Visual Studio must implement the `IVsCred
 This interface defines a single `GetCredentialsAsync` method accepting the following input parameters:
 
 <table>
-<th>Input parameter</th>
-<th>Description</th>
+    <th>Input parameter</th>
+    <th>Description</th>
     <tr>
         <td>Uri uri</td>
         <td>The package source Uri for which credentials are being requested.</td>
