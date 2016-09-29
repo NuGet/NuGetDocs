@@ -63,7 +63,7 @@ To create a new configuration file, copy the template below into that file and t
 
 <div class="block-callout-warning">
     <strong>Note:</strong><br>
-	Although you can modify the file in any text editor, NuGet silently ignores the entire configuration file if it contains malformed XML (mismatched tags, invalid quotation marks, etc.).
+	Although you can modify the file in any text editor, NuGet (v3.4.3 and later) silently ignores the entire configuration file if it contains malformed XML (mismatched tags, invalid quotation marks, etc.).
 </div>
 
 

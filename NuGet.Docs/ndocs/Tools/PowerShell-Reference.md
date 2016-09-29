@@ -99,7 +99,7 @@ Gets the set of online packages with specified Id/keyword from the package sourc
     PM> Find-Package Elmah
     Returns packages with the keyword Elmah available from the package source.
     
-    PM> Get-Package jquery -AllVersions -ExactMatch
+    PM> Find-Package jquery -AllVersions -ExactMatch
     Returns jquery package with all versions available from the package source.
 
     PM> Find-Package EntityFramework -version 6.1.1
@@ -241,7 +241,7 @@ Installs a package.
 
 ### Usage
 
-    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-Force] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
+    Install-Package [-Id] <string> [-IgnoreDependencies] [-ProjectName <string>] [-Version <string>] [-Source <string>] [-IncludePrerelease] [-FileConflictAction] [-DependencyVersion <dependencyVersion>] [-WhatIf]
 
 Installs a package and its dependencies into the project.
 
@@ -278,12 +278,6 @@ Installs a package and its dependencies into the project.
         <tr>
         <td>IncludePrerelease</td>
         <td>Indicates whether to include prerelease packages.</td>
-        <td>Required = false</td>
-    </tr>
-    <tr>
-        <td>Force</td>
-        <td>Install a package forcibly to the project. If the same version is already installed, 
-        will uninstall the package first and then install.</td>
         <td>Required = false</td>
     </tr>
     <tr>

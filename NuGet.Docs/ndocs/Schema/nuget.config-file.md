@@ -1,6 +1,6 @@
 # NuGet.Config Reference
 
-NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](ndocs/consume-packages/configuring-nuget-behavior). The individual settings are described in the sections below.
+NuGet behavior is controlled by settings in `NuGet.Config` files as described in [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). The individual settings are described in the sections below.
 
 <div class="block-callout-info">
     <strong>Note</strong>
