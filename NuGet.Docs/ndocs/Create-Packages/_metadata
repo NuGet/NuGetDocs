@@ -6,9 +6,7 @@ Creating-Localized-Packages
 Prerelease-Packages
 Native-Packages
 Symbol-Packages
-Package-Types
 Publish-a-package
-Managing-Package-Owners
 project.json-and-UWP
 project.json-Impact
 Analyzers-Conventions

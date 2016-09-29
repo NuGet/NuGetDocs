@@ -146,7 +146,7 @@ However, for you package to work great and provide enough contextual information
             <td>
                 <a href="/Release-Notes/NuGet-3.5">v3.5</a> Specifies the type of the
                 package. This is important if the package is something other than a traditional
-                dependency package. For more information, see the <a href="../create-packages/package-types">package
+                dependency package. For more information, see the <a href="../create-packages/creating-a-package#setting-a-package-type">package
                 type</a> documentation.
             </td>
         </tr>
