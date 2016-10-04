@@ -2,7 +2,7 @@
 
 NuGet supports the ability to make transformations to source code and configuration files at package install and uninstall times. 
 
-A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx). This allows you to isert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project. 
+A **source code transformation** applies one-way token replacement to files in the package's `content` folder when the package is installed, where tokens refer to Visual Studio [project properties](https://msdn.microsoft.com/library/vslangproj.projectproperties_properties.aspx). This allows you to insert a file into the project's namespace, or to customize code that would typically go into `global.asax` in an ASP.NET project. 
 
 A **config file transformation** allows you to modify files that already exist in a target project, such as `web.config` and `app.config`. For example, your package might need to add an item to the `modules` section in the config file. This transformation is done by including special files in the package that describe the sections to add to the configuration files. When a package is uninstalled, those same changes are then reversed, making this a two-way transformation. 
  
