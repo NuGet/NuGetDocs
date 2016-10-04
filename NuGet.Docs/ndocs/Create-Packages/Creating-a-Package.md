@@ -387,7 +387,7 @@ The following options are a few that are common with Visual Studio projects:
 
 ##Next Steps
 
-Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](/ndocs/create-packages/publish-a-package) for details.
+Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](/ndocs/create-packages/publish-a-package).
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
