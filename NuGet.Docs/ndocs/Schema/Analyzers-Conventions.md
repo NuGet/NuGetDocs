@@ -61,7 +61,7 @@ If the user's project is using `packages.config`, the MSBuild script that picks 
 		}
 	}
 
-	$project.Type gives the language name like (C# or VB.NET)
+	$project.Type # gives the language name like (C# or VB.NET)
 	$languageFolder = ""
 	if($project.Type -eq "C#")
 	{
@@ -114,7 +114,7 @@ If the user's project is using `packages.config`, the MSBuild script that picks 
         }
     }
 
-    $project.Type gives the language name like (C# or VB.NET)
+    $project.Type # gives the language name like (C# or VB.NET)
     $languageFolder = ""
     if($project.Type -eq "C#")
     {
