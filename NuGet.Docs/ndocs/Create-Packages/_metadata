@@ -1,4 +1,5 @@
-﻿Creating-a-Package
+﻿Overview-and-Workflow
+Creating-a-Package
 Dependency-Versions
 Supporting-Multiple-Target-Frameworks
 Source-and-Config-File-Transformations
@@ -9,4 +10,3 @@ Symbol-Packages
 Publish-a-package
 project.json-and-UWP
 project.json-Impact
-Analyzers-Conventions
