@@ -102,7 +102,7 @@ You're now ready to publish the package to nuget.org using the NuGet CLI. (Alter
 
 <div class="block-callout-warning">
 	<strong>Note</strong><br>
-	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be publicly visible to other developers. To host packages privately, see <a href="/ndocs/host-packages/hosting-packages-overview">Hosting packages</a>.
+	The packages you publish to <a href="https://www.nuget.org/">nuget.org</a> will be publicly visible to other developers. To host packages privately, see <a href="/ndocs/hosting-packages/overview">Hosting packages</a>.
 </div>
 
 1. Create a free account on [nuget.org](https://www.nuget.org/users/account/LogOn?returnUrl=%2F), or log in if you already have one. When creating a new account, you'll receive a confirmation email. You must confirm the account before you can upload a package.
