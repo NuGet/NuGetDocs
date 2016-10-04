@@ -23,6 +23,10 @@ Specify the id and optionally the version of the package to install. If a path t
         is used.</td>
     </tr>
     <tr>
+        <td>directdownload</td>
+        <td>(v<em>3.6</em>) Download directly without populating any caches with metadata or binaries.</td>
+    </tr>
+    <tr>
         <td>excludeversion</td>
         <td>If set, the destination directory will contain only the package name, not the version number.</td>
     </tr>
@@ -36,7 +40,7 @@ Specify the id and optionally the version of the package to install. If a path t
     </tr>
     <tr>
         <td>nocache</td>
-        <td>Disables looking up packages from local machine cache.</td>
+        <td>Disables looking up packages from any caches.</td>
     </tr>
     <tr>
         <td>noninteractive</td>
@@ -167,7 +171,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
 
 (v<em>2.7</em>) Downloads and unzips (restores) any packages missing from the packages folder.
 
-(v<em>3.3.0</em>) Generates a project.lock.json file for projects using project.json.
+(v<em>3.3</em>) Generates a project.lock.json file for projects using project.json.
 
 ### Usage
     nuget restore [solution|packages.config|project.json] [options]
@@ -177,6 +181,10 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
     <tr>
         <td>configfile</td>
         <td>Specifies the user specific configuration file. If omitted, nuget.config is used instead.</td>
+    </tr>
+    <tr>
+        <td>directdownload</td>
+        <td>(v<em>3.6</em>) Download directly without populating any caches with metadata or binaries.</td>
     </tr>
     <tr>
         <td>disableparallelprocessing</td>
@@ -192,7 +200,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
     </tr>
     <tr>
         <td>nocache</td>
-        <td>Disables using the machine cache as the first package source.</td>
+        <td>Disables looking up packages from any caches.</td>
     </tr>
     <tr>
         <td>noninteractive</td>
@@ -226,7 +234,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
     </tr>
 </table>
 
-### Restore  Notes
+### Restore Notes
 The restore command is executed in the following steps:
 
 1. Determine the operation mode of the restore command.
