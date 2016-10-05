@@ -194,8 +194,10 @@ You then have four `NuGet.Config` files in the following locations with the give
 
 ## NuGet defaults file 
 
-NuGet has always had the notion of a default package source, nuget.org, that the user could not delete. However, when using NuGet with internal package sources, it's often desirable to make sure that developers and build servers use packages from those sources instead of nuget.org. With NuGet 2.7 and later, you can use the `%PROGRAMDATA%\NuGet\NuGetDefaults.config` file to control certain machine-wide defaults described below. This provides administrators a convenient way to deploy (using Group Policy, for example) consistent `NuGetDefaults.config` files to developer and build machines, thus ensuring correct use of package sources.
+NuGet 3.3 and earlier uses a hardcoded default package source, nuget.org, that the user could not delete. However, when using NuGet with internal package sources, it's often desirable to make sure that developers and build servers use packages from those sources instead of nuget.org. With NuGet 2.7 and later, you can use the `%PROGRAMDATA%\NuGet\NuGetDefaults.config` file to control certain machine-wide defaults described below. This provides administrators a convenient way to deploy (using Group Policy, for example) consistent `NuGetDefaults.config` files to developer and build machines, thus ensuring correct use of package sources.
 
+Note that NuGet 3.4 and later does not use a hardcoded default source. When nuget.exe is run for the first time, `NuGet.config` is generated and nuget.org is added as the default package source in the config file. In the absence of the NuGet.config file, the default package source is undefined.
+  
 The defaults file works with the following settings:
 
 - `packageSources`: this collection has the same meaning as `packageSources` in regular config files and specifies the default sources in their preferred order. If this setting exists in `NuGetDefaults.config`, then NuGet will not use nuget.org as a default package source. An administrator can thus make sure that everyone using this file will be working with the same sources and avoids using nuget.org if desired.
