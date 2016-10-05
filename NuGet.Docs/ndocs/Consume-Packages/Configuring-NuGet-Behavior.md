@@ -69,7 +69,7 @@ To create a new configuration file, copy the template below into that file and t
 
 ## How settings are applied
 
-As described above in [Config file locations and uses](#config-file-location-and-uses), any number of `NuGet.Config` files can exist on a machine, both in global locations and within a project's folder structure. This allows you to control settings in different places as they apply to a project, a group of projects, or all projects. 
+As described above in [Config file locations and uses](#config-file-locations-and-uses), any number of `NuGet.Config` files can exist on a machine, both in global locations and within a project's folder structure. This allows you to control settings in different places as they apply to a project, a group of projects, or all projects. 
 
 <div class="block-callout-info">
     <strong>Note:</strong><br>
