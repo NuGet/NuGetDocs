@@ -528,7 +528,7 @@ Creates a NuGet package based on the specified nuspec or project file.
         <td>Displays help information for the pack command.</td>
     </tr>
     <tr>
-        <td>includereferenceprojects</td>
+        <td>includereferencedprojects</td>
         <td>Include referenced projects either as dependencies or as part of the package. If a referenced
         project has a corresponding nuspec file that has the same name as the project, then that
         referenced project is added as a dependency. Otherwise, the referenced project is added as part
