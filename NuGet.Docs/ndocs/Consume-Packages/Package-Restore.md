@@ -8,7 +8,7 @@ In this topic:
 * [Constraining package versions with restore](#constraining-package-versions-with-restore)
 * [Command-line restore](#command-line-restore), for all versions of NuGet
 * [Automatic restore in Visual Studio](#automatic-restore-in-visual-studio), for NuGet 2.7 and later. 
-* [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore-in-visual-studio), for NuGet 2.6 and earlier.
+* [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore), for NuGet 2.6 and earlier.
 * [Package restore with Team Foundation Build](#package-restore-with-team-foundation-build)
 
 To check your NuGet version, simply run `nuget.exe` on the command line and look at the first line of output. 
@@ -59,7 +59,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
 
 For reference, see the [NuGet config file overview](/ndocs/consume-packages/nuget-config-file-overview).
 
-MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore-in-visual-studio).
+MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore).
 
 In some cases, a developer or company might want to enable or disable package restore on a machine by default for all users. This can be done by adding the same settings above to the global NuGet configuration file located in `%ProgramData%\NuGet\Config[\{IDE}[\{Version}[\{SKU}]]]`. Individual users can then selectively enable restore as needed on a project level. See [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior#how-settings-are-applied) for exact details on how NuGet prioritizes multiple config files.
 
