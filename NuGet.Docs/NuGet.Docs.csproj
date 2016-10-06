@@ -274,6 +274,13 @@
     <Content Include="images\Create\Create_01-ShowReadme.png" />
     <Content Include="images\Create\Prerelease_01-LatestStable.png" />
     <Content Include="images\Create\Prerelease_02-CheckPrerelease.png" />
+    <Content Include="images\Create\publish_APIKey.png" />
+    <Content Include="images\Create\publish_NotYetIndexed.png" />
+    <Content Include="images\Create\publish_NuGet-API-Key.PNG" />
+    <Content Include="images\Hosting\Hosting_01-NuGet.Server-Set4.6.png" />
+    <Content Include="images\Hosting\Hosting_02-NuGet.Server-Package.png" />
+    <Content Include="images\Hosting\Hosting_03-NuGet.Server-Package-Folder.png" />
+    <Content Include="images\Hosting\Hosting_04-NuGet.Server-FeedHomePage.png" />
     <Content Include="ndocs\add-redirect.md" />
     <Content Include="ndocs\API\Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
@@ -283,12 +290,10 @@
     <Content Include="ndocs\Consume-Packages\Dependency-Resolution.md" />
     <Content Include="ndocs\Consume-Packages\Reinstalling-and-Updating-Packages.md" />
     <Content Include="ndocs\Consume-Packages\_metadata" />
-    <Content Include="ndocs\Create-Packages\Analyzers-Conventions.md" />
+    <Content Include="ndocs\Schema\Analyzers-Conventions.md" />
     <Content Include="ndocs\Create-Packages\Creating-a-Package.md" />
     <Content Include="ndocs\Create-Packages\Creating-Localized-Packages.md" />
     <Content Include="ndocs\Create-Packages\Dependency-Versions.md" />
-    <Content Include="ndocs\Create-Packages\Managing-Package-Owners.md" />
-    <Content Include="ndocs\Create-Packages\Package-Types.md" />
     <Content Include="ndocs\Create-Packages\Prerelease-Packages.md" />
     <Content Include="ndocs\Create-Packages\project.json-and-UWP.md" />
     <Content Include="ndocs\Create-Packages\Publish-a-package.md" />
@@ -301,7 +306,7 @@
     <Content Include="ndocs\Guides\Create-UWP-Packages.md" />
     <Content Include="ndocs\Guides\Install-NuGet.md" />
     <Content Include="ndocs\Guides\_metadata" />
-    <Content Include="ndocs\Hosting-Packages\Hosting-Packages-Overview.md" />
+    <Content Include="ndocs\Hosting-Packages\Overview.md" />
     <Content Include="ndocs\Hosting-Packages\Local-Feeds.md" />
     <Content Include="ndocs\Hosting-Packages\NuGet.Server.md" />
     <Content Include="ndocs\Hosting-Packages\_metadata" />
@@ -384,6 +389,10 @@
     <Content Include="ndocs\Create-Packages\Source-File-Transformations.cshtml" />
     <Content Include="ndocs\Create-Packages\SemVer-Support.cshtml" />
     <Content Include="ndocs\Consume-Packages\Support-for-Native-Projects.cshtml" />
+    <Content Include="ndocs\Create-Packages\Package-Types.cshtml" />
+    <Content Include="ndocs\Create-Packages\Managing-package-owners.cshtml" />
+    <Content Include="ndocs\Create-Packages\Analyzers-Conventions.cshtml" />
+    <Content Include="ndocs\Hosting-Packages\Hosting-Packages-Overview.cshtml" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
@@ -702,7 +711,6 @@
     <Content Include="images\Create\package-sources-with-custom-source.png" />
     <Content Include="images\Create\package-sources.png" />
     <Content Include="images\Create\pp.files.png" />
-    <Content Include="images\Create\publish_NuGet-API-Key.PNG" />
     <Content Include="images\Create\publish_NuGetSignIn.PNG" />
     <Content Include="images\Create\publish_UploadYourPackage.PNG" />
     <Content Include="images\Create\Selecting-local-feed-in-Add-Library-Package-Reference.png" />

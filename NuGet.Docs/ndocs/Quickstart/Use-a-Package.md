@@ -97,7 +97,6 @@ With the Newtonsoft.Json package in the project, you can call its `JsonConvert.S
 
 
 ##Related topics
-* [NuGet 3.0, .NET and project.json](/ndocs/consume-packages/projectjson-intro)
-* [Dependency Resolution in NuGet v3 / project.json](/ndocs/consume-packages/projectjson-dependency)
-* [NuGet Configuration File](/ndocs/consume-packages/nuget-config-file-overview)
-* [NuGet Config File Defaults](/ndocs/consume-packages/nuget-config-file-defaults)
+* [Overview and workflow of package consumption](/ndocs/consume-packages/overview-and-workflow)
+* [Finding and choosing](/ndocs/consume-packages/finding-and-choosing-packages)
+* [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior)

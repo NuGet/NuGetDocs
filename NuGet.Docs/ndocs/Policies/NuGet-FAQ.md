@@ -152,7 +152,7 @@ It is not possible to squat package names. If you feel that an existing package 
 
 **How do I claim ownership for packages ?**
 
-Check out [Managing Package Owners on nuget.org](/ndocs/create-packages/managing-package-owners) for details.
+Check out [Managing package owners on nuget.org](/ndocs/create-packages/publish-a-package#managing-package-owners-on-nuget-org) for details.
 
 **How do I deal with a package owner who is violating my software license?**
 
@@ -160,7 +160,7 @@ We encourage the NuGet community to work together to resolve any disputes that m
 
 **Is it recommended to upload my test packages to NuGet.org ?**
 
-For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public nuget servers like https://myget.org (public and private feeds) or [Visual Studio Online](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/). Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
+For test purposes, you can use [staging.nuget.org](http://staging.nuget.org), or alternative public nuget servers like https://myget.org (public and private feeds) or [Visual Studio Team Services](https://blogs.msdn.microsoft.com/visualstudioalm/2015/08/27/announcing-package-management-support-for-vsotfs/). Please note that the packages being uploaded to staging.nuget.org may not be preserved. More details can be found [here.](http://blog.nuget.org/20130419/goodbye-preview.html)
 
 **What is the maximum size of packages I can upload to NuGet.org?**
 
@@ -176,7 +176,7 @@ Dependencies are mostly static and never change. When fixing a bug in code, the 
 
 When downloading and uploading to NuGet does not work, it's best to [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information such as MTR or a Fiddler trace, as well as the operating system you are using, machine configuration (CPU, Network, hard drive), is your machine behind a proxy or firewall, and what version of .NET is installed on the machine. If you are use new cross platform tools (such as .NET CLI, or DNU) please indicate the exact version you are using.
 
-Also please make sure you are using the latest version of NuGet either in visual studio or on the commandline. When you communicate with support, please include the version of your NuGet tools, the package sources you are using, a restore log (with detailed verbosity), and MTR/Fiddler traces if possible.
+Also please make sure you are using the latest version of NuGet either in Visual Studio or on the commandline. When you communicate with support, please include the version of your NuGet tools, the package sources you are using, a restore log (with detailed verbosity), and MTR/Fiddler traces if possible.
 
 **To capture MTR:**
 

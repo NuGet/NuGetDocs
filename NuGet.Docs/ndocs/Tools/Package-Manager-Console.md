@@ -14,7 +14,7 @@ The **Package Manager Console** window is displayed.
 
 The two drop-down lists set default values that let you omit parameters from the commands you enter in the window:
 
-* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](ndocs/hosting-packages/hosting-packages-overview).
+* In the **Package source** list, select the default source (NuGet package feed) that you want your commands to use. Typically you will leave this as its default value of **NuGet official package source**. For more information about alternative feeds, see [Hosting Your Own NuGet Feeds](ndocs/hosting-packages/overview).
 * In the **Default project** list, select the default project that you want your commands to work with. (The default value will be the first project in the solution, not necessarily the one you have selected in **Solution Explorer** when you open the window.)
 
 When you enter commands, you can override these defaults.

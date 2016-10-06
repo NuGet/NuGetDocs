@@ -18,6 +18,7 @@ This topic covers the most common steps involved in package creation:
 	- [A Visual Studio project](#from-a-visual-studio-project)
 	- [A convention-based working directory](#from-a-convention-based-working-directory)
 - [Choosing a unique package identifier and setting the version number](#choosing-a-unique-package-identifier-and-setting-the-version-number)
+- [Setting a package type](#setting-a-package-type) (NuGet 3.5 and later)
 - [Adding a readme and other files](#adding-a-readme-and-other-files)
 - [Including MSBuild props and targets in a package](#including-msbuild-props-and-targets-in-a-package)
 - [Creating the package](#creating-the-package)
@@ -222,6 +223,40 @@ For the **&lt;version&gt;** value:
 	</ul>
 </div> 
 
+## Setting a package type
+
+Beginning with NuGet 3.5, packages can be marked with a specific *package type* to indicate the package's intended use. Packages that are not marked with a type, including all packages created with earlier versions of NuGet, are assumed to be the `Dependency` type.
+
+- `Dependency` type packages add build- or run-time assets to libraries and applications, and can be installed in any project type (assuming they are compatible). 
+  
+- `DotnetCliTool` type packages are extensions to the [.NET CLI](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/index) and are invoked from the command line. Such packages can be installed only in .NET Core projects and have no effect on restore operations. More details about these per-project extensions are available in the  [.NET Core extensibility](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/extensibility#per-project-based-extensibility) documentation.
+
+	When a DotnetCliTool package is installed, Visual Studio will place the package in the project.json `tools` node instead of the `dependencies` node.
+
+- Custom type packages use an arbitrary type identifier that conforms to the same format rules as package IDs. Any type other than Dependency and `DotnetCliTool`, however, are not recognized by the NuGet Package Manager in Visual Studio.
+
+Package types are set either in the `.nuspec` file or in `project.json`. In both cases, it's best for backwards compatibility to *not* explicitly set the `Dependency` type and to instead rely on NuGet assuming this type when no type is specified.
+	
+- `.nuspec`: Indicate the package type within a `packageTypes\packageType` node under the `<metadata>` element:
+
+		<?xml version="1.0" encoding="utf-8"?>
+		<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+		  <metadata>
+			<!-- ... -->
+			<packageTypes>
+			  <packageType type="DotnetCliTool" />
+			</packageTypes>
+		  </metadata>
+		</package>
+
+- `project.json`: Indicate the package type within a `packOptions.packageType` property json:
+
+		{
+		  // ...
+		  "packOptions": {
+			"packageType": "DotnetCliTool"
+		  }
+		}
 
 ## Adding a readme and other files
 
@@ -352,7 +387,7 @@ The following options are a few that are common with Visual Studio projects:
 
 ##Next Steps
 
-Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice. See [Publishing a Package](/ndocs/create-packages/publish-a-package) for details.
+Once you've created a package, which is a `.nupkg` file, you can publish it to the gallery of your choice as described on [Publishing a Package](/ndocs/create-packages/publish-a-package).
 
 You might also want to extend the capabilities of your package or otherwise support other scenarios as described in the following topics:
 
@@ -360,11 +395,10 @@ You might also want to extend the capabilities of your package or otherwise supp
 - [Supporting multiple target frameworks](/ndocs/create-packages/supporting-multiple-target-frameworks)
 - [Transformations of source and configuration files](/ndocs/create-packages/source-and-config-file-transformations)
 - [Localization](/ndocs/create-packages/creating-localized-packages)
-- [Package Versioning](/ndocs/create-packages/prerelease-packages)
+- [Pre-release versions](/ndocs/create-packages/prerelease-packages)
 
 Finally, there are additional package types to be aware of:
 
 - [Native Packages](/ndocs/create-packages/native-packages)
 - [Symbol Packages](/ndocs/create-packages/symbol-packages)
-- [Package Types](/ndocs/create-packages/package-types)
 

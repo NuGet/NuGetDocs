@@ -1,4 +1,5 @@
-﻿Creating-a-Package
+﻿Overview-and-Workflow
+Creating-a-Package
 Dependency-Versions
 Supporting-Multiple-Target-Frameworks
 Source-and-Config-File-Transformations
@@ -6,9 +7,6 @@ Creating-Localized-Packages
 Prerelease-Packages
 Native-Packages
 Symbol-Packages
-Package-Types
 Publish-a-package
-Managing-Package-Owners
 project.json-and-UWP
 project.json-Impact
-Analyzers-Conventions

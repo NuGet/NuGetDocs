@@ -2,20 +2,22 @@
 
 The project.json system used in NuGet 3.x affects package authors in several ways as described in the following sections.
 
+- [Install and uninstall scripts are ignored](#install-and-uninstall-scripts-are-ignored)
+
+
 ## Changes affecting existing packages usage
 
 Traditional NuGet packages support a set of features that are not carried over to the transitive world. 
 
-### Install and Uninstall scripts 
+### Install and uninstall scripts are ignored 
 
-These scripts are not supported and will be ignored. In case they exist in the package a project using transitive restore. 
+The transitive restore model, described in [Dependency resolution](/ndocs/consume-packages/dependency-resolution#dependency-resolution-in-nuget-3-x), does not have a concept of "package install time". A package is either present or not present, but there is no consistent process that occurs when a package is installed.
 
-The main reason we removed support for this is that in the transitive model, is that there is no concept of package install time. A package is either present or not present, but there is no consistent process that occurs when a package is installed. Install scripts only worked in Visual Studio and other IDE had to mock Visual Studio extensibility API in an attempt to support this scenario. But common editors have no support, and similarly command line tools have no support for running these scripts. 
+Also, install scripts were supported only in Visual Studio. Other IDEs had to mock the Visual Studio extensibility API to attempt to support such scripts, and no support was available in common editors and command-line tools. 
 
+### Content transforms are not supported. 
 
-### Content Transforms 
-
-Similarly to install scripts, transforms run on package install and are typically not idempotent. Since there is no install time anymore, XDT Transform and similar features are not supported, and will be ignored if such a package is used in a transitive scenario. 
+Similar to install scripts, transforms run on package install and are typically not idempotent. Since there is no install time anymore, XDT Transform and similar features are not supported, and will be ignored if such a package is used in a transitive scenario. 
 
 
 ### Content 
