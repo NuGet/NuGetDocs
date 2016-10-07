@@ -399,6 +399,7 @@
     <Content Include="ndocs\Create-Packages\Managing-package-owners.cshtml" />
     <Content Include="ndocs\Create-Packages\Analyzers-Conventions.cshtml" />
     <Content Include="ndocs\Hosting-Packages\Hosting-Packages-Overview.cshtml" />
+    <Content Include="ndocs\Create-Packages\Overview-and-Workflow.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
