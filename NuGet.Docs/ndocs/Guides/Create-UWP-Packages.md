@@ -227,7 +227,7 @@ With the completed .nuspec referencing all the files you need to include in the 
 	nuget pack ImageEnhancer.nuspec
 </code>
 
-This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](/ndocs/tools/package-explorer)) and expanding all the nodes, you'll see the following contents:
+This will generate `ImageEnhancer.YOUR_NAME.1.0.0.nupkg`. Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
 ![NuGet Package Explorer showing the ImageEnhancer package](/images/BuildForUWP/05.PNG)
 

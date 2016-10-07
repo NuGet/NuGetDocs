@@ -350,7 +350,7 @@ Once `nuget pack` succeeds, you'll have a `.nupkg` file that you can publish to 
 
 <div class="block-callout-info">
 	<strong>Package Explorer</strong><br>
-	A helpful way to examine a package after creating it is to open it in the <a href="/ndocs/tools/package-explorer">Package Explorer</a> tool. This gives you a graphical view of the package contents and its manifest. You can also rename the resulting .nupkg file to a .zip file and explore its contents directly.
+	A helpful way to examine a package after creating it is to open it in the <a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer">Package Explorer</a> tool. This gives you a graphical view of the package contents and its manifest. You can also rename the resulting .nupkg file to a .zip file and explore its contents directly.
 </div>
 
 
