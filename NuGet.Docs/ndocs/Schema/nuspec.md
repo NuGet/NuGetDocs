@@ -603,7 +603,7 @@ Or use a double wildcard to exclude a set of files recursively across directorie
 
 In order to provide a better experience and clearer definition of what files should be `` in a project, the new contentFiles element has been introduced to the nuspec.  These files are designed to be immutable, and should not be modified by developers who install the package.  This feature only applies to projects that are managed by project.json configuration files.
 
-The contentFiles element contains a collection of files elements that define a mask of files and how those files should be references by a project.  The files elements reference a location inside of the NuGet package whose content could be placed there by either packaging the files directly on disk or by using a <code>files</code> element as demonstrated above.
+The contentFiles element contains a collection of files elements that define a mask of files and how those files should be referenced by a project.  The files elements reference a location inside of the NuGet package whose content could be placed there by either packaging the files directly on disk or by using a <code>files</code> element as demonstrated above.
 
 Files child-elements of contentFiles in the nuspec are applied from top to bottom, with the topmost elements taking precedence over lower elements in the collection.  These elements apply to entries in the contentFiles folder of the package.  Type of content that work very well in this model include:
 
@@ -623,9 +623,9 @@ Content shall be stored in the package in folders that match this pattern:
 
 Examples of legal folder locations include:
 
-Language and framework agnostic: <code>/coNtentFiles/any/any/config.xml</code>
-net45 content for all languages: <code>/coNtentFiles/any/net45/config.xml</code>
-CSharp specific content for net45 and up: <code>/coNtentFiles/cs/net45/sample.cs</code>
+* Language and framework agnostic: <code>/contentFiles/any/any/config.xml</code>
+* net45 content for all languages: <code>/contentFiles/any/net45/config.xml</code>
+* CSharp specific content for net45 and up: <code>/contentFiles/cs/net45/sample.cs</code>
 
 Empty folders can use <code>_._</code> to opt out of providing content for certain combinations of language and TxM:
 
