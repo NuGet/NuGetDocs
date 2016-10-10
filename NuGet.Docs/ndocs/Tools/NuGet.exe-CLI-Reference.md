@@ -99,7 +99,7 @@ This command can also be used to update nuget.exe itself using the *-self* flag.
         is used.</td>
     </tr>
     <tr>
-        <td>fileconflictactions</td>
+        <td>fileconflictaction</td>
         <td>(v<em>2.5</em>) Specifies the action to take, when asked to overwrite or ignore existing files referenced by the project: overwrite, ignore, none.</td>
     </tr>
     <tr>
