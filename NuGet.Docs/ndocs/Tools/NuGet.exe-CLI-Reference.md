@@ -123,6 +123,10 @@ where <packagePath> is the pathname to the package to add, and <sourcePath> spec
     <tr>
         <td>help</td>
         <td>Displays help information for the command.</td>
+	</tr>
+    <tr>
+        <td>fileconflictaction</td>
+        <td><em>(2.5+)</em> Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are <em>overwrite, ignore, none</em>.</td>
     </tr>
     <tr>
         <td>verbosity</td>
