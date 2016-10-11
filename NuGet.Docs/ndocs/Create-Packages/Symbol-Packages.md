@@ -2,7 +2,7 @@
 
 In addition to building packages for nuget.org or other sources, NuGet also supports creating associated symbol packages and publishing them to the [SymbolSource repository](http://www.symbolsource.org/Public).
 
-Package consumers can then [enable symbol packages](/ndocs/consume-packages/enabling-symbol-packages) so that your symbols are automatically installed with your primary package. This allows consumers to step into your package code in the Visual Studio debugger.
+Package consumers can then add https://nuget.smbsrc.net/ to their symbol sources in Visual Studio. This allows consumers to step into your package code in the Visual Studio debugger.
 
 ## Creating a symbol package
 
