@@ -1,6 +1,6 @@
 ﻿# NuGet Credential Providers for Visual Studio
 
-The NuGet Visual Studio Extension 3.6+ now supports Credential Providers, which enable NuGet to work with authenticated feeds.
+The NuGet Visual Studio Extension 3.6+ supports Credential Providers, which enable NuGet to work with authenticated feeds.
 After you install a NuGet Credential Provider for Visual Studio, the NuGet Visual Studio extension will automatically acquire and refresh credentials for authenticated feeds as necessary.
 
 <div class="block-callout-info">
@@ -11,11 +11,11 @@ After you install a NuGet Credential Provider for Visual Studio, the NuGet Visua
 
 ## Sample
 
-A sample implementation can be found in [our GitHub Samples](https://github.com/NuGet/Samples) repository.
+A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
 
 ## Supported versions of Visual Studio
 
-NuGet Credential Providers for Visual Studio must be installed as a regular Visual Studio extension and will require Visual Studio 2017 RC or above.
+NuGet Credential Providers for Visual Studio must be installed as a regular Visual Studio extension and will require [Visual Studio 2017](https://aka.ms/vs/15/preview/vs_enterprise) (currently in preview) or above.
 
 ## Available NuGet Credential Providers for Visual Studio
 
@@ -31,34 +31,34 @@ During credential acquisition, the credential service will try credential provid
 
 1. Credentials will be fetched from NuGet configuration files (using the built-in `SettingsCredentialProvider`).
 2. If the package source is on Visual Studio Team Services, the `VisualStudioAccountProvider` will be used.
-3. All other plug-in credential providers will be tried in the order of discovery outlined above.
+3. All other plug-in credential providers will be tried sequentially.
 4. If no credentials have been acquired yet, the user will be prompted for credentials using a standard basic authentication dialog.
+
+### Implementing IVsCredentialProvider.GetCredentialsAsync
 
 To create a NuGet Credential Provider for Visual Studio, create a Visual Studio Extension that exposes a public MEF Export implementing the `IVsCredentialProvider` type, and adheres to the principles outlined below.
 
     public interface IVsCredentialProvider
     {
-        Task<ICredentials>
-        Uri uri,
-        IWebProxy proxy,
-        bool isProxyRequest,
-        bool isRetry,
-        bool nonInteractive,
-        CancellationToken cancellationToken);
+        Task<ICredentials> GetCredentialsAsync(
+          Uri uri,
+          IWebProxy proxy,
+          bool isProxyRequest,
+          bool isRetry,
+          bool nonInteractive,
+          CancellationToken cancellationToken);
     }
 
-A sample implementation can be found in [our GitHub Samples](https://github.com/NuGet/Samples) repository.
-
-### NuGet Credential Provider for Visual Studio Basics
+A sample implementation can be found in [the VsCredentialProvider sample](https://github.com/NuGet/Samples/tree/master/VsCredentialProvider).
 
 Each NuGet Credential Provider for Visual Studio must:
 
 1. Determine whether it can provide credentials for the targeted URI before initiating credential acquisition. If the provider cannot supply credentials for the targeted source, then it should return `null`.
 2. If the provider does handle requests for the targeted URI, but cannot supply credentials, an exception should be thrown.
 
-### NuGet Credential Provider for Visual Studio Input Parameters
-
 A custom NuGet Credential Provider for Visual Studio must implement the `IVsCredentialProvider` interface available in the [NuGet.VisualStudio package](https://www.nuget.org/packages/NuGet.VisualStudio/).
+
+**Input Parameters**
 
 This interface defines a single `GetCredentialsAsync` method accepting the following input parameters:
 
@@ -83,7 +83,7 @@ This interface defines a single `GetCredentialsAsync` method accepting the follo
     </tr>
     <tr>
         <td>bool nonInteractive</td>
-        <td>If true, then interactive prompts must not be allowed.</td>
+        <td>If true, the credential provider must suppress all user prompts and use default values instead.</td>
     </tr>
     <tr>
         <td>CancellationToken cancellationToken</td>
@@ -91,8 +91,6 @@ This interface defines a single `GetCredentialsAsync` method accepting the follo
     </tr>
 </table>
 
-### NuGet Credential Provider for Visual Studio Output Parameter
+**Return Value**
 
-The result of the call to `IVsCredentialProvider.GetCredentialsAsync` is a credentials object implementing the `System.Net.ICredentials` interface.
-
-More information about this type can be found [here](https://msdn.microsoft.com/en-us/library/system.net.icredentials(v=vs.110).aspx).
+A credentials object implementing the [`System.Net.ICredentials` interface](https://msdn.microsoft.com/en-us/library/system.net.icredentials.aspx).

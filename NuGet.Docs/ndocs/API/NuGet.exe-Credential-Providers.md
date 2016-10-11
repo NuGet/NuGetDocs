@@ -1,6 +1,6 @@
 # NuGet.exe Credential Providers
 
-NuGet.exe 3.3+ now supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds.
+NuGet.exe 3.3+ supports Credential Providers, which enable NuGet to work seamlessly with authenticated feeds.
 After you install a NuGet.exe Credential Provider, NuGet.exe will automatically acquire and refresh credentials for authenticated feeds as necessary.
 
 <div class="block-callout-info">
@@ -11,34 +11,15 @@ After you install a NuGet.exe Credential Provider, NuGet.exe will automatically 
 
 NuGet.exe Credential Providers can be used in 3 ways:
 
-* [Globally](#installing-a-credential-provider-globally)
-
-* [Environment Variable](#using-a-credential-provider-from-an-environment-variable)
-
-* [Alongside NuGet.exe](#using-a-credential-provider-alongside-nugetexe)
-
-## Installing a NuGet.exe Credential Provider Globally
-
-To make a Credential Provider available to all instances of NuGet.exe run under the current user's profile,
-add it to `%LocalAppData%\NuGet\CredentialProviders`
-
-You may need to create the `CredentialProviders` folder.
-
+* **Globally**: to make a credential provider available to all instances of NuGet.exe run under the current user's profile,
+add it to `%LocalAppData%\NuGet\CredentialProviders`. You may need to create the `CredentialProviders` folder.
 NuGet.exe Credential Providers can be installed at the root of the `CredentialProviders` folder or within a subfolder. If a NuGet.exe Credential Provider has multiple files/assemblies, using subfolders can help keep the Providers organized.
 
-## Using a NuGet.exe Credential Provider from an Environment Variable
+* **From an Environment Variable**: NuGet.exe Credential Providers can also be stored anywhere and then made accessible to NuGet.exe via an environment variable. To use a NuGet.exe Credential Provider this way, set the `%NUGET_CREDENTIALPROVIDERS_PATH%` to the location of your Provider. The variable can be a semicolon-separated list, e.g. `path1;path2`, if you have have multiple NuGet.exe Credential Providers in different locations.
 
-NuGet.exe Credential Providers can also be stored anywhere and then made accessible to NuGet.exe via an environment variable. To use a NuGet.exe Credential Provider this way, set the `%NUGET_CREDENTIALPROVIDERS_PATH%` to the location of your Provider. The variable can be a semicolon-separated list, e.g. `path1;path2`, if you have have multiple NuGet.exe Credential Providers in different locations.
-
-## Using a NuGet.exe Credential Provider Alongside NuGet.exe
-
-NuGet.exe Credential Providers can also be placed in the same folder as NuGet.exe.
-
-## Using Multiple NuGet.exe Credential Providers
+* **Alongside NuGet.exe**: NuGet.exe Credential Providers can also be placed in the same folder as NuGet.exe.
 
 The NuGet.exe client will search the above locations, in order, for NuGet.exe Credential Providers. Specifically, it will search for any file that matches the pattern `CredentialProvider*.exe` and load each provider in the order it's found. If two NuGet.exe Credential Providers are found in the same directory, they will be loaded in alphabetical order.
-
-## Available NuGet.exe Credential Providers
 
 Some of the available NuGet.exe Credential Providers are: [Visual Studio Team Services Credential Provider](https://www.visualstudio.com/en-us/docs/package/get-started/nuget/auth#vsts-credential-provider)
 
@@ -59,7 +40,7 @@ During credential acquisition, the credential service will try plug-in credentia
 
 To create a NuGet.exe Credential Provider, create a command-line executable that takes the inputs specified below, acquires credentials as appropriate, then returns the appropriate exit status code and standard output.
 
-### NuGet.exe Credential Provider Executable Basics
+**Basics**
 
 NuGet.exe Credential Providers must follow the naming convention `CredentialProvider*.exe`., and each Credential Provider must:
 
@@ -72,7 +53,7 @@ NuGet.exe Credential Providers must follow the naming convention `CredentialProv
 
 4. Encode stdout responses using UTF-8 encoding.
 
-### NuGet.exe Credential Provider Input Parameters
+**Input Parameters**
 
 <table>
     <th>Input parameter</th>
@@ -91,7 +72,7 @@ NuGet.exe Credential Providers must follow the naming convention `CredentialProv
     </tr>
 </table>
 
-### NuGet.exe Credential Provider Exit Status Codes
+**Exit Codes**
 
 <table>
     <th>Exit code</th>
@@ -114,7 +95,7 @@ NuGet.exe Credential Providers must follow the naming convention `CredentialProv
     </tr>
 </table>
 
-### NuGet.exe Credential Provider Standard Output
+**Standard Output**
 
 <table>
     <th>Property</th>
@@ -135,7 +116,7 @@ NuGet.exe Credential Providers must follow the naming convention `CredentialProv
     </tr>
 </table>
 
-### Example stdout
+Example stdout:
 
     { "Username" : "freddy@example.com",
       "Password" : "bwm3bcx6txhprzmxhl2x63mdsul6grctazoomtdb6kfbof7m3a3z",
