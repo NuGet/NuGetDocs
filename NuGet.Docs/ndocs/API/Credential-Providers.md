@@ -64,9 +64,13 @@ a) Determine whether it can provide credentials for the targeted URI before init
 
 b) Not modify nuget.config (i.e. by setting credentials there).
 
-c) Handle HTTP Proxy configuration on their own. The CredentialService will not pass HTTP Proxy configuration   information to the plugin.
+c) Handle HTTP Proxy configuration on their own. The CredentialService will not pass HTTP Proxy configuration information to the plugin.
 
-d) Encode stdout responses using UTF-8 encoding.
+d) Return credentials or error details to NuGet by writing a json response object (see below) to stdout, using UTF-8 encoding.
+
+e) Optionally emit additional trace logging to stderr. No secrets should ever be written to stderr, since at verbosity levels "normal" or "detailed" such traces are echoed by NuGet to the console.
+
+f) Unexpected parameters should be ignored, providing forward compatibility with future versions of NuGet.
 
 ### Credential Provider Input Parameters
 
@@ -74,7 +78,7 @@ d) Encode stdout responses using UTF-8 encoding.
 <th>Input parameter</th>
 <th>Description</th>
     <tr>
-        <td>Uri{value}</td>
+        <td>Uri {value}</td>
         <td>The package source Uri for which credentials will be filled.</td>
     </tr>
     <tr>
@@ -84,6 +88,10 @@ d) Encode stdout responses using UTF-8 encoding.
     <tr>
         <td>IsRetry</td>
         <td>If present, this is a retry and the credentials were rejected on a previous attempt. Providers typically use the `IsRetry` flag to ensure that they bypass any existing cache and prompt for new credentials if possible.</td>
+    </tr>
+    <tr>
+        <td>Verbosity {Value}</td>
+        <td>If present, one of the following values: "normal", "quiet", or "detailed". If no value is supplied, defaults to "normal". Providers should use this as an indication of the level of optional logging to emit to the standard error stream.</td>
     </tr>
 </table>
 
