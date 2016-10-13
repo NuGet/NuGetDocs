@@ -25,7 +25,7 @@ Next, you can either upload the package through the nuget.org web portal, or pus
 
 	3. At a command prompt, run the following command:
 
-			nuget set ApiKey Your-API-Key
+			nuget setApiKey Your-API-Key
 
 		This will store your API key on the machine so that you will not need to do this step again on the same machine.
 
