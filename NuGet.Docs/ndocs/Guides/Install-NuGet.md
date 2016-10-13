@@ -25,7 +25,7 @@ The following capabilities are supported only in the NuGet CLI:
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
-	You might also be interested in the <b>NuGet Package Explorer</b>, an open-source, stand-alone tool to visually explore and create NuGet packages. See the <a href="/ndocs/tools/package-explorer">Package Explorer</a> topic for details.<br><br>
+	You might also be interested in the <a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer">NuGet Package Explorer</a>, an open-source, stand-alone tool to visually explore and create NuGet packages..<br><br>
 	Also, the cross-platform <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/index#installation">.NET Core CLI</a> toolchain for developing .NET Core applications also supports a <a href="https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-restore">dotnet restore</a> command that performs a nuget restore. No other nuget commands are available in the .NET Core CLI at present, however. 
 </div>
 
@@ -35,6 +35,10 @@ The following capabilities are supported only in the NuGet CLI:
 The NuGet CLI can be installed using any of the following methods:
 
 1. **nuget.org**: Download the latest version of the nuget.exe file from [nuget.org/downloads](https://nuget.org/downloads) and save it to an appropriate location on your machine. If desired, add that location to your PATH environment variable so you can NuGet from anywhere. (Note that the download is a single .exe file, so save it rather than running it from the browser.)
+
+	<div class="block-callout-info">
+		With NuGet 1.4+, you can use `nuget update -self` to update your existing nuget.exe to the latest version.	    
+	</div>
 
 2. **Chocolatey**: Install the [NuGet.CommandLine](http://chocolatey.org/packages/NuGet.CommandLine) Chocolatey package using the [Chocolatey](http://chocolatey.org) client. 
 

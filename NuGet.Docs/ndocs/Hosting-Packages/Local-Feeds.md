@@ -11,7 +11,8 @@ With NuGet 3.3 and above, you'll realize much better performance by structuring 
 	\\myserver\packages
       └─<packageID>
         └─<version>	            
-          └─<packageID>.<version>.nupkg	    
+          ├─<packageID>.<version>.nupkg	
+          └─<other files>
 
 NuGet will create this structure automatically when you use the [`nuget add`](/ndocs/tools/nuget.exe-cli-reference#add) command to copy packages to the feed: 
 

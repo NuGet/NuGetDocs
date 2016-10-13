@@ -277,6 +277,12 @@
     <Content Include="images\Create\publish_APIKey.png" />
     <Content Include="images\Create\publish_NotYetIndexed.png" />
     <Content Include="images\Create\publish_NuGet-API-Key.PNG" />
+    <Content Include="images\docs\PackageManagerConsoleControls.png" />
+    <Content Include="images\docs\PackageManagerUIOptions.png" />
+    <Content Include="images\docs\PackageSourceDropDown.png" />
+    <Content Include="images\docs\PackageSourceSettings.png" />
+    <Content Include="images\docs\UninstallPackage.png" />
+    <Content Include="images\docs\UpdatePackages.png" />
     <Content Include="images\Hosting\Hosting_01-NuGet.Server-Set4.6.png" />
     <Content Include="images\Hosting\Hosting_02-NuGet.Server-Package.png" />
     <Content Include="images\Hosting\Hosting_03-NuGet.Server-Package-Folder.png" />
@@ -393,6 +399,7 @@
     <Content Include="ndocs\Create-Packages\Managing-package-owners.cshtml" />
     <Content Include="ndocs\Create-Packages\Analyzers-Conventions.cshtml" />
     <Content Include="ndocs\Hosting-Packages\Hosting-Packages-Overview.cshtml" />
+    <Content Include="ndocs\Create-Packages\Overview-and-Workflow.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
@@ -401,7 +408,6 @@
     <Content Include="ndocs\Schema\project.lock.json.md" />
     <Content Include="ndocs\Schema\Target-Frameworks.md" />
     <Content Include="ndocs\Schema\_metadata" />
-    <Content Include="ndocs\Tools\Package-Explorer.md" />
     <Content Include="ndocs\Tools\Package-Manager-Console.md" />
     <Content Include="ndocs\Tools\Package-Manager-UI.md" />
     <Content Include="ndocs\Tools\PowerShell-Reference.md" />
@@ -459,6 +465,7 @@
     <Content Include="release-notes\NuGet-3.5-Beta2.cshtml" />
     <Content Include="packages.config" />
     <Content Include="ndocs\Tools\NuGet.exe-CLI-Reference.md" />
+    <Content Include="ndocs\Tools\Package-Explorer.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
