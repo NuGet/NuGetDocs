@@ -281,6 +281,7 @@
     <Content Include="images\docs\PackageManagerUIOptions.png" />
     <Content Include="images\docs\PackageSourceDropDown.png" />
     <Content Include="images\docs\PackageSourceSettings.png" />
+    <Content Include="images\docs\SchemaExplorer.png" />
     <Content Include="images\docs\UninstallPackage.png" />
     <Content Include="images\docs\UpdatePackages.png" />
     <Content Include="images\Hosting\Hosting_01-NuGet.Server-Set4.6.png" />
@@ -405,7 +406,6 @@
     <Content Include="ndocs\Schema\nuget.config-file.md" />
     <Content Include="ndocs\Schema\nuspec.md" />
     <Content Include="ndocs\Schema\project.json.md" />
-    <Content Include="ndocs\Schema\project.lock.json.md" />
     <Content Include="ndocs\Schema\Target-Frameworks.md" />
     <Content Include="ndocs\Schema\_metadata" />
     <Content Include="ndocs\Tools\Package-Manager-Console.md" />
@@ -466,6 +466,7 @@
     <Content Include="packages.config" />
     <Content Include="ndocs\Tools\NuGet.exe-CLI-Reference.md" />
     <Content Include="ndocs\Tools\Package-Explorer.cshtml" />
+    <Content Include="ndocs\Schema\project.json.lock.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
