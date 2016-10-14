@@ -135,7 +135,7 @@ As noted before, MSBuild-integrated restore with NuGet 2.6 and earlier is typica
 
 Again, this option is **not** checked by default for NuGet 2.6 and earlier and must be manually set for package restore to work. For a custom build `.proj`, a pre build `<Exec>` action must also be added manually to restore packages.
 
-With MSBuild-integrated restore, packages that are downloaded by Visual Studio will be automatically added to Team Foundation Version Control by default when the project is connected to a repository. To change this behavior, see [Omitting packages with Team Foundation Version Control](/ndocs/consume-packages/packages-and-source-control#omitting-packages-with-team-foundation-version-control-(tfvc)).
+With MSBuild-integrated restore, packages that are downloaded by Visual Studio will be automatically added to Team Foundation Version Control by default when the project is connected to a repository. To change this behavior, see [Omitting packages with Team Foundation Version Control](/ndocs/consume-packages/packages-and-source-control#omitting-packages-with-team-foundation-version-control).
 
 
 ### Migrating to automatic restore
@@ -156,7 +156,7 @@ The process is as follows:
 1. Close Visual Studio to avoid file potential file locks and conflicts.
 2. If using TFS:  
 	a. Remove `nuget.exe` and `nuget.targets` from the solution's `.nuget` folder and remove those files from the solution workspace.  
-	b. Retain `nuget.config` with the `disableSourceControlIntegration` setting as explained in [Omitting packages with Team Foundation Version Control](/ndocs/consume-packages/packages-and-source-control#omitting-packages-with-team-foundation-version-control-(tfvc)).  
+	b. Retain `nuget.config` with the `disableSourceControlIntegration` setting as explained in [Omitting packages with Team Foundation Version Control](/ndocs/consume-packages/packages-and-source-control#omitting-packages-with-team-foundation-version-control).  
 3. If not using TFS:  
 	a. Remove the `.nuget` folder from the solution and the solution workspace.  
 4. Edit each project file in the solution, remove the `&lt;RestorePackages&gt;` element, and remove any references to the `nuget.targets` file. Those settings generally appear as follows:
