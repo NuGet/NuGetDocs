@@ -14,6 +14,8 @@ You can create both packages with the `-Symbols` option, either from a nuspec fi
 
 <code class="bash hljs">
 	nuget pack MyPackage.nuspec -Symbols
+</code>
+<code class="bash hljs">
 	nuget pack MyProject.csproj -Symbols
 </code>
 
