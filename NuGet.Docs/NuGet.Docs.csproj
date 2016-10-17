@@ -467,6 +467,7 @@
     <Content Include="ndocs\Tools\NuGet.exe-CLI-Reference.md" />
     <Content Include="ndocs\Tools\Package-Explorer.cshtml" />
     <Content Include="ndocs\Schema\project.json.lock.cshtml" />
+    <Content Include="ndocs\Visual-Studio-Extensibility\_metadata" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
