@@ -19,7 +19,7 @@ The NuGet core team is self-appointed as Benevolent Dictator or project lead. Ho
 
 In many ways, the role of the benevolent dictator is less about dictatorship and more about diplomacy. The key is to ensure that, as the project expands, the right people are given influence over it and the community rallies behind the vision of the project lead. The lead’s job is then to ensure that the committers (see below) make the right decisions on behalf of the project. Generally speaking, as long as the committers are aligned with the project’s strategy, the project lead will allow them to proceed as they desire.
 
-Additionally, .NET Foundation staff consider the project lead the primary or  first point of contact for NuGet for purposes of business operations including domain registrations, and technical services (e.g. code-signing).
+Additionally, .NET Foundation staff consider the project lead the primary or first point of contact for NuGet for purposes of business operations including domain registrations, and technical services (e.g. code-signing).
 
 ### Committers
 

@@ -50,6 +50,10 @@ Note: `dependencyVersion` and `repositoryPath` apply only to projects using `pac
 		<td>The location in which to install NuGet packages instead of the default <code>$(Solutiondir)\packages</code> folder. A relative path can be used in project-specific <code>nuget.config</code> files.</td>
 	</tr>
 	<tr>
+		<td>defaultPushSource</td>
+		<td>Identifies the URL or path of the package source that should be used as the default if no other package sources are found for an operation.</td>
+	</tr>
+	<tr>
 		<td>http_proxy<br>http_proxy.user<br>http_proxy.password<br>no_proxy</td>
 		<td>Proxy settings to use when connecting to package sources; <code>http_proxy</code> should be in the format <code>http://&lt;username&gt;:&lt;password&gt@&lt;domain&gt</code>. Passwords are encrypted and cannot be added manually. For <code>no_proxy</code>, the value is a comma-separated list of domains the bypass the proxy server. You can alternately use the HTTP_PROXY and NO_PROXY environment variables for those values. For additional details, see <a href="http://skolima.blogspot.com/2012/07/nuget-proxy-settings.html">NuGet proxy settings</a> (skolima.blogspot.com).</td>
 	</tr>	
