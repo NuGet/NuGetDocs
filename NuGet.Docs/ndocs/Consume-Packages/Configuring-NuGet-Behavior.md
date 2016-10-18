@@ -76,11 +76,11 @@ As described above in [Config file locations and uses](#config-file-locations-an
 	This process is sometimes referred to as "chaining" of config file, and the ability to insert a specific setting anywhere along the chain may be referred to as a "NuGet extensibility point."
 </div>
 
-When `nuget.exe` is run from the command line or run implicitly within Visual Studio, it loads settings from config files in the following order:
+When `nuget.exe` is run from the command line or run implicitly within Visual Studio, it loads settings from config files in the following order, starting with NuGet 3.4 when using a -configFile the merging behavior is turned off.
 
 1. Files in `%ProgramData%\NuGet\Config` starting at this top folder and iterating down through the `{IDE}\{Version}\{SKU}\` subfolders if they exist.
-2. The global config file, except in NuGet 3.4 and later if `-configFile` is used on the command line. 
-3. The file specified with `-configFile`.
+2. The global config file.
+3. The file specified with `-configFile`(3.3 and earlier only, from 3.4 and on the configFile specified overrides merging).
 4. Files found in the path to the current folder (where nuget.exe is invoked or the folder containing the Visual Studio solution), starting from the root and ending in the current folder.
 
 As settings are found in these files, they are processed as follows:
