@@ -317,7 +317,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 			<li>HighestMinor: the version with the lowest major, highest minor, highest patch</li>
 			<li>Highest: the highest version</li>
 		</ul>
-		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#dependencyversion"><em>dependencyVersion</em></a> setting in the nuget.config file.
+		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
         </td>        
     </tr>
     <tr>
@@ -444,7 +444,7 @@ Get the version of installed package from specified project and syncs the versio
 			<li>HighestMinor: the version with the lowest major, highest minor, highest patch</li>
 			<li>Highest: the highest version</li>
 		</ul>
-		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#dependencyversion"><em>dependencyVersion</em></a> setting in the nuget.config file.
+		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
         </td>        
     </tr>
     <tr>
@@ -584,7 +584,7 @@ NuGet 2.7 and earlier will give an error saying that a newer version is already 
 			<li>HighestMinor: the version with the lowest major, highest minor, highest patch</li>
 			<li>Highest (default for Update-Package with no parameters): the highest version</li>
 		</ul>
-		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#dependencyversion"><em>dependencyVersion</em></a> setting in the nuget.config file.
+		You can set the default value using the <a href="/ndocs/schema/nuget.config-file#config-section"><em>dependencyVersion</em></a> setting in the nuget.config file.
         </td>        
     </tr>    
     <tr>

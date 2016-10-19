@@ -59,7 +59,7 @@ Every NuGet package needs a manifest–a .nuspec file–to describe its contents
 		  </metadata>
 		</package>	
 
-4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package(#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
+4. Select a package ID that is unique across nuget.org. We recommend using the naming conventions described in [Creating a package](/ndocs/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number). You must also update the author and description tags or you will get an error in the next step. Here's an updated .nuspec file as an example:
  		
 		<?xml version="1.0"?>
 		<package>

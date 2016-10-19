@@ -31,6 +31,11 @@ In general, it's a best practice to have one NuGet package per assembly, provide
  
 However, if your package contains assemblies that are used exclusively by your package, then it's fine to include them. For example, if Utilities.dll depends on Utilities.resources.dll, where the latter is not useful on its own, then you can put both in the same package.	
 
+<div class="block-callout-info">
+	<strong>Note</strong><br>	
+	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named <code>.resources.dll</code> because they are assumed to be localized satellite assemblies (see <a href="/ndocs/create-packages/creating-localized-packages">Creating localized packages</a>). For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
+</div>
+
 
 ## The role and structure of the .nuspec file
 
@@ -328,13 +333,13 @@ With NuGet 3.x, targets are not added to the project but are instead made availa
 When using an assembly or the convention-based working directory, create a package by running `nuget pack` with your `.nuspec` file:
 
 <code class="bash hljs">
-	nuget pack <your_project>.nuspec
+	nuget pack &lt;your_project&gt;.nuspec
 </code>
 
 When using a Visual Studio project, run `nuget pack` instead with your project file, which will automatically load the project's `.nuspec` file and replace any tokens within it using values in the project file: 
 
 <code class="bash hljs">
-	nuget pack <your_project>.csproj
+	nuget pack &lt;your_project&gt;.csproj
 </code>
 
 <div class="block-callout-info">
@@ -370,13 +375,12 @@ The following options are a few that are common with Visual Studio projects:
 
 	If a referenced project includes a `.nuspec` file of its own, then NuGet adds that referenced project as a dependency instead.  You will need to package and publish that project separately.
 
-- **Build configuration**: By default, NuGet will use the default build configuration set in the project file, typically *Debug*. To pack files from a different build configuration, such as *Release*, use the `-Prop` option with the configuration:
+- **Build configuration**: By default, NuGet will use the default build configuration set in the project file, typically *Debug*. To pack files from a different build configuration, such as *Release*, use the `-properties` option with the configuration:
 
 	<code class="bash hljs">
-    	nuget pack MyProject.csproj -Prop Configuration=Release
+    	nuget pack MyProject.csproj -properties Configuration=Release
 	</code>
 	
-	To change the default build configuration, 
 
 - **Symbols**: to include symbols that allow consumers to step through your package code in the debugger, use the `-Symbols` option:
 

@@ -617,7 +617,7 @@ where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or projec
     </tr>
     <tr>
         <td>properties</td>
-        <td>Specifies a list of properties for the package, separated by semicolons (;).</td>
+        <td>Specifies a list of token=value pairs, separated by semicolons, where each occurrence of $token$ in the nuspec file will be replaced with the given value. Values can be strings in quotation marks.</td>
     </tr>
     <tr>
         <td>symbols</td>
@@ -667,10 +667,10 @@ For this project, the package created by `nuget pack` will have a dependency on 
 
     nuget pack foo.csproj
 
-    nuget pack foo.csproj -Build -symbols -properties Configuration=Release
+    nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5"
 
     # create a package from project foo.csproj, using msbuild version 12 to build the project
-    nuget pack foo.csproj -Build -symbols -properties Configuration=Release -MSBuildVersion 12
+    nuget pack foo.csproj -Build -symbols -properties owners=janedoe,xiaop;version="1.0.5" -MSBuildVersion 12
 
     nuget pack foo.nuspec -version 2.1.0
 
