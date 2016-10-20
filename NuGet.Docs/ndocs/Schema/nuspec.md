@@ -274,7 +274,7 @@ The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of 
     </tr>
     <tr>
         <td><code>version</code></td>
-        <td>(Required) The range of versions acceptable as a dependency. See <a href="dependency-versions#version-ranges-in--nuspec-files">Dependency versions</a> for exact syntax.</td>
+        <td>(Required) The range of versions acceptable as a dependency. See <a href="/ndocs/create-packages/dependency-versions#version-ranges">Dependency versions</a> for exact syntax.</td>
     </tr>
 </table>
 
