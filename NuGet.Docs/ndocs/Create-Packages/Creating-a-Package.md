@@ -155,7 +155,7 @@ Note that there are several additional packaging options available when working 
 	When a solution-level package is installed, it is tracked in a packages.config file in the .nuget directory, rather than in a packages.config file in a specific project.
 </div>
 
-## From a convention-based working directory
+### From a convention-based working directory
 
 In addition to assemblies and simple files like a readme, some packages may contain the following: 
 
