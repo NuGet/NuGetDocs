@@ -110,7 +110,7 @@ Note that when creating a `.nuspec` from a Visual Studio project, the manifest w
 
 ## Creating the .nuspec file
 
-You can create a `.nuspec` file from scratch in any text editor, or by starting with an editing file from another project. You can also have NuGet create a template manifest for your by using the following command:
+You can create a `.nuspec` file from scratch in any text editor, or start by editing a file from another project. You can also have NuGet create a template manifest for your by using the following command:
 
 <code class="bash hljs">
     nuget spec <package_name>
