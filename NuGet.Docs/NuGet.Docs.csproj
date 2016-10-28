@@ -374,6 +374,8 @@
     <Content Include="ndocs\Release-Notes\NuGet-3.4.md" />
     <Content Include="ndocs\Release-Notes\NuGet-3.5-Beta.md" />
     <Content Include="ndocs\Release-Notes\NuGet-3.5-Beta2.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.5-RC.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.5-RTM.md" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
