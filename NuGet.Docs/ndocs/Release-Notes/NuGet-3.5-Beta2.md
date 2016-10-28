@@ -6,7 +6,7 @@ NuGet 3.5 Beta 2 RTM was released June 27, 2016 for Visual Studio 2013 and nuget
 
 [Issues List](https://github.com/Nuget/Home/issues?q=is%3Aissue+milestone%3A%223.5+Beta2%22+is%3Aclosed)
 
-# Notable Changes
+# Notable Changes:-
 
 **Bugs:**
 
