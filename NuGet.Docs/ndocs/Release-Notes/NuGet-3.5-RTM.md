@@ -147,8 +147,6 @@
 
 * Deleting a project closes corresponding UI window, but, renaming a project does not rename the UI window. Note that PMC listens to project rename and project remove events - [#670](https://github.com/NuGet/Home/issues/670)
 
-* iOS app build failed - [#3242](https://github.com/NuGet/Home/issues/3242)
-
 * [Willow Web Workload] Creating Razor v3 WSP hangs - [#3241](https://github.com/NuGet/Home/issues/3241)
 
 * Install/restore of a particular package fails with "Package contains multiple nuspec files." - [#3231](https://github.com/NuGet/Home/issues/3231)
