@@ -2,7 +2,7 @@
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6. 
 
-Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](/ndocs/create-package/creating-a-package#from-a-convention-based-working-directory).
+Fortunately, NuGet supports putting multiple versions of the same library in a single package through the convention-based working directory method described in [Creating a package](/ndocs/create-packages/creating-a-package#from-a-convention-based-working-directory).
 
 <div class="block-callout-info">
 	<strong>Note</strong><br>
