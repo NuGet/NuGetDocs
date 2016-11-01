@@ -39,6 +39,7 @@ Many other individuals and companies have made significant contributions to the 
 * [Sonatype Nexus](http://www.sonatype.com/nexus-repository-sonatype)
 * [SymbolSource](http://www.symbolsource.org/Public)
 * [Xamarin and MonoDevelop](https://github.com/mrward/monodevelop-nuget-addin)
+* [MinimalNugetServer](https://github.com/TanukiSharp/MinimalNugetServer)
 
 
 ## Other NuGet-based utilities
