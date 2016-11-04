@@ -218,7 +218,7 @@ When using an unencrypted password:
 
 ### apikeys
 
-Stores keys for sources that use API key authentication, as set with the [`nuget -setapikey` command](/ndocs/tools/nuget.exe-cli-reference#setapikey).
+Stores keys for sources that use API key authentication, as set with the [`nuget setapikey` command](/ndocs/tools/nuget.exe-cli-reference#setapikey).
 
 <table>
 	<tr>
