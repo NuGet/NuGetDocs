@@ -24,16 +24,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand navmods" href="http://nuget.org"><span><img class="brandimage" src="~/images/nugetBrand.png" /></span>nuget</a>
+                <a class="navbar-brand navmods" href="http://nuget.org" onclick="trackOutboundLink('http://nuget.org'); return false;"><span><img class="brandimage" src="~/images/nugetBrand.png" /></span>nuget</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="https://www.nuget.org/packages">Packages</a></li>
+                    <li><a href="https://www.nuget.org/packages" onclick="trackOutboundLink('https://www.nuget.org/packages'); return false;">Packages</a></li>
                     <li><a href="~/">Documentation</a></li>
-                    <li class="visible-lg visible-xs"><a href="https://dist.nuget.org/index.html">Downloads</a></li>
+                    <li class="visible-lg visible-xs"><a href="https://dist.nuget.org/index.html" onclick="trackOutboundLink('https://dist.nuget.org/index.html'); return false;">Downloads</a></li>
                     <li class="visible-lg visible-xs"><a href="~/ndocs/Release-Notes">Release Notes</a></li>
-                    <li class="visible-lg visible-xs"><a href="http://blog.nuget.org/">Blog</a></li>
-                    <li class="visible-lg visible-xs"><a href="https://www.nuget.org/policies/contact">Contact Us</a></li>
+                    <li class="visible-lg visible-xs"><a href="http://blog.nuget.org/" onclick="trackOutboundLink('http://blog.nuget.org/'); return false;">Blog</a></li>
+                    <li class="visible-lg visible-xs"><a href="https://www.nuget.org/policies/contact" onclick="trackOutboundLink('https://www.nuget.org/policies/contact'); return false;">Contact Us</a></li>
                 </ul>
                 <div class="search">
                     <ul class="nav navbar-nav navbar-right">
@@ -84,6 +84,13 @@
         
           ga('create', 'UA-30016961-4', 'auto');
           ga('send', 'pageview');
+
+        var trackOutboundLink = function(url) {
+           ga('send', 'event', 'outbound', 'click', url, {
+             'transport': 'beacon',
+             'hitCallback': function(){document.location = url;}
+           });
+        }
     </script>
 </body>
 </html>
