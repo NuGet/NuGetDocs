@@ -396,6 +396,7 @@
     <Content Include="ndocs\Release-Notes\NuGet-3.4.cshtml" />
     <Content Include="ndocs\Release-Notes\NuGet-3.5-Beta.cshtml" />
     <Content Include="ndocs\Release-Notes\NuGet-3.5-Beta2.cshtml" />
+    <Content Include="ndocs\Release-Notes\NuGet-3.5-RTM.cshtml" />
     <Content Include="ndocs\Release-Notes\NuGet-3.5-RC.cshtml" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="release-notes\Known-Issues.cshtml" />
@@ -445,7 +446,6 @@
     <Content Include="release-notes\NuGet-3.4.4.cshtml" />
     <Content Include="release-notes\NuGet-3.4.cshtml" />
     <Content Include="release-notes\NuGet-3.5-Beta.cshtml" />
-    <Content Include="release-notes\NuGet-3.5-Beta2.cshtml" />
     <Content Include="packages.config" />
     <Content Include="ndocs\Tools\Package-Explorer.cshtml" />
     <Content Include="ndocs\Schema\project.json.lock.cshtml" />
@@ -461,6 +461,7 @@
     <Content Include="ndocs\Visual-Studio-Extensibility\NuGet-API-in-Visual-Studio.cshtml" />
     <Content Include="ndocs\Visual-Studio-Extensibility\Project-System-Support.cshtml" />
     <Content Include="ndocs\Visual-Studio-Extensibility\Visual-Studio-Templates.cshtml" />
+    <Content Include="release-notes\NuGet-3.5-Beta2.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
