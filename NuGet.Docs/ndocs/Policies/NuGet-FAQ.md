@@ -30,7 +30,7 @@ A [graphical client](https://github.com/mrward/monodevelop-nuget-addin) is avail
 
 In Visual Studio, use the **Help > About Microsoft Visual Studio** command and look at the version displayed next to **NuGet Package Manager**. 
 
-Alternatively, launch the Package Manager Console (**Tools > NuGet Package Manager > Package Manager Console**) and tnere `$host` to see information about NuGet including the version.
+Alternatively, launch the Package Manager Console (**Tools > NuGet Package Manager > Package Manager Console**) and enter `$host` to see information about NuGet including the version.
 
 **What languages are supported by NuGet?**
 
