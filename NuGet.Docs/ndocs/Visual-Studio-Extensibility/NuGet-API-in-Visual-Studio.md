@@ -8,9 +8,11 @@ As of NuGet 3.3+, NuGet exports the following services all of which reside in th
 - [`IConsoleInitializer`](#iconsoleinitializer-interface): Triggers eager initialization of the NuGet Package Manager Console.
 - [`IVsPackageInstaller`](#ivspackageinstaller-interface): Methods to install NuGet packages into projects.
 - [`IVsPackageInstallerEvents`](#ivspackageinstallerevents-interface): Events for package install/uninstall.
+- [`IVsPackageInstallerProjectEvents`](#ivspackageinstallerprojectevents-interface): Batch events for package install/uninstall.
 - [`IVsPackageInstallerServices`](#ivspackageinstallerservices-interface): Methods to retrieve installed packages in the current solution and to check whether a given package is installed in a project.
 - [`IVsPackageManagerProvider`](#-ibspackagemanagerprovider-interface): Methods to provide alternative Package Manager suggestions for a NuGet package.    
 - [`IVsPackageMetadata`](#ivspackagemetadata-interface); Methods to retrieve information about an installed package. 
+- [`IVsPackageProjectMetadata`](#ivspackageprojectmetadata-interface); Methods to retrieve information about a project where NuGet actions are being executed. 
 - [`IVsPackageRestorer`](#ivspackagerestorer-interface): Methods to restore packages installed in a project.
 - [`IVsPackageSourceProvider`](#ivspackagesourceprovider-interface): Methods to retrieve a list of NuGet package sources.
 - [`IVsPackageUninstaller`](#ivspackageuninstaller-interface): Methods to uninstall NuGet packages from projects.
@@ -284,6 +286,22 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
     }
 
 
+## IVsPackageInstallerProjectEvents interface
+
+    public interface IVsPackageInstallerProjectEvents
+    {
+        /// <summary>
+        /// Raised before any IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchStart;
+
+        /// <summary>
+        /// Raised after all IVsPackageInstallerEvents events are raised for a project.
+        /// </summary>
+        event VsPackageProjectEventHandler BatchEnd;
+    }
+    
+    
 ## IVsPackageInstallerServices interface
 
     public interface IVsPackageInstallerServices
@@ -423,6 +441,21 @@ For reference, the source code for NuGet.VisualStudio is contained within the [N
         string VersionString { get; }
     }
 
+## IVsPackageProjectMetadata interface
+
+    public interface IVsPackageProjectMetadata
+    {
+        /// <summary>
+        /// Unique batch id for batch start/end events of the project.
+        /// </summary>
+        string BatchId { get; }
+
+        /// <summary>
+        /// Name of the project.
+        /// </summary>
+        string ProjectName { get; }
+    }
+    
 ## IVsPackageRestorer interface
 
     public interface IVsPackageRestorer
