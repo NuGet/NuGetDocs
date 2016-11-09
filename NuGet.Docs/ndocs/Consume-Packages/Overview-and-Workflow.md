@@ -4,6 +4,8 @@ Between nuget.org and private package galleries that your organization might est
 
 ![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](/images/Consume/Overview-01-GeneralFlow.png)
 
+\* *Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/nuget.exe-cli-reference#install).*
+
 For details, see [Finding and Choosing Packages](/ndocs/consume-packages/finding-and-choosing-packages) and the [Use a Package quickstart](/ndocs/quickstart/use-a-package).
 
 NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` (NuGet 2.x) or `project.json` (NuGet 3.x) in your project root. You can look in the appropriate file at any time to see the full list of  dependencies for your project. 
