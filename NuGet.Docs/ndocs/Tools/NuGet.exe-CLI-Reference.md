@@ -2,119 +2,122 @@
 
 The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages. Refer to the [Install Guide](/ndocs/guides/install-nuget) for installation instructions.
 
-Available commands:
+Available commands are listed below. Also see the section on [Environment variables](#environment-variables) for how they're used with nuget.exe.
 
 <table>
     <tr>
-		<th>Command</th>
-		<th>Description</th>
-		<th>NuGet Version</th>
-	</tr>
-	<tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>NuGet Version</th>
+    </tr>
+    <tr>
         <td><a href="#add">add</a></td>
         <td>Adds a package to a non-HTTP package source using hierarchical layout. For HTTP sources, use <em>push</em>.</td>
-		<td>3.3+</td>
+        <td>3.3+</td>
     </tr>
-	<tr>
+    <tr>
         <td><a href="#config">config</a></td>
         <td>Gets or sets NuGet configuration values.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
-	<tr>
-		<td><a href="#delete">delete</a></td>        
+    <tr>
+        <td><a href="#delete">delete</a></td>
         <td>Removes or unlists a package from a package source.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#help">help or ?</a></td>
         <td>Displays help information or help for a command.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#init">init</a></td>
         <td>Adds packages from a folder to a package source using hierarchical layout.</td>
-		<td>3.3+</td>
+        <td>3.3+</td>
     </tr>
     <tr>
         <td><a href="#install">install</a></td>
         <td>Installs a package into the current project but does not modify the project or packages.config.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#list">list</a></td>
         <td>Displays packages from a given source.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#locals">locals</a></td>
         <td>Clears or lists packages in various caches or the global packages folder, or identifies those folders.</td>
-		<td>3.3+</td>
+        <td>3.3+</td>
     </tr>
     <tr>
         <td><a href="#mirror">mirror</a></td>
         <td>Mirrors a package and its dependencies from a source to a target repository.</td>
-		<td>Deprecated in 3.2+</td>
+        <td>Deprecated in 3.2+</td>
     </tr>
     <tr>
         <td><a href="#pack">pack</a></td>
         <td>Creates a NuGet package from a .nuspec or project file.</td>
-		<td>2.7+</td>
+        <td>2.7+</td>
     </tr>
     <tr>
         <td><a href="#push">push</a></td>
         <td>Publishes a package to a package source.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#restore">restore</a></td>
         <td>Restores all packages referenced by packages.config or project.json.</td>
-		<td>2.7+</td>
+        <td>2.7+</td>
     </tr>
     <tr>
         <td><a href="#setapikey">setapikey</a></td>
         <td>Saves an API key for a given package source.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#sources">sources</a></td>
         <td>Manages package sources in configuration files.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#spec">spec</a></td>
         <td>Generates a .nuspec file, using tokens if generating the file from a Visual Studio project.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
     <tr>
         <td><a href="#update">update</a></td>
         <td>Updates a project's packages to the latest available versions.</td>
-		<td>All</td>
+        <td>All</td>
     </tr>
 </table>
 
 
 ## add
+
 *Version 3.3+*
 
 Adds a specified package to a non-HTTP package source (a folder or UNC path) in a hierarchical layout, wherein folders are created for the package ID and version number. For example:
 
-	\\myserver\packages
+    \\myserver\packages
       └─<packageID>
-        └─<version>	            
+        └─<version>
           ├─<packageID>.<version>.nupkg
-		  ├─<packageID>.<version>.nupkg.sha512
-		  └─<packageID>.nuspec
+          ├─<packageID>.<version>.nupkg.sha512
+          └─<packageID>.nuspec
 
 When restoring or updating against the package source, hierarchical layout provides significantly better performance.
 
 To expand all the files in the package to the destination package source, use the `-expand` switch. This typically results in additional subfolders appearing in the destination, such as `tools` and `lib`.
 
 ### Usage
+
     nuget add <packagePath> -source <sourcePath> [options]
 
-where <packagePath> is the pathname to the package to add, and <sourcePath> specifies the folder-based package source to which the package will be added. HTTP sources are not supported.
+where &lt;packagePath&gt; is the pathname to the package to add, and &lt;sourcePath&gt; specifies the folder-based package source to which the package will be added. HTTP sources are not supported.
 
 ### Options
+
 <table>
     <tr>
         <td>expand</td>
@@ -123,7 +126,7 @@ where <packagePath> is the pathname to the package to add, and <sourcePath> spec
     <tr>
         <td>help</td>
         <td>Displays help information for the command.</td>
-	</tr>
+    </tr>
     <tr>
         <td>fileconflictaction</td>
         <td><em>(2.5+)</em> Specifies the action to take when asked to overwrite or ignore existing files referenced by the project. Values are <em>overwrite, ignore, none</em>.</td>
@@ -146,14 +149,15 @@ where <packagePath> is the pathname to the package to add, and <sourcePath> spec
 Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). For details on allowable key names, refer to the [NuGet config file reference](/ndocs/schema/nuget.config-file).
 
 ### Usage
+
     nuget config -set <name>=<value> [<name>=<value> ...] [options]
 
 where &lt;name&gt; and &lt;value&gt; specify a key-value pair to be set in the configuration. You can specify as many pairs as desired.
 
 In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
-
 ### Options
+
 <table>
     <tr>
         <td>configfile</td>
@@ -178,9 +182,9 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
     nuget config -set repositoryPath=c:\packages -configfile c:\my.config
 
-	nuget config -set repositoryPath=%PACKAGE_REPO% -configfile %ProgramData%\NuGet\NuGetDefaults.Config
+    nuget config -set repositoryPath=%PACKAGE_REPO% -configfile %ProgramData%\NuGet\NuGetDefaults.Config
 
-	nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
+    nuget config -set HTTP_PROXY=http://127.0.0.1 -set HTTP_PROXY.USER=domain\user
 
 
 ##  delete
@@ -188,11 +192,13 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 Deletes or unlists a package from a package source. For nuget.org, the action is to [unlist the package](/ndocs/policies/deleting-packages).
 
 ### Usage
+
     nuget delete <packageID> <packageVersion> [options]
 
 where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to delete or unlist. The exact behavior depends on the source. For local folders, for instance, the package is deleted; for nuget.org the package is unlisted.
 
 ### Options
+
 <table>
     <tr>
         <td>apikey</td>
@@ -228,22 +234,24 @@ where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to
     nuget delete MyPackage 1.0 -source http://package.contoso.com/source -apikey A1B2C3
 
 
-##  help
+## help
 
 Displays general help information and help information about specific commands.
 
 ### Usage
+
     nuget help [command] [options]
-	nuget ? [command] [options]
+    nuget ? [command] [options]
 
 where [command] identifies a specific command for which to display help.
 
 <div class="block-callout-warning">
-	<strong>Note</strong><br>
-	With some commands, be mindful to specify <em>help</em> first, as with <em>nuget help install</em>, because there is a package named "help" on nuget.org. If you give the command <em>nuget install help</em>, you'll not get help on the install command but will instead install the help package.
+    <strong>Note</strong><br>
+    With some commands, be mindful to specify <em>help</em> first, as with <em>nuget help install</em>, because there is a package named "help" on nuget.org. If you give the command <em>nuget install help</em>, you'll not get help on the install command but will instead install the help package.
 </div>
 
 ### Options
+
 <table>
     <tr>
         <td>all</td>
@@ -251,7 +259,7 @@ where [command] identifies a specific command for which to display help.
     </tr>
     <tr>
         <td>help</td>
-        <td>Displays help information for the help command iself.</td>
+        <td>Displays help information for the help command itself.</td>
     </tr>
     <tr>
         <td>markdown</td>
@@ -277,6 +285,7 @@ where [command] identifies a specific command for which to display help.
 
 
 ## init
+
 *Version 3.3+*
 
 Copies all the packages from a flat folder to a destination folder using a hierarchical layout as described for the [add command](#add) above. That is, using `init` is equivalent to using the `add` command on each package in the folder.
@@ -285,11 +294,13 @@ As with `add`, the destination must be either a local folder or a UNC path; HTTP
 
 
 ### Usage
+
     nuget init <source> <destination> [options]
 
 where &lt;source&gt; is the folder containing packages and &lt;destination&gt; is the local folder or UNC pathname to which the packages will be copied.
 
 ### Options
+
 <table>
     <tr>
         <td>expand</td>
@@ -401,11 +412,13 @@ where &lt;packageID&gt; names the package to install (using the latest version),
 Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.config`, are used. If `NuGet.config` specifies no sources, then `list` uses the default feed (nuget.org).
 
 ### Usage
+
     nuget list [search terms] [options]
 
 where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions.
 
 ### Options
+
 <table>
     <tr>
         <td>allversions</td>
@@ -449,13 +462,14 @@ where the optional search terms will filter the displayed list. Search terms are
     nuget list -verbose -allversions
 
 ## locals
+
 *Version 3.3+*
 
 Clears or lists local NuGet resources such as the http-request cache, packages cache, and the machine-wide global packages folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the NuGet Cache](/ndocs/consume-packages/managing-the-nuget-cache).
 
 ### Usage
 
-	nuget locals <cache> [options]
+    nuget locals <cache> [options]
 
 where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-packages`, and `temp` *(3.4+)*.
 
@@ -463,18 +477,18 @@ where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-pac
 ### Options
 
 <table>
-	<tr>
-		<td>clear</td>
-		<td>Clear the specified cache.</td>
-	</tr>
-	<tr>
-		<td>help</td>
-		<td>Displays help information for the command.</td>
-	</tr>
-	<tr>
-		<td>list</td>
-		<td>List the location of the specified cache, or the locations of all caches when used with <em>all</em>.</td>
-	</tr>
+    <tr>
+        <td>clear</td>
+        <td>Clear the specified cache.</td>
+    </tr>
+    <tr>
+        <td>help</td>
+        <td>Displays help information for the command.</td>
+    </tr>
+    <tr>
+        <td>list</td>
+        <td>List the location of the specified cache, or the locations of all caches when used with <em>all</em>.</td>
+    </tr>
     <tr>
         <td>verbosity</td>
         <td>Specifies the amount of details displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed</em>.</td>
@@ -483,11 +497,11 @@ where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-pac
 
 ### Examples
 
-	nuget locals all -list
-	nuget locals http-cache -clear
+    nuget locals all -list
+    nuget locals http-cache -clear
 
 
-##  mirror
+## mirror
 
 *Deprecated in 3.2+*
 
@@ -495,7 +509,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
 <div class="block-callout-info">
     <strong>Note</strong><br>
-    To enable this command for NuGet versions before 3.2, go to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe..  
+    To enable this command for NuGet versions before 3.2, go to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe..
 </div>
 
 ### Usage
@@ -508,6 +522,7 @@ The &lt;listUrlTarget&gt; specifies the source repository, and &lt;publishUrlTar
 If your target repository is on https://machine/repo that's running [NuGet.Server](/ndocs/hosting-packages/nuget.server), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/package*, respectively.
 
 ### Options
+
 <table>
     <tr>
         <td>apikey</td>
@@ -519,7 +534,7 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
     </tr>
     <tr>
         <td>nocache</td>
-		<td>Prevents NuGet from using packages from local machine caches.</td>        
+        <td>Prevents NuGet from using packages from local machine caches.</td>
     </tr>
     <tr>
         <td>noop</td>
@@ -527,7 +542,7 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
     </tr>
     <tr>
         <td>prerelease</td>
-		<td>Includes prerelease packages in the mirroring operation.</td>        
+        <td>Includes prerelease packages in the mirroring operation.</td>
     </tr>
     <tr>
         <td>source</td>
@@ -552,17 +567,19 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
     nuget mirror Microsoft.Net.Http https://MyRepo/nuget https://MyRepo/api/v2/package -prerelease
 
 
-##  pack
+## pack
 *Version 2.7+*
 
 Creates a NuGet package based on the specified nuspec or project file.
 
 ### Usage
+
     nuget pack <nuspecPath | projectPath> [options]
 
 where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or project file, respectively.
 
 ### Options
+
 <table>
     <tr>
     </tr>
@@ -650,12 +667,12 @@ that have the `developmentDependency` attribute set to `true`. These entries wil
 
 For example, consider the following `packages.config` file in the source project:
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<packages>
-		<package id="jQuery" version="1.5.2" />
-		<package id="netfx-Guard" version="1.3.3.2" developmentDependency="true" />
-		<package id="microsoft-web-helpers" version="1.15" />
-	</packages>
+    <?xml version="1.0" encoding="utf-8"?>
+    <packages>
+        <package id="jQuery" version="1.5.2" />
+        <package id="netfx-Guard" version="1.3.3.2" developmentDependency="true" />
+        <package id="microsoft-web-helpers" version="1.15" />
+    </packages>
 
 For this project, the package created by `nuget pack` will have a dependency on `jQuery` and `microsoft-web-helpers` but not `netfx-Guard`.
 
@@ -684,11 +701,13 @@ Pushes a package to a package source and publishes it.
 NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.config`, then loading any `nuget.config` or `.nuget\nuget.config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior))
 
 ### Usage
+
     nuget push <packagePath> [options]
 
 where &lt;packagePath&gt; identifies the package to push to the server.
 
 ### Options
+
 <table>
     <tr>
         <td>apikey</td>
@@ -742,6 +761,7 @@ where &lt;packagePath&gt; identifies the package to push to the server.
 
 
 ## restore
+
 *Version 2.7+*
 
 NuGet 2.7+: Downloads and installs any packages missing from the `packages` folder.
@@ -749,11 +769,13 @@ NuGet 2.7+: Downloads and installs any packages missing from the `packages` fold
 NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file.
 
 ### Usage
+
     nuget restore <projectPath> [options]
 
 where &lt;projectPath&gt; specifies the location of a solution, a `packages.config` file, or a `project.json` file. See [Remarks](#remarks) below for behavioral details.
 
 ### Options
+
 <table>
     <tr>
         <td>configfile</td>
@@ -783,7 +805,7 @@ where &lt;projectPath&gt; specifies the location of a solution, a `packages.conf
     <tr>
         <td>outputdirectory or -packagesdirectory</td>
         <td>Specifies the folder in which packages are installed. If no folder is specified, the current folder is used.</td>
-	</tr>
+    </tr>
     <tr>
         <td>requireconsent</td>
         <td>Verifies that restoring packages is enabled before downloading and installing the packages. For details, see <a href="/ndocs/consume-packages/package-restore">Package Restore</a>.</td>
@@ -804,51 +826,52 @@ where &lt;projectPath&gt; specifies the location of a solution, a `packages.conf
 </table>
 
 ### Remarks
+
 The restore command is executed in the following steps:
 
 1. Determine the operation mode of the restore command.
 
-	<table>
-		<tr>
-			<th>projectPath file type</th>
-			<th>Behavior</th>
-		</tr>
-		<tr>
-			<td>Solution (folder)</td>
-			<td>NuGet looks for a .sln file and uses that if found; otherwise gives an error. $(SolutionDir)\.nuget is used as the starting folder.</td>
-		</tr>
-		<tr>
-			<td>.sln file</td>
-			<td>Restore packages identified by the solution; gives an error if -solutiondirectory is used. $(SolutionDir)\.nuget is used as the starting folder.</td>
-		</tr>
-		<tr>
-			<td>packages.config</td>
-			<td>Restore packages listed in this file.</td>
-		</tr>
-		<tr>
-			<td>project.json</td>
-			<td>Restore packages listed in this file, resolving and installing dependencies.</td>
-		</tr>
-		<tr>
-			<td>Other file type</td>
-			<td>File is assumed to be a .sln file as above; if it's not a solution, NuGet gives an error.</td>
-		</tr>
-		<tr>
-			<td>(projectPath not specified)</td>
-			<td>
-				<ul>
-					<li>NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error.</li>
-					<li>If there are no solution files, NuGet looks for a packages.config or project.json and uses that to restore packages.</li>
-					<li>If no solution file, packages.config, or project.json is found, NuGet gives an error.</li>
-				</ul>
-			</td>
-		</tr>
-	</table>
+    <table>
+        <tr>
+            <th>projectPath file type</th>
+            <th>Behavior</th>
+        </tr>
+        <tr>
+            <td>Solution (folder)</td>
+            <td>NuGet looks for a .sln file and uses that if found; otherwise gives an error. $(SolutionDir)\.nuget is used as the starting folder.</td>
+        </tr>
+        <tr>
+            <td>.sln file</td>
+            <td>Restore packages identified by the solution; gives an error if -solutiondirectory is used. $(SolutionDir)\.nuget is used as the starting folder.</td>
+        </tr>
+        <tr>
+            <td>packages.config</td>
+            <td>Restore packages listed in this file.</td>
+        </tr>
+        <tr>
+            <td>project.json</td>
+            <td>Restore packages listed in this file, resolving and installing dependencies.</td>
+        </tr>
+        <tr>
+            <td>Other file type</td>
+            <td>File is assumed to be a .sln file as above; if it's not a solution, NuGet gives an error.</td>
+        </tr>
+        <tr>
+            <td>(projectPath not specified)</td>
+            <td>
+                <ul>
+                    <li>NuGet looks for solution files in the current folder. If a single file is found, that one is used to restore packages; if multiple solutions are found, NuGet gives an error.</li>
+                    <li>If there are no solution files, NuGet looks for a packages.config or project.json and uses that to restore packages.</li>
+                    <li>If no solution file, packages.config, or project.json is found, NuGet gives an error.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
 
 2. Determine the packages folder using the following priority order (NuGet gives an error if none of these folders are found):
 
-	* The `%userprofile%\.nuget\packages` value in `project.json`.
+    * The `%userprofile%\.nuget\packages` value in `project.json`.
     * The folder specified with `-packagesdirectory`.
     * The `repositoryPath` vale in `nuget.config`
     * The folder specified with `-solutiondirectory`
@@ -858,7 +881,7 @@ The restore command is executed in the following steps:
 3. When restoring packages for a solution, NuGet does the following:
     * Loads the solution file.
     * Restores solution level packages listed in `$(SolutionDir)\.nuget\packages.config` into the `packages` folder.
-    * Restore packages listed in `$(ProjectDir)\packages.config` into the `packages` folder. For each package specified, restore the package in parallel unless `-disableparallelprocessing` is specified.        
+    * Restore packages listed in `$(ProjectDir)\packages.config` into the `packages` folder. For each package specified, restore the package in parallel unless `-disableparallelprocessing` is specified.
 
 ### Examples
 
@@ -880,11 +903,13 @@ The restore command is executed in the following steps:
 Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent commands.
 
 ### Usage
+
     nuget setapikey <key> -source <url> [options]
 
 where &lt;source&gt; identifies the server and &lt;key&gt; is the key or password to save. If &lt;source&gt; is omitted, nuget.org is assumed.
 
 ### Options
+
 <table>
     <tr>
         <td>configfile</td>
@@ -912,17 +937,18 @@ where &lt;source&gt; identifies the server and &lt;key&gt; is the key or passwor
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -source https://example.com/nugetfeed
 
 
-##  sources
+## sources
 
 Manages the list of sources located in `%AppData%\NuGet\NuGet.config` or the specified configiration file.
 
 ### Usage
+
     nuget sources <operation> -Name <name> -Source <source>
 
 where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Update*, &lt;name&gt; is the name of the source, and &lt;source&gt; is the source's URL.
 
-
 ### Options
+
 <table>
     <tr>
         <td>configfile</td>
@@ -941,7 +967,7 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
         <td>password</td>
         <td>Specifies the password for authenticating with the source.</td>
     </tr>
-	<tr>
+    <tr>
         <td>storepasswordincleartext</td>
         <td>Indicates to store the password in unencrypted text instead of
         the default behavior of storing an encrypted form.</td>
@@ -956,14 +982,13 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
     </tr>
 </table>
 
-
 ### Examples
 
-	nuget sources Add "MyServer" \\myserver\packages
+    nuget sources Add "MyServer" \\myserver\packages
 
-	nuget sources Disable "MyServer"
+    nuget sources Disable "MyServer"
 
-	nuget source Enable "nuget.org"
+    nuget source Enable "nuget.org"
 
 
 ## spec
@@ -971,11 +996,13 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
 Generates a `.nuspec` file for a new package. If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file. For additional information, see [Creating a Package](/ndocs/create-packages/creating-a-package).
 
 ### Usage
+
     nuget spec [<packageID>] [options]
 
 where &lt;packageID&gt; is an optional package identifier to save in the `.nuspec` file.
 
 ### Options
+
 <table>
     <tr>
         <td>assemblypath</td>
@@ -1013,7 +1040,7 @@ where &lt;packageID&gt; is an optional package identifier to save in the `.nuspe
     nuget spec -a MyAssembly.dll
 
 
-##  update
+## update
 
 Updates all packages in a project the latest available versions. It is recommended to run ['restore'](#restore) before running the `update`.
 
@@ -1024,11 +1051,13 @@ The `update` command will also update assembly references in the project file, p
 This command can also be used to update nuget.exe itself using the *-self* flag.
 
 ### Usage
+
     nuget update <configPath> [options]
 
 where &lt;configPath&gt; identifies either a `packages.config` or solution file that lists the project's dependencies.
 
 ### Options
+
 <table>
     <tr>
         <td>configfile</td>
@@ -1099,3 +1128,87 @@ where &lt;configPath&gt; identifies either a `packages.config` or solution file 
     nuget update -safe
 
     nuget update -self
+
+## Environment variables
+
+The behavior of nuget.exe can be configured through a number of environment variables, which affect nuget.exe on machine, user, or process levels.
+
+In general, options specified directly on the command line or in the NuGet configuration files have precedence, but there are a few exceptions such as *FORCE_NUGET_EXE_INTERACTIVE*. If you find that nuget.exe behaves differently between machines, an environment variable could be the cause. For example, Azure Web Apps Kudu (used during deployment) has *NUGET_XMLDOC_MODE* set to *skip* to speed up package restore performance and save disk space.
+
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+    <th>Remarks</th>
+  </tr>
+  <tr>
+    <td>http_proxy</td>
+    <td>Http proxy used for NuGet HTTP operations.</td>
+    <td>This would be specified as <em>http://&lt;username&gt;:&lt;password&gt;@proxy.com</em> .</td>
+  </tr>
+  <tr>
+    <td>no_proxy</td>
+    <td>Configures domains to bypass from using proxy.</td>
+    <td>Specified as domains separated by comma (,).</td>
+  </tr>
+  <tr>
+    <td>EnableNuGetPackageRestore</td>
+    <td>Flag for if NuGet should implicitly grant consent if that's required by package on restore.</td>
+    <td>Specified flag is specified as <em>true</em> or <em>1</em>, any other value treated as flag not set.</td>
+  </tr>
+  <tr>
+    <td>NUGET_EXE_NO_PROMPT</td>
+    <td>Prevents nuget.exe for prompting for credentials.</td>
+    <td>Any value except null or empty string will be treated as this flag set to true</td>
+  </tr>
+  <tr>
+    <td>FORCE_NUGET_EXE_INTERACTIVE</td>
+    <td>Global environment variable to force interactive mode.</td>
+    <td>Any value except null or empty string will be treated as this flag set to true</td>
+  </tr>
+  <tr>
+    <td>NUGET_PACKAGES</td>
+    <td>Path to where packages are stored / cached.</td>
+    <td>Specified as absolute path.</td>
+  </tr>
+  <tr>
+    <td>NUGET_FALLBACK_PACKAGES</td>
+    <td>Global fallback packages folders.</td>
+    <td>Absolute folder paths separated by semicolon (;).</td>
+  </tr>
+  <tr>
+    <td>NUGET_HTTP_CACHE_PATH</td>
+    <td>HTTP cache folder.</td>
+    <td>Specified as absolute path.</td>
+  </tr>
+  <tr>
+    <td>NUGET_PERSIST_DG</td>
+    <td>Flag indicating if dg files (data collected from MSBuild) should be persisted.</td>
+    <td>Specified as <em>true</em> or <em>false</em> (default), if NUGET_PERSIST_DG_PATH not set will be stored to temporary directory (NuGetScratch folder in current environment temp directory).</td>
+  </tr>
+  <tr>
+    <td>NUGET_PERSIST_DG_PATH</td>
+    <td>Path to persist dg files.</td>
+    <td>Specified as absolute path, this option is only used when <em>NUGET_PERSIST_DG</em> is set to true.</td>
+  </tr>
+  <tr>
+    <td>NUGET_RESTORE_MSBUILD_ARGS</td>
+    <td>Sets additional MSBuild arguments.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NUGET_RESTORE_MSBUILD_VERBOSITY</td>
+    <td>Sets the MSBuild log verbosity.</td>
+    <td>Default is <em>quiet</em> ("/v:q"). Possible values <em>q[uiet]</em>, <em>m[inimal]</em>, <em>n[ormal]</em>, <em>d[etailed]</em>, and <em>diag[nostic]</em>.</td>
+  </tr>
+  <tr>
+    <td>NUGET_SHOW_STACK</td>
+    <td>Determines whether the full exception (including stack trace) should be displayed to the user.</td>
+    <td>Specified as <em>true</em> or <em>false</em> (default).</td>
+  </tr>
+  <tr>
+    <td>NUGET_XMLDOC_MODE</td>
+    <td>Determines how assemblies XML documentation file extraction should be handled.</td>
+    <td>Supported modes are <em>skip</em> (do not extract XML documentation files), <em>compress</em> (store XML doc files as a zip archive) or <em>none</em> (default, treat XML doc files as regular files).</td>
+  </tr>
+</table>
