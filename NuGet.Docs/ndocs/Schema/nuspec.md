@@ -671,7 +671,7 @@ These files are specified with a set of attributes that describe how they should
 	<tr>
 		<td>buildAction</td>
 		<td>
-			The build action to assign to the contnet item for MSBuild, such as <code>Content</code>, <code>None</code>, <code>Embedded Resource</code>, <code>Compile</code>, etc. The default is <code>Compile</code>. 
+			The build action to assign to the content item for MSBuild, such as <code>Content</code>, <code>None</code>, <code>Embedded Resource</code>, <code>Compile</code>, etc. The default is <code>Compile</code>. 
 		</td>
 	</tr>
 	<tr>
