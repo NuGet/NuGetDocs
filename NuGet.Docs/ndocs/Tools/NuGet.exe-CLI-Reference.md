@@ -570,7 +570,9 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
 ## pack
 *Version 2.7+*
 
-Creates a NuGet package based on the specified nuspec or project file.
+Creates a NuGet package based on the specified nuspec or project file. Note that the `pack` command requires MSBuild and will not work on Linux systems. On Mac OS X, you need to have Mono 4.4.2 installed.
+
+With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames.
 
 ### Usage
 
