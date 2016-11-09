@@ -18,27 +18,27 @@ In this topic:
 The current `nuspec.xsd` schema file can be found in the [NuGet GitHub repository](https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd).
 
 <div class="block-callout-info">
-	<strong>Note</strong><br>
-	On nuget.org you can find a NuGet.Manifest.Schema 2.0.4 package. However, the schema files contained within it are older versions applicable to NuGet 2.0 and earlier. The most up-to-date schema file is best obtained from the GitHub repository.	
+    <strong>Note</strong><br>
+    On nuget.org you can find a NuGet.Manifest.Schema 2.0.4 package. However, the schema files contained within it are older versions applicable to NuGet 2.0 and earlier. The most up-to-date schema file is best obtained from the GitHub repository.    
 </div>
 
 Within this schema, a `.nuspec` file has the following general form:  
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-	  <metadata>
-	    <!-- Required elements-->
-	    <id></id>
-		<version></version>
-		<description></description>
-		<authors></authors>
+    <?xml version="1.0" encoding="utf-8"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <metadata>
+        <!-- Required elements-->
+        <id></id>
+        <version></version>
+        <description></description>
+        <authors></authors>
 
-		<!-- Optional elements -->	
-		<!-- ... -->    
-	  </metadata>
+        <!-- Optional elements -->    
+        <!-- ... -->    
+      </metadata>
       <!-- Optional 'files' node -->
-	</package>
-	
+    </package>
+    
 For a clear visual representation of the schema, open the schema file in Visual Studio in Design mode and click on the **XML Schema Explorer** link, or open the file as code, right-click in the editor, and select **Show XML Schema Explorer**. Either way you'll get a view like the one below (when mostly expanded):
 
 ![Visual Studio Schema Explorer with nuspec.xsd open](/images/docs/SchemaExplorer.png)
@@ -54,13 +54,13 @@ These elements must appear within a &lt;metadata&gt; element.
     <tbody>
         <tr>
             <th>Element</th>
-			<th>Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td><strong>id</strong></td>
             <td>
                 <p>
-                The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See <a href="/ndocs/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number">Choosing a unique package identifier</a> for guidance.</p>				
+                The case-insensitive package identifier, which must be unique across nuget.org or whatever gallery the package will reside in. IDs may not contain spaces or characters that are not valid for a URL, and generally follow .NET namespace rules. See <a href="/ndocs/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number">Choosing a unique package identifier</a> for guidance.</p>                
             </td>
         </tr>
         <tr>
@@ -90,7 +90,7 @@ These elements must appear within a &lt;metadata&gt; element.
     <tbody>
         <tr>
             <th>Element</th>
-			<th>Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td><strong>title</strong></td>
@@ -177,7 +177,7 @@ These elements must appear within a &lt;metadata&gt; element.
         <tr>
             <td><strong>references</strong></td>
             <td><em>(1.5+)</em> A collection of zero or more &lt;reference&gt; elements naming assemblies in the package's <code>lib</code> folder that are added as project references. Each reference has a <em>file</em> attribute. &lt;references&gt; can also contain a &lt;group&lt; element with a <em>targetFramework</em> attribute, that then contains &lt;reference&gt; elements. If omitted, all references in <code>lib</code> are included. See <a href="#specifying-explicit-assembly-references">Specifying explicit assembly references.</a> below.  
-			</td>
+            </td>
         </tr>
         <tr>
             <td><strong>contentFiles</strong></td>
@@ -191,7 +191,7 @@ These elements must appear within a &lt;metadata&gt; element.
 ### Files element
 
 The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify whcih assembly and content files to include in the package. See <a href="#including-assembly-files">Including assembly files</a> and <a href="#including-content-files">Including content files</a> later in this topic for details.</td>
-        
+
 
 ## Replacement tokens
 
@@ -199,14 +199,14 @@ When creating a package, the [`nuget pack` command](/ndocs/tools/nuget.exe-cli-r
 
 On the command line, you specify token values with `nuget pack -properties <name>=<value>;<name>=<value>`. For example, you can use a token such as `$owners$` and `$desc$` in the `.nuspec` and provide the values at packing time as follows:
 
-	nuget pack MyProject.csproj -properties
+    nuget pack MyProject.csproj -properties
         owners=janedoe,harikm,kimo,xiaop;desc="Awesome app logger utility"
 
 To use values from a project, specify the tokens described in the table below (AssemblyInfo refers to the file in `Properties` such as `AssemblyInfo.cs` or `AssemblyInfo.vb`).
 
 To use these tokens, you must run `nuget pack` with the project file rather than just the `.nuspec`. For example, when using the following command, the `$id$` and `$version$` tokens in a `.nuspec` file will be replaced with the project's `AssemblyName` and `AssemblyVersion` values:
 
-	nuget pack MyProject.csproj
+    nuget pack MyProject.csproj
 
 Typically, when you have a project you'll create the `.nuspec` initially using `nuget spec MyProject.csproj` which will automatically include some of these standard tokens. Note, however, that if a project lacks values for required `.nuspec` elements, then `nuget pack` will fail. Furthermore, if you change project values, be sure to rebuild before creating the package; this can be done conveniently with the pack command's `build` switch. 
 
@@ -214,52 +214,52 @@ With the exception of `$configuration$`, values in the project will be used in p
 
 <table class="reference">
     <tr>
-		<th>Token</th>
-	    <th>Value source</th>
-		<th>Value</th></tr>
+        <th>Token</th>
+        <th>Value source</th>
+        <th>Value</th></tr>
     <tr>
         <td>$id$</td>
-	    <td>Project file</td>
+        <td>Project file</td>
         <td>AssemblyName from the project file</td>
     </tr>
     <tr>
         <td>$version$</td>
-		<td>AssemblyInfo</td>
+        <td>AssemblyInfo</td>
         <td>AssemblyInformationalVersion if present, otherwise AssemblyVersion</td>
     </tr>
     <tr>
         <td>$author$</td>
-		<td>AssemblyInfo</td>
+        <td>AssemblyInfo</td>
         <td>AssemblyCompany</td>
     </tr>
     <tr>
         <td>$description$</td>
-		<td>AssemblyInfo</td>
+        <td>AssemblyInfo</td>
         <td>AssemblyDescription</td> 
     </tr>
     <tr>
         <td>$copyright$</td>
-		<td>AssemblyInfo</td>
+        <td>AssemblyInfo</td>
         <td>AssemblyCopyright</td> 
     </tr>
     <tr>
         <td>$configuration$</td>
-		<td>Assembly DLL</td>
+        <td>Assembly DLL</td>
         <td>Configuration used to build the assembly, defaulting to Debug. Note that to create a package using a Release configuration, you always use <code>-properties Configuration=Release</code> on the command line.</td> 
     </tr>
 </table>
 
 Tokens can also be used to resolve paths when you include [assembly files](#including-assembly-files) and [content files](#including-content-files). The tokens have the same names as the MSBuild properties, making it possible to select files to be included depending on the current build configuration. For example, if you use the following tokens in the `.nuspec` file:
 
-	<files>
-	    <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
-	</files>
+    <files>
+        <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
+    </files>
 
 And you build an assembly whose `AssemblyName` is `LoggingLibrary` with the `Release` configuration in MSBuild, the resulting lines in the `.nuspec` file in the package will be as follows:
-	
-	<files>
-	    <file src="bin\Release\library.pdb" target="lib\net40" />
-	</files>
+    
+    <files>
+        <file src="bin\Release\library.pdb" target="lib\net40" />
+    </files>
 
 
 ## Dependencies
@@ -280,10 +280,10 @@ The &lt;dependencies&gt; element within &lt;metadata&gt; contains any number of 
 
 For example, the following lines indicate dependencies on `PackageA` version 1.1.0 or higher, and `PackageB` version 1.x. 
 
-	<dependencies>
-	  <dependency id="PackageA" version="1.1.0" />
-	  <dependency id="PackageB" version="[1,2)" />
-	</dependencies>
+    <dependencies>
+      <dependency id="PackageA" version="1.1.0" />
+      <dependency id="PackageB" version="[1,2)" />
+    </dependencies>
 
 When creating a `.nuspec` from a project using `nuget spec`, dependencies that exist in that project will be automatically included in the resulting `.nuspec` file.
 
@@ -298,25 +298,25 @@ Each group has an attribute named `targetFramework` and contains zero or more &l
 The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of dependencies. See [Target frameworks](target-frameworks) for the exact framework identifiers.
 
 <div class="block-callout-info">
-	<strong>Note</strong>	
-	The group format cannot be intermixed with a flat list.
+    <strong>Note</strong>    
+    The group format cannot be intermixed with a flat list.
 </div>
 
 The following example shows different variations of the &lt;group&gt; element:
 
-	<dependencies> 
-	   <group>
-	      <dependency id="RouteMagic" version="1.1.0" />
-	   </group>
+    <dependencies> 
+       <group>
+          <dependency id="RouteMagic" version="1.1.0" />
+       </group>
 
-	   <group targetFramework="net40">
-	      <dependency id="jQuery" />
-	      <dependency id="WebActivator" />
-	   </group>
+       <group targetFramework="net40">
+          <dependency id="jQuery" />
+          <dependency id="WebActivator" />
+       </group>
  
-	   <group targetFramework="sl30">
-	   </group>
-	</dependencies>
+       <group targetFramework="sl30">
+       </group>
+    </dependencies>
 
 
 ## Explicit assembly references
@@ -326,10 +326,10 @@ The &lt;references&gt; element explicitly specifies the assemblies that the targ
 
 For example, the following &lt;references&gt; element instructs NuGet to add references to only `xunit.dll` and `xunit.extensions.dll` even if there are additional assemblies in the package:
 
-	<references>
-	  <reference file="xunit.dll" />
-	  <reference file="xunit.extensions.dll" />
-	</references>
+    <references>
+      <reference file="xunit.dll" />
+      <reference file="xunit.extensions.dll" />
+    </references>
 
 Explicit reference are typically used for design-time only assemblies. When using [Code Contracts](https://msdn.microsoft.com/library/dd264808.aspx), for example, contract assemblies need to be next to the runtime assemblies that they augment so that Visual Studio can find them, but the contract assemblies need not be referenced by the project or copied into the project's `bin` folder.
 
@@ -346,25 +346,25 @@ Each group has an attribute named `targetFramework` and contains zero or more &l
 The &lt;group&gt; element without a `targetFramework` attribute is used as the default or fallback list of references. See [Target frameworks](target-frameworks) for the exact framework identifiers.
 
 <div class="block-callout-info">
-	<strong>Note</strong>	
-	The group format cannot be intermixed with a flat list.
+    <strong>Note</strong>    
+    The group format cannot be intermixed with a flat list.
 </div>
 
 The following example shows different variations of the &lt;group&gt; element:
 
-	<references> 
-	  <group>
-	    <reference file="a.dll" />
-	  </group>
+    <references> 
+      <group>
+        <reference file="a.dll" />
+      </group>
 
-	  <group targetFramework="net45"> 
-	      <reference file="b45.dll" />
-	  </group>
+      <group targetFramework="net45"> 
+          <reference file="b45.dll" />
+      </group>
  
-	  <group targetFramework="netcore45"> 
-	    <reference file="bcore45.dll" /> 
-	  </group>
-	</references>
+      <group targetFramework="netcore45"> 
+        <reference file="bcore45.dll" /> 
+      </group>
+    </references>
 
 
 ## Framework assembly references
@@ -395,11 +395,11 @@ The &lt;frameworkAssemblies&gt; element contains zero or more &lt;frameworkAssem
 
 The following example shows a reference to `System.Net` for all target frameworks, and a reference to `System.ServiceModel` for .NET Framework 4.0 only:
 
-	<frameworkAssemblies>
-	  <frameworkAssembly assemblyName="System.Net"  />
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Net"  />
 
-	  <frameworkAssembly assemblyName="System.ServiceModel" 	targetFramework="net40" />	  
-	</frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ServiceModel"     targetFramework="net40" />      
+    </frameworkAssemblies>
 
 
 
@@ -409,17 +409,17 @@ The following example shows a reference to `System.Net` for all target framework
 If you follow the conventions described in [Creating a Package](/ndocs/create-packages/creating-a-package), you do not have to explicitly specify a list of files in the `.nuspec` file. The `nuget pack` command will automatically pick up the necessary files.
 
 <div class="block-callout-info">
-	<strong>Note</strong><br>	
-	When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named <code>.resources.dll</code> because they are assumed to be localized satellite assemblies. For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
+    <strong>Note</strong><br>    
+    When a package is installed into a project, NuGet automatically adds assembly references to the package's DLLs, <em>excluding</em> those that are named <code>.resources.dll</code> because they are assumed to be localized satellite assemblies. For this reason, avoid using ".resources.dll" for files that otherwise contain essential package code.  
 </div>
 
 To bypass this automatic behavior and explicitly control which files are included in a package, place a &lt;files&gt; element as a child of &lt;package&gt; (and a sibling of &lt;metadata&gt;), identifying each file with a separate &lt;file&gt; element. For example:     
 
-	<files>
-	  <file src="bin\Debug\*.dll" target="lib" /> 
-	  <file src="bin\Debug\*.pdb" target="lib" /> 
-	  <file src="tools\**\*.*" exclude="**\*.log" />
-	</files>
+    <files>
+      <file src="bin\Debug\*.dll" target="lib" /> 
+      <file src="bin\Debug\*.pdb" target="lib" /> 
+      <file src="tools\**\*.*" exclude="**\*.log" />
+    </files>
   
 
 With NuGet 2.x and earlier, and projects using `packages.config`, the &lt;files&gt; element is also used to include immutable content files when a package is installed. With NuGet 3.3+ and projects using `project.json`, the &lt;contentFiles&gt; element is used instead. See [Including content files](#including-content-files) below for details. 
@@ -459,65 +459,65 @@ Each &lt;file&gt; element specifies the following attributes:
 
 **Single assembly**
 
-	Source file: 
-	    library.dll
-	
-	.nuspec entry:	
-		<file src="library.dll" target="lib" />
-		
-	Packaged result:	 
-	    lib\library.dll
+    Source file: 
+        library.dll
+    
+    .nuspec entry:    
+        <file src="library.dll" target="lib" />
+        
+    Packaged result:     
+        lib\library.dll
 
 **Single assembly specific to a target framework**
 
-	Source file:
-		library.dll
+    Source file:
+        library.dll
 
-	.nuspec entry:
-		<file src="assemblies\net40\library.dll" target="lib\net40" />
+    .nuspec entry:
+        <file src="assemblies\net40\library.dll" target="lib\net40" />
 
-	Packaged result:
-		lib\net40\library.dll
+    Packaged result:
+        lib\net40\library.dll
 
 **Set of DLLs using a wildcard**
 
-	Source files: 
-		bin\release\libraryA.dll
-		bin\release\libraryB.dll
+    Source files: 
+        bin\release\libraryA.dll
+        bin\release\libraryB.dll
 
-	.nuspec entry: 
-		<file src="bin\release\*.dll" target="lib" />
+    .nuspec entry: 
+        <file src="bin\release\*.dll" target="lib" />
 
-	Packaged result:
-		lib\libraryA.dll
-		lib\libraryB.dll
+    Packaged result:
+        lib\libraryA.dll
+        lib\libraryB.dll
 
 **DLLs for different frameworks**
 
-	Source files:
-		lib\net40\library.dll
-		lib\net20\library.dll
+    Source files:
+        lib\net40\library.dll
+        lib\net20\library.dll
 
-	.nuspec entry (using ** recursive search):
-		<file src="lib\**" target="lib" />
+    .nuspec entry (using ** recursive search):
+        <file src="lib\**" target="lib" />
 
-	Packaged result: 
-		lib\net40\library.dll 
-		lib\net20\library.dll
+    Packaged result: 
+        lib\net40\library.dll 
+        lib\net20\library.dll
 
 **Excluding files**
 
-	Source files:
-		\tools\*.bak
-		\tools\*.log
-		\tools\build\*.log
+    Source files:
+        \tools\*.bak
+        \tools\*.log
+        \tools\build\*.log
  
-	.nuspec entries:
-	    <file src="tools\*.*" target="tools" exclude="tools\*.bak" />
-	    <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
-	
-	Package result:
-		(no files)
+    .nuspec entries:
+        <file src="tools\*.*" target="tools" exclude="tools\*.bak" />
+        <file src="tools\**\*.*" target="tools" exclude="**\*.log" />
+    
+    Package result:
+        (no files)
 
 ## Including content files
 
@@ -538,108 +538,108 @@ For content files, simply use the same format as for assembly files, but specify
 
 **Basic content files**
 
-	Source files: 
-		css\mobile\style1.css
-		css\mobile\style2.css
+    Source files: 
+        css\mobile\style1.css
+        css\mobile\style2.css
 
-	.nuspec entry:
-		<file src="css\mobile\*.css" target="content\css\mobile" />
+    .nuspec entry:
+        <file src="css\mobile\*.css" target="content\css\mobile" />
 
-	Packaged result: 
-		content\css\mobile\style1.css
-		content\css\mobile\style2.css
+    Packaged result: 
+        content\css\mobile\style1.css
+        content\css\mobile\style2.css
 
 **Content files with directory structure**
 
-	Source files:
-		css\mobile\style.css
-		css\mobile\wp7\style.css
-		css\browser\style.css
+    Source files:
+        css\mobile\style.css
+        css\mobile\wp7\style.css
+        css\browser\style.css
 
-	.nuspec entry: 
-		<file src="css\**\*.css" target="content\css" />
+    .nuspec entry: 
+        <file src="css\**\*.css" target="content\css" />
 
-	Packaged result:
-		content\css\mobile\style.css 
-		content\css\mobile\wp7\style.css
-		content\css\browser\style.css
+    Packaged result:
+        content\css\mobile\style.css 
+        content\css\mobile\wp7\style.css
+        content\css\browser\style.css
 
 **Content file specific to a target framework**
 
-	Source file:
-		css\cool\style.css
+    Source file:
+        css\cool\style.css
 
-	.nuspec entry
-		<file src="css\cool\style.css" target="Content" />
+    .nuspec entry
+        <file src="css\cool\style.css" target="Content" />
 
-	Packaged result:
-		content\style.css
+    Packaged result:
+        content\style.css
 
 ** Content file copied to a folder with dot in name**
 
 In this case, NuGet sees that the extension in `target` does not match the extension in `src` and thus treats that part of the name in `target` as a folder:
 
-	Source file:
-		images\picture.png
+    Source file:
+        images\picture.png
 
-	.nuspec entry:
-		<file src="images\picture.png" target="Content\images\package.icons" />
+    .nuspec entry:
+        <file src="images\picture.png" target="Content\images\package.icons" />
 
-	Packaged result:
-		content\images\package.icons\picture.png
+    Packaged result:
+        content\images\package.icons\picture.png
 
 **Content files without extensions**
 
 To include files without an extension, use the * or ** wildcards:
 
-	Source file:
-		flags\installed
+    Source file:
+        flags\installed
 
-	.nuspec entry:
-		<file src="flags\**" target="flags" />
+    .nuspec entry:
+        <file src="flags\**" target="flags" />
 
-	Packaged result:
-		flags\installed
+    Packaged result:
+        flags\installed
 
 **Content files with deep path and deep target**
 
 In this case, because the file extensions of the source and target match, NuGet assumes that the target is a file name and not a folder:
 
-	Source file:
-		css\cool\style.css
+    Source file:
+        css\cool\style.css
 
-	.nuspec entry:
-		<file src="css\cool\style.css" target="Content\css\cool" />
-	    or:
-		<file src="css\cool\style.css" target="Content\css\cool\style.css" />
+    .nuspec entry:
+        <file src="css\cool\style.css" target="Content\css\cool" />
+        or:
+        <file src="css\cool\style.css" target="Content\css\cool\style.css" />
 
-	Packaged result:
-		content\css\cool\style.css
+    Packaged result:
+        content\css\cool\style.css
 
 **Renaming a content file in the package**
 
-	Source file:
-		ie\css\style.css
+    Source file:
+        ie\css\style.css
 
-	.nuspec entry:
-		<file src="ie\css\style.css" target="Content\css\ie.css" />
+    .nuspec entry:
+        <file src="ie\css\style.css" target="Content\css\ie.css" />
 
-	Packaged result:
-		content\css\ie.css
+    Packaged result:
+        content\css\ie.css
 
 **Excluding files**
 
-	Source file:
-		docs\*.txt (multiple files)
+    Source file:
+        docs\*.txt (multiple files)
 
-	.nuspec entry:
-		<file src="docs\*.txt" target="content\docs" exclude="docs\admin.txt" />
-		or
-		<file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
-	
-	Packaged result:
-		All .txt files from docs except admin.txt (first example)
-		All .txt files from docs except admin.txt and log.txt (second example)
+    .nuspec entry:
+        <file src="docs\*.txt" target="content\docs" exclude="docs\admin.txt" />
+        or
+        <file src="*.txt" target="content\docs" exclude="admin.txt;log.txt" />
+    
+    Packaged result:
+        All .txt files from docs except admin.txt (first example)
+        All .txt files from docs except admin.txt and log.txt (second example)
 
 
 ### Using the contentFiles element for content files
@@ -652,40 +652,40 @@ To control which files are included, the &lt;contentFiles&gt; element specifies 
 These files are specified with a set of attributes that describe how they should be used within the project system:
 
 <table class="reference">
-	<tr>
-		<th>Attribute</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>include</td>
-		<td>
-			(Required) The location of the file or files to include, subject to exclusions specified by the <code>exclude</code> attribute. The path is relative to the <code>.nuspec</code> file unless an absolute path is specified. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
-		</td>    		
-	</tr>
-	<tr>
-		<td>exclude</td>
+    <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>include</td>
+        <td>
+            (Required) The location of the file or files to include, subject to exclusions specified by the <code>exclude</code> attribute. The path is relative to the <code>.nuspec</code> file unless an absolute path is specified. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
+        </td>            
+    </tr>
+    <tr>
+        <td>exclude</td>
         <td>
             A semicolon-delimited list of files or file patterns to exclude from the <code>src</code> location. The wildcard character * is allowed, and the double wildcard ** implies a recursive folder search.
         </td>
-	</tr>
-	<tr>
-		<td>buildAction</td>
-		<td>
-			The build action to assign to the content item for MSBuild, such as <code>Content</code>, <code>None</code>, <code>Embedded Resource</code>, <code>Compile</code>, etc. The default is <code>Compile</code>. 
-		</td>
-	</tr>
-	<tr>
-		<td>copyToOutput</td>
-		<td>
-			A Boolean indicating whether to copy content items to the build output folder. The default is false.
-		</td>
-	</tr>
-	<tr>
-		<td>flatten</td>
-		<td>
-			A Boolean indicating whether to copy content items to a single folder in the build output (true), or to preserve the folder structure in the package (false). The default is false.
-		</td>
-	</tr>
+    </tr>
+    <tr>
+        <td>buildAction</td>
+        <td>
+            The build action to assign to the content item for MSBuild, such as <code>Content</code>, <code>None</code>, <code>Embedded Resource</code>, <code>Compile</code>, etc. The default is <code>Compile</code>. 
+        </td>
+    </tr>
+    <tr>
+        <td>copyToOutput</td>
+        <td>
+            A Boolean indicating whether to copy content items to the build output folder. The default is false.
+        </td>
+    </tr>
+    <tr>
+        <td>flatten</td>
+        <td>
+            A Boolean indicating whether to copy content items to a single folder in the build output (true), or to preserve the folder structure in the package (false). The default is false.
+        </td>
+    </tr>
 </table>
 
 When installing a package, NuGet applies the child elements of &lt;contentFiles&gt; from top to bottom. If multiple entries match the same file then all entries will be applied. The top-most entry will override the lower entries if there is a conflict for the same attribute.
@@ -694,7 +694,7 @@ When installing a package, NuGet applies the child elements of &lt;contentFiles&
 
 The package project should structure content using the following pattern:
 
-	/contentFiles/{codeLanguage}/{TxM}/{any?}
+    /contentFiles/{codeLanguage}/{TxM}/{any?}
 
 - `codeLanguages` may be `cs`, `vb`, `fs`, `any`, or the lowercase equivalent of a given `$(ProjectLanguage)`
 * `TxM` is any legal target framework moniker that NuGet supports (see [Target frameworks](/ndocs/schema/target-frameworks)).
@@ -702,111 +702,111 @@ The package project should structure content using the following pattern:
 
 For example:
 
-	Language- and framework-agnostic:
-		/contentFiles/any/any/config.xml
+    Language- and framework-agnostic:
+        /contentFiles/any/any/config.xml
 
-	net45 content for all lanugages
-		/contentFiles/any/net45/config.xml
+    net45 content for all lanugages
+        /contentFiles/any/net45/config.xml
 
-	C#-specific content for net45 and up
-		/contentFiles/cs/net45/sample.cs
+    C#-specific content for net45 and up
+        /contentFiles/cs/net45/sample.cs
 
 Empty folders can use `.` to opt out of providing content for certain combinations of language and TxM, for example:
 
-	/contentFiles/vb/any/code.vb
-	/contentFiles/cs/any/.
-	
+    /contentFiles/vb/any/code.vb
+    /contentFiles/cs/any/.
+    
 
 #### Example contentFiles section
 
-	<contentFiles>
-	    <!-- Embed image resources -->
-	    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
-	    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+    <contentFiles>
+        <!-- Embed image resources -->
+        <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+        <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
 
-	    <!-- Embed all image resources under contentFiles/cs/ -->
-	    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+        <!-- Embed all image resources under contentFiles/cs/ -->
+        <files include="cs/**/*.png" buildAction="EmbeddedResource" />
 
-	    <!-- Copy config.xml to the root of the output folder -->
-	    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+        <!-- Copy config.xml to the root of the output folder -->
+        <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
 
-	    <!-- Copy run.cmd to the output folder and keep the directory structure -->
-		<files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+        <!-- Copy run.cmd to the output folder and keep the directory structure -->
+        <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
 
-	    <!-- Include everything in the scripts folder except exe files -->
-	    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />	   
-	</contentFiles>
+        <!-- Include everything in the scripts folder except exe files -->
+        <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />       
+    </contentFiles>
 
 
 ## Example .nuspec files
 
 **A simple .nuspec that does not specify dependencies or files**
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-	  <metadata>
-	    <id>sample</id>
-	    <version>1.2.3</version>
-	    <authors>Kim Abercrombie, Franck Halmaert</authors>
-	    <description>Sample exists only to show a sample .nuspec file.</description>
-	    <language>en-US</language>
-	    <projectUrl>http://xunit.codeplex.com/</projectUrl>
-	    <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
-	  </metadata>
-	</package>
+    <?xml version="1.0" encoding="utf-8"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <metadata>
+        <id>sample</id>
+        <version>1.2.3</version>
+        <authors>Kim Abercrombie, Franck Halmaert</authors>
+        <description>Sample exists only to show a sample .nuspec file.</description>
+        <language>en-US</language>
+        <projectUrl>http://xunit.codeplex.com/</projectUrl>
+        <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+      </metadata>
+    </package>
 
 **A .nuspec with dependencies**
 
-	<?xml version="1.0" encoding="utf-8"?>
-	<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-	  <metadata>
-	    <id>sample</id>
-	    <version>1.0.0</version>
-	    <authors>Microsoft</authors>
-	    <dependencies>
-	      <dependency id="another-package" version="3.0.0" />
-	      <dependency id="yet-another-package"/>
-	    </dependencies> 
-	  </metadata>
-	</package>
+    <?xml version="1.0" encoding="utf-8"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <metadata>
+        <id>sample</id>
+        <version>1.0.0</version>
+        <authors>Microsoft</authors>
+        <dependencies>
+          <dependency id="another-package" version="3.0.0" />
+          <dependency id="yet-another-package"/>
+        </dependencies> 
+      </metadata>
+    </package>
 
 **A .nuspec with files**
 
-	<?xml version="1.0"?>
-	<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-	  <metadata>
-	    <id>routedebugger</id>
-	    <version>1.0.0</version>
-	    <authors>Jay Hamlin</authors>
-	    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	    <description>Route Debugger is a little utility I wrote...</description>
-	  </metadata>
-	  <files>
-	    <file src="bin\Debug\*.dll" target="lib" />
-	  </files>
-	</package>
+    <?xml version="1.0"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <metadata>
+        <id>routedebugger</id>
+        <version>1.0.0</version>
+        <authors>Jay Hamlin</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Route Debugger is a little utility I wrote...</description>
+      </metadata>
+      <files>
+        <file src="bin\Debug\*.dll" target="lib" />
+      </files>
+    </package>
 
 **A .nuspec with framework assemblies**
 
-	<?xml version="1.0"?>
-	<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-	  <metadata>
-	    <id>PackageWithGacReferences</id>
-	    <version>1.0</version>
-	    <authors>Author here</authors>
-	    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	    <description>
-	        A package that has framework assemblyReferences depending 
-	        on the target framework.
-	    </description>
-	    <frameworkAssemblies>
-	      <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
-	      <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
-	      <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
-	      <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
-	    </frameworkAssemblies>
-	  </metadata>
-	</package>
+    <?xml version="1.0"?>
+    <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <metadata>
+        <id>PackageWithGacReferences</id>
+        <version>1.0</version>
+        <authors>Author here</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+            A package that has framework assemblyReferences depending 
+            on the target framework.
+        </description>
+        <frameworkAssemblies>
+          <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+          <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
+          <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
+          <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
+        </frameworkAssemblies>
+      </metadata>
+    </package>
 
 In this example, the following will be installed for specific project targets:
 
