@@ -1099,3 +1099,85 @@ where &lt;configPath&gt; identifies either a `packages.config` or solution file 
     nuget update -safe
 
     nuget update -self
+
+## Environment variables
+
+There's a few environment variables available which lets you change the NuGet console default behavior on a machine, user or process level. In general user specified options via command-line parameters or configuration will have precedence, but there are exceptions like i.e. *FORCE_NUGET_EXE_INTERACTIVE*. If NuGet console behaves differently locally vs. build system it could be an environment variable causing this, i.e. Azure Web Apps Kudu which is used during deployment has *NUGET_XMLDOC_MODE* set to *skip* to speed up package restore performance and save disk space.
+
+<table>
+  <tr>
+		<th>Variable</th>
+		<th>Description</th>
+		<th>Remarks</th>
+	</tr>
+  <tr>
+    <td>http_proxy</td>
+    <td>Http proxy used for NuGet HTTP operations.</td>
+    <td>This would be specified as <em>http://&lt;username&gt;:&lt;password&gt;@proxy.com</em> .</td>
+  </tr>
+  <tr>
+    <td>no_proxy</td>
+    <td>Configures domains to bypass from using proxy.</td>
+    <td>Specified as domains separated by comma (,).</td>
+  </tr>
+  <tr>
+    <td>EnableNuGetPackageRestore</td>
+    <td>Flag for if NuGet should implicitly grant consent if that's required by package on restore.</td>
+    <td>Specified flag is specified as <em>true</em> or <em>1</em>, any other value treated as flag not set.</td>
+  </tr>
+  <tr>
+    <td>NUGET_EXE_NO_PROMPT</td>
+    <td>Prevents the exe for prompting for credentials.</td>
+    <td>Any value except null or empty string will be treated as this flag set/true</td>
+  </tr>
+  <tr>
+    <td>FORCE_NUGET_EXE_INTERACTIVE</td>
+    <td>Global environment variable to force interactive mode.</td>
+    <td>Any value except null or empty string will be treated as this flag set/true</td>
+  </tr>
+  <tr>
+    <td>NUGET_PACKAGES</td>
+    <td>Path to where packages are stored / cached.</td>
+    <td>Specified as absolute path.</td>
+  </tr>
+  <tr>
+    <td>NUGET_FALLBACK_PACKAGES</td>
+    <td>Global fallback packages folders.</td>
+    <td>Absolute folder paths separated by semicolon (;).</td>
+  </tr>
+  <tr>
+    <td>NUGET_HTTP_CACHE_PATH</td>
+    <td>HTTP cache folder.</td>
+    <td>Specified as absolute path.</td>
+  </tr>
+  <tr>
+    <td>NUGET_PERSIST_DG</td>
+    <td>Flag indicating if dg files (data collected from MSBuild) should be persisted.</td>
+    <td>Specified as <em>true</em> or <em>false</em> (default), if NUGET_PERSIST_DG_PATH not set will be stored to temporary directory (NuGetScratch folder in current environment temp directory).</td>
+  </tr>
+  <tr>
+    <td>NUGET_PERSIST_DG_PATH</td>
+    <td>Path to persist dg files.</td>
+    <td>Specified as absolute path, this option is only used when <em>NUGET_PERSIST_DG</em> is set to true.</td>
+  </tr>
+  <tr>
+    <td>NUGET_RESTORE_MSBUILD_ARGS</td>
+    <td>Sets additional MSBuild arguments.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NUGET_RESTORE_MSBUILD_VERBOSITY</td>
+    <td>Sets the MSBuild log verbosity.</td>
+    <td>Default is <em>quiet</em> ("/v:q"). Possible values <em>q[uiet]</em>, <em>m[inimal]</em>, <em>n[ormal]</em>, <em>d[etailed]</em>, and <em>diag[nostic]</em>.</td>
+  </tr>
+  <tr>
+    <td>NUGET_SHOW_STACK</td>
+    <td>Determines whether the full exception (including stack trace) should be displayed to the user.</td>
+    <td>Specified as <em>true</em> or <em>false</em> (default).</td>
+  </tr>
+  <tr>
+    <td>NUGET_XMLDOC_MODE</td>
+    <td>Determines how assemblies XML documentation file extraction should be handled.</td>
+    <td>Supported modes are <em>skip</em> (do not extract XML documentation files), <em>compress</em> (store XML doc files as a zip archive) or <em>none</em> (default, treat XML doc files as regular files).</td>
+  </tr>
+</table>
