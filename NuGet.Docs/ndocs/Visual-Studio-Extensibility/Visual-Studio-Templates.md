@@ -60,7 +60,6 @@ The VSIX itself can serve as the source for packages required by the template:
     <code class="html">
 		&lt;packages repository="extension"
               repositoryId="MyTemplateContainerExtensionId"&gt;
-
     	&lt;!-- ... --&gt;
     	&lt;/packages&gt;
 	</code>
