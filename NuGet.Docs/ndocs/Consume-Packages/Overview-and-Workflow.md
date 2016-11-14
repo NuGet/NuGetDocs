@@ -18,7 +18,7 @@ When adding project code to a source repository, you typically don't include NuG
 
 [Package Restore](/ndocs/consume-packages/package-restore) uses the information in `packages.config` or `project.json` to reinstall all dependencies. Note that there are differences in the process between NuGet 2.x and 3.x, which are described in [Dependency Resolution](/ndocs/consume-packages/dependency-resolution). 
 
-Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `reinstall` command via the NuGet command line or the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](/ndocs/consume-packages/reinstalling-and-updating-packages).
+Occasionally it's necessary to reinstall packages that are already included in a project, which may also reinstall dependencies. This is easy to do using the `reinstall` command via the NuGet Package Manager Console. For details, see [Reinstalling and Updating Packages](/ndocs/consume-packages/reinstalling-and-updating-packages).
 
 Finally, NuGet's behavior is driven by `nuget.config` configuration files. Multiple files can be used to centralize certain settings at different levels, as explained in [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). 
  
