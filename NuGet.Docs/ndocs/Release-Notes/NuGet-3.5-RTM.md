@@ -1,7 +1,8 @@
+# 3.5 RTM Release Notes
 
-#3.5 RTM Release Notes
+[NuGet 3.5 RC Release Notes](nuget-3.5-RC) | [NuGet 4.0 RC Release Notes](nuget-4.0-RC)
 
-**Bug:**
+## Bug Fixes
 
 * Pack doesn't use msbuild 14.1 on mono - [#3550](https://github.com/NuGet/Home/issues/3550)
 
@@ -123,7 +124,7 @@
 
 * Nuget Install with All Package Sources, but package missing from 1 source, fails - [#2322](https://github.com/NuGet/Home/issues/2322)
 
-* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+<>c__DisplayClass_0+<<AddReference>b__>d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
+* [PerfWatson] UIDelay: nuget.packagemanagement.visualstudio.dll!NuGet.PackageManagement.VisualStudio.VSMSBuildNuGetProjectSystem+&lt;&gt;c__DisplayClass_0+&lt;&lt;AddReference&gt;b__&gt;d.MoveNext - [#2285](https://github.com/NuGet/Home/issues/2285)
 
 * Install blocks if a single source fails authorization - [#2034](https://github.com/NuGet/Home/issues/2034)
 
@@ -229,7 +230,7 @@
 
 * Unable to update native packages - [#1291](https://github.com/NuGet/Home/issues/1291)
 
-**Feature:**
+## Features
 
 * Support setting CopyLocal to false on references added by NuGet - [#329](https://github.com/NuGet/Home/issues/329)
 
@@ -251,8 +252,7 @@
 
 * Enable SemVer 2.0.0 in pack - [#3356](https://github.com/NuGet/Home/issues/3356)
 
-**DCR:**
-
+## DCRs
 
 * NuGet.exe push - timeout parameter doesn't work  - [#2785](https://github.com/NuGet/Home/issues/2785)
 
