@@ -162,6 +162,8 @@ In the following example, everything except the content files from the package w
         <!-- ... -->
     </ItemGroup>
 
+Note that because `build` is not included with `PrivateAsset`, targets and props *will* flow to the parent project. Consider, for example, that the reference above is used in a project that builds a NuGet package called AppLogger. AppLogger can consume the targets and props from Contoso.Utility.UsefulStuff, as can projects that consume AppLogger.
+
 ## Adding a PackageReference condition
 
 You can use a condition to control whether a package is included, where conditions can use any MSBuild variable or a variable defined in the targets or props file.

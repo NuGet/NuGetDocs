@@ -1,5 +1,7 @@
 # Create .NET Standard Packages with Visual Studio 2017
 
+*Applies to NuGet 4.x+. See [Create .NET Standard Packages with Visual Studio 2015](/ndocs/guides/create-net-standard-packages-vs2015) for working with NuGet 3.x+*
+
 The [.NET Standard Library]((https://docs.microsoft.com/en-us/dotnet/articles/standard/library)) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4 with Visual Studio 2017 and NuGet 4.0. 
@@ -44,7 +46,7 @@ The require workload appears as follows in the Visual Studio installer:
 
 ## Edit metadata in the .csproj file
 
-With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec'. A full description of that metadata is found in [Adding nuget pack as an MSBuild target](/ndocs/schema/csproj-pack-target).
+With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec'. A full description of that metadata is found in [NuGet pack and restore as MSBuild targets](/ndocs/schema/msbuild-targets).
 
 1. Right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
 1. Locate the `PropertyGroup` that contains a single `TargetFramework` element and motify it as follows. Note that `TargetFramework` becomes `TargetFrameworks` (plural):
@@ -70,7 +72,7 @@ NuGet 4.0 supports a pack target using MSBuild when the project contains the nec
 
     msbuild /t:pack /p:Configuration=Release
 
-This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default release will be `Debug`.
+This will generate `AppLogger.YOUR_NAME.1.0.0.nupkg` in the `bin\Release` folder by default, as it builds that configuration. If you omit the `/p` switch, the default configuration will be `Debug`.
 
 Opening this file in a tool like the [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer) and expanding all the nodes, you'll see the following contents:
 
@@ -85,11 +87,7 @@ To make your package available to other developers,  follow the instructions on 
 
 ## Related topics
 
-* [Nuspec Reference](/ndocs/schema/nuspec)
-* [Symbol packages](/ndocs/create-packages/symbol-packages)
-* [Dependency Versions](/ndocs/create-packages/dependency-versions)
-* [Supporting Multiple .NET Framework Versions](/ndocs/create-packages/supporting-multiple-target-frameworks)
-* [Include MSBuild props and targets in a package](/ndocs/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package)
-* [Creating Localized Packages](/ndocs/create-packages/creating-localized-packages)
+* [Package References in Project Files](/ndocs/consume-packages/package-reference-in-project-files). This topic covers how dependencies are indicated in a `.csproj` file.
+* [NuGet pack and restore as MSBuild targets](/ndocs/schema/msbuild-targets)
 * [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 * [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)

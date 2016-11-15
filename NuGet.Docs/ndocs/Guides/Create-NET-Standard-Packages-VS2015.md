@@ -1,5 +1,7 @@
 # Create .NET Standard Packages with Visual Studio 2015
 
+*Applies to NuGet 3.x. See [Create .NET Standard Packages with Visual Studio 2017](/ndocs/guides/create-net-standard-packages-vs2017) for working with NuGet 4.x+.*
+
 The [.NET Standard Library]((https://docs.microsoft.com/en-us/dotnet/articles/standard/library)) is a formal specification of .NET APIs intended to be available on all .NET runtimes, thus establishing greater uniformity in the .NET ecosystem. The .NET Standard Library defines a uniform set of BCL (Base Class Library) APIs for all .NET platforms to implement, independent of workload. It enables developers to produce PCLs that are usable across all .NET runtimes, and reduces if not eliminates platform-specific conditional compilation directives in shared code.
 
 This guide will walk you through creating a nuget package targeting .NET Standard Library 1.4 with Visual Studio 2015 and NuGet 3.x. This will work across .NET Framework 4.6.1, Universal Windows Platform 10, .NET Core, and Mono/Xamarin. For details, see the [.NET Standard mapping table](#table) later in this topic.
