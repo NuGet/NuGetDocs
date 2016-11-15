@@ -5,6 +5,7 @@
     This topic is intended to be a reference for the process of creating a package. For a focused walkthrough example, refer to the <a href="/ndocs/quickstart/create-and-publish-a-package">Create and Publish a Package Quickstart</a>.
 
     Additionally, this topic applies to all project types other than .NET Core projects using Visual Studio 2017 and NuGet 4.0+. In these cases,
+    NuGet uses information from a .csproj file directly. These details are explained in the guide, <a href="/ndocs/guides/create-net-standard-packages-vs2017">Create .NET Standard Packages with Visual Studio 2017</a> and <a href="/ndocs/schema/msbuild-targets">NuGet pack and restore as MSBuild targets</a>.
 </div>
 
 No matter what your package does or what code it contains, NuGet is how you package that functionality into a component that can be shared with and used by any number of other developers.

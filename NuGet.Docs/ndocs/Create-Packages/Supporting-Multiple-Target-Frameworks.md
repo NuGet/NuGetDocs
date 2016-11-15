@@ -1,5 +1,6 @@
 # Supporting Multiple .NET Framework Versions
 
+*For .NET Core projects using NuGet 4.0+, see [NuGet pack and restore as MSBuild targets](/ndocs/schema/msbuild-targets) for details on cross-targeting.*
 
 Many libraries target a specific version of the .NET Framework. For example, you might have one version of your library that's specific to UWP, and another version that takes advantage of features in .NET Framework 4.6.
 
