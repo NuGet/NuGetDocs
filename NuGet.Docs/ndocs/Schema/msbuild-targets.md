@@ -345,11 +345,11 @@ Restore creates the following files in the build `obj` folder:
             <th>Previously project.lock.json</th>
         </tr>
         <tr>
-            <th>{projectName}.projectFIleExtension.nuget.g.props</th>
+            <th>{projectName}.projectFileExtension.nuget.g.props</th>
             <th>References to msbuild targets contained in packages</th>
         </tr>
         <tr>
-            <th>{projectName}.projectFIleExtension.nuget.g.targets</th>
+            <th>{projectName}.projectFileExtension.nuget.g.targets</th>
             <th>References to msbuild props contained in packages</th>
         </tr>
     </tbody>
