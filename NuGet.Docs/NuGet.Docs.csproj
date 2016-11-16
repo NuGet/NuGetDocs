@@ -309,7 +309,6 @@
     <Content Include="ndocs\Create-Packages\Symbol-Packages.md" />
     <Content Include="ndocs\Create-Packages\_metadata" />
     <Content Include="ndocs\Guides\Create-Cross-Platform-Packages.md" />
-    <Content Include="ndocs\Guides\Create-NET-Standard-Packages.md" />
     <Content Include="ndocs\Guides\Create-UWP-Packages.md" />
     <Content Include="ndocs\Guides\Install-NuGet.md" />
     <Content Include="ndocs\Guides\_metadata" />
@@ -403,6 +402,11 @@
     <Content Include="ndocs\Create-Packages\Analyzers-Conventions.cshtml" />
     <Content Include="ndocs\Hosting-Packages\Hosting-Packages-Overview.cshtml" />
     <Content Include="ndocs\Create-Packages\Overview-and-Workflow.md" />
+    <Content Include="ndocs\Release-Notes\NuGet-4.0-RC.md" />
+    <Content Include="ndocs\Guides\Create-NET-Standard-Packages-VS2015.md" />
+    <Content Include="ndocs\Guides\Create-NET-Standard-Packages-VS2017.md" />
+    <Content Include="ndocs\Guides\Create-NET-Standard-Packages.cshtml" />
+    <Content Include="ndocs\Consume-Packages\Restore-Team-Build\Team-Build.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
@@ -470,6 +474,8 @@
     <Content Include="ndocs\Tools\Package-Explorer.cshtml" />
     <Content Include="ndocs\Schema\project.json.lock.cshtml" />
     <Content Include="ndocs\Visual-Studio-Extensibility\_metadata" />
+    <Content Include="ndocs\Tools\dotnet-Commands.md" />
+    <Content Include="ndocs\Schema\csproj-pack-target.md" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

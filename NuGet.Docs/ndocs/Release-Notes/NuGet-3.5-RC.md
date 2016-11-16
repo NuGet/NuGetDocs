@@ -1,10 +1,12 @@
-#3.5 RC Release Notes
+# 3.5 RC Release Notes
+
+[NuGet 3.5 Beta 2 Release Notes](nuget-3.5-Beta2) | [NuGet 3.5 RTM Release Notes](nuget-3.5-RTM)
 
 3.5 release is focused on improving quality and performance of NuGet clients. In addition, we have shipped a few features like support for [Fallback folders](https://github.com/NuGet/Home/issues/2899), [PackageType](https://github.com/NuGet/Home/issues/2476) support in nuspec and more.
 
 [Issues List](https://github.com/NuGet/Home/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%223.5 RC)
 
-**Bugs:**
+## Bug Fixes
 
 * Install/restore of a package fails with "Package contains multiple nuspec files." - [#3231](https://github.com/NuGet/Home/issues/3231)
 
@@ -62,7 +64,7 @@
 
 * "Upgrade vailable" filter shows upgrades that violate the version constraint - [#1094](https://github.com/NuGet/Home/issues/1094)
 
-**Performance Improvements:**
+## Performance Improvements
 
 * Performance: Improve ContentModel target framework parsing - [#3162](https://github.com/NuGet/Home/issues/3162)
 
@@ -72,7 +74,7 @@
 
 * Solve ReSharper performance issues in NuGet Update - [#3044](https://github.com/NuGet/Home/issues/3044): On a sample project, time taken to install packages reduced from 140s to 68s.
 
-**DCRs:**
+## DCRs
 
 * NuGet needs to let users know that upgrading/installing in a dotnet tfm based PCL could cause issues - [#3138](https://github.com/NuGet/Home/issues/3138)
 
@@ -88,7 +90,7 @@
 
 * Symbol packages should not ever be used in install or update #2807
 
-**Features:**
+## Features
 
 * Support for fallback package folders - [#2899](https://github.com/NuGet/Home/issues/2899)
 

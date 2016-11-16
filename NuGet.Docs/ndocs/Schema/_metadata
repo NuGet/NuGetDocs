@@ -1,5 +1,6 @@
 nuspec
 project.json
+msbuild-targets
 nuget.config-file
 Target-Frameworks
 Analyzers-Conventions
