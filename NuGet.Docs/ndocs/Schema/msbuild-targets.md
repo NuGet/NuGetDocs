@@ -213,7 +213,7 @@ There are two MSBuild  properties that you can use in your project file or comma
 
 ### Package references
 
-See the [Package References specification](https://github.com/NuGet/Home/wiki/PackageReference-Specification).
+See [Package References in Project Files](/ndocs/consume-packages/package-references-in-project-files).
 
 ### Including content in package
 
