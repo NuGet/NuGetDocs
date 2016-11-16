@@ -290,7 +290,7 @@ As part of the move to MSBuild, package restore becomes an MSBuild target; `nuge
 
 ### Restore properties
 
-Additional restore settings may come from MSBuild properties.
+Additional restore settings may come from MSBuild properties; values are set from the command line.
 
 <table>
     <thead>
@@ -324,26 +324,9 @@ Additional restore settings may come from MSBuild properties.
             <th>RestoreIgnoreFailedSource</th>
             <th>If true, ignores failing or missing package sources</th>
         </tr>
-        <tr>
-            <th>RestoreTaskAssemblyFile</th>
-            <th>Path to NuGet.Build.Tasks.dll</th>
-        </tr>
-        <tr>
-            <th>RestoreGraphProjectInput</th>
-            <th>Semicolon-delimited list of absolute paths to projects to restore</th>
-        </tr>
-        <tr>
-            <th>RestoreOutputPath</th>
-            <th>Output directory (defaults to the obj folder)</th>
-        </tr>
     </tbody>
 </table>
 
-#### Example
-
-    <PropertyGroup>
-        <RestoreIgnoreFailedSource>true</RestoreIgnoreFailedSource>
-    <PropertyGroup>
 
 ### Restore outputs
 
@@ -362,23 +345,15 @@ Restore creates the following files in the build `obj` folder:
             <th>Previously project.lock.json</th>
         </tr>
         <tr>
-            <th>project.generated.targets</th>
+            <th>{projectName}.projectFIleExtension.nuget.g.props</th>
             <th>References to msbuild targets contained in packages</th>
         </tr>
         <tr>
-            <th>project.generated.props</th>
+            <th>{projectName}.projectFIleExtension.nuget.g.targets</th>
             <th>References to msbuild props contained in packages</th>
         </tr>
     </tbody>
 </table>
-
-### Multiple asset files per project
-
-`project.assets.json` are be placed in the intermediate folder for a specific target framework. Instead of containing all combinations of frameworks and RIDs it will contain a single framework.
-
-The restore task will read target frameworks from the project file and then restore for all frameworks.
-
-RIDs will be passed into msbuild, these will then flow through to NuGet restore and will create additional runtime graphs in the assets file.
 
 ## PackageTargetFallback
 
