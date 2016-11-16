@@ -475,7 +475,7 @@
     <Content Include="ndocs\Schema\project.json.lock.cshtml" />
     <Content Include="ndocs\Visual-Studio-Extensibility\_metadata" />
     <Content Include="ndocs\Tools\dotnet-Commands.md" />
-    <Content Include="ndocs\Schema\csproj-pack-target.md" />
+    <Content Include="ndocs\Schema\msbuild-targets.md" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
