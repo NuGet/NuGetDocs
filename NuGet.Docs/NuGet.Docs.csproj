@@ -275,7 +275,7 @@
     <Content Include="images\Create\Prerelease_01-LatestStable.png" />
     <Content Include="images\Create\Prerelease_02-CheckPrerelease.png" />
     <Content Include="ndocs\add-redirect.md" />
-    <Content Include="ndocs\API\Credential-Providers.md" />
+    <Content Include="ndocs\API\NuGet.exe-Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
     <Content Include="ndocs\API\_metadata" />
     <Content Include="ndocs\Consume-Packages\Configuring-NuGet-Behavior.md" />
@@ -383,6 +383,7 @@
     <Content Include="ndocs\Create-Packages\Config-File-Transformations.cshtml" />
     <Content Include="ndocs\Create-Packages\Source-File-Transformations.cshtml" />
     <Content Include="ndocs\Create-Packages\SemVer-Support.cshtml" />
+    <Content Include="ndocs\API\NuGet-Credential-Providers-for-Visual-Studio.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
