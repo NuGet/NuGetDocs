@@ -590,6 +590,9 @@
     <Content Include="images\BuildForNetStandard\02-ChangeTarget.png" />
     <Content Include="images\BuildForNetStandard\03-PackageExplorer.png" />
     <Content Include="images\BuildForNetStandard\05.PNG" />
+    <Content Include="images\BuildForNetStandard\NuGet4-01-Workload.png" />
+    <Content Include="images\BuildForNetStandard\NuGet4-02-NewProject.png" />
+    <Content Include="images\BuildForNetStandard\NuGet4-03-PackageExplorer.png" />
     <Content Include="images\BuildForUWP\01.PNG" />
     <Content Include="images\BuildForUWP\02.PNG" />
     <Content Include="images\BuildForUWP\03.PNG" />

@@ -24,7 +24,7 @@ The require workload appears as follows in the Visual Studio installer:
 
 1. In Visual Studio, **File > New > Project**, expand the **Visual C# > .NET Core** node, select **Class Library (Net Standard)**, change the name to AppLogger, and click OK.
 
-    ![Create new class library project](/images/BuildForNetStandard/NuGet4-01-NewProject.png)
+    ![Create new class library project](/images/BuildForNetStandard/NuGet4-02-NewProject.png)
 
 1. Change the build configuration to **Release**.
 1. Right-click the `AppLogger (Portable)` in Solution Explorer, select **Properties**, select the **Build** tab, check the box for **XML documentation file**, and set the filename to just `AppLogger.xml`.
