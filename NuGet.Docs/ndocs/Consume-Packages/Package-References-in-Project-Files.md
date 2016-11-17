@@ -2,7 +2,7 @@
 
 Package references, using the `PackageReference` node, allow you to manage NuGet dependencies directly in .NET Core project files, without needing a separate `packages.config` or `project.json` file. This approach also allows you to use MSBuild conditions to choose package references per target framework, configuration, platform, or other groupings. It also allows for fine-grained control over dependencies and content flow. In terms of behavior and dependency resolution, it is the same as using `project.json`
 
-<div class="block-callout-info>
+<div class="block-callout-info">
     <strong>Note</strong><br>
     Package references are currently supported for only .NET Core projects in Visual Studio 2017.
 </div>
@@ -26,7 +26,6 @@ or, alternately:
         <PackageReference Include="Contoso.Utility.UsefulStuff" Version="3.6.0" />
         <!-- ... -->
     </ItemGroup>
-
 
 ## Controlling dependency version
 
@@ -77,9 +76,9 @@ The following metadata tags control dependency assets:
 <table>
     <thead>
         <tr>
-            <td>Tag</td>
-            <td>Description</td>
-            <td>Default value</td>
+            <th>Tag</th>
+            <th>Description</th>
+            <th>Default value</th>
         </tr>
     </thead>
     <tbody>
@@ -107,8 +106,8 @@ Allowable values for these tags are as follows, with multiple values separated b
 <table>
     <thead>
         <tr>
-            <td>Value</td>
-            <td>Description</td>
+            <th>Value</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -172,15 +171,13 @@ For example, say you're targeting `netstandard1.4` as well as `net452` but have 
 
     <ItemGroup>
         <!-- ... -->
-
-        <PackageReference Include="Newtonsoft.json" Condition="'$(TargetFramework)' == 'net452'>
+        <PackageReference Include="Newtonsoft.json" Condition="'$(TargetFramework)' == 'net452'">
             <Version>9.0.1</Version>
         </PackageReference>
-
         <!-- ... -->
     </ItemGroup>
 
-A package build using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:
+A package built using this project will show that Newtonsoft.json is included as a dependency only for a `net452` target:
 
 ![The result of applying a Condition on PackageReference](/images/Consume/PackageReference-Condition.png)
 

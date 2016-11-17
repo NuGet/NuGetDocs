@@ -46,22 +46,21 @@ The require workload appears as follows in the Visual Studio installer:
 
 ## Edit metadata in the .csproj file
 
-With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec'. A full description of that metadata is found in [NuGet pack and restore as MSBuild targets](/ndocs/schema/msbuild-targets).
+With NuGet 4.0 and .NET Core projects, package metadata is contained directly in the `.csproj` file instead of external files such as a `.nuspec`. A full description of that metadata is found in [NuGet pack and restore as MSBuild targets](/ndocs/schema/msbuild-targets#pack-target).
 
 1. Right-click the project in Solution Explorer and select **Edit AppLogger.csproj**.
-1. Locate the `PropertyGroup` that contains a single `TargetFramework` element and motify it as follows. Note that `TargetFramework` becomes `TargetFrameworks` (plural):
 
-    <PropertyGroup>
-      <TargetFrameworks>netstandard1.4</TargetFrameworks>
-        <PackageId>AppLogger.YOUR_NAME</PackageId>
-        <PackageVersion>1.0.0</PackageVersion>
-        <Authors>YOUR_NAME</Authors>
-        <Description>Awesome application logging utility</Description>
-        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <PackageReleaseNotes>First release</PackageReleaseNotes>
-        <Copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</Copyright>
-        <PackageTags>logger logging logs</PackageTags>
-    </PropertyGroup>
+        <PropertyGroup>
+            <TargetFramework>netstandard1.4</TargetFramework>
+            <PackageId>AppLogger.YOUR_NAME</PackageId>
+            <PackageVersion>1.0.0</PackageVersion>
+            <Authors>YOUR_NAME</Authors>
+            <Description>Awesome application logging utility</Description>
+            <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+            <PackageReleaseNotes>First release</PackageReleaseNotes>
+            <Copyright>Copyright 2016 (c) Contoso Corporation. All rights reserved.</Copyright>
+            <PackageTags>logger logging logs</PackageTags>
+        </PropertyGroup>
 
 1. Right-click the solution and select **Build Solution** to again generate all the files for the package, this time with the correct metadata.
 
@@ -87,7 +86,7 @@ To make your package available to other developers,  follow the instructions on 
 
 ## Related topics
 
-* [Package References in Project Files](/ndocs/consume-packages/package-reference-in-project-files). This topic covers how dependencies are indicated in a `.csproj` file.
+* [Package References in Project Files](/ndocs/consume-packages/package-references-in-project-files). This topic covers how dependencies are indicated in a `.csproj` file.
 * [NuGet pack and restore as MSBuild targets](/ndocs/schema/msbuild-targets)
 * [.NET Standard Library documentation](https://docs.microsoft.com/en-us/dotnet/articles/standard/library)
 * [Porting to .NET Core from .NET Framework](https://docs.microsoft.com/en-us/dotnet/articles/core/porting/index)

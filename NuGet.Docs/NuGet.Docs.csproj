@@ -407,6 +407,7 @@
     <Content Include="ndocs\Guides\Create-NET-Standard-Packages-VS2017.md" />
     <Content Include="ndocs\Guides\Create-NET-Standard-Packages.cshtml" />
     <Content Include="ndocs\Consume-Packages\Restore-Team-Build\Team-Build.md" />
+    <Content Include="ndocs\Consume-Packages\Package-References-in-Project-Files.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
