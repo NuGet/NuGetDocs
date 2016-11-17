@@ -266,6 +266,7 @@
     <Content Include="images\Consume\Finding-05-OperationChart.png" />
     <Content Include="images\Consume\Overview-01-GeneralFlow.png" />
     <Content Include="images\Consume\Overview-02-RestoreFlow.png" />
+    <Content Include="images\Consume\PackageReference-Condition.png" />
     <Content Include="images\Consume\Restore-01-AutoRestoreOptions.png" />
     <Content Include="images\Consume\Restore-02-VSTSBuild.png" />
     <Content Include="images\Consume\Symbols_01-AddingSource.png" />
