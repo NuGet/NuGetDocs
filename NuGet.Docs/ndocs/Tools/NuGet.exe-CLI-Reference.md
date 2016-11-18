@@ -509,7 +509,7 @@ Mirrors a package and its dependencies from the specified source repositories to
 
 <div class="block-callout-info">
     <strong>Note</strong><br>
-    To enable this command for NuGet versions before 3.2, go to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe..
+    To enable this command for NuGet versions before 3.2, go to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe.
 </div>
 
 ### Usage
@@ -983,6 +983,11 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
         <td>Specifies the amount of details displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed (2.5+)</em>.</td>
     </tr>
 </table>
+
+<div class="block-callout-info">
+    <strong>Note</strong><br>
+    Make sure to add the sources' password under the same user context as the NuGet.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same windows user as the build server task is ran.
+</div>
 
 ### Examples
 
