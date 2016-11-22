@@ -1,6 +1,6 @@
 # Dependency Versions
 
-*For .NET Core projects using NuGet 4.0+, see [Package References in Project Files](/ndocs/consume-packages/project-references-in-project-files) for declaring dependencies.*
+*For .NET Core projects using NuGet 4.0+, see [Package References in Project Files](/ndocs/consume-packages/package-references-in-project-files) for declaring dependencies.*
 
 When you [create a NuGet package](creating-a-package), you can specify dependencies for your package in the **&lt;dependencies&gt;** node of the `.nuspec` file, where each dependency is listed with a **&lt;dependency&gt;** tag:
 
