@@ -19,9 +19,12 @@ NuGet Credential Providers for Visual Studio must be installed as a regular Visu
 
 ## Available NuGet Credential Providers for Visual Studio
 
-There is a single credential provider that is built into the Visual Studio NuGet extension to support Visual Studio Team Services.
+There is a credential provider built into the Visual Studio NuGet extension to support Visual Studio Team Services.
 
 The NuGet Visual Studio Extension uses an internal `VsCredentialProviderImporter` which also scans for plug-in credential providers. These plug-in credential providers must be discoverable as a MEF Export of type `IVsCredentialProvider`.
+
+Available plug-in credential providers include:
+* [MyGet Credential Provider for Visual Studio 2017](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## Creating a NuGet Credential Provider for Visual Studio
 
