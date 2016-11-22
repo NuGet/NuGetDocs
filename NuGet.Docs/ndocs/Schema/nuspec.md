@@ -430,7 +430,7 @@ Each &lt;file&gt; element specifies the following attributes:
 
 <table class="reference">
     <tr>
-        <th>Attriute</th>
+        <th>Attribute</th>
         <th>Description</th>
     </tr>
     <tr>
