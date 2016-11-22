@@ -1,4 +1,4 @@
-﻿# NuGet Credential Providers for Visual Studio
+# NuGet Credential Providers for Visual Studio
 
 The NuGet Visual Studio Extension 3.6+ supports Credential Providers, which enable NuGet to work with authenticated feeds.
 After you install a NuGet Credential Provider for Visual Studio, the NuGet Visual Studio extension will automatically acquire and refresh credentials for authenticated feeds as necessary.
@@ -24,6 +24,7 @@ There is a credential provider built into the Visual Studio NuGet extension to s
 The NuGet Visual Studio Extension uses an internal `VsCredentialProviderImporter` which also scans for plug-in credential providers. These plug-in credential providers must be discoverable as a MEF Export of type `IVsCredentialProvider`.
 
 Available plug-in credential providers include:
+
 * [MyGet Credential Provider for Visual Studio 2017](http://docs.myget.org/docs/reference/credential-provider-for-visual-studio)
 
 ## Creating a NuGet Credential Provider for Visual Studio
