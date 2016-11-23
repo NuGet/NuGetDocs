@@ -986,7 +986,7 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
 
 <div class="block-callout-info">
     <strong>Note</strong><br>
-    Make sure to add the sources' password under the same user context as the NuGet.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same windows user as the build server task is ran.
+    Make sure to add the sources' password under the same user context as the NuGet.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same windows user that the build server task will run under.
 </div>
 
 ### Examples
