@@ -266,6 +266,7 @@
     <Content Include="images\Consume\Finding-05-OperationChart.png" />
     <Content Include="images\Consume\Overview-01-GeneralFlow.png" />
     <Content Include="images\Consume\Overview-02-RestoreFlow.png" />
+    <Content Include="images\Consume\PackageReference-Condition.png" />
     <Content Include="images\Consume\Restore-01-AutoRestoreOptions.png" />
     <Content Include="images\Consume\Restore-02-VSTSBuild.png" />
     <Content Include="images\Consume\Symbols_01-AddingSource.png" />
@@ -289,7 +290,7 @@
     <Content Include="images\Hosting\Hosting_03-NuGet.Server-Package-Folder.png" />
     <Content Include="images\Hosting\Hosting_04-NuGet.Server-FeedHomePage.png" />
     <Content Include="ndocs\add-redirect.md" />
-    <Content Include="ndocs\API\Credential-Providers.md" />
+    <Content Include="ndocs\API\NuGet.exe-Credential-Providers.md" />
     <Content Include="ndocs\API\NuGet-API-V3.md" />
     <Content Include="ndocs\API\_metadata" />
     <Content Include="ndocs\Consume-Packages\Configuring-NuGet-Behavior.md" />
@@ -407,6 +408,8 @@
     <Content Include="ndocs\Guides\Create-NET-Standard-Packages-VS2017.md" />
     <Content Include="ndocs\Guides\Create-NET-Standard-Packages.cshtml" />
     <Content Include="ndocs\Consume-Packages\Restore-Team-Build\Team-Build.md" />
+    <Content Include="ndocs\Consume-Packages\Package-References-in-Project-Files.md" />
+    <Content Include="ndocs\API\NuGet-Credential-Providers-for-Visual-Studio.md" />
     <None Include="ndocs\Release-Notes\Properties\PublishProfiles\nugetdocs-next.pubxml" />
     <Content Include="ndocs\Release-Notes\_metadata" />
     <Content Include="ndocs\Schema\nuget.config-file.md" />
@@ -475,7 +478,7 @@
     <Content Include="ndocs\Schema\project.json.lock.cshtml" />
     <Content Include="ndocs\Visual-Studio-Extensibility\_metadata" />
     <Content Include="ndocs\Tools\dotnet-Commands.md" />
-    <Content Include="ndocs\Schema\csproj-pack-target.md" />
+    <Content Include="ndocs\Schema\msbuild-targets.md" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -590,6 +593,9 @@
     <Content Include="images\BuildForNetStandard\02-ChangeTarget.png" />
     <Content Include="images\BuildForNetStandard\03-PackageExplorer.png" />
     <Content Include="images\BuildForNetStandard\05.PNG" />
+    <Content Include="images\BuildForNetStandard\NuGet4-01-Workload.png" />
+    <Content Include="images\BuildForNetStandard\NuGet4-02-NewProject.png" />
+    <Content Include="images\BuildForNetStandard\NuGet4-03-PackageExplorer.png" />
     <Content Include="images\BuildForUWP\01.PNG" />
     <Content Include="images\BuildForUWP\02.PNG" />
     <Content Include="images\BuildForUWP\03.PNG" />

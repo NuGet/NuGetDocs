@@ -213,7 +213,7 @@ There are two MSBuild  properties that you can use in your project file or comma
 
 ### Package references
 
-See the [Package References specification](https://github.com/NuGet/Home/wiki/PackageReference-Specification).
+See [Package References in Project Files](/ndocs/consume-packages/package-references-in-project-files).
 
 ### Including content in package
 
@@ -301,28 +301,28 @@ Additional restore settings may come from MSBuild properties; values are set fro
     </thead>
     <tbody>
         <tr>
-            <th>RestoreSources</th>
-            <th>List of package sources separated by semicolons</th>
+            <td>RestoreSources</td>
+            <td>List of package sources separated by semicolons</td>
         </tr>
         <tr>
-            <th>RestorePackagesPath</th>
-            <th>User packages directory path</th>
+            <td>RestorePackagesPath</td>
+            <td>User packages directory path</td>
         </tr>
         <tr>
-            <th>RestoreDisableParallel</th>
-            <th>Limit downloads to one at a time</th>
+            <td>RestoreDisableParallel</td>
+            <td>Limit downloads to one at a time</td>
         </tr>
         <tr>
-            <th>RestoreConfigFile</th>
-            <th>nuget.config file</th>
+            <td>RestoreConfigFile</td>
+            <td>nuget.config file</td>
         </tr>
         <tr>
-            <th>RestoreNoCache</th>
-            <th>If true, avoids using the web cache</th>
+            <td>RestoreNoCache</td>
+            <td>If true, avoids using the web cache</td>
         </tr>
         <tr>
-            <th>RestoreIgnoreFailedSource</th>
-            <th>If true, ignores failing or missing package sources</th>
+            <td>RestoreIgnoreFailedSource</td>
+            <td>If true, ignores failing or missing package sources</td>
         </tr>
     </tbody>
 </table>
@@ -341,16 +341,16 @@ Restore creates the following files in the build `obj` folder:
     </thead>
     <tbody>
         <tr>
-            <th>project.assets.json</th>
-            <th>Previously project.lock.json</th>
+            <td>project.assets.json</td>
+            <td>Previously project.lock.json</td>
         </tr>
         <tr>
-            <th>{projectName}.projectFileExtension.nuget.g.props</th>
-            <th>References to msbuild targets contained in packages</th>
+            <td>{projectName}.projectFileExtension.nuget.g.props</td>
+            <td>References to msbuild targets contained in packages</td>
         </tr>
         <tr>
-            <th>{projectName}.projectFileExtension.nuget.g.targets</th>
-            <th>References to msbuild props contained in packages</th>
+            <td>{projectName}.projectFileExtension.nuget.g.targets</td>
+            <td>References to msbuild props contained in packages</td>
         </tr>
     </tbody>
 </table>
