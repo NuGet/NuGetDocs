@@ -110,7 +110,7 @@ Controls package restore during builds.
     </tr>
     <tr>
         <td>automatic</td>
-        <td>A Boolean indicating whether NuGet shoudl check for missing packages during a build.</td>
+        <td>A Boolean indicating whether NuGet should check for missing packages during a build.</td>
     </tr>
 </table>
 
