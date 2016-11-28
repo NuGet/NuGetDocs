@@ -528,7 +528,7 @@ Content files are files that a package needs to include in a project, but are co
 - Scripts that need to be included with the build output of the project
 - Configuration files for the package that need to be included in the project but don't need any project-specific changes. 
 
-Content files are included in a package using the &lt;files&lt; element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+, which instead uses the &;lt;contentFiles&gt; element.
+Content files are included in a package using the &lt;files&lt; element, specifying the `content` folder in the `target` attribute. However, such files are ignored when the package is installed in a project using the `project.json` system in NuGet 3.3+, which instead uses the &lt;contentFiles&gt; element.
 
 For maximum compatibility with consuming projects, a package ideally specifies content files in both locations. 
 
