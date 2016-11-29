@@ -15,7 +15,7 @@ To check your NuGet version, simply run `nuget.exe` on the command line and look
 
 It's best to avoid mixing the automatic and MSBuild-integrated restore methods for a single project. We instead recommend [migrating to automatic restore](#migrating-to-automatic-restore).
 
-For additional details on package restore on build servers, see [Package restore with TFBuild](/ndocs/consume-packages/package-restore-with-tfbuild).
+For additional details on package restore on build servers, see [Package restore with TFBuild](/ndocs/Consume-Packages/Restore-Team-Build/Team-Build).
 
 <div class="block-callout-info">
     <strong>Note</strong><br>
