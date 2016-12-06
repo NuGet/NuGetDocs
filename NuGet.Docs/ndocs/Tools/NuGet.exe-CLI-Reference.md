@@ -110,13 +110,13 @@ When restoring or updating against the package source, hierarchical layout provi
 
 To expand all the files in the package to the destination package source, use the `-expand` switch. This typically results in additional subfolders appearing in the destination, such as `tools` and `lib`.
 
-### Usage
+#### Usage
 
     nuget add <packagePath> -source <sourcePath> [options]
 
 where &lt;packagePath&gt; is the pathname to the package to add, and &lt;sourcePath&gt; specifies the folder-based package source to which the package will be added. HTTP sources are not supported.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -137,7 +137,7 @@ where &lt;packagePath&gt; is the pathname to the package to add, and &lt;sourceP
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget add foo.nupkg -source c:\bar\
 
@@ -148,7 +148,7 @@ where &lt;packagePath&gt; is the pathname to the package to add, and &lt;sourceP
 
 Gets or sets NuGet config values. For additional usage, see [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior). For details on allowable key names, refer to the [NuGet config file reference](/ndocs/schema/nuget.config-file).
 
-### Usage
+#### Usage
 
     nuget config -set <name>=<value> [<name>=<value> ...] [options]
 
@@ -156,7 +156,7 @@ where &lt;name&gt; and &lt;value&gt; specify a key-value pair to be set in the c
 
 In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -178,7 +178,7 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget config -set repositoryPath=c:\packages -configfile c:\my.config
 
@@ -191,13 +191,13 @@ In NuGet 3.4+, &lt;value&gt; can be use environment variables.
 
 Deletes or unlists a package from a package source. For nuget.org, the action is to [unlist the package](/ndocs/policies/deleting-packages).
 
-### Usage
+#### Usage
 
     nuget delete <packageID> <packageVersion> [options]
 
 where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to delete or unlist. The exact behavior depends on the source. For local folders, for instance, the package is deleted; for nuget.org the package is unlisted.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -227,7 +227,7 @@ where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget delete MyPackage 1.0
 
@@ -238,7 +238,7 @@ where &lt;packageID&gt; and &lt;packageVersion&gt; identify the exact package to
 
 Displays general help information and help information about specific commands.
 
-### Usage
+#### Usage
 
     nuget help [command] [options]
     nuget ? [command] [options]
@@ -250,7 +250,7 @@ where [command] identifies a specific command for which to display help.
     With some commands, be mindful to specify <em>help</em> first, as with <em>nuget help install</em>, because there is a package named "help" on nuget.org. If you give the command <em>nuget install help</em>, you'll not get help on the install command but will instead install the help package.
 </div>
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -275,7 +275,7 @@ where [command] identifies a specific command for which to display help.
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget help
     nuget help push
@@ -293,13 +293,13 @@ Copies all the packages from a flat folder to a destination folder using a hiera
 As with `add`, the destination must be either a local folder or a UNC path; HTTP package repositories such as nuget.org or private servers are not supported.
 
 
-### Usage
+#### Usage
 
     nuget init <source> <destination> [options]
 
 where &lt;source&gt; is the folder containing packages and &lt;destination&gt; is the local folder or UNC pathname to which the packages will be copied.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -316,7 +316,7 @@ where &lt;source&gt; is the folder containing packages and &lt;destination&gt; i
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget init c:\foo c:\bar
     nuget init \\foo\packages \\bar\packages -expand
@@ -333,14 +333,14 @@ The `install` command does not modify a project file or `packages.config`; in th
 To add a dependency, either add a project through the Package Manager UI or Console in Visual Studio, or modify `packages.config` and then run either `install` or `restore`. For projects using `project.json`, you can modify that file and then run `restore`.
 
 
-### Usage
+#### Usage
 
     nuget install <packageID | configFilePath> [options]
 
 where &lt;packageID&gt; names the package to install (using the latest version), or &lt;configFilePath&gt; identifies the `packages.config` file that lists the packages to install. You can indicate a specific version with the `-version` option.
 
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -398,7 +398,7 @@ where &lt;packageID&gt; names the package to install (using the latest version),
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget install elmah
 
@@ -411,13 +411,13 @@ where &lt;packageID&gt; names the package to install (using the latest version),
 
 Displays a list of packages from a given source. If no sources are specified, all sources defined in the global configuration file, `%AppData%\NuGet\NuGet.config`, are used. If `NuGet.config` specifies no sources, then `list` uses the default feed (nuget.org).
 
-### Usage
+#### Usage
 
     nuget list [search terms] [options]
 
 where the optional search terms will filter the displayed list. Search terms are applied to the names of packages, tags, and package descriptions.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -455,7 +455,7 @@ where the optional search terms will filter the displayed list. Search terms are
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget list
 
@@ -467,14 +467,14 @@ where the optional search terms will filter the displayed list. Search terms are
 
 Clears or lists local NuGet resources such as the http-request cache, packages cache, and the machine-wide global packages folder. The `locals` command can also be used to display a list of those locations. For more information, see [Managing the NuGet Cache](/ndocs/consume-packages/managing-the-nuget-cache).
 
-### Usage
+#### Usage
 
     nuget locals <cache> [options]
 
 where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-packages`, and `temp` *(3.4+)*.
 
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -495,7 +495,7 @@ where &lt;cache&gt; is one of `all`, `http-cache`, `packages-cache`, `global-pac
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget locals all -list
     nuget locals http-cache -clear
@@ -512,7 +512,7 @@ Mirrors a package and its dependencies from the specified source repositories to
     To enable this command for NuGet versions before 3.2, go to <a href="https://nuget.codeplex.com/releases">https://nuget.codeplex.com/releases</a>, select the newest stable release, download NuGet.ServerExtensions.dll and Nuget-Signed.exe to your local disk and rename the Nuget-Signed.Exe to nuget.exe.
 </div>
 
-### Usage
+#### Usage
     nuget mirror <packageID | configFilePath> <listUrlTarget> <publishUrlTarget> [options]
 
 where &lt;packageID&gt; is the package to mirror, or &lt;configFilePath&gt; identifies the `packages.config` file that lists the packages to mirror.
@@ -521,7 +521,7 @@ The &lt;listUrlTarget&gt; specifies the source repository, and &lt;publishUrlTar
 
 If your target repository is on https://machine/repo that's running [NuGet.Server](/ndocs/hosting-packages/nuget.server), the list and push urls will be *https://machine/repo/nuget* and *https://machine/repo/api/v2/package*, respectively.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -558,7 +558,7 @@ If your target repository is on https://machine/repo that's running [NuGet.Serve
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget mirror packages.config  https://MyRepo/nuget https://MyRepo/api/v2/package -source https://nuget.org/api/v2 -apikey myApiKey -nocache
 
@@ -574,13 +574,13 @@ Creates a NuGet package based on the specified nuspec or project file. Note that
 
 With Mono, you also need to adjust non-local paths in the .nuspec file to Unix-style paths, as nuget.exe will not itself convert Windows pathnames.
 
-### Usage
+#### Usage
 
     nuget pack <nuspecPath | projectPath> [options]
 
 where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or project file, respectively.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -656,7 +656,7 @@ where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or projec
     </tr>
 </table>
 
-### Excluding development dependencies
+#### Excluding development dependencies
 
 Some NuGet packages are useful as development dependencies, which help you author your own library, but aren't necessarily needed as actual package dependencies.
 
@@ -674,7 +674,7 @@ For example, consider the following `packages.config` file in the source project
 
 For this project, the package created by `nuget pack` will have a dependency on `jQuery` and `microsoft-web-helpers` but not `netfx-Guard`.
 
-### Examples
+#### Examples
 
     nuget pack
 
@@ -698,13 +698,13 @@ Pushes a package to a package source and publishes it.
 
 NuGet's default configuration is obtained by loading `%AppData%\NuGet\NuGet.config`, then loading any `nuget.config` or `.nuget\nuget.config` files starting from root of drive and ending in current directory (see [Configuring NuGet Behavior](/ndocs/consume-packages/configuring-nuget-behavior))
 
-### Usage
+#### Usage
 
     nuget push <packagePath> [options]
 
 where &lt;packagePath&gt; identifies the package to push to the server.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -738,7 +738,7 @@ where &lt;packagePath&gt; identifies the package to push to the server.
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget push foo.nupkg
 
@@ -766,13 +766,13 @@ NuGet 2.7+: Downloads and installs any packages missing from the `packages` fold
 
 NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file.
 
-### Usage
+#### Usage
 
     nuget restore <projectPath> [options]
 
 where &lt;projectPath&gt; specifies the location of a solution, a `packages.config` file, or a `project.json` file. See [Remarks](#remarks) below for behavioral details.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -823,7 +823,7 @@ where &lt;projectPath&gt; specifies the location of a solution, a `packages.conf
     </tr>
 </table>
 
-### Remarks
+#### Remarks
 
 The restore command is executed in the following steps:
 
@@ -881,7 +881,7 @@ The restore command is executed in the following steps:
     * Restores solution level packages listed in `$(SolutionDir)\.nuget\packages.config` into the `packages` folder.
     * Restore packages listed in `$(ProjectDir)\packages.config` into the `packages` folder. For each package specified, restore the package in parallel unless `-disableparallelprocessing` is specified.
 
-### Examples
+#### Examples
 
     # Restore packages for a solution file
     nuget restore a.sln
@@ -900,13 +900,13 @@ The restore command is executed in the following steps:
 
 Saves an API key for a given server URL into `NuGet.Config` so that it doesn't need to be entered for subsequent commands.
 
-### Usage
+#### Usage
 
     nuget setapikey <key> -source <url> [options]
 
 where &lt;source&gt; identifies the server and &lt;key&gt; is the key or password to save. If &lt;source&gt; is omitted, nuget.org is assumed.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -928,7 +928,7 @@ where &lt;source&gt; identifies the server and &lt;key&gt; is the key or passwor
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget setapikey 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
 
@@ -939,13 +939,13 @@ where &lt;source&gt; identifies the server and &lt;key&gt; is the key or passwor
 
 Manages the list of sources located in `%AppData%\NuGet\NuGet.config` or the specified configiration file.
 
-### Usage
+#### Usage
 
     nuget sources <operation> -Name <name> -Source <source>
 
 where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Update*, &lt;name&gt; is the name of the source, and &lt;source&gt; is the source's URL.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -985,7 +985,7 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
     Make sure to add the sources' password under the same user context as the NuGet.exe is later used to access the package source. The password will be stored encrypted in the config file and can only be decrypted in the same user context as it was encrypted. So for example when you use a build server to restore NuGet packages the password must be encrypted with the same windows user that the build server task will run under.
 </div>
 
-### Examples
+#### Examples
 
     nuget sources Add "MyServer" \\myserver\packages
 
@@ -998,13 +998,13 @@ where &lt;operation&gt; is one of *List, Add, Remove, Enable, Disable,* or *Upda
 
 Generates a `.nuspec` file for a new package. If run in the same folder as a project file (`.csproj`, `.vbproj`, `.fsproj`), `spec` creates a tokenized `.nuspec` file. For additional information, see [Creating a Package](/ndocs/create-packages/creating-a-package).
 
-### Usage
+#### Usage
 
     nuget spec [<packageID>] [options]
 
 where &lt;packageID&gt; is an optional package identifier to save in the `.nuspec` file.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -1034,7 +1034,7 @@ where &lt;packageID&gt; is an optional package identifier to save in the `.nuspe
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget spec
 
@@ -1053,13 +1053,13 @@ The `update` command will also update assembly references in the project file, p
 
 This command can also be used to update nuget.exe itself using the *-self* flag.
 
-### Usage
+#### Usage
 
     nuget update <configPath> [options]
 
 where &lt;configPath&gt; identifies either a `packages.config` or solution file that lists the project's dependencies.
 
-### Options
+#### Options
 
 <table>
     <tr>
@@ -1121,7 +1121,7 @@ where &lt;configPath&gt; identifies either a `packages.config` or solution file 
     </tr>
 </table>
 
-### Examples
+#### Examples
 
     nuget update
 
