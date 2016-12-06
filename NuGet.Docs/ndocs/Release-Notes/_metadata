@@ -3,8 +3,6 @@ NuGet-4.0-RC
 NuGet-3.5-RTM
 NuGet-3.5-RC
 NuGet-3.5-Beta2
-NuGet-2.12
-NuGet-2.12-RC
 NuGet-3.4.4
 NuGet-3.5-Beta
 NuGet-3.4.3
@@ -23,6 +21,8 @@ NuGet-3.0-RC2
 NuGet-3.0-RC
 NuGet-3.0-Beta
 NuGet-3.0-Preview
+NuGet-2.12
+NuGet-2.12-RC
 NuGet-2.9-RC
 NuGet-2.8.7
 NuGet-2.8.6

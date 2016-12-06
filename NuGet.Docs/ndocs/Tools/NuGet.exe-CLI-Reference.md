@@ -619,10 +619,6 @@ where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or projec
         <td>Specifies the version of MSBuild to be used with this command. Supported values are 4, 12, 14. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</td>
     </tr>
     <tr>
-        <td>noninteractive</td>
-        <td>Suppresses prompts for user input or confirmations.</td>
-    </tr>
-    <tr>
         <td>nodefaultexcludes</td>
         <td>Prevents default exclusion of NuGet package files and files and folders starting with a dot, such as <em>.svn</em>.</td>
     </tr>
@@ -639,16 +635,16 @@ where &lt;nuspecPath&gt; and &lt;projectPath&gt; specify the `.nuspec` or projec
         <td>Specifies a list of token=value pairs, separated by semicolons, where each occurrence of $token$ in the nuspec file will be replaced with the given value. Values can be strings in quotation marks.</td>
     </tr>
     <tr>
+        <td>suffix</td>
+        <td>Appends a suffix to the internally generated version number, typically used for appending build or other pre-release identifiers. For example, using <code>-suffix nightly</code> will create a package with a version number like <code>1.2.3.45-nightly</code>.</td>
+    </tr>
+    <tr>
         <td>symbols</td>
         <td>Specifies that the package contains sources and symbols. When used with a with a nuspec file, this creates a regular NuGet package file and the corresponding symbols package.</td>
     </tr>
     <tr>
         <td>tool</td>
         <td>Specifies that the output files of the project should be placed in the tool folder.</td>
-    </tr>
-    <tr>
-        <td>verbose</td>
-        <td>Shows verbose output for package building.</td>
     </tr>
     <tr>
         <td>verbosity</td>
