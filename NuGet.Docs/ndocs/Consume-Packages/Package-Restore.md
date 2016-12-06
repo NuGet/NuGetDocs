@@ -206,4 +206,4 @@ For more details see then [Walkthrough of Package Restore with Team Foundation B
 
 ### Command-line restore wrapped in MSBuild
 
-With existing build servers and MSBuild-based projects, you can also choose to to wrap the command line in a regular MSBuild project. This minimizes changes on the server and also provides built-in support for aggregated logging and error reporting. This differs from the usual MSBuild-integrated restore as it runs before any other build process happens, instead of as part of those other processes.
+With existing build servers and MSBuild-based projects, you can also choose to wrap the command line in a regular MSBuild project. This minimizes changes on the server and also provides built-in support for aggregated logging and error reporting. This differs from the usual MSBuild-integrated restore as it runs before any other build process happens, instead of as part of those other processes.
