@@ -1,4 +1,4 @@
-# PowerShell Reference
+﻿# PowerShell Reference
 
 The Package Manager Console provides a PowerShell interface within Visual Studio to interact with NuGet. This topic is the reference for those commands; for a guide to using the console, see the [Package Manager Console](/ndocs/tools/package-manager-console) topic.  
 
@@ -368,7 +368,7 @@ Launches the default browser with the project, license, or report abuse URL for 
     </tr>
     <tr>
         <td>Source</td>
-        <td>Specifies the packiage source, defaulting to the default source.</td>        
+        <td>Specifies the package source, defaulting to the default source.</td>        
     </tr>
     <tr>
         <td>License</td>
@@ -425,7 +425,7 @@ Get the version of installed package from specified project and syncs the versio
     </tr>
     <tr>
         <td>Source</td>
-        <td>Specifies the URL or path of a package source, defualting to the current package source.</td>        
+        <td>Specifies the URL or path of a package source, defaulting to the current package source.</td>        
     </tr>
     <tr>
         <td>IncludePrerelease</td>
