@@ -111,7 +111,7 @@ Set the [`repositoryPath`](/ndocs/schema/nuget.config#config-section) setting in
 
 **How do I avoid checking in packages folder to source control?**
 
-Set the [`disableSourceControlIntegration`](/ndocs/schema/nuget.config#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automaticatlly.
+Set the [`disableSourceControlIntegration`](/ndocs/schema/nuget.config#solution-section) in `nuget.config` to `true`. This key works at the solution level and hence need to be added to the `$(Solutiondir)\.nuget\nuget.config` file. Enabling package restore from Visual Studio creates this file automatically.
 
 **How do I turn off package restore?**
 
@@ -165,7 +165,7 @@ Dependencies are mostly static and never change. When fixing a bug in code, the 
 
 **Why can't I download/upload packages to nuget.org?**
 
-First make sure you're using the latest versions of NuGet. If that continues to faile, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
+First make sure you're using the latest versions of NuGet. If that continues to fail, [contact support](https://www.nuget.org/policies/Contact) and provide additional connection troubleshooting information including:
 
 - The version of NuGet you're using
 - The package sources you're using
