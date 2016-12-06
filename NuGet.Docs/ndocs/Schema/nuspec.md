@@ -154,7 +154,7 @@ These elements must appear within a &lt;metadata&gt; element.
         </tr>
         <tr>
             <td><strong>minClientVersion</strong></td>
-            <td><em>(2.5+)</em>  Specifies the minimum version of the NuGet client that can install this package, enfoced by nuget.exe and the Visual Studio Package Manager.</td>
+            <td><em>(2.5+)</em>  Specifies the minimum version of the NuGet client that can install this package, enforced by nuget.exe and the Visual Studio Package Manager.</td>
         </tr>
 </table>
 
@@ -163,7 +163,7 @@ These elements must appear within a &lt;metadata&gt; element.
 <table>
         <tr>
             <td><strong>packageTypes</strong></td>
-            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>verion</em>. See <a href="../create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
+            <td><em>(3.3+)</em> A collection of zero or more &lt;packageType&gt; elements specifying the type of the package if other than a traditional dependency package. Each packageType has attributes of <em>name</em> and <em>version</em>. See <a href="../create-packages/creating-a-package#setting-a-package-type">Setting a package type</a>.
             </td>
         </tr>
         <tr>
@@ -190,7 +190,7 @@ These elements must appear within a &lt;metadata&gt; element.
 
 ### Files element
 
-The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify whcih assembly and content files to include in the package. See <a href="#including-assembly-files">Including assembly files</a> and <a href="#including-content-files">Including content files</a> later in this topic for details.</td>
+The &lt;package&gt; node may also contain a &lt;files&gt; and/or &lt;contentFiles&gt; nodes as siblings to &lt;metadata&gt; to specify which assembly and content files to include in the package. See <a href="#including-assembly-files">Including assembly files</a> and <a href="#including-content-files">Including content files</a> later in this topic for details.</td>
 
 
 ## Replacement tokens
@@ -644,7 +644,7 @@ In this case, because the file extensions of the source and target match, NuGet 
 
 ### Using the contentFiles element for content files
 
-*Verion 3.3+ with project.json only*
+*Version 3.3+ with project.json only*
 
 By default, a package places content in a `contentFiles` folder (see below) and `nuget pack` will include all files in that folder using default attributes. In this case it's not necessary to include a `contentFiles` node in the `.nuspec` at all. 
 
@@ -705,7 +705,7 @@ For example:
     Language- and framework-agnostic:
         /contentFiles/any/any/config.xml
 
-    net45 content for all lanugages
+    net45 content for all languages
         /contentFiles/any/net45/config.xml
 
     C#-specific content for net45 and up

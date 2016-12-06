@@ -1,10 +1,10 @@
-# NuGet pack and restore as MSBuild targets
+﻿# NuGet pack and restore as MSBuild targets
 
 *NuGet 4.0+*
 
 NuGet 4.0+ can work directly with the information in a `.csproj` file without requring a separate `packages.config` or `project.json` file. All the metadata that was previously stored in those configuration files can be instead stores in the `.csproj` file directly, as described here.
 
-NuGet is also a first-class MSBuild citizen with with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target.
+NuGet is also a first-class MSBuild citizen with the `pack` and `restore` targets as described below. These targets allow you to work with NuGet as you would with any other MSBuild task or target.
 
 In this topic:
 
