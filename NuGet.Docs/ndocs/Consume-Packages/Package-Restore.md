@@ -57,7 +57,7 @@ Package restore is primarily enabled through **Tools > Options > [NuGet] Package
           </packageRestore>
         </configuration>
 
-For reference, see the [NuGet config file overview](/ndocs/consume-packages/nuget-config-file-overview).
+For reference, see the [NuGet config file - packageRestore section](/ndocs/schema/nuget.config-file#packagerestore-section).
 
 MSBuild-integrated restore with NuGet 2.6 and earlier is typically enabled by right-clicking a solution in Visual Studio and selecting **Enable NuGet Package Restore**. This sets up the necessary files and folders for this option to work, as explained under [MSBuild-integrated restore in Visual Studio](#msbuild-integrated-restore).
 
