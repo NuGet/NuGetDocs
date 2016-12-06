@@ -1,4 +1,4 @@
-#Create and publish a package
+﻿#Create and publish a package
 
 It's a simple process to create a NuGet package from a .NET Class Library and publish it to nuget.org. The following steps walk you through the process using the NuGet command-line interface (CLI) and Visual Studio:
 
@@ -93,7 +93,7 @@ Creating a NuGet package from a project is simple: just run the `pack` command:
 
 This will create a NuGet package file like `AppLogger.1.0.0.0.nupkg` using, of course, the package name and version number from the .nuspec file.
 
-Note that you'll get warnings if you haven't updated various fields in the .nuspec file from from their default values.
+Note that you'll get warnings if you haven't updated various fields in the .nuspec file from their default values.
 
 Also, note that `pack` requires Mono 4.4.2 on Mac OS X and does not work on Linux systems. On a Mac, you must also convert Windows pathnames in the `.nuspec` file to Unix-style paths.
 
