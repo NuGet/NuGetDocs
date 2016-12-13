@@ -764,7 +764,9 @@ where &lt;packagePath&gt; identifies the package to push to the server.
 
 NuGet 2.7+: Downloads and installs any packages missing from the `packages` folder.
 
+NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file and a `<project>.nuget.props` file, if needed. (Both files can be omitted from source control.)
 
+NuGet 4.0+ with project in which package references are included in the project file directly: Generates a `<project>.nuget.props` file, if needed, in the `obj` folder. (The file can be omitted from source control.)
 
 #### Usage
 
