@@ -764,7 +764,7 @@ where &lt;packagePath&gt; identifies the package to push to the server.
 
 NuGet 2.7+: Downloads and installs any packages missing from the `packages` folder.
 
-NuGet 3.3+ with projects using `project.json`: Generates a `project.lock.json` file.
+
 
 #### Usage
 
@@ -843,11 +843,7 @@ The restore command is executed in the following steps:
             <td>Restore packages identified by the solution; gives an error if -solutiondirectory is used. $(SolutionDir)\.nuget is used as the starting folder.</td>
         </tr>
         <tr>
-            <td>packages.config</td>
-            <td>Restore packages listed in this file.</td>
-        </tr>
-        <tr>
-            <td>project.json</td>
+            <td>packages.config,<br>project.json, or <br>project file</td>
             <td>Restore packages listed in this file, resolving and installing dependencies.</td>
         </tr>
         <tr>

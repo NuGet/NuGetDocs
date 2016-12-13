@@ -180,18 +180,18 @@ To include all these files in a package, you lay out a folder structure using th
     </tr>
     <tr>
         <td><strong>lib</strong></td>
-        <td>Assemblies (.dll files)</td>
-        <td>Added as assembly references</td>
+        <td>Assembly(.dll) files (.dll), documentation (.xml) files, and symbol (.pdb) files. </td>
+        <td>Assemblies are added as references; .xml and .pdb copied into project folders.</td>a
     </tr>
     <tr>
         <td><strong>content</strong></td>
         <td>Arbitrary files</td>
-        <td>Contents are copied to the project root</td>
+        <td>Contents are copied to the project root.</td>
     </tr>
     <tr>
         <td><strong>build</strong></td>
         <td>MSBuild .targets and .props files</td>
-        <td>Automatically inserted into the project file (NuGet 2.x) or project.json.lock (NuGet 3.x)</td>
+        <td>Automatically inserted into the project file (NuGet 2.x) or project.json.lock (NuGet 3.x).</td>
     </tr>
 </table>
 

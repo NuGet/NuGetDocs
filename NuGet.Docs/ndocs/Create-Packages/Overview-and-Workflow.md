@@ -4,6 +4,11 @@ Creating a package starts with the code you want to package and share with other
 
 A package can also serve only to pull in a number of other dependencies and not contain any code of its own, which is a convenient way to create a single package for an SDK that's composed of multiple independent packages. In other cases, a package may contain only symbol (.pdb) files to aid debugging.
 
+<div class="block-callout-note">
+    <strong>Note</strong></br>
+    When you create a package for use by other developers, it's important to understand that they will be taking a dependency on your work. As such, creating and publishing a package also implies a commitment to fixing bugs and making other updates, or at the very least making the package available as open source so others can help to maintain it.
+</div> 
+
 To learn and understand the creation process, start with [Creating a package](/ndocs/create-packages/creating-a-package) which will guide you through the core processes common to all packages. This includes deciding which assemblies to package, creating the `.nuspec` (manifest) file, choosing a package identity and version number, setting a package type, adding a readme, and including MSBuild props and targets. The topic ends with creating the package itself using the `nuget pack` command.
 
 From there, you can consider a number of other options for your package:

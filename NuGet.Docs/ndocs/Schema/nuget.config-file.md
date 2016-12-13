@@ -133,7 +133,7 @@ Controls whether the `packages` folder of a solution is included in source contr
     </tr>
     <tr>
         <td>disableSourceControlIntegration</td>
-        <td>A Boolean indicating whether to ignore the packages folder when working with source control. The default value is true.</td>
+        <td>A Boolean indicating whether to ignore the packages folder when working with source control. The default value is false.</td>
     </tr>
 
 </table>
