@@ -4,7 +4,7 @@ Between nuget.org and private package galleries that your organization might est
 
 ![Flow of going to a package source, finding a package, installing it in a project, then adding a using statement and calls to the package API](/images/Consume/Overview-01-GeneralFlow.png)
 
-\* *Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/nuget.exe-cli-reference#install). *
+\* _Except with `nuget install` from the command-line, in which case it's necessary to edit the configuration files by hand. See the [install command reference](../tools/nuget.exe-cli-reference#install)._
 
 For details, see [Finding and Choosing Packages](/ndocs/consume-packages/finding-and-choosing-packages) and the [Use a Package quickstart](/ndocs/quickstart/use-a-package).
 
