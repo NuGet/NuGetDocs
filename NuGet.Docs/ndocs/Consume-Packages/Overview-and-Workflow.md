@@ -8,7 +8,7 @@ Between nuget.org and private package galleries that your organization might est
 
 For details, see [Finding and Choosing Packages](/ndocs/consume-packages/finding-and-choosing-packages) and the [Use a Package quickstart](/ndocs/quickstart/use-a-package).
 
-NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` or `project.json` in your project root, depending on project type. With NuGet 4.0+ and .NET Core projects, dependencies are instead stored in the project file directly. See [Package References in Project Files](/ndocs/consume/package-references-in-project-files). In any case, you can look in the appropriate file at any time to see the full list of  dependencies for your project.
+NuGet remembers the identity and version number of each installed package, recording it in either `packages.config` or `project.json` in your project root, depending on project type. With NuGet 4.0+ and .NET Core projects, dependencies are instead stored in the project file directly. See [Package References in Project Files](/ndocs/consume-packages/package-references-in-project-files). In any case, you can look in the appropriate file at any time to see the full list of  dependencies for your project.
 
 When installing packages, NuGet typically checks if the package is already available from its cache. You can manually clear this cache from the command line, as described on [Managing the NuGet cache](/ndocs/consume-packages/managing-the-nuget-cache).
 
