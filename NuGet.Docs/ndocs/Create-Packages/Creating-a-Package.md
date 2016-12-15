@@ -180,8 +180,8 @@ To include all these files in a package, you lay out a folder structure using th
     </tr>
     <tr>
         <td><strong>lib</strong></td>
-        <td>Assembly(.dll) files (.dll), documentation (.xml) files, and symbol (.pdb) files. </td>
-        <td>Assemblies are added as references; .xml and .pdb copied into project folders.</td>a
+        <td>Assembly(.dll) files (.dll), documentation (.xml) files, and symbol (.pdb) files</td>
+        <td>Assemblies are added as references; .xml and .pdb copied into project folders.</td>
     </tr>
     <tr>
         <td><strong>content</strong></td>
