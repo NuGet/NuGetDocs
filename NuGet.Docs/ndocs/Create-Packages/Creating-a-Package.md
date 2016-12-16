@@ -46,7 +46,7 @@ A .nuspec is an XML manifest file that describes a package's contents and drives
 Here's typical (but fictitious) `.nuspec` file, with annotation comments:
 
     <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
         <!-- The identifier that must be unique within the hosting gallery -->
         <id>Contoso.Utility.UsefulStuff</id>
@@ -251,7 +251,7 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
           <metadata>
             <!-- ... -->
             <packageTypes>
-              <packageType type="DotnetCliTool" />
+              <packageType name="DotnetCliTool" />
             </packageTypes>
           </metadata>
         </package>
@@ -270,7 +270,7 @@ Package types are set either in the `.nuspec` file or in `project.json`. In both
 To directly specify files to include in the package, use the **&lt;files&gt;** node in the `.nuspec` file, which *follows* the &lt;metadata&gt; tag:
 
     <?xml version="1.0"?>
-    <package xmlns="http://schemas.microsoft.com/packaging/2016/06/nuspec.xsd">
+    <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
       <metadata>
         <!-- ... -->
       </metadata>
