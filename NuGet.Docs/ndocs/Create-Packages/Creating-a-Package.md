@@ -195,7 +195,7 @@ To include all these files in a package, you lay out a folder structure using th
     </tr>
 </table>
 
-Think of the **content** folder as the of the target application, so if you want the package to add an image in the application's */images* folder, place it in the *content/images* folder of the package.
+Think of the **content** folder as the root of the target application, so if you want the package to add an image in the application's */images* folder, place it in the *content/images* folder of the package.
 
 Next, from the root folder of this layout, run the following command to create the `.nuspec` file:
 
