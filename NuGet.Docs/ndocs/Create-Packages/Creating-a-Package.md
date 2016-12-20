@@ -123,7 +123,7 @@ The resulting `<package_name>.nuspec` file (or `Package.nuspec` if you omit a sp
 You can also use `nuget spec` with an existing assembly, a Visual Studio project, or a convention-based working directory as described in the following sections. Note that in all cases, the resulting `.nuspec` file will contain placeholders that you'll need to edit before creating the package itself.
 
 ### From an assembly DLL
-If you have an assembly DLL, you can easily generate a `.nuspec` file from the metatdata in the assembly using the following command:
+If you have an assembly DLL, you can easily generate a `.nuspec` file from the metadata in the assembly using the following command:
 
 <code class="bash hljs">
     nuget spec MyAssembly.dll
