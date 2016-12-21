@@ -34,18 +34,58 @@ For additional details on how dependencies are installed, see [Reinstalling and 
 
 NuGet supports using interval notation for specifying version ranges, summarized as follows:
 
-Notation   | Applied rule    | Description
------------|-----------------|------------------------------
-1.0        |  1.0 ≤ x        |  Minimum version, inclusive
-(1.0,)      |  1.0 < x        |  Mininum version, exclusive
-[1.0]      |  x == 1.0       |  Exact version match
-(,1.0]     |  x ≤ 1.0        |  Maximum version, inclusive
-(,1.0)     |  x < 1.0        |  Maximum version, exclusive
-[1.0,2.0]  |  1.0 ≤ x ≤ 2.0  |  Exact range, inclusive
-(1.0,2.0)  |  1.0 < x < 2.0  |  Exact range, exclusive
-[1.0,2.0)  |  1.0 ≤ x < 2.0  |  Mixed inclusive minimum and exclusive maximum version
-(1.0)      |  invalid        |  invalid
-
+<table>
+    <tr>
+        <th>Notation</th>
+        <th>Applied rule</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>1.0</td>
+        <td>1.0 ≤ x</td>
+        <td>Minimum version, inclusive</td>
+    </tr>
+    <tr>
+        <td>(1.0,)</td>
+        <td>1.0 < x</td>
+        <td>Mininum version, exclusive</td>
+    </tr>
+    <tr>
+        <td>[1.0]</td>
+        <td>x == 1.0</td>
+        <td>Exact version match</td>
+    </tr>
+    <tr>
+        <td>(,1.0]</td>
+        <td>x ≤ 1.0</td>
+        <td>Maximum version, inclusive</td>
+    </tr>
+    <tr>
+        <td>(,1.0)</td>
+        <td>x < 1.0</td>
+        <td>Maximum version, exclusive</td>
+    </tr>
+    <tr>
+        <td>[1.0,2.0]</td>
+        <td>1.0 ≤ x ≤ 2.0</td>
+        <td>Exact range, inclusive</td>
+    </tr>
+    <tr>
+        <td>(1.0,2.0)</td>
+        <td>1.0 < x < 2.0</td>
+        <td>Exact range, exclusive</td>
+    </tr>
+    <tr>
+        <td>[1.0,2.0)</td>
+        <td>1.0 ≤ x < 2.0</td>
+        <td>Mixed inclusive minimum and exclusive maximum version</td>
+    </tr>
+    <tr>
+        <td>(1.0)</td>
+        <td>invalid</td>
+        <td>invalid</td>
+    </tr>
+</table>
 
 
 A few examples:
