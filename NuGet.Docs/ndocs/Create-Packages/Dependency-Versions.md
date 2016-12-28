@@ -48,7 +48,7 @@ NuGet supports using interval notation for specifying version ranges, summarized
     <tr>
         <td>(1.0,)</td>
         <td>1.0 < x</td>
-        <td>Mininum version, exclusive</td>
+        <td>Minimum version, exclusive</td>
     </tr>
     <tr>
         <td>[1.0]</td>
