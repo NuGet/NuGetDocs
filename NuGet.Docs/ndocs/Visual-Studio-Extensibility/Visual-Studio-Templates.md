@@ -4,7 +4,7 @@ Visual Studio project and item templates often need to ensure that certain packa
 
 To support this, template authors can instruct NuGet to install the necessary packages, rather than individual libraries. Developers can then easily update those packages at any later time. 
 
-To learn more about authoring templates themselves, refer to [Creating Project and Item Templates in Visual Studio](https://msdn.microsoft.com/library/s365byhx.aspx) pr [Creating Custom Project and Item Templates with the Visual Studio SDK](https://msdn.microsoft.com/library/ff527340.aspx).
+To learn more about authoring templates themselves, refer to [Creating Project and Item Templates in Visual Studio](https://msdn.microsoft.com/library/s365byhx.aspx) or [Creating Custom Project and Item Templates with the Visual Studio SDK](https://msdn.microsoft.com/library/ff527340.aspx).
 
 The remainder of this section describes the specific steps to take when authoring a template to properly include NuGet packages.
 
