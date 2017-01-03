@@ -55,7 +55,7 @@ In NuGet 3.x with projects using `project.json` to list dependencies, installing
 
 In projects using `packages.config`, the same behavior applies unless you specifically constrain the version range. For example, if you know that your application will work only with version 1.x of a package but not 2.0 and above, perhaps due to a major change in the package API, then you'd want to constrain upgrades to 1.x versions. This prevents accidental updates that would break the application.
 
-To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2]`: 
+To set a constraint, open `packages.config` in a text editor, locate the dependency in question, and add the `allowedVersions` attribute with a version range. For example, to constrain updates to version 1.x, set `allowedVersions` to `[1,2)`: 
 
     <?xml version="1.0" encoding="utf-8"?>
     <packages>
