@@ -349,6 +349,10 @@ where &lt;packageID&gt; names the package to install (using the latest version),
         <em>%AppData%\NuGet\NuGet.config</em> is used.</td>
     </tr>
     <tr>
+         <td>directdownload</td>
+         <td><em>(3.6+)</em> Download directly without populating any caches with metadata or binaries.</td>
+    </tr>
+    <tr>
         <td>excludeversion</td>
         <td>Excludes the version number from the installation folder.</td>
     </tr>
@@ -782,6 +786,10 @@ where &lt;projectPath&gt; specifies the location of a solution, a `packages.conf
         <td>The NuGet configuration file to modify. If not specified,
         <em>%AppData%\NuGet\NuGet.config</em> is used.</td>
     </tr>
+    <tr>
+         <td>directdownload</td>
+         <td><em>(3.6+)</em> Download directly without populating any caches with metadata or binaries.</td>
+     </tr>
     <tr>
         <td>disableparallelprocessing</td>
         <td>Disables parallel NuGet project restores and package downloads.</td>
